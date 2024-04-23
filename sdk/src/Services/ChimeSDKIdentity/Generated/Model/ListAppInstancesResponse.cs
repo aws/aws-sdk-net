@@ -33,7 +33,7 @@ namespace Amazon.ChimeSDKIdentity.Model
     /// </summary>
     public partial class ListAppInstancesResponse : AmazonWebServiceResponse
     {
-        private List<AppInstanceSummary> _appInstances = new List<AppInstanceSummary>();
+        private List<AppInstanceSummary> _appInstances = AWSConfigs.InitializeCollections ? new List<AppInstanceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         // Check to see if AppInstances property is set
         internal bool IsSetAppInstances()
         {
-            return this._appInstances != null && this._appInstances.Count > 0; 
+            return this._appInstances != null && (this._appInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

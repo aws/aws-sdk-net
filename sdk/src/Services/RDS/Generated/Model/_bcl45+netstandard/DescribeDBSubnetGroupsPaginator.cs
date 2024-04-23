@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
         /// Enumerable containing all of the DBSubnetGroups
         /// </summary>
         public IPaginatedEnumerable<DBSubnetGroup> DBSubnetGroups => 
-            new PaginatedResultKeyResponse<DescribeDBSubnetGroupsResponse, DBSubnetGroup>(this, (i) => i.DBSubnetGroups);
+            new PaginatedResultKeyResponse<DescribeDBSubnetGroupsResponse, DBSubnetGroup>(this, (i) => i.DBSubnetGroups ?? new List<DBSubnetGroup>());
 
         internal DescribeDBSubnetGroupsPaginator(IAmazonRDS client, DescribeDBSubnetGroupsRequest request)
         {

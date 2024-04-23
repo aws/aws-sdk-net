@@ -33,7 +33,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class GetDataSourceResponse : AmazonWebServiceResponse
     {
-        private List<FormOutput> _assetFormsOutput = new List<FormOutput>();
+        private List<FormOutput> _assetFormsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
         private DataSourceConfigurationOutput _configuration;
         private DateTime? _createdAt;
         private string _description;
@@ -71,7 +71,7 @@ namespace Amazon.DataZone.Model
         // Check to see if AssetFormsOutput property is set
         internal bool IsSetAssetFormsOutput()
         {
-            return this._assetFormsOutput != null && this._assetFormsOutput.Count > 0; 
+            return this._assetFormsOutput != null && (this._assetFormsOutput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -354,7 +354,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Recommendation.
+        /// Gets and sets the property Recommendation. 
+        /// <para>
+        /// The recommendation configuration of the data source.
+        /// </para>
         /// </summary>
         public RecommendationConfiguration Recommendation
         {

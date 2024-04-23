@@ -36,9 +36,9 @@ namespace Amazon.SecurityHub.Model
     public partial class SecurityControlDefinition
     {
         private RegionAvailabilityStatus _currentRegionAvailability;
-        private List<string> _customizableProperties = new List<string>();
+        private List<string> _customizableProperties = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
-        private Dictionary<string, ParameterDefinition> _parameterDefinitions = new Dictionary<string, ParameterDefinition>();
+        private Dictionary<string, ParameterDefinition> _parameterDefinitions = AWSConfigs.InitializeCollections ? new Dictionary<string, ParameterDefinition>() : null;
         private string _remediationUrl;
         private string _securityControlId;
         private SeverityRating _severityRating;
@@ -81,7 +81,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if CustomizableProperties property is set
         internal bool IsSetCustomizableProperties()
         {
-            return this._customizableProperties != null && this._customizableProperties.Count > 0; 
+            return this._customizableProperties != null && (this._customizableProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ParameterDefinitions property is set
         internal bool IsSetParameterDefinitions()
         {
-            return this._parameterDefinitions != null && this._parameterDefinitions.Count > 0; 
+            return this._parameterDefinitions != null && (this._parameterDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

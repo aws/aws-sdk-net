@@ -38,12 +38,12 @@ namespace Amazon.EC2.Model
         private DateTime? _deleteTime;
         private string _failureCode;
         private string _failureMessage;
-        private List<NatGatewayAddress> _natGatewayAddresses = new List<NatGatewayAddress>();
+        private List<NatGatewayAddress> _natGatewayAddresses = AWSConfigs.InitializeCollections ? new List<NatGatewayAddress>() : null;
         private string _natGatewayId;
         private ProvisionedBandwidth _provisionedBandwidth;
         private NatGatewayState _state;
         private string _subnetId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace Amazon.EC2.Model
         // Check to see if NatGatewayAddresses property is set
         internal bool IsSetNatGatewayAddresses()
         {
-            return this._natGatewayAddresses != null && this._natGatewayAddresses.Count > 0; 
+            return this._natGatewayAddresses != null && (this._natGatewayAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -299,7 +299,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

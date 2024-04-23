@@ -42,8 +42,8 @@ namespace Amazon.RDS.Model
     {
         private string _dbClusterEndpointIdentifier;
         private string _endpointType;
-        private List<string> _excludedMembers = new List<string>();
-        private List<string> _staticMembers = new List<string>();
+        private List<string> _excludedMembers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _staticMembers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DBClusterEndpointIdentifier. 
@@ -100,7 +100,7 @@ namespace Amazon.RDS.Model
         // Check to see if ExcludedMembers property is set
         internal bool IsSetExcludedMembers()
         {
-            return this._excludedMembers != null && this._excludedMembers.Count > 0; 
+            return this._excludedMembers != null && (this._excludedMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.RDS.Model
         // Check to see if StaticMembers property is set
         internal bool IsSetStaticMembers()
         {
-            return this._staticMembers != null && this._staticMembers.Count > 0; 
+            return this._staticMembers != null && (this._staticMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

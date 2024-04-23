@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the ActiveAssignments
         /// </summary>
         public IPaginatedEnumerable<ActiveIAMPolicyAssignment> ActiveAssignments => 
-            new PaginatedResultKeyResponse<ListIAMPolicyAssignmentsForUserResponse, ActiveIAMPolicyAssignment>(this, (i) => i.ActiveAssignments);
+            new PaginatedResultKeyResponse<ListIAMPolicyAssignmentsForUserResponse, ActiveIAMPolicyAssignment>(this, (i) => i.ActiveAssignments ?? new List<ActiveIAMPolicyAssignment>());
 
         internal ListIAMPolicyAssignmentsForUserPaginator(IAmazonQuickSight client, ListIAMPolicyAssignmentsForUserRequest request)
         {

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Provides the authorization configuration information needed to deploy a Amazon Q web
-    /// experience to end users.
+    /// Provides the authorization configuration information needed to deploy a Amazon Q Business
+    /// web experience to end users.
     /// </summary>
     public partial class WebExperienceAuthConfiguration
     {

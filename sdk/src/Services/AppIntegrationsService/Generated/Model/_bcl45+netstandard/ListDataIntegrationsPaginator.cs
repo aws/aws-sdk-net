@@ -45,7 +45,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// Enumerable containing all of the DataIntegrations
         /// </summary>
         public IPaginatedEnumerable<DataIntegrationSummary> DataIntegrations => 
-            new PaginatedResultKeyResponse<ListDataIntegrationsResponse, DataIntegrationSummary>(this, (i) => i.DataIntegrations);
+            new PaginatedResultKeyResponse<ListDataIntegrationsResponse, DataIntegrationSummary>(this, (i) => i.DataIntegrations ?? new List<DataIntegrationSummary>());
 
         internal ListDataIntegrationsPaginator(IAmazonAppIntegrationsService client, ListDataIntegrationsRequest request)
         {

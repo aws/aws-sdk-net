@@ -34,7 +34,7 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class CreateOrderRequest : AmazonOutpostsRequest
     {
-        private List<LineItemRequest> _lineItems = new List<LineItemRequest>();
+        private List<LineItemRequest> _lineItems = AWSConfigs.InitializeCollections ? new List<LineItemRequest>() : null;
         private string _outpostIdentifier;
         private PaymentOption _paymentOption;
         private PaymentTerm _paymentTerm;
@@ -55,7 +55,7 @@ namespace Amazon.Outposts.Model
         // Check to see if LineItems property is set
         internal bool IsSetLineItems()
         {
-            return this._lineItems != null && this._lineItems.Count > 0; 
+            return this._lineItems != null && (this._lineItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

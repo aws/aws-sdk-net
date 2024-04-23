@@ -33,8 +33,28 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class GlueRunConfigurationInput
     {
+        private bool? _autoImportDataQualityResult;
         private string _dataAccessRole;
-        private List<RelationalFilterConfiguration> _relationalFilterConfigurations = new List<RelationalFilterConfiguration>();
+        private List<RelationalFilterConfiguration> _relationalFilterConfigurations = AWSConfigs.InitializeCollections ? new List<RelationalFilterConfiguration>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AutoImportDataQualityResult. 
+        /// <para>
+        /// Specifies whether to automatically import data quality metrics as part of the data
+        /// source run.
+        /// </para>
+        /// </summary>
+        public bool AutoImportDataQualityResult
+        {
+            get { return this._autoImportDataQualityResult.GetValueOrDefault(); }
+            set { this._autoImportDataQualityResult = value; }
+        }
+
+        // Check to see if AutoImportDataQualityResult property is set
+        internal bool IsSetAutoImportDataQualityResult()
+        {
+            return this._autoImportDataQualityResult.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DataAccessRole. 
@@ -72,7 +92,7 @@ namespace Amazon.DataZone.Model
         // Check to see if RelationalFilterConfigurations property is set
         internal bool IsSetRelationalFilterConfigurations()
         {
-            return this._relationalFilterConfigurations != null && this._relationalFilterConfigurations.Count > 0; 
+            return this._relationalFilterConfigurations != null && (this._relationalFilterConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.FIS.Model
     /// </summary>
     public partial class ListExperimentsResponse : AmazonWebServiceResponse
     {
-        private List<ExperimentSummary> _experiments = new List<ExperimentSummary>();
+        private List<ExperimentSummary> _experiments = AWSConfigs.InitializeCollections ? new List<ExperimentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FIS.Model
         // Check to see if Experiments property is set
         internal bool IsSetExperiments()
         {
-            return this._experiments != null && this._experiments.Count > 0; 
+            return this._experiments != null && (this._experiments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

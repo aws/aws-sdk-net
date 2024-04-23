@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model
     public partial class DescribeOrganizationConformancePackStatusesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OrganizationConformancePackStatus> _organizationConformancePackStatuses = new List<OrganizationConformancePackStatus>();
+        private List<OrganizationConformancePackStatus> _organizationConformancePackStatuses = AWSConfigs.InitializeCollections ? new List<OrganizationConformancePackStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if OrganizationConformancePackStatuses property is set
         internal bool IsSetOrganizationConformancePackStatuses()
         {
-            return this._organizationConformancePackStatuses != null && this._organizationConformancePackStatuses.Count > 0; 
+            return this._organizationConformancePackStatuses != null && (this._organizationConformancePackStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

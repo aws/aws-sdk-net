@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricQuery requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFilter())
             {
                 context.Writer.WritePropertyName("Filter");
@@ -85,3 +88,4 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

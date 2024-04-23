@@ -41,9 +41,9 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class UserSearchCriteria
     {
-        private List<UserSearchCriteria> _andConditions = new List<UserSearchCriteria>();
+        private List<UserSearchCriteria> _andConditions = AWSConfigs.InitializeCollections ? new List<UserSearchCriteria>() : null;
         private HierarchyGroupCondition _hierarchyGroupCondition;
-        private List<UserSearchCriteria> _orConditions = new List<UserSearchCriteria>();
+        private List<UserSearchCriteria> _orConditions = AWSConfigs.InitializeCollections ? new List<UserSearchCriteria>() : null;
         private StringCondition _stringCondition;
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         // Check to see if AndConditions property is set
         internal bool IsSetAndConditions()
         {
-            return this._andConditions != null && this._andConditions.Count > 0; 
+            return this._andConditions != null && (this._andConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.Connect.Model
         // Check to see if OrConditions property is set
         internal bool IsSetOrConditions()
         {
-            return this._orConditions != null && this._orConditions.Count > 0; 
+            return this._orConditions != null && (this._orConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,9 +108,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// The currently supported values for <c>FieldName</c> are <c>username</c>, <c>firstname</c>,
-        /// <c>lastname</c>, <c>resourceId</c>, <c>routingProfileId</c>, <c>securityProfileId</c>,
-        /// <c>agentGroupId</c>, and <c>agentGroupPathIds</c>.
+        /// The currently supported values for <c>FieldName</c> are <c>Username</c>, <c>FirstName</c>,
+        /// <c>LastName</c>, <c>RoutingProfileId</c>, <c>SecurityProfileId</c>, <c>ResourceId</c>.
         /// </para>
         /// </summary>
         public StringCondition StringCondition

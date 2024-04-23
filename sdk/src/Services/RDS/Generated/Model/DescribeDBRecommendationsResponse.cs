@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<DBRecommendation> _dbRecommendations = new List<DBRecommendation>();
+        private List<DBRecommendation> _dbRecommendations = AWSConfigs.InitializeCollections ? new List<DBRecommendation>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBRecommendations property is set
         internal bool IsSetDBRecommendations()
         {
-            return this._dbRecommendations != null && this._dbRecommendations.Count > 0; 
+            return this._dbRecommendations != null && (this._dbRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

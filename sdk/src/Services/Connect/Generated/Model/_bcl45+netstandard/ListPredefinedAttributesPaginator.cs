@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the PredefinedAttributeSummaryList
         /// </summary>
         public IPaginatedEnumerable<PredefinedAttributeSummary> PredefinedAttributeSummaryList => 
-            new PaginatedResultKeyResponse<ListPredefinedAttributesResponse, PredefinedAttributeSummary>(this, (i) => i.PredefinedAttributeSummaryList);
+            new PaginatedResultKeyResponse<ListPredefinedAttributesResponse, PredefinedAttributeSummary>(this, (i) => i.PredefinedAttributeSummaryList ?? new List<PredefinedAttributeSummary>());
 
         internal ListPredefinedAttributesPaginator(IAmazonConnect client, ListPredefinedAttributesRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the ScheduledInstanceAvailabilitySet
         /// </summary>
         public IPaginatedEnumerable<ScheduledInstanceAvailability> ScheduledInstanceAvailabilitySet => 
-            new PaginatedResultKeyResponse<DescribeScheduledInstanceAvailabilityResponse, ScheduledInstanceAvailability>(this, (i) => i.ScheduledInstanceAvailabilitySet);
+            new PaginatedResultKeyResponse<DescribeScheduledInstanceAvailabilityResponse, ScheduledInstanceAvailability>(this, (i) => i.ScheduledInstanceAvailabilitySet ?? new List<ScheduledInstanceAvailability>());
 
         internal DescribeScheduledInstanceAvailabilityPaginator(IAmazonEC2 client, DescribeScheduledInstanceAvailabilityRequest request)
         {

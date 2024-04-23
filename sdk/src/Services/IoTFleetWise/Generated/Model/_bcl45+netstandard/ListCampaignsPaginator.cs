@@ -45,7 +45,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Enumerable containing all of the CampaignSummaries
         /// </summary>
         public IPaginatedEnumerable<CampaignSummary> CampaignSummaries => 
-            new PaginatedResultKeyResponse<ListCampaignsResponse, CampaignSummary>(this, (i) => i.CampaignSummaries);
+            new PaginatedResultKeyResponse<ListCampaignsResponse, CampaignSummary>(this, (i) => i.CampaignSummaries ?? new List<CampaignSummary>());
 
         internal ListCampaignsPaginator(IAmazonIoTFleetWise client, ListCampaignsRequest request)
         {

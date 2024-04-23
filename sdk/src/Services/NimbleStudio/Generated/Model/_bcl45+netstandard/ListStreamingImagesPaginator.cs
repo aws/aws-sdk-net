@@ -45,7 +45,7 @@ namespace Amazon.NimbleStudio.Model
         /// Enumerable containing all of the StreamingImages
         /// </summary>
         public IPaginatedEnumerable<StreamingImage> StreamingImages => 
-            new PaginatedResultKeyResponse<ListStreamingImagesResponse, StreamingImage>(this, (i) => i.StreamingImages);
+            new PaginatedResultKeyResponse<ListStreamingImagesResponse, StreamingImage>(this, (i) => i.StreamingImages ?? new List<StreamingImage>());
 
         internal ListStreamingImagesPaginator(IAmazonNimbleStudio client, ListStreamingImagesRequest request)
         {

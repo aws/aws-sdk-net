@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the Apps
         /// </summary>
         public IPaginatedEnumerable<AppDetails> Apps => 
-            new PaginatedResultKeyResponse<ListAppsResponse, AppDetails>(this, (i) => i.Apps);
+            new PaginatedResultKeyResponse<ListAppsResponse, AppDetails>(this, (i) => i.Apps ?? new List<AppDetails>());
 
         internal ListAppsPaginator(IAmazonSageMaker client, ListAppsRequest request)
         {

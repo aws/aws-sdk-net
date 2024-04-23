@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceCount())
                 {
                     request.Parameters.Add("InstanceCount", StringUtils.FromInt(publicRequest.InstanceCount));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPriceSchedules())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,21 +78,26 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("PriceSchedules" + "." + publicRequestlistValueIndex + "." + "CurrencyCode", StringUtils.FromString(publicRequestlistValue.CurrencyCode));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPrice())
                         {
                             request.Parameters.Add("PriceSchedules" + "." + publicRequestlistValueIndex + "." + "Price", StringUtils.FromDouble(publicRequestlistValue.Price));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTerm())
                         {
                             request.Parameters.Add("PriceSchedules" + "." + publicRequestlistValueIndex + "." + "Term", StringUtils.FromLong(publicRequestlistValue.Term));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReservedInstancesId())
                 {
                     request.Parameters.Add("ReservedInstancesId", StringUtils.FromString(publicRequest.ReservedInstancesId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -36,7 +36,7 @@ namespace Amazon.SecurityHub.Model
         private bool? _additionalOccurrences;
         private CustomDataIdentifiersResult _customDataIdentifiers;
         private string _mimeType;
-        private List<SensitiveDataResult> _sensitiveData = new List<SensitiveDataResult>();
+        private List<SensitiveDataResult> _sensitiveData = AWSConfigs.InitializeCollections ? new List<SensitiveDataResult>() : null;
         private long? _sizeClassified;
         private ClassificationStatus _status;
 
@@ -112,7 +112,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SensitiveData property is set
         internal bool IsSetSensitiveData()
         {
-            return this._sensitiveData != null && this._sensitiveData.Count > 0; 
+            return this._sensitiveData != null && (this._sensitiveData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

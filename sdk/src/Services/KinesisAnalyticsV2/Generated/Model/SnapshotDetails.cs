@@ -34,6 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class SnapshotDetails
     {
         private long? _applicationVersionId;
+        private RuntimeEnvironment _runtimeEnvironment;
         private DateTime? _snapshotCreationTimestamp;
         private string _snapshotName;
         private SnapshotStatus _snapshotStatus;
@@ -55,6 +56,24 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationVersionId()
         {
             return this._applicationVersionId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeEnvironment. 
+        /// <para>
+        /// The Flink Runtime for the application snapshot.
+        /// </para>
+        /// </summary>
+        public RuntimeEnvironment RuntimeEnvironment
+        {
+            get { return this._runtimeEnvironment; }
+            set { this._runtimeEnvironment = value; }
+        }
+
+        // Check to see if RuntimeEnvironment property is set
+        internal bool IsSetRuntimeEnvironment()
+        {
+            return this._runtimeEnvironment != null;
         }
 
         /// <summary>

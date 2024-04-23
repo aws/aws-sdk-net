@@ -37,7 +37,7 @@ namespace Amazon.XRay.Model
         private string _ec2InstanceId;
         private string _hostname;
         private string _resourceARN;
-        private List<TelemetryRecord> _telemetryRecords = new List<TelemetryRecord>();
+        private List<TelemetryRecord> _telemetryRecords = AWSConfigs.InitializeCollections ? new List<TelemetryRecord>() : null;
 
         /// <summary>
         /// Gets and sets the property EC2InstanceId.
@@ -100,7 +100,7 @@ namespace Amazon.XRay.Model
         // Check to see if TelemetryRecords property is set
         internal bool IsSetTelemetryRecords()
         {
-            return this._telemetryRecords != null && this._telemetryRecords.Count > 0; 
+            return this._telemetryRecords != null && (this._telemetryRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

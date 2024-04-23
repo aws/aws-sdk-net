@@ -45,7 +45,7 @@ namespace Amazon.CodeArtifact.Model
         /// Enumerable containing all of the Versions
         /// </summary>
         public IPaginatedEnumerable<PackageVersionSummary> Versions => 
-            new PaginatedResultKeyResponse<ListPackageVersionsResponse, PackageVersionSummary>(this, (i) => i.Versions);
+            new PaginatedResultKeyResponse<ListPackageVersionsResponse, PackageVersionSummary>(this, (i) => i.Versions ?? new List<PackageVersionSummary>());
 
         internal ListPackageVersionsPaginator(IAmazonCodeArtifact client, ListPackageVersionsRequest request)
         {

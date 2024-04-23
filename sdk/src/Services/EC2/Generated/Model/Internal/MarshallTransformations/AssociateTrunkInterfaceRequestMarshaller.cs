@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("BranchInterfaceId", StringUtils.FromString(publicRequest.BranchInterfaceId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
@@ -70,18 +72,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGreKey())
                 {
                     request.Parameters.Add("GreKey", StringUtils.FromInt(publicRequest.GreKey));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTrunkInterfaceId())
                 {
                     request.Parameters.Add("TrunkInterfaceId", StringUtils.FromString(publicRequest.TrunkInterfaceId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVlanId())
                 {
                     request.Parameters.Add("VlanId", StringUtils.FromInt(publicRequest.VlanId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

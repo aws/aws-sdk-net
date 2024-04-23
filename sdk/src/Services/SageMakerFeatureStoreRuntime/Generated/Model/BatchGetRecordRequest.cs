@@ -35,7 +35,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     public partial class BatchGetRecordRequest : AmazonSageMakerFeatureStoreRuntimeRequest
     {
         private ExpirationTimeResponse _expirationTimeResponse;
-        private List<BatchGetRecordIdentifier> _identifiers = new List<BatchGetRecordIdentifier>();
+        private List<BatchGetRecordIdentifier> _identifiers = AWSConfigs.InitializeCollections ? new List<BatchGetRecordIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property ExpirationTimeResponse. 
@@ -75,7 +75,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         // Check to see if Identifiers property is set
         internal bool IsSetIdentifiers()
         {
-            return this._identifiers != null && this._identifiers.Count > 0; 
+            return this._identifiers != null && (this._identifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -39,7 +39,7 @@ namespace Amazon.DevOpsGuru.Model
     public partial class ResourceCollection
     {
         private CloudFormationCollection _cloudFormation;
-        private List<TagCollection> _tags = new List<TagCollection>();
+        private List<TagCollection> _tags = AWSConfigs.InitializeCollections ? new List<TagCollection>() : null;
 
         /// <summary>
         /// Gets and sets the property CloudFormation. 
@@ -116,7 +116,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

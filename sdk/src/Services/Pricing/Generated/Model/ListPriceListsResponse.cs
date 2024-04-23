@@ -34,7 +34,7 @@ namespace Amazon.Pricing.Model
     public partial class ListPriceListsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PriceList> _priceLists = new List<PriceList>();
+        private List<PriceList> _priceLists = AWSConfigs.InitializeCollections ? new List<PriceList>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Pricing.Model
         // Check to see if PriceLists property is set
         internal bool IsSetPriceLists()
         {
-            return this._priceLists != null && this._priceLists.Count > 0; 
+            return this._priceLists != null && (this._priceLists.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

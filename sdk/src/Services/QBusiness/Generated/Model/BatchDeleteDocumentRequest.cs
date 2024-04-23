@@ -31,7 +31,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Container for the parameters to the BatchDeleteDocument operation.
     /// Asynchronously deletes one or more documents added using the <c>BatchPutDocument</c>
-    /// API from an Amazon Q index.
+    /// API from an Amazon Q Business index.
     /// 
     ///  
     /// <para>
@@ -43,13 +43,13 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private string _dataSourceSyncId;
-        private List<DeleteDocument> _documents = new List<DeleteDocument>();
+        private List<DeleteDocument> _documents = AWSConfigs.InitializeCollections ? new List<DeleteDocument>() : null;
         private string _indexId;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application.
+        /// The identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -87,7 +87,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Documents. 
         /// <para>
-        /// Documents deleted from the Amazon Q index.
+        /// Documents deleted from the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,13 +100,13 @@ namespace Amazon.QBusiness.Model
         // Check to see if Documents property is set
         internal bool IsSetDocuments()
         {
-            return this._documents != null && this._documents.Count > 0; 
+            return this._documents != null && (this._documents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the Amazon Q index that contains the documents to delete.
+        /// The identifier of the Amazon Q Business index that contains the documents to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

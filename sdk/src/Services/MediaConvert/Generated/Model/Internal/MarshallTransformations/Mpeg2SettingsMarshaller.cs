@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Mpeg2Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdaptiveQuantization())
             {
                 context.Writer.WritePropertyName("adaptiveQuantization");
@@ -108,7 +111,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGopSize())
             {
                 context.Writer.WritePropertyName("gopSize");
-                context.Writer.Write(requestObject.GopSize);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.GopSize))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GopSize));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.GopSize);
+                }
             }
 
             if(requestObject.IsSetGopSizeUnits())
@@ -252,3 +262,4 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

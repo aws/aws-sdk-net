@@ -35,7 +35,7 @@ namespace Amazon.SecretsManager.Model
     {
         private string _arn;
         private string _name;
-        private List<ReplicationStatusType> _replicationStatus = new List<ReplicationStatusType>();
+        private List<ReplicationStatusType> _replicationStatus = AWSConfigs.InitializeCollections ? new List<ReplicationStatusType>() : null;
         private string _versionId;
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if ReplicationStatus property is set
         internal bool IsSetReplicationStatus()
         {
-            return this._replicationStatus != null && this._replicationStatus.Count > 0; 
+            return this._replicationStatus != null && (this._replicationStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

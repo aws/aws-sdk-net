@@ -33,7 +33,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// </summary>
     public partial class ListIdentitySourcesResponse : AmazonWebServiceResponse
     {
-        private List<IdentitySourceItem> _identitySources = new List<IdentitySourceItem>();
+        private List<IdentitySourceItem> _identitySources = AWSConfigs.InitializeCollections ? new List<IdentitySourceItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if IdentitySources property is set
         internal bool IsSetIdentitySources()
         {
-            return this._identitySources != null && this._identitySources.Count > 0; 
+            return this._identitySources != null && (this._identitySources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

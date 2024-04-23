@@ -35,13 +35,13 @@ namespace Amazon.CloudWatchRUM.Model
     {
         private bool? _allowCookies;
         private bool? _enableXRay;
-        private List<string> _excludedPages = new List<string>();
-        private List<string> _favoritePages = new List<string>();
+        private List<string> _excludedPages = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _favoritePages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _guestRoleArn;
         private string _identityPoolId;
-        private List<string> _includedPages = new List<string>();
+        private List<string> _includedPages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _sessionSampleRate;
-        private List<string> _telemetries = new List<string>();
+        private List<string> _telemetries = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowCookies. 
@@ -107,7 +107,7 @@ namespace Amazon.CloudWatchRUM.Model
         // Check to see if ExcludedPages property is set
         internal bool IsSetExcludedPages()
         {
-            return this._excludedPages != null && this._excludedPages.Count > 0; 
+            return this._excludedPages != null && (this._excludedPages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.CloudWatchRUM.Model
         // Check to see if FavoritePages property is set
         internal bool IsSetFavoritePages()
         {
-            return this._favoritePages != null && this._favoritePages.Count > 0; 
+            return this._favoritePages != null && (this._favoritePages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace Amazon.CloudWatchRUM.Model
         // Check to see if IncludedPages property is set
         internal bool IsSetIncludedPages()
         {
-            return this._includedPages != null && this._includedPages.Count > 0; 
+            return this._includedPages != null && (this._includedPages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace Amazon.CloudWatchRUM.Model
         // Check to see if Telemetries property is set
         internal bool IsSetTelemetries()
         {
-            return this._telemetries != null && this._telemetries.Count > 0; 
+            return this._telemetries != null && (this._telemetries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

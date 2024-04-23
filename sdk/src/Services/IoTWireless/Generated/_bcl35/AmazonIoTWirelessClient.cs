@@ -54,6 +54,12 @@ namespace Amazon.IoTWireless
     /// a session to update the firmware of individual devices or an entire group of devices
     /// in a multicast group.
     /// </para>
+    ///  
+    /// <para>
+    /// To connect to the AWS IoT Wireless Service, use the Service endpoints as described
+    /// in <a href="https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region">IoT
+    /// Wireless Service endpoints</a> in the <i>AWS General Reference</i>.
+    /// </para>
     /// </summary>
     public partial class AmazonIoTWirelessClient : AmazonServiceClient, IAmazonIoTWireless
     {
@@ -1359,6 +1365,27 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Provisions a wireless gateway.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When provisioning a wireless gateway, you might run into duplication errors for the
+        /// following reasons.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you specify a <c>GatewayEui</c> value that already exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you used a <c>ClientRequestToken</c> with the same parameters within the last 10
+        /// minutes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To avoid this error, make sure that you use unique identifiers and parameters for
+        /// each request within the specified time period.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWirelessGateway service method.</param>
         /// 
@@ -2211,6 +2238,27 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Deletes a wireless gateway.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When deleting a wireless gateway, you might run into duplication errors for the following
+        /// reasons.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you specify a <c>GatewayEui</c> value that already exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you used a <c>ClientRequestToken</c> with the same parameters within the last 10
+        /// minutes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To avoid this error, make sure that you use unique identifiers and parameters for
+        /// each request within the specified time period.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWirelessGateway service method.</param>
         /// 
@@ -3308,6 +3356,150 @@ namespace Amazon.IoTWireless
         public virtual GetLogLevelsByResourceTypesResponse EndGetLogLevelsByResourceTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<GetLogLevelsByResourceTypesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetMetricConfiguration
+
+        /// <summary>
+        /// Get the metric configuration status for this AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetMetricConfiguration service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetricConfiguration">REST API Reference for GetMetricConfiguration Operation</seealso>
+        public virtual GetMetricConfigurationResponse GetMetricConfiguration(GetMetricConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetricConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetricConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricConfiguration operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMetricConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetricConfiguration">REST API Reference for GetMetricConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetMetricConfiguration(GetMetricConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMetricConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMetricConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetMetricConfigurationResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetricConfiguration">REST API Reference for GetMetricConfiguration Operation</seealso>
+        public virtual GetMetricConfigurationResponse EndGetMetricConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMetricConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetMetrics
+
+        /// <summary>
+        /// Get the summary metrics for this AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetrics service method.</param>
+        /// 
+        /// <returns>The response from the GetMetrics service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetrics">REST API Reference for GetMetrics Operation</seealso>
+        public virtual GetMetricsResponse GetMetrics(GetMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetricsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetrics operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetrics">REST API Reference for GetMetrics Operation</seealso>
+        public virtual IAsyncResult BeginGetMetrics(GetMetricsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetricsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMetrics.</param>
+        /// 
+        /// <returns>Returns a  GetMetricsResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetrics">REST API Reference for GetMetrics Operation</seealso>
+        public virtual GetMetricsResponse EndGetMetrics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMetricsResponse>(asyncResult);
         }
 
         #endregion
@@ -7280,6 +7472,78 @@ namespace Amazon.IoTWireless
         public virtual UpdateLogLevelsByResourceTypesResponse EndUpdateLogLevelsByResourceTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateLogLevelsByResourceTypesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMetricConfiguration
+
+        /// <summary>
+        /// Update the summary metric configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetricConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMetricConfiguration service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMetricConfiguration">REST API Reference for UpdateMetricConfiguration Operation</seealso>
+        public virtual UpdateMetricConfigurationResponse UpdateMetricConfiguration(UpdateMetricConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMetricConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetricConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMetricConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMetricConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetricConfiguration operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMetricConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMetricConfiguration">REST API Reference for UpdateMetricConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMetricConfiguration(UpdateMetricConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMetricConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetricConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMetricConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMetricConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateMetricConfigurationResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMetricConfiguration">REST API Reference for UpdateMetricConfiguration Operation</seealso>
+        public virtual UpdateMetricConfigurationResponse EndUpdateMetricConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMetricConfigurationResponse>(asyncResult);
         }
 
         #endregion

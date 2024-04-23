@@ -33,7 +33,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class ListCustomerManagedPolicyReferencesInPermissionSetResponse : AmazonWebServiceResponse
     {
-        private List<CustomerManagedPolicyReference> _customerManagedPolicyReferences = new List<CustomerManagedPolicyReference>();
+        private List<CustomerManagedPolicyReference> _customerManagedPolicyReferences = AWSConfigs.InitializeCollections ? new List<CustomerManagedPolicyReference>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if CustomerManagedPolicyReferences property is set
         internal bool IsSetCustomerManagedPolicyReferences()
         {
-            return this._customerManagedPolicyReferences != null && this._customerManagedPolicyReferences.Count > 0; 
+            return this._customerManagedPolicyReferences != null && (this._customerManagedPolicyReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

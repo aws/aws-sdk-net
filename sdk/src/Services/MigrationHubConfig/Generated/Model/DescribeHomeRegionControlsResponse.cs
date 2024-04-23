@@ -33,7 +33,7 @@ namespace Amazon.MigrationHubConfig.Model
     /// </summary>
     public partial class DescribeHomeRegionControlsResponse : AmazonWebServiceResponse
     {
-        private List<HomeRegionControl> _homeRegionControls = new List<HomeRegionControl>();
+        private List<HomeRegionControl> _homeRegionControls = AWSConfigs.InitializeCollections ? new List<HomeRegionControl>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.MigrationHubConfig.Model
         // Check to see if HomeRegionControls property is set
         internal bool IsSetHomeRegionControls()
         {
-            return this._homeRegionControls != null && this._homeRegionControls.Count > 0; 
+            return this._homeRegionControls != null && (this._homeRegionControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

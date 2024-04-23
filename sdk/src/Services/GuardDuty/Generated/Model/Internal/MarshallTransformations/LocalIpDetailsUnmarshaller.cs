@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.IpAddressV4 = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ipAddressV6", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddressV6 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
@@ -88,3 +95,4 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

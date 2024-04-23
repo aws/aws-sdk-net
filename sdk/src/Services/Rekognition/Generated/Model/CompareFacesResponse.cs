@@ -33,11 +33,11 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class CompareFacesResponse : AmazonWebServiceResponse
     {
-        private List<CompareFacesMatch> _faceMatches = new List<CompareFacesMatch>();
+        private List<CompareFacesMatch> _faceMatches = AWSConfigs.InitializeCollections ? new List<CompareFacesMatch>() : null;
         private ComparedSourceImageFace _sourceImageFace;
         private OrientationCorrection _sourceImageOrientationCorrection;
         private OrientationCorrection _targetImageOrientationCorrection;
-        private List<ComparedFace> _unmatchedFaces = new List<ComparedFace>();
+        private List<ComparedFace> _unmatchedFaces = AWSConfigs.InitializeCollections ? new List<ComparedFace>() : null;
 
         /// <summary>
         /// Gets and sets the property FaceMatches. 
@@ -57,7 +57,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if FaceMatches property is set
         internal bool IsSetFaceMatches()
         {
-            return this._faceMatches != null && this._faceMatches.Count > 0; 
+            return this._faceMatches != null && (this._faceMatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if UnmatchedFaces property is set
         internal bool IsSetUnmatchedFaces()
         {
-            return this._unmatchedFaces != null && this._unmatchedFaces.Count > 0; 
+            return this._unmatchedFaces != null && (this._unmatchedFaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

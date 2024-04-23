@@ -34,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     public partial class GetPredictiveScalingForecastResponse : AmazonWebServiceResponse
     {
         private CapacityForecast _capacityForecast;
-        private List<LoadForecast> _loadForecast = new List<LoadForecast>();
+        private List<LoadForecast> _loadForecast = AWSConfigs.InitializeCollections ? new List<LoadForecast>() : null;
         private DateTime? _updateTime;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LoadForecast property is set
         internal bool IsSetLoadForecast()
         {
-            return this._loadForecast != null && this._loadForecast.Count > 0; 
+            return this._loadForecast != null && (this._loadForecast.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

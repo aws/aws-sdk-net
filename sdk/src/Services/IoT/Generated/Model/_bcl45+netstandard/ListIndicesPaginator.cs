@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the IndexNames
         /// </summary>
         public IPaginatedEnumerable<string> IndexNames => 
-            new PaginatedResultKeyResponse<ListIndicesResponse, string>(this, (i) => i.IndexNames);
+            new PaginatedResultKeyResponse<ListIndicesResponse, string>(this, (i) => i.IndexNames ?? new List<string>());
 
         internal ListIndicesPaginator(IAmazonIoT client, ListIndicesRequest request)
         {

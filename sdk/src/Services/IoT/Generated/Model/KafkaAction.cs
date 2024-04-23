@@ -34,9 +34,9 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class KafkaAction
     {
-        private Dictionary<string, string> _clientProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _clientProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _destinationArn;
-        private List<KafkaActionHeader> _headers = new List<KafkaActionHeader>();
+        private List<KafkaActionHeader> _headers = AWSConfigs.InitializeCollections ? new List<KafkaActionHeader>() : null;
         private string _key;
         private string _partition;
         private string _topic;
@@ -57,7 +57,7 @@ namespace Amazon.IoT.Model
         // Check to see if ClientProperties property is set
         internal bool IsSetClientProperties()
         {
-            return this._clientProperties != null && this._clientProperties.Count > 0; 
+            return this._clientProperties != null && (this._clientProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.IoT.Model
         // Check to see if Headers property is set
         internal bool IsSetHeaders()
         {
-            return this._headers != null && this._headers.Count > 0; 
+            return this._headers != null && (this._headers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

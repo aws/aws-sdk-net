@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Get Agent Version Response
+    /// This is the response object from the GetAgentVersion operation.
     /// </summary>
     public partial class GetAgentVersionResponse : AmazonWebServiceResponse
     {
         private AgentVersion _agentVersion;
 
         /// <summary>
-        /// Gets and sets the property AgentVersion.
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// Contains details about the version of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentVersion AgentVersion

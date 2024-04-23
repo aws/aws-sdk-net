@@ -36,7 +36,7 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class UpdatePipelineRequest : AmazonIoTAnalyticsRequest
     {
-        private List<PipelineActivity> _pipelineActivities = new List<PipelineActivity>();
+        private List<PipelineActivity> _pipelineActivities = AWSConfigs.InitializeCollections ? new List<PipelineActivity>() : null;
         private string _pipelineName;
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if PipelineActivities property is set
         internal bool IsSetPipelineActivities()
         {
-            return this._pipelineActivities != null && this._pipelineActivities.Count > 0; 
+            return this._pipelineActivities != null && (this._pipelineActivities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

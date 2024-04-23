@@ -34,8 +34,8 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class ListJobsFilterCriteria
     {
-        private List<ListJobsFilterTerm> _excludes = new List<ListJobsFilterTerm>();
-        private List<ListJobsFilterTerm> _includes = new List<ListJobsFilterTerm>();
+        private List<ListJobsFilterTerm> _excludes = AWSConfigs.InitializeCollections ? new List<ListJobsFilterTerm>() : null;
+        private List<ListJobsFilterTerm> _includes = AWSConfigs.InitializeCollections ? new List<ListJobsFilterTerm>() : null;
 
         /// <summary>
         /// Gets and sets the property Excludes. 
@@ -53,7 +53,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Excludes property is set
         internal bool IsSetExcludes()
         {
-            return this._excludes != null && this._excludes.Count > 0; 
+            return this._excludes != null && (this._excludes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Includes property is set
         internal bool IsSetIncludes()
         {
-            return this._includes != null && this._includes.Count > 0; 
+            return this._includes != null && (this._includes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the Steps
         /// </summary>
         public IPaginatedEnumerable<InferenceRecommendationsJobStep> Steps => 
-            new PaginatedResultKeyResponse<ListInferenceRecommendationsJobStepsResponse, InferenceRecommendationsJobStep>(this, (i) => i.Steps);
+            new PaginatedResultKeyResponse<ListInferenceRecommendationsJobStepsResponse, InferenceRecommendationsJobStep>(this, (i) => i.Steps ?? new List<InferenceRecommendationsJobStep>());
 
         internal ListInferenceRecommendationsJobStepsPaginator(IAmazonSageMaker client, ListInferenceRecommendationsJobStepsRequest request)
         {

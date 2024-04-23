@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DestinationToCreate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityZoneName())
             {
                 context.Writer.WritePropertyName("AvailabilityZoneName");
@@ -78,3 +81,4 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

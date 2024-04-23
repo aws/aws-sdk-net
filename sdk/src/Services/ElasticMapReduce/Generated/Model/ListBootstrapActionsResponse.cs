@@ -33,7 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class ListBootstrapActionsResponse : AmazonWebServiceResponse
     {
-        private List<Command> _bootstrapActions = new List<Command>();
+        private List<Command> _bootstrapActions = AWSConfigs.InitializeCollections ? new List<Command>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if BootstrapActions property is set
         internal bool IsSetBootstrapActions()
         {
-            return this._bootstrapActions != null && this._bootstrapActions.Count > 0; 
+            return this._bootstrapActions != null && (this._bootstrapActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

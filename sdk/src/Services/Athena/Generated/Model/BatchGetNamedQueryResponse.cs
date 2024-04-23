@@ -33,8 +33,8 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class BatchGetNamedQueryResponse : AmazonWebServiceResponse
     {
-        private List<NamedQuery> _namedQueries = new List<NamedQuery>();
-        private List<UnprocessedNamedQueryId> _unprocessedNamedQueryIds = new List<UnprocessedNamedQueryId>();
+        private List<NamedQuery> _namedQueries = AWSConfigs.InitializeCollections ? new List<NamedQuery>() : null;
+        private List<UnprocessedNamedQueryId> _unprocessedNamedQueryIds = AWSConfigs.InitializeCollections ? new List<UnprocessedNamedQueryId>() : null;
 
         /// <summary>
         /// Gets and sets the property NamedQueries. 
@@ -51,7 +51,7 @@ namespace Amazon.Athena.Model
         // Check to see if NamedQueries property is set
         internal bool IsSetNamedQueries()
         {
-            return this._namedQueries != null && this._namedQueries.Count > 0; 
+            return this._namedQueries != null && (this._namedQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.Athena.Model
         // Check to see if UnprocessedNamedQueryIds property is set
         internal bool IsSetUnprocessedNamedQueryIds()
         {
-            return this._unprocessedNamedQueryIds != null && this._unprocessedNamedQueryIds.Count > 0; 
+            return this._unprocessedNamedQueryIds != null && (this._unprocessedNamedQueryIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

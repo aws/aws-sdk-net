@@ -45,7 +45,7 @@ namespace Amazon.APIGateway.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ClientCertificate> Items => 
-            new PaginatedResultKeyResponse<GetClientCertificatesResponse, ClientCertificate>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<GetClientCertificatesResponse, ClientCertificate>(this, (i) => i.Items ?? new List<ClientCertificate>());
 
         internal GetClientCertificatesPaginator(IAmazonAPIGateway client, GetClientCertificatesRequest request)
         {

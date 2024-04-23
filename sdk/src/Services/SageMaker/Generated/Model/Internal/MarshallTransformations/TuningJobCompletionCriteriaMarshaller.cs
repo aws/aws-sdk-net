@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TuningJobCompletionCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBestObjectiveNotImproving())
             {
                 context.Writer.WritePropertyName("BestObjectiveNotImproving");
@@ -70,7 +73,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetObjectiveMetricValue())
             {
                 context.Writer.WritePropertyName("TargetObjectiveMetricValue");
-                context.Writer.Write(requestObject.TargetObjectiveMetricValue);
+                if(StringUtils.IsSpecialFloatValue(requestObject.TargetObjectiveMetricValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TargetObjectiveMetricValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TargetObjectiveMetricValue);
+                }
             }
 
         }
@@ -82,3 +92,4 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

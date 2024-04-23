@@ -45,7 +45,7 @@ namespace Amazon.AppMesh.Model
         /// Enumerable containing all of the VirtualNodes
         /// </summary>
         public IPaginatedEnumerable<VirtualNodeRef> VirtualNodes => 
-            new PaginatedResultKeyResponse<ListVirtualNodesResponse, VirtualNodeRef>(this, (i) => i.VirtualNodes);
+            new PaginatedResultKeyResponse<ListVirtualNodesResponse, VirtualNodeRef>(this, (i) => i.VirtualNodes ?? new List<VirtualNodeRef>());
 
         internal ListVirtualNodesPaginator(IAmazonAppMesh client, ListVirtualNodesRequest request)
         {

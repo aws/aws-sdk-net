@@ -33,7 +33,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class GetAssessmentResponse : AmazonWebServiceResponse
     {
-        private List<AssessmentTarget> _assessmentTargets = new List<AssessmentTarget>();
+        private List<AssessmentTarget> _assessmentTargets = AWSConfigs.InitializeCollections ? new List<AssessmentTarget>() : null;
         private DataCollectionDetails _dataCollectionDetails;
         private string _id;
 
@@ -53,7 +53,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if AssessmentTargets property is set
         internal bool IsSetAssessmentTargets()
         {
-            return this._assessmentTargets != null && this._assessmentTargets.Count > 0; 
+            return this._assessmentTargets != null && (this._assessmentTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

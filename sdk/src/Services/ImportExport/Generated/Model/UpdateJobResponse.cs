@@ -33,7 +33,7 @@ namespace Amazon.ImportExport.Model
     /// </summary>
     public partial class UpdateJobResponse : AmazonWebServiceResponse
     {
-        private List<Artifact> _artifactList = new List<Artifact>();
+        private List<Artifact> _artifactList = AWSConfigs.InitializeCollections ? new List<Artifact>() : null;
         private bool? _success;
         private string _warningMessage;
 
@@ -49,7 +49,7 @@ namespace Amazon.ImportExport.Model
         // Check to see if ArtifactList property is set
         internal bool IsSetArtifactList()
         {
-            return this._artifactList != null && this._artifactList.Count > 0; 
+            return this._artifactList != null && (this._artifactList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

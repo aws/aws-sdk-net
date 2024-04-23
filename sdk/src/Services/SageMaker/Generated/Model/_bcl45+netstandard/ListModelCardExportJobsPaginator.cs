@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the ModelCardExportJobSummaries
         /// </summary>
         public IPaginatedEnumerable<ModelCardExportJobSummary> ModelCardExportJobSummaries => 
-            new PaginatedResultKeyResponse<ListModelCardExportJobsResponse, ModelCardExportJobSummary>(this, (i) => i.ModelCardExportJobSummaries);
+            new PaginatedResultKeyResponse<ListModelCardExportJobsResponse, ModelCardExportJobSummary>(this, (i) => i.ModelCardExportJobSummaries ?? new List<ModelCardExportJobSummary>());
 
         internal ListModelCardExportJobsPaginator(IAmazonSageMaker client, ListModelCardExportJobsRequest request)
         {

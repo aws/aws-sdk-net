@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AcceptRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRule())
             {
                 context.Writer.WritePropertyName("rule");
@@ -54,7 +57,14 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("threshold");
-                context.Writer.Write(requestObject.Threshold);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Threshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Threshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Threshold);
+                }
             }
 
         }
@@ -66,3 +76,4 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

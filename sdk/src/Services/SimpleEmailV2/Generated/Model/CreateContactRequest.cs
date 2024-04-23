@@ -38,7 +38,7 @@ namespace Amazon.SimpleEmailV2.Model
         private string _attributesData;
         private string _contactListName;
         private string _emailAddress;
-        private List<TopicPreference> _topicPreferences = new List<TopicPreference>();
+        private List<TopicPreference> _topicPreferences = AWSConfigs.InitializeCollections ? new List<TopicPreference>() : null;
         private bool? _unsubscribeAll;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if TopicPreferences property is set
         internal bool IsSetTopicPreferences()
         {
-            return this._topicPreferences != null && this._topicPreferences.Count > 0; 
+            return this._topicPreferences != null && (this._topicPreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

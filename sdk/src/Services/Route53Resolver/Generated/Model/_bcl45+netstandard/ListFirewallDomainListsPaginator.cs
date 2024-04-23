@@ -45,7 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// Enumerable containing all of the FirewallDomainLists
         /// </summary>
         public IPaginatedEnumerable<FirewallDomainListMetadata> FirewallDomainLists => 
-            new PaginatedResultKeyResponse<ListFirewallDomainListsResponse, FirewallDomainListMetadata>(this, (i) => i.FirewallDomainLists);
+            new PaginatedResultKeyResponse<ListFirewallDomainListsResponse, FirewallDomainListMetadata>(this, (i) => i.FirewallDomainLists ?? new List<FirewallDomainListMetadata>());
 
         internal ListFirewallDomainListsPaginator(IAmazonRoute53Resolver client, ListFirewallDomainListsRequest request)
         {

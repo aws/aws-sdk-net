@@ -45,7 +45,7 @@ namespace Amazon.AWSHealth.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<OrganizationEvent> Events => 
-            new PaginatedResultKeyResponse<DescribeEventsForOrganizationResponse, OrganizationEvent>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<DescribeEventsForOrganizationResponse, OrganizationEvent>(this, (i) => i.Events ?? new List<OrganizationEvent>());
 
         internal DescribeEventsForOrganizationPaginator(IAmazonAWSHealth client, DescribeEventsForOrganizationRequest request)
         {

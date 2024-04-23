@@ -37,8 +37,8 @@ namespace Amazon.DataZone.Model
         private string _clientToken;
         private string _domainIdentifier;
         private string _requestReason;
-        private List<SubscribedListingInput> _subscribedListings = new List<SubscribedListingInput>();
-        private List<SubscribedPrincipalInput> _subscribedPrincipals = new List<SubscribedPrincipalInput>();
+        private List<SubscribedListingInput> _subscribedListings = AWSConfigs.InitializeCollections ? new List<SubscribedListingInput>() : null;
+        private List<SubscribedPrincipalInput> _subscribedPrincipals = AWSConfigs.InitializeCollections ? new List<SubscribedPrincipalInput>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -98,7 +98,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubscribedListings.
+        /// Gets and sets the property SubscribedListings. 
+        /// <para>
+        /// The published asset for which the subscription grant is to be created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
         public List<SubscribedListingInput> SubscribedListings
@@ -110,7 +113,7 @@ namespace Amazon.DataZone.Model
         // Check to see if SubscribedListings property is set
         internal bool IsSetSubscribedListings()
         {
-            return this._subscribedListings != null && this._subscribedListings.Count > 0; 
+            return this._subscribedListings != null && (this._subscribedListings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +132,7 @@ namespace Amazon.DataZone.Model
         // Check to see if SubscribedPrincipals property is set
         internal bool IsSetSubscribedPrincipals()
         {
-            return this._subscribedPrincipals != null && this._subscribedPrincipals.Count > 0; 
+            return this._subscribedPrincipals != null && (this._subscribedPrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

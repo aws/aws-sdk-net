@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,42 +63,52 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDesiredCapacity())
                 {
                     request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(publicRequest.DesiredCapacity));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndTimeUtc())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxSize())
                 {
                     request.Parameters.Add("MaxSize", StringUtils.FromInt(publicRequest.MaxSize));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMinSize())
                 {
                     request.Parameters.Add("MinSize", StringUtils.FromInt(publicRequest.MinSize));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRecurrence())
                 {
                     request.Parameters.Add("Recurrence", StringUtils.FromString(publicRequest.Recurrence));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScheduledActionName())
                 {
                     request.Parameters.Add("ScheduledActionName", StringUtils.FromString(publicRequest.ScheduledActionName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartTimeUtc())
                 {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTimeUtc())
                 {
-                    request.Parameters.Add("Time", StringUtils.FromDateTimeToISO8601(publicRequest.TimeUtc));
+                    request.Parameters.Add("Time", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.TimeUtc));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTimeZone())
                 {
                     request.Parameters.Add("TimeZone", StringUtils.FromString(publicRequest.TimeZone));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         private string _elasticsearchVersion;
         private AwsElasticsearchDomainEncryptionAtRestOptions _encryptionAtRestOptions;
         private string _endpoint;
-        private Dictionary<string, string> _endpoints = new Dictionary<string, string>();
+        private Dictionary<string, string> _endpoints = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AwsElasticsearchDomainLogPublishingOptions _logPublishingOptions;
         private AwsElasticsearchDomainNodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
         private AwsElasticsearchDomainServiceSoftwareOptions _serviceSoftwareOptions;
@@ -224,7 +224,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class UpdateAttributesRequest
     {
-        private List<string> _blacklist = new List<string>();
+        private List<string> _blacklist = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Blacklist. 
@@ -54,7 +54,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Blacklist property is set
         internal bool IsSetBlacklist()
         {
-            return this._blacklist != null && this._blacklist.Count > 0; 
+            return this._blacklist != null && (this._blacklist.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

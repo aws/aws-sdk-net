@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Subnets
         /// </summary>
         public IPaginatedEnumerable<Subnet> Subnets => 
-            new PaginatedResultKeyResponse<DescribeSubnetsResponse, Subnet>(this, (i) => i.Subnets);
+            new PaginatedResultKeyResponse<DescribeSubnetsResponse, Subnet>(this, (i) => i.Subnets ?? new List<Subnet>());
 
         internal DescribeSubnetsPaginator(IAmazonEC2 client, DescribeSubnetsRequest request)
         {

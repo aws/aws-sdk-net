@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class ListInstanceProfilesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceProfile> _instanceProfiles = new List<InstanceProfile>();
+        private List<InstanceProfile> _instanceProfiles = AWSConfigs.InitializeCollections ? new List<InstanceProfile>() : null;
         private bool? _isTruncated;
         private string _marker;
 
@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfiles property is set
         internal bool IsSetInstanceProfiles()
         {
-            return this._instanceProfiles != null && this._instanceProfiles.Count > 0; 
+            return this._instanceProfiles != null && (this._instanceProfiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

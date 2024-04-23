@@ -35,7 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private AutoScalingPolicy _autoScalingPolicy;
         private string _bidPrice;
-        private List<Configuration> _configurations = new List<Configuration>();
+        private List<Configuration> _configurations = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
         private string _customAmiId;
         private EbsConfiguration _ebsConfiguration;
         private int? _instanceCount;
@@ -124,7 +124,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

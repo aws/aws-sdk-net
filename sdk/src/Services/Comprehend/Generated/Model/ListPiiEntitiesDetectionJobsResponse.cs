@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model
     public partial class ListPiiEntitiesDetectionJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PiiEntitiesDetectionJobProperties> _piiEntitiesDetectionJobPropertiesList = new List<PiiEntitiesDetectionJobProperties>();
+        private List<PiiEntitiesDetectionJobProperties> _piiEntitiesDetectionJobPropertiesList = AWSConfigs.InitializeCollections ? new List<PiiEntitiesDetectionJobProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if PiiEntitiesDetectionJobPropertiesList property is set
         internal bool IsSetPiiEntitiesDetectionJobPropertiesList()
         {
-            return this._piiEntitiesDetectionJobPropertiesList != null && this._piiEntitiesDetectionJobPropertiesList.Count > 0; 
+            return this._piiEntitiesDetectionJobPropertiesList != null && (this._piiEntitiesDetectionJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

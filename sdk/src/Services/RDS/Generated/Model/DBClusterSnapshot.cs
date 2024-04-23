@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
     public partial class DBClusterSnapshot
     {
         private int? _allocatedStorage;
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _clusterCreateTime;
         private string _dbClusterIdentifier;
         private string _dbClusterResourceId;
@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model
         private bool? _storageEncrypted;
         private int? _storageThroughput;
         private string _storageType;
-        private List<Tag> _tagList = new List<Tag>();
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.RDS.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -542,7 +542,7 @@ namespace Amazon.RDS.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

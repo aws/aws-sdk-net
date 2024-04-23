@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         private string _masterUsername;
         private string _ncharCharacterSetName;
         private string _snapshotType;
-        private List<Tag> _tagList = new List<Tag>();
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private DateTime? _tenantDatabaseCreateTime;
         private string _tenantDatabaseResourceId;
         private string _tenantDBName;
@@ -222,7 +222,7 @@ namespace Amazon.RDS.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

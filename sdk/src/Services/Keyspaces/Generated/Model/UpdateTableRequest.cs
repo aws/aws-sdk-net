@@ -36,7 +36,7 @@ namespace Amazon.Keyspaces.Model
     /// </summary>
     public partial class UpdateTableRequest : AmazonKeyspacesRequest
     {
-        private List<ColumnDefinition> _addColumns = new List<ColumnDefinition>();
+        private List<ColumnDefinition> _addColumns = AWSConfigs.InitializeCollections ? new List<ColumnDefinition>() : null;
         private AutoScalingSpecification _autoScalingSpecification;
         private CapacitySpecification _capacitySpecification;
         private ClientSideTimestamps _clientSideTimestamps;
@@ -44,7 +44,7 @@ namespace Amazon.Keyspaces.Model
         private EncryptionSpecification _encryptionSpecification;
         private string _keyspaceName;
         private PointInTimeRecovery _pointInTimeRecovery;
-        private List<ReplicaSpecification> _replicaSpecifications = new List<ReplicaSpecification>();
+        private List<ReplicaSpecification> _replicaSpecifications = AWSConfigs.InitializeCollections ? new List<ReplicaSpecification>() : null;
         private string _tableName;
         private TimeToLive _ttl;
 
@@ -74,7 +74,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if AddColumns property is set
         internal bool IsSetAddColumns()
         {
-            return this._addColumns != null && this._addColumns.Count > 0; 
+            return this._addColumns != null && (this._addColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -305,7 +305,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if ReplicaSpecifications property is set
         internal bool IsSetReplicaSpecifications()
         {
-            return this._replicaSpecifications != null && this._replicaSpecifications.Count > 0; 
+            return this._replicaSpecifications != null && (this._replicaSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

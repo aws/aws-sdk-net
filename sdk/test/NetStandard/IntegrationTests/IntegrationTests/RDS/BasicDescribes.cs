@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             var response = await Client.DescribeDBParameterGroupsAsync();
             Assert.NotNull(response);
 
-            if (response.DBParameterGroups.Count > 0)
+            if (response.DBParameterGroups != null && response.DBParameterGroups.Count > 0)
             {
                 var dbParamGroupFamily = response.DBParameterGroups[0];
 
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
                 });
                 Assert.NotNull(response);
 
-                if (describeResponse.DBEngineVersions.Count > 0)
+                if (describeResponse.DBEngineVersions != null && describeResponse.DBEngineVersions.Count > 0)
                 {
                     foreach (var dbev in describeResponse.DBEngineVersions)
                     {
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             var response = await Client.DescribeDBParameterGroupsAsync();
             Assert.NotNull(response);
 
-            if (response.DBParameterGroups.Count > 0)
+            if (response.DBParameterGroups != null && response.DBParameterGroups.Count > 0)
             {
                 foreach (var dbpg in response.DBParameterGroups)
                 {
@@ -97,7 +97,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             Assert.NotNull(response);
 
             string dbInstanceIdentifier = null;
-            if (response.DBInstances.Count > 0)
+            if (response.DBInstances != null && response.DBInstances.Count > 0)
             {
                 foreach (var dbi in response.DBInstances)
                 {

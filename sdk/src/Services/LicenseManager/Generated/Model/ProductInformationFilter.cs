@@ -35,7 +35,7 @@ namespace Amazon.LicenseManager.Model
     {
         private string _productInformationFilterComparator;
         private string _productInformationFilterName;
-        private List<string> _productInformationFilterValue = new List<string>();
+        private List<string> _productInformationFilterValue = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ProductInformationFilterComparator. 
@@ -90,7 +90,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if ProductInformationFilterValue property is set
         internal bool IsSetProductInformationFilterValue()
         {
-            return this._productInformationFilterValue != null && this._productInformationFilterValue.Count > 0; 
+            return this._productInformationFilterValue != null && (this._productInformationFilterValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

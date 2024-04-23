@@ -45,7 +45,7 @@ namespace Amazon.MediaLive.Model
         /// Enumerable containing all of the Inputs
         /// </summary>
         public IPaginatedEnumerable<Input> Inputs => 
-            new PaginatedResultKeyResponse<ListInputsResponse, Input>(this, (i) => i.Inputs);
+            new PaginatedResultKeyResponse<ListInputsResponse, Input>(this, (i) => i.Inputs ?? new List<Input>());
 
         internal ListInputsPaginator(IAmazonMediaLive client, ListInputsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class BatchGetFlowAssociationResponse : AmazonWebServiceResponse
     {
-        private List<FlowAssociationSummary> _flowAssociationSummaryList = new List<FlowAssociationSummary>();
+        private List<FlowAssociationSummary> _flowAssociationSummaryList = AWSConfigs.InitializeCollections ? new List<FlowAssociationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property FlowAssociationSummaryList. 
@@ -50,7 +50,7 @@ namespace Amazon.Connect.Model
         // Check to see if FlowAssociationSummaryList property is set
         internal bool IsSetFlowAssociationSummaryList()
         {
-            return this._flowAssociationSummaryList != null && this._flowAssociationSummaryList.Count > 0; 
+            return this._flowAssociationSummaryList != null && (this._flowAssociationSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

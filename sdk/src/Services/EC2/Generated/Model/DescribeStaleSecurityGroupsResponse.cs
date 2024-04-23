@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeStaleSecurityGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StaleSecurityGroup> _staleSecurityGroupSet = new List<StaleSecurityGroup>();
+        private List<StaleSecurityGroup> _staleSecurityGroupSet = AWSConfigs.InitializeCollections ? new List<StaleSecurityGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if StaleSecurityGroupSet property is set
         internal bool IsSetStaleSecurityGroupSet()
         {
-            return this._staleSecurityGroupSet != null && this._staleSecurityGroupSet.Count > 0; 
+            return this._staleSecurityGroupSet != null && (this._staleSecurityGroupSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

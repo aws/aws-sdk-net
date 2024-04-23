@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AcceptanceRequired", StringUtils.FromBool(publicRequest.AcceptanceRequired));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAddGatewayLoadBalancerArns())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -71,6 +73,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAddNetworkLoadBalancerArns())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -80,6 +83,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAddSupportedIpAddressTypes())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -89,10 +93,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrivateDnsName())
                 {
                     request.Parameters.Add("PrivateDnsName", StringUtils.FromString(publicRequest.PrivateDnsName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveGatewayLoadBalancerArns())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -102,6 +108,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveNetworkLoadBalancerArns())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -111,10 +118,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemovePrivateDnsName())
                 {
                     request.Parameters.Add("RemovePrivateDnsName", StringUtils.FromBool(publicRequest.RemovePrivateDnsName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveSupportedIpAddressTypes())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -124,10 +133,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServiceId())
                 {
                     request.Parameters.Add("ServiceId", StringUtils.FromString(publicRequest.ServiceId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         private string _connectionType;
         private string _connectorName;
         private string _name;
-        private List<GlueSchema> _outputSchemas = new List<GlueSchema>();
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
         private string _schemaName;
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.Glue.Model
         // Check to see if OutputSchemas property is set
         internal bool IsSetOutputSchemas()
         {
-            return this._outputSchemas != null && this._outputSchemas.Count > 0; 
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

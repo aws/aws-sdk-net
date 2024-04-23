@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
         private string _marker;
         private int? _pageSize;
-        private List<long> _revocationIds = new List<long>();
+        private List<long> _revocationIds = AWSConfigs.InitializeCollections ? new List<long>() : null;
         private string _trustStoreArn;
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if RevocationIds property is set
         internal bool IsSetRevocationIds()
         {
-            return this._revocationIds != null && this._revocationIds.Count > 0; 
+            return this._revocationIds != null && (this._revocationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

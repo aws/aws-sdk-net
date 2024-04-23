@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
     public partial class PurchaseScheduledInstancesRequest : AmazonEC2Request
     {
         private string _clientToken;
-        private List<PurchaseRequest> _purchaseRequests = new List<PurchaseRequest>();
+        private List<PurchaseRequest> _purchaseRequests = AWSConfigs.InitializeCollections ? new List<PurchaseRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model
         // Check to see if PurchaseRequests property is set
         internal bool IsSetPurchaseRequests()
         {
-            return this._purchaseRequests != null && this._purchaseRequests.Count > 0; 
+            return this._purchaseRequests != null && (this._purchaseRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

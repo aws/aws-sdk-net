@@ -44,8 +44,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyTrafficMirrorFilterNetworkServicesRequest : AmazonEC2Request
     {
-        private List<string> _addNetworkServices = new List<string>();
-        private List<string> _removeNetworkServices = new List<string>();
+        private List<string> _addNetworkServices = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _removeNetworkServices = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _trafficMirrorFilterId;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddNetworkServices property is set
         internal bool IsSetAddNetworkServices()
         {
-            return this._addNetworkServices != null && this._addNetworkServices.Count > 0; 
+            return this._addNetworkServices != null && (this._addNetworkServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveNetworkServices property is set
         internal bool IsSetRemoveNetworkServices()
         {
-            return this._removeNetworkServices != null && this._removeNetworkServices.Count > 0; 
+            return this._removeNetworkServices != null && (this._removeNetworkServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

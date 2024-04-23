@@ -44,7 +44,7 @@ namespace Amazon.CloudFormation.Model
     public partial class RollbackConfiguration
     {
         private int? _monitoringTimeInMinutes;
-        private List<RollbackTrigger> _rollbackTriggers = new List<RollbackTrigger>();
+        private List<RollbackTrigger> _rollbackTriggers = AWSConfigs.InitializeCollections ? new List<RollbackTrigger>() : null;
 
         /// <summary>
         /// Gets and sets the property MonitoringTimeInMinutes. 
@@ -62,8 +62,8 @@ namespace Amazon.CloudFormation.Model
         /// If you specify a monitoring period but don't specify any rollback triggers, CloudFormation
         /// still waits the specified period of time before cleaning up old resources after update
         /// operations. You can use this monitoring period to perform any manual stack validation
-        /// desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">
-        /// <c>CancelUpdateStack</c> </a>, for example) as necessary.
+        /// desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>,
+        /// for example) as necessary.
         /// </para>
         ///  
         /// <para>
@@ -129,7 +129,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if RollbackTriggers property is set
         internal bool IsSetRollbackTriggers()
         {
-            return this._rollbackTriggers != null && this._rollbackTriggers.Count > 0; 
+            return this._rollbackTriggers != null && (this._rollbackTriggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

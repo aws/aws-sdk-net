@@ -37,7 +37,7 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class BatchGetPreparedStatementRequest : AmazonAthenaRequest
     {
-        private List<string> _preparedStatementNames = new List<string>();
+        private List<string> _preparedStatementNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workGroup;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.Athena.Model
         // Check to see if PreparedStatementNames property is set
         internal bool IsSetPreparedStatementNames()
         {
-            return this._preparedStatementNames != null && this._preparedStatementNames.Count > 0; 
+            return this._preparedStatementNames != null && (this._preparedStatementNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

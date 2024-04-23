@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the AnnotationStores
         /// </summary>
         public IPaginatedEnumerable<AnnotationStoreItem> AnnotationStores => 
-            new PaginatedResultKeyResponse<ListAnnotationStoresResponse, AnnotationStoreItem>(this, (i) => i.AnnotationStores);
+            new PaginatedResultKeyResponse<ListAnnotationStoresResponse, AnnotationStoreItem>(this, (i) => i.AnnotationStores ?? new List<AnnotationStoreItem>());
 
         internal ListAnnotationStoresPaginator(IAmazonOmics client, ListAnnotationStoresRequest request)
         {

@@ -39,19 +39,21 @@ namespace Amazon.Glue.Model
         private string _databaseName;
         private string _description;
         private FederatedTable _federatedTable;
+        private bool? _isMultiDialectView;
         private bool? _isRegisteredWithLakeFormation;
         private DateTime? _lastAccessTime;
         private DateTime? _lastAnalyzedTime;
         private string _name;
         private string _owner;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
-        private List<Column> _partitionKeys = new List<Column>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Column> _partitionKeys = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private int? _retention;
         private StorageDescriptor _storageDescriptor;
         private string _tableType;
         private TableIdentifier _targetTable;
         private DateTime? _updateTime;
         private string _versionId;
+        private ViewDefinition _viewDefinition;
         private string _viewExpandedText;
         private string _viewOriginalText;
 
@@ -170,6 +172,25 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsMultiDialectView. 
+        /// <para>
+        /// Specifies whether the view supports the SQL dialects of one or more different query
+        /// engines and can therefore be read by those engines.
+        /// </para>
+        /// </summary>
+        public bool IsMultiDialectView
+        {
+            get { return this._isMultiDialectView.GetValueOrDefault(); }
+            set { this._isMultiDialectView = value; }
+        }
+
+        // Check to see if IsMultiDialectView property is set
+        internal bool IsSetIsMultiDialectView()
+        {
+            return this._isMultiDialectView.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IsRegisteredWithLakeFormation. 
         /// <para>
         /// Indicates whether the table has been registered with Lake Formation.
@@ -277,7 +298,7 @@ namespace Amazon.Glue.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -305,7 +326,7 @@ namespace Amazon.Glue.Model
         // Check to see if PartitionKeys property is set
         internal bool IsSetPartitionKeys()
         {
-            return this._partitionKeys != null && this._partitionKeys.Count > 0; 
+            return this._partitionKeys != null && (this._partitionKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -431,6 +452,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetVersionId()
         {
             return this._versionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViewDefinition. 
+        /// <para>
+        /// A structure that contains all the information that defines the view, including the
+        /// dialect or dialects for the view, and the query.
+        /// </para>
+        /// </summary>
+        public ViewDefinition ViewDefinition
+        {
+            get { return this._viewDefinition; }
+            set { this._viewDefinition = value; }
+        }
+
+        // Check to see if ViewDefinition property is set
+        internal bool IsSetViewDefinition()
+        {
+            return this._viewDefinition != null;
         }
 
         /// <summary>

@@ -181,6 +181,11 @@ namespace Amazon.DynamoDBv2.Model
         /// The ID of the Amazon Web Services account that owns the bucket the export will be
         /// stored in.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// S3BucketOwner is a required parameter when exporting to a S3 bucket in another account.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string S3BucketOwner
         {
@@ -267,7 +272,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The Amazon Resource Name (ARN) associated with the table to export.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableArn
         {
             get { return this._tableArn; }

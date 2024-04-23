@@ -31,8 +31,8 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Container for the parameters to the CreateSession operation.
     /// Creates a session. A session is a contextual container used for generating recommendations.
-    /// Amazon Connect creates a new Amazon Q session for each contact on which Amazon Q is
-    /// enabled.
+    /// Amazon Connect creates a new Amazon Q in Connect session for each contact on which
+    /// Amazon Q in Connect is enabled.
     /// </summary>
     public partial class CreateSessionRequest : AmazonQConnectRequest
     {
@@ -40,13 +40,14 @@ namespace Amazon.QConnect.Model
         private string _clientToken;
         private string _description;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private TagFilter _tagFilter;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssistantId. 
         /// <para>
-        /// The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot
-        /// contain the ARN.
+        /// The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN.
+        /// URLs cannot contain the ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -123,6 +124,24 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TagFilter. 
+        /// <para>
+        /// An object that can be used to specify Tag conditions. 
+        /// </para>
+        /// </summary>
+        public TagFilter TagFilter
+        {
+            get { return this._tagFilter; }
+            set { this._tagFilter = value; }
+        }
+
+        // Check to see if TagFilter property is set
+        internal bool IsSetTagFilter()
+        {
+            return this._tagFilter != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags used to organize, track, or control access for this resource.
@@ -137,7 +156,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,16 +34,16 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class Ec2InstanceAttributes
     {
-        private List<string> _additionalMasterSecurityGroups = new List<string>();
-        private List<string> _additionalSlaveSecurityGroups = new List<string>();
+        private List<string> _additionalMasterSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _additionalSlaveSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ec2AvailabilityZone;
         private string _ec2KeyName;
         private string _ec2SubnetId;
         private string _emrManagedMasterSecurityGroup;
         private string _emrManagedSlaveSecurityGroup;
         private string _iamInstanceProfile;
-        private List<string> _requestedEc2AvailabilityZones = new List<string>();
-        private List<string> _requestedEc2SubnetIds = new List<string>();
+        private List<string> _requestedEc2AvailabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _requestedEc2SubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceAccessSecurityGroup;
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if AdditionalMasterSecurityGroups property is set
         internal bool IsSetAdditionalMasterSecurityGroups()
         {
-            return this._additionalMasterSecurityGroups != null && this._additionalMasterSecurityGroups.Count > 0; 
+            return this._additionalMasterSecurityGroups != null && (this._additionalMasterSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if AdditionalSlaveSecurityGroups property is set
         internal bool IsSetAdditionalSlaveSecurityGroups()
         {
-            return this._additionalSlaveSecurityGroups != null && this._additionalSlaveSecurityGroups.Count > 0; 
+            return this._additionalSlaveSecurityGroups != null && (this._additionalSlaveSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if RequestedEc2AvailabilityZones property is set
         internal bool IsSetRequestedEc2AvailabilityZones()
         {
-            return this._requestedEc2AvailabilityZones != null && this._requestedEc2AvailabilityZones.Count > 0; 
+            return this._requestedEc2AvailabilityZones != null && (this._requestedEc2AvailabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -242,7 +242,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if RequestedEc2SubnetIds property is set
         internal bool IsSetRequestedEc2SubnetIds()
         {
-            return this._requestedEc2SubnetIds != null && this._requestedEc2SubnetIds.Count > 0; 
+            return this._requestedEc2SubnetIds != null && (this._requestedEc2SubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

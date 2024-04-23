@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the HsmConfigurations
         /// </summary>
         public IPaginatedEnumerable<HsmConfiguration> HsmConfigurations => 
-            new PaginatedResultKeyResponse<DescribeHsmConfigurationsResponse, HsmConfiguration>(this, (i) => i.HsmConfigurations);
+            new PaginatedResultKeyResponse<DescribeHsmConfigurationsResponse, HsmConfiguration>(this, (i) => i.HsmConfigurations ?? new List<HsmConfiguration>());
 
         internal DescribeHsmConfigurationsPaginator(IAmazonRedshift client, DescribeHsmConfigurationsRequest request)
         {

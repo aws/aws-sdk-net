@@ -38,7 +38,7 @@ namespace Amazon.CodeArtifact.Model
         private string _domain;
         private string _domainOwner;
         private string _repository;
-        private List<UpstreamRepository> _upstreams = new List<UpstreamRepository>();
+        private List<UpstreamRepository> _upstreams = AWSConfigs.InitializeCollections ? new List<UpstreamRepository>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -135,7 +135,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Upstreams property is set
         internal bool IsSetUpstreams()
         {
-            return this._upstreams != null && this._upstreams.Count > 0; 
+            return this._upstreams != null && (this._upstreams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class HierarchicalPrincipal
     {
-        private List<Principal> _principalList = new List<Principal>();
+        private List<Principal> _principalList = AWSConfigs.InitializeCollections ? new List<Principal>() : null;
 
         /// <summary>
         /// Gets and sets the property PrincipalList. 
@@ -55,7 +55,7 @@ namespace Amazon.Kendra.Model
         // Check to see if PrincipalList property is set
         internal bool IsSetPrincipalList()
         {
-            return this._principalList != null && this._principalList.Count > 0; 
+            return this._principalList != null && (this._principalList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

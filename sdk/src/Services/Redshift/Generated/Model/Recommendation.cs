@@ -42,8 +42,8 @@ namespace Amazon.Redshift.Model
         private string _observation;
         private string _recommendationText;
         private string _recommendationType;
-        private List<RecommendedAction> _recommendedActions = new List<RecommendedAction>();
-        private List<ReferenceLink> _referenceLinks = new List<ReferenceLink>();
+        private List<RecommendedAction> _recommendedActions = AWSConfigs.InitializeCollections ? new List<RecommendedAction>() : null;
+        private List<ReferenceLink> _referenceLinks = AWSConfigs.InitializeCollections ? new List<ReferenceLink>() : null;
         private string _title;
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace Amazon.Redshift.Model
         // Check to see if RecommendedActions property is set
         internal bool IsSetRecommendedActions()
         {
-            return this._recommendedActions != null && this._recommendedActions.Count > 0; 
+            return this._recommendedActions != null && (this._recommendedActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -249,7 +249,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ReferenceLinks property is set
         internal bool IsSetReferenceLinks()
         {
-            return this._referenceLinks != null && this._referenceLinks.Count > 0; 
+            return this._referenceLinks != null && (this._referenceLinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

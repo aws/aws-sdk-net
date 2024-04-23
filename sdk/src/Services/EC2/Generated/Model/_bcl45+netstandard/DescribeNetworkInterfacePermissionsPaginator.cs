@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the NetworkInterfacePermissions
         /// </summary>
         public IPaginatedEnumerable<NetworkInterfacePermission> NetworkInterfacePermissions => 
-            new PaginatedResultKeyResponse<DescribeNetworkInterfacePermissionsResponse, NetworkInterfacePermission>(this, (i) => i.NetworkInterfacePermissions);
+            new PaginatedResultKeyResponse<DescribeNetworkInterfacePermissionsResponse, NetworkInterfacePermission>(this, (i) => i.NetworkInterfacePermissions ?? new List<NetworkInterfacePermission>());
 
         internal DescribeNetworkInterfacePermissionsPaginator(IAmazonEC2 client, DescribeNetworkInterfacePermissionsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.PcaConnectorAd.Model
     /// </summary>
     public partial class ListTemplateGroupAccessControlEntriesResponse : AmazonWebServiceResponse
     {
-        private List<AccessControlEntrySummary> _accessControlEntries = new List<AccessControlEntrySummary>();
+        private List<AccessControlEntrySummary> _accessControlEntries = AWSConfigs.InitializeCollections ? new List<AccessControlEntrySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.PcaConnectorAd.Model
         // Check to see if AccessControlEntries property is set
         internal bool IsSetAccessControlEntries()
         {
-            return this._accessControlEntries != null && this._accessControlEntries.Count > 0; 
+            return this._accessControlEntries != null && (this._accessControlEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

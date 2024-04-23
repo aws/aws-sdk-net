@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,25 +63,31 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceCount", StringUtils.FromInt(publicRequest.InstanceCount));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLimitPrice())
                 {
                     if(publicRequest.LimitPrice.IsSetAmount())
                     {
                         request.Parameters.Add("LimitPrice" + "." + "Amount", StringUtils.FromDouble(publicRequest.LimitPrice.Amount));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LimitPrice.IsSetCurrencyCode())
                     {
                         request.Parameters.Add("LimitPrice" + "." + "CurrencyCode", StringUtils.FromString(publicRequest.LimitPrice.CurrencyCode));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPurchaseTime())
                 {
-                    request.Parameters.Add("PurchaseTime", StringUtils.FromDateTimeToISO8601(publicRequest.PurchaseTime));
+                    request.Parameters.Add("PurchaseTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.PurchaseTime));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReservedInstancesOfferingId())
                 {
                     request.Parameters.Add("ReservedInstancesOfferingId", StringUtils.FromString(publicRequest.ReservedInstancesOfferingId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

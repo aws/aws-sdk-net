@@ -41,19 +41,19 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class AlfrescoConfiguration
     {
-        private List<DataSourceToIndexFieldMapping> _blogFieldMappings = new List<DataSourceToIndexFieldMapping>();
+        private List<DataSourceToIndexFieldMapping> _blogFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
         private bool? _crawlComments;
         private bool? _crawlSystemFolders;
-        private List<DataSourceToIndexFieldMapping> _documentLibraryFieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<string> _entityFilter = new List<string>();
-        private List<string> _exclusionPatterns = new List<string>();
-        private List<string> _inclusionPatterns = new List<string>();
+        private List<DataSourceToIndexFieldMapping> _documentLibraryFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<string> _entityFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _exclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _inclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _secretArn;
         private string _siteId;
         private string _siteUrl;
         private S3Path _sslCertificateS3Path;
         private DataSourceVpcConfiguration _vpcConfiguration;
-        private List<DataSourceToIndexFieldMapping> _wikiFieldMappings = new List<DataSourceToIndexFieldMapping>();
+        private List<DataSourceToIndexFieldMapping> _wikiFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property BlogFieldMappings. 
@@ -76,7 +76,7 @@ namespace Amazon.Kendra.Model
         // Check to see if BlogFieldMappings property is set
         internal bool IsSetBlogFieldMappings()
         {
-            return this._blogFieldMappings != null && this._blogFieldMappings.Count > 0; 
+            return this._blogFieldMappings != null && (this._blogFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.Kendra.Model
         // Check to see if DocumentLibraryFieldMappings property is set
         internal bool IsSetDocumentLibraryFieldMappings()
         {
-            return this._documentLibraryFieldMappings != null && this._documentLibraryFieldMappings.Count > 0; 
+            return this._documentLibraryFieldMappings != null && (this._documentLibraryFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Amazon.Kendra.Model
         // Check to see if EntityFilter property is set
         internal bool IsSetEntityFilter()
         {
-            return this._entityFilter != null && this._entityFilter.Count > 0; 
+            return this._entityFilter != null && (this._entityFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ExclusionPatterns property is set
         internal bool IsSetExclusionPatterns()
         {
-            return this._exclusionPatterns != null && this._exclusionPatterns.Count > 0; 
+            return this._exclusionPatterns != null && (this._exclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Amazon.Kendra.Model
         // Check to see if InclusionPatterns property is set
         internal bool IsSetInclusionPatterns()
         {
-            return this._inclusionPatterns != null && this._inclusionPatterns.Count > 0; 
+            return this._inclusionPatterns != null && (this._inclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -340,7 +340,7 @@ namespace Amazon.Kendra.Model
         // Check to see if WikiFieldMappings property is set
         internal bool IsSetWikiFieldMappings()
         {
-            return this._wikiFieldMappings != null && this._wikiFieldMappings.Count > 0; 
+            return this._wikiFieldMappings != null && (this._wikiFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

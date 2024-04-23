@@ -30,7 +30,14 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCrossAccountResourceAccounts operation.
-    /// List the accounts that have cross-account endpoints.
+    /// List the accounts that have cross-account resources.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html">
+    /// Working with cross-account attachments and resources in Global Accelerator</a> in
+    /// the <i> Global Accelerator Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ListCrossAccountResourceAccountsRequest : AmazonGlobalAcceleratorRequest
     {

@@ -37,7 +37,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class AddTagsRequest : AmazonOpenSearchServiceRequest
     {
         private string _arn;
-        private List<Tag> _tagList = new List<Tag>();
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -75,7 +75,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

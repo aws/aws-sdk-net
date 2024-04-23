@@ -35,7 +35,7 @@ namespace Amazon.GroundStation.Model
     {
         private string _contactId;
         private ContactStatus _contactStatus;
-        private List<DataflowDetail> _dataflowList = new List<DataflowDetail>();
+        private List<DataflowDetail> _dataflowList = AWSConfigs.InitializeCollections ? new List<DataflowDetail>() : null;
         private DateTime? _endTime;
         private string _errorMessage;
         private string _groundStation;
@@ -46,7 +46,9 @@ namespace Amazon.GroundStation.Model
         private string _region;
         private string _satelliteArn;
         private DateTime? _startTime;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private DateTime? _visibilityEndTime;
+        private DateTime? _visibilityStartTime;
 
         /// <summary>
         /// Gets and sets the property ContactId. 
@@ -100,7 +102,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if DataflowList property is set
         internal bool IsSetDataflowList()
         {
-            return this._dataflowList != null && this._dataflowList.Count > 0; 
+            return this._dataflowList != null && (this._dataflowList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -300,7 +302,49 @@ namespace Amazon.GroundStation.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VisibilityEndTime. 
+        /// <para>
+        ///  Projected time in UTC your satellite will set below the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+        /// mask</a>. This time is based on the satellite's current active ephemeris for future
+        /// contacts and the ephemeris that was active during contact execution for completed
+        /// contacts. 
+        /// </para>
+        /// </summary>
+        public DateTime VisibilityEndTime
+        {
+            get { return this._visibilityEndTime.GetValueOrDefault(); }
+            set { this._visibilityEndTime = value; }
+        }
+
+        // Check to see if VisibilityEndTime property is set
+        internal bool IsSetVisibilityEndTime()
+        {
+            return this._visibilityEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VisibilityStartTime. 
+        /// <para>
+        ///  Projected time in UTC your satellite will rise above the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive
+        /// mask</a>. This time is based on the satellite's current active ephemeris for future
+        /// contacts and the ephemeris that was active during contact execution for completed
+        /// contacts. 
+        /// </para>
+        /// </summary>
+        public DateTime VisibilityStartTime
+        {
+            get { return this._visibilityStartTime.GetValueOrDefault(); }
+            set { this._visibilityStartTime = value; }
+        }
+
+        // Check to see if VisibilityStartTime property is set
+        internal bool IsSetVisibilityStartTime()
+        {
+            return this._visibilityStartTime.HasValue; 
         }
 
     }

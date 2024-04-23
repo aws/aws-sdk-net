@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model
     public partial class DescribeDatasetGroupResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationTime;
-        private List<string> _datasetArns = new List<string>();
+        private List<string> _datasetArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _datasetGroupArn;
         private string _datasetGroupName;
         private Domain _domain;
@@ -75,7 +75,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if DatasetArns property is set
         internal bool IsSetDatasetArns()
         {
-            return this._datasetArns != null && this._datasetArns.Count > 0; 
+            return this._datasetArns != null && (this._datasetArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

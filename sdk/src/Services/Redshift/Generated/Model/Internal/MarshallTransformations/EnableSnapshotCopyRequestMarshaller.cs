@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,22 +63,27 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinationRegion())
                 {
                     request.Parameters.Add("DestinationRegion", StringUtils.FromString(publicRequest.DestinationRegion));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetManualSnapshotRetentionPeriod())
                 {
                     request.Parameters.Add("ManualSnapshotRetentionPeriod", StringUtils.FromInt(publicRequest.ManualSnapshotRetentionPeriod));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRetentionPeriod())
                 {
                     request.Parameters.Add("RetentionPeriod", StringUtils.FromInt(publicRequest.RetentionPeriod));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotCopyGrantName())
                 {
                     request.Parameters.Add("SnapshotCopyGrantName", StringUtils.FromString(publicRequest.SnapshotCopyGrantName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

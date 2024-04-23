@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the VerifiedAccessEndpoints
         /// </summary>
         public IPaginatedEnumerable<VerifiedAccessEndpoint> VerifiedAccessEndpoints => 
-            new PaginatedResultKeyResponse<DescribeVerifiedAccessEndpointsResponse, VerifiedAccessEndpoint>(this, (i) => i.VerifiedAccessEndpoints);
+            new PaginatedResultKeyResponse<DescribeVerifiedAccessEndpointsResponse, VerifiedAccessEndpoint>(this, (i) => i.VerifiedAccessEndpoints ?? new List<VerifiedAccessEndpoint>());
 
         internal DescribeVerifiedAccessEndpointsPaginator(IAmazonEC2 client, DescribeVerifiedAccessEndpointsRequest request)
         {

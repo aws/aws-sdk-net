@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
     {
         private string _databaseVersion;
         private string _maintenanceTrackName;
-        private List<SupportedOperation> _supportedOperations = new List<SupportedOperation>();
+        private List<SupportedOperation> _supportedOperations = AWSConfigs.InitializeCollections ? new List<SupportedOperation>() : null;
 
         /// <summary>
         /// Gets and sets the property DatabaseVersion. 
@@ -90,7 +90,7 @@ namespace Amazon.Redshift.Model
         // Check to see if SupportedOperations property is set
         internal bool IsSetSupportedOperations()
         {
-            return this._supportedOperations != null && this._supportedOperations.Count > 0; 
+            return this._supportedOperations != null && (this._supportedOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

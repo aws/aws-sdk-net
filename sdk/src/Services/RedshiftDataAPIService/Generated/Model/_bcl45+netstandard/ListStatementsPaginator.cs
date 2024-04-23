@@ -45,7 +45,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Enumerable containing all of the Statements
         /// </summary>
         public IPaginatedEnumerable<StatementData> Statements => 
-            new PaginatedResultKeyResponse<ListStatementsResponse, StatementData>(this, (i) => i.Statements);
+            new PaginatedResultKeyResponse<ListStatementsResponse, StatementData>(this, (i) => i.Statements ?? new List<StatementData>());
 
         internal ListStatementsPaginator(IAmazonRedshiftDataAPIService client, ListStatementsRequest request)
         {

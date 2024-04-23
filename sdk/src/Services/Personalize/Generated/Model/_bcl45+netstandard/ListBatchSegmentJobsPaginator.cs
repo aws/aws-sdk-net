@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the BatchSegmentJobs
         /// </summary>
         public IPaginatedEnumerable<BatchSegmentJobSummary> BatchSegmentJobs => 
-            new PaginatedResultKeyResponse<ListBatchSegmentJobsResponse, BatchSegmentJobSummary>(this, (i) => i.BatchSegmentJobs);
+            new PaginatedResultKeyResponse<ListBatchSegmentJobsResponse, BatchSegmentJobSummary>(this, (i) => i.BatchSegmentJobs ?? new List<BatchSegmentJobSummary>());
 
         internal ListBatchSegmentJobsPaginator(IAmazonPersonalize client, ListBatchSegmentJobsRequest request)
         {

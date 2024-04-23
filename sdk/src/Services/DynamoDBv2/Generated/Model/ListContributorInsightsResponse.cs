@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ListContributorInsightsResponse : AmazonWebServiceResponse
     {
-        private List<ContributorInsightsSummary> _contributorInsightsSummaries = new List<ContributorInsightsSummary>();
+        private List<ContributorInsightsSummary> _contributorInsightsSummaries = AWSConfigs.InitializeCollections ? new List<ContributorInsightsSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ContributorInsightsSummaries property is set
         internal bool IsSetContributorInsightsSummaries()
         {
-            return this._contributorInsightsSummaries != null && this._contributorInsightsSummaries.Count > 0; 
+            return this._contributorInsightsSummaries != null && (this._contributorInsightsSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

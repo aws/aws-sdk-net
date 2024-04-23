@@ -33,7 +33,7 @@ namespace Amazon.IoTEvents.Model
     /// </summary>
     public partial class ListAlarmModelsResponse : AmazonWebServiceResponse
     {
-        private List<AlarmModelSummary> _alarmModelSummaries = new List<AlarmModelSummary>();
+        private List<AlarmModelSummary> _alarmModelSummaries = AWSConfigs.InitializeCollections ? new List<AlarmModelSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if AlarmModelSummaries property is set
         internal bool IsSetAlarmModelSummaries()
         {
-            return this._alarmModelSummaries != null && this._alarmModelSummaries.Count > 0; 
+            return this._alarmModelSummaries != null && (this._alarmModelSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

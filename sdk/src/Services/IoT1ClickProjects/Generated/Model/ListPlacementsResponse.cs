@@ -34,7 +34,7 @@ namespace Amazon.IoT1ClickProjects.Model
     public partial class ListPlacementsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PlacementSummary> _placements = new List<PlacementSummary>();
+        private List<PlacementSummary> _placements = AWSConfigs.InitializeCollections ? new List<PlacementSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.IoT1ClickProjects.Model
         // Check to see if Placements property is set
         internal bool IsSetPlacements()
         {
-            return this._placements != null && this._placements.Count > 0; 
+            return this._placements != null && (this._placements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

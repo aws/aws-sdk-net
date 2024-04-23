@@ -35,7 +35,7 @@ namespace Amazon.LakeFormation.Model
     {
         private ComparisonOperator _comparisonOperator;
         private FieldNameString _field;
-        private List<string> _stringValueList = new List<string>();
+        private List<string> _stringValueList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
@@ -88,7 +88,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if StringValueList property is set
         internal bool IsSetStringValueList()
         {
-            return this._stringValueList != null && this._stringValueList.Count > 0; 
+            return this._stringValueList != null && (this._stringValueList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

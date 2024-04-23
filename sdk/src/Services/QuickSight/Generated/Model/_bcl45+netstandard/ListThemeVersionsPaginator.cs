@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the ThemeVersionSummaryList
         /// </summary>
         public IPaginatedEnumerable<ThemeVersionSummary> ThemeVersionSummaryList => 
-            new PaginatedResultKeyResponse<ListThemeVersionsResponse, ThemeVersionSummary>(this, (i) => i.ThemeVersionSummaryList);
+            new PaginatedResultKeyResponse<ListThemeVersionsResponse, ThemeVersionSummary>(this, (i) => i.ThemeVersionSummaryList ?? new List<ThemeVersionSummary>());
 
         internal ListThemeVersionsPaginator(IAmazonQuickSight client, ListThemeVersionsRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class ListSupportedInstanceTypesResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<SupportedInstanceType> _supportedInstanceTypes = new List<SupportedInstanceType>();
+        private List<SupportedInstanceType> _supportedInstanceTypes = AWSConfigs.InitializeCollections ? new List<SupportedInstanceType>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -70,7 +70,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if SupportedInstanceTypes property is set
         internal bool IsSetSupportedInstanceTypes()
         {
-            return this._supportedInstanceTypes != null && this._supportedInstanceTypes.Count > 0; 
+            return this._supportedInstanceTypes != null && (this._supportedInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

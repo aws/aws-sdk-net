@@ -34,7 +34,7 @@ namespace Amazon.FraudDetector.Model
     public partial class ModelScores
     {
         private ModelVersion _modelVersion;
-        private Dictionary<string, float> _scores = new Dictionary<string, float>();
+        private Dictionary<string, float> _scores = AWSConfigs.InitializeCollections ? new Dictionary<string, float>() : null;
 
         /// <summary>
         /// Gets and sets the property ModelVersion. 
@@ -69,7 +69,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Scores property is set
         internal bool IsSetScores()
         {
-            return this._scores != null && this._scores.Count > 0; 
+            return this._scores != null && (this._scores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

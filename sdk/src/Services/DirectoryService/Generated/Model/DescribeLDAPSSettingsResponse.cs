@@ -33,7 +33,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class DescribeLDAPSSettingsResponse : AmazonWebServiceResponse
     {
-        private List<LDAPSSettingInfo> _ldapsSettingsInfo = new List<LDAPSSettingInfo>();
+        private List<LDAPSSettingInfo> _ldapsSettingsInfo = AWSConfigs.InitializeCollections ? new List<LDAPSSettingInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if LDAPSSettingsInfo property is set
         internal bool IsSetLDAPSSettingsInfo()
         {
-            return this._ldapsSettingsInfo != null && this._ldapsSettingsInfo.Count > 0; 
+            return this._ldapsSettingsInfo != null && (this._ldapsSettingsInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -72,7 +72,7 @@ namespace Amazon.TimestreamWrite.Model
     #endif
     public partial class RejectedRecordsException : AmazonTimestreamWriteException
     {
-        private List<RejectedRecord> _rejectedRecords = new List<RejectedRecord>();
+        private List<RejectedRecord> _rejectedRecords = AWSConfigs.InitializeCollections ? new List<RejectedRecord>() : null;
 
         /// <summary>
         /// Constructs a new RejectedRecordsException with the specified error
@@ -174,7 +174,7 @@ namespace Amazon.TimestreamWrite.Model
         // Check to see if RejectedRecords property is set
         internal bool IsSetRejectedRecords()
         {
-            return this._rejectedRecords != null && this._rejectedRecords.Count > 0; 
+            return this._rejectedRecords != null && (this._rejectedRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

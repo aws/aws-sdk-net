@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,30 +63,37 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Enable", StringUtils.FromBool(publicRequest.Enable));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndTime())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTime));
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIamRole())
                 {
                     request.Parameters.Add("IamRole", StringUtils.FromString(publicRequest.IamRole));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSchedule())
                 {
                     request.Parameters.Add("Schedule", StringUtils.FromString(publicRequest.Schedule));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScheduledActionDescription())
                 {
                     request.Parameters.Add("ScheduledActionDescription", StringUtils.FromString(publicRequest.ScheduledActionDescription));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScheduledActionName())
                 {
                     request.Parameters.Add("ScheduledActionName", StringUtils.FromString(publicRequest.ScheduledActionName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartTime())
                 {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetAction())
                 {
                     if(publicRequest.TargetAction.IsSetPauseCluster())
@@ -94,46 +102,59 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TargetAction" + "." + "PauseCluster" + "." + "ClusterIdentifier", StringUtils.FromString(publicRequest.TargetAction.PauseCluster.ClusterIdentifier));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.TargetAction.IsSetResizeCluster())
                     {
                         if(publicRequest.TargetAction.ResizeCluster.IsSetClassic())
                         {
                             request.Parameters.Add("TargetAction" + "." + "ResizeCluster" + "." + "Classic", StringUtils.FromBool(publicRequest.TargetAction.ResizeCluster.Classic));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.TargetAction.ResizeCluster.IsSetClusterIdentifier())
                         {
                             request.Parameters.Add("TargetAction" + "." + "ResizeCluster" + "." + "ClusterIdentifier", StringUtils.FromString(publicRequest.TargetAction.ResizeCluster.ClusterIdentifier));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.TargetAction.ResizeCluster.IsSetClusterType())
                         {
                             request.Parameters.Add("TargetAction" + "." + "ResizeCluster" + "." + "ClusterType", StringUtils.FromString(publicRequest.TargetAction.ResizeCluster.ClusterType));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.TargetAction.ResizeCluster.IsSetNodeType())
                         {
                             request.Parameters.Add("TargetAction" + "." + "ResizeCluster" + "." + "NodeType", StringUtils.FromString(publicRequest.TargetAction.ResizeCluster.NodeType));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.TargetAction.ResizeCluster.IsSetNumberOfNodes())
                         {
                             request.Parameters.Add("TargetAction" + "." + "ResizeCluster" + "." + "NumberOfNodes", StringUtils.FromInt(publicRequest.TargetAction.ResizeCluster.NumberOfNodes));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.TargetAction.ResizeCluster.IsSetReservedNodeId())
                         {
                             request.Parameters.Add("TargetAction" + "." + "ResizeCluster" + "." + "ReservedNodeId", StringUtils.FromString(publicRequest.TargetAction.ResizeCluster.ReservedNodeId));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.TargetAction.ResizeCluster.IsSetTargetReservedNodeOfferingId())
                         {
                             request.Parameters.Add("TargetAction" + "." + "ResizeCluster" + "." + "TargetReservedNodeOfferingId", StringUtils.FromString(publicRequest.TargetAction.ResizeCluster.TargetReservedNodeOfferingId));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.TargetAction.IsSetResumeCluster())
                     {
                         if(publicRequest.TargetAction.ResumeCluster.IsSetClusterIdentifier())
                         {
                             request.Parameters.Add("TargetAction" + "." + "ResumeCluster" + "." + "ClusterIdentifier", StringUtils.FromString(publicRequest.TargetAction.ResumeCluster.ClusterIdentifier));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

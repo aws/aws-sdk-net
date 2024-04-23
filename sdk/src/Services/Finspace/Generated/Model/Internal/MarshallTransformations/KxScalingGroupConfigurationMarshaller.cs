@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KxScalingGroupConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("cpu");
-                context.Writer.Write(requestObject.Cpu);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Cpu))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Cpu));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Cpu);
+                }
             }
 
             if(requestObject.IsSetMemoryLimit())
@@ -84,3 +94,4 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

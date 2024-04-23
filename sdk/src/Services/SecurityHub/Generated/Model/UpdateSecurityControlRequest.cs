@@ -35,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class UpdateSecurityControlRequest : AmazonSecurityHubRequest
     {
         private string _lastUpdateReason;
-        private Dictionary<string, ParameterConfiguration> _parameters = new Dictionary<string, ParameterConfiguration>();
+        private Dictionary<string, ParameterConfiguration> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, ParameterConfiguration>() : null;
         private string _securityControlId;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

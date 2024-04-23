@@ -45,7 +45,7 @@ namespace Amazon.TrustedAdvisor.Model
         /// Enumerable containing all of the AccountRecommendationLifecycleSummaries
         /// </summary>
         public IPaginatedEnumerable<AccountRecommendationLifecycleSummary> AccountRecommendationLifecycleSummaries => 
-            new PaginatedResultKeyResponse<ListOrganizationRecommendationAccountsResponse, AccountRecommendationLifecycleSummary>(this, (i) => i.AccountRecommendationLifecycleSummaries);
+            new PaginatedResultKeyResponse<ListOrganizationRecommendationAccountsResponse, AccountRecommendationLifecycleSummary>(this, (i) => i.AccountRecommendationLifecycleSummaries ?? new List<AccountRecommendationLifecycleSummary>());
 
         internal ListOrganizationRecommendationAccountsPaginator(IAmazonTrustedAdvisor client, ListOrganizationRecommendationAccountsRequest request)
         {

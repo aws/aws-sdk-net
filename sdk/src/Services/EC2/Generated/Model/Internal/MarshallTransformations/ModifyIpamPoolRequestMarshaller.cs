@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,41 +68,51 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("AddAllocationResourceTag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("AddAllocationResourceTag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAllocationDefaultNetmaskLength())
                 {
                     request.Parameters.Add("AllocationDefaultNetmaskLength", StringUtils.FromInt(publicRequest.AllocationDefaultNetmaskLength));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAllocationMaxNetmaskLength())
                 {
                     request.Parameters.Add("AllocationMaxNetmaskLength", StringUtils.FromInt(publicRequest.AllocationMaxNetmaskLength));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAllocationMinNetmaskLength())
                 {
                     request.Parameters.Add("AllocationMinNetmaskLength", StringUtils.FromInt(publicRequest.AllocationMinNetmaskLength));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAutoImport())
                 {
                     request.Parameters.Add("AutoImport", StringUtils.FromBool(publicRequest.AutoImport));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClearAllocationDefaultNetmaskLength())
                 {
                     request.Parameters.Add("ClearAllocationDefaultNetmaskLength", StringUtils.FromBool(publicRequest.ClearAllocationDefaultNetmaskLength));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpamPoolId())
                 {
                     request.Parameters.Add("IpamPoolId", StringUtils.FromString(publicRequest.IpamPoolId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveAllocationResourceTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -111,13 +122,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("RemoveAllocationResourceTag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("RemoveAllocationResourceTag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

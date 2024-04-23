@@ -68,9 +68,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Grant", targetDepth + 1))
                     {
                         if (null == response.AccessControlList)
+                        {
                             response.AccessControlList = new S3AccessControlList();
+                        }
+                        if (null == response.AccessControlList.Grants)
+                        {
+                            response.AccessControlList.Grants = new List<S3Grant>();
+                        }
+
                         response.AccessControlList.Grants.Add(GrantUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                 }

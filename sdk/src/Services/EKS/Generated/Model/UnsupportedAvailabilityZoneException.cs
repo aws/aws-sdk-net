@@ -40,7 +40,7 @@ namespace Amazon.EKS.Model
     {
         private string _clusterName;
         private string _nodegroupName;
-        private List<string> _validZones = new List<string>();
+        private List<string> _validZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Constructs a new UnsupportedAvailabilityZoneException with the specified error
@@ -183,7 +183,7 @@ namespace Amazon.EKS.Model
         // Check to see if ValidZones property is set
         internal bool IsSetValidZones()
         {
-            return this._validZones != null && this._validZones.Count > 0; 
+            return this._validZones != null && (this._validZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

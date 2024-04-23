@@ -33,7 +33,7 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class ListConfigsResponse : AmazonWebServiceResponse
     {
-        private List<ConfigListItem> _configList = new List<ConfigListItem>();
+        private List<ConfigListItem> _configList = AWSConfigs.InitializeCollections ? new List<ConfigListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if ConfigList property is set
         internal bool IsSetConfigList()
         {
-            return this._configList != null && this._configList.Count > 0; 
+            return this._configList != null && (this._configList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

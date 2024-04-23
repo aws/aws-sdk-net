@@ -215,7 +215,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property FunctionAssociations. 
         /// <para>
-        /// A list of CloudFront functions that are associated with this cache behavior. CloudFront
+        /// A list of CloudFront functions that are associated with this cache behavior. Your
         /// functions must be published to the <c>LIVE</c> stage to associate them with a cache
         /// behavior.
         /// </para>

@@ -33,7 +33,7 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class GetInsightEventsResponse : AmazonWebServiceResponse
     {
-        private List<InsightEvent> _insightEvents = new List<InsightEvent>();
+        private List<InsightEvent> _insightEvents = AWSConfigs.InitializeCollections ? new List<InsightEvent>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.XRay.Model
         // Check to see if InsightEvents property is set
         internal bool IsSetInsightEvents()
         {
-            return this._insightEvents != null && this._insightEvents.Count > 0; 
+            return this._insightEvents != null && (this._insightEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

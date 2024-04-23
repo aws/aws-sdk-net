@@ -36,7 +36,7 @@ namespace Amazon.WorkDocs.Model
     public partial class CreateCustomMetadataRequest : AmazonWorkDocsRequest
     {
         private string _authenticationToken;
-        private Dictionary<string, string> _customMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _customMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceId;
         private string _versionId;
 
@@ -76,7 +76,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if CustomMetadata property is set
         internal bool IsSetCustomMetadata()
         {
-            return this._customMetadata != null && this._customMetadata.Count > 0; 
+            return this._customMetadata != null && (this._customMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

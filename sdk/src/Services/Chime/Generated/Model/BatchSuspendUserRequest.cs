@@ -55,7 +55,7 @@ namespace Amazon.Chime.Model
     public partial class BatchSuspendUserRequest : AmazonChimeRequest
     {
         private string _accountId;
-        private List<string> _userIdList = new List<string>();
+        private List<string> _userIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -92,7 +92,7 @@ namespace Amazon.Chime.Model
         // Check to see if UserIdList property is set
         internal bool IsSetUserIdList()
         {
-            return this._userIdList != null && this._userIdList.Count > 0; 
+            return this._userIdList != null && (this._userIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

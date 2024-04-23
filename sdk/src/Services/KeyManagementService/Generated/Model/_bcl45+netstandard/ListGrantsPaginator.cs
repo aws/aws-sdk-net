@@ -45,7 +45,7 @@ namespace Amazon.KeyManagementService.Model
         /// Enumerable containing all of the Grants
         /// </summary>
         public IPaginatedEnumerable<GrantListEntry> Grants => 
-            new PaginatedResultKeyResponse<ListGrantsResponse, GrantListEntry>(this, (i) => i.Grants);
+            new PaginatedResultKeyResponse<ListGrantsResponse, GrantListEntry>(this, (i) => i.Grants ?? new List<GrantListEntry>());
 
         internal ListGrantsPaginator(IAmazonKeyManagementService client, ListGrantsRequest request)
         {
@@ -69,7 +69,7 @@ namespace Amazon.KeyManagementService.Model
                 marker = response.NextMarker;
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(marker));
+            while (response.Truncated);
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -90,7 +90,7 @@ namespace Amazon.KeyManagementService.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(marker));
+            while (response.Truncated);
         }
 #endif
     }

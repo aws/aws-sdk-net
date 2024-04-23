@@ -66,9 +66,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The resource type of the rollback trigger. Specify either <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html">
-        /// <c>AWS::CloudWatch::Alarm</c> </a> or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html">
-        /// <c>AWS::CloudWatch::CompositeAlarm</c> </a> resource types.
+        /// The resource type of the rollback trigger. Specify either <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html">AWS::CloudWatch::Alarm</a>
+        /// or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html">AWS::CloudWatch::CompositeAlarm</a>
+        /// resource types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

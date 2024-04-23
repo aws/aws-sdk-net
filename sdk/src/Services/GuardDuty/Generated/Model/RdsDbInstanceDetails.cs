@@ -39,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         private string _dbInstanceIdentifier;
         private string _engine;
         private string _engineVersion;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DbClusterIdentifier. 
@@ -148,7 +148,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

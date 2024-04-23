@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the HyperParameterTuningJobSummaries
         /// </summary>
         public IPaginatedEnumerable<HyperParameterTuningJobSummary> HyperParameterTuningJobSummaries => 
-            new PaginatedResultKeyResponse<ListHyperParameterTuningJobsResponse, HyperParameterTuningJobSummary>(this, (i) => i.HyperParameterTuningJobSummaries);
+            new PaginatedResultKeyResponse<ListHyperParameterTuningJobsResponse, HyperParameterTuningJobSummary>(this, (i) => i.HyperParameterTuningJobSummaries ?? new List<HyperParameterTuningJobSummary>());
 
         internal ListHyperParameterTuningJobsPaginator(IAmazonSageMaker client, ListHyperParameterTuningJobsRequest request)
         {

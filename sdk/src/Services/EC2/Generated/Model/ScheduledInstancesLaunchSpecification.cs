@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ScheduledInstancesLaunchSpecification
     {
-        private List<ScheduledInstancesBlockDeviceMapping> _blockDeviceMappings = new List<ScheduledInstancesBlockDeviceMapping>();
+        private List<ScheduledInstancesBlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<ScheduledInstancesBlockDeviceMapping>() : null;
         private bool? _ebsOptimized;
         private ScheduledInstancesIamInstanceProfile _iamInstanceProfile;
         private string _imageId;
@@ -47,10 +47,10 @@ namespace Amazon.EC2.Model
         private string _kernelId;
         private string _keyName;
         private ScheduledInstancesMonitoring _monitoring;
-        private List<ScheduledInstancesNetworkInterface> _networkInterfaces = new List<ScheduledInstancesNetworkInterface>();
+        private List<ScheduledInstancesNetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<ScheduledInstancesNetworkInterface>() : null;
         private ScheduledInstancesPlacement _placement;
         private string _ramdiskId;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subnetId;
         private string _userData;
 
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -221,7 +221,7 @@ namespace Amazon.EC2.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

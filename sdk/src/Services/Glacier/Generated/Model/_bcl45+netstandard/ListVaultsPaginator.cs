@@ -45,7 +45,7 @@ namespace Amazon.Glacier.Model
         /// Enumerable containing all of the VaultList
         /// </summary>
         public IPaginatedEnumerable<DescribeVaultOutput> VaultList => 
-            new PaginatedResultKeyResponse<ListVaultsResponse, DescribeVaultOutput>(this, (i) => i.VaultList);
+            new PaginatedResultKeyResponse<ListVaultsResponse, DescribeVaultOutput>(this, (i) => i.VaultList ?? new List<DescribeVaultOutput>());
 
         internal ListVaultsPaginator(IAmazonGlacier client, ListVaultsRequest request)
         {

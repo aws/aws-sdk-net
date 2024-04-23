@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the UpdateActions
         /// </summary>
         public IPaginatedEnumerable<UpdateAction> UpdateActions => 
-            new PaginatedResultKeyResponse<DescribeUpdateActionsResponse, UpdateAction>(this, (i) => i.UpdateActions);
+            new PaginatedResultKeyResponse<DescribeUpdateActionsResponse, UpdateAction>(this, (i) => i.UpdateActions ?? new List<UpdateAction>());
 
         internal DescribeUpdateActionsPaginator(IAmazonElastiCache client, DescribeUpdateActionsRequest request)
         {

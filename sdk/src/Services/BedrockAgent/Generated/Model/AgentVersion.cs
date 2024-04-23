@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the information of an agent version.
+    /// Contains details about a version of an agent.
     /// </summary>
     public partial class AgentVersion
     {
@@ -41,17 +41,20 @@ namespace Amazon.BedrockAgent.Model
         private DateTime? _createdAt;
         private string _customerEncryptionKeyArn;
         private string _description;
-        private List<string> _failureReasons = new List<string>();
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _foundationModel;
         private int? _idleSessionTTLInSeconds;
         private string _instruction;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
-        private List<string> _recommendedActions = new List<string>();
+        private List<string> _recommendedActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _updatedAt;
         private string _version;
 
         /// <summary>
-        /// Gets and sets the property AgentArn.
+        /// Gets and sets the property AgentArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the agent that the version belongs to.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string AgentArn
@@ -67,7 +70,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentId.
+        /// Gets and sets the property AgentId. 
+        /// <para>
+        /// The unique identifier of the agent that the version belongs to.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentId
@@ -83,7 +89,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentName.
+        /// Gets and sets the property AgentName. 
+        /// <para>
+        /// The name of the agent that the version belongs to.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentName
@@ -99,7 +108,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentResourceRoleArn.
+        /// Gets and sets the property AgentResourceRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations
+        /// on the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string AgentResourceRoleArn
@@ -115,7 +128,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentStatus.
+        /// Gets and sets the property AgentStatus. 
+        /// <para>
+        /// The status of the agent that the version belongs to.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentStatus AgentStatus
@@ -131,7 +147,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The time at which the version was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime CreatedAt
@@ -147,7 +166,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomerEncryptionKeyArn.
+        /// Gets and sets the property CustomerEncryptionKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string CustomerEncryptionKeyArn
@@ -163,7 +185,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the version.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -179,7 +204,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FailureReasons.
+        /// Gets and sets the property FailureReasons. 
+        /// <para>
+        /// A list of reasons that the API operation on the version failed.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public List<string> FailureReasons
@@ -191,11 +219,14 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property FoundationModel.
+        /// Gets and sets the property FoundationModel. 
+        /// <para>
+        /// The foundation model that the version invokes.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string FoundationModel
@@ -211,7 +242,17 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IdleSessionTTLInSeconds.
+        /// Gets and sets the property IdleSessionTTLInSeconds. 
+        /// <para>
+        /// The number of seconds for which Amazon Bedrock keeps information about a user's conversation
+        /// with the agent.
+        /// </para>
+        ///  
+        /// <para>
+        /// A user interaction remains active for the amount of time specified. If no conversation
+        /// occurs during this time, the session expires and Amazon Bedrock deletes any data provided
+        /// before the timeout.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=3600)]
         public int IdleSessionTTLInSeconds
@@ -227,7 +268,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Instruction.
+        /// Gets and sets the property Instruction. 
+        /// <para>
+        /// The instructions provided to the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=40, Max=1200)]
         public string Instruction
@@ -243,7 +287,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PromptOverrideConfiguration.
+        /// Gets and sets the property PromptOverrideConfiguration. 
+        /// <para>
+        /// Contains configurations to override prompt templates in different parts of an agent
+        /// sequence. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+        /// prompts</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public PromptOverrideConfiguration PromptOverrideConfiguration
@@ -259,7 +308,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecommendedActions.
+        /// Gets and sets the property RecommendedActions. 
+        /// <para>
+        /// A list of recommended actions to take for the failed API operation on the version
+        /// to succeed.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public List<string> RecommendedActions
@@ -271,11 +324,14 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if RecommendedActions property is set
         internal bool IsSetRecommendedActions()
         {
-            return this._recommendedActions != null && this._recommendedActions.Count > 0; 
+            return this._recommendedActions != null && (this._recommendedActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The time at which the version was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime UpdatedAt
@@ -291,7 +347,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version.
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version number.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Version

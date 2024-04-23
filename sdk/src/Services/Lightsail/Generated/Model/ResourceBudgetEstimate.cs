@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class ResourceBudgetEstimate
     {
-        private List<CostEstimate> _costEstimates = new List<CostEstimate>();
+        private List<CostEstimate> _costEstimates = AWSConfigs.InitializeCollections ? new List<CostEstimate>() : null;
         private DateTime? _endTime;
         private string _resourceName;
         private ResourceType _resourceType;
@@ -54,7 +54,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if CostEstimates property is set
         internal bool IsSetCostEstimates()
         {
-            return this._costEstimates != null && this._costEstimates.Count > 0; 
+            return this._costEstimates != null && (this._costEstimates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

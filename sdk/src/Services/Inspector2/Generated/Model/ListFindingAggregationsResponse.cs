@@ -33,7 +33,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class ListFindingAggregationsResponse : AmazonWebServiceResponse
     {
-        private List<AggregationResponse> _aggregations = new List<AggregationResponse>();
+        private List<AggregationResponse> _aggregations = AWSConfigs.InitializeCollections ? new List<AggregationResponse>() : null;
         private AggregationType _aggregationType;
         private string _nextToken;
 
@@ -52,7 +52,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Aggregations property is set
         internal bool IsSetAggregations()
         {
-            return this._aggregations != null && this._aggregations.Count > 0; 
+            return this._aggregations != null && (this._aggregations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the DefaultVocabularyList
         /// </summary>
         public IPaginatedEnumerable<DefaultVocabulary> DefaultVocabularyList => 
-            new PaginatedResultKeyResponse<ListDefaultVocabulariesResponse, DefaultVocabulary>(this, (i) => i.DefaultVocabularyList);
+            new PaginatedResultKeyResponse<ListDefaultVocabulariesResponse, DefaultVocabulary>(this, (i) => i.DefaultVocabularyList ?? new List<DefaultVocabulary>());
 
         internal ListDefaultVocabulariesPaginator(IAmazonConnect client, ListDefaultVocabulariesRequest request)
         {

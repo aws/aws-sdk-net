@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CollectionSummary Object
     /// </summary>  
-    public class CollectionSummaryUnmarshaller : IUnmarshaller<CollectionSummary, XmlUnmarshallerContext>
+    public class CollectionSummaryUnmarshaller : IUnmarshaller<CollectionSummary, XmlUnmarshallerContext>, IUnmarshaller<CollectionSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,6 +88,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public CollectionSummary Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static CollectionSummaryUnmarshaller _instance = new CollectionSummaryUnmarshaller();        
 
@@ -102,3 +113,4 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

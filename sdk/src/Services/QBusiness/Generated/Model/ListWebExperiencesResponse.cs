@@ -34,13 +34,13 @@ namespace Amazon.QBusiness.Model
     public partial class ListWebExperiencesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WebExperience> _webExperiences = new List<WebExperience>();
+        private List<WebExperience> _webExperiences = AWSConfigs.InitializeCollections ? new List<WebExperience>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Amazon Q returns this token, which you can use in a
-        /// later request to list the next set of messages.
+        /// If the response is truncated, Amazon Q Business returns this token, which you can
+        /// use in a later request to list the next set of messages.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]
@@ -59,7 +59,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property WebExperiences. 
         /// <para>
-        /// An array of summary information for one or more Amazon Q experiences.
+        /// An array of summary information for one or more Amazon Q Business experiences.
         /// </para>
         /// </summary>
         public List<WebExperience> WebExperiences
@@ -71,7 +71,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if WebExperiences property is set
         internal bool IsSetWebExperiences()
         {
-            return this._webExperiences != null && this._webExperiences.Count > 0; 
+            return this._webExperiences != null && (this._webExperiences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

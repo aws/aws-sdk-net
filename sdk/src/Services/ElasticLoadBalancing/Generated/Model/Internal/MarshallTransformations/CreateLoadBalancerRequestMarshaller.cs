@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetListeners())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -76,33 +78,41 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InstancePort", StringUtils.FromInt(publicRequestlistValue.InstancePort));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetInstanceProtocol())
                         {
                             request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InstanceProtocol", StringUtils.FromString(publicRequestlistValue.InstanceProtocol));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetLoadBalancerPort())
                         {
                             request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LoadBalancerPort", StringUtils.FromInt(publicRequestlistValue.LoadBalancerPort));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetProtocol())
                         {
                             request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Protocol", StringUtils.FromString(publicRequestlistValue.Protocol));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetSSLCertificateId())
                         {
                             request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SSLCertificateId", StringUtils.FromString(publicRequestlistValue.SSLCertificateId));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoadBalancerName())
                 {
                     request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScheme())
                 {
                     request.Parameters.Add("Scheme", StringUtils.FromString(publicRequest.Scheme));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSecurityGroups())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -112,6 +122,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSubnets())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -121,6 +132,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -130,13 +142,16 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

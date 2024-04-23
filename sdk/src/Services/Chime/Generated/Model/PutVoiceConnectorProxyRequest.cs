@@ -51,7 +51,7 @@ namespace Amazon.Chime.Model
         private int? _defaultSessionExpiryMinutes;
         private bool? _disabled;
         private string _fallBackPhoneNumber;
-        private List<string> _phoneNumberPoolCountries = new List<string>();
+        private List<string> _phoneNumberPoolCountries = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _voiceConnectorId;
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.Chime.Model
         // Check to see if PhoneNumberPoolCountries property is set
         internal bool IsSetPhoneNumberPoolCountries()
         {
-            return this._phoneNumberPoolCountries != null && this._phoneNumberPoolCountries.Count > 0; 
+            return this._phoneNumberPoolCountries != null && (this._phoneNumberPoolCountries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

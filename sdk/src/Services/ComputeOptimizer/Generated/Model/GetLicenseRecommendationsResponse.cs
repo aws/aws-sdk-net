@@ -33,8 +33,8 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetLicenseRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<GetRecommendationError> _errors = new List<GetRecommendationError>();
-        private List<LicenseRecommendation> _licenseRecommendations = new List<LicenseRecommendation>();
+        private List<GetRecommendationError> _errors = AWSConfigs.InitializeCollections ? new List<GetRecommendationError>() : null;
+        private List<LicenseRecommendation> _licenseRecommendations = AWSConfigs.InitializeCollections ? new List<LicenseRecommendation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if LicenseRecommendations property is set
         internal bool IsSetLicenseRecommendations()
         {
-            return this._licenseRecommendations != null && this._licenseRecommendations.Count > 0; 
+            return this._licenseRecommendations != null && (this._licenseRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

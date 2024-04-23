@@ -35,9 +35,9 @@ namespace Amazon.SageMaker.Model
     {
         private DateTime? _completionTime;
         private DateTime? _creationTime;
-        private List<EndpointPerformance> _endpointPerformances = new List<EndpointPerformance>();
+        private List<EndpointPerformance> _endpointPerformances = AWSConfigs.InitializeCollections ? new List<EndpointPerformance>() : null;
         private string _failureReason;
-        private List<InferenceRecommendation> _inferenceRecommendations = new List<InferenceRecommendation>();
+        private List<InferenceRecommendation> _inferenceRecommendations = AWSConfigs.InitializeCollections ? new List<InferenceRecommendation>() : null;
         private RecommendationJobInputConfig _inputConfig;
         private string _jobArn;
         private string _jobDescription;
@@ -101,7 +101,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if EndpointPerformances property is set
         internal bool IsSetEndpointPerformances()
         {
-            return this._endpointPerformances != null && this._endpointPerformances.Count > 0; 
+            return this._endpointPerformances != null && (this._endpointPerformances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InferenceRecommendations property is set
         internal bool IsSetInferenceRecommendations()
         {
-            return this._inferenceRecommendations != null && this._inferenceRecommendations.Count > 0; 
+            return this._inferenceRecommendations != null && (this._inferenceRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

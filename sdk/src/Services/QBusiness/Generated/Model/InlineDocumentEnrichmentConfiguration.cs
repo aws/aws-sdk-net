@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Provides the configuration information for applying basic logic to alter document
-    /// metadata and content when ingesting documents into Amazon Q.
+    /// metadata and content when ingesting documents into Amazon Q Business.
     /// 
     ///  
     /// <para>

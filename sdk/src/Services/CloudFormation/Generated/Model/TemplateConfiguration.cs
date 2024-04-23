@@ -52,8 +52,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-        /// <c>DeletionPolicy</c> attribute</a> in the <i>CloudFormation User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy
+        /// attribute</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public GeneratedTemplateDeletionPolicy DeletionPolicy
@@ -86,8 +86,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-        /// <c>UpdateReplacePolicy</c> attribute</a> in the <i>CloudFormation User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy
+        /// attribute</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public GeneratedTemplateUpdateReplacePolicy UpdateReplacePolicy

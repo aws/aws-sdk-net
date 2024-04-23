@@ -36,7 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class SendAutomationSignalRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _automationExecutionId;
-        private Dictionary<string, List<string>> _payload = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _payload = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private SignalType _signalType;
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Payload property is set
         internal bool IsSetPayload()
         {
-            return this._payload != null && this._payload.Count > 0; 
+            return this._payload != null && (this._payload.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

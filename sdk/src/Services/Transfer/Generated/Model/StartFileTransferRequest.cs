@@ -47,7 +47,7 @@ namespace Amazon.Transfer.Model
     ///  <ul> <li> 
     /// <para>
     /// If you are transferring file from a partner's SFTP server to Amazon Web Services storage,
-    /// you specify one or more <c>RetreiveFilePaths</c> to identify the files you want to
+    /// you specify one or more <c>RetrieveFilePaths</c> to identify the files you want to
     /// transfer, and a <c>LocalDirectoryPath</c> to specify the destination folder.
     /// </para>
     ///  </li> <li> 
@@ -63,8 +63,8 @@ namespace Amazon.Transfer.Model
         private string _connectorId;
         private string _localDirectoryPath;
         private string _remoteDirectoryPath;
-        private List<string> _retrieveFilePaths = new List<string>();
-        private List<string> _sendFilePaths = new List<string>();
+        private List<string> _retrieveFilePaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _sendFilePaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectorId. 
@@ -144,7 +144,7 @@ namespace Amazon.Transfer.Model
         // Check to see if RetrieveFilePaths property is set
         internal bool IsSetRetrieveFilePaths()
         {
-            return this._retrieveFilePaths != null && this._retrieveFilePaths.Count > 0; 
+            return this._retrieveFilePaths != null && (this._retrieveFilePaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.Transfer.Model
         // Check to see if SendFilePaths property is set
         internal bool IsSetSendFilePaths()
         {
-            return this._sendFilePaths != null && this._sendFilePaths.Count > 0; 
+            return this._sendFilePaths != null && (this._sendFilePaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

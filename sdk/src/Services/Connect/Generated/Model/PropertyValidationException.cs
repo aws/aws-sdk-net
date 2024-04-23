@@ -36,7 +36,7 @@ namespace Amazon.Connect.Model
     #endif
     public partial class PropertyValidationException : AmazonConnectException
     {
-        private List<PropertyValidationExceptionProperty> _propertyList = new List<PropertyValidationExceptionProperty>();
+        private List<PropertyValidationExceptionProperty> _propertyList = AWSConfigs.InitializeCollections ? new List<PropertyValidationExceptionProperty>() : null;
 
         /// <summary>
         /// Constructs a new PropertyValidationException with the specified error
@@ -135,7 +135,7 @@ namespace Amazon.Connect.Model
         // Check to see if PropertyList property is set
         internal bool IsSetPropertyList()
         {
-            return this._propertyList != null && this._propertyList.Count > 0; 
+            return this._propertyList != null && (this._propertyList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RuleVariables requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetIPSets())
             {
                 context.Writer.WritePropertyName("IPSets");
@@ -92,3 +95,4 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

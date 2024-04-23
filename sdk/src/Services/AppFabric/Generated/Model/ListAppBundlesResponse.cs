@@ -33,7 +33,7 @@ namespace Amazon.AppFabric.Model
     /// </summary>
     public partial class ListAppBundlesResponse : AmazonWebServiceResponse
     {
-        private List<AppBundleSummary> _appBundleSummaryList = new List<AppBundleSummary>();
+        private List<AppBundleSummary> _appBundleSummaryList = AWSConfigs.InitializeCollections ? new List<AppBundleSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AppFabric.Model
         // Check to see if AppBundleSummaryList property is set
         internal bool IsSetAppBundleSummaryList()
         {
-            return this._appBundleSummaryList != null && this._appBundleSummaryList.Count > 0; 
+            return this._appBundleSummaryList != null && (this._appBundleSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

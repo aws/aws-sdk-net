@@ -35,7 +35,7 @@ namespace Amazon.Ivschat.Model
     public partial class UpdateRoomRequest : AmazonIvschatRequest
     {
         private string _identifier;
-        private List<string> _loggingConfigurationIdentifiers = new List<string>();
+        private List<string> _loggingConfigurationIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maximumMessageLength;
         private int? _maximumMessageRatePerSecond;
         private MessageReviewHandler _messageReviewHandler;
@@ -76,7 +76,7 @@ namespace Amazon.Ivschat.Model
         // Check to see if LoggingConfigurationIdentifiers property is set
         internal bool IsSetLoggingConfigurationIdentifiers()
         {
-            return this._loggingConfigurationIdentifiers != null && this._loggingConfigurationIdentifiers.Count > 0; 
+            return this._loggingConfigurationIdentifiers != null && (this._loggingConfigurationIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

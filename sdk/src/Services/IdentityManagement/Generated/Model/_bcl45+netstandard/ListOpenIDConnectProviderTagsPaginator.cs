@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<Tag> Tags => 
-            new PaginatedResultKeyResponse<ListOpenIDConnectProviderTagsResponse, Tag>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<ListOpenIDConnectProviderTagsResponse, Tag>(this, (i) => i.Tags ?? new List<Tag>());
 
         internal ListOpenIDConnectProviderTagsPaginator(IAmazonIdentityManagementService client, ListOpenIDConnectProviderTagsRequest request)
         {

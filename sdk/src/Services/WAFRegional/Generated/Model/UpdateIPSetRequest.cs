@@ -135,7 +135,7 @@ namespace Amazon.WAFRegional.Model
     {
         private string _changeToken;
         private string _ipSetId;
-        private List<IPSetUpdate> _updates = new List<IPSetUpdate>();
+        private List<IPSetUpdate> _updates = AWSConfigs.InitializeCollections ? new List<IPSetUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property ChangeToken. 
@@ -205,7 +205,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if Updates property is set
         internal bool IsSetUpdates()
         {
-            return this._updates != null && this._updates.Count > 0; 
+            return this._updates != null && (this._updates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.ARCZonalShift.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<AutoshiftSummary> Items => 
-            new PaginatedResultKeyResponse<ListAutoshiftsResponse, AutoshiftSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListAutoshiftsResponse, AutoshiftSummary>(this, (i) => i.Items ?? new List<AutoshiftSummary>());
 
         internal ListAutoshiftsPaginator(IAmazonARCZonalShift client, ListAutoshiftsRequest request)
         {

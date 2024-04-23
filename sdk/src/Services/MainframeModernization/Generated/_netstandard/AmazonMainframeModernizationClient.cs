@@ -1287,6 +1287,59 @@ namespace Amazon.MainframeModernization
 
         #endregion
         
+        #region  ListBatchJobRestartPoints
+
+        internal virtual ListBatchJobRestartPointsResponse ListBatchJobRestartPoints(ListBatchJobRestartPointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBatchJobRestartPointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBatchJobRestartPointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBatchJobRestartPointsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the job steps for JCL files to restart a batch job. This is only applicable
+        /// for Micro Focus engine with versions 8.0.6 and above.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBatchJobRestartPoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBatchJobRestartPoints service method, as returned by MainframeModernization.</returns>
+        /// <exception cref="Amazon.MainframeModernization.Model.AccessDeniedException">
+        /// The account or role doesn't have the right permissions to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ConflictException">
+        /// The parameters provided in the request conflict with existing resources.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ThrottlingException">
+        /// The number of requests made exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.MainframeModernization.Model.ValidationException">
+        /// One or more parameters provided in the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobRestartPoints">REST API Reference for ListBatchJobRestartPoints Operation</seealso>
+        public virtual Task<ListBatchJobRestartPointsResponse> ListBatchJobRestartPointsAsync(ListBatchJobRestartPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBatchJobRestartPointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBatchJobRestartPointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBatchJobRestartPointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDataSetImportHistory
 
         internal virtual ListDataSetImportHistoryResponse ListDataSetImportHistory(ListDataSetImportHistoryRequest request)

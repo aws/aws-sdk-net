@@ -35,16 +35,16 @@ namespace Amazon.MediaConvert.Model
     {
         private int? _adAvailOffset;
         private AvailBlanking _availBlanking;
-        private List<ColorConversion3DLUTSetting> _colorConversion3DLUTSettings = new List<ColorConversion3DLUTSetting>();
+        private List<ColorConversion3DLUTSetting> _colorConversion3DLUTSettings = AWSConfigs.InitializeCollections ? new List<ColorConversion3DLUTSetting>() : null;
         private EsamSettings _esam;
         private ExtendedDataServices _extendedDataServices;
         private int? _followSource;
-        private List<Input> _inputs = new List<Input>();
+        private List<Input> _inputs = AWSConfigs.InitializeCollections ? new List<Input>() : null;
         private KantarWatermarkSettings _kantarWatermark;
         private MotionImageInserter _motionImageInserter;
         private NielsenConfiguration _nielsenConfiguration;
         private NielsenNonLinearWatermarkSettings _nielsenNonLinearWatermark;
-        private List<OutputGroup> _outputGroups = new List<OutputGroup>();
+        private List<OutputGroup> _outputGroups = AWSConfigs.InitializeCollections ? new List<OutputGroup>() : null;
         private TimecodeConfig _timecodeConfig;
         private TimedMetadataInsertion _timedMetadataInsertion;
 
@@ -85,7 +85,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ColorConversion3DLUTSettings. Use 3D LUTs to specify custom
         /// color mapping behavior when you convert from one color space into another. You can
-        /// include up to 8 different 3D LUTs.
+        /// include up to 8 different 3D LUTs. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/3d-luts.html
         /// </summary>
         public List<ColorConversion3DLUTSetting> ColorConversion3DLUTSettings
         {
@@ -96,7 +96,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if ColorConversion3DLUTSettings property is set
         internal bool IsSetColorConversion3DLUTSettings()
         {
-            return this._colorConversion3DLUTSettings != null && this._colorConversion3DLUTSettings.Count > 0; 
+            return this._colorConversion3DLUTSettings != null && (this._colorConversion3DLUTSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -171,7 +171,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if OutputGroups property is set
         internal bool IsSetOutputGroups()
         {
-            return this._outputGroups != null && this._outputGroups.Count > 0; 
+            return this._outputGroups != null && (this._outputGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

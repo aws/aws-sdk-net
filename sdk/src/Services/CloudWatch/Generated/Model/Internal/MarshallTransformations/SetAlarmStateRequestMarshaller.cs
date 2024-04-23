@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AlarmName", StringUtils.FromString(publicRequest.AlarmName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStateReason())
                 {
                     request.Parameters.Add("StateReason", StringUtils.FromString(publicRequest.StateReason));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStateReasonData())
                 {
                     request.Parameters.Add("StateReasonData", StringUtils.FromString(publicRequest.StateReasonData));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStateValue())
                 {
                     request.Parameters.Add("StateValue", StringUtils.FromString(publicRequest.StateValue));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeGlobalClustersRequest : AmazonRDSRequest
     {
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private string _globalClusterIdentifier;
         private string _marker;
         private int? _maxRecords;
@@ -53,7 +53,17 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// This parameter isn't currently supported.
+        /// A filter that specifies one or more global database clusters to describe. This parameter
+        /// is case-sensitive.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently, the only supported filter is <c>region</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If used, the request returns information about any global cluster with at least one
+        /// member (primary or secondary) in the specified Amazon Web Services Regions.
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -65,7 +75,7 @@ namespace Amazon.RDS.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

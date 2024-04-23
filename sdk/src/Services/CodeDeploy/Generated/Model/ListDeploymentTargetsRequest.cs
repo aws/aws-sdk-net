@@ -36,7 +36,7 @@ namespace Amazon.CodeDeploy.Model
     {
         private string _deploymentId;
         private string _nextToken;
-        private Dictionary<string, List<string>> _targetFilters = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _targetFilters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property DeploymentId. 
@@ -103,7 +103,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if TargetFilters property is set
         internal bool IsSetTargetFilters()
         {
-            return this._targetFilters != null && this._targetFilters.Count > 0; 
+            return this._targetFilters != null && (this._targetFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

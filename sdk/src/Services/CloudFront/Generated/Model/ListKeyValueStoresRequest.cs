@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListKeyValueStores operation.
-    /// Specifies the Key Value Stores to list.
+    /// Specifies the key value stores to list.
     /// </summary>
     public partial class ListKeyValueStoresRequest : AmazonCloudFrontRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The marker associated with the Key Value Stores list.
+        /// The marker associated with the key value stores list.
         /// </para>
         /// </summary>
         public string Marker
@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of items in the Key Value Stores list.
+        /// The maximum number of items in the key value stores list.
         /// </para>
         /// </summary>
         public string MaxItems
@@ -77,7 +77,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the request for the Key Value Stores list.
+        /// The status of the request for the key value stores list.
         /// </para>
         /// </summary>
         public string Status

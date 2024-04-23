@@ -33,7 +33,7 @@ namespace Amazon.KinesisVideo.Model
     /// </summary>
     public partial class DescribeMappedResourceConfigurationResponse : AmazonWebServiceResponse
     {
-        private List<MappedResourceConfigurationListItem> _mappedResourceConfigurationList = new List<MappedResourceConfigurationListItem>();
+        private List<MappedResourceConfigurationListItem> _mappedResourceConfigurationList = AWSConfigs.InitializeCollections ? new List<MappedResourceConfigurationListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.KinesisVideo.Model
         // Check to see if MappedResourceConfigurationList property is set
         internal bool IsSetMappedResourceConfigurationList()
         {
-            return this._mappedResourceConfigurationList != null && this._mappedResourceConfigurationList.Count > 0; 
+            return this._mappedResourceConfigurationList != null && (this._mappedResourceConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

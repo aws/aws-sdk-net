@@ -36,7 +36,7 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class BatchGetEffectiveLifecyclePolicyRequest : AmazonOpenSearchServerlessRequest
     {
-        private List<LifecyclePolicyResourceIdentifier> _resourceIdentifiers = new List<LifecyclePolicyResourceIdentifier>();
+        private List<LifecyclePolicyResourceIdentifier> _resourceIdentifiers = AWSConfigs.InitializeCollections ? new List<LifecyclePolicyResourceIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceIdentifiers. 
@@ -54,7 +54,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if ResourceIdentifiers property is set
         internal bool IsSetResourceIdentifiers()
         {
-            return this._resourceIdentifiers != null && this._resourceIdentifiers.Count > 0; 
+            return this._resourceIdentifiers != null && (this._resourceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

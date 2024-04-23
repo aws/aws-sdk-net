@@ -45,7 +45,7 @@ namespace Amazon.MediaLive.Model
         /// Enumerable containing all of the InputDeviceTransfers
         /// </summary>
         public IPaginatedEnumerable<TransferringInputDeviceSummary> InputDeviceTransfers => 
-            new PaginatedResultKeyResponse<ListInputDeviceTransfersResponse, TransferringInputDeviceSummary>(this, (i) => i.InputDeviceTransfers);
+            new PaginatedResultKeyResponse<ListInputDeviceTransfersResponse, TransferringInputDeviceSummary>(this, (i) => i.InputDeviceTransfers ?? new List<TransferringInputDeviceSummary>());
 
         internal ListInputDeviceTransfersPaginator(IAmazonMediaLive client, ListInputDeviceTransfersRequest request)
         {

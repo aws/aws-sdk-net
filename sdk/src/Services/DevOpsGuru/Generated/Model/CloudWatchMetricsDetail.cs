@@ -33,7 +33,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class CloudWatchMetricsDetail
     {
-        private List<CloudWatchMetricsDimension> _dimensions = new List<CloudWatchMetricsDimension>();
+        private List<CloudWatchMetricsDimension> _dimensions = AWSConfigs.InitializeCollections ? new List<CloudWatchMetricsDimension>() : null;
         private CloudWatchMetricsDataSummary _metricDataSummary;
         private string _metricName;
         private string _awsNamespace;
@@ -56,7 +56,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

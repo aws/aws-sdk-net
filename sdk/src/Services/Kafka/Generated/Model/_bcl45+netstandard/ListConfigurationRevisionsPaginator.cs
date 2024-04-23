@@ -45,7 +45,7 @@ namespace Amazon.Kafka.Model
         /// Enumerable containing all of the Revisions
         /// </summary>
         public IPaginatedEnumerable<ConfigurationRevision> Revisions => 
-            new PaginatedResultKeyResponse<ListConfigurationRevisionsResponse, ConfigurationRevision>(this, (i) => i.Revisions);
+            new PaginatedResultKeyResponse<ListConfigurationRevisionsResponse, ConfigurationRevision>(this, (i) => i.Revisions ?? new List<ConfigurationRevision>());
 
         internal ListConfigurationRevisionsPaginator(IAmazonKafka client, ListConfigurationRevisionsRequest request)
         {

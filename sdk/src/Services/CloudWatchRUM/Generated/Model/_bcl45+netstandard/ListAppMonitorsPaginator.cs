@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// Enumerable containing all of the AppMonitorSummaries
         /// </summary>
         public IPaginatedEnumerable<AppMonitorSummary> AppMonitorSummaries => 
-            new PaginatedResultKeyResponse<ListAppMonitorsResponse, AppMonitorSummary>(this, (i) => i.AppMonitorSummaries);
+            new PaginatedResultKeyResponse<ListAppMonitorsResponse, AppMonitorSummary>(this, (i) => i.AppMonitorSummaries ?? new List<AppMonitorSummary>());
 
         internal ListAppMonitorsPaginator(IAmazonCloudWatchRUM client, ListAppMonitorsRequest request)
         {

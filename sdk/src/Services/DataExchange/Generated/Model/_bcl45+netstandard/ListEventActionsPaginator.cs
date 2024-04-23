@@ -45,7 +45,7 @@ namespace Amazon.DataExchange.Model
         /// Enumerable containing all of the EventActions
         /// </summary>
         public IPaginatedEnumerable<EventActionEntry> EventActions => 
-            new PaginatedResultKeyResponse<ListEventActionsResponse, EventActionEntry>(this, (i) => i.EventActions);
+            new PaginatedResultKeyResponse<ListEventActionsResponse, EventActionEntry>(this, (i) => i.EventActions ?? new List<EventActionEntry>());
 
         internal ListEventActionsPaginator(IAmazonDataExchange client, ListEventActionsRequest request)
         {

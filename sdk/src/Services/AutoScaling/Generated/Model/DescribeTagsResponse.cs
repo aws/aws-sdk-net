@@ -34,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     public partial class DescribeTagsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TagDescription> _tags = new List<TagDescription>();
+        private List<TagDescription> _tags = AWSConfigs.InitializeCollections ? new List<TagDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

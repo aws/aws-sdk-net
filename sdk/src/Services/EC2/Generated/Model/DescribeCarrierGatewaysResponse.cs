@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeCarrierGatewaysResponse : AmazonWebServiceResponse
     {
-        private List<CarrierGateway> _carrierGateways = new List<CarrierGateway>();
+        private List<CarrierGateway> _carrierGateways = AWSConfigs.InitializeCollections ? new List<CarrierGateway>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if CarrierGateways property is set
         internal bool IsSetCarrierGateways()
         {
-            return this._carrierGateways != null && this._carrierGateways.Count > 0; 
+            return this._carrierGateways != null && (this._carrierGateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

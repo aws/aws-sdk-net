@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public class ListBucketsResponse : AmazonWebServiceResponse
     {
-        private List<S3Bucket> buckets = new List<S3Bucket>();
+        private List<S3Bucket> buckets = AWSConfigs.InitializeCollections ? new List<S3Bucket>() : null;
         private Owner owner;
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Amazon.S3.Model
         // Check to see if Buckets property is set
         internal bool IsSetBuckets()
         {
-            return this.buckets.Count > 0;
+            return this.buckets != null && (this.buckets.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

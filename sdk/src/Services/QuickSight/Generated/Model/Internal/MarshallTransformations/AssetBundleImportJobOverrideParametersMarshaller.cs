@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AssetBundleImportJobOverrideParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnalyses())
             {
                 context.Writer.WritePropertyName("Analyses");
@@ -177,3 +180,4 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

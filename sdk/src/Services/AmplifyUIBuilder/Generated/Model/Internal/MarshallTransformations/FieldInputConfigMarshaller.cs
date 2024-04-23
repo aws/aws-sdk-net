@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FieldInputConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDefaultChecked())
             {
                 context.Writer.WritePropertyName("defaultChecked");
@@ -89,13 +92,27 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("maxValue");
-                context.Writer.Write(requestObject.MaxValue);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MaxValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxValue);
+                }
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("minValue");
-                context.Writer.Write(requestObject.MinValue);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinValue);
+                }
             }
 
             if(requestObject.IsSetName())
@@ -125,7 +142,14 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStep())
             {
                 context.Writer.WritePropertyName("step");
-                context.Writer.Write(requestObject.Step);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Step))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Step));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Step);
+                }
             }
 
             if(requestObject.IsSetType())
@@ -160,3 +184,4 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

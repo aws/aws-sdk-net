@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SnapshotJobS3Result
     {
-        private List<SnapshotJobResultErrorInfo> _errorInfo = new List<SnapshotJobResultErrorInfo>();
+        private List<SnapshotJobResultErrorInfo> _errorInfo = AWSConfigs.InitializeCollections ? new List<SnapshotJobResultErrorInfo>() : null;
         private SnapshotS3DestinationConfiguration _s3DestinationConfiguration;
         private string _s3Uri;
 
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ErrorInfo property is set
         internal bool IsSetErrorInfo()
         {
-            return this._errorInfo != null && this._errorInfo.Count > 0; 
+            return this._errorInfo != null && (this._errorInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

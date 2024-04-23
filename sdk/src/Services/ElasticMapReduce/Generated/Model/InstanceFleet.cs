@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _id;
         private InstanceFleetType _instanceFleetType;
-        private List<InstanceTypeSpecification> _instanceTypeSpecifications = new List<InstanceTypeSpecification>();
+        private List<InstanceTypeSpecification> _instanceTypeSpecifications = AWSConfigs.InitializeCollections ? new List<InstanceTypeSpecification>() : null;
         private InstanceFleetProvisioningSpecifications _launchSpecifications;
         private string _name;
         private int? _provisionedOnDemandCapacity;
@@ -107,7 +107,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceTypeSpecifications property is set
         internal bool IsSetInstanceTypeSpecifications()
         {
-            return this._instanceTypeSpecifications != null && this._instanceTypeSpecifications.Count > 0; 
+            return this._instanceTypeSpecifications != null && (this._instanceTypeSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

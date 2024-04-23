@@ -40,7 +40,7 @@ namespace Amazon.MachineLearning.Model
         private string _dataSchemaUri;
         private string _resourceRole;
         private string _s3StagingLocation;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _selectSqlQuery;
         private string _serviceRole;
         private string _subnetId;
@@ -369,7 +369,7 @@ namespace Amazon.MachineLearning.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

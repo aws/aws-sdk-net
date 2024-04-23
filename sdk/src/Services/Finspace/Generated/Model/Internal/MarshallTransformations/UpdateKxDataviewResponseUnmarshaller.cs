@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -115,6 +116,12 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.LastModifiedTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("readWrite", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.ReadWrite = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("segmentConfigurations", targetDepth))
@@ -204,3 +211,4 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

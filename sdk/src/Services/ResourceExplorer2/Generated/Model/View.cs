@@ -39,7 +39,7 @@ namespace Amazon.ResourceExplorer2.Model
     public partial class View
     {
         private SearchFilter _filters;
-        private List<IncludedProperty> _includedProperties = new List<IncludedProperty>();
+        private List<IncludedProperty> _includedProperties = AWSConfigs.InitializeCollections ? new List<IncludedProperty>() : null;
         private DateTime? _lastUpdatedAt;
         private string _owner;
         private string _scope;
@@ -80,7 +80,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if IncludedProperties property is set
         internal bool IsSetIncludedProperties()
         {
-            return this._includedProperties != null && this._includedProperties.Count > 0; 
+            return this._includedProperties != null && (this._includedProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

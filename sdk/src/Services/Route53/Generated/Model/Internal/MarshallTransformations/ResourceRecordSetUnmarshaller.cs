@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceRecordSet Object
     /// </summary>  
-    public class ResourceRecordSetUnmarshaller : IUnmarshaller<ResourceRecordSet, XmlUnmarshallerContext>
+    public class ResourceRecordSetUnmarshaller : IUnmarshaller<ResourceRecordSet, XmlUnmarshallerContext>, IUnmarshaller<ResourceRecordSet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -111,6 +112,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ResourceRecords/ResourceRecord", targetDepth))
                     {
+                        if (unmarshalledObject.ResourceRecords == null)
+                        {
+                            unmarshalledObject.ResourceRecords = new List<ResourceRecord>();
+                        }
                         var unmarshaller = ResourceRecordUnmarshaller.Instance;
                         unmarshalledObject.ResourceRecords.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -153,6 +158,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ResourceRecordSet Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static ResourceRecordSetUnmarshaller _instance = new ResourceRecordSetUnmarshaller();        
 
@@ -168,3 +183,4 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

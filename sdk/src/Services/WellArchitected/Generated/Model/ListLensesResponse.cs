@@ -33,7 +33,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ListLensesResponse : AmazonWebServiceResponse
     {
-        private List<LensSummary> _lensSummaries = new List<LensSummary>();
+        private List<LensSummary> _lensSummaries = AWSConfigs.InitializeCollections ? new List<LensSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if LensSummaries property is set
         internal bool IsSetLensSummaries()
         {
-            return this._lensSummaries != null && this._lensSummaries.Count > 0; 
+            return this._lensSummaries != null && (this._lensSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

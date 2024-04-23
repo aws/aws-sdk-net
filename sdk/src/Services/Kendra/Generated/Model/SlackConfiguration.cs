@@ -30,20 +30,43 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Provides the configuration information to connect to Slack as your data source.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Amazon Kendra now supports an upgraded Slack connector.
+    /// </para>
+    ///  
+    /// <para>
+    /// You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+    /// object instead of the <c>SlackConfiguration</c> object to configure your connector.
+    /// </para>
+    ///  
+    /// <para>
+    /// Connectors configured using the older console and API architecture will continue to
+    /// function as configured. However, you won’t be able to edit or update them. If you
+    /// want to edit or update your connector configuration, you must create a new connector.
+    /// </para>
+    ///  
+    /// <para>
+    /// We recommended migrating your connector workflow to the upgraded version. Support
+    /// for connectors configured using the older architecture is scheduled to end by June
+    /// 2024.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SlackConfiguration
     {
         private bool? _crawlBotMessage;
         private bool? _excludeArchived;
-        private List<string> _exclusionPatterns = new List<string>();
-        private List<DataSourceToIndexFieldMapping> _fieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<string> _inclusionPatterns = new List<string>();
+        private List<string> _exclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DataSourceToIndexFieldMapping> _fieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<string> _inclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _lookBackPeriod;
-        private List<string> _privateChannelFilter = new List<string>();
-        private List<string> _publicChannelFilter = new List<string>();
+        private List<string> _privateChannelFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _publicChannelFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _secretArn;
         private string _sinceCrawlDate;
-        private List<string> _slackEntityList = new List<string>();
+        private List<string> _slackEntityList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _teamId;
         private bool? _useChangeLog;
         private DataSourceVpcConfiguration _vpcConfiguration;
@@ -104,7 +127,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ExclusionPatterns property is set
         internal bool IsSetExclusionPatterns()
         {
-            return this._exclusionPatterns != null && this._exclusionPatterns.Count > 0; 
+            return this._exclusionPatterns != null && (this._exclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +151,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FieldMappings property is set
         internal bool IsSetFieldMappings()
         {
-            return this._fieldMappings != null && this._fieldMappings.Count > 0; 
+            return this._fieldMappings != null && (this._fieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +174,7 @@ namespace Amazon.Kendra.Model
         // Check to see if InclusionPatterns property is set
         internal bool IsSetInclusionPatterns()
         {
-            return this._inclusionPatterns != null && this._inclusionPatterns.Count > 0; 
+            return this._inclusionPatterns != null && (this._inclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -198,7 +221,7 @@ namespace Amazon.Kendra.Model
         // Check to see if PrivateChannelFilter property is set
         internal bool IsSetPrivateChannelFilter()
         {
-            return this._privateChannelFilter != null && this._privateChannelFilter.Count > 0; 
+            return this._privateChannelFilter != null && (this._privateChannelFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -218,7 +241,7 @@ namespace Amazon.Kendra.Model
         // Check to see if PublicChannelFilter property is set
         internal bool IsSetPublicChannelFilter()
         {
-            return this._publicChannelFilter != null && this._publicChannelFilter.Count > 0; 
+            return this._publicChannelFilter != null && (this._publicChannelFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -286,7 +309,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SlackEntityList property is set
         internal bool IsSetSlackEntityList()
         {
-            return this._slackEntityList != null && this._slackEntityList.Count > 0; 
+            return this._slackEntityList != null && (this._slackEntityList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

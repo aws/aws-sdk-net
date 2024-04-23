@@ -35,11 +35,11 @@ namespace Amazon.DataZone.Model
     public partial class PutEnvironmentBlueprintConfigurationRequest : AmazonDataZoneRequest
     {
         private string _domainIdentifier;
-        private List<string> _enabledRegions = new List<string>();
+        private List<string> _enabledRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _environmentBlueprintIdentifier;
         private string _manageAccessRoleArn;
         private string _provisioningRoleArn;
-        private Dictionary<string, Dictionary<string, string>> _regionalParameters = new Dictionary<string, Dictionary<string, string>>();
+        private Dictionary<string, Dictionary<string, string>> _regionalParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
 
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
@@ -76,7 +76,7 @@ namespace Amazon.DataZone.Model
         // Check to see if EnabledRegions property is set
         internal bool IsSetEnabledRegions()
         {
-            return this._enabledRegions != null && this._enabledRegions.Count > 0; 
+            return this._enabledRegions != null && (this._enabledRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.DataZone.Model
         // Check to see if RegionalParameters property is set
         internal bool IsSetRegionalParameters()
         {
-            return this._regionalParameters != null && this._regionalParameters.Count > 0; 
+            return this._regionalParameters != null && (this._regionalParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

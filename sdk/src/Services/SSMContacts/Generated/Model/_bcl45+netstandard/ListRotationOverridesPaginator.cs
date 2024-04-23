@@ -45,7 +45,7 @@ namespace Amazon.SSMContacts.Model
         /// Enumerable containing all of the RotationOverrides
         /// </summary>
         public IPaginatedEnumerable<RotationOverride> RotationOverrides => 
-            new PaginatedResultKeyResponse<ListRotationOverridesResponse, RotationOverride>(this, (i) => i.RotationOverrides);
+            new PaginatedResultKeyResponse<ListRotationOverridesResponse, RotationOverride>(this, (i) => i.RotationOverrides ?? new List<RotationOverride>());
 
         internal ListRotationOverridesPaginator(IAmazonSSMContacts client, ListRotationOverridesRequest request)
         {

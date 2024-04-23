@@ -33,7 +33,7 @@ namespace Amazon.Neptune.Model
     /// </summary>
     public partial class DescribeGlobalClustersResponse : AmazonWebServiceResponse
     {
-        private List<GlobalCluster> _globalClusters = new List<GlobalCluster>();
+        private List<GlobalCluster> _globalClusters = AWSConfigs.InitializeCollections ? new List<GlobalCluster>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Neptune.Model
         // Check to see if GlobalClusters property is set
         internal bool IsSetGlobalClusters()
         {
-            return this._globalClusters != null && this._globalClusters.Count > 0; 
+            return this._globalClusters != null && (this._globalClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

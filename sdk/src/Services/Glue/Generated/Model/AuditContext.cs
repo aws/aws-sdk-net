@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     {
         private string _additionalAuditContext;
         private bool? _allColumnsRequested;
-        private List<string> _requestedColumns = new List<string>();
+        private List<string> _requestedColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalAuditContext. 
@@ -89,7 +89,7 @@ namespace Amazon.Glue.Model
         // Check to see if RequestedColumns property is set
         internal bool IsSetRequestedColumns()
         {
-            return this._requestedColumns != null && this._requestedColumns.Count > 0; 
+            return this._requestedColumns != null && (this._requestedColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

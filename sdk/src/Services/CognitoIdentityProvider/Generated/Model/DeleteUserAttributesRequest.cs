@@ -51,7 +51,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class DeleteUserAttributesRequest : AmazonCognitoIdentityProviderRequest
     {
         private string _accessToken;
-        private List<string> _userAttributeNames = new List<string>();
+        private List<string> _userAttributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessToken. 
@@ -94,7 +94,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if UserAttributeNames property is set
         internal bool IsSetUserAttributeNames()
         {
-            return this._userAttributeNames != null && this._userAttributeNames.Count > 0; 
+            return this._userAttributeNames != null && (this._userAttributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

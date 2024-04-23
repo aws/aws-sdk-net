@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model
     public partial class ListWhatIfForecastExportsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WhatIfForecastExportSummary> _whatIfForecastExports = new List<WhatIfForecastExportSummary>();
+        private List<WhatIfForecastExportSummary> _whatIfForecastExports = AWSConfigs.InitializeCollections ? new List<WhatIfForecastExportSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if WhatIfForecastExports property is set
         internal bool IsSetWhatIfForecastExports()
         {
-            return this._whatIfForecastExports != null && this._whatIfForecastExports.Count > 0; 
+            return this._whatIfForecastExports != null && (this._whatIfForecastExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

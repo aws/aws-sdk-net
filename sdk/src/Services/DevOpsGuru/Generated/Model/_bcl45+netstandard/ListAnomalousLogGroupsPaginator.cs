@@ -45,7 +45,7 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the AnomalousLogGroups
         /// </summary>
         public IPaginatedEnumerable<AnomalousLogGroup> AnomalousLogGroups => 
-            new PaginatedResultKeyResponse<ListAnomalousLogGroupsResponse, AnomalousLogGroup>(this, (i) => i.AnomalousLogGroups);
+            new PaginatedResultKeyResponse<ListAnomalousLogGroupsResponse, AnomalousLogGroup>(this, (i) => i.AnomalousLogGroups ?? new List<AnomalousLogGroup>());
 
         internal ListAnomalousLogGroupsPaginator(IAmazonDevOpsGuru client, ListAnomalousLogGroupsRequest request)
         {

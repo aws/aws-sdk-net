@@ -45,7 +45,7 @@ namespace Amazon.CodeBuild.Model
         /// Enumerable containing all of the Ids
         /// </summary>
         public IPaginatedEnumerable<string> Ids => 
-            new PaginatedResultKeyResponse<ListBuildsForProjectResponse, string>(this, (i) => i.Ids);
+            new PaginatedResultKeyResponse<ListBuildsForProjectResponse, string>(this, (i) => i.Ids ?? new List<string>());
 
         internal ListBuildsForProjectPaginator(IAmazonCodeBuild client, ListBuildsForProjectRequest request)
         {

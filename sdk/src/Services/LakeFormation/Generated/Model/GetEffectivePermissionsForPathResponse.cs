@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model
     public partial class GetEffectivePermissionsForPathResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PrincipalResourcePermissions> _permissions = new List<PrincipalResourcePermissions>();
+        private List<PrincipalResourcePermissions> _permissions = AWSConfigs.InitializeCollections ? new List<PrincipalResourcePermissions>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

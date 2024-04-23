@@ -33,7 +33,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ListCollaborationConfiguredAudienceModelAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<CollaborationConfiguredAudienceModelAssociationSummary> _collaborationConfiguredAudienceModelAssociationSummaries = new List<CollaborationConfiguredAudienceModelAssociationSummary>();
+        private List<CollaborationConfiguredAudienceModelAssociationSummary> _collaborationConfiguredAudienceModelAssociationSummaries = AWSConfigs.InitializeCollections ? new List<CollaborationConfiguredAudienceModelAssociationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if CollaborationConfiguredAudienceModelAssociationSummaries property is set
         internal bool IsSetCollaborationConfiguredAudienceModelAssociationSummaries()
         {
-            return this._collaborationConfiguredAudienceModelAssociationSummaries != null && this._collaborationConfiguredAudienceModelAssociationSummaries.Count > 0; 
+            return this._collaborationConfiguredAudienceModelAssociationSummaries != null && (this._collaborationConfiguredAudienceModelAssociationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// Enumerable containing all of the EventSourceMappings
         /// </summary>
         public IPaginatedEnumerable<EventSourceMappingConfiguration> EventSourceMappings => 
-            new PaginatedResultKeyResponse<ListEventSourceMappingsResponse, EventSourceMappingConfiguration>(this, (i) => i.EventSourceMappings);
+            new PaginatedResultKeyResponse<ListEventSourceMappingsResponse, EventSourceMappingConfiguration>(this, (i) => i.EventSourceMappings ?? new List<EventSourceMappingConfiguration>());
 
         internal ListEventSourceMappingsPaginator(IAmazonLambda client, ListEventSourceMappingsRequest request)
         {

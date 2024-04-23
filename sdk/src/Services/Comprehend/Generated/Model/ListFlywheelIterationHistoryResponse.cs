@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ListFlywheelIterationHistoryResponse : AmazonWebServiceResponse
     {
-        private List<FlywheelIterationProperties> _flywheelIterationPropertiesList = new List<FlywheelIterationProperties>();
+        private List<FlywheelIterationProperties> _flywheelIterationPropertiesList = AWSConfigs.InitializeCollections ? new List<FlywheelIterationProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if FlywheelIterationPropertiesList property is set
         internal bool IsSetFlywheelIterationPropertiesList()
         {
-            return this._flywheelIterationPropertiesList != null && this._flywheelIterationPropertiesList.Count > 0; 
+            return this._flywheelIterationPropertiesList != null && (this._flywheelIterationPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

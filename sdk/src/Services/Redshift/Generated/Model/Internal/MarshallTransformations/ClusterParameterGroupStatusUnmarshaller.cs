@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ClusterParameterStatusList/member", targetDepth))
                     {
                         var unmarshaller = ClusterParameterStatusUnmarshaller.Instance;
+                        if (unmarshalledObject.ClusterParameterStatusList == null)
+                        {
+                            unmarshalledObject.ClusterParameterStatusList = new List<ClusterParameterStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ClusterParameterStatusList.Add(item);
                         continue;
@@ -108,3 +113,4 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

@@ -45,7 +45,7 @@ namespace Amazon.PrometheusService.Model
         /// Enumerable containing all of the Scrapers
         /// </summary>
         public IPaginatedEnumerable<ScraperSummary> Scrapers => 
-            new PaginatedResultKeyResponse<ListScrapersResponse, ScraperSummary>(this, (i) => i.Scrapers);
+            new PaginatedResultKeyResponse<ListScrapersResponse, ScraperSummary>(this, (i) => i.Scrapers ?? new List<ScraperSummary>());
 
         internal ListScrapersPaginator(IAmazonPrometheusService client, ListScrapersRequest request)
         {

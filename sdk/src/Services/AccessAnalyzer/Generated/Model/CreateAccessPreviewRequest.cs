@@ -37,7 +37,7 @@ namespace Amazon.AccessAnalyzer.Model
     {
         private string _analyzerArn;
         private string _clientToken;
-        private Dictionary<string, Configuration> _configurations = new Dictionary<string, Configuration>();
+        private Dictionary<string, Configuration> _configurations = AWSConfigs.InitializeCollections ? new Dictionary<string, Configuration>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalyzerArn. 
@@ -97,7 +97,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

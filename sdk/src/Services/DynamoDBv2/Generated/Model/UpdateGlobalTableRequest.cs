@@ -50,7 +50,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>
     ///  This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
     /// 2017.11.29</a> of global tables. If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-    /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+    /// 2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
     /// instead. 
     /// </para>
     ///  
@@ -83,7 +83,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class UpdateGlobalTableRequest : AmazonDynamoDBRequest
     {
         private string _globalTableName;
-        private List<ReplicaUpdate> _replicaUpdates = new List<ReplicaUpdate>();
+        private List<ReplicaUpdate> _replicaUpdates = AWSConfigs.InitializeCollections ? new List<ReplicaUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property GlobalTableName. 
@@ -120,7 +120,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ReplicaUpdates property is set
         internal bool IsSetReplicaUpdates()
         {
-            return this._replicaUpdates != null && this._replicaUpdates.Count > 0; 
+            return this._replicaUpdates != null && (this._replicaUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

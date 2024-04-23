@@ -34,7 +34,7 @@ namespace Amazon.Schemas.Model
     public partial class ListSchemaVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SchemaVersionSummary> _schemaVersions = new List<SchemaVersionSummary>();
+        private List<SchemaVersionSummary> _schemaVersions = AWSConfigs.InitializeCollections ? new List<SchemaVersionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Schemas.Model
         // Check to see if SchemaVersions property is set
         internal bool IsSetSchemaVersions()
         {
-            return this._schemaVersions != null && this._schemaVersions.Count > 0; 
+            return this._schemaVersions != null && (this._schemaVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

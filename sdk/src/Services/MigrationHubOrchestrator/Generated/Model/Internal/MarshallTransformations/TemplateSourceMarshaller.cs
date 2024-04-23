@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TemplateSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetWorkflowId())
             {
                 context.Writer.WritePropertyName("workflowId");
@@ -60,3 +63,4 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

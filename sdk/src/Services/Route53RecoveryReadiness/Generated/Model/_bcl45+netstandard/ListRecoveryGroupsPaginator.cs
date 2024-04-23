@@ -45,7 +45,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         /// Enumerable containing all of the RecoveryGroups
         /// </summary>
         public IPaginatedEnumerable<RecoveryGroupOutput> RecoveryGroups => 
-            new PaginatedResultKeyResponse<ListRecoveryGroupsResponse, RecoveryGroupOutput>(this, (i) => i.RecoveryGroups);
+            new PaginatedResultKeyResponse<ListRecoveryGroupsResponse, RecoveryGroupOutput>(this, (i) => i.RecoveryGroups ?? new List<RecoveryGroupOutput>());
 
         internal ListRecoveryGroupsPaginator(IAmazonRoute53RecoveryReadiness client, ListRecoveryGroupsRequest request)
         {

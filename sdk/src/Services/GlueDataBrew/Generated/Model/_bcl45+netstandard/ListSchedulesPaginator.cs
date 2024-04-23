@@ -45,7 +45,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Enumerable containing all of the Schedules
         /// </summary>
         public IPaginatedEnumerable<Schedule> Schedules => 
-            new PaginatedResultKeyResponse<ListSchedulesResponse, Schedule>(this, (i) => i.Schedules);
+            new PaginatedResultKeyResponse<ListSchedulesResponse, Schedule>(this, (i) => i.Schedules ?? new List<Schedule>());
 
         internal ListSchedulesPaginator(IAmazonGlueDataBrew client, ListSchedulesRequest request)
         {

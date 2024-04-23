@@ -45,7 +45,7 @@ namespace Amazon.Rekognition.Model
         private int? _maxResults;
         private string _nextToken;
         private string _projectArn;
-        private List<string> _versionNames = new List<string>();
+        private List<string> _versionNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -129,7 +129,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if VersionNames property is set
         internal bool IsSetVersionNames()
         {
-            return this._versionNames != null && this._versionNames.Count > 0; 
+            return this._versionNames != null && (this._versionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

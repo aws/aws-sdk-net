@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Summary information for the retriever used for your Amazon Q application.
+    /// Summary information for the retriever used for your Amazon Q Business application.
     /// </summary>
     public partial class Retriever
     {
@@ -42,7 +42,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application using the retriever.
+        /// The identifier of the Amazon Q Business application using the retriever.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -80,7 +80,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property RetrieverId. 
         /// <para>
-        /// The identifier of the retriever used by your Amazon Q application.
+        /// The identifier of the retriever used by your Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

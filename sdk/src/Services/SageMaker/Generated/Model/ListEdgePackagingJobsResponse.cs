@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListEdgePackagingJobsResponse : AmazonWebServiceResponse
     {
-        private List<EdgePackagingJobSummary> _edgePackagingJobSummaries = new List<EdgePackagingJobSummary>();
+        private List<EdgePackagingJobSummary> _edgePackagingJobSummaries = AWSConfigs.InitializeCollections ? new List<EdgePackagingJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if EdgePackagingJobSummaries property is set
         internal bool IsSetEdgePackagingJobSummaries()
         {
-            return this._edgePackagingJobSummaries != null && this._edgePackagingJobSummaries.Count > 0; 
+            return this._edgePackagingJobSummaries != null && (this._edgePackagingJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

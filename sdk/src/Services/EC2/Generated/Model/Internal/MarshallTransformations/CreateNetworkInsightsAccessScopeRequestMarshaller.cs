@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,6 +67,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExcludePaths())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -84,6 +86,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationPorts())
                                 {
                                     int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
@@ -93,6 +96,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationPrefixLists())
                                 {
                                     int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
@@ -102,6 +106,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetProtocols())
                                 {
                                     int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
@@ -111,6 +116,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourceAddresses())
                                 {
                                     int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
@@ -120,6 +126,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourcePorts())
                                 {
                                     int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
@@ -129,6 +136,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourcePrefixLists())
                                 {
                                     int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
@@ -138,7 +146,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.Destination.IsSetResourceStatement())
                             {
                                 if(publicRequestlistValue.Destination.ResourceStatement.IsSetResources())
@@ -150,6 +160,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationResourceStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.ResourceStatement.IsSetResourceTypes())
                                 {
                                     int publicRequestlistValueDestinationResourceStatementlistValueIndex = 1;
@@ -159,8 +170,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationResourceStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetSource())
                         {
                             if(publicRequestlistValue.Source.IsSetPacketHeaderStatement())
@@ -174,6 +188,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationPorts())
                                 {
                                     int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
@@ -183,6 +198,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationPrefixLists())
                                 {
                                     int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
@@ -192,6 +208,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetProtocols())
                                 {
                                     int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
@@ -201,6 +218,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourceAddresses())
                                 {
                                     int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
@@ -210,6 +228,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourcePorts())
                                 {
                                     int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
@@ -219,6 +238,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourcePrefixLists())
                                 {
                                     int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
@@ -228,7 +248,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.Source.IsSetResourceStatement())
                             {
                                 if(publicRequestlistValue.Source.ResourceStatement.IsSetResources())
@@ -240,6 +262,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourceResourceStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.ResourceStatement.IsSetResourceTypes())
                                 {
                                     int publicRequestlistValueSourceResourceStatementlistValueIndex = 1;
@@ -249,8 +272,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourceResourceStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetThroughResources())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -267,6 +293,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             publicRequestlistValuelistValueResourceStatementlistValueIndex++;
                                         }
                                     }
+#pragma warning restore CS0612,CS0618
                                     if(publicRequestlistValuelistValue.ResourceStatement.IsSetResourceTypes())
                                     {
                                         int publicRequestlistValuelistValueResourceStatementlistValueIndex = 1;
@@ -276,13 +303,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             publicRequestlistValuelistValueResourceStatementlistValueIndex++;
                                         }
                                     }
+#pragma warning restore CS0612,CS0618
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMatchPaths())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -301,6 +332,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationPorts())
                                 {
                                     int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
@@ -310,6 +342,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationPrefixLists())
                                 {
                                     int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
@@ -319,6 +352,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetProtocols())
                                 {
                                     int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
@@ -328,6 +362,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourceAddresses())
                                 {
                                     int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
@@ -337,6 +372,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourcePorts())
                                 {
                                     int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
@@ -346,6 +382,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourcePrefixLists())
                                 {
                                     int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
@@ -355,7 +392,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.Destination.IsSetResourceStatement())
                             {
                                 if(publicRequestlistValue.Destination.ResourceStatement.IsSetResources())
@@ -367,6 +406,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationResourceStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Destination.ResourceStatement.IsSetResourceTypes())
                                 {
                                     int publicRequestlistValueDestinationResourceStatementlistValueIndex = 1;
@@ -376,8 +416,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueDestinationResourceStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetSource())
                         {
                             if(publicRequestlistValue.Source.IsSetPacketHeaderStatement())
@@ -391,6 +434,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationPorts())
                                 {
                                     int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
@@ -400,6 +444,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationPrefixLists())
                                 {
                                     int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
@@ -409,6 +454,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetProtocols())
                                 {
                                     int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
@@ -418,6 +464,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourceAddresses())
                                 {
                                     int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
@@ -427,6 +474,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourcePorts())
                                 {
                                     int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
@@ -436,6 +484,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourcePrefixLists())
                                 {
                                     int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
@@ -445,7 +494,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.Source.IsSetResourceStatement())
                             {
                                 if(publicRequestlistValue.Source.ResourceStatement.IsSetResources())
@@ -457,6 +508,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourceResourceStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValue.Source.ResourceStatement.IsSetResourceTypes())
                                 {
                                     int publicRequestlistValueSourceResourceStatementlistValueIndex = 1;
@@ -466,8 +518,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestlistValueSourceResourceStatementlistValueIndex++;
                                     }
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetThroughResources())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -484,6 +539,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             publicRequestlistValuelistValueResourceStatementlistValueIndex++;
                                         }
                                     }
+#pragma warning restore CS0612,CS0618
                                     if(publicRequestlistValuelistValue.ResourceStatement.IsSetResourceTypes())
                                     {
                                         int publicRequestlistValuelistValueResourceStatementlistValueIndex = 1;
@@ -493,13 +549,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             publicRequestlistValuelistValueResourceStatementlistValueIndex++;
                                         }
                                     }
+#pragma warning restore CS0612,CS0618
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -509,6 +569,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -518,16 +579,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

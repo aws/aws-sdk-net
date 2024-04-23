@@ -34,7 +34,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     public partial class ListRecoveryGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RecoveryGroupOutput> _recoveryGroups = new List<RecoveryGroupOutput>();
+        private List<RecoveryGroupOutput> _recoveryGroups = AWSConfigs.InitializeCollections ? new List<RecoveryGroupOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         // Check to see if RecoveryGroups property is set
         internal bool IsSetRecoveryGroups()
         {
-            return this._recoveryGroups != null && this._recoveryGroups.Count > 0; 
+            return this._recoveryGroups != null && (this._recoveryGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

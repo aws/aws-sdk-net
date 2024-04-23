@@ -35,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeSessionsRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<SessionFilter> _filters = new List<SessionFilter>();
+        private List<SessionFilter> _filters = AWSConfigs.InitializeCollections ? new List<SessionFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private SessionState _state;
@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

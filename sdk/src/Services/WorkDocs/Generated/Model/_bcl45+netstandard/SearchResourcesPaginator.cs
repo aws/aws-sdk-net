@@ -45,7 +45,7 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ResponseItem> Items => 
-            new PaginatedResultKeyResponse<SearchResourcesResponse, ResponseItem>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<SearchResourcesResponse, ResponseItem>(this, (i) => i.Items ?? new List<ResponseItem>());
 
         internal SearchResourcesPaginator(IAmazonWorkDocs client, SearchResourcesRequest request)
         {

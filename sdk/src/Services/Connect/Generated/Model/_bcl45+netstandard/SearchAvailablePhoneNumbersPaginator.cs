@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the AvailableNumbersList
         /// </summary>
         public IPaginatedEnumerable<AvailableNumberSummary> AvailableNumbersList => 
-            new PaginatedResultKeyResponse<SearchAvailablePhoneNumbersResponse, AvailableNumberSummary>(this, (i) => i.AvailableNumbersList);
+            new PaginatedResultKeyResponse<SearchAvailablePhoneNumbersResponse, AvailableNumberSummary>(this, (i) => i.AvailableNumbersList ?? new List<AvailableNumberSummary>());
 
         internal SearchAvailablePhoneNumbersPaginator(IAmazonConnect client, SearchAvailablePhoneNumbersRequest request)
         {

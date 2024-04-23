@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBClusterEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<DBClusterEndpoint> _dbClusterEndpoints = new List<DBClusterEndpoint>();
+        private List<DBClusterEndpoint> _dbClusterEndpoints = AWSConfigs.InitializeCollections ? new List<DBClusterEndpoint>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBClusterEndpoints property is set
         internal bool IsSetDBClusterEndpoints()
         {
-            return this._dbClusterEndpoints != null && this._dbClusterEndpoints.Count > 0; 
+            return this._dbClusterEndpoints != null && (this._dbClusterEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

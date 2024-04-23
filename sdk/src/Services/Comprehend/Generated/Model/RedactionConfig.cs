@@ -35,7 +35,7 @@ namespace Amazon.Comprehend.Model
     {
         private string _maskCharacter;
         private PiiEntitiesDetectionMaskMode _maskMode;
-        private List<string> _piiEntityTypes = new List<string>();
+        private List<string> _piiEntityTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaskCharacter. 
@@ -91,7 +91,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if PiiEntityTypes property is set
         internal bool IsSetPiiEntityTypes()
         {
-            return this._piiEntityTypes != null && this._piiEntityTypes.Count > 0; 
+            return this._piiEntityTypes != null && (this._piiEntityTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

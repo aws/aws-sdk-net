@@ -35,7 +35,7 @@ namespace Amazon.ConfigService.Model
     public partial class OrganizationAggregationSource
     {
         private bool? _allAwsRegions;
-        private List<string> _awsRegions = new List<string>();
+        private List<string> _awsRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if AwsRegions property is set
         internal bool IsSetAwsRegions()
         {
-            return this._awsRegions != null && this._awsRegions.Count > 0; 
+            return this._awsRegions != null && (this._awsRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class GetDevicePositionHistoryResponse : AmazonWebServiceResponse
     {
-        private List<DevicePosition> _devicePositions = new List<DevicePosition>();
+        private List<DevicePosition> _devicePositions = AWSConfigs.InitializeCollections ? new List<DevicePosition>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.LocationService.Model
         // Check to see if DevicePositions property is set
         internal bool IsSetDevicePositions()
         {
-            return this._devicePositions != null && this._devicePositions.Count > 0; 
+            return this._devicePositions != null && (this._devicePositions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

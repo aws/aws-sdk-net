@@ -78,6 +78,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Part", targetDepth))
                     {
+                        if (unmarshalledObject.Parts == null)
+                        {
+                            unmarshalledObject.Parts = new List<ObjectPart>();
+                        }
                         var unmarshaller = ObjectPartUnmarshaller.Instance;
                         unmarshalledObject.Parts.Add(unmarshaller.Unmarshall(context));
                         continue;

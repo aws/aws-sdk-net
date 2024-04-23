@@ -84,6 +84,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  The Amazon Resource Name (ARN) associated with the table that was imported to. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TableArn
         {
             get { return this._tableArn; }

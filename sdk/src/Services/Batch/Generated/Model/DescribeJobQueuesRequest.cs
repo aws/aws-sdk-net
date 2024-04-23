@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class DescribeJobQueuesRequest : AmazonBatchRequest
     {
-        private List<string> _jobQueues = new List<string>();
+        private List<string> _jobQueues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -53,7 +53,7 @@ namespace Amazon.Batch.Model
         // Check to see if JobQueues property is set
         internal bool IsSetJobQueues()
         {
-            return this._jobQueues != null && this._jobQueues.Count > 0; 
+            return this._jobQueues != null && (this._jobQueues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

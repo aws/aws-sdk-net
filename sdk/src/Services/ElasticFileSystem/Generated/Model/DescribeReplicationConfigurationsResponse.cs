@@ -34,7 +34,7 @@ namespace Amazon.ElasticFileSystem.Model
     public partial class DescribeReplicationConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReplicationConfigurationDescription> _replications = new List<ReplicationConfigurationDescription>();
+        private List<ReplicationConfigurationDescription> _replications = AWSConfigs.InitializeCollections ? new List<ReplicationConfigurationDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.ElasticFileSystem.Model
         // Check to see if Replications property is set
         internal bool IsSetReplications()
         {
-            return this._replications != null && this._replications.Count > 0; 
+            return this._replications != null && (this._replications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

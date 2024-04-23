@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the MaintenanceTracks
         /// </summary>
         public IPaginatedEnumerable<MaintenanceTrack> MaintenanceTracks => 
-            new PaginatedResultKeyResponse<DescribeClusterTracksResponse, MaintenanceTrack>(this, (i) => i.MaintenanceTracks);
+            new PaginatedResultKeyResponse<DescribeClusterTracksResponse, MaintenanceTrack>(this, (i) => i.MaintenanceTracks ?? new List<MaintenanceTrack>());
 
         internal DescribeClusterTracksPaginator(IAmazonRedshift client, DescribeClusterTracksRequest request)
         {

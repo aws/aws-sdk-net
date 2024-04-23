@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListManagedJobTemplatesResponse : AmazonWebServiceResponse
     {
-        private List<ManagedJobTemplateSummary> _managedJobTemplates = new List<ManagedJobTemplateSummary>();
+        private List<ManagedJobTemplateSummary> _managedJobTemplates = AWSConfigs.InitializeCollections ? new List<ManagedJobTemplateSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model
         // Check to see if ManagedJobTemplates property is set
         internal bool IsSetManagedJobTemplates()
         {
-            return this._managedJobTemplates != null && this._managedJobTemplates.Count > 0; 
+            return this._managedJobTemplates != null && (this._managedJobTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.DocDB.Model
         /// Enumerable containing all of the DBEngineVersions
         /// </summary>
         public IPaginatedEnumerable<DBEngineVersion> DBEngineVersions => 
-            new PaginatedResultKeyResponse<DescribeDBEngineVersionsResponse, DBEngineVersion>(this, (i) => i.DBEngineVersions);
+            new PaginatedResultKeyResponse<DescribeDBEngineVersionsResponse, DBEngineVersion>(this, (i) => i.DBEngineVersions ?? new List<DBEngineVersion>());
 
         internal DescribeDBEngineVersionsPaginator(IAmazonDocDB client, DescribeDBEngineVersionsRequest request)
         {

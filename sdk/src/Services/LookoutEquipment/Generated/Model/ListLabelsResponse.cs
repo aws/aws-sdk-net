@@ -33,7 +33,7 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class ListLabelsResponse : AmazonWebServiceResponse
     {
-        private List<LabelSummary> _labelSummaries = new List<LabelSummary>();
+        private List<LabelSummary> _labelSummaries = AWSConfigs.InitializeCollections ? new List<LabelSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if LabelSummaries property is set
         internal bool IsSetLabelSummaries()
         {
-            return this._labelSummaries != null && this._labelSummaries.Count > 0; 
+            return this._labelSummaries != null && (this._labelSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.CodeCatalyst.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<DevEnvironmentSessionSummary> Items => 
-            new PaginatedResultKeyResponse<ListDevEnvironmentSessionsResponse, DevEnvironmentSessionSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListDevEnvironmentSessionsResponse, DevEnvironmentSessionSummary>(this, (i) => i.Items ?? new List<DevEnvironmentSessionSummary>());
 
         internal ListDevEnvironmentSessionsPaginator(IAmazonCodeCatalyst client, ListDevEnvironmentSessionsRequest request)
         {

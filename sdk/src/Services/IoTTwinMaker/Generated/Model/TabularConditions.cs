@@ -33,8 +33,8 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class TabularConditions
     {
-        private List<OrderBy> _orderBy = new List<OrderBy>();
-        private List<PropertyFilter> _propertyFilters = new List<PropertyFilter>();
+        private List<OrderBy> _orderBy = AWSConfigs.InitializeCollections ? new List<OrderBy>() : null;
+        private List<PropertyFilter> _propertyFilters = AWSConfigs.InitializeCollections ? new List<PropertyFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property OrderBy. 
@@ -53,7 +53,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if OrderBy property is set
         internal bool IsSetOrderBy()
         {
-            return this._orderBy != null && this._orderBy.Count > 0; 
+            return this._orderBy != null && (this._orderBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyFilters property is set
         internal bool IsSetPropertyFilters()
         {
-            return this._propertyFilters != null && this._propertyFilters.Count > 0; 
+            return this._propertyFilters != null && (this._propertyFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

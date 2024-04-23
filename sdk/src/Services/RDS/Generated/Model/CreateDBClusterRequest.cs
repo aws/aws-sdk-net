@@ -58,9 +58,10 @@ namespace Amazon.RDS.Model
     {
         private int? _allocatedStorage;
         private bool? _autoMinorVersionUpgrade;
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
+        private string _caCertificateIdentifier;
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
         private string _databaseName;
@@ -72,7 +73,7 @@ namespace Amazon.RDS.Model
         private bool? _deletionProtection;
         private string _domain;
         private string _domainIAMRoleName;
-        private List<string> _enableCloudwatchLogsExports = new List<string>();
+        private List<string> _enableCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableGlobalWriteForwarding;
         private bool? _enableHttpEndpoint;
         private bool? _enableIAMDatabaseAuthentication;
@@ -106,8 +107,8 @@ namespace Amazon.RDS.Model
         private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private bool? _storageEncrypted;
         private string _storageType;
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
@@ -183,7 +184,7 @@ namespace Amazon.RDS.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -255,6 +256,33 @@ namespace Amazon.RDS.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CACertificateIdentifier. 
+        /// <para>
+        /// The CA certificate identifier to use for the DB cluster's server certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+        /// SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Multi-AZ DB clusters
+        /// </para>
+        /// </summary>
+        public string CACertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CACertificateIdentifier property is set
+        internal bool IsSetCACertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
         }
 
         /// <summary>
@@ -623,7 +651,7 @@ namespace Amazon.RDS.Model
         // Check to see if EnableCloudwatchLogsExports property is set
         internal bool IsSetEnableCloudwatchLogsExports()
         {
-            return this._enableCloudwatchLogsExports != null && this._enableCloudwatchLogsExports.Count > 0; 
+            return this._enableCloudwatchLogsExports != null && (this._enableCloudwatchLogsExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -842,6 +870,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The <c>serverless</c> engine mode only applies for Aurora Serverless v1 DB clusters.
+        /// Aurora Serverless v2 DB clusters use the <c>provisioned</c> engine mode.
         /// </para>
         ///  
         /// <para>
@@ -1877,7 +1906,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Multi-AZ DB clusters - <c>io1</c> 
+        /// Multi-AZ DB clusters - <c>io1 | io2 | gp3</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1930,7 +1959,7 @@ namespace Amazon.RDS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1952,7 +1981,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

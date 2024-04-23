@@ -33,7 +33,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class ExportThemesResponse : AmazonWebServiceResponse
     {
-        private List<Theme> _entities = new List<Theme>();
+        private List<Theme> _entities = AWSConfigs.InitializeCollections ? new List<Theme>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Entities property is set
         internal bool IsSetEntities()
         {
-            return this._entities != null && this._entities.Count > 0; 
+            return this._entities != null && (this._entities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

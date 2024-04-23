@@ -38,7 +38,7 @@ namespace Amazon.DataZone.Model
         private RedshiftCredentialConfiguration _redshiftCredentialConfiguration;
         private RedshiftStorage _redshiftStorage;
         private string _region;
-        private List<RelationalFilterConfiguration> _relationalFilterConfigurations = new List<RelationalFilterConfiguration>();
+        private List<RelationalFilterConfiguration> _relationalFilterConfigurations = AWSConfigs.InitializeCollections ? new List<RelationalFilterConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -148,7 +148,7 @@ namespace Amazon.DataZone.Model
         // Check to see if RelationalFilterConfigurations property is set
         internal bool IsSetRelationalFilterConfigurations()
         {
-            return this._relationalFilterConfigurations != null && this._relationalFilterConfigurations.Count > 0; 
+            return this._relationalFilterConfigurations != null && (this._relationalFilterConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

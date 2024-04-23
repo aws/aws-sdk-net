@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the VolumeStatuses
         /// </summary>
         public IPaginatedEnumerable<VolumeStatusItem> VolumeStatuses => 
-            new PaginatedResultKeyResponse<DescribeVolumeStatusResponse, VolumeStatusItem>(this, (i) => i.VolumeStatuses);
+            new PaginatedResultKeyResponse<DescribeVolumeStatusResponse, VolumeStatusItem>(this, (i) => i.VolumeStatuses ?? new List<VolumeStatusItem>());
 
         internal DescribeVolumeStatusPaginator(IAmazonEC2 client, DescribeVolumeStatusRequest request)
         {

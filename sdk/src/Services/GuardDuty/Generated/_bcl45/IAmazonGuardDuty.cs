@@ -210,11 +210,30 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Creates a single Amazon GuardDuty detector. A detector is a resource that represents
-        /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
-        /// Region where you enable the service. You can have only one detector per account per
-        /// Region. All data sources are enabled in a new detector by default.
+        /// Creates a single GuardDuty detector. A detector is a resource that represents the
+        /// GuardDuty service. To start using GuardDuty, you must create a detector in each Region
+        /// where you enable the service. You can have only one detector per account per Region.
+        /// All data sources are enabled in a new detector by default.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// When you don't specify any <c>features</c>, with an exception to <c>RUNTIME_MONITORING</c>,
+        /// all the optional features are enabled by default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you specify some of the <c>features</c>, any feature that is not specified in
+        /// the API call gets enabled by default, with an exception to <c>RUNTIME_MONITORING</c>.
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some data sources might not be available
@@ -238,11 +257,30 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Creates a single Amazon GuardDuty detector. A detector is a resource that represents
-        /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
-        /// Region where you enable the service. You can have only one detector per account per
-        /// Region. All data sources are enabled in a new detector by default.
+        /// Creates a single GuardDuty detector. A detector is a resource that represents the
+        /// GuardDuty service. To start using GuardDuty, you must create a detector in each Region
+        /// where you enable the service. You can have only one detector per account per Region.
+        /// All data sources are enabled in a new detector by default.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// When you don't specify any <c>features</c>, with an exception to <c>RUNTIME_MONITORING</c>,
+        /// all the optional features are enabled by default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you specify some of the <c>features</c>, any feature that is not specified in
+        /// the API call gets enabled by default, with an exception to <c>RUNTIME_MONITORING</c>.
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some data sources might not be available
@@ -386,18 +424,19 @@ namespace Amazon.GuardDuty
         /// </para>
         ///  
         /// <para>
-        /// If you are adding accounts by invitation, before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>,
-        /// use <c>CreateMembers</c> after GuardDuty has been enabled in potential member accounts.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you disassociate a member from a GuardDuty delegated administrator, the member
-        /// account details obtained from this API, including the associated email addresses,
-        /// will be retained. This is done so that the delegated administrator can invoke the
-        /// <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>
+        /// If you disassociate a member account that was added by invitation, the member account
+        /// details obtained from this API, including the associated email addresses, will be
+        /// retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>
         /// API without the need to invoke the CreateMembers API again. To remove the details
         /// associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>
         /// API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When the member accounts added through Organizations are later disassociated, you
+        /// (administrator) can't invite them by calling the InviteMembers API. You can create
+        /// an association with these member accounts again only by calling the CreateMembers
+        /// API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
@@ -435,18 +474,19 @@ namespace Amazon.GuardDuty
         /// </para>
         ///  
         /// <para>
-        /// If you are adding accounts by invitation, before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>,
-        /// use <c>CreateMembers</c> after GuardDuty has been enabled in potential member accounts.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you disassociate a member from a GuardDuty delegated administrator, the member
-        /// account details obtained from this API, including the associated email addresses,
-        /// will be retained. This is done so that the delegated administrator can invoke the
-        /// <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>
+        /// If you disassociate a member account that was added by invitation, the member account
+        /// details obtained from this API, including the associated email addresses, will be
+        /// retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>
         /// API without the need to invoke the CreateMembers API again. To remove the details
         /// associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>
         /// API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When the member accounts added through Organizations are later disassociated, you
+        /// (administrator) can't invite them by calling the InviteMembers API. You can create
+        /// an association with these member accounts again only by calling the CreateMembers
+        /// API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
@@ -1299,6 +1339,22 @@ namespace Amazon.GuardDuty
         /// to <c>ALL</c>, you'll receive an error if you attempt to disassociate a member account
         /// before removing them from your organization.
         /// </para>
+        ///  
+        /// <para>
+        /// If you disassociate a member account that was added by invitation, the member account
+        /// details obtained from this API, including the associated email addresses, will be
+        /// retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>
+        /// API without the need to invoke the CreateMembers API again. To remove the details
+        /// associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>
+        /// API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When the member accounts added through Organizations are later disassociated, you
+        /// (administrator) can't invite them by calling the InviteMembers API. You can create
+        /// an association with these member accounts again only by calling the CreateMembers
+        /// API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
         /// 
@@ -1333,6 +1389,22 @@ namespace Amazon.GuardDuty
         /// With <c>autoEnableOrganizationMembers</c> configuration for your organization set
         /// to <c>ALL</c>, you'll receive an error if you attempt to disassociate a member account
         /// before removing them from your organization.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you disassociate a member account that was added by invitation, the member account
+        /// details obtained from this API, including the associated email addresses, will be
+        /// retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>
+        /// API without the need to invoke the CreateMembers API again. To remove the details
+        /// associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>
+        /// API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When the member accounts added through Organizations are later disassociated, you
+        /// (administrator) can't invite them by calling the InviteMembers API. You can create
+        /// an association with these member accounts again only by calling the CreateMembers
+        /// API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
@@ -1972,14 +2044,13 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Retrieves how many active member accounts in your Amazon Web Services organization
-        /// have each feature enabled within GuardDuty. Only a delegated GuardDuty administrator
-        /// of an organization can run this API.
+        /// Retrieves how many active member accounts have each feature enabled within GuardDuty.
+        /// Only a delegated GuardDuty administrator of an organization can run this API.
         /// 
         ///  
         /// <para>
-        /// When you create a new Amazon Web Services organization, it might take up to 24 hours
-        /// to generate the statistics for the entire organization.
+        /// When you create a new organization, it might take up to 24 hours to generate the statistics
+        /// for the entire organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationStatistics service method.</param>
@@ -1997,14 +2068,13 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Retrieves how many active member accounts in your Amazon Web Services organization
-        /// have each feature enabled within GuardDuty. Only a delegated GuardDuty administrator
-        /// of an organization can run this API.
+        /// Retrieves how many active member accounts have each feature enabled within GuardDuty.
+        /// Only a delegated GuardDuty administrator of an organization can run this API.
         /// 
         ///  
         /// <para>
-        /// When you create a new Amazon Web Services organization, it might take up to 24 hours
-        /// to generate the statistics for the entire organization.
+        /// When you create a new organization, it might take up to 24 hours to generate the statistics
+        /// for the entire organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationStatistics service method.</param>
@@ -2185,6 +2255,22 @@ namespace Amazon.GuardDuty
         /// <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>.
         /// 
         /// </para>
+        ///  
+        /// <para>
+        /// If you disassociate a member account that was added by invitation, the member account
+        /// details obtained from this API, including the associated email addresses, will be
+        /// retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>
+        /// API without the need to invoke the CreateMembers API again. To remove the details
+        /// associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>
+        /// API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When the member accounts added through Organizations are later disassociated, you
+        /// (administrator) can't invite them by calling the InviteMembers API. You can create
+        /// an association with these member accounts again only by calling the CreateMembers
+        /// API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
         /// 
@@ -2227,6 +2313,22 @@ namespace Amazon.GuardDuty
         /// again. To remove the details associated with a member account, you must also invoke
         /// <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>.
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you disassociate a member account that was added by invitation, the member account
+        /// details obtained from this API, including the associated email addresses, will be
+        /// retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>
+        /// API without the need to invoke the CreateMembers API again. To remove the details
+        /// associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>
+        /// API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When the member accounts added through Organizations are later disassociated, you
+        /// (administrator) can't invite them by calling the InviteMembers API. You can create
+        /// an association with these member accounts again only by calling the CreateMembers
+        /// API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
@@ -2743,7 +2845,13 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Initiates the malware scan. Invoking this API will automatically create the <a href="https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html">Service-linked
-        /// role </a> in the corresponding account.
+        /// role</a> in the corresponding account.
+        /// 
+        ///  
+        /// <para>
+        /// When the malware scan starts, you can use the associated scan ID to track the status
+        /// of the scan. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeMalwareScans.html">DescribeMalwareScans</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMalwareScan service method.</param>
         /// 
@@ -2764,7 +2872,13 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Initiates the malware scan. Invoking this API will automatically create the <a href="https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html">Service-linked
-        /// role </a> in the corresponding account.
+        /// role</a> in the corresponding account.
+        /// 
+        ///  
+        /// <para>
+        /// When the malware scan starts, you can use the associated scan ID to track the status
+        /// of the scan. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeMalwareScans.html">DescribeMalwareScans</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMalwareScan service method.</param>
         /// <param name="cancellationToken">
@@ -3022,8 +3136,16 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Updates the GuardDuty detector specified by the detectorId.
+        /// Updates the GuardDuty detector specified by the detector ID.
         /// 
+        ///  
+        /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some data sources might not be available
@@ -3047,8 +3169,16 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Updates the GuardDuty detector specified by the detectorId.
+        /// Updates the GuardDuty detector specified by the detector ID.
         /// 
+        ///  
+        /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some data sources might not be available
@@ -3258,6 +3388,14 @@ namespace Amazon.GuardDuty
         /// 
         ///  
         /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// There might be regional differences because some data sources might not be available
         /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
         /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
@@ -3281,6 +3419,14 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Contains information on member accounts to be updated.
         /// 
+        ///  
+        /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some data sources might not be available
@@ -3316,6 +3462,14 @@ namespace Amazon.GuardDuty
         /// 
         ///  
         /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// There might be regional differences because some data sources might not be available
         /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
         /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
@@ -3341,6 +3495,14 @@ namespace Amazon.GuardDuty
         /// provide a value for either <c>autoEnableOrganizationMembers</c> or <c>autoEnable</c>,
         /// but not both. 
         /// 
+        ///  
+        /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some data sources might not be available

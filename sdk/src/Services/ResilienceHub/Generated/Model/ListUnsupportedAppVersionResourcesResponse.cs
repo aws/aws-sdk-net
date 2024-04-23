@@ -35,7 +35,7 @@ namespace Amazon.ResilienceHub.Model
     {
         private string _nextToken;
         private string _resolutionId;
-        private List<UnsupportedResource> _unsupportedResources = new List<UnsupportedResource>();
+        private List<UnsupportedResource> _unsupportedResources = AWSConfigs.InitializeCollections ? new List<UnsupportedResource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -90,7 +90,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if UnsupportedResources property is set
         internal bool IsSetUnsupportedResources()
         {
-            return this._unsupportedResources != null && this._unsupportedResources.Count > 0; 
+            return this._unsupportedResources != null && (this._unsupportedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

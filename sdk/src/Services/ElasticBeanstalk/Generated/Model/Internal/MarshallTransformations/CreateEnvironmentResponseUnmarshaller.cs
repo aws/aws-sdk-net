@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -138,6 +139,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EnvironmentLinks/member", targetDepth))
                     {
                         var unmarshaller = EnvironmentLinkUnmarshaller.Instance;
+                        if (response.EnvironmentLinks == null)
+                        {
+                            response.EnvironmentLinks = new List<EnvironmentLink>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.EnvironmentLinks.Add(item);
                         continue;
@@ -264,3 +269,4 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

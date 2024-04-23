@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DataShareAssociations/member", targetDepth))
                     {
                         var unmarshaller = DataShareAssociationUnmarshaller.Instance;
+                        if (unmarshalledObject.DataShareAssociations == null)
+                        {
+                            unmarshalledObject.DataShareAssociations = new List<DataShareAssociation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DataShareAssociations.Add(item);
                         continue;
@@ -120,3 +125,4 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

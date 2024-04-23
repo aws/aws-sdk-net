@@ -44,7 +44,7 @@ namespace Amazon.Omics.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Checksum
         {
             get { return this._checksum; }

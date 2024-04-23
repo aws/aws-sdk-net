@@ -45,7 +45,7 @@ namespace Amazon.Drs.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<StagingSourceServer> Items => 
-            new PaginatedResultKeyResponse<ListExtensibleSourceServersResponse, StagingSourceServer>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListExtensibleSourceServersResponse, StagingSourceServer>(this, (i) => i.Items ?? new List<StagingSourceServer>());
 
         internal ListExtensibleSourceServersPaginator(IAmazonDrs client, ListExtensibleSourceServersRequest request)
         {

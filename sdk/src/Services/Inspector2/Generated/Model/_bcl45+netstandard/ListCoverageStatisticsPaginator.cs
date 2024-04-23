@@ -45,7 +45,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the CountsByGroup
         /// </summary>
         public IPaginatedEnumerable<Counts> CountsByGroup => 
-            new PaginatedResultKeyResponse<ListCoverageStatisticsResponse, Counts>(this, (i) => i.CountsByGroup);
+            new PaginatedResultKeyResponse<ListCoverageStatisticsResponse, Counts>(this, (i) => i.CountsByGroup ?? new List<Counts>());
 
         internal ListCoverageStatisticsPaginator(IAmazonInspector2 client, ListCoverageStatisticsRequest request)
         {

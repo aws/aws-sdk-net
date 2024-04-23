@@ -46,7 +46,7 @@ namespace Amazon.DLM.Model
     public partial class Parameters
     {
         private bool? _excludeBootVolume;
-        private List<Tag> _excludeDataVolumeTags = new List<Tag>();
+        private List<Tag> _excludeDataVolumeTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _noReboot;
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.DLM.Model
         // Check to see if ExcludeDataVolumeTags property is set
         internal bool IsSetExcludeDataVolumeTags()
         {
-            return this._excludeDataVolumeTags != null && this._excludeDataVolumeTags.Count > 0; 
+            return this._excludeDataVolumeTags != null && (this._excludeDataVolumeTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

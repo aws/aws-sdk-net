@@ -36,8 +36,8 @@ namespace Amazon.Kendra.Model
     {
         private string _documentDataFieldName;
         private string _documentTitleFieldName;
-        private List<DataSourceToIndexFieldMapping> _fieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<string> _includeFilterTypes = new List<string>();
+        private List<DataSourceToIndexFieldMapping> _fieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<string> _includeFilterTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DocumentDataFieldName. 
@@ -95,7 +95,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FieldMappings property is set
         internal bool IsSetFieldMappings()
         {
-            return this._fieldMappings != null && this._fieldMappings.Count > 0; 
+            return this._fieldMappings != null && (this._fieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.Kendra.Model
         // Check to see if IncludeFilterTypes property is set
         internal bool IsSetIncludeFilterTypes()
         {
-            return this._includeFilterTypes != null && this._includeFilterTypes.Count > 0; 
+            return this._includeFilterTypes != null && (this._includeFilterTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

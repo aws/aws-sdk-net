@@ -33,7 +33,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class UpdateCostAllocationTagsStatusResponse : AmazonWebServiceResponse
     {
-        private List<UpdateCostAllocationTagsStatusError> _errors = new List<UpdateCostAllocationTagsStatusError>();
+        private List<UpdateCostAllocationTagsStatusError> _errors = AWSConfigs.InitializeCollections ? new List<UpdateCostAllocationTagsStatusError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -53,7 +53,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

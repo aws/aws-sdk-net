@@ -40,7 +40,7 @@ namespace Amazon.EMRContainers.Model
         private int? _maxResults;
         private string _name;
         private string _nextToken;
-        private List<string> _states = new List<string>();
+        private List<string> _states = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _virtualClusterId;
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if States property is set
         internal bool IsSetStates()
         {
-            return this._states != null && this._states.Count > 0; 
+            return this._states != null && (this._states.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

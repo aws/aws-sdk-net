@@ -45,7 +45,7 @@ namespace Amazon.Transfer.Model
         /// Enumerable containing all of the SecurityPolicyNames
         /// </summary>
         public IPaginatedEnumerable<string> SecurityPolicyNames => 
-            new PaginatedResultKeyResponse<ListSecurityPoliciesResponse, string>(this, (i) => i.SecurityPolicyNames);
+            new PaginatedResultKeyResponse<ListSecurityPoliciesResponse, string>(this, (i) => i.SecurityPolicyNames ?? new List<string>());
 
         internal ListSecurityPoliciesPaginator(IAmazonTransfer client, ListSecurityPoliciesRequest request)
         {

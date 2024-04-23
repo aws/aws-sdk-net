@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsCloudFrontDistributionOriginGroups
     {
-        private List<AwsCloudFrontDistributionOriginGroup> _items = new List<AwsCloudFrontDistributionOriginGroup>();
+        private List<AwsCloudFrontDistributionOriginGroup> _items = AWSConfigs.InitializeCollections ? new List<AwsCloudFrontDistributionOriginGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property Items. 
@@ -50,7 +50,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

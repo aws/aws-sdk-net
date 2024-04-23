@@ -33,7 +33,7 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class ListDatasetsResponse : AmazonWebServiceResponse
     {
-        private List<DatasetSummary> _datasets = new List<DatasetSummary>();
+        private List<DatasetSummary> _datasets = AWSConfigs.InitializeCollections ? new List<DatasetSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Personalize.Model
         // Check to see if Datasets property is set
         internal bool IsSetDatasets()
         {
-            return this._datasets != null && this._datasets.Count > 0; 
+            return this._datasets != null && (this._datasets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

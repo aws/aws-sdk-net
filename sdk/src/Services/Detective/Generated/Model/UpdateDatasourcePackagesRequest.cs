@@ -34,7 +34,7 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class UpdateDatasourcePackagesRequest : AmazonDetectiveRequest
     {
-        private List<string> _datasourcePackages = new List<string>();
+        private List<string> _datasourcePackages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _graphArn;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Detective.Model
         // Check to see if DatasourcePackages property is set
         internal bool IsSetDatasourcePackages()
         {
-            return this._datasourcePackages != null && this._datasourcePackages.Count > 0; 
+            return this._datasourcePackages != null && (this._datasourcePackages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

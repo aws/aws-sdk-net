@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the DataShares
         /// </summary>
         public IPaginatedEnumerable<DataShare> DataShares => 
-            new PaginatedResultKeyResponse<DescribeDataSharesForProducerResponse, DataShare>(this, (i) => i.DataShares);
+            new PaginatedResultKeyResponse<DescribeDataSharesForProducerResponse, DataShare>(this, (i) => i.DataShares ?? new List<DataShare>());
 
         internal DescribeDataSharesForProducerPaginator(IAmazonRedshift client, DescribeDataSharesForProducerRequest request)
         {

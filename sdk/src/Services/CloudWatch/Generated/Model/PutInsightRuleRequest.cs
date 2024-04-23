@@ -46,7 +46,7 @@ namespace Amazon.CloudWatch.Model
         private string _ruleDefinition;
         private string _ruleName;
         private string _ruleState;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property RuleDefinition. 
@@ -140,7 +140,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

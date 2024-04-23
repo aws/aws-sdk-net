@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model
     /// </summary>
     public partial class ListEulasRequest : AmazonNimbleStudioRequest
     {
-        private List<string> _eulaIds = new List<string>();
+        private List<string> _eulaIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if EulaIds property is set
         internal bool IsSetEulaIds()
         {
-            return this._eulaIds != null && this._eulaIds.Count > 0; 
+            return this._eulaIds != null && (this._eulaIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

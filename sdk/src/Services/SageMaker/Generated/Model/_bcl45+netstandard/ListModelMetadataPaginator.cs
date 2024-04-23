@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the ModelMetadataSummaries
         /// </summary>
         public IPaginatedEnumerable<ModelMetadataSummary> ModelMetadataSummaries => 
-            new PaginatedResultKeyResponse<ListModelMetadataResponse, ModelMetadataSummary>(this, (i) => i.ModelMetadataSummaries);
+            new PaginatedResultKeyResponse<ListModelMetadataResponse, ModelMetadataSummary>(this, (i) => i.ModelMetadataSummaries ?? new List<ModelMetadataSummary>());
 
         internal ListModelMetadataPaginator(IAmazonSageMaker client, ListModelMetadataRequest request)
         {

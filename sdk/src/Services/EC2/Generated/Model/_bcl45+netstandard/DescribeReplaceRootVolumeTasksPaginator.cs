@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the ReplaceRootVolumeTasks
         /// </summary>
         public IPaginatedEnumerable<ReplaceRootVolumeTask> ReplaceRootVolumeTasks => 
-            new PaginatedResultKeyResponse<DescribeReplaceRootVolumeTasksResponse, ReplaceRootVolumeTask>(this, (i) => i.ReplaceRootVolumeTasks);
+            new PaginatedResultKeyResponse<DescribeReplaceRootVolumeTasksResponse, ReplaceRootVolumeTask>(this, (i) => i.ReplaceRootVolumeTasks ?? new List<ReplaceRootVolumeTask>());
 
         internal DescribeReplaceRootVolumeTasksPaginator(IAmazonEC2 client, DescribeReplaceRootVolumeTasksRequest request)
         {

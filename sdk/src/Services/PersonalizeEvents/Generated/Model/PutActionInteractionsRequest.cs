@@ -44,7 +44,7 @@ namespace Amazon.PersonalizeEvents.Model
     /// </summary>
     public partial class PutActionInteractionsRequest : AmazonPersonalizeEventsRequest
     {
-        private List<ActionInteraction> _actionInteractions = new List<ActionInteraction>();
+        private List<ActionInteraction> _actionInteractions = AWSConfigs.InitializeCollections ? new List<ActionInteraction>() : null;
         private string _trackingId;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.PersonalizeEvents.Model
         // Check to see if ActionInteractions property is set
         internal bool IsSetActionInteractions()
         {
-            return this._actionInteractions != null && this._actionInteractions.Count > 0; 
+            return this._actionInteractions != null && (this._actionInteractions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

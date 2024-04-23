@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the NetworkResources
         /// </summary>
         public IPaginatedEnumerable<NetworkResource> NetworkResources => 
-            new PaginatedResultKeyResponse<GetNetworkResourcesResponse, NetworkResource>(this, (i) => i.NetworkResources);
+            new PaginatedResultKeyResponse<GetNetworkResourcesResponse, NetworkResource>(this, (i) => i.NetworkResources ?? new List<NetworkResource>());
 
         internal GetNetworkResourcesPaginator(IAmazonNetworkManager client, GetNetworkResourcesRequest request)
         {

@@ -36,7 +36,7 @@ namespace Amazon.PersonalizeEvents.Model
     public partial class PutUsersRequest : AmazonPersonalizeEventsRequest
     {
         private string _datasetArn;
-        private List<User> _users = new List<User>();
+        private List<User> _users = AWSConfigs.InitializeCollections ? new List<User>() : null;
 
         /// <summary>
         /// Gets and sets the property DatasetArn. 
@@ -74,7 +74,7 @@ namespace Amazon.PersonalizeEvents.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

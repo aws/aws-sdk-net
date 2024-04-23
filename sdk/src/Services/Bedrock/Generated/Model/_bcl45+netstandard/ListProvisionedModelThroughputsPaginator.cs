@@ -45,7 +45,7 @@ namespace Amazon.Bedrock.Model
         /// Enumerable containing all of the ProvisionedModelSummaries
         /// </summary>
         public IPaginatedEnumerable<ProvisionedModelSummary> ProvisionedModelSummaries => 
-            new PaginatedResultKeyResponse<ListProvisionedModelThroughputsResponse, ProvisionedModelSummary>(this, (i) => i.ProvisionedModelSummaries);
+            new PaginatedResultKeyResponse<ListProvisionedModelThroughputsResponse, ProvisionedModelSummary>(this, (i) => i.ProvisionedModelSummaries ?? new List<ProvisionedModelSummary>());
 
         internal ListProvisionedModelThroughputsPaginator(IAmazonBedrock client, ListProvisionedModelThroughputsRequest request)
         {

@@ -49,12 +49,12 @@ namespace Amazon.OpsWorksCM.Model
         private int? _s3DataSize;
         private string _s3DataUrl;
         private string _s3LogUrl;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serverName;
         private string _serviceRoleArn;
         private BackupStatus _status;
         private string _statusDescription;
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _toolsVersion;
         private string _userArn;
 
@@ -383,7 +383,7 @@ namespace Amazon.OpsWorksCM.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -477,7 +477,7 @@ namespace Amazon.OpsWorksCM.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

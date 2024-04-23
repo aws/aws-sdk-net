@@ -35,7 +35,7 @@ namespace Amazon.StorageGateway.Model
     {
         private string _gatewayARN;
         private string _marker;
-        private List<VTLDevice> _vtlDevices = new List<VTLDevice>();
+        private List<VTLDevice> _vtlDevices = AWSConfigs.InitializeCollections ? new List<VTLDevice>() : null;
 
         /// <summary>
         /// Gets and sets the property GatewayARN.
@@ -91,7 +91,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VTLDevices property is set
         internal bool IsSetVTLDevices()
         {
-            return this._vtlDevices != null && this._vtlDevices.Count > 0; 
+            return this._vtlDevices != null && (this._vtlDevices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

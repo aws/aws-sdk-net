@@ -45,7 +45,7 @@ namespace Amazon.SSMContacts.Model
         /// Enumerable containing all of the Receipts
         /// </summary>
         public IPaginatedEnumerable<Receipt> Receipts => 
-            new PaginatedResultKeyResponse<ListPageReceiptsResponse, Receipt>(this, (i) => i.Receipts);
+            new PaginatedResultKeyResponse<ListPageReceiptsResponse, Receipt>(this, (i) => i.Receipts ?? new List<Receipt>());
 
         internal ListPageReceiptsPaginator(IAmazonSSMContacts client, ListPageReceiptsRequest request)
         {

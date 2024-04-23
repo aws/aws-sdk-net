@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model
     public partial class Suggestion
     {
         private string _id;
-        private List<SourceDocument> _sourceDocuments = new List<SourceDocument>();
+        private List<SourceDocument> _sourceDocuments = AWSConfigs.InitializeCollections ? new List<SourceDocument>() : null;
         private SuggestionValue _value;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SourceDocuments property is set
         internal bool IsSetSourceDocuments()
         {
-            return this._sourceDocuments != null && this._sourceDocuments.Count > 0; 
+            return this._sourceDocuments != null && (this._sourceDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

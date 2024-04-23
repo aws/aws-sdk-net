@@ -33,7 +33,7 @@ namespace Amazon.ManagedGrafana.Model
     /// </summary>
     public partial class ListVersionsResponse : AmazonWebServiceResponse
     {
-        private List<string> _grafanaVersions = new List<string>();
+        private List<string> _grafanaVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if GrafanaVersions property is set
         internal bool IsSetGrafanaVersions()
         {
-            return this._grafanaVersions != null && this._grafanaVersions.Count > 0; 
+            return this._grafanaVersions != null && (this._grafanaVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

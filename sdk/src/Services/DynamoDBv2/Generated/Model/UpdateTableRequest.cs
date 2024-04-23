@@ -59,19 +59,18 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>
     ///  <c>UpdateTable</c> is an asynchronous operation; while it's executing, the table
     /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it's <c>UPDATING</c>,
-    /// you can't issue another <c>UpdateTable</c> request on the base table nor any replicas.
-    /// When the table returns to the <c>ACTIVE</c> state, the <c>UpdateTable</c> operation
-    /// is complete.
+    /// you can't issue another <c>UpdateTable</c> request. When the table returns to the
+    /// <c>ACTIVE</c> state, the <c>UpdateTable</c> operation is complete.
     /// </para>
     /// </summary>
     public partial class UpdateTableRequest : AmazonDynamoDBRequest
     {
-        private List<AttributeDefinition> _attributeDefinitions = new List<AttributeDefinition>();
+        private List<AttributeDefinition> _attributeDefinitions = AWSConfigs.InitializeCollections ? new List<AttributeDefinition>() : null;
         private BillingMode _billingMode;
         private bool? _deletionProtectionEnabled;
-        private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = new List<GlobalSecondaryIndexUpdate>();
+        private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndexUpdate>() : null;
         private ProvisionedThroughput _provisionedThroughput;
-        private List<ReplicationGroupUpdate> _replicaUpdates = new List<ReplicationGroupUpdate>();
+        private List<ReplicationGroupUpdate> _replicaUpdates = AWSConfigs.InitializeCollections ? new List<ReplicationGroupUpdate>() : null;
         private SSESpecification _sseSpecification;
         private StreamSpecification _streamSpecification;
         private TableClass _tableClass;
@@ -85,7 +84,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates UpdateTableRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table to be updated.</param>
+        /// <param name="tableName">The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="provisionedThroughput">The new provisioned throughput settings for the specified table or index.</param>
         public UpdateTableRequest(string tableName, ProvisionedThroughput provisionedThroughput)
         {
@@ -110,7 +109,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if AttributeDefinitions property is set
         internal bool IsSetAttributeDefinitions()
         {
-            return this._attributeDefinitions != null && this._attributeDefinitions.Count > 0; 
+            return this._attributeDefinitions != null && (this._attributeDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -205,7 +204,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if GlobalSecondaryIndexUpdates property is set
         internal bool IsSetGlobalSecondaryIndexUpdates()
         {
-            return this._globalSecondaryIndexUpdates != null && this._globalSecondaryIndexUpdates.Count > 0; 
+            return this._globalSecondaryIndexUpdates != null && (this._globalSecondaryIndexUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -248,7 +247,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ReplicaUpdates property is set
         internal bool IsSetReplicaUpdates()
         {
-            return this._replicaUpdates != null && this._replicaUpdates.Count > 0; 
+            return this._replicaUpdates != null && (this._replicaUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -315,10 +314,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table to be updated.
+        /// The name of the table to be updated. You can also provide the Amazon Resource Name
+        /// (ARN) of the table in this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

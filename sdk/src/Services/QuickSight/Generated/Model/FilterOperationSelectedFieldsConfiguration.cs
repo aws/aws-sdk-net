@@ -39,9 +39,9 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class FilterOperationSelectedFieldsConfiguration
     {
-        private List<ColumnIdentifier> _selectedColumns = new List<ColumnIdentifier>();
+        private List<ColumnIdentifier> _selectedColumns = AWSConfigs.InitializeCollections ? new List<ColumnIdentifier>() : null;
         private SelectedFieldOptions _selectedFieldOptions;
-        private List<string> _selectedFields = new List<string>();
+        private List<string> _selectedFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SelectedColumns. 
@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SelectedColumns property is set
         internal bool IsSetSelectedColumns()
         {
-            return this._selectedColumns != null && this._selectedColumns.Count > 0; 
+            return this._selectedColumns != null && (this._selectedColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SelectedFields property is set
         internal bool IsSetSelectedFields()
         {
-            return this._selectedFields != null && this._selectedFields.Count > 0; 
+            return this._selectedFields != null && (this._selectedFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

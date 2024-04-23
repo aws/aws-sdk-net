@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,6 +74,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AutoMLConfigUnmarshaller.Instance;
                     unmarshalledObject.AutoMLConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("autoTrainingConfig", targetDepth))
+                {
+                    var unmarshaller = AutoTrainingConfigUnmarshaller.Instance;
+                    unmarshalledObject.AutoTrainingConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("eventValueThreshold", targetDepth))
@@ -124,3 +131,4 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

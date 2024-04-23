@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the AccessEntries
         /// </summary>
         public IPaginatedEnumerable<string> AccessEntries => 
-            new PaginatedResultKeyResponse<ListAccessEntriesResponse, string>(this, (i) => i.AccessEntries);
+            new PaginatedResultKeyResponse<ListAccessEntriesResponse, string>(this, (i) => i.AccessEntries ?? new List<string>());
 
         internal ListAccessEntriesPaginator(IAmazonEKS client, ListAccessEntriesRequest request)
         {

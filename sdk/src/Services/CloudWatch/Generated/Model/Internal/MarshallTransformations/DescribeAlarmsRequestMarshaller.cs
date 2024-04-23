@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ActionPrefix", StringUtils.FromString(publicRequest.ActionPrefix));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAlarmNamePrefix())
                 {
                     request.Parameters.Add("AlarmNamePrefix", StringUtils.FromString(publicRequest.AlarmNamePrefix));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAlarmNames())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,6 +78,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAlarmTypes())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -84,26 +88,32 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetChildrenOfAlarmName())
                 {
                     request.Parameters.Add("ChildrenOfAlarmName", StringUtils.FromString(publicRequest.ChildrenOfAlarmName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetParentsOfAlarmName())
                 {
                     request.Parameters.Add("ParentsOfAlarmName", StringUtils.FromString(publicRequest.ParentsOfAlarmName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStateValue())
                 {
                     request.Parameters.Add("StateValue", StringUtils.FromString(publicRequest.StateValue));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

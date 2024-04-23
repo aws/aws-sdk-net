@@ -33,7 +33,7 @@ namespace Amazon.Private5G.Model
     /// </summary>
     public partial class NetworkResource
     {
-        private List<NameValuePair> _attributes = new List<NameValuePair>();
+        private List<NameValuePair> _attributes = AWSConfigs.InitializeCollections ? new List<NameValuePair>() : null;
         private CommitmentInformation _commitmentInformation;
         private DateTime? _createdAt;
         private string _description;
@@ -66,7 +66,7 @@ namespace Amazon.Private5G.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

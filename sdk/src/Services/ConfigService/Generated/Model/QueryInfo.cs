@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class QueryInfo
     {
-        private List<FieldInfo> _selectFields = new List<FieldInfo>();
+        private List<FieldInfo> _selectFields = AWSConfigs.InitializeCollections ? new List<FieldInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property SelectFields. 
@@ -50,7 +50,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if SelectFields property is set
         internal bool IsSetSelectFields()
         {
-            return this._selectFields != null && this._selectFields.Count > 0; 
+            return this._selectFields != null && (this._selectFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

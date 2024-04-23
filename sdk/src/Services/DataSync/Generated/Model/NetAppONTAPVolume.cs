@@ -41,7 +41,7 @@ namespace Amazon.DataSync.Model
         private long? _lunCount;
         private MaxP95Performance _maxP95Performance;
         private bool? _nfsExported;
-        private List<Recommendation> _recommendations = new List<Recommendation>();
+        private List<Recommendation> _recommendations = AWSConfigs.InitializeCollections ? new List<Recommendation>() : null;
         private RecommendationStatus _recommendationStatus;
         private string _resourceId;
         private string _securityStyle;
@@ -199,7 +199,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Recommendations property is set
         internal bool IsSetRecommendations()
         {
-            return this._recommendations != null && this._recommendations.Count > 0; 
+            return this._recommendations != null && (this._recommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

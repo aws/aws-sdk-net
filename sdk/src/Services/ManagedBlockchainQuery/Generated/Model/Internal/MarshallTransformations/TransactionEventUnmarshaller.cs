@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,18 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("blockchainInstant", targetDepth))
+                {
+                    var unmarshaller = BlockchainInstantUnmarshaller.Instance;
+                    unmarshalledObject.BlockchainInstant = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("confirmationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfirmationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("contractAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -85,6 +98,24 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Network = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("spentVoutIndex", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SpentVoutIndex = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("spentVoutTransactionHash", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SpentVoutTransactionHash = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("spentVoutTransactionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SpentVoutTransactionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("to", targetDepth))
@@ -123,6 +154,12 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                     unmarshalledObject.VoutIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("voutSpent", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.VoutSpent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
@@ -142,3 +179,4 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

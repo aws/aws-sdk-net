@@ -120,7 +120,7 @@ namespace Amazon.CloudWatch.Model
         private DateTime? _endTimeUtc;
         private LabelOptions _labelOptions;
         private int? _maxDatapoints;
-        private List<MetricDataQuery> _metricDataQueries = new List<MetricDataQuery>();
+        private List<MetricDataQuery> _metricDataQueries = AWSConfigs.InitializeCollections ? new List<MetricDataQuery>() : null;
         private string _nextToken;
         private ScanBy _scanBy;
         private DateTime? _startTimeUtc;
@@ -215,7 +215,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if MetricDataQueries property is set
         internal bool IsSetMetricDataQueries()
         {
-            return this._metricDataQueries != null && this._metricDataQueries.Count > 0; 
+            return this._metricDataQueries != null && (this._metricDataQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -244,6 +244,10 @@ namespace Amazon.CloudWatch.Model
         /// the newest data first and paginates when the <c>MaxDatapoints</c> limit is reached.
         /// <c>TimestampAscending</c> returns the oldest data first and paginates when the <c>MaxDatapoints</c>
         /// limit is reached.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the default of <c>TimestampDescending</c> is used.
         /// </para>
         /// </summary>
         public ScanBy ScanBy

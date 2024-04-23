@@ -31,8 +31,9 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// <summary>
     /// Container for the parameters to the ImportCrl operation.
     /// Imports the certificate revocation list (CRL). A CRL is a list of certificates that
-    /// have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates
-    /// against the CRL before issuing credentials. 
+    /// have been revoked by the issuing certificate Authority (CA).In order to be properly
+    /// imported, a CRL must be in PEM format. IAM Roles Anywhere validates against the CRL
+    /// before issuing credentials. 
     /// 
     ///  
     /// <para>
@@ -44,7 +45,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         private MemoryStream _crlData;
         private bool? _enabled;
         private string _name;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _trustAnchorArn;
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

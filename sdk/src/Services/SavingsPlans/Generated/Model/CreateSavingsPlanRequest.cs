@@ -38,14 +38,14 @@ namespace Amazon.SavingsPlans.Model
         private string _commitment;
         private DateTime? _purchaseTime;
         private string _savingsPlanOfferingId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _upfrontPaymentAmount;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -63,8 +63,9 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property Commitment. 
         /// <para>
-        /// The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot
-        /// specify more than five digits after the decimal point.
+        /// The hourly commitment, in the same currency of the <c>savingsPlanOfferingId</c>. This
+        /// is a value between 0.001 and 1 million. You cannot specify more than five digits after
+        /// the decimal point.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +84,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property PurchaseTime. 
         /// <para>
-        /// The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+        /// The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).
         /// </para>
         /// </summary>
         public DateTime PurchaseTime
@@ -132,14 +133,14 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property UpfrontPaymentAmount. 
         /// <para>
         /// The up-front payment amount. This is a whole number between 50 and 99 percent of the
-        /// total value of the Savings Plan. This parameter is supported only if the payment option
+        /// total value of the Savings Plan. This parameter is only supported if the payment option
         /// is <c>Partial Upfront</c>.
         /// </para>
         /// </summary>

@@ -41,7 +41,7 @@ namespace Amazon.CloudWatchLogs.Model
         private string _filterPattern;
         private string _kmsKeyId;
         private long? _lastModifiedTimeStamp;
-        private List<string> _logGroupArnList = new List<string>();
+        private List<string> _logGroupArnList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AnomalyDetectorStatus. 
@@ -213,7 +213,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogGroupArnList property is set
         internal bool IsSetLogGroupArnList()
         {
-            return this._logGroupArnList != null && this._logGroupArnList.Count > 0; 
+            return this._logGroupArnList != null && (this._logGroupArnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

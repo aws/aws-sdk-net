@@ -33,10 +33,10 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class PartitionIndexDescriptor
     {
-        private List<BackfillError> _backfillErrors = new List<BackfillError>();
+        private List<BackfillError> _backfillErrors = AWSConfigs.InitializeCollections ? new List<BackfillError>() : null;
         private string _indexName;
         private PartitionIndexStatus _indexStatus;
-        private List<KeySchemaElement> _keys = new List<KeySchemaElement>();
+        private List<KeySchemaElement> _keys = AWSConfigs.InitializeCollections ? new List<KeySchemaElement>() : null;
 
         /// <summary>
         /// Gets and sets the property BackfillErrors. 
@@ -54,7 +54,7 @@ namespace Amazon.Glue.Model
         // Check to see if BackfillErrors property is set
         internal bool IsSetBackfillErrors()
         {
-            return this._backfillErrors != null && this._backfillErrors.Count > 0; 
+            return this._backfillErrors != null && (this._backfillErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.Glue.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

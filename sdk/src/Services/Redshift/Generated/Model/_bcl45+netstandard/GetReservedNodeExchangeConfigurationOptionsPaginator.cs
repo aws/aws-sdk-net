@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the ReservedNodeConfigurationOptionList
         /// </summary>
         public IPaginatedEnumerable<ReservedNodeConfigurationOption> ReservedNodeConfigurationOptionList => 
-            new PaginatedResultKeyResponse<GetReservedNodeExchangeConfigurationOptionsResponse, ReservedNodeConfigurationOption>(this, (i) => i.ReservedNodeConfigurationOptionList);
+            new PaginatedResultKeyResponse<GetReservedNodeExchangeConfigurationOptionsResponse, ReservedNodeConfigurationOption>(this, (i) => i.ReservedNodeConfigurationOptionList ?? new List<ReservedNodeConfigurationOption>());
 
         internal GetReservedNodeExchangeConfigurationOptionsPaginator(IAmazonRedshift client, GetReservedNodeExchangeConfigurationOptionsRequest request)
         {

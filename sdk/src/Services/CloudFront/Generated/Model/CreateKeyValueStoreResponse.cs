@@ -40,7 +40,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ETag. 
         /// <para>
-        /// The ETag in the resulting Key Value Store.
+        /// The <c>ETag</c> in the resulting key value store.
         /// </para>
         /// </summary>
         public string ETag
@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property KeyValueStore. 
         /// <para>
-        /// The resulting Key Value Store.
+        /// The resulting key value store.
         /// </para>
         /// </summary>
         public KeyValueStore KeyValueStore
@@ -76,7 +76,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The location of the resulting Key Value Store.
+        /// The location of the resulting key value store.
         /// </para>
         /// </summary>
         public string Location

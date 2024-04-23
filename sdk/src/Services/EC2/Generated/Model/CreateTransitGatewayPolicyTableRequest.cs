@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateTransitGatewayPolicyTableRequest : AmazonEC2Request
     {
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private string _transitGatewayId;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

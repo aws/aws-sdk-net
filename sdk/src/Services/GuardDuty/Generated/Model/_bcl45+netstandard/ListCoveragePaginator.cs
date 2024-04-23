@@ -45,7 +45,7 @@ namespace Amazon.GuardDuty.Model
         /// Enumerable containing all of the Resources
         /// </summary>
         public IPaginatedEnumerable<CoverageResource> Resources => 
-            new PaginatedResultKeyResponse<ListCoverageResponse, CoverageResource>(this, (i) => i.Resources);
+            new PaginatedResultKeyResponse<ListCoverageResponse, CoverageResource>(this, (i) => i.Resources ?? new List<CoverageResource>());
 
         internal ListCoveragePaginator(IAmazonGuardDuty client, ListCoverageRequest request)
         {

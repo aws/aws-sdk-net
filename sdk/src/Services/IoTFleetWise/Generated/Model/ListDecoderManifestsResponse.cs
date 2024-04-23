@@ -34,7 +34,7 @@ namespace Amazon.IoTFleetWise.Model
     public partial class ListDecoderManifestsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<DecoderManifestSummary> _summaries = new List<DecoderManifestSummary>();
+        private List<DecoderManifestSummary> _summaries = AWSConfigs.InitializeCollections ? new List<DecoderManifestSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Summaries property is set
         internal bool IsSetSummaries()
         {
-            return this._summaries != null && this._summaries.Count > 0; 
+            return this._summaries != null && (this._summaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

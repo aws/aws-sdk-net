@@ -70,8 +70,8 @@ namespace Amazon.ForecastService.Model
     {
         private DataDestination _destination;
         private string _format;
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _whatIfForecastArns = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _whatIfForecastArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _whatIfForecastExportName;
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if WhatIfForecastArns property is set
         internal bool IsSetWhatIfForecastArns()
         {
-            return this._whatIfForecastArns != null && this._whatIfForecastArns.Count > 0; 
+            return this._whatIfForecastArns != null && (this._whatIfForecastArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

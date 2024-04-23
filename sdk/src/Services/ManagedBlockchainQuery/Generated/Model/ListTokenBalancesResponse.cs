@@ -34,7 +34,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     public partial class ListTokenBalancesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TokenBalance> _tokenBalances = new List<TokenBalance>();
+        private List<TokenBalance> _tokenBalances = AWSConfigs.InitializeCollections ? new List<TokenBalance>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         // Check to see if TokenBalances property is set
         internal bool IsSetTokenBalances()
         {
-            return this._tokenBalances != null && this._tokenBalances.Count > 0; 
+            return this._tokenBalances != null && (this._tokenBalances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

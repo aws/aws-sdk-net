@@ -40,7 +40,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class PutManagedInsightRulesRequest : AmazonCloudWatchRequest
     {
-        private List<ManagedRule> _managedRules = new List<ManagedRule>();
+        private List<ManagedRule> _managedRules = AWSConfigs.InitializeCollections ? new List<ManagedRule>() : null;
 
         /// <summary>
         /// Gets and sets the property ManagedRules. 
@@ -58,7 +58,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if ManagedRules property is set
         internal bool IsSetManagedRules()
         {
-            return this._managedRules != null && this._managedRules.Count > 0; 
+            return this._managedRules != null && (this._managedRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.DLM.Model
     {
         private string _descriptionRegex;
         private EventTypeValues _eventType;
-        private List<string> _snapshotOwner = new List<string>();
+        private List<string> _snapshotOwner = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DescriptionRegex. 
@@ -102,7 +102,7 @@ namespace Amazon.DLM.Model
         // Check to see if SnapshotOwner property is set
         internal bool IsSetSnapshotOwner()
         {
-            return this._snapshotOwner != null && this._snapshotOwner.Count > 0; 
+            return this._snapshotOwner != null && (this._snapshotOwner.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

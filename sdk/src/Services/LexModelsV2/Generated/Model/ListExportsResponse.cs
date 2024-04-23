@@ -35,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _botVersion;
-        private List<ExportSummary> _exportSummaries = new List<ExportSummary>();
+        private List<ExportSummary> _exportSummaries = AWSConfigs.InitializeCollections ? new List<ExportSummary>() : null;
         private string _localeId;
         private string _nextToken;
 
@@ -95,7 +95,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if ExportSummaries property is set
         internal bool IsSetExportSummaries()
         {
-            return this._exportSummaries != null && this._exportSummaries.Count > 0; 
+            return this._exportSummaries != null && (this._exportSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

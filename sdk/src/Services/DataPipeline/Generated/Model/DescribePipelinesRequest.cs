@@ -45,7 +45,7 @@ namespace Amazon.DataPipeline.Model
     /// </summary>
     public partial class DescribePipelinesRequest : AmazonDataPipelineRequest
     {
-        private List<string> _pipelineIds = new List<string>();
+        private List<string> _pipelineIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property PipelineIds. 
@@ -64,7 +64,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if PipelineIds property is set
         internal bool IsSetPipelineIds()
         {
-            return this._pipelineIds != null && this._pipelineIds.Count > 0; 
+            return this._pipelineIds != null && (this._pipelineIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -96,6 +97,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MFADevices/member", targetDepth))
                     {
                         var unmarshaller = MFADeviceUnmarshaller.Instance;
+                        if (response.MFADevices == null)
+                        {
+                            response.MFADevices = new List<MFADevice>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.MFADevices.Add(item);
                         continue;
@@ -156,3 +161,4 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

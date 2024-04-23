@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AccountsWithRestoreAccess/AccountWithRestoreAccess", targetDepth))
                     {
                         var unmarshaller = AccountWithRestoreAccessUnmarshaller.Instance;
+                        if (unmarshalledObject.AccountsWithRestoreAccess == null)
+                        {
+                            unmarshalledObject.AccountsWithRestoreAccess = new List<AccountWithRestoreAccess>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AccountsWithRestoreAccess.Add(item);
                         continue;
@@ -214,8 +219,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RestorableNodeTypes/NodeType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.RestorableNodeTypes == null)
+                        {
+                            unmarshalledObject.RestorableNodeTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RestorableNodeTypes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SnapshotCreateTime", targetDepth))
@@ -257,6 +272,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tags/Tag", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;
@@ -308,3 +327,4 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

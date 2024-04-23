@@ -37,19 +37,19 @@ namespace Amazon.CertificateManager.Model
         private DateTime? _createdAt;
         private string _domainName;
         private bool? _exported;
-        private List<string> _extendedKeyUsages = new List<string>();
+        private List<string> _extendedKeyUsages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _hasAdditionalSubjectAlternativeNames;
         private DateTime? _importedAt;
         private bool? _inUse;
         private DateTime? _issuedAt;
         private KeyAlgorithm _keyAlgorithm;
-        private List<string> _keyUsages = new List<string>();
+        private List<string> _keyUsages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _notAfter;
         private DateTime? _notBefore;
         private RenewalEligibility _renewalEligibility;
         private DateTime? _revokedAt;
         private CertificateStatus _status;
-        private List<string> _subjectAlternativeNameSummaries = new List<string>();
+        private List<string> _subjectAlternativeNameSummaries = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CertificateType _type;
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if ExtendedKeyUsages property is set
         internal bool IsSetExtendedKeyUsages()
         {
-            return this._extendedKeyUsages != null && this._extendedKeyUsages.Count > 0; 
+            return this._extendedKeyUsages != null && (this._extendedKeyUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -272,7 +272,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if KeyUsages property is set
         internal bool IsSetKeyUsages()
         {
-            return this._keyUsages != null && this._keyUsages.Count > 0; 
+            return this._keyUsages != null && (this._keyUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -404,7 +404,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if SubjectAlternativeNameSummaries property is set
         internal bool IsSetSubjectAlternativeNameSummaries()
         {
-            return this._subjectAlternativeNameSummaries != null && this._subjectAlternativeNameSummaries.Count > 0; 
+            return this._subjectAlternativeNameSummaries != null && (this._subjectAlternativeNameSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

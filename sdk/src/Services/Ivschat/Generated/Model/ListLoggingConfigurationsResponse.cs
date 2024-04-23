@@ -33,7 +33,7 @@ namespace Amazon.Ivschat.Model
     /// </summary>
     public partial class ListLoggingConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<LoggingConfigurationSummary> _loggingConfigurations = new List<LoggingConfigurationSummary>();
+        private List<LoggingConfigurationSummary> _loggingConfigurations = AWSConfigs.InitializeCollections ? new List<LoggingConfigurationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.Ivschat.Model
         // Check to see if LoggingConfigurations property is set
         internal bool IsSetLoggingConfigurations()
         {
-            return this._loggingConfigurations != null && this._loggingConfigurations.Count > 0; 
+            return this._loggingConfigurations != null && (this._loggingConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -30,6 +30,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Represents the information required for client programs to connect to a cache node.
+    /// This value is read-only.
     /// </summary>
     public partial class Endpoint
     {

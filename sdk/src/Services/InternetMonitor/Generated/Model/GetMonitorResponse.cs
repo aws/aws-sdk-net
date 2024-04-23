@@ -42,9 +42,9 @@ namespace Amazon.InternetMonitor.Model
         private string _monitorName;
         private MonitorProcessingStatusCode _processingStatus;
         private string _processingStatusInfo;
-        private List<string> _resources = new List<string>();
+        private List<string> _resources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MonitorConfigState _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _trafficPercentageToMonitor;
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -288,7 +288,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

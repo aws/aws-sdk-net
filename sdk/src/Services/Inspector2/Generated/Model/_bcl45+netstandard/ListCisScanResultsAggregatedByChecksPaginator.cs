@@ -45,7 +45,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the CheckAggregations
         /// </summary>
         public IPaginatedEnumerable<CisCheckAggregation> CheckAggregations => 
-            new PaginatedResultKeyResponse<ListCisScanResultsAggregatedByChecksResponse, CisCheckAggregation>(this, (i) => i.CheckAggregations);
+            new PaginatedResultKeyResponse<ListCisScanResultsAggregatedByChecksResponse, CisCheckAggregation>(this, (i) => i.CheckAggregations ?? new List<CisCheckAggregation>());
 
         internal ListCisScanResultsAggregatedByChecksPaginator(IAmazonInspector2 client, ListCisScanResultsAggregatedByChecksRequest request)
         {

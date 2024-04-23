@@ -41,11 +41,11 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _environmentName;
         private string _groupName;
         private string _operationsRole;
-        private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
-        private List<OptionSpecification> _optionsToRemove = new List<OptionSpecification>();
+        private List<ConfigurationOptionSetting> _optionSettings = AWSConfigs.InitializeCollections ? new List<ConfigurationOptionSetting>() : null;
+        private List<OptionSpecification> _optionsToRemove = AWSConfigs.InitializeCollections ? new List<OptionSpecification>() : null;
         private string _platformArn;
         private string _solutionStackName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _templateName;
         private EnvironmentTier _tier;
         private string _versionLabel;
@@ -219,7 +219,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionSettings property is set
         internal bool IsSetOptionSettings()
         {
-            return this._optionSettings != null && this._optionSettings.Count > 0; 
+            return this._optionSettings != null && (this._optionSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionsToRemove property is set
         internal bool IsSetOptionsToRemove()
         {
-            return this._optionsToRemove != null && this._optionsToRemove.Count > 0; 
+            return this._optionsToRemove != null && (this._optionsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -308,7 +308,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

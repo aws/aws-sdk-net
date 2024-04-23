@@ -37,7 +37,7 @@ namespace Amazon.CodeGuruProfiler.Model
     public partial class ConfigureAgentRequest : AmazonCodeGuruProfilerRequest
     {
         private string _fleetInstanceId;
-        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _profilingGroupName;
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

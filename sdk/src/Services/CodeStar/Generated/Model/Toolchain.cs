@@ -36,7 +36,7 @@ namespace Amazon.CodeStar.Model
     {
         private string _roleArn;
         private ToolchainSource _source;
-        private Dictionary<string, string> _stackParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _stackParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property RoleArn. 
@@ -95,7 +95,7 @@ namespace Amazon.CodeStar.Model
         // Check to see if StackParameters property is set
         internal bool IsSetStackParameters()
         {
-            return this._stackParameters != null && this._stackParameters.Count > 0; 
+            return this._stackParameters != null && (this._stackParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

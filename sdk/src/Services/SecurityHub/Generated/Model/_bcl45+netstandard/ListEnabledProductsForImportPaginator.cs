@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all of the ProductSubscriptions
         /// </summary>
         public IPaginatedEnumerable<string> ProductSubscriptions => 
-            new PaginatedResultKeyResponse<ListEnabledProductsForImportResponse, string>(this, (i) => i.ProductSubscriptions);
+            new PaginatedResultKeyResponse<ListEnabledProductsForImportResponse, string>(this, (i) => i.ProductSubscriptions ?? new List<string>());
 
         internal ListEnabledProductsForImportPaginator(IAmazonSecurityHub client, ListEnabledProductsForImportRequest request)
         {

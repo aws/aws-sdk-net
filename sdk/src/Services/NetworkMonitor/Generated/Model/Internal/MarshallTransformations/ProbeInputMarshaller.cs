@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProbeInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
@@ -98,3 +101,4 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

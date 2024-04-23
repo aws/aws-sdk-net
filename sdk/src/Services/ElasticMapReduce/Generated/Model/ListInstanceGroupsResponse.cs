@@ -33,7 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class ListInstanceGroupsResponse : AmazonWebServiceResponse
     {
-        private List<InstanceGroup> _instanceGroups = new List<InstanceGroup>();
+        private List<InstanceGroup> _instanceGroups = AWSConfigs.InitializeCollections ? new List<InstanceGroup>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
-            return this._instanceGroups != null && this._instanceGroups.Count > 0; 
+            return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

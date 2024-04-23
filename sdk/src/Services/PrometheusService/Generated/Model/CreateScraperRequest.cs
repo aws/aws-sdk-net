@@ -69,7 +69,7 @@ namespace Amazon.PrometheusService.Model
         private Destination _destination;
         private ScrapeConfiguration _scrapeConfiguration;
         private Source _source;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Alias. 
@@ -185,7 +185,7 @@ namespace Amazon.PrometheusService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -140,7 +140,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     },
                 });
 
-                var count = (await Client.ReceiveMessageAsync(mainQueueURL)).Messages.Count;
+                var count = (await Client.ReceiveMessageAsync(mainQueueURL)).Messages?.Count;
 
                 await s3Client.PutObjectAsync(new PutObjectRequest {
                     ContentBody = "Hello World",
@@ -155,11 +155,14 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     var messages = (await Client.ReceiveMessageAsync(mainQueueURL)).Messages;
 
-                    foreach (var message in messages)
+                    if ( messages != null)
                     {
-                        objectCreaedMessageReceived = message.Body.Contains("ObjectCreated:Put");
-                        if (objectCreaedMessageReceived)
-                            return;
+                        foreach (var message in messages)
+                        {
+                            objectCreaedMessageReceived = message.Body.Contains("ObjectCreated:Put");
+                            if (objectCreaedMessageReceived)
+                                return;
+                        }
                     }
 
                     UtilityMethods.Sleep(TimeSpan.FromSeconds(2));

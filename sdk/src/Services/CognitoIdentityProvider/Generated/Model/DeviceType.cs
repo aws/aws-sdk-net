@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class DeviceType
     {
-        private List<AttributeType> _deviceAttributes = new List<AttributeType>();
+        private List<AttributeType> _deviceAttributes = AWSConfigs.InitializeCollections ? new List<AttributeType>() : null;
         private DateTime? _deviceCreateDate;
         private string _deviceKey;
         private DateTime? _deviceLastAuthenticatedDate;
@@ -54,7 +54,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if DeviceAttributes property is set
         internal bool IsSetDeviceAttributes()
         {
-            return this._deviceAttributes != null && this._deviceAttributes.Count > 0; 
+            return this._deviceAttributes != null && (this._deviceAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

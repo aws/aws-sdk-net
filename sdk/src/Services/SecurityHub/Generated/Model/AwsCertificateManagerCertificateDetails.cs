@@ -36,15 +36,15 @@ namespace Amazon.SecurityHub.Model
         private string _certificateAuthorityArn;
         private string _createdAt;
         private string _domainName;
-        private List<AwsCertificateManagerCertificateDomainValidationOption> _domainValidationOptions = new List<AwsCertificateManagerCertificateDomainValidationOption>();
-        private List<AwsCertificateManagerCertificateExtendedKeyUsage> _extendedKeyUsages = new List<AwsCertificateManagerCertificateExtendedKeyUsage>();
+        private List<AwsCertificateManagerCertificateDomainValidationOption> _domainValidationOptions = AWSConfigs.InitializeCollections ? new List<AwsCertificateManagerCertificateDomainValidationOption>() : null;
+        private List<AwsCertificateManagerCertificateExtendedKeyUsage> _extendedKeyUsages = AWSConfigs.InitializeCollections ? new List<AwsCertificateManagerCertificateExtendedKeyUsage>() : null;
         private string _failureReason;
         private string _importedAt;
-        private List<string> _inUseBy = new List<string>();
+        private List<string> _inUseBy = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _issuedAt;
         private string _issuer;
         private string _keyAlgorithm;
-        private List<AwsCertificateManagerCertificateKeyUsage> _keyUsages = new List<AwsCertificateManagerCertificateKeyUsage>();
+        private List<AwsCertificateManagerCertificateKeyUsage> _keyUsages = AWSConfigs.InitializeCollections ? new List<AwsCertificateManagerCertificateKeyUsage>() : null;
         private string _notAfter;
         private string _notBefore;
         private AwsCertificateManagerCertificateOptions _options;
@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model
         private string _signatureAlgorithm;
         private string _status;
         private string _subject;
-        private List<string> _subjectAlternativeNames = new List<string>();
+        private List<string> _subjectAlternativeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _type;
 
         /// <summary>
@@ -82,10 +82,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string CreatedAt
         {
@@ -138,7 +160,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DomainValidationOptions property is set
         internal bool IsSetDomainValidationOptions()
         {
-            return this._domainValidationOptions != null && this._domainValidationOptions.Count > 0; 
+            return this._domainValidationOptions != null && (this._domainValidationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +180,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ExtendedKeyUsages property is set
         internal bool IsSetExtendedKeyUsages()
         {
-            return this._extendedKeyUsages != null && this._extendedKeyUsages.Count > 0; 
+            return this._extendedKeyUsages != null && (this._extendedKeyUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,10 +217,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ImportedAt
         {
@@ -227,7 +271,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if InUseBy property is set
         internal bool IsSetInUseBy()
         {
-            return this._inUseBy != null && this._inUseBy.Count > 0; 
+            return this._inUseBy != null && (this._inUseBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -237,10 +281,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string IssuedAt
         {
@@ -310,7 +376,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if KeyUsages property is set
         internal bool IsSetKeyUsages()
         {
-            return this._keyUsages != null && this._keyUsages.Count > 0; 
+            return this._keyUsages != null && (this._keyUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -320,10 +386,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string NotAfter
         {
@@ -344,10 +432,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string NotBefore
         {
@@ -519,7 +629,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SubjectAlternativeNames property is set
         internal bool IsSetSubjectAlternativeNames()
         {
-            return this._subjectAlternativeNames != null && this._subjectAlternativeNames.Count > 0; 
+            return this._subjectAlternativeNames != null && (this._subjectAlternativeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

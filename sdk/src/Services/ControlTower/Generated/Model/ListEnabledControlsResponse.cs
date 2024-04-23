@@ -33,7 +33,7 @@ namespace Amazon.ControlTower.Model
     /// </summary>
     public partial class ListEnabledControlsResponse : AmazonWebServiceResponse
     {
-        private List<EnabledControlSummary> _enabledControls = new List<EnabledControlSummary>();
+        private List<EnabledControlSummary> _enabledControls = AWSConfigs.InitializeCollections ? new List<EnabledControlSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.ControlTower.Model
         // Check to see if EnabledControls property is set
         internal bool IsSetEnabledControls()
         {
-            return this._enabledControls != null && this._enabledControls.Count > 0; 
+            return this._enabledControls != null && (this._enabledControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

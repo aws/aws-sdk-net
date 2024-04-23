@@ -33,7 +33,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class ListKeysResponse : AmazonWebServiceResponse
     {
-        private List<ListKeysResponseEntry> _entries = new List<ListKeysResponseEntry>();
+        private List<ListKeysResponseEntry> _entries = AWSConfigs.InitializeCollections ? new List<ListKeysResponseEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -48,8 +48,8 @@ namespace Amazon.GroundStation.Model
     {
         private int? _contactPostPassDurationSeconds;
         private int? _contactPrePassDurationSeconds;
-        private List<EndpointDetails> _endpointDetails = new List<EndpointDetails>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<EndpointDetails> _endpointDetails = AWSConfigs.InitializeCollections ? new List<EndpointDetails>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactPostPassDurationSeconds. 
@@ -111,7 +111,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if EndpointDetails property is set
         internal bool IsSetEndpointDetails()
         {
-            return this._endpointDetails != null && this._endpointDetails.Count > 0; 
+            return this._endpointDetails != null && (this._endpointDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

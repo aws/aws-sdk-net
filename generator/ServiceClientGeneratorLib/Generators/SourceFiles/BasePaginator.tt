@@ -39,7 +39,7 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListI
         /// Enumerable containing all of the <#=resultKey.Member.PropertyName#>
         /// </summary>
         public IPaginatedEnumerable<<#=resultKey.ListItemType#>> <#=resultKey.Member.PropertyName#> => 
-            new PaginatedResultKeyResponse<<#=this.Operation.Name#>Response, <#=resultKey.ListItemType#>>(this, (i) => i.<#=resultKey.PropertyName#>);
+            new PaginatedResultKeyResponse<<#=this.Operation.Name#>Response, <#=resultKey.ListItemType#>>(this, (i) => i.<#=resultKey.PropertyName#> ?? new <#=resultKey.Member.DetermineType()#>());
 <#
 }
 #>

@@ -33,7 +33,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class GetChangeLogsResponse : AmazonWebServiceResponse
     {
-        private List<ChangeLog> _changeLogs = new List<ChangeLog>();
+        private List<ChangeLog> _changeLogs = AWSConfigs.InitializeCollections ? new List<ChangeLog>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if ChangeLogs property is set
         internal bool IsSetChangeLogs()
         {
-            return this._changeLogs != null && this._changeLogs.Count > 0; 
+            return this._changeLogs != null && (this._changeLogs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

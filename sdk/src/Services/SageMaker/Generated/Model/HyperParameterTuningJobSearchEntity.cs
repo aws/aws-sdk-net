@@ -46,9 +46,9 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTime;
         private ObjectiveStatusCounters _objectiveStatusCounters;
         private HyperParameterTrainingJobSummary _overallBestTrainingJob;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private HyperParameterTrainingJobDefinition _trainingJobDefinition;
-        private List<HyperParameterTrainingJobDefinition> _trainingJobDefinitions = new List<HyperParameterTrainingJobDefinition>();
+        private List<HyperParameterTrainingJobDefinition> _trainingJobDefinitions = AWSConfigs.InitializeCollections ? new List<HyperParameterTrainingJobDefinition>() : null;
         private TrainingJobStatusCounters _trainingJobStatusCounters;
         private HyperParameterTuningJobCompletionDetails _tuningJobCompletionDetails;
         private HyperParameterTuningJobWarmStartConfig _warmStartConfig;
@@ -278,7 +278,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -312,7 +312,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if TrainingJobDefinitions property is set
         internal bool IsSetTrainingJobDefinitions()
         {
-            return this._trainingJobDefinitions != null && this._trainingJobDefinitions.Count > 0; 
+            return this._trainingJobDefinitions != null && (this._trainingJobDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,11 +37,10 @@ namespace Amazon.CleanRoomsML.Model
         private DateTime? _createTime;
         private string _description;
         private string _kmsKeyArn;
-        private List<AudienceModelMetric> _metrics = new List<AudienceModelMetric>();
         private string _name;
         private AudienceModelStatus _status;
         private StatusDetails _statusDetails;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _trainingDataEndTime;
         private string _trainingDatasetArn;
         private DateTime? _trainingDataStartTime;
@@ -124,24 +123,6 @@ namespace Amazon.CleanRoomsML.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Metrics. 
-        /// <para>
-        /// Accuracy metrics for the model.
-        /// </para>
-        /// </summary>
-        public List<AudienceModelMetric> Metrics
-        {
-            get { return this._metrics; }
-            set { this._metrics = value; }
-        }
-
-        // Check to see if Metrics property is set
-        internal bool IsSetMetrics()
-        {
-            return this._metrics != null && this._metrics.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the audience model.
@@ -213,7 +194,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

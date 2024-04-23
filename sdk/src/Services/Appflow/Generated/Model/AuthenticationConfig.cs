@@ -33,7 +33,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class AuthenticationConfig
     {
-        private List<CustomAuthConfig> _customAuthConfigs = new List<CustomAuthConfig>();
+        private List<CustomAuthConfig> _customAuthConfigs = AWSConfigs.InitializeCollections ? new List<CustomAuthConfig>() : null;
         private bool? _isApiKeyAuthSupported;
         private bool? _isBasicAuthSupported;
         private bool? _isCustomAuthSupported;
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model
         // Check to see if CustomAuthConfigs property is set
         internal bool IsSetCustomAuthConfigs()
         {
-            return this._customAuthConfigs != null && this._customAuthConfigs.Count > 0; 
+            return this._customAuthConfigs != null && (this._customAuthConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

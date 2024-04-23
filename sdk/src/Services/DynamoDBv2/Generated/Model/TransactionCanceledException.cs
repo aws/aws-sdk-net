@@ -275,7 +275,7 @@ namespace Amazon.DynamoDBv2.Model
     #endif
     public partial class TransactionCanceledException : AmazonDynamoDBException
     {
-        private List<CancellationReason> _cancellationReasons = new List<CancellationReason>();
+        private List<CancellationReason> _cancellationReasons = AWSConfigs.InitializeCollections ? new List<CancellationReason>() : null;
 
         /// <summary>
         /// Constructs a new TransactionCanceledException with the specified error
@@ -378,7 +378,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if CancellationReasons property is set
         internal bool IsSetCancellationReasons()
         {
-            return this._cancellationReasons != null && this._cancellationReasons.Count > 0; 
+            return this._cancellationReasons != null && (this._cancellationReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

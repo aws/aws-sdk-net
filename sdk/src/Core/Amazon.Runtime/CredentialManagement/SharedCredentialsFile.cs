@@ -478,7 +478,7 @@ namespace Amazon.Runtime.CredentialManagement
 
 
             if (configProperties.TryGetValue(SsoSession, out var session)
-                && _configFile.TryGetSection(session, true, out var ssoSessionProperties))
+                && _configFile.TryGetSection(session, true, false, out var ssoSessionProperties, out _))
             {
                 // Skip SsoSession properties as it might be used by other profiles
                 var ssoSessionPropertiesNames = ssoSessionProperties.Keys.ToArray();

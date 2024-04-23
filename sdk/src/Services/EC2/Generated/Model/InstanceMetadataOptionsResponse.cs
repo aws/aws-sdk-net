@@ -68,6 +68,10 @@ namespace Amazon.EC2.Model
         /// Indicates whether the IPv6 endpoint for the instance metadata service is enabled or
         /// disabled.
         /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>disabled</c> 
+        /// </para>
         /// </summary>
         public InstanceMetadataProtocolState HttpProtocolIpv6
         {
@@ -84,16 +88,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HttpPutResponseHopLimit. 
         /// <para>
-        /// The desired HTTP PUT response hop limit for instance metadata requests. The larger
-        /// the number, the further instance metadata requests can travel.
+        /// The maximum number of hops that the metadata token can travel.
         /// </para>
         ///  
         /// <para>
-        /// Default: 1
-        /// </para>
-        ///  
-        /// <para>
-        /// Possible values: Integers from 1 to 64
+        /// Possible values: Integers from <c>1</c> to <c>64</c> 
         /// </para>
         /// </summary>
         public int HttpPutResponseHopLimit
@@ -115,16 +114,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>optional</c> - IMDSv2 is optional. You can choose whether to send a session token
-        /// in your instance metadata retrieval requests. If you retrieve IAM role credentials
-        /// without a session token, you receive the IMDSv1 role credentials. If you retrieve
-        /// IAM role credentials using a valid session token, you receive the IMDSv2 role credentials.
+        ///  <c>optional</c> - IMDSv2 is optional, which means that you can use either IMDSv2
+        /// or IMDSv1.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>required</c> - IMDSv2 is required. You must send a session token in your instance
-        /// metadata retrieval requests. With this option, retrieving the IAM role credentials
-        /// always returns IMDSv2 credentials; IMDSv1 credentials are not available.
+        ///  <c>required</c> - IMDSv2 is required, which means that IMDSv1 is disabled, and you
+        /// must use IMDSv2.
         /// </para>
         ///  </li> </ul>
         /// </summary>

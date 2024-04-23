@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIndex operation.
-    /// Creates an Amazon Q index.
+    /// Creates an Amazon Q Business index.
     /// 
     ///  
     /// <para>
@@ -52,12 +52,12 @@ namespace Amazon.QBusiness.Model
         private string _clientToken;
         private string _description;
         private string _displayName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application using the index.
+        /// The identifier of the Amazon Q Business application using the index.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -115,7 +115,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the Amazon Q index.
+        /// A description for the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -134,7 +134,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// A name for the Amazon Q index.
+        /// A name for the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -168,7 +168,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

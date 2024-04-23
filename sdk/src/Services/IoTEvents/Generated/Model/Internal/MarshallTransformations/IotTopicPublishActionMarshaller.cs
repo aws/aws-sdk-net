@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IotTopicPublishAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMqttTopic())
             {
                 context.Writer.WritePropertyName("mqttTopic");
@@ -71,3 +74,4 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

@@ -33,8 +33,8 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class CancelDomainConfigChangeResponse : AmazonWebServiceResponse
     {
-        private List<string> _cancelledChangeIds = new List<string>();
-        private List<CancelledChangeProperty> _cancelledChangeProperties = new List<CancelledChangeProperty>();
+        private List<string> _cancelledChangeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<CancelledChangeProperty> _cancelledChangeProperties = AWSConfigs.InitializeCollections ? new List<CancelledChangeProperty>() : null;
         private bool? _dryRun;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if CancelledChangeIds property is set
         internal bool IsSetCancelledChangeIds()
         {
-            return this._cancelledChangeIds != null && this._cancelledChangeIds.Count > 0; 
+            return this._cancelledChangeIds != null && (this._cancelledChangeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if CancelledChangeProperties property is set
         internal bool IsSetCancelledChangeProperties()
         {
-            return this._cancelledChangeProperties != null && this._cancelledChangeProperties.Count > 0; 
+            return this._cancelledChangeProperties != null && (this._cancelledChangeProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

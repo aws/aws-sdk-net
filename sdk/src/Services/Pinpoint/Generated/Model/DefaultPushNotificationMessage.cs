@@ -36,9 +36,9 @@ namespace Amazon.Pinpoint.Model
     {
         private Action _action;
         private string _body;
-        private Dictionary<string, string> _data = new Dictionary<string, string>();
+        private Dictionary<string, string> _data = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _silentPush;
-        private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _substitutions = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _title;
         private string _url;
 
@@ -112,7 +112,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Data property is set
         internal bool IsSetData()
         {
-            return this._data != null && this._data.Count > 0; 
+            return this._data != null && (this._data.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Substitutions property is set
         internal bool IsSetSubstitutions()
         {
-            return this._substitutions != null && this._substitutions.Count > 0; 
+            return this._substitutions != null && (this._substitutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

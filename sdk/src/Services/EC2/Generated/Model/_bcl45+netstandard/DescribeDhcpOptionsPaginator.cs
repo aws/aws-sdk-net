@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the DhcpOptions
         /// </summary>
         public IPaginatedEnumerable<DhcpOptions> DhcpOptions => 
-            new PaginatedResultKeyResponse<DescribeDhcpOptionsResponse, DhcpOptions>(this, (i) => i.DhcpOptions);
+            new PaginatedResultKeyResponse<DescribeDhcpOptionsResponse, DhcpOptions>(this, (i) => i.DhcpOptions ?? new List<DhcpOptions>());
 
         internal DescribeDhcpOptionsPaginator(IAmazonEC2 client, DescribeDhcpOptionsRequest request)
         {

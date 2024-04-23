@@ -40,7 +40,7 @@ namespace Amazon.Batch.Model
     public partial class NodeProperties
     {
         private int? _mainNode;
-        private List<NodeRangeProperty> _nodeRangeProperties = new List<NodeRangeProperty>();
+        private List<NodeRangeProperty> _nodeRangeProperties = AWSConfigs.InitializeCollections ? new List<NodeRangeProperty>() : null;
         private int? _numNodes;
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.Batch.Model
         // Check to see if NodeRangeProperties property is set
         internal bool IsSetNodeRangeProperties()
         {
-            return this._nodeRangeProperties != null && this._nodeRangeProperties.Count > 0; 
+            return this._nodeRangeProperties != null && (this._nodeRangeProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

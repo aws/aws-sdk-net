@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class QueryDefinition
     {
         private long? _lastModified;
-        private List<string> _logGroupNames = new List<string>();
+        private List<string> _logGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _queryDefinitionId;
         private string _queryString;
@@ -74,7 +74,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogGroupNames property is set
         internal bool IsSetLogGroupNames()
         {
-            return this._logGroupNames != null && this._logGroupNames.Count > 0; 
+            return this._logGroupNames != null && (this._logGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

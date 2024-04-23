@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class AlgorithmValidationSpecification
     {
-        private List<AlgorithmValidationProfile> _validationProfiles = new List<AlgorithmValidationProfile>();
+        private List<AlgorithmValidationProfile> _validationProfiles = AWSConfigs.InitializeCollections ? new List<AlgorithmValidationProfile>() : null;
         private string _validationRole;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ValidationProfiles property is set
         internal bool IsSetValidationProfiles()
         {
-            return this._validationProfiles != null && this._validationProfiles.Count > 0; 
+            return this._validationProfiles != null && (this._validationProfiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

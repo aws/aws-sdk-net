@@ -62,7 +62,7 @@ namespace Amazon.RDSDataService.Model
     public partial class BatchExecuteStatementRequest : AmazonRDSDataServiceRequest
     {
         private string _database;
-        private List<List<SqlParameter>> _parameterSets = new List<List<SqlParameter>>();
+        private List<List<SqlParameter>> _parameterSets = AWSConfigs.InitializeCollections ? new List<List<SqlParameter>>() : null;
         private string _resourceArn;
         private string _schema;
         private string _secretArn;
@@ -122,7 +122,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if ParameterSets property is set
         internal bool IsSetParameterSets()
         {
-            return this._parameterSets != null && this._parameterSets.Count > 0; 
+            return this._parameterSets != null && (this._parameterSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

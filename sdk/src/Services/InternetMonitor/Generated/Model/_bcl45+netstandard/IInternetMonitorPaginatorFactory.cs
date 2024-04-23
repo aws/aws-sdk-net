@@ -36,6 +36,11 @@ namespace Amazon.InternetMonitor.Model
         IListHealthEventsPaginator ListHealthEvents(ListHealthEventsRequest request);
 
         /// <summary>
+        /// Paginator for ListInternetEvents operation
+        ///</summary>
+        IListInternetEventsPaginator ListInternetEvents(ListInternetEventsRequest request);
+
+        /// <summary>
         /// Paginator for ListMonitors operation
         ///</summary>
         IListMonitorsPaginator ListMonitors(ListMonitorsRequest request);

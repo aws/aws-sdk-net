@@ -33,7 +33,7 @@ namespace Amazon.MarketplaceCatalog.Model
     /// </summary>
     public partial class ResaleAuthorizationManufacturerAccountIdFilter
     {
-        private List<string> _valueList = new List<string>();
+        private List<string> _valueList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _wildCardValue;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if ValueList property is set
         internal bool IsSetValueList()
         {
-            return this._valueList != null && this._valueList.Count > 0; 
+            return this._valueList != null && (this._valueList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

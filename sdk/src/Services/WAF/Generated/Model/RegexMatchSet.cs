@@ -59,7 +59,7 @@ namespace Amazon.WAF.Model
     {
         private string _name;
         private string _regexMatchSetId;
-        private List<RegexMatchTuple> _regexMatchTuples = new List<RegexMatchTuple>();
+        private List<RegexMatchTuple> _regexMatchTuples = AWSConfigs.InitializeCollections ? new List<RegexMatchTuple>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -140,7 +140,7 @@ namespace Amazon.WAF.Model
         // Check to see if RegexMatchTuples property is set
         internal bool IsSetRegexMatchTuples()
         {
-            return this._regexMatchTuples != null && this._regexMatchTuples.Count > 0; 
+            return this._regexMatchTuples != null && (this._regexMatchTuples.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

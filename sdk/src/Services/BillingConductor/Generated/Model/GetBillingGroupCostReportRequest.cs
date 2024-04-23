@@ -37,7 +37,7 @@ namespace Amazon.BillingConductor.Model
     {
         private string _arn;
         private BillingPeriodRange _billingPeriodRange;
-        private List<string> _groupBy = new List<string>();
+        private List<string> _groupBy = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -95,7 +95,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if GroupBy property is set
         internal bool IsSetGroupBy()
         {
-            return this._groupBy != null && this._groupBy.Count > 0; 
+            return this._groupBy != null && (this._groupBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

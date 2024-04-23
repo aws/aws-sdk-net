@@ -34,7 +34,7 @@ namespace Amazon.FraudDetector.Model
     public partial class ExternalModelOutputs
     {
         private ExternalModelSummary _externalModel;
-        private Dictionary<string, string> _outputs = new Dictionary<string, string>();
+        private Dictionary<string, string> _outputs = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExternalModel. 
@@ -69,7 +69,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

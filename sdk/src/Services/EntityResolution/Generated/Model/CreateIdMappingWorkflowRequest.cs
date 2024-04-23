@@ -38,10 +38,10 @@ namespace Amazon.EntityResolution.Model
     {
         private string _description;
         private IdMappingTechniques _idMappingTechniques;
-        private List<IdMappingWorkflowInputSource> _inputSourceConfig = new List<IdMappingWorkflowInputSource>();
-        private List<IdMappingWorkflowOutputSource> _outputSourceConfig = new List<IdMappingWorkflowOutputSource>();
+        private List<IdMappingWorkflowInputSource> _inputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingWorkflowInputSource>() : null;
+        private List<IdMappingWorkflowOutputSource> _outputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingWorkflowOutputSource>() : null;
         private string _roleArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workflowName;
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if InputSourceConfig property is set
         internal bool IsSetInputSourceConfig()
         {
-            return this._inputSourceConfig != null && this._inputSourceConfig.Count > 0; 
+            return this._inputSourceConfig != null && (this._inputSourceConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.EntityResolution.Model
         /// <c>OutputS3Path</c> and <c>Output</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=1)]
         public List<IdMappingWorkflowOutputSource> OutputSourceConfig
         {
             get { return this._outputSourceConfig; }
@@ -119,7 +119,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if OutputSourceConfig property is set
         internal bool IsSetOutputSourceConfig()
         {
-            return this._outputSourceConfig != null && this._outputSourceConfig.Count > 0; 
+            return this._outputSourceConfig != null && (this._outputSourceConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.EntityResolution.Model
         /// to create resources on your behalf as part of workflow execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=32, Max=512)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -158,7 +158,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

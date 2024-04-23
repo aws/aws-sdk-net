@@ -36,10 +36,11 @@ namespace Amazon.Omics.Model
     {
         private string _clientToken;
         private string _description;
+        private ETagAlgorithmFamily _eTagAlgorithmFamily;
         private string _fallbackLocation;
         private string _name;
         private SseConfig _sseConfig;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -81,9 +82,27 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ETagAlgorithmFamily. 
+        /// <para>
+        /// The ETag algorithm family to use for ingested read sets.
+        /// </para>
+        /// </summary>
+        public ETagAlgorithmFamily ETagAlgorithmFamily
+        {
+            get { return this._eTagAlgorithmFamily; }
+            set { this._eTagAlgorithmFamily = value; }
+        }
+
+        // Check to see if ETagAlgorithmFamily property is set
+        internal bool IsSetETagAlgorithmFamily()
+        {
+            return this._eTagAlgorithmFamily != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FallbackLocation. 
         /// <para>
-        ///  An S3 location that is used to store files that have failed a direct upload. 
+        /// An S3 location that is used to store files that have failed a direct upload.
         /// </para>
         /// </summary>
         public string FallbackLocation
@@ -150,7 +169,7 @@ namespace Amazon.Omics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

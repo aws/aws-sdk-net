@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class BatchAssociateAnalyticsDataSetRequest : AmazonConnectRequest
     {
-        private List<string> _dataSetIds = new List<string>();
+        private List<string> _dataSetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _instanceId;
         private string _targetAccountId;
 
@@ -60,7 +60,7 @@ namespace Amazon.Connect.Model
         // Check to see if DataSetIds property is set
         internal bool IsSetDataSetIds()
         {
-            return this._dataSetIds != null && this._dataSetIds.Count > 0; 
+            return this._dataSetIds != null && (this._dataSetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,9 +34,9 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class GetDeliverabilityDashboardOptionsResponse : AmazonWebServiceResponse
     {
         private DeliverabilityDashboardAccountStatus _accountStatus;
-        private List<DomainDeliverabilityTrackingOption> _activeSubscribedDomains = new List<DomainDeliverabilityTrackingOption>();
+        private List<DomainDeliverabilityTrackingOption> _activeSubscribedDomains = AWSConfigs.InitializeCollections ? new List<DomainDeliverabilityTrackingOption>() : null;
         private bool? _dashboardEnabled;
-        private List<DomainDeliverabilityTrackingOption> _pendingExpirationSubscribedDomains = new List<DomainDeliverabilityTrackingOption>();
+        private List<DomainDeliverabilityTrackingOption> _pendingExpirationSubscribedDomains = AWSConfigs.InitializeCollections ? new List<DomainDeliverabilityTrackingOption>() : null;
         private DateTime? _subscriptionExpiryDate;
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if ActiveSubscribedDomains property is set
         internal bool IsSetActiveSubscribedDomains()
         {
-            return this._activeSubscribedDomains != null && this._activeSubscribedDomains.Count > 0; 
+            return this._activeSubscribedDomains != null && (this._activeSubscribedDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if PendingExpirationSubscribedDomains property is set
         internal bool IsSetPendingExpirationSubscribedDomains()
         {
-            return this._pendingExpirationSubscribedDomains != null && this._pendingExpirationSubscribedDomains.Count > 0; 
+            return this._pendingExpirationSubscribedDomains != null && (this._pendingExpirationSubscribedDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

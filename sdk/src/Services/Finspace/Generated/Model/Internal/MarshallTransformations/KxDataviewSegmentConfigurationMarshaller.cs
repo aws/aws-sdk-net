@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KxDataviewSegmentConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDbPaths())
             {
                 context.Writer.WritePropertyName("dbPaths");
@@ -54,6 +57,12 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectDbPathsListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetOnDemand())
+            {
+                context.Writer.WritePropertyName("onDemand");
+                context.Writer.Write(requestObject.OnDemand);
             }
 
             if(requestObject.IsSetVolumeName())
@@ -71,3 +80,4 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

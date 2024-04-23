@@ -45,7 +45,7 @@ namespace Amazon.CodeBuild.Model
         /// Enumerable containing all of the ReportGroups
         /// </summary>
         public IPaginatedEnumerable<string> ReportGroups => 
-            new PaginatedResultKeyResponse<ListSharedReportGroupsResponse, string>(this, (i) => i.ReportGroups);
+            new PaginatedResultKeyResponse<ListSharedReportGroupsResponse, string>(this, (i) => i.ReportGroups ?? new List<string>());
 
         internal ListSharedReportGroupsPaginator(IAmazonCodeBuild client, ListSharedReportGroupsRequest request)
         {

@@ -33,8 +33,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Filter
     {
-        private List<FilterExpression> _filters = new List<FilterExpression>();
-        private List<string> _inputs = new List<string>();
+        private List<FilterExpression> _filters = AWSConfigs.InitializeCollections ? new List<FilterExpression>() : null;
+        private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FilterLogicalOperator _logicalOperator;
         private string _name;
 
@@ -54,7 +54,7 @@ namespace Amazon.Glue.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Glue.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

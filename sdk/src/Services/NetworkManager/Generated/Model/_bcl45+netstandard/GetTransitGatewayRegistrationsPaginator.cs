@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the TransitGatewayRegistrations
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayRegistration> TransitGatewayRegistrations => 
-            new PaginatedResultKeyResponse<GetTransitGatewayRegistrationsResponse, TransitGatewayRegistration>(this, (i) => i.TransitGatewayRegistrations);
+            new PaginatedResultKeyResponse<GetTransitGatewayRegistrationsResponse, TransitGatewayRegistration>(this, (i) => i.TransitGatewayRegistrations ?? new List<TransitGatewayRegistration>());
 
         internal GetTransitGatewayRegistrationsPaginator(IAmazonNetworkManager client, GetTransitGatewayRegistrationsRequest request)
         {

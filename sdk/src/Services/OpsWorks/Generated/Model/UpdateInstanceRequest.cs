@@ -51,7 +51,7 @@ namespace Amazon.OpsWorks.Model
         private bool? _installUpdatesOnBoot;
         private string _instanceId;
         private string _instanceType;
-        private List<string> _layerIds = new List<string>();
+        private List<string> _layerIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _os;
         private string _sshKeyName;
 
@@ -276,7 +276,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if LayerIds property is set
         internal bool IsSetLayerIds()
         {
-            return this._layerIds != null && this._layerIds.Count > 0; 
+            return this._layerIds != null && (this._layerIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

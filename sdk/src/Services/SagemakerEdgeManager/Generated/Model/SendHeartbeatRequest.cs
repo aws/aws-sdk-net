@@ -34,12 +34,12 @@ namespace Amazon.SagemakerEdgeManager.Model
     /// </summary>
     public partial class SendHeartbeatRequest : AmazonSagemakerEdgeManagerRequest
     {
-        private List<EdgeMetric> _agentMetrics = new List<EdgeMetric>();
+        private List<EdgeMetric> _agentMetrics = AWSConfigs.InitializeCollections ? new List<EdgeMetric>() : null;
         private string _agentVersion;
         private DeploymentResult _deploymentResult;
         private string _deviceFleetName;
         private string _deviceName;
-        private List<Model> _models = new List<Model>();
+        private List<Model> _models = AWSConfigs.InitializeCollections ? new List<Model>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentMetrics. 
@@ -56,7 +56,7 @@ namespace Amazon.SagemakerEdgeManager.Model
         // Check to see if AgentMetrics property is set
         internal bool IsSetAgentMetrics()
         {
-            return this._agentMetrics != null && this._agentMetrics.Count > 0; 
+            return this._agentMetrics != null && (this._agentMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.SagemakerEdgeManager.Model
         // Check to see if Models property is set
         internal bool IsSetModels()
         {
-            return this._models != null && this._models.Count > 0; 
+            return this._models != null && (this._models.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.Backup.Model
         /// Enumerable containing all of the Results
         /// </summary>
         public IPaginatedEnumerable<ProtectedResource> Results => 
-            new PaginatedResultKeyResponse<ListProtectedResourcesByBackupVaultResponse, ProtectedResource>(this, (i) => i.Results);
+            new PaginatedResultKeyResponse<ListProtectedResourcesByBackupVaultResponse, ProtectedResource>(this, (i) => i.Results ?? new List<ProtectedResource>());
 
         internal ListProtectedResourcesByBackupVaultPaginator(IAmazonBackup client, ListProtectedResourcesByBackupVaultRequest request)
         {

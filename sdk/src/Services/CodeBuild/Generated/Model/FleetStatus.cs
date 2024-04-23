@@ -101,6 +101,10 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>PENDING_DELETION</c>: The compute fleet is pending deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>DELETING</c>: The compute fleet is being deleted.
         /// </para>
         ///  </li> <li> 

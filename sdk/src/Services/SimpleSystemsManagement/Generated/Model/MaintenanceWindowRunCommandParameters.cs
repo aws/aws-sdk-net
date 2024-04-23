@@ -69,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private NotificationConfig _notificationConfig;
         private string _outputS3BucketName;
         private string _outputS3KeyPrefix;
-        private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _serviceRoleArn;
         private int? _timeoutSeconds;
 
@@ -252,7 +252,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

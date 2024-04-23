@@ -35,7 +35,7 @@ namespace Amazon.AppConfig.Model
     {
         private string _extensionAssociationId;
         private string _extensionId;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _versionNumber;
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.AppConfig.Model
         /// One or more parameters for the actions called by the extension.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Min=0, Max=10)]
         public Dictionary<string, string> Parameters
         {
             get { return this._parameters; }
@@ -90,7 +90,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

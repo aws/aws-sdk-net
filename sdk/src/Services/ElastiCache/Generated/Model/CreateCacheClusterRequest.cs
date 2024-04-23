@@ -46,29 +46,29 @@ namespace Amazon.ElastiCache.Model
         private string _cacheClusterId;
         private string _cacheNodeType;
         private string _cacheParameterGroupName;
-        private List<string> _cacheSecurityGroupNames = new List<string>();
+        private List<string> _cacheSecurityGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _cacheSubnetGroupName;
         private string _engine;
         private string _engineVersion;
         private IpDiscovery _ipDiscovery;
-        private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = new List<LogDeliveryConfigurationRequest>();
+        private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = AWSConfigs.InitializeCollections ? new List<LogDeliveryConfigurationRequest>() : null;
         private NetworkType _networkType;
         private string _notificationTopicArn;
         private int? _numCacheNodes;
         private OutpostMode _outpostMode;
         private int? _port;
         private string _preferredAvailabilityZone;
-        private List<string> _preferredAvailabilityZones = new List<string>();
+        private List<string> _preferredAvailabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _preferredMaintenanceWindow;
         private string _preferredOutpostArn;
-        private List<string> _preferredOutpostArns = new List<string>();
+        private List<string> _preferredOutpostArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicationGroupId;
-        private List<string> _securityGroupIds = new List<string>();
-        private List<string> _snapshotArns = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _snapshotArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _snapshotName;
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _transitEncryptionEnabled;
 
         /// <summary>
@@ -438,7 +438,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheSecurityGroupNames property is set
         internal bool IsSetCacheSecurityGroupNames()
         {
-            return this._cacheSecurityGroupNames != null && this._cacheSecurityGroupNames.Count > 0; 
+            return this._cacheSecurityGroupNames != null && (this._cacheSecurityGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -555,7 +555,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if LogDeliveryConfigurations property is set
         internal bool IsSetLogDeliveryConfigurations()
         {
-            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+            return this._logDeliveryConfigurations != null && (this._logDeliveryConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -734,7 +734,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if PreferredAvailabilityZones property is set
         internal bool IsSetPreferredAvailabilityZones()
         {
-            return this._preferredAvailabilityZones != null && this._preferredAvailabilityZones.Count > 0; 
+            return this._preferredAvailabilityZones != null && (this._preferredAvailabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -790,7 +790,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if PreferredOutpostArns property is set
         internal bool IsSetPreferredOutpostArns()
         {
-            return this._preferredOutpostArns != null && this._preferredOutpostArns.Count > 0; 
+            return this._preferredOutpostArns != null && (this._preferredOutpostArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -845,7 +845,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -874,7 +874,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SnapshotArns property is set
         internal bool IsSetSnapshotArns()
         {
-            return this._snapshotArns != null && this._snapshotArns.Count > 0; 
+            return this._snapshotArns != null && (this._snapshotArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -978,7 +978,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

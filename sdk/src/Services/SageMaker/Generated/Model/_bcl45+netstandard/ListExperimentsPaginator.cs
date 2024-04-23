@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the ExperimentSummaries
         /// </summary>
         public IPaginatedEnumerable<ExperimentSummary> ExperimentSummaries => 
-            new PaginatedResultKeyResponse<ListExperimentsResponse, ExperimentSummary>(this, (i) => i.ExperimentSummaries);
+            new PaginatedResultKeyResponse<ListExperimentsResponse, ExperimentSummary>(this, (i) => i.ExperimentSummaries ?? new List<ExperimentSummary>());
 
         internal ListExperimentsPaginator(IAmazonSageMaker client, ListExperimentsRequest request)
         {

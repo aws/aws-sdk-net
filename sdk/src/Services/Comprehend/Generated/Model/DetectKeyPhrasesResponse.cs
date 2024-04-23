@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class DetectKeyPhrasesResponse : AmazonWebServiceResponse
     {
-        private List<KeyPhrase> _keyPhrases = new List<KeyPhrase>();
+        private List<KeyPhrase> _keyPhrases = AWSConfigs.InitializeCollections ? new List<KeyPhrase>() : null;
 
         /// <summary>
         /// Gets and sets the property KeyPhrases. 
@@ -53,7 +53,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if KeyPhrases property is set
         internal bool IsSetKeyPhrases()
         {
-            return this._keyPhrases != null && this._keyPhrases.Count > 0; 
+            return this._keyPhrases != null && (this._keyPhrases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

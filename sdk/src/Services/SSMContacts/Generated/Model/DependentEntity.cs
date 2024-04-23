@@ -39,7 +39,7 @@ namespace Amazon.SSMContacts.Model
     /// </summary>
     public partial class DependentEntity
     {
-        private List<string> _dependentResourceIds = new List<string>();
+        private List<string> _dependentResourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _relationType;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if DependentResourceIds property is set
         internal bool IsSetDependentResourceIds()
         {
-            return this._dependentResourceIds != null && this._dependentResourceIds.Count > 0; 
+            return this._dependentResourceIds != null && (this._dependentResourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

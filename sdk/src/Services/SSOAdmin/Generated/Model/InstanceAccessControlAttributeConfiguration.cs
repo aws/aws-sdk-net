@@ -33,7 +33,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class InstanceAccessControlAttributeConfiguration
     {
-        private List<AccessControlAttribute> _accessControlAttributes = new List<AccessControlAttribute>();
+        private List<AccessControlAttribute> _accessControlAttributes = AWSConfigs.InitializeCollections ? new List<AccessControlAttribute>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessControlAttributes. 
@@ -52,7 +52,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if AccessControlAttributes property is set
         internal bool IsSetAccessControlAttributes()
         {
-            return this._accessControlAttributes != null && this._accessControlAttributes.Count > 0; 
+            return this._accessControlAttributes != null && (this._accessControlAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

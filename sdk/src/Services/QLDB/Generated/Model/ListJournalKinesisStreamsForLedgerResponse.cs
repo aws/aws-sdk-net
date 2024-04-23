@@ -34,7 +34,7 @@ namespace Amazon.QLDB.Model
     public partial class ListJournalKinesisStreamsForLedgerResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<JournalKinesisStreamDescription> _streams = new List<JournalKinesisStreamDescription>();
+        private List<JournalKinesisStreamDescription> _streams = AWSConfigs.InitializeCollections ? new List<JournalKinesisStreamDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. <ul> <li> 
@@ -78,7 +78,7 @@ namespace Amazon.QLDB.Model
         // Check to see if Streams property is set
         internal bool IsSetStreams()
         {
-            return this._streams != null && this._streams.Count > 0; 
+            return this._streams != null && (this._streams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

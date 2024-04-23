@@ -46,7 +46,7 @@ namespace Amazon.Omics.Model
         private string _outputUri;
         private Amazon.Runtime.Documents.Document _parameters;
         private int? _priority;
-        private Dictionary<string, string> _resourceDigests = new Dictionary<string, string>();
+        private Dictionary<string, string> _resourceDigests = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private RunRetentionMode _retentionMode;
         private string _roleArn;
         private string _runGroupId;
@@ -58,7 +58,7 @@ namespace Amazon.Omics.Model
         private string _statusMessage;
         private DateTime? _stopTime;
         private int? _storageCapacity;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uuid;
         private string _workflowId;
         private WorkflowType _workflowType;
@@ -66,7 +66,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Accelerators. 
         /// <para>
-        ///  The computational accelerator used to run the workflow. 
+        /// The computational accelerator used to run the workflow.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -160,7 +160,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        ///  The reason a run has failed. 
+        /// The reason a run has failed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -217,7 +217,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property LogLocation. 
         /// <para>
-        ///  The location of the run log. 
+        /// The location of the run log.
         /// </para>
         /// </summary>
         public RunLogLocation LogLocation
@@ -322,7 +322,7 @@ namespace Amazon.Omics.Model
         // Check to see if ResourceDigests property is set
         internal bool IsSetResourceDigests()
         {
-            return this._resourceDigests != null && this._resourceDigests.Count > 0; 
+            return this._resourceDigests != null && (this._resourceDigests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -404,7 +404,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RunOutputUri. 
         /// <para>
-        ///  The destination for workflow outputs. 
+        /// The destination for workflow outputs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=750)]
@@ -546,13 +546,13 @@ namespace Amazon.Omics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Uuid. 
         /// <para>
-        ///  The universally unique identifier for a run. 
+        /// The universally unique identifier for a run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

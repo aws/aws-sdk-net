@@ -33,7 +33,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class Image
     {
-        private List<Application> _applications = new List<Application>();
+        private List<Application> _applications = AWSConfigs.InitializeCollections ? new List<Application>() : null;
         private string _appstreamAgentVersion;
         private string _arn;
         private string _baseImageArn;
@@ -42,7 +42,7 @@ namespace Amazon.AppStream.Model
         private string _displayName;
         private string _imageBuilderName;
         private bool? _imageBuilderSupported;
-        private List<ResourceError> _imageErrors = new List<ResourceError>();
+        private List<ResourceError> _imageErrors = AWSConfigs.InitializeCollections ? new List<ResourceError>() : null;
         private ImagePermissions _imagePermissions;
         private string _name;
         private PlatformType _platform;
@@ -66,7 +66,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Amazon.AppStream.Model
         // Check to see if ImageErrors property is set
         internal bool IsSetImageErrors()
         {
-            return this._imageErrors != null && this._imageErrors.Count > 0; 
+            return this._imageErrors != null && (this._imageErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

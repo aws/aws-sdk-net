@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class TerminateInstancesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceStateChange> _terminatingInstances = new List<InstanceStateChange>();
+        private List<InstanceStateChange> _terminatingInstances = AWSConfigs.InitializeCollections ? new List<InstanceStateChange>() : null;
 
         /// <summary>
         /// Gets and sets the property TerminatingInstances. 
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         // Check to see if TerminatingInstances property is set
         internal bool IsSetTerminatingInstances()
         {
-            return this._terminatingInstances != null && this._terminatingInstances.Count > 0; 
+            return this._terminatingInstances != null && (this._terminatingInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

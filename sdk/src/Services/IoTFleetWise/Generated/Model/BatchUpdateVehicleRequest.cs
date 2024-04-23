@@ -46,7 +46,7 @@ namespace Amazon.IoTFleetWise.Model
     /// </summary>
     public partial class BatchUpdateVehicleRequest : AmazonIoTFleetWiseRequest
     {
-        private List<UpdateVehicleRequestItem> _vehicles = new List<UpdateVehicleRequestItem>();
+        private List<UpdateVehicleRequestItem> _vehicles = AWSConfigs.InitializeCollections ? new List<UpdateVehicleRequestItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Vehicles. 
@@ -65,7 +65,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Vehicles property is set
         internal bool IsSetVehicles()
         {
-            return this._vehicles != null && this._vehicles.Count > 0; 
+            return this._vehicles != null && (this._vehicles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

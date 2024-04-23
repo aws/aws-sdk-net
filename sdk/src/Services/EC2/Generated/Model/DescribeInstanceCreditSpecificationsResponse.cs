@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeInstanceCreditSpecificationsResponse : AmazonWebServiceResponse
     {
-        private List<InstanceCreditSpecification> _instanceCreditSpecifications = new List<InstanceCreditSpecification>();
+        private List<InstanceCreditSpecification> _instanceCreditSpecifications = AWSConfigs.InitializeCollections ? new List<InstanceCreditSpecification>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceCreditSpecifications property is set
         internal bool IsSetInstanceCreditSpecifications()
         {
-            return this._instanceCreditSpecifications != null && this._instanceCreditSpecifications.Count > 0; 
+            return this._instanceCreditSpecifications != null && (this._instanceCreditSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,8 +34,8 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class AutomatedAbrRule
     {
-        private List<AllowedRenditionSize> _allowedRenditions = new List<AllowedRenditionSize>();
-        private List<ForceIncludeRenditionSize> _forceIncludeRenditions = new List<ForceIncludeRenditionSize>();
+        private List<AllowedRenditionSize> _allowedRenditions = AWSConfigs.InitializeCollections ? new List<AllowedRenditionSize>() : null;
+        private List<ForceIncludeRenditionSize> _forceIncludeRenditions = AWSConfigs.InitializeCollections ? new List<ForceIncludeRenditionSize>() : null;
         private MinBottomRenditionSize _minBottomRenditionSize;
         private MinTopRenditionSize _minTopRenditionSize;
         private RuleType _type;
@@ -54,7 +54,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AllowedRenditions property is set
         internal bool IsSetAllowedRenditions()
         {
-            return this._allowedRenditions != null && this._allowedRenditions.Count > 0; 
+            return this._allowedRenditions != null && (this._allowedRenditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if ForceIncludeRenditions property is set
         internal bool IsSetForceIncludeRenditions()
         {
-            return this._forceIncludeRenditions != null && this._forceIncludeRenditions.Count > 0; 
+            return this._forceIncludeRenditions != null && (this._forceIncludeRenditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

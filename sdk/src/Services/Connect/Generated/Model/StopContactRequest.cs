@@ -30,8 +30,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the StopContact operation.
-    /// Ends the specified contact. This call does not work for voice contacts that use the
-    /// following initiation methods:
+    /// Ends the specified contact. Use this API to stop queued callbacks. It does not work
+    /// for voice contacts that use the following initiation methods:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -47,8 +47,7 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Chat and task contacts, however, can be terminated in any state, regardless of initiation
-    /// method.
+    /// Chat and task contacts can be terminated in any state, regardless of initiation method.
     /// </para>
     /// </summary>
     public partial class StopContactRequest : AmazonConnectRequest

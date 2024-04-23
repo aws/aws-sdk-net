@@ -33,9 +33,9 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class ListCisScanConfigurationsFilterCriteria
     {
-        private List<CisStringFilter> _scanConfigurationArnFilters = new List<CisStringFilter>();
-        private List<CisStringFilter> _scanNameFilters = new List<CisStringFilter>();
-        private List<TagFilter> _targetResourceTagFilters = new List<TagFilter>();
+        private List<CisStringFilter> _scanConfigurationArnFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisStringFilter> _scanNameFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<TagFilter> _targetResourceTagFilters = AWSConfigs.InitializeCollections ? new List<TagFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property ScanConfigurationArnFilters. 
@@ -53,7 +53,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ScanConfigurationArnFilters property is set
         internal bool IsSetScanConfigurationArnFilters()
         {
-            return this._scanConfigurationArnFilters != null && this._scanConfigurationArnFilters.Count > 0; 
+            return this._scanConfigurationArnFilters != null && (this._scanConfigurationArnFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ScanNameFilters property is set
         internal bool IsSetScanNameFilters()
         {
-            return this._scanNameFilters != null && this._scanNameFilters.Count > 0; 
+            return this._scanNameFilters != null && (this._scanNameFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TargetResourceTagFilters property is set
         internal bool IsSetTargetResourceTagFilters()
         {
-            return this._targetResourceTagFilters != null && this._targetResourceTagFilters.Count > 0; 
+            return this._targetResourceTagFilters != null && (this._targetResourceTagFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

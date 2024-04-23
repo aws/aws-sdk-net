@@ -30,10 +30,18 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCampaign operation.
+    /// <important> 
+    /// <para>
+    ///  You incur campaign costs while it is active. To avoid unnecessary costs, make sure
+    /// to delete the campaign when you are finished. For information about campaign costs,
+    /// see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Creates a campaign that deploys a solution version. When a client calls the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
     /// and <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a>
     /// APIs, a campaign is specified in the request.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Minimum Provisioned TPS and Auto-Scaling</b> 
@@ -130,7 +138,7 @@ namespace Amazon.Personalize.Model
         private int? _minProvisionedTPS;
         private string _name;
         private string _solutionVersionArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CampaignConfig. 
@@ -195,7 +203,21 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property SolutionVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the solution version to deploy.
+        /// The Amazon Resource Name (ARN) of the trained model to deploy with the campaign. To
+        /// specify the latest solution version of your solution, specify the ARN of your <i>solution</i>
+        /// in <c>SolutionArn/$LATEST</c> format. You must use this format if you set <c>syncWithLatestSolutionVersion</c>
+        /// to <c>True</c> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  To deploy a model that isn't the latest solution version of your solution, specify
+        /// the ARN of the solution version. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
+        /// automatic campaign updates</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -228,7 +250,7 @@ namespace Amazon.Personalize.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

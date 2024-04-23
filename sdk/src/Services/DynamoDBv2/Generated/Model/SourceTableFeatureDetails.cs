@@ -34,8 +34,8 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class SourceTableFeatureDetails
     {
-        private List<GlobalSecondaryIndexInfo> _globalSecondaryIndexes = new List<GlobalSecondaryIndexInfo>();
-        private List<LocalSecondaryIndexInfo> _localSecondaryIndexes = new List<LocalSecondaryIndexInfo>();
+        private List<GlobalSecondaryIndexInfo> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndexInfo>() : null;
+        private List<LocalSecondaryIndexInfo> _localSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<LocalSecondaryIndexInfo>() : null;
         private SSEDescription _sseDescription;
         private StreamSpecification _streamDescription;
         private TimeToLiveDescription _timeToLiveDescription;
@@ -57,7 +57,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if GlobalSecondaryIndexes property is set
         internal bool IsSetGlobalSecondaryIndexes()
         {
-            return this._globalSecondaryIndexes != null && this._globalSecondaryIndexes.Count > 0; 
+            return this._globalSecondaryIndexes != null && (this._globalSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if LocalSecondaryIndexes property is set
         internal bool IsSetLocalSecondaryIndexes()
         {
-            return this._localSecondaryIndexes != null && this._localSecondaryIndexes.Count > 0; 
+            return this._localSecondaryIndexes != null && (this._localSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

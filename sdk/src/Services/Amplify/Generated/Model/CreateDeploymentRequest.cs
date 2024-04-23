@@ -44,7 +44,7 @@ namespace Amazon.Amplify.Model
     {
         private string _appId;
         private string _branchName;
-        private Dictionary<string, string> _fileMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _fileMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AppId. 
@@ -102,7 +102,7 @@ namespace Amazon.Amplify.Model
         // Check to see if FileMap property is set
         internal bool IsSetFileMap()
         {
-            return this._fileMap != null && this._fileMap.Count > 0; 
+            return this._fileMap != null && (this._fileMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

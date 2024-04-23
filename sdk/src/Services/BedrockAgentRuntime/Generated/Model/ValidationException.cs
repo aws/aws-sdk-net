@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// This exception is thrown when the request's input validation fails
+    /// Input validation failed. Check your request parameters and retry the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

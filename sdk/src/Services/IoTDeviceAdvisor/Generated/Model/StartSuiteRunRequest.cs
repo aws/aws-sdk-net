@@ -43,7 +43,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         private string _suiteDefinitionId;
         private string _suiteDefinitionVersion;
         private SuiteRunConfiguration _suiteRunConfiguration;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
@@ -118,7 +118,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

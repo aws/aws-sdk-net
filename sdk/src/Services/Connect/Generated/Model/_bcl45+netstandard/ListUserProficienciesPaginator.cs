@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the UserProficiencyList
         /// </summary>
         public IPaginatedEnumerable<UserProficiency> UserProficiencyList => 
-            new PaginatedResultKeyResponse<ListUserProficienciesResponse, UserProficiency>(this, (i) => i.UserProficiencyList);
+            new PaginatedResultKeyResponse<ListUserProficienciesResponse, UserProficiency>(this, (i) => i.UserProficiencyList ?? new List<UserProficiency>());
 
         internal ListUserProficienciesPaginator(IAmazonConnect client, ListUserProficienciesRequest request)
         {

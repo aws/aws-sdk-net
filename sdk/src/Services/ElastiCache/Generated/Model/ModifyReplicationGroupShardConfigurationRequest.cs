@@ -37,10 +37,10 @@ namespace Amazon.ElastiCache.Model
     {
         private bool? _applyImmediately;
         private int? _nodeGroupCount;
-        private List<string> _nodeGroupsToRemove = new List<string>();
-        private List<string> _nodeGroupsToRetain = new List<string>();
+        private List<string> _nodeGroupsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _nodeGroupsToRetain = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicationGroupId;
-        private List<ReshardingConfiguration> _reshardingConfiguration = new List<ReshardingConfiguration>();
+        private List<ReshardingConfiguration> _reshardingConfiguration = AWSConfigs.InitializeCollections ? new List<ReshardingConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
@@ -108,7 +108,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NodeGroupsToRemove property is set
         internal bool IsSetNodeGroupsToRemove()
         {
-            return this._nodeGroupsToRemove != null && this._nodeGroupsToRemove.Count > 0; 
+            return this._nodeGroupsToRemove != null && (this._nodeGroupsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NodeGroupsToRetain property is set
         internal bool IsSetNodeGroupsToRetain()
         {
-            return this._nodeGroupsToRetain != null && this._nodeGroupsToRetain.Count > 0; 
+            return this._nodeGroupsToRetain != null && (this._nodeGroupsToRetain.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReshardingConfiguration property is set
         internal bool IsSetReshardingConfiguration()
         {
-            return this._reshardingConfiguration != null && this._reshardingConfiguration.Count > 0; 
+            return this._reshardingConfiguration != null && (this._reshardingConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

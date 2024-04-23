@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// This exception is thrown when there is a conflict performing an operation
+    /// There was a conflict performing an operation. Resolve the conflict and retry your
+    /// request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -33,7 +33,7 @@ namespace Amazon.Shield.Model
     /// </summary>
     public partial class DescribeDRTAccessResponse : AmazonWebServiceResponse
     {
-        private List<string> _logBucketList = new List<string>();
+        private List<string> _logBucketList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Shield.Model
         // Check to see if LogBucketList property is set
         internal bool IsSetLogBucketList()
         {
-            return this._logBucketList != null && this._logBucketList.Count > 0; 
+            return this._logBucketList != null && (this._logBucketList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

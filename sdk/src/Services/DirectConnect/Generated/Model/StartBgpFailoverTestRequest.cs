@@ -50,7 +50,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class StartBgpFailoverTestRequest : AmazonDirectConnectRequest
     {
-        private List<string> _bgpPeers = new List<string>();
+        private List<string> _bgpPeers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _testDurationInMinutes;
         private string _virtualInterfaceId;
 
@@ -69,7 +69,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if BgpPeers property is set
         internal bool IsSetBgpPeers()
         {
-            return this._bgpPeers != null && this._bgpPeers.Count > 0; 
+            return this._bgpPeers != null && (this._bgpPeers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

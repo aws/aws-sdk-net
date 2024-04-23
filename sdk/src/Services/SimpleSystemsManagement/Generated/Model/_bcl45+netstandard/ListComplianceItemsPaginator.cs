@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the ComplianceItems
         /// </summary>
         public IPaginatedEnumerable<ComplianceItem> ComplianceItems => 
-            new PaginatedResultKeyResponse<ListComplianceItemsResponse, ComplianceItem>(this, (i) => i.ComplianceItems);
+            new PaginatedResultKeyResponse<ListComplianceItemsResponse, ComplianceItem>(this, (i) => i.ComplianceItems ?? new List<ComplianceItem>());
 
         internal ListComplianceItemsPaginator(IAmazonSimpleSystemsManagement client, ListComplianceItemsRequest request)
         {

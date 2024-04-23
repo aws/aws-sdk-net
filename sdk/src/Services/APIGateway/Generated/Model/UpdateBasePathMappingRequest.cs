@@ -36,7 +36,7 @@ namespace Amazon.APIGateway.Model
     {
         private string _basePath;
         private string _domainName;
-        private List<PatchOperation> _patchOperations = new List<PatchOperation>();
+        private List<PatchOperation> _patchOperations = AWSConfigs.InitializeCollections ? new List<PatchOperation>() : null;
 
         /// <summary>
         /// Gets and sets the property BasePath. 
@@ -96,7 +96,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if PatchOperations property is set
         internal bool IsSetPatchOperations()
         {
-            return this._patchOperations != null && this._patchOperations.Count > 0; 
+            return this._patchOperations != null && (this._patchOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

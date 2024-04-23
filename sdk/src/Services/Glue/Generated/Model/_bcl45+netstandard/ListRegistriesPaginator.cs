@@ -45,7 +45,7 @@ namespace Amazon.Glue.Model
         /// Enumerable containing all of the Registries
         /// </summary>
         public IPaginatedEnumerable<RegistryListItem> Registries => 
-            new PaginatedResultKeyResponse<ListRegistriesResponse, RegistryListItem>(this, (i) => i.Registries);
+            new PaginatedResultKeyResponse<ListRegistriesResponse, RegistryListItem>(this, (i) => i.Registries ?? new List<RegistryListItem>());
 
         internal ListRegistriesPaginator(IAmazonGlue client, ListRegistriesRequest request)
         {

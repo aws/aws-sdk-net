@@ -42,19 +42,19 @@ namespace Amazon.GroundStation.Model
     {
         private int? _contactPostPassDurationSeconds;
         private int? _contactPrePassDurationSeconds;
-        private List<List<string>> _dataflowEdges = new List<List<string>>();
+        private List<List<string>> _dataflowEdges = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private int? _minimumViableContactDurationSeconds;
         private string _name;
         private KmsKey _streamsKmsKey;
         private string _streamsKmsRole;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _trackingConfigArn;
 
         /// <summary>
         /// Gets and sets the property ContactPostPassDurationSeconds. 
         /// <para>
-        /// Amount of time after a contact ends that you’d like to receive a CloudWatch event
-        /// indicating the pass has finished.
+        /// Amount of time after a contact ends that you’d like to receive a Ground Station Contact
+        /// State Change event indicating the pass has finished.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=21600)]
@@ -73,8 +73,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ContactPrePassDurationSeconds. 
         /// <para>
-        /// Amount of time prior to contact start you’d like to receive a CloudWatch event indicating
-        /// an upcoming pass.
+        /// Amount of time prior to contact start you’d like to receive a Ground Station Contact
+        /// State Change event indicating an upcoming pass.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=21600)]
@@ -107,7 +107,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if DataflowEdges property is set
         internal bool IsSetDataflowEdges()
         {
-            return this._dataflowEdges != null && this._dataflowEdges.Count > 0; 
+            return this._dataflowEdges != null && (this._dataflowEdges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

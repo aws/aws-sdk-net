@@ -45,7 +45,7 @@ namespace Amazon.NimbleStudio.Model
         /// Enumerable containing all of the Sessions
         /// </summary>
         public IPaginatedEnumerable<StreamingSession> Sessions => 
-            new PaginatedResultKeyResponse<ListStreamingSessionsResponse, StreamingSession>(this, (i) => i.Sessions);
+            new PaginatedResultKeyResponse<ListStreamingSessionsResponse, StreamingSession>(this, (i) => i.Sessions ?? new List<StreamingSession>());
 
         internal ListStreamingSessionsPaginator(IAmazonNimbleStudio client, ListStreamingSessionsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class GetRestoreTestingInferredMetadataResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _inferredMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _inferredMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property InferredMetadata. 
@@ -51,7 +51,7 @@ namespace Amazon.Backup.Model
         // Check to see if InferredMetadata property is set
         internal bool IsSetInferredMetadata()
         {
-            return this._inferredMetadata != null && this._inferredMetadata.Count > 0; 
+            return this._inferredMetadata != null && (this._inferredMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

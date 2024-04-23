@@ -33,7 +33,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class ListFlowsResponse : AmazonWebServiceResponse
     {
-        private List<FlowDefinition> _flows = new List<FlowDefinition>();
+        private List<FlowDefinition> _flows = AWSConfigs.InitializeCollections ? new List<FlowDefinition>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Appflow.Model
         // Check to see if Flows property is set
         internal bool IsSetFlows()
         {
-            return this._flows != null && this._flows.Count > 0; 
+            return this._flows != null && (this._flows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

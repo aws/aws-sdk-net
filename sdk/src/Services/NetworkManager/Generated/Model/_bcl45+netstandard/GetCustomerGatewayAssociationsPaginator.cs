@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the CustomerGatewayAssociations
         /// </summary>
         public IPaginatedEnumerable<CustomerGatewayAssociation> CustomerGatewayAssociations => 
-            new PaginatedResultKeyResponse<GetCustomerGatewayAssociationsResponse, CustomerGatewayAssociation>(this, (i) => i.CustomerGatewayAssociations);
+            new PaginatedResultKeyResponse<GetCustomerGatewayAssociationsResponse, CustomerGatewayAssociation>(this, (i) => i.CustomerGatewayAssociations ?? new List<CustomerGatewayAssociation>());
 
         internal GetCustomerGatewayAssociationsPaginator(IAmazonNetworkManager client, GetCustomerGatewayAssociationsRequest request)
         {

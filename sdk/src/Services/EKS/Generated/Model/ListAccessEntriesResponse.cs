@@ -33,7 +33,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class ListAccessEntriesResponse : AmazonWebServiceResponse
     {
-        private List<string> _accessEntries = new List<string>();
+        private List<string> _accessEntries = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EKS.Model
         // Check to see if AccessEntries property is set
         internal bool IsSetAccessEntries()
         {
-            return this._accessEntries != null && this._accessEntries.Count > 0; 
+            return this._accessEntries != null && (this._accessEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

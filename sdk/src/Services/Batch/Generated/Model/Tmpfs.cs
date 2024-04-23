@@ -40,7 +40,7 @@ namespace Amazon.Batch.Model
     public partial class Tmpfs
     {
         private string _containerPath;
-        private List<string> _mountOptions = new List<string>();
+        private List<string> _mountOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _size;
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.Batch.Model
         // Check to see if MountOptions property is set
         internal bool IsSetMountOptions()
         {
-            return this._mountOptions != null && this._mountOptions.Count > 0; 
+            return this._mountOptions != null && (this._mountOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

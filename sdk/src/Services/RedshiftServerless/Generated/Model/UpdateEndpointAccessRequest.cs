@@ -35,7 +35,7 @@ namespace Amazon.RedshiftServerless.Model
     public partial class UpdateEndpointAccessRequest : AmazonRedshiftServerlessRequest
     {
         private string _endpointName;
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EndpointName. 
@@ -72,7 +72,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

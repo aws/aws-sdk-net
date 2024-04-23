@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all of the SubscriptionFilters
         /// </summary>
         public IPaginatedEnumerable<SubscriptionFilter> SubscriptionFilters => 
-            new PaginatedResultKeyResponse<DescribeSubscriptionFiltersResponse, SubscriptionFilter>(this, (i) => i.SubscriptionFilters);
+            new PaginatedResultKeyResponse<DescribeSubscriptionFiltersResponse, SubscriptionFilter>(this, (i) => i.SubscriptionFilters ?? new List<SubscriptionFilter>());
 
         internal DescribeSubscriptionFiltersPaginator(IAmazonCloudWatchLogs client, DescribeSubscriptionFiltersRequest request)
         {

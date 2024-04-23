@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ArcConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArcAngle())
             {
                 context.Writer.WritePropertyName("ArcAngle");
-                context.Writer.Write(requestObject.ArcAngle);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ArcAngle))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ArcAngle));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ArcAngle);
+                }
             }
 
             if(requestObject.IsSetArcThickness())
@@ -66,3 +76,4 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

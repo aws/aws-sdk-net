@@ -42,7 +42,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private bool? _selfManagedOptOutsEnabled;
         private bool? _sharedRoutesEnabled;
         private PoolStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _twoWayChannelArn;
         private string _twoWayChannelRole;
         private bool? _twoWayEnabled;
@@ -245,7 +245,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

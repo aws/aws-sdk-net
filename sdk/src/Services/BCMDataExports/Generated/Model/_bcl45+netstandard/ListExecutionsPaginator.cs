@@ -45,7 +45,7 @@ namespace Amazon.BCMDataExports.Model
         /// Enumerable containing all of the Executions
         /// </summary>
         public IPaginatedEnumerable<ExecutionReference> Executions => 
-            new PaginatedResultKeyResponse<ListExecutionsResponse, ExecutionReference>(this, (i) => i.Executions);
+            new PaginatedResultKeyResponse<ListExecutionsResponse, ExecutionReference>(this, (i) => i.Executions ?? new List<ExecutionReference>());
 
         internal ListExecutionsPaginator(IAmazonBCMDataExports client, ListExecutionsRequest request)
         {

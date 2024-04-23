@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListSubscribedWorkteamsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SubscribedWorkteam> _subscribedWorkteams = new List<SubscribedWorkteam>();
+        private List<SubscribedWorkteam> _subscribedWorkteams = AWSConfigs.InitializeCollections ? new List<SubscribedWorkteam>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SubscribedWorkteams property is set
         internal bool IsSetSubscribedWorkteams()
         {
-            return this._subscribedWorkteams != null && this._subscribedWorkteams.Count > 0; 
+            return this._subscribedWorkteams != null && (this._subscribedWorkteams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.AppConfig.Model
     /// </summary>
     public partial class ListExtensionsResponse : AmazonWebServiceResponse
     {
-        private List<ExtensionSummary> _items = new List<ExtensionSummary>();
+        private List<ExtensionSummary> _items = AWSConfigs.InitializeCollections ? new List<ExtensionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

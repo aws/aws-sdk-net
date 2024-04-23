@@ -41,7 +41,7 @@ namespace Amazon.IoTTwinMaker.Model
         private string _metadataTransferJobRole;
         private MetadataTransferJobProgress _progress;
         private string _reportUrl;
-        private List<SourceConfiguration> _sources = new List<SourceConfiguration>();
+        private List<SourceConfiguration> _sources = AWSConfigs.InitializeCollections ? new List<SourceConfiguration>() : null;
         private MetadataTransferJobStatus _status;
         private DateTime? _updateDateTime;
 
@@ -212,7 +212,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

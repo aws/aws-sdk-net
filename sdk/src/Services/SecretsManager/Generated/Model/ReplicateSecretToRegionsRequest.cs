@@ -53,7 +53,7 @@ namespace Amazon.SecretsManager.Model
     /// </summary>
     public partial class ReplicateSecretToRegionsRequest : AmazonSecretsManagerRequest
     {
-        private List<ReplicaRegionType> _addReplicaRegions = new List<ReplicaRegionType>();
+        private List<ReplicaRegionType> _addReplicaRegions = AWSConfigs.InitializeCollections ? new List<ReplicaRegionType>() : null;
         private bool? _forceOverwriteReplicaSecret;
         private string _secretId;
 
@@ -73,7 +73,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if AddReplicaRegions property is set
         internal bool IsSetAddReplicaRegions()
         {
-            return this._addReplicaRegions != null && this._addReplicaRegions.Count > 0; 
+            return this._addReplicaRegions != null && (this._addReplicaRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

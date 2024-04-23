@@ -37,7 +37,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class ListTagsForResourceRequest : AmazonDatabaseMigrationServiceRequest
     {
         private string _resourceArn;
-        private List<string> _resourceArnList = new List<string>();
+        private List<string> _resourceArnList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -77,7 +77,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if ResourceArnList property is set
         internal bool IsSetResourceArnList()
         {
-            return this._resourceArnList != null && this._resourceArnList.Count > 0; 
+            return this._resourceArnList != null && (this._resourceArnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

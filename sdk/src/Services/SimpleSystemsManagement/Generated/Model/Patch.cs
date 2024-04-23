@@ -33,12 +33,12 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class Patch
     {
-        private List<string> _advisoryIds = new List<string>();
+        private List<string> _advisoryIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _arch;
-        private List<string> _bugzillaIds = new List<string>();
+        private List<string> _bugzillaIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _classification;
         private string _contentUrl;
-        private List<string> _cveIds = new List<string>();
+        private List<string> _cveIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private int? _epoch;
         private string _id;
@@ -73,7 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AdvisoryIds property is set
         internal bool IsSetAdvisoryIds()
         {
-            return this._advisoryIds != null && this._advisoryIds.Count > 0; 
+            return this._advisoryIds != null && (this._advisoryIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if BugzillaIds property is set
         internal bool IsSetBugzillaIds()
         {
-            return this._bugzillaIds != null && this._bugzillaIds.Count > 0; 
+            return this._bugzillaIds != null && (this._bugzillaIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if CVEIds property is set
         internal bool IsSetCVEIds()
         {
-            return this._cveIds != null && this._cveIds.Count > 0; 
+            return this._cveIds != null && (this._cveIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

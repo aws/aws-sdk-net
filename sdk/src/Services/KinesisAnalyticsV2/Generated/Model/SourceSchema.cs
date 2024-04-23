@@ -35,7 +35,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// </summary>
     public partial class SourceSchema
     {
-        private List<RecordColumn> _recordColumns = new List<RecordColumn>();
+        private List<RecordColumn> _recordColumns = AWSConfigs.InitializeCollections ? new List<RecordColumn>() : null;
         private string _recordEncoding;
         private RecordFormat _recordFormat;
 
@@ -55,7 +55,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if RecordColumns property is set
         internal bool IsSetRecordColumns()
         {
-            return this._recordColumns != null && this._recordColumns.Count > 0; 
+            return this._recordColumns != null && (this._recordColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

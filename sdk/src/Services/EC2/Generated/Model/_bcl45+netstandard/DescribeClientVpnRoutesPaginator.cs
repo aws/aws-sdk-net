@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Routes
         /// </summary>
         public IPaginatedEnumerable<ClientVpnRoute> Routes => 
-            new PaginatedResultKeyResponse<DescribeClientVpnRoutesResponse, ClientVpnRoute>(this, (i) => i.Routes);
+            new PaginatedResultKeyResponse<DescribeClientVpnRoutesResponse, ClientVpnRoute>(this, (i) => i.Routes ?? new List<ClientVpnRoute>());
 
         internal DescribeClientVpnRoutesPaginator(IAmazonEC2 client, DescribeClientVpnRoutesRequest request)
         {

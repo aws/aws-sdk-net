@@ -45,7 +45,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Enumerable containing all of the Listeners
         /// </summary>
         public IPaginatedEnumerable<CustomRoutingListener> Listeners => 
-            new PaginatedResultKeyResponse<ListCustomRoutingListenersResponse, CustomRoutingListener>(this, (i) => i.Listeners);
+            new PaginatedResultKeyResponse<ListCustomRoutingListenersResponse, CustomRoutingListener>(this, (i) => i.Listeners ?? new List<CustomRoutingListener>());
 
         internal ListCustomRoutingListenersPaginator(IAmazonGlobalAccelerator client, ListCustomRoutingListenersRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.CloudWatch.Model
         /// Enumerable containing all of the AnomalyDetectors
         /// </summary>
         public IPaginatedEnumerable<AnomalyDetector> AnomalyDetectors => 
-            new PaginatedResultKeyResponse<DescribeAnomalyDetectorsResponse, AnomalyDetector>(this, (i) => i.AnomalyDetectors);
+            new PaginatedResultKeyResponse<DescribeAnomalyDetectorsResponse, AnomalyDetector>(this, (i) => i.AnomalyDetectors ?? new List<AnomalyDetector>());
 
         internal DescribeAnomalyDetectorsPaginator(IAmazonCloudWatch client, DescribeAnomalyDetectorsRequest request)
         {

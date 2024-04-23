@@ -37,7 +37,7 @@ namespace Amazon.PI.Model
     {
         private string _identifier;
         private int? _maxResults;
-        private List<string> _metrics = new List<string>();
+        private List<string> _metrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
         private ServiceType _serviceType;
 
@@ -100,7 +100,7 @@ namespace Amazon.PI.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

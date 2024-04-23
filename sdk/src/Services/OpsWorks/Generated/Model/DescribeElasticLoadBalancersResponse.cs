@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeElasticLoadBalancersResponse : AmazonWebServiceResponse
     {
-        private List<ElasticLoadBalancer> _elasticLoadBalancers = new List<ElasticLoadBalancer>();
+        private List<ElasticLoadBalancer> _elasticLoadBalancers = AWSConfigs.InitializeCollections ? new List<ElasticLoadBalancer>() : null;
 
         /// <summary>
         /// Gets and sets the property ElasticLoadBalancers. 
@@ -51,7 +51,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if ElasticLoadBalancers property is set
         internal bool IsSetElasticLoadBalancers()
         {
-            return this._elasticLoadBalancers != null && this._elasticLoadBalancers.Count > 0; 
+            return this._elasticLoadBalancers != null && (this._elasticLoadBalancers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.EntityResolution.Model
         /// Enumerable containing all of the SchemaList
         /// </summary>
         public IPaginatedEnumerable<SchemaMappingSummary> SchemaList => 
-            new PaginatedResultKeyResponse<ListSchemaMappingsResponse, SchemaMappingSummary>(this, (i) => i.SchemaList);
+            new PaginatedResultKeyResponse<ListSchemaMappingsResponse, SchemaMappingSummary>(this, (i) => i.SchemaList ?? new List<SchemaMappingSummary>());
 
         internal ListSchemaMappingsPaginator(IAmazonEntityResolution client, ListSchemaMappingsRequest request)
         {

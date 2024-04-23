@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ActiveTrustedSigners Object
     /// </summary>  
-    public class ActiveTrustedSignersUnmarshaller : IUnmarshaller<ActiveTrustedSigners, XmlUnmarshallerContext>
+    public class ActiveTrustedSignersUnmarshaller : IUnmarshaller<ActiveTrustedSigners, XmlUnmarshallerContext>, IUnmarshaller<ActiveTrustedSigners, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -63,6 +64,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Items/Signer", targetDepth))
                     {
+                        if (unmarshalledObject.Items == null)
+                        {
+                            unmarshalledObject.Items = new List<Signer>();
+                        }
                         var unmarshaller = SignerUnmarshaller.Instance;
                         unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -81,6 +86,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ActiveTrustedSigners Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static ActiveTrustedSignersUnmarshaller _instance = new ActiveTrustedSignersUnmarshaller();        
 
@@ -96,3 +111,4 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

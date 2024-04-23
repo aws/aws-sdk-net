@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetMappingResponse : AmazonWebServiceResponse
     {
-        private List<MappingEntry> _mapping = new List<MappingEntry>();
+        private List<MappingEntry> _mapping = AWSConfigs.InitializeCollections ? new List<MappingEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Mapping. 
@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model
         // Check to see if Mapping property is set
         internal bool IsSetMapping()
         {
-            return this._mapping != null && this._mapping.Count > 0; 
+            return this._mapping != null && (this._mapping.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

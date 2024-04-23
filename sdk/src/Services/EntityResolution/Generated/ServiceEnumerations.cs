@@ -121,6 +121,56 @@ namespace Amazon.EntityResolution
 
 
     /// <summary>
+    /// Constants used for properties of type IdNamespaceType.
+    /// </summary>
+    public class IdNamespaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SOURCE for IdNamespaceType
+        /// </summary>
+        public static readonly IdNamespaceType SOURCE = new IdNamespaceType("SOURCE");
+        /// <summary>
+        /// Constant TARGET for IdNamespaceType
+        /// </summary>
+        public static readonly IdNamespaceType TARGET = new IdNamespaceType("TARGET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdNamespaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdNamespaceType FindValue(string value)
+        {
+            return FindValue<IdNamespaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdNamespaceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IncrementalRunType.
     /// </summary>
     public class IncrementalRunType : ConstantClass
@@ -444,6 +494,56 @@ namespace Amazon.EntityResolution
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StatementEffect.
+    /// </summary>
+    public class StatementEffect : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Allow for StatementEffect
+        /// </summary>
+        public static readonly StatementEffect Allow = new StatementEffect("Allow");
+        /// <summary>
+        /// Constant Deny for StatementEffect
+        /// </summary>
+        public static readonly StatementEffect Deny = new StatementEffect("Deny");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatementEffect(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatementEffect FindValue(string value)
+        {
+            return FindValue<StatementEffect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatementEffect(string value)
         {
             return FindValue(value);
         }

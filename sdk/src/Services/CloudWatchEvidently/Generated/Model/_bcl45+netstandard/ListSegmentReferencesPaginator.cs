@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Enumerable containing all of the ReferencedBy
         /// </summary>
         public IPaginatedEnumerable<RefResource> ReferencedBy => 
-            new PaginatedResultKeyResponse<ListSegmentReferencesResponse, RefResource>(this, (i) => i.ReferencedBy);
+            new PaginatedResultKeyResponse<ListSegmentReferencesResponse, RefResource>(this, (i) => i.ReferencedBy ?? new List<RefResource>());
 
         internal ListSegmentReferencesPaginator(IAmazonCloudWatchEvidently client, ListSegmentReferencesRequest request)
         {

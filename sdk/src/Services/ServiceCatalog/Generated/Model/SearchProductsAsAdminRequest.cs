@@ -35,7 +35,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class SearchProductsAsAdminRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
-        private Dictionary<string, List<string>> _filters = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _filters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private int? _pageSize;
         private string _pageToken;
         private string _portfolioId;
@@ -87,7 +87,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -50,8 +50,8 @@ namespace Amazon.EC2.Model
     /// Backing snapshots copied to an Outpost are encrypted by default using the default
     /// encryption key for the Region, or a different key that you specify in the request
     /// using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more information,
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-    /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
+    /// <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
+    /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -71,6 +71,7 @@ namespace Amazon.EC2.Model
         private string _name;
         private string _sourceImageId;
         private string _sourceRegion;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -155,9 +156,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-        /// Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EC2
-        /// User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy
+        /// AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public string DestinationOutpostArn
@@ -179,8 +180,8 @@ namespace Amazon.EC2.Model
         /// You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted
         /// copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you
         /// specify a non-default Key Management Service (KMS) KMS key using <c>KmsKeyId</c>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -305,6 +306,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetSourceRegion()
         {
             return this._sourceRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the new AMI and new snapshots. You can tag the AMI, the snapshots,
+        /// or both.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To tag the new AMI, the value for <c>ResourceType</c> must be <c>image</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To tag the new snapshots, the value for <c>ResourceType</c> must be <c>snapshot</c>.
+        /// The same tag is applied to all the new snapshots.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you specify other values for <c>ResourceType</c>, the request fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

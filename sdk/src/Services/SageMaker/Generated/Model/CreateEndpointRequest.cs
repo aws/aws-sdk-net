@@ -138,7 +138,7 @@ namespace Amazon.SageMaker.Model
         private DeploymentConfig _deploymentConfig;
         private string _endpointConfigName;
         private string _endpointName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DeploymentConfig.
@@ -215,7 +215,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

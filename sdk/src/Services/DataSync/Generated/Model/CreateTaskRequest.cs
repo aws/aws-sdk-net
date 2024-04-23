@@ -50,14 +50,14 @@ namespace Amazon.DataSync.Model
     {
         private string _cloudWatchLogGroupArn;
         private string _destinationLocationArn;
-        private List<FilterRule> _excludes = new List<FilterRule>();
-        private List<FilterRule> _includes = new List<FilterRule>();
+        private List<FilterRule> _excludes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
+        private List<FilterRule> _includes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
         private ManifestConfig _manifestConfig;
         private string _name;
         private Options _options;
         private TaskSchedule _schedule;
         private string _sourceLocationArn;
-        private List<TagListEntry> _tags = new List<TagListEntry>();
+        private List<TagListEntry> _tags = AWSConfigs.InitializeCollections ? new List<TagListEntry>() : null;
         private TaskReportConfig _taskReportConfig;
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Excludes property is set
         internal bool IsSetExcludes()
         {
-            return this._excludes != null && this._excludes.Count > 0; 
+            return this._excludes != null && (this._excludes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Includes property is set
         internal bool IsSetIncludes()
         {
-            return this._includes != null && this._includes.Count > 0; 
+            return this._includes != null && (this._includes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -274,7 +274,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

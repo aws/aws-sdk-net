@@ -34,7 +34,7 @@ namespace Amazon.Budgets.Model
     public partial class ScpActionDefinition
     {
         private string _policyId;
-        private List<string> _targetIds = new List<string>();
+        private List<string> _targetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property PolicyId. 
@@ -71,7 +71,7 @@ namespace Amazon.Budgets.Model
         // Check to see if TargetIds property is set
         internal bool IsSetTargetIds()
         {
-            return this._targetIds != null && this._targetIds.Count > 0; 
+            return this._targetIds != null && (this._targetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

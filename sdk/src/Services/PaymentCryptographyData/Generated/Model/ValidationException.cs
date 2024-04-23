@@ -36,7 +36,7 @@ namespace Amazon.PaymentCryptographyData.Model
     #endif
     public partial class ValidationException : AmazonPaymentCryptographyDataException
     {
-        private List<ValidationExceptionField> _fieldList = new List<ValidationExceptionField>();
+        private List<ValidationExceptionField> _fieldList = AWSConfigs.InitializeCollections ? new List<ValidationExceptionField>() : null;
 
         /// <summary>
         /// Constructs a new ValidationException with the specified error
@@ -138,7 +138,7 @@ namespace Amazon.PaymentCryptographyData.Model
         // Check to see if FieldList property is set
         internal bool IsSetFieldList()
         {
-            return this._fieldList != null && this._fieldList.Count > 0; 
+            return this._fieldList != null && (this._fieldList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

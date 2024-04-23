@@ -45,7 +45,7 @@ namespace Amazon.Tnb.Model
         /// Enumerable containing all of the FunctionPackages
         /// </summary>
         public IPaginatedEnumerable<ListSolFunctionPackageInfo> FunctionPackages => 
-            new PaginatedResultKeyResponse<ListSolFunctionPackagesResponse, ListSolFunctionPackageInfo>(this, (i) => i.FunctionPackages);
+            new PaginatedResultKeyResponse<ListSolFunctionPackagesResponse, ListSolFunctionPackageInfo>(this, (i) => i.FunctionPackages ?? new List<ListSolFunctionPackageInfo>());
 
         internal ListSolFunctionPackagesPaginator(IAmazonTnb client, ListSolFunctionPackagesRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class DeclineInvitationsResponse : AmazonWebServiceResponse
     {
-        private List<UnprocessedAccount> _unprocessedAccounts = new List<UnprocessedAccount>();
+        private List<UnprocessedAccount> _unprocessedAccounts = AWSConfigs.InitializeCollections ? new List<UnprocessedAccount>() : null;
 
         /// <summary>
         /// Gets and sets the property UnprocessedAccounts. 
@@ -52,7 +52,7 @@ namespace Amazon.Macie2.Model
         // Check to see if UnprocessedAccounts property is set
         internal bool IsSetUnprocessedAccounts()
         {
-            return this._unprocessedAccounts != null && this._unprocessedAccounts.Count > 0; 
+            return this._unprocessedAccounts != null && (this._unprocessedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

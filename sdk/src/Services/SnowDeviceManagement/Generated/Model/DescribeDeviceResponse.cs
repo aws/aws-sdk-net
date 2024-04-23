@@ -34,16 +34,16 @@ namespace Amazon.SnowDeviceManagement.Model
     public partial class DescribeDeviceResponse : AmazonWebServiceResponse
     {
         private string _associatedWithJob;
-        private List<Capacity> _deviceCapacities = new List<Capacity>();
+        private List<Capacity> _deviceCapacities = AWSConfigs.InitializeCollections ? new List<Capacity>() : null;
         private UnlockState _deviceState;
         private string _deviceType;
         private DateTime? _lastReachedOutAt;
         private DateTime? _lastUpdatedAt;
         private string _managedDeviceArn;
         private string _managedDeviceId;
-        private List<PhysicalNetworkInterface> _physicalNetworkInterfaces = new List<PhysicalNetworkInterface>();
+        private List<PhysicalNetworkInterface> _physicalNetworkInterfaces = AWSConfigs.InitializeCollections ? new List<PhysicalNetworkInterface>() : null;
         private SoftwareInformation _software;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssociatedWithJob. 
@@ -79,7 +79,7 @@ namespace Amazon.SnowDeviceManagement.Model
         // Check to see if DeviceCapacities property is set
         internal bool IsSetDeviceCapacities()
         {
-            return this._deviceCapacities != null && this._deviceCapacities.Count > 0; 
+            return this._deviceCapacities != null && (this._deviceCapacities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace Amazon.SnowDeviceManagement.Model
         // Check to see if PhysicalNetworkInterfaces property is set
         internal bool IsSetPhysicalNetworkInterfaces()
         {
-            return this._physicalNetworkInterfaces != null && this._physicalNetworkInterfaces.Count > 0; 
+            return this._physicalNetworkInterfaces != null && (this._physicalNetworkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -245,7 +245,7 @@ namespace Amazon.SnowDeviceManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

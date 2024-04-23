@@ -41,9 +41,8 @@ namespace Amazon.VerifiedPermissions.Model
     ///  </note> <note> 
     /// <para>
     /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-    /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-    /// propagate through the service and be visible in the results of other Verified Permissions
-    /// operations.
+    /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+    /// through the service and be visible in the results of other Verified Permissions operations.
     /// </para>
     ///  </note>
     /// </summary>
@@ -71,7 +70,13 @@ namespace Amazon.VerifiedPermissions.Model
         ///  
         /// <para>
         /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
-        /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
+        /// the retry fails with an <c>ConflictException</c> error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Verified Permissions recognizes a <c>ClientToken</c> for eight hours. After eight
+        /// hours, the next request with the same parameters performs the operation again regardless
+        /// of the value of <c>ClientToken</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

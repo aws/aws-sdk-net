@@ -45,7 +45,7 @@ namespace Amazon.CodeCatalyst.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ProjectSummary> Items => 
-            new PaginatedResultKeyResponse<ListProjectsResponse, ProjectSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListProjectsResponse, ProjectSummary>(this, (i) => i.Items ?? new List<ProjectSummary>());
 
         internal ListProjectsPaginator(IAmazonCodeCatalyst client, ListProjectsRequest request)
         {

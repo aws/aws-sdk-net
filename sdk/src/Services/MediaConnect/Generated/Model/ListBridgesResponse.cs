@@ -33,7 +33,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class ListBridgesResponse : AmazonWebServiceResponse
     {
-        private List<ListedBridge> _bridges = new List<ListedBridge>();
+        private List<ListedBridge> _bridges = AWSConfigs.InitializeCollections ? new List<ListedBridge>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Bridges property is set
         internal bool IsSetBridges()
         {
-            return this._bridges != null && this._bridges.Count > 0; 
+            return this._bridges != null && (this._bridges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

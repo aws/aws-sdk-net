@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,26 +63,32 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeletionProtection", StringUtils.FromBool(publicRequest.DeletionProtection));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngine())
                 {
                     request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngineVersion())
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGlobalClusterIdentifier())
                 {
                     request.Parameters.Add("GlobalClusterIdentifier", StringUtils.FromString(publicRequest.GlobalClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceDBClusterIdentifier())
                 {
                     request.Parameters.Add("SourceDBClusterIdentifier", StringUtils.FromString(publicRequest.SourceDBClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStorageEncrypted())
                 {
                     request.Parameters.Add("StorageEncrypted", StringUtils.FromBool(publicRequest.StorageEncrypted));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

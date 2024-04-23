@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     public partial class DescribeOptionGroupOptionsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<OptionGroupOption> _optionGroupOptions = new List<OptionGroupOption>();
+        private List<OptionGroupOption> _optionGroupOptions = AWSConfigs.InitializeCollections ? new List<OptionGroupOption>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -68,7 +68,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupOptions property is set
         internal bool IsSetOptionGroupOptions()
         {
-            return this._optionGroupOptions != null && this._optionGroupOptions.Count > 0; 
+            return this._optionGroupOptions != null && (this._optionGroupOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

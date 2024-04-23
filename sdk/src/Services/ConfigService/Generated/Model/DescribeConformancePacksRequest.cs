@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeConformancePacksRequest : AmazonConfigServiceRequest
     {
-        private List<string> _conformancePackNames = new List<string>();
+        private List<string> _conformancePackNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _limit;
         private string _nextToken;
 
@@ -55,7 +55,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConformancePackNames property is set
         internal bool IsSetConformancePackNames()
         {
-            return this._conformancePackNames != null && this._conformancePackNames.Count > 0; 
+            return this._conformancePackNames != null && (this._conformancePackNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

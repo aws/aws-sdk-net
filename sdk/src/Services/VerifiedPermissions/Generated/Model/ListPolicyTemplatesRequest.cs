@@ -55,7 +55,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// per response. You can specify a maximum of 50 policy templates per response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

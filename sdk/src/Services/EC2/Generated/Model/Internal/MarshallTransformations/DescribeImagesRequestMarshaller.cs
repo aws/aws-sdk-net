@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFilters())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -76,6 +78,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -85,9 +88,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetImageIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -97,22 +102,27 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIncludeDeprecated())
                 {
                     request.Parameters.Add("IncludeDeprecated", StringUtils.FromBool(publicRequest.IncludeDeprecated));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIncludeDisabled())
                 {
                     request.Parameters.Add("IncludeDisabled", StringUtils.FromBool(publicRequest.IncludeDisabled));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOwners())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -122,6 +132,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

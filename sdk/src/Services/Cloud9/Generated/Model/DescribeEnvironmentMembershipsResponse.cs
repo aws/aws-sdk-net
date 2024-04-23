@@ -33,7 +33,7 @@ namespace Amazon.Cloud9.Model
     /// </summary>
     public partial class DescribeEnvironmentMembershipsResponse : AmazonWebServiceResponse
     {
-        private List<EnvironmentMember> _memberships = new List<EnvironmentMember>();
+        private List<EnvironmentMember> _memberships = AWSConfigs.InitializeCollections ? new List<EnvironmentMember>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Cloud9.Model
         // Check to see if Memberships property is set
         internal bool IsSetMemberships()
         {
-            return this._memberships != null && this._memberships.Count > 0; 
+            return this._memberships != null && (this._memberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

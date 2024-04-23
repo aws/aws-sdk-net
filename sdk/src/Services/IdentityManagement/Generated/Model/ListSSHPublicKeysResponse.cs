@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private bool? _isTruncated;
         private string _marker;
-        private List<SSHPublicKeyMetadata> _sshPublicKeys = new List<SSHPublicKeyMetadata>();
+        private List<SSHPublicKeyMetadata> _sshPublicKeys = AWSConfigs.InitializeCollections ? new List<SSHPublicKeyMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property IsTruncated. 
@@ -93,7 +93,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if SSHPublicKeys property is set
         internal bool IsSetSSHPublicKeys()
         {
-            return this._sshPublicKeys != null && this._sshPublicKeys.Count > 0; 
+            return this._sshPublicKeys != null && (this._sshPublicKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AvailabilityZones/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailabilityZones == null)
+                        {
+                            unmarshalledObject.AvailabilityZones = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
@@ -118,6 +123,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EnabledMetrics/member", targetDepth))
                     {
                         var unmarshaller = EnabledMetricUnmarshaller.Instance;
+                        if (unmarshalledObject.EnabledMetrics == null)
+                        {
+                            unmarshalledObject.EnabledMetrics = new List<EnabledMetric>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.EnabledMetrics.Add(item);
                         continue;
@@ -143,6 +152,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Instances/member", targetDepth))
                     {
                         var unmarshaller = InstanceUnmarshaller.Instance;
+                        if (unmarshalledObject.Instances == null)
+                        {
+                            unmarshalledObject.Instances = new List<Instance>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Instances.Add(item);
                         continue;
@@ -162,6 +175,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LoadBalancerNames/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.LoadBalancerNames == null)
+                        {
+                            unmarshalledObject.LoadBalancerNames = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LoadBalancerNames.Add(item);
                         continue;
@@ -223,6 +240,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SuspendedProcesses/member", targetDepth))
                     {
                         var unmarshaller = SuspendedProcessUnmarshaller.Instance;
+                        if (unmarshalledObject.SuspendedProcesses == null)
+                        {
+                            unmarshalledObject.SuspendedProcesses = new List<SuspendedProcess>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SuspendedProcesses.Add(item);
                         continue;
@@ -230,6 +251,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tags/member", targetDepth))
                     {
                         var unmarshaller = TagDescriptionUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<TagDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;
@@ -237,6 +262,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TargetGroupARNs/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.TargetGroupARNs == null)
+                        {
+                            unmarshalledObject.TargetGroupARNs = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TargetGroupARNs.Add(item);
                         continue;
@@ -244,6 +273,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TerminationPolicies/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.TerminationPolicies == null)
+                        {
+                            unmarshalledObject.TerminationPolicies = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TerminationPolicies.Add(item);
                         continue;
@@ -251,6 +284,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TrafficSources/member", targetDepth))
                     {
                         var unmarshaller = TrafficSourceIdentifierUnmarshaller.Instance;
+                        if (unmarshalledObject.TrafficSources == null)
+                        {
+                            unmarshalledObject.TrafficSources = new List<TrafficSourceIdentifier>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TrafficSources.Add(item);
                         continue;
@@ -308,3 +345,4 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

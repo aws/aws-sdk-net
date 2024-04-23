@@ -87,7 +87,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        ///  The reason a task has failed. 
+        /// The reason a task has failed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -106,7 +106,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Gpus. 
         /// <para>
-        ///  The number of Graphics Processing Units (GPU) specified in the task. 
+        /// The number of Graphics Processing Units (GPU) specified in the task.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -125,7 +125,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        ///  The instance type for a task. 
+        /// The instance type for a task.
         /// </para>
         /// </summary>
         public string InstanceType

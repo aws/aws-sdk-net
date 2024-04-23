@@ -33,7 +33,7 @@ namespace Amazon.CloudHSM.Model
     /// </summary>
     public partial class ListAvailableZonesResponse : AmazonWebServiceResponse
     {
-        private List<string> _azList = new List<string>();
+        private List<string> _azList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AZList. 
@@ -50,7 +50,7 @@ namespace Amazon.CloudHSM.Model
         // Check to see if AZList property is set
         internal bool IsSetAZList()
         {
-            return this._azList != null && this._azList.Count > 0; 
+            return this._azList != null && (this._azList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

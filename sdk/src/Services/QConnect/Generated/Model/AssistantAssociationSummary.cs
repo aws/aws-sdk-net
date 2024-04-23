@@ -39,12 +39,12 @@ namespace Amazon.QConnect.Model
         private string _assistantId;
         private AssistantAssociationOutputData _associationData;
         private AssociationType _associationType;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssistantArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Q assistant.
+        /// The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +101,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property AssistantId. 
         /// <para>
-        /// The identifier of the Amazon Q assistant.
+        /// The identifier of the Amazon Q in Connect assistant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -170,7 +170,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

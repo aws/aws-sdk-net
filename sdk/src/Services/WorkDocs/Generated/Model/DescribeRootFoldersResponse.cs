@@ -33,7 +33,7 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class DescribeRootFoldersResponse : AmazonWebServiceResponse
     {
-        private List<FolderMetadata> _folders = new List<FolderMetadata>();
+        private List<FolderMetadata> _folders = AWSConfigs.InitializeCollections ? new List<FolderMetadata>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Folders property is set
         internal bool IsSetFolders()
         {
-            return this._folders != null && this._folders.Count > 0; 
+            return this._folders != null && (this._folders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

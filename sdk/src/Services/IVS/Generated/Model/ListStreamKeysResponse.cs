@@ -34,7 +34,7 @@ namespace Amazon.IVS.Model
     public partial class ListStreamKeysResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StreamKeySummary> _streamKeys = new List<StreamKeySummary>();
+        private List<StreamKeySummary> _streamKeys = AWSConfigs.InitializeCollections ? new List<StreamKeySummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.IVS.Model
         // Check to see if StreamKeys property is set
         internal bool IsSetStreamKeys()
         {
-            return this._streamKeys != null && this._streamKeys.Count > 0; 
+            return this._streamKeys != null && (this._streamKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

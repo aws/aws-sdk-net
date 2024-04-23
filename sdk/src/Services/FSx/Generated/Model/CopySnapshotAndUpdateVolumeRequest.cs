@@ -38,7 +38,7 @@ namespace Amazon.FSx.Model
     {
         private string _clientRequestToken;
         private OpenZFSCopyStrategy _copyStrategy;
-        private List<string> _options = new List<string>();
+        private List<string> _options = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sourceSnapshotARN;
         private string _volumeId;
 
@@ -129,7 +129,7 @@ namespace Amazon.FSx.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -172,6 +172,55 @@ namespace Amazon.IAMRolesAnywhere
 
         #endregion
         
+        #region  DeleteAttributeMapping
+
+
+        /// <summary>
+        /// Delete an entry from the attribute mapping rules enforced by a given profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttributeMapping service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAttributeMapping service method, as returned by IAMRolesAnywhere.</returns>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteAttributeMapping">REST API Reference for DeleteAttributeMapping Operation</seealso>
+        DeleteAttributeMappingResponse DeleteAttributeMapping(DeleteAttributeMappingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAttributeMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttributeMapping operation on AmazonIAMRolesAnywhereClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAttributeMapping
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteAttributeMapping">REST API Reference for DeleteAttributeMapping Operation</seealso>
+        IAsyncResult BeginDeleteAttributeMapping(DeleteAttributeMappingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAttributeMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAttributeMapping.</param>
+        /// 
+        /// <returns>Returns a  DeleteAttributeMappingResult from IAMRolesAnywhere.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteAttributeMapping">REST API Reference for DeleteAttributeMapping Operation</seealso>
+        DeleteAttributeMappingResponse EndDeleteAttributeMapping(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteCrl
 
 
@@ -847,8 +896,9 @@ namespace Amazon.IAMRolesAnywhere
 
         /// <summary>
         /// Imports the certificate revocation list (CRL). A CRL is a list of certificates that
-        /// have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates
-        /// against the CRL before issuing credentials. 
+        /// have been revoked by the issuing certificate Authority (CA).In order to be properly
+        /// imported, a CRL must be in PEM format. IAM Roles Anywhere validates against the CRL
+        /// before issuing credentials. 
         /// 
         ///  
         /// <para>
@@ -1151,6 +1201,57 @@ namespace Amazon.IAMRolesAnywhere
         /// <returns>Returns a  ListTrustAnchorsResult from IAMRolesAnywhere.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListTrustAnchors">REST API Reference for ListTrustAnchors Operation</seealso>
         ListTrustAnchorsResponse EndListTrustAnchors(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutAttributeMapping
+
+
+        /// <summary>
+        /// Put an entry in the attribute mapping rules that will be enforced by a given profile.
+        /// A mapping specifies a certificate field and one or more specifiers that have contextual
+        /// meanings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAttributeMapping service method.</param>
+        /// 
+        /// <returns>The response from the PutAttributeMapping service method, as returned by IAMRolesAnywhere.</returns>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutAttributeMapping">REST API Reference for PutAttributeMapping Operation</seealso>
+        PutAttributeMappingResponse PutAttributeMapping(PutAttributeMappingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAttributeMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAttributeMapping operation on AmazonIAMRolesAnywhereClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAttributeMapping
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutAttributeMapping">REST API Reference for PutAttributeMapping Operation</seealso>
+        IAsyncResult BeginPutAttributeMapping(PutAttributeMappingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAttributeMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAttributeMapping.</param>
+        /// 
+        /// <returns>Returns a  PutAttributeMappingResult from IAMRolesAnywhere.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutAttributeMapping">REST API Reference for PutAttributeMapping Operation</seealso>
+        PutAttributeMappingResponse EndPutAttributeMapping(IAsyncResult asyncResult);
 
         #endregion
         

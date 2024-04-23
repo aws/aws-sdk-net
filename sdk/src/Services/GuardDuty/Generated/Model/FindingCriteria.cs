@@ -33,7 +33,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class FindingCriteria
     {
-        private Dictionary<string, Condition> _criterion = new Dictionary<string, Condition>();
+        private Dictionary<string, Condition> _criterion = AWSConfigs.InitializeCollections ? new Dictionary<string, Condition>() : null;
 
         /// <summary>
         /// Gets and sets the property Criterion. 
@@ -51,7 +51,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Criterion property is set
         internal bool IsSetCriterion()
         {
-            return this._criterion != null && this._criterion.Count > 0; 
+            return this._criterion != null && (this._criterion.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

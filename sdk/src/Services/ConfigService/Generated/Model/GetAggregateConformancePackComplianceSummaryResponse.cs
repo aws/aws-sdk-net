@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class GetAggregateConformancePackComplianceSummaryResponse : AmazonWebServiceResponse
     {
-        private List<AggregateConformancePackComplianceSummary> _aggregateConformancePackComplianceSummaries = new List<AggregateConformancePackComplianceSummary>();
+        private List<AggregateConformancePackComplianceSummary> _aggregateConformancePackComplianceSummaries = AWSConfigs.InitializeCollections ? new List<AggregateConformancePackComplianceSummary>() : null;
         private string _groupByKey;
         private string _nextToken;
 
@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if AggregateConformancePackComplianceSummaries property is set
         internal bool IsSetAggregateConformancePackComplianceSummaries()
         {
-            return this._aggregateConformancePackComplianceSummaries != null && this._aggregateConformancePackComplianceSummaries.Count > 0; 
+            return this._aggregateConformancePackComplianceSummaries != null && (this._aggregateConformancePackComplianceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

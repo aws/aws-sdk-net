@@ -48,7 +48,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class DisassociatePhoneNumbersFromVoiceConnectorRequest : AmazonChimeRequest
     {
-        private List<string> _e164PhoneNumbers = new List<string>();
+        private List<string> _e164PhoneNumbers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _voiceConnectorId;
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Chime.Model
         // Check to see if E164PhoneNumbers property is set
         internal bool IsSetE164PhoneNumbers()
         {
-            return this._e164PhoneNumbers != null && this._e164PhoneNumbers.Count > 0; 
+            return this._e164PhoneNumbers != null && (this._e164PhoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

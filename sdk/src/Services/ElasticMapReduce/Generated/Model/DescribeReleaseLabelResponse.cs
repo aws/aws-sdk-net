@@ -33,8 +33,8 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class DescribeReleaseLabelResponse : AmazonWebServiceResponse
     {
-        private List<SimplifiedApplication> _applications = new List<SimplifiedApplication>();
-        private List<OSRelease> _availableOSReleases = new List<OSRelease>();
+        private List<SimplifiedApplication> _applications = AWSConfigs.InitializeCollections ? new List<SimplifiedApplication>() : null;
+        private List<OSRelease> _availableOSReleases = AWSConfigs.InitializeCollections ? new List<OSRelease>() : null;
         private string _nextToken;
         private string _releaseLabel;
 
@@ -54,7 +54,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if AvailableOSReleases property is set
         internal bool IsSetAvailableOSReleases()
         {
-            return this._availableOSReleases != null && this._availableOSReleases.Count > 0; 
+            return this._availableOSReleases != null && (this._availableOSReleases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

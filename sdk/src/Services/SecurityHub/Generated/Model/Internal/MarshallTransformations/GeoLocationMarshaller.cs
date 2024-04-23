@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GeoLocation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLat())
             {
                 context.Writer.WritePropertyName("Lat");
-                context.Writer.Write(requestObject.Lat);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Lat))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lat));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Lat);
+                }
             }
 
             if(requestObject.IsSetLon())
             {
                 context.Writer.WritePropertyName("Lon");
-                context.Writer.Write(requestObject.Lon);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Lon))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lon));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Lon);
+                }
             }
 
         }
@@ -66,3 +83,4 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

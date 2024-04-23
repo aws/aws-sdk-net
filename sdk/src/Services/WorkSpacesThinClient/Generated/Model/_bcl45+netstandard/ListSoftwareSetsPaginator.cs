@@ -45,7 +45,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// Enumerable containing all of the SoftwareSets
         /// </summary>
         public IPaginatedEnumerable<SoftwareSetSummary> SoftwareSets => 
-            new PaginatedResultKeyResponse<ListSoftwareSetsResponse, SoftwareSetSummary>(this, (i) => i.SoftwareSets);
+            new PaginatedResultKeyResponse<ListSoftwareSetsResponse, SoftwareSetSummary>(this, (i) => i.SoftwareSets ?? new List<SoftwareSetSummary>());
 
         internal ListSoftwareSetsPaginator(IAmazonWorkSpacesThinClient client, ListSoftwareSetsRequest request)
         {

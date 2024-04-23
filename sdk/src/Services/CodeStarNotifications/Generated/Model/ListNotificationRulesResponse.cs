@@ -34,7 +34,7 @@ namespace Amazon.CodeStarNotifications.Model
     public partial class ListNotificationRulesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<NotificationRuleSummary> _notificationRules = new List<NotificationRuleSummary>();
+        private List<NotificationRuleSummary> _notificationRules = AWSConfigs.InitializeCollections ? new List<NotificationRuleSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.CodeStarNotifications.Model
         // Check to see if NotificationRules property is set
         internal bool IsSetNotificationRules()
         {
-            return this._notificationRules != null && this._notificationRules.Count > 0; 
+            return this._notificationRules != null && (this._notificationRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

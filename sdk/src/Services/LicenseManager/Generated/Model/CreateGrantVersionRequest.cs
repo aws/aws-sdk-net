@@ -35,7 +35,7 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class CreateGrantVersionRequest : AmazonLicenseManagerRequest
     {
-        private List<string> _allowedOperations = new List<string>();
+        private List<string> _allowedOperations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientToken;
         private string _grantArn;
         private string _grantName;
@@ -60,7 +60,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if AllowedOperations property is set
         internal bool IsSetAllowedOperations()
         {
-            return this._allowedOperations != null && this._allowedOperations.Count > 0; 
+            return this._allowedOperations != null && (this._allowedOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

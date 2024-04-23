@@ -33,7 +33,7 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class AggregateStatus
     {
-        private Dictionary<string, bool> _signatureMap = new Dictionary<string, bool>();
+        private Dictionary<string, bool> _signatureMap = AWSConfigs.InitializeCollections ? new Dictionary<string, bool>() : null;
         private AgentStatus _status;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if SignatureMap property is set
         internal bool IsSetSignatureMap()
         {
-            return this._signatureMap != null && this._signatureMap.Count > 0; 
+            return this._signatureMap != null && (this._signatureMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,8 +37,8 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class MetricStreamStatisticsConfiguration
     {
-        private List<string> _additionalStatistics = new List<string>();
-        private List<MetricStreamStatisticsMetric> _includeMetrics = new List<MetricStreamStatisticsMetric>();
+        private List<string> _additionalStatistics = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<MetricStreamStatisticsMetric> _includeMetrics = AWSConfigs.InitializeCollections ? new List<MetricStreamStatisticsMetric>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalStatistics. 
@@ -71,7 +71,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if AdditionalStatistics property is set
         internal bool IsSetAdditionalStatistics()
         {
-            return this._additionalStatistics != null && this._additionalStatistics.Count > 0; 
+            return this._additionalStatistics != null && (this._additionalStatistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if IncludeMetrics property is set
         internal bool IsSetIncludeMetrics()
         {
-            return this._includeMetrics != null && this._includeMetrics.Count > 0; 
+            return this._includeMetrics != null && (this._includeMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

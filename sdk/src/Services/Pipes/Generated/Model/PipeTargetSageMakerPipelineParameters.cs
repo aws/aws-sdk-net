@@ -33,7 +33,7 @@ namespace Amazon.Pipes.Model
     /// </summary>
     public partial class PipeTargetSageMakerPipelineParameters
     {
-        private List<SageMakerPipelineParameter> _pipelineParameterList = new List<SageMakerPipelineParameter>();
+        private List<SageMakerPipelineParameter> _pipelineParameterList = AWSConfigs.InitializeCollections ? new List<SageMakerPipelineParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property PipelineParameterList. 
@@ -51,7 +51,7 @@ namespace Amazon.Pipes.Model
         // Check to see if PipelineParameterList property is set
         internal bool IsSetPipelineParameterList()
         {
-            return this._pipelineParameterList != null && this._pipelineParameterList.Count > 0; 
+            return this._pipelineParameterList != null && (this._pipelineParameterList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

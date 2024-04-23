@@ -45,7 +45,7 @@ namespace Amazon.LakeFormation.Model
         /// Enumerable containing all of the WorkUnitRanges
         /// </summary>
         public IPaginatedEnumerable<WorkUnitRange> WorkUnitRanges => 
-            new PaginatedResultKeyResponse<GetWorkUnitsResponse, WorkUnitRange>(this, (i) => i.WorkUnitRanges);
+            new PaginatedResultKeyResponse<GetWorkUnitsResponse, WorkUnitRange>(this, (i) => i.WorkUnitRanges ?? new List<WorkUnitRange>());
 
         internal GetWorkUnitsPaginator(IAmazonLakeFormation client, GetWorkUnitsRequest request)
         {

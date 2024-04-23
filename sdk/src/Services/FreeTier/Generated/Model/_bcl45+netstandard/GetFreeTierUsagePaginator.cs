@@ -45,7 +45,7 @@ namespace Amazon.FreeTier.Model
         /// Enumerable containing all of the FreeTierUsages
         /// </summary>
         public IPaginatedEnumerable<FreeTierUsage> FreeTierUsages => 
-            new PaginatedResultKeyResponse<GetFreeTierUsageResponse, FreeTierUsage>(this, (i) => i.FreeTierUsages);
+            new PaginatedResultKeyResponse<GetFreeTierUsageResponse, FreeTierUsage>(this, (i) => i.FreeTierUsages ?? new List<FreeTierUsage>());
 
         internal GetFreeTierUsagePaginator(IAmazonFreeTier client, GetFreeTierUsageRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeVpcEndpointServicePermissionsResponse : AmazonWebServiceResponse
     {
-        private List<AllowedPrincipal> _allowedPrincipals = new List<AllowedPrincipal>();
+        private List<AllowedPrincipal> _allowedPrincipals = AWSConfigs.InitializeCollections ? new List<AllowedPrincipal>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if AllowedPrincipals property is set
         internal bool IsSetAllowedPrincipals()
         {
-            return this._allowedPrincipals != null && this._allowedPrincipals.Count > 0; 
+            return this._allowedPrincipals != null && (this._allowedPrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

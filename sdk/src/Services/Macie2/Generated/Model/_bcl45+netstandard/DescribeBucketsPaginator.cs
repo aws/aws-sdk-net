@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the Buckets
         /// </summary>
         public IPaginatedEnumerable<BucketMetadata> Buckets => 
-            new PaginatedResultKeyResponse<DescribeBucketsResponse, BucketMetadata>(this, (i) => i.Buckets);
+            new PaginatedResultKeyResponse<DescribeBucketsResponse, BucketMetadata>(this, (i) => i.Buckets ?? new List<BucketMetadata>());
 
         internal DescribeBucketsPaginator(IAmazonMacie2 client, DescribeBucketsRequest request)
         {

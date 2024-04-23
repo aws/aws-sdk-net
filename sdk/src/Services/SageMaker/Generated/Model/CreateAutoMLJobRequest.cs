@@ -62,12 +62,12 @@ namespace Amazon.SageMaker.Model
         private string _autoMLJobName;
         private AutoMLJobObjective _autoMLJobObjective;
         private bool? _generateCandidateDefinitionsOnly;
-        private List<AutoMLChannel> _inputDataConfig = new List<AutoMLChannel>();
+        private List<AutoMLChannel> _inputDataConfig = AWSConfigs.InitializeCollections ? new List<AutoMLChannel>() : null;
         private ModelDeployConfig _modelDeployConfig;
         private AutoMLOutputDataConfig _outputDataConfig;
         private ProblemType _problemType;
         private string _roleArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoMLJobConfig. 
@@ -164,7 +164,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InputDataConfig property is set
         internal bool IsSetInputDataConfig()
         {
-            return this._inputDataConfig != null && this._inputDataConfig.Count > 0; 
+            return this._inputDataConfig != null && (this._inputDataConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -264,7 +264,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBClusterEndpointIdentifier", StringUtils.FromString(publicRequest.DBClusterEndpointIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndpointType())
                 {
                     request.Parameters.Add("EndpointType", StringUtils.FromString(publicRequest.EndpointType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExcludedMembers())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,6 +78,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStaticMembers())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -84,6 +88,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

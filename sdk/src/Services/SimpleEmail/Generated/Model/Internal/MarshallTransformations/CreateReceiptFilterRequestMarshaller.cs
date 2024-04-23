@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,16 +67,21 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filter" + "." + "IpFilter" + "." + "Cidr", StringUtils.FromString(publicRequest.Filter.IpFilter.Cidr));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.Filter.IpFilter.IsSetPolicy())
                         {
                             request.Parameters.Add("Filter" + "." + "IpFilter" + "." + "Policy", StringUtils.FromString(publicRequest.Filter.IpFilter.Policy));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Filter.IsSetName())
                     {
                         request.Parameters.Add("Filter" + "." + "Name", StringUtils.FromString(publicRequest.Filter.Name));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

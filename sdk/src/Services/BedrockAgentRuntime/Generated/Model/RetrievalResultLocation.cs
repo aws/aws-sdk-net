@@ -29,7 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// The source location of a retrieval result.
+    /// Contains information about the location of the data source.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+    /// response</a> – in the <c>location</c> field
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
+    /// response</a> – in the <c>location</c> field
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+    /// response</a> – in the <c>locatino</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RetrievalResultLocation
     {
@@ -37,7 +58,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private RetrievalResultLocationType _type;
 
         /// <summary>
-        /// Gets and sets the property S3Location.
+        /// Gets and sets the property S3Location. 
+        /// <para>
+        /// Contains the S3 location of the data source.
+        /// </para>
         /// </summary>
         public RetrievalResultS3Location S3Location
         {
@@ -52,7 +76,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the location of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public RetrievalResultLocationType Type

@@ -33,7 +33,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class ListAnnotationStoresResponse : AmazonWebServiceResponse
     {
-        private List<AnnotationStoreItem> _annotationStores = new List<AnnotationStoreItem>();
+        private List<AnnotationStoreItem> _annotationStores = AWSConfigs.InitializeCollections ? new List<AnnotationStoreItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Omics.Model
         // Check to see if AnnotationStores property is set
         internal bool IsSetAnnotationStores()
         {
-            return this._annotationStores != null && this._annotationStores.Count > 0; 
+            return this._annotationStores != null && (this._annotationStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

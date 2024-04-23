@@ -51,8 +51,8 @@ namespace Amazon.GameLift.Model
         private string _instanceRoleArn;
         private InstanceRoleCredentialsProvider _instanceRoleCredentialsProvider;
         private EC2InstanceType _instanceType;
-        private List<string> _logPaths = new List<string>();
-        private List<string> _metricGroups = new List<string>();
+        private List<string> _logPaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _metricGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
         private OperatingSystem _operatingSystem;
@@ -62,7 +62,7 @@ namespace Amazon.GameLift.Model
         private string _serverLaunchParameters;
         private string _serverLaunchPath;
         private FleetStatus _status;
-        private List<string> _stoppedActions = new List<string>();
+        private List<string> _stoppedActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _terminationTime;
 
         /// <summary>
@@ -338,7 +338,7 @@ namespace Amazon.GameLift.Model
         // Check to see if LogPaths property is set
         internal bool IsSetLogPaths()
         {
-            return this._logPaths != null && this._logPaths.Count > 0; 
+            return this._logPaths != null && (this._logPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -359,7 +359,7 @@ namespace Amazon.GameLift.Model
         // Check to see if MetricGroups property is set
         internal bool IsSetMetricGroups()
         {
-            return this._metricGroups != null && this._metricGroups.Count > 0; 
+            return this._metricGroups != null && (this._metricGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -589,7 +589,7 @@ namespace Amazon.GameLift.Model
         // Check to see if StoppedActions property is set
         internal bool IsSetStoppedActions()
         {
-            return this._stoppedActions != null && this._stoppedActions.Count > 0; 
+            return this._stoppedActions != null && (this._stoppedActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

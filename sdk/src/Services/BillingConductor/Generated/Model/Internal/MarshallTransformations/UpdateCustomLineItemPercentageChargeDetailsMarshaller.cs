@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateCustomLineItemPercentageChargeDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPercentageValue())
             {
                 context.Writer.WritePropertyName("PercentageValue");
-                context.Writer.Write(requestObject.PercentageValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentageValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentageValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PercentageValue);
+                }
             }
 
         }
@@ -60,3 +70,4 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

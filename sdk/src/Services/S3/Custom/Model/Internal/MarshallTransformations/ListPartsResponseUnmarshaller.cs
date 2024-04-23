@@ -103,8 +103,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Part", targetDepth))
                     {
+                        if (response.Parts == null)
+                        {
+                            response.Parts = new List<PartDetail>();
+                        }
                         response.Parts.Add(PartDetailUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                     if (context.TestExpression("Initiator", targetDepth))

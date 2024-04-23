@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model
     public partial class ListTableMetadataResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TableMetadata> _tableMetadataList = new List<TableMetadata>();
+        private List<TableMetadata> _tableMetadataList = AWSConfigs.InitializeCollections ? new List<TableMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.Athena.Model
         // Check to see if TableMetadataList property is set
         internal bool IsSetTableMetadataList()
         {
-            return this._tableMetadataList != null && this._tableMetadataList.Count > 0; 
+            return this._tableMetadataList != null && (this._tableMetadataList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

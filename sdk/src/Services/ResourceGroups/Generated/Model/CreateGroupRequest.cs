@@ -54,11 +54,11 @@ namespace Amazon.ResourceGroups.Model
     /// </summary>
     public partial class CreateGroupRequest : AmazonResourceGroupsRequest
     {
-        private List<GroupConfigurationItem> _configuration = new List<GroupConfigurationItem>();
+        private List<GroupConfigurationItem> _configuration = AWSConfigs.InitializeCollections ? new List<GroupConfigurationItem>() : null;
         private string _description;
         private string _name;
         private ResourceQuery _resourceQuery;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -86,7 +86,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if Configuration property is set
         internal bool IsSetConfiguration()
         {
-            return this._configuration != null && this._configuration.Count > 0; 
+            return this._configuration != null && (this._configuration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,8 +115,9 @@ namespace Amazon.ResourceGroups.Model
         /// The name of the group, which is the identifier of the group in other operations. You
         /// can't change the name of a resource group after you create it. A resource group name
         /// can consist of letters, numbers, hyphens, periods, and underscores. The name cannot
-        /// start with <c>AWS</c> or <c>aws</c>; these are reserved. A resource group name must
-        /// be unique within each Amazon Web Services Region in your Amazon Web Services account.
+        /// start with <c>AWS</c>, <c>aws</c>, or any other possible capitalization; these are
+        /// reserved. A resource group name must be unique within each Amazon Web Services Region
+        /// in your Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -173,7 +174,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

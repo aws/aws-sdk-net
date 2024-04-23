@@ -36,7 +36,7 @@ namespace Amazon.MemoryDB.Model
     {
         private string _kmsKeyId;
         private string _sourceSnapshotName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _targetBucket;
         private string _targetSnapshotName;
 
@@ -95,7 +95,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

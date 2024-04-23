@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the HsmClientCertificates
         /// </summary>
         public IPaginatedEnumerable<HsmClientCertificate> HsmClientCertificates => 
-            new PaginatedResultKeyResponse<DescribeHsmClientCertificatesResponse, HsmClientCertificate>(this, (i) => i.HsmClientCertificates);
+            new PaginatedResultKeyResponse<DescribeHsmClientCertificatesResponse, HsmClientCertificate>(this, (i) => i.HsmClientCertificates ?? new List<HsmClientCertificate>());
 
         internal DescribeHsmClientCertificatesPaginator(IAmazonRedshift client, DescribeHsmClientCertificatesRequest request)
         {

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputOrigin requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -63,6 +66,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RegionName);
             }
 
+            if(requestObject.IsSetResponseTimeout())
+            {
+                context.Writer.WritePropertyName("responseTimeout");
+                context.Writer.Write(requestObject.ResponseTimeout);
+            }
+
         }
 
         /// <summary>
@@ -72,3 +81,4 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

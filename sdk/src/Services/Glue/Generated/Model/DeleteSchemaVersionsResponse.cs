@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DeleteSchemaVersionsResponse : AmazonWebServiceResponse
     {
-        private List<SchemaVersionErrorItem> _schemaVersionErrors = new List<SchemaVersionErrorItem>();
+        private List<SchemaVersionErrorItem> _schemaVersionErrors = AWSConfigs.InitializeCollections ? new List<SchemaVersionErrorItem>() : null;
 
         /// <summary>
         /// Gets and sets the property SchemaVersionErrors. 
@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model
         // Check to see if SchemaVersionErrors property is set
         internal bool IsSetSchemaVersionErrors()
         {
-            return this._schemaVersionErrors != null && this._schemaVersionErrors.Count > 0; 
+            return this._schemaVersionErrors != null && (this._schemaVersionErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

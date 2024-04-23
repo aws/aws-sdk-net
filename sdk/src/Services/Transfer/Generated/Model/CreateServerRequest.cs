@@ -48,11 +48,11 @@ namespace Amazon.Transfer.Model
         private string _postAuthenticationLoginBanner;
         private string _preAuthenticationLoginBanner;
         private ProtocolDetails _protocolDetails;
-        private List<string> _protocols = new List<string>();
+        private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private S3StorageOptions _s3StorageOptions;
         private string _securityPolicyName;
-        private List<string> _structuredLogDestinations = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _structuredLogDestinations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private WorkflowDetails _workflowDetails;
 
         /// <summary>
@@ -523,7 +523,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -554,7 +554,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SecurityPolicyName. 
         /// <para>
-        /// Specifies the name of the security policy that is attached to the server.
+        /// Specifies the name of the security policy for the server.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -610,7 +610,7 @@ namespace Amazon.Transfer.Model
         // Check to see if StructuredLogDestinations property is set
         internal bool IsSetStructuredLogDestinations()
         {
-            return this._structuredLogDestinations != null && this._structuredLogDestinations.Count > 0; 
+            return this._structuredLogDestinations != null && (this._structuredLogDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -629,7 +629,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

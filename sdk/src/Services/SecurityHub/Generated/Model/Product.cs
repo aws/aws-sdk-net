@@ -34,10 +34,10 @@ namespace Amazon.SecurityHub.Model
     public partial class Product
     {
         private string _activationUrl;
-        private List<string> _categories = new List<string>();
+        private List<string> _categories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _companyName;
         private string _description;
-        private List<string> _integrationTypes = new List<string>();
+        private List<string> _integrationTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _marketplaceUrl;
         private string _productArn;
         private string _productName;
@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Categories property is set
         internal bool IsSetCategories()
         {
-            return this._categories != null && this._categories.Count > 0; 
+            return this._categories != null && (this._categories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if IntegrationTypes property is set
         internal bool IsSetIntegrationTypes()
         {
-            return this._integrationTypes != null && this._integrationTypes.Count > 0; 
+            return this._integrationTypes != null && (this._integrationTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

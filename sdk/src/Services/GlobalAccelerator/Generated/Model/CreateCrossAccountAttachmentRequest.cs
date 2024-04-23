@@ -31,27 +31,44 @@ namespace Amazon.GlobalAccelerator.Model
     /// <summary>
     /// Container for the parameters to the CreateCrossAccountAttachment operation.
     /// Create a cross-account attachment in Global Accelerator. You create a cross-account
-    /// attachment to specify the <i>principals</i> who have permission to add to accelerators
-    /// in their own account the resources in your account that you also list in the attachment.
+    /// attachment to specify the <i>principals</i> who have permission to work with <i>resources</i>
+    /// in accelerators in their own account. You specify, in the same attachment, the resources
+    /// that are shared.
     /// 
     ///  
     /// <para>
     /// A principal can be an Amazon Web Services account number or the Amazon Resource Name
-    /// (ARN) for an accelerator. For account numbers that are listed as principals, to add
-    /// a resource listed in the attachment to an accelerator, you must sign in to an account
-    /// specified as a principal. Then you can add the resources that are listed to any of
-    /// your accelerators. If an accelerator ARN is listed in the cross-account attachment
-    /// as a principal, anyone with permission to make updates to the accelerator can add
-    /// as endpoints resources that are listed in the attachment. 
+    /// (ARN) for an accelerator. For account numbers that are listed as principals, to work
+    /// with a resource listed in the attachment, you must sign in to an account specified
+    /// as a principal. Then, you can work with resources that are listed, with any of your
+    /// accelerators. If an accelerator ARN is listed in the cross-account attachment as a
+    /// principal, anyone with permission to make updates to the accelerator can work with
+    /// resources that are listed in the attachment. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Specify each principal and resource separately. To specify two CIDR address pools,
+    /// list them individually under <c>Resources</c>, and so on. For a command line operation,
+    /// for example, you might use a statement like the following:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c> "Resources": [{"Cidr": "169.254.60.0/24"},{"Cidr": "169.254.59.0/24"}]</c> 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html">
+    /// Working with cross-account attachments and resources in Global Accelerator</a> in
+    /// the <i> Global Accelerator Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateCrossAccountAttachmentRequest : AmazonGlobalAcceleratorRequest
     {
         private string _idempotencyToken;
         private string _name;
-        private List<string> _principals = new List<string>();
-        private List<Resource> _resources = new List<Resource>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _principals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Resource> _resources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
@@ -95,7 +112,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Principals. 
         /// <para>
-        /// The principals to list in the cross-account attachment. A principal can be an Amazon
+        /// The principals to include in the cross-account attachment. A principal can be an Amazon
         /// Web Services account number or the Amazon Resource Name (ARN) for an accelerator.
         /// 
         /// </para>
@@ -109,15 +126,16 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) for the resources to list in the cross-account attachment.
-        /// A resource can be any supported Amazon Web Services resource type for Global Accelerator.
-        /// 
+        /// The Amazon Resource Names (ARNs) for the resources to include in the cross-account
+        /// attachment. A resource can be any supported Amazon Web Services resource type for
+        /// Global Accelerator or a CIDR range for a bring your own IP address (BYOIP) address
+        /// pool. 
         /// </para>
         /// </summary>
         public List<Resource> Resources
@@ -129,13 +147,13 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Create tags for cross-account attachment.
+        /// Add tags for a cross-account attachment.
         /// </para>
         ///  
         /// <para>
@@ -152,7 +170,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

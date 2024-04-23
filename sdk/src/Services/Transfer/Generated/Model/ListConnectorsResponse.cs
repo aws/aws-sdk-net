@@ -33,7 +33,7 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class ListConnectorsResponse : AmazonWebServiceResponse
     {
-        private List<ListedConnector> _connectors = new List<ListedConnector>();
+        private List<ListedConnector> _connectors = AWSConfigs.InitializeCollections ? new List<ListedConnector>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Connectors property is set
         internal bool IsSetConnectors()
         {
-            return this._connectors != null && this._connectors.Count > 0; 
+            return this._connectors != null && (this._connectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

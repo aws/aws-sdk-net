@@ -33,7 +33,7 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class ListAdaptersResponse : AmazonWebServiceResponse
     {
-        private List<AdapterOverview> _adapters = new List<AdapterOverview>();
+        private List<AdapterOverview> _adapters = AWSConfigs.InitializeCollections ? new List<AdapterOverview>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Textract.Model
         // Check to see if Adapters property is set
         internal bool IsSetAdapters()
         {
-            return this._adapters != null && this._adapters.Count > 0; 
+            return this._adapters != null && (this._adapters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

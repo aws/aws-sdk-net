@@ -45,7 +45,7 @@ namespace Amazon.Private5G.Model
         /// Enumerable containing all of the Orders
         /// </summary>
         public IPaginatedEnumerable<Order> Orders => 
-            new PaginatedResultKeyResponse<ListOrdersResponse, Order>(this, (i) => i.Orders);
+            new PaginatedResultKeyResponse<ListOrdersResponse, Order>(this, (i) => i.Orders ?? new List<Order>());
 
         internal ListOrdersPaginator(IAmazonPrivate5G client, ListOrdersRequest request)
         {

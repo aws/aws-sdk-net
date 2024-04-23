@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TranscriptFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAbsoluteTimeRange())
             {
                 context.Writer.WritePropertyName("AbsoluteTimeRange");
@@ -105,3 +108,4 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

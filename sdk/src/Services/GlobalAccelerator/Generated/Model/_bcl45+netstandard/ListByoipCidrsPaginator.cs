@@ -45,7 +45,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Enumerable containing all of the ByoipCidrs
         /// </summary>
         public IPaginatedEnumerable<ByoipCidr> ByoipCidrs => 
-            new PaginatedResultKeyResponse<ListByoipCidrsResponse, ByoipCidr>(this, (i) => i.ByoipCidrs);
+            new PaginatedResultKeyResponse<ListByoipCidrsResponse, ByoipCidr>(this, (i) => i.ByoipCidrs ?? new List<ByoipCidr>());
 
         internal ListByoipCidrsPaginator(IAmazonGlobalAccelerator client, ListByoipCidrsRequest request)
         {

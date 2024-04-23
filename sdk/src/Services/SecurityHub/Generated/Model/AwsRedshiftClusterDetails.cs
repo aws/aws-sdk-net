@@ -39,17 +39,17 @@ namespace Amazon.SecurityHub.Model
         private string _clusterAvailabilityStatus;
         private string _clusterCreateTime;
         private string _clusterIdentifier;
-        private List<AwsRedshiftClusterClusterNode> _clusterNodes = new List<AwsRedshiftClusterClusterNode>();
-        private List<AwsRedshiftClusterClusterParameterGroup> _clusterParameterGroups = new List<AwsRedshiftClusterClusterParameterGroup>();
+        private List<AwsRedshiftClusterClusterNode> _clusterNodes = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterClusterNode>() : null;
+        private List<AwsRedshiftClusterClusterParameterGroup> _clusterParameterGroups = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterClusterParameterGroup>() : null;
         private string _clusterPublicKey;
         private string _clusterRevisionNumber;
-        private List<AwsRedshiftClusterClusterSecurityGroup> _clusterSecurityGroups = new List<AwsRedshiftClusterClusterSecurityGroup>();
+        private List<AwsRedshiftClusterClusterSecurityGroup> _clusterSecurityGroups = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterClusterSecurityGroup>() : null;
         private AwsRedshiftClusterClusterSnapshotCopyStatus _clusterSnapshotCopyStatus;
         private string _clusterStatus;
         private string _clusterSubnetGroupName;
         private string _clusterVersion;
         private string _dbName;
-        private List<AwsRedshiftClusterDeferredMaintenanceWindow> _deferredMaintenanceWindows = new List<AwsRedshiftClusterDeferredMaintenanceWindow>();
+        private List<AwsRedshiftClusterDeferredMaintenanceWindow> _deferredMaintenanceWindows = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterDeferredMaintenanceWindow>() : null;
         private AwsRedshiftClusterElasticIpStatus _elasticIpStatus;
         private string _elasticResizeNumberOfNodeOptions;
         private bool? _encrypted;
@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         private string _expectedNextSnapshotScheduleTime;
         private string _expectedNextSnapshotScheduleTimeStatus;
         private AwsRedshiftClusterHsmStatus _hsmStatus;
-        private List<AwsRedshiftClusterIamRole> _iamRoles = new List<AwsRedshiftClusterIamRole>();
+        private List<AwsRedshiftClusterIamRole> _iamRoles = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterIamRole>() : null;
         private string _kmsKeyId;
         private AwsRedshiftClusterLoggingStatus _loggingStatus;
         private string _maintenanceTrackName;
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model
         private string _nextMaintenanceWindowStartTime;
         private string _nodeType;
         private int? _numberOfNodes;
-        private List<string> _pendingActions = new List<string>();
+        private List<string> _pendingActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AwsRedshiftClusterPendingModifiedValues _pendingModifiedValues;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
@@ -76,7 +76,7 @@ namespace Amazon.SecurityHub.Model
         private string _snapshotScheduleIdentifier;
         private string _snapshotScheduleState;
         private string _vpcId;
-        private List<AwsRedshiftClusterVpcSecurityGroup> _vpcSecurityGroups = new List<AwsRedshiftClusterVpcSecurityGroup>();
+        private List<AwsRedshiftClusterVpcSecurityGroup> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<AwsRedshiftClusterVpcSecurityGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
@@ -181,10 +181,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ClusterCreateTime
         {
@@ -231,7 +253,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ClusterNodes property is set
         internal bool IsSetClusterNodes()
         {
-            return this._clusterNodes != null && this._clusterNodes.Count > 0; 
+            return this._clusterNodes != null && (this._clusterNodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -249,7 +271,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ClusterParameterGroups property is set
         internal bool IsSetClusterParameterGroups()
         {
-            return this._clusterParameterGroups != null && this._clusterParameterGroups.Count > 0; 
+            return this._clusterParameterGroups != null && (this._clusterParameterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -303,7 +325,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ClusterSecurityGroups property is set
         internal bool IsSetClusterSecurityGroups()
         {
-            return this._clusterSecurityGroups != null && this._clusterSecurityGroups.Count > 0; 
+            return this._clusterSecurityGroups != null && (this._clusterSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -431,7 +453,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DeferredMaintenanceWindows property is set
         internal bool IsSetDeferredMaintenanceWindows()
         {
-            return this._deferredMaintenanceWindows != null && this._deferredMaintenanceWindows.Count > 0; 
+            return this._deferredMaintenanceWindows != null && (this._deferredMaintenanceWindows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -533,10 +555,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ExpectedNextSnapshotScheduleTime
         {
@@ -607,7 +651,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if IamRoles property is set
         internal bool IsSetIamRoles()
         {
-            return this._iamRoles != null && this._iamRoles.Count > 0; 
+            return this._iamRoles != null && (this._iamRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -720,10 +764,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string NextMaintenanceWindowStartTime
         {
@@ -788,7 +854,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PendingActions property is set
         internal bool IsSetPendingActions()
         {
-            return this._pendingActions != null && this._pendingActions.Count > 0; 
+            return this._pendingActions != null && (this._pendingActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -970,7 +1036,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if VpcSecurityGroups property is set
         internal bool IsSetVpcSecurityGroups()
         {
-            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+            return this._vpcSecurityGroups != null && (this._vpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

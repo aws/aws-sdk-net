@@ -33,7 +33,7 @@ namespace Amazon.Glacier.Model
     /// </summary>
     public partial class DataRetrievalPolicy
     {
-        private List<DataRetrievalRule> _rules = new List<DataRetrievalRule>();
+        private List<DataRetrievalRule> _rules = AWSConfigs.InitializeCollections ? new List<DataRetrievalRule>() : null;
 
         /// <summary>
         /// Gets and sets the property Rules. 
@@ -51,7 +51,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

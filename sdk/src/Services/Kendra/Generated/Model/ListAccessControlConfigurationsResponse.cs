@@ -33,7 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class ListAccessControlConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<AccessControlConfigurationSummary> _accessControlConfigurations = new List<AccessControlConfigurationSummary>();
+        private List<AccessControlConfigurationSummary> _accessControlConfigurations = AWSConfigs.InitializeCollections ? new List<AccessControlConfigurationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Kendra.Model
         // Check to see if AccessControlConfigurations property is set
         internal bool IsSetAccessControlConfigurations()
         {
-            return this._accessControlConfigurations != null && this._accessControlConfigurations.Count > 0; 
+            return this._accessControlConfigurations != null && (this._accessControlConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

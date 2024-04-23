@@ -35,6 +35,12 @@ namespace Amazon.ECS.Model
     /// 
     ///  <note> 
     /// <para>
+    /// On March 21, 2024, a change was made to resolve the task definition revision before
+    /// authorization. When a task definition revision is not specified, authorization will
+    /// occur using the latest revision of a task definition.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
     /// Elastic Inference (EI), and will help current customers migrate their workloads to
     /// options that offer better price and performance. After April 15, 2023, new customers
@@ -43,7 +49,7 @@ namespace Amazon.ECS.Model
     /// during the past 30-day period are considered current customers and will be able to
     /// continue using the service. 
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
@@ -59,7 +65,7 @@ namespace Amazon.ECS.Model
     public partial class StartTaskRequest : AmazonECSRequest
     {
         private string _cluster;
-        private List<string> _containerInstances = new List<string>();
+        private List<string> _containerInstances = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableecsManagedTags;
         private bool? _enableExecuteCommand;
         private string _group;
@@ -68,9 +74,9 @@ namespace Amazon.ECS.Model
         private PropagateTags _propagateTags;
         private string _referenceId;
         private string _startedBy;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _taskDefinition;
-        private List<TaskVolumeConfiguration> _volumeConfigurations = new List<TaskVolumeConfiguration>();
+        private List<TaskVolumeConfiguration> _volumeConfigurations = AWSConfigs.InitializeCollections ? new List<TaskVolumeConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -108,7 +114,7 @@ namespace Amazon.ECS.Model
         // Check to see if ContainerInstances property is set
         internal bool IsSetContainerInstances()
         {
-            return this._containerInstances != null && this._containerInstances.Count > 0; 
+            return this._containerInstances != null && (this._containerInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -340,7 +346,7 @@ namespace Amazon.ECS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -381,7 +387,7 @@ namespace Amazon.ECS.Model
         // Check to see if VolumeConfigurations property is set
         internal bool IsSetVolumeConfigurations()
         {
-            return this._volumeConfigurations != null && this._volumeConfigurations.Count > 0; 
+            return this._volumeConfigurations != null && (this._volumeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

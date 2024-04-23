@@ -30,12 +30,13 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGlobalSettings operation.
-    /// Updates whether the Amazon Web Services account is opted into organization sharing
+    /// Update whether the Amazon Web Services account is opted into organization sharing
     /// and discovery integration features.
     /// </summary>
     public partial class UpdateGlobalSettingsRequest : AmazonWellArchitectedRequest
     {
         private DiscoveryIntegrationStatus _discoveryIntegrationStatus;
+        private AccountJiraConfigurationInput _jiraConfiguration;
         private OrganizationSharingStatus _organizationSharingStatus;
 
         /// <summary>
@@ -54,6 +55,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetDiscoveryIntegrationStatus()
         {
             return this._discoveryIntegrationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// The status of Jira integration settings.
+        /// </para>
+        /// </summary>
+        public AccountJiraConfigurationInput JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     public partial class ListDataQualityRuleRecommendationRunsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<DataQualityRuleRecommendationRunDescription> _runs = new List<DataQualityRuleRecommendationRunDescription>();
+        private List<DataQualityRuleRecommendationRunDescription> _runs = AWSConfigs.InitializeCollections ? new List<DataQualityRuleRecommendationRunDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Glue.Model
         // Check to see if Runs property is set
         internal bool IsSetRuns()
         {
-            return this._runs != null && this._runs.Count > 0; 
+            return this._runs != null && (this._runs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

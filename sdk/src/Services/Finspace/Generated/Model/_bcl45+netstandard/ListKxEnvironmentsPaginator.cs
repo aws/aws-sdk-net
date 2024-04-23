@@ -45,7 +45,7 @@ namespace Amazon.Finspace.Model
         /// Enumerable containing all of the Environments
         /// </summary>
         public IPaginatedEnumerable<KxEnvironment> Environments => 
-            new PaginatedResultKeyResponse<ListKxEnvironmentsResponse, KxEnvironment>(this, (i) => i.Environments);
+            new PaginatedResultKeyResponse<ListKxEnvironmentsResponse, KxEnvironment>(this, (i) => i.Environments ?? new List<KxEnvironment>());
 
         internal ListKxEnvironmentsPaginator(IAmazonFinspace client, ListKxEnvironmentsRequest request)
         {

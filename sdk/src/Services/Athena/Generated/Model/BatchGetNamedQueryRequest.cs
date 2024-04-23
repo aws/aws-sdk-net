@@ -41,7 +41,7 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class BatchGetNamedQueryRequest : AmazonAthenaRequest
     {
-        private List<string> _namedQueryIds = new List<string>();
+        private List<string> _namedQueryIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NamedQueryIds. 
@@ -59,7 +59,7 @@ namespace Amazon.Athena.Model
         // Check to see if NamedQueryIds property is set
         internal bool IsSetNamedQueryIds()
         {
-            return this._namedQueryIds != null && this._namedQueryIds.Count > 0; 
+            return this._namedQueryIds != null && (this._namedQueryIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

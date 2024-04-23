@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoMerging requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetConflictResolution())
             {
                 context.Writer.WritePropertyName("ConflictResolution");
@@ -76,7 +79,14 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinAllowedConfidenceScoreForMerging())
             {
                 context.Writer.WritePropertyName("MinAllowedConfidenceScoreForMerging");
-                context.Writer.Write(requestObject.MinAllowedConfidenceScoreForMerging);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinAllowedConfidenceScoreForMerging))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinAllowedConfidenceScoreForMerging));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinAllowedConfidenceScoreForMerging);
+                }
             }
 
         }
@@ -88,3 +98,4 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

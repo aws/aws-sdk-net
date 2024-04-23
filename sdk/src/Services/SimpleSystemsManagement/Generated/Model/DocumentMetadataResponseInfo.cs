@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DocumentMetadataResponseInfo
     {
-        private List<DocumentReviewerResponseSource> _reviewerResponse = new List<DocumentReviewerResponseSource>();
+        private List<DocumentReviewerResponseSource> _reviewerResponse = AWSConfigs.InitializeCollections ? new List<DocumentReviewerResponseSource>() : null;
 
         /// <summary>
         /// Gets and sets the property ReviewerResponse. 
@@ -50,7 +50,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ReviewerResponse property is set
         internal bool IsSetReviewerResponse()
         {
-            return this._reviewerResponse != null && this._reviewerResponse.Count > 0; 
+            return this._reviewerResponse != null && (this._reviewerResponse.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

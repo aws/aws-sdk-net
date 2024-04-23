@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class DescribeTagsRequest : AmazonElasticLoadBalancingRequest
     {
-        private List<string> _loadBalancerNames = new List<string>();
+        private List<string> _loadBalancerNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerNames property is set
         internal bool IsSetLoadBalancerNames()
         {
-            return this._loadBalancerNames != null && this._loadBalancerNames.Count > 0; 
+            return this._loadBalancerNames != null && (this._loadBalancerNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

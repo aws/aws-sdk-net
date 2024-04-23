@@ -34,7 +34,7 @@ namespace Amazon.Pipes.Model
     public partial class ListPipesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Pipe> _pipes = new List<Pipe>();
+        private List<Pipe> _pipes = AWSConfigs.InitializeCollections ? new List<Pipe>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.Pipes.Model
         // Check to see if Pipes property is set
         internal bool IsSetPipes()
         {
-            return this._pipes != null && this._pipes.Count > 0; 
+            return this._pipes != null && (this._pipes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.ApplicationInsights.Model
     {
         private string _componentName;
         private string _componentRemarks;
-        private Dictionary<string, Dictionary<string, string>> _detectedWorkload = new Dictionary<string, Dictionary<string, string>>();
+        private Dictionary<string, Dictionary<string, string>> _detectedWorkload = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
         private bool? _monitor;
         private OsType _osType;
         private string _resourceType;
@@ -95,7 +95,7 @@ namespace Amazon.ApplicationInsights.Model
         // Check to see if DetectedWorkload property is set
         internal bool IsSetDetectedWorkload()
         {
-            return this._detectedWorkload != null && this._detectedWorkload.Count > 0; 
+            return this._detectedWorkload != null && (this._detectedWorkload.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

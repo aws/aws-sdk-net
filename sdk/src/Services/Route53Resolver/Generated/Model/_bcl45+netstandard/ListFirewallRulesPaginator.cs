@@ -45,7 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// Enumerable containing all of the FirewallRules
         /// </summary>
         public IPaginatedEnumerable<FirewallRule> FirewallRules => 
-            new PaginatedResultKeyResponse<ListFirewallRulesResponse, FirewallRule>(this, (i) => i.FirewallRules);
+            new PaginatedResultKeyResponse<ListFirewallRulesResponse, FirewallRule>(this, (i) => i.FirewallRules ?? new List<FirewallRule>());
 
         internal ListFirewallRulesPaginator(IAmazonRoute53Resolver client, ListFirewallRulesRequest request)
         {

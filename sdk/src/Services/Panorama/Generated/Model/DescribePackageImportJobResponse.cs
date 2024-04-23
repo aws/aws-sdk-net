@@ -37,7 +37,7 @@ namespace Amazon.Panorama.Model
         private DateTime? _createdTime;
         private PackageImportJobInputConfig _inputConfig;
         private string _jobId;
-        private List<JobResourceTags> _jobTags = new List<JobResourceTags>();
+        private List<JobResourceTags> _jobTags = AWSConfigs.InitializeCollections ? new List<JobResourceTags>() : null;
         private PackageImportJobType _jobType;
         private DateTime? _lastUpdatedTime;
         private PackageImportJobOutput _output;
@@ -136,7 +136,7 @@ namespace Amazon.Panorama.Model
         // Check to see if JobTags property is set
         internal bool IsSetJobTags()
         {
-            return this._jobTags != null && this._jobTags.Count > 0; 
+            return this._jobTags != null && (this._jobTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class BatchDeleteFeaturedResultsSetRequest : AmazonKendraRequest
     {
-        private List<string> _featuredResultsSetIds = new List<string>();
+        private List<string> _featuredResultsSetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _indexId;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FeaturedResultsSetIds property is set
         internal bool IsSetFeaturedResultsSetIds()
         {
-            return this._featuredResultsSetIds != null && this._featuredResultsSetIds.Count > 0; 
+            return this._featuredResultsSetIds != null && (this._featuredResultsSetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

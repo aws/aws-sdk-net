@@ -34,7 +34,7 @@ namespace Amazon.KendraRanking.Model
     public partial class ListRescoreExecutionPlansResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RescoreExecutionPlanSummary> _summaryItems = new List<RescoreExecutionPlanSummary>();
+        private List<RescoreExecutionPlanSummary> _summaryItems = AWSConfigs.InitializeCollections ? new List<RescoreExecutionPlanSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.KendraRanking.Model
         // Check to see if SummaryItems property is set
         internal bool IsSetSummaryItems()
         {
-            return this._summaryItems != null && this._summaryItems.Count > 0; 
+            return this._summaryItems != null && (this._summaryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -64,11 +64,11 @@ namespace Amazon.EC2.Model
     {
         private bool? _acceptanceRequired;
         private string _clientToken;
-        private List<string> _gatewayLoadBalancerArns = new List<string>();
-        private List<string> _networkLoadBalancerArns = new List<string>();
+        private List<string> _gatewayLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _networkLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _privateDnsName;
-        private List<string> _supportedIpAddressTypes = new List<string>();
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<string> _supportedIpAddressTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property AcceptanceRequired. 
@@ -124,7 +124,7 @@ namespace Amazon.EC2.Model
         // Check to see if GatewayLoadBalancerArns property is set
         internal bool IsSetGatewayLoadBalancerArns()
         {
-            return this._gatewayLoadBalancerArns != null && this._gatewayLoadBalancerArns.Count > 0; 
+            return this._gatewayLoadBalancerArns != null && (this._gatewayLoadBalancerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Amazon.EC2.Model
         // Check to see if NetworkLoadBalancerArns property is set
         internal bool IsSetNetworkLoadBalancerArns()
         {
-            return this._networkLoadBalancerArns != null && this._networkLoadBalancerArns.Count > 0; 
+            return this._networkLoadBalancerArns != null && (this._networkLoadBalancerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.EC2.Model
         // Check to see if SupportedIpAddressTypes property is set
         internal bool IsSetSupportedIpAddressTypes()
         {
-            return this._supportedIpAddressTypes != null && this._supportedIpAddressTypes.Count > 0; 
+            return this._supportedIpAddressTypes != null && (this._supportedIpAddressTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

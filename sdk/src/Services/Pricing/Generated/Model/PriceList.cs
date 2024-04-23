@@ -42,7 +42,7 @@ namespace Amazon.Pricing.Model
     public partial class PriceList
     {
         private string _currencyCode;
-        private List<string> _fileFormats = new List<string>();
+        private List<string> _fileFormats = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _priceListArn;
         private string _regionCode;
 
@@ -82,7 +82,7 @@ namespace Amazon.Pricing.Model
         // Check to see if FileFormats property is set
         internal bool IsSetFileFormats()
         {
-            return this._fileFormats != null && this._fileFormats.Count > 0; 
+            return this._fileFormats != null && (this._fileFormats.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

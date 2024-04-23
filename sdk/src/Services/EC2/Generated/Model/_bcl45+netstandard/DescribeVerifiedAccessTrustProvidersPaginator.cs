@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the VerifiedAccessTrustProviders
         /// </summary>
         public IPaginatedEnumerable<VerifiedAccessTrustProvider> VerifiedAccessTrustProviders => 
-            new PaginatedResultKeyResponse<DescribeVerifiedAccessTrustProvidersResponse, VerifiedAccessTrustProvider>(this, (i) => i.VerifiedAccessTrustProviders);
+            new PaginatedResultKeyResponse<DescribeVerifiedAccessTrustProvidersResponse, VerifiedAccessTrustProvider>(this, (i) => i.VerifiedAccessTrustProviders ?? new List<VerifiedAccessTrustProvider>());
 
         internal DescribeVerifiedAccessTrustProvidersPaginator(IAmazonEC2 client, DescribeVerifiedAccessTrustProvidersRequest request)
         {

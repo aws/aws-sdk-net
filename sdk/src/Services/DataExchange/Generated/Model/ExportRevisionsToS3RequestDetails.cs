@@ -35,7 +35,7 @@ namespace Amazon.DataExchange.Model
     {
         private string _dataSetId;
         private ExportServerSideEncryption _encryption;
-        private List<RevisionDestinationEntry> _revisionDestinations = new List<RevisionDestinationEntry>();
+        private List<RevisionDestinationEntry> _revisionDestinations = AWSConfigs.InitializeCollections ? new List<RevisionDestinationEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property DataSetId. 
@@ -90,7 +90,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if RevisionDestinations property is set
         internal bool IsSetRevisionDestinations()
         {
-            return this._revisionDestinations != null && this._revisionDestinations.Count > 0; 
+            return this._revisionDestinations != null && (this._revisionDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

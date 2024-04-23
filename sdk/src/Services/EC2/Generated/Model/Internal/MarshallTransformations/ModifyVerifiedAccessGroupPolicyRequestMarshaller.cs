@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,29 +67,36 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyDocument())
                 {
                     request.Parameters.Add("PolicyDocument", StringUtils.FromString(publicRequest.PolicyDocument));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyEnabled())
                 {
                     request.Parameters.Add("PolicyEnabled", StringUtils.FromBool(publicRequest.PolicyEnabled));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSseSpecification())
                 {
                     if(publicRequest.SseSpecification.IsSetCustomerManagedKeyEnabled())
                     {
                         request.Parameters.Add("SseSpecification" + "." + "CustomerManagedKeyEnabled", StringUtils.FromBool(publicRequest.SseSpecification.CustomerManagedKeyEnabled));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.SseSpecification.IsSetKmsKeyArn())
                     {
                         request.Parameters.Add("SseSpecification" + "." + "KmsKeyArn", StringUtils.FromString(publicRequest.SseSpecification.KmsKeyArn));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVerifiedAccessGroupId())
                 {
                     request.Parameters.Add("VerifiedAccessGroupId", StringUtils.FromString(publicRequest.VerifiedAccessGroupId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

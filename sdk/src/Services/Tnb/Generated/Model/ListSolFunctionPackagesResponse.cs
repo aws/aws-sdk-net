@@ -33,7 +33,7 @@ namespace Amazon.Tnb.Model
     /// </summary>
     public partial class ListSolFunctionPackagesResponse : AmazonWebServiceResponse
     {
-        private List<ListSolFunctionPackageInfo> _functionPackages = new List<ListSolFunctionPackageInfo>();
+        private List<ListSolFunctionPackageInfo> _functionPackages = AWSConfigs.InitializeCollections ? new List<ListSolFunctionPackageInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Tnb.Model
         // Check to see if FunctionPackages property is set
         internal bool IsSetFunctionPackages()
         {
-            return this._functionPackages != null && this._functionPackages.Count > 0; 
+            return this._functionPackages != null && (this._functionPackages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

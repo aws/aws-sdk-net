@@ -34,7 +34,7 @@ namespace Amazon.Outposts.Model
     public partial class ComputeAttributes
     {
         private string _hostId;
-        private List<string> _instanceFamilies = new List<string>();
+        private List<string> _instanceFamilies = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ComputeAssetState _state;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Outposts.Model
         // Check to see if InstanceFamilies property is set
         internal bool IsSetInstanceFamilies()
         {
-            return this._instanceFamilies != null && this._instanceFamilies.Count > 0; 
+            return this._instanceFamilies != null && (this._instanceFamilies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// Enumerable containing all of the FindingsMetrics
         /// </summary>
         public IPaginatedEnumerable<AccountFindingsMetric> FindingsMetrics => 
-            new PaginatedResultKeyResponse<ListFindingsMetricsResponse, AccountFindingsMetric>(this, (i) => i.FindingsMetrics);
+            new PaginatedResultKeyResponse<ListFindingsMetricsResponse, AccountFindingsMetric>(this, (i) => i.FindingsMetrics ?? new List<AccountFindingsMetric>());
 
         internal ListFindingsMetricsPaginator(IAmazonCodeGuruSecurity client, ListFindingsMetricsRequest request)
         {

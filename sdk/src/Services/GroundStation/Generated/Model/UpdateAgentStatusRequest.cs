@@ -43,7 +43,7 @@ namespace Amazon.GroundStation.Model
     {
         private string _agentId;
         private AggregateStatus _aggregateStatus;
-        private List<ComponentStatusData> _componentStatuses = new List<ComponentStatusData>();
+        private List<ComponentStatusData> _componentStatuses = AWSConfigs.InitializeCollections ? new List<ComponentStatusData>() : null;
         private string _taskId;
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if ComponentStatuses property is set
         internal bool IsSetComponentStatuses()
         {
-            return this._componentStatuses != null && this._componentStatuses.Count > 0; 
+            return this._componentStatuses != null && (this._componentStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

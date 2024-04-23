@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the Parameters
         /// </summary>
         public IPaginatedEnumerable<Parameter> Parameters => 
-            new PaginatedResultKeyResponse<DescribeEngineDefaultParametersResponse, Parameter>(this, (i) => i.EngineDefaults.Parameters);
+            new PaginatedResultKeyResponse<DescribeEngineDefaultParametersResponse, Parameter>(this, (i) => i.EngineDefaults.Parameters ?? new List<Parameter>());
 
         internal DescribeEngineDefaultParametersPaginator(IAmazonElastiCache client, DescribeEngineDefaultParametersRequest request)
         {

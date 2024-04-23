@@ -36,7 +36,7 @@ namespace Amazon.Lambda.Model
         private FunctionCodeLocation _code;
         private Concurrency _concurrency;
         private FunctionConfiguration _configuration;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Code. 
@@ -108,7 +108,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

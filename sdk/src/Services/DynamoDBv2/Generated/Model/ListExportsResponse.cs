@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ListExportsResponse : AmazonWebServiceResponse
     {
-        private List<ExportSummary> _exportSummaries = new List<ExportSummary>();
+        private List<ExportSummary> _exportSummaries = AWSConfigs.InitializeCollections ? new List<ExportSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ExportSummaries property is set
         internal bool IsSetExportSummaries()
         {
-            return this._exportSummaries != null && this._exportSummaries.Count > 0; 
+            return this._exportSummaries != null && (this._exportSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

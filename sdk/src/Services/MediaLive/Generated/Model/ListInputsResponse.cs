@@ -33,7 +33,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ListInputsResponse : AmazonWebServiceResponse
     {
-        private List<Input> _inputs = new List<Input>();
+        private List<Input> _inputs = AWSConfigs.InitializeCollections ? new List<Input>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAgentVersion operation.
-    /// Deletes an Agent version for existing Amazon Bedrock Agent
+    /// Deletes a version of an agent.
     /// </summary>
     public partial class DeleteAgentVersionRequest : AmazonBedrockAgentRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent that the version belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentVersion.
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The version of the agent to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentVersion
@@ -76,7 +79,9 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property SkipResourceInUseCheck. 
         /// <para>
-        /// Skips checking if resource is in use when set to true. Defaults to false
+        /// By default, this value is <c>false</c> and deletion is stopped if the resource is
+        /// in use. If you set it to <c>true</c>, the resource will be deleted even if the resource
+        /// is in use.
         /// </para>
         /// </summary>
         public bool SkipResourceInUseCheck

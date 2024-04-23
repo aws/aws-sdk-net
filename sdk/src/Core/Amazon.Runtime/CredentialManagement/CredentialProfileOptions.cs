@@ -28,9 +28,7 @@ namespace Amazon.Runtime.CredentialManagement
     /// SessionAWSCredentials       AccessKey SecretKey Token
     /// AssmeRoleAWSCredentials     SourceProfile RoleArn [ExternalID] [MfaSerial]
     /// FederatedAWSCredentials     EndpointName RoleArn [UserIdentity]
-#if !BCL35
-    /// SSO                         SsoAccountId SsoRegion SsoRoleName SsoStartUrl SsoSession
-#endif
+    /// SSO                         SsoAccountId SsoRegion SsoRoleName SsoStartUrl SsoSession (Not supported in .NET Framework 3.5)
     /// </summary>
     public class CredentialProfileOptions
     {

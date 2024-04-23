@@ -35,7 +35,7 @@ namespace Amazon.BedrockAgentRuntime
     /// <summary>
     /// <para>Implementation for accessing BedrockAgentRuntime</para>
     ///
-    /// Amazon Bedrock Agent
+    /// Contains APIs related to model invocation and querying of knowledge bases.
     /// </summary>
     public partial class AmazonBedrockAgentRuntimeClient : AmazonServiceClient, IAmazonBedrockAgentRuntime
     {
@@ -266,40 +266,91 @@ namespace Amazon.BedrockAgentRuntime
         #region  InvokeAgent
 
         /// <summary>
-        /// Invokes the specified Bedrock model to run inference using the input provided in the
-        /// request body.
+        /// Sends a prompt for the agent to process and respond to. Use return control event type
+        /// for function calling.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The CLI doesn't support <c>InvokeAgent</c>.
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        /// To continue the same conversation with an agent, use the same <c>sessionId</c> value
+        /// in the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To activate trace enablement, turn <c>enableTrace</c> to <c>true</c>. Trace enablement
+        /// helps you follow the agent's reasoning process that led it to the information it processed,
+        /// the actions it took, and the final result it yielded. For more information, see <a
+        /// href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace
+        /// enablement</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// End a conversation by setting <c>endSession</c> to <c>true</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// In the <c>sessionState</c> object, you can include attributes for the session or prompt
+        /// or parameters returned from the action group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use return control event type for function calling.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The response is returned in the <c>bytes</c> field of the <c>chunk</c> object.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>attribution</c> object contains citations for parts of the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you set <c>enableTrace</c> to <c>true</c> in the request, you can trace the agent's
+        /// steps and reasoning process that led it to the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Errors are also surfaced in the response.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeAgent service method.</param>
         /// 
         /// <returns>The response from the InvokeAgent service method, as returned by BedrockAgentRuntime.</returns>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
-        /// This exception is thrown when a request fails due to dependency like Lambda, Bedrock,
-        /// STS resource
+        /// There was an issue with a dependency due to a server issue. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
-        /// This exception is thrown when a request fails due to dependency like Lambda, Bedrock,
-        /// STS resource due to a customer fault (i.e. bad configuration)
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeAgent">REST API Reference for InvokeAgent Operation</seealso>
         public virtual InvokeAgentResponse InvokeAgent(InvokeAgentRequest request)
@@ -350,39 +401,41 @@ namespace Amazon.BedrockAgentRuntime
         #region  Retrieve
 
         /// <summary>
-        /// Retrieve from knowledge base.
+        /// Queries a knowledge base and retrieves information from it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Retrieve service method.</param>
         /// 
         /// <returns>The response from the Retrieve service method, as returned by BedrockAgentRuntime.</returns>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
-        /// This exception is thrown when a request fails due to dependency like Lambda, Bedrock,
-        /// STS resource
+        /// There was an issue with a dependency due to a server issue. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
-        /// This exception is thrown when a request fails due to dependency like Lambda, Bedrock,
-        /// STS resource due to a customer fault (i.e. bad configuration)
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/Retrieve">REST API Reference for Retrieve Operation</seealso>
         public virtual RetrieveResponse Retrieve(RetrieveRequest request)
@@ -433,39 +486,42 @@ namespace Amazon.BedrockAgentRuntime
         #region  RetrieveAndGenerate
 
         /// <summary>
-        /// RetrieveAndGenerate API
+        /// Queries a knowledge base and generates responses based on the retrieved results. The
+        /// response only cites sources that are relevant to the query.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveAndGenerate service method.</param>
         /// 
         /// <returns>The response from the RetrieveAndGenerate service method, as returned by BedrockAgentRuntime.</returns>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
-        /// This exception is thrown when a request is denied per access permissions
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
-        /// This exception is thrown when a request fails due to dependency like Lambda, Bedrock,
-        /// STS resource
+        /// There was an issue with a dependency due to a server issue. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
-        /// This exception is thrown when there is a conflict performing an operation
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
-        /// This exception is thrown when a request fails due to dependency like Lambda, Bedrock,
-        /// STS resource due to a customer fault (i.e. bad configuration)
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
-        /// This exception is thrown if there was an unexpected error during processing of request
+        /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
-        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
-        /// This exception is thrown when a request is made beyond the service quota
+        /// The number of requests exceeds the service quota. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
-        /// This exception is thrown when the number of requests exceeds the limit
+        /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
-        /// This exception is thrown when the request's input validation fails
+        /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrieveAndGenerate">REST API Reference for RetrieveAndGenerate Operation</seealso>
         public virtual RetrieveAndGenerateResponse RetrieveAndGenerate(RetrieveAndGenerateRequest request)

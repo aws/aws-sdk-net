@@ -30,15 +30,19 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIpRestriction operation.
-    /// Updates the content and status of IP rules. To use this operation, you must provide
-    /// the entire map of rules. You can use the <c>DescribeIpRestriction</c> operation to
-    /// get the current rule map.
+    /// Updates the content and status of IP rules. Traffic from a source is allowed when
+    /// the source satisfies either the <c>IpRestrictionRule</c>, <c>VpcIdRestrictionRule</c>,
+    /// or <c>VpcEndpointIdRestrictionRule</c>. To use this operation, you must provide the
+    /// entire map of rules. You can use the <c>DescribeIpRestriction</c> operation to get
+    /// the current rule map.
     /// </summary>
     public partial class UpdateIpRestrictionRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
         private bool? _enabled;
-        private Dictionary<string, string> _ipRestrictionRuleMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _ipRestrictionRuleMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _vpcEndpointIdRestrictionRuleMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _vpcIdRestrictionRuleMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -92,7 +96,44 @@ namespace Amazon.QuickSight.Model
         // Check to see if IpRestrictionRuleMap property is set
         internal bool IsSetIpRestrictionRuleMap()
         {
-            return this._ipRestrictionRuleMap != null && this._ipRestrictionRuleMap.Count > 0; 
+            return this._ipRestrictionRuleMap != null && (this._ipRestrictionRuleMap.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointIdRestrictionRuleMap. 
+        /// <para>
+        /// A map of allowed VPC endpoint IDs and their corresponding rule descriptions.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> VpcEndpointIdRestrictionRuleMap
+        {
+            get { return this._vpcEndpointIdRestrictionRuleMap; }
+            set { this._vpcEndpointIdRestrictionRuleMap = value; }
+        }
+
+        // Check to see if VpcEndpointIdRestrictionRuleMap property is set
+        internal bool IsSetVpcEndpointIdRestrictionRuleMap()
+        {
+            return this._vpcEndpointIdRestrictionRuleMap != null && (this._vpcEndpointIdRestrictionRuleMap.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcIdRestrictionRuleMap. 
+        /// <para>
+        /// A map of VPC IDs and their corresponding rules. When you configure this parameter,
+        /// traffic from all VPC endpoints that are present in the specified VPC is allowed.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> VpcIdRestrictionRuleMap
+        {
+            get { return this._vpcIdRestrictionRuleMap; }
+            set { this._vpcIdRestrictionRuleMap = value; }
+        }
+
+        // Check to see if VpcIdRestrictionRuleMap property is set
+        internal bool IsSetVpcIdRestrictionRuleMap()
+        {
+            return this._vpcIdRestrictionRuleMap != null && (this._vpcIdRestrictionRuleMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

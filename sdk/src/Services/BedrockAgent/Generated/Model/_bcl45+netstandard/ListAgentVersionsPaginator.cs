@@ -45,7 +45,7 @@ namespace Amazon.BedrockAgent.Model
         /// Enumerable containing all of the AgentVersionSummaries
         /// </summary>
         public IPaginatedEnumerable<AgentVersionSummary> AgentVersionSummaries => 
-            new PaginatedResultKeyResponse<ListAgentVersionsResponse, AgentVersionSummary>(this, (i) => i.AgentVersionSummaries);
+            new PaginatedResultKeyResponse<ListAgentVersionsResponse, AgentVersionSummary>(this, (i) => i.AgentVersionSummaries ?? new List<AgentVersionSummary>());
 
         internal ListAgentVersionsPaginator(IAmazonBedrockAgent client, ListAgentVersionsRequest request)
         {

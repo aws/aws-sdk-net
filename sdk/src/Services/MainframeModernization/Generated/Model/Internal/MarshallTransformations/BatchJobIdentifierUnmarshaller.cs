@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     unmarshalledObject.FileBatchJobIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("restartBatchJobIdentifier", targetDepth))
+                {
+                    var unmarshaller = RestartBatchJobIdentifierUnmarshaller.Instance;
+                    unmarshalledObject.RestartBatchJobIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3BatchJobIdentifier", targetDepth))
                 {
                     var unmarshaller = S3BatchJobIdentifierUnmarshaller.Instance;
@@ -100,3 +107,4 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

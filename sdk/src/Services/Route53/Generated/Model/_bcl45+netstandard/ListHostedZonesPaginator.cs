@@ -45,7 +45,7 @@ namespace Amazon.Route53.Model
         /// Enumerable containing all of the HostedZones
         /// </summary>
         public IPaginatedEnumerable<HostedZone> HostedZones => 
-            new PaginatedResultKeyResponse<ListHostedZonesResponse, HostedZone>(this, (i) => i.HostedZones);
+            new PaginatedResultKeyResponse<ListHostedZonesResponse, HostedZone>(this, (i) => i.HostedZones ?? new List<HostedZone>());
 
         internal ListHostedZonesPaginator(IAmazonRoute53 client, ListHostedZonesRequest request)
         {

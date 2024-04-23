@@ -45,7 +45,7 @@ namespace Amazon.CloudControlApi.Model
         /// Enumerable containing all of the ResourceRequestStatusSummaries
         /// </summary>
         public IPaginatedEnumerable<ProgressEvent> ResourceRequestStatusSummaries => 
-            new PaginatedResultKeyResponse<ListResourceRequestsResponse, ProgressEvent>(this, (i) => i.ResourceRequestStatusSummaries);
+            new PaginatedResultKeyResponse<ListResourceRequestsResponse, ProgressEvent>(this, (i) => i.ResourceRequestStatusSummaries ?? new List<ProgressEvent>());
 
         internal ListResourceRequestsPaginator(IAmazonCloudControlApi client, ListResourceRequestsRequest request)
         {

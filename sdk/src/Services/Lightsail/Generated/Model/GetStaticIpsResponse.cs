@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model
     public partial class GetStaticIpsResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<StaticIp> _staticIps = new List<StaticIp>();
+        private List<StaticIp> _staticIps = AWSConfigs.InitializeCollections ? new List<StaticIp>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -78,7 +78,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if StaticIps property is set
         internal bool IsSetStaticIps()
         {
-            return this._staticIps != null && this._staticIps.Count > 0; 
+            return this._staticIps != null && (this._staticIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

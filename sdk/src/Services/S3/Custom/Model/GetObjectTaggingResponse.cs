@@ -24,7 +24,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class GetObjectTaggingResponse : AmazonWebServiceResponse
     {
-        private List<Tag> tagging = new List<Tag>();
+        private List<Tag> tagging = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets or sets tag-set for a given object

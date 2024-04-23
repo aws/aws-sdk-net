@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ListConfigurationPolicyAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<ConfigurationPolicyAssociationSummary> _configurationPolicyAssociationSummaries = new List<ConfigurationPolicyAssociationSummary>();
+        private List<ConfigurationPolicyAssociationSummary> _configurationPolicyAssociationSummaries = AWSConfigs.InitializeCollections ? new List<ConfigurationPolicyAssociationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ConfigurationPolicyAssociationSummaries property is set
         internal bool IsSetConfigurationPolicyAssociationSummaries()
         {
-            return this._configurationPolicyAssociationSummaries != null && this._configurationPolicyAssociationSummaries.Count > 0; 
+            return this._configurationPolicyAssociationSummaries != null && (this._configurationPolicyAssociationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

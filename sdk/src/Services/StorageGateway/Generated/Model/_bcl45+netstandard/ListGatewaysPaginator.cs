@@ -45,7 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// Enumerable containing all of the Gateways
         /// </summary>
         public IPaginatedEnumerable<GatewayInfo> Gateways => 
-            new PaginatedResultKeyResponse<ListGatewaysResponse, GatewayInfo>(this, (i) => i.Gateways);
+            new PaginatedResultKeyResponse<ListGatewaysResponse, GatewayInfo>(this, (i) => i.Gateways ?? new List<GatewayInfo>());
 
         internal ListGatewaysPaginator(IAmazonStorageGateway client, ListGatewaysRequest request)
         {

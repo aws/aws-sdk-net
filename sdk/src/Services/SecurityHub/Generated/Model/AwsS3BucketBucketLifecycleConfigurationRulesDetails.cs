@@ -40,10 +40,10 @@ namespace Amazon.SecurityHub.Model
         private AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails _filter;
         private string _id;
         private int? _noncurrentVersionExpirationInDays;
-        private List<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails> _noncurrentVersionTransitions = new List<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails>();
+        private List<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails> _noncurrentVersionTransitions = AWSConfigs.InitializeCollections ? new List<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails>() : null;
         private string _prefix;
         private string _status;
-        private List<AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails> _transitions = new List<AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails>();
+        private List<AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails> _transitions = AWSConfigs.InitializeCollections ? new List<AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property AbortIncompleteMultipartUpload. 
@@ -71,10 +71,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ExpirationDate
         {
@@ -202,7 +224,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if NoncurrentVersionTransitions property is set
         internal bool IsSetNoncurrentVersionTransitions()
         {
-            return this._noncurrentVersionTransitions != null && this._noncurrentVersionTransitions.Count > 0; 
+            return this._noncurrentVersionTransitions != null && (this._noncurrentVersionTransitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -256,7 +278,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Transitions property is set
         internal bool IsSetTransitions()
         {
-            return this._transitions != null && this._transitions.Count > 0; 
+            return this._transitions != null && (this._transitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

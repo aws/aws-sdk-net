@@ -45,7 +45,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Enumerable containing all of the SignalDecoders
         /// </summary>
         public IPaginatedEnumerable<SignalDecoder> SignalDecoders => 
-            new PaginatedResultKeyResponse<ListDecoderManifestSignalsResponse, SignalDecoder>(this, (i) => i.SignalDecoders);
+            new PaginatedResultKeyResponse<ListDecoderManifestSignalsResponse, SignalDecoder>(this, (i) => i.SignalDecoders ?? new List<SignalDecoder>());
 
         internal ListDecoderManifestSignalsPaginator(IAmazonIoTFleetWise client, ListDecoderManifestSignalsRequest request)
         {

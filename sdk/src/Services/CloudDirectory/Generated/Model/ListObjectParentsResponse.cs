@@ -34,8 +34,8 @@ namespace Amazon.CloudDirectory.Model
     public partial class ListObjectParentsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ObjectIdentifierAndLinkNameTuple> _parentLinks = new List<ObjectIdentifierAndLinkNameTuple>();
-        private Dictionary<string, string> _parents = new Dictionary<string, string>();
+        private List<ObjectIdentifierAndLinkNameTuple> _parentLinks = AWSConfigs.InitializeCollections ? new List<ObjectIdentifierAndLinkNameTuple>() : null;
+        private Dictionary<string, string> _parents = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if ParentLinks property is set
         internal bool IsSetParentLinks()
         {
-            return this._parentLinks != null && this._parentLinks.Count > 0; 
+            return this._parentLinks != null && (this._parentLinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if Parents property is set
         internal bool IsSetParents()
         {
-            return this._parents != null && this._parents.Count > 0; 
+            return this._parents != null && (this._parents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

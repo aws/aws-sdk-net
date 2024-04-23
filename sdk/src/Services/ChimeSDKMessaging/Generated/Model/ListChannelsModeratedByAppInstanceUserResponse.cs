@@ -33,7 +33,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </summary>
     public partial class ListChannelsModeratedByAppInstanceUserResponse : AmazonWebServiceResponse
     {
-        private List<ChannelModeratedByAppInstanceUserSummary> _channels = new List<ChannelModeratedByAppInstanceUserSummary>();
+        private List<ChannelModeratedByAppInstanceUserSummary> _channels = AWSConfigs.InitializeCollections ? new List<ChannelModeratedByAppInstanceUserSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if Channels property is set
         internal bool IsSetChannels()
         {
-            return this._channels != null && this._channels.Count > 0; 
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

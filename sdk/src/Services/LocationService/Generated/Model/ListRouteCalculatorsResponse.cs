@@ -33,7 +33,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class ListRouteCalculatorsResponse : AmazonWebServiceResponse
     {
-        private List<ListRouteCalculatorsResponseEntry> _entries = new List<ListRouteCalculatorsResponseEntry>();
+        private List<ListRouteCalculatorsResponseEntry> _entries = AWSConfigs.InitializeCollections ? new List<ListRouteCalculatorsResponseEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

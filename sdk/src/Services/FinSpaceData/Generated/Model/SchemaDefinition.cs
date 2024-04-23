@@ -33,8 +33,8 @@ namespace Amazon.FinSpaceData.Model
     /// </summary>
     public partial class SchemaDefinition
     {
-        private List<ColumnDefinition> _columns = new List<ColumnDefinition>();
-        private List<string> _primaryKeyColumns = new List<string>();
+        private List<ColumnDefinition> _columns = AWSConfigs.InitializeCollections ? new List<ColumnDefinition>() : null;
+        private List<string> _primaryKeyColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Columns. 
@@ -51,7 +51,7 @@ namespace Amazon.FinSpaceData.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.FinSpaceData.Model
         // Check to see if PrimaryKeyColumns property is set
         internal bool IsSetPrimaryKeyColumns()
         {
-            return this._primaryKeyColumns != null && this._primaryKeyColumns.Count > 0; 
+            return this._primaryKeyColumns != null && (this._primaryKeyColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

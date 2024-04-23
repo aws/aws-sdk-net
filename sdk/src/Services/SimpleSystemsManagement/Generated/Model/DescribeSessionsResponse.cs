@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribeSessionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Session> _sessions = new List<Session>();
+        private List<Session> _sessions = AWSConfigs.InitializeCollections ? new List<Session>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Sessions property is set
         internal bool IsSetSessions()
         {
-            return this._sessions != null && this._sessions.Count > 0; 
+            return this._sessions != null && (this._sessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

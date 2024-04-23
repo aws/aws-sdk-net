@@ -39,14 +39,7 @@ namespace Amazon.GuardDuty.Model
         private ResourceType _resourceType;
 
         /// <summary>
-        /// Gets and sets the property Ec2InstanceDetails. <note> 
-        /// <para>
-        /// This API is also used when you use GuardDuty Runtime Monitoring for your Amazon EC2
-        /// instances (currently in preview release) and is subject to change. The use of this
-        /// API is subject to Section 2 of the <a href="http://aws.amazon.com/service-terms/">Amazon
-        /// Web Services Service Terms</a> ("Betas and Previews").
-        /// </para>
-        ///  </note> 
+        /// Gets and sets the property Ec2InstanceDetails. 
         /// <para>
         /// Information about the Amazon EC2 instance assessed for runtime coverage.
         /// </para>

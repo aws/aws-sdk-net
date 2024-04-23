@@ -45,7 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all of the StackEvents
         /// </summary>
         public IPaginatedEnumerable<StackEvent> StackEvents => 
-            new PaginatedResultKeyResponse<DescribeStackEventsResponse, StackEvent>(this, (i) => i.StackEvents);
+            new PaginatedResultKeyResponse<DescribeStackEventsResponse, StackEvent>(this, (i) => i.StackEvents ?? new List<StackEvent>());
 
         internal DescribeStackEventsPaginator(IAmazonCloudFormation client, DescribeStackEventsRequest request)
         {

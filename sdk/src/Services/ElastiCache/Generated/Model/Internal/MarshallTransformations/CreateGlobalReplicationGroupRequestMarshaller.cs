@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,14 +63,17 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GlobalReplicationGroupDescription", StringUtils.FromString(publicRequest.GlobalReplicationGroupDescription));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGlobalReplicationGroupIdSuffix())
                 {
                     request.Parameters.Add("GlobalReplicationGroupIdSuffix", StringUtils.FromString(publicRequest.GlobalReplicationGroupIdSuffix));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrimaryReplicationGroupId())
                 {
                     request.Parameters.Add("PrimaryReplicationGroupId", StringUtils.FromString(publicRequest.PrimaryReplicationGroupId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
         private string _catalogId;
         private string _databaseName;
         private OpenTableFormatInput _openTableFormatInput;
-        private List<PartitionIndex> _partitionIndexes = new List<PartitionIndex>();
+        private List<PartitionIndex> _partitionIndexes = AWSConfigs.InitializeCollections ? new List<PartitionIndex>() : null;
         private TableInput _tableInput;
         private string _transactionId;
 
@@ -115,7 +115,7 @@ namespace Amazon.Glue.Model
         // Check to see if PartitionIndexes property is set
         internal bool IsSetPartitionIndexes()
         {
-            return this._partitionIndexes != null && this._partitionIndexes.Count > 0; 
+            return this._partitionIndexes != null && (this._partitionIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -90,6 +91,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ResourceScanSummaries/member", targetDepth))
                     {
                         var unmarshaller = ResourceScanSummaryUnmarshaller.Instance;
+                        if (response.ResourceScanSummaries == null)
+                        {
+                            response.ResourceScanSummaries = new List<ResourceScanSummary>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ResourceScanSummaries.Add(item);
                         continue;
@@ -142,3 +147,4 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

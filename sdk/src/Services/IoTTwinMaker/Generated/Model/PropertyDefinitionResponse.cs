@@ -33,7 +33,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class PropertyDefinitionResponse
     {
-        private Dictionary<string, string> _configuration = new Dictionary<string, string>();
+        private Dictionary<string, string> _configuration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DataType _dataType;
         private DataValue _defaultValue;
         private string _displayName;
@@ -60,7 +60,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Configuration property is set
         internal bool IsSetConfiguration()
         {
-            return this._configuration != null && this._configuration.Count > 0; 
+            return this._configuration != null && (this._configuration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

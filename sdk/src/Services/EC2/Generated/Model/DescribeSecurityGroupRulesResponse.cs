@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeSecurityGroupRulesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SecurityGroupRule> _securityGroupRules = new List<SecurityGroupRule>();
+        private List<SecurityGroupRule> _securityGroupRules = AWSConfigs.InitializeCollections ? new List<SecurityGroupRule>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupRules property is set
         internal bool IsSetSecurityGroupRules()
         {
-            return this._securityGroupRules != null && this._securityGroupRules.Count > 0; 
+            return this._securityGroupRules != null && (this._securityGroupRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

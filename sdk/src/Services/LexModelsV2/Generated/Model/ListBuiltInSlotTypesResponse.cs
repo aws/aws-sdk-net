@@ -33,7 +33,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class ListBuiltInSlotTypesResponse : AmazonWebServiceResponse
     {
-        private List<BuiltInSlotTypeSummary> _builtInSlotTypeSummaries = new List<BuiltInSlotTypeSummary>();
+        private List<BuiltInSlotTypeSummary> _builtInSlotTypeSummaries = AWSConfigs.InitializeCollections ? new List<BuiltInSlotTypeSummary>() : null;
         private string _localeId;
         private string _nextToken;
 
@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BuiltInSlotTypeSummaries property is set
         internal bool IsSetBuiltInSlotTypeSummaries()
         {
-            return this._builtInSlotTypeSummaries != null && this._builtInSlotTypeSummaries.Count > 0; 
+            return this._builtInSlotTypeSummaries != null && (this._builtInSlotTypeSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

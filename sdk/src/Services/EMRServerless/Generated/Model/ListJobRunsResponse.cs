@@ -33,7 +33,7 @@ namespace Amazon.EMRServerless.Model
     /// </summary>
     public partial class ListJobRunsResponse : AmazonWebServiceResponse
     {
-        private List<JobRunSummary> _jobRuns = new List<JobRunSummary>();
+        private List<JobRunSummary> _jobRuns = AWSConfigs.InitializeCollections ? new List<JobRunSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.EMRServerless.Model
         // Check to see if JobRuns property is set
         internal bool IsSetJobRuns()
         {
-            return this._jobRuns != null && this._jobRuns.Count > 0; 
+            return this._jobRuns != null && (this._jobRuns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

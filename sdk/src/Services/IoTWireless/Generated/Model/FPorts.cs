@@ -33,7 +33,7 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class FPorts
     {
-        private List<ApplicationConfig> _applications = new List<ApplicationConfig>();
+        private List<ApplicationConfig> _applications = AWSConfigs.InitializeCollections ? new List<ApplicationConfig>() : null;
         private int? _clockSync;
         private int? _fuota;
         private int? _multicast;
@@ -54,7 +54,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

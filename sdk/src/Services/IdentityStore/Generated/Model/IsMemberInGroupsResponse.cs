@@ -33,7 +33,7 @@ namespace Amazon.IdentityStore.Model
     /// </summary>
     public partial class IsMemberInGroupsResponse : AmazonWebServiceResponse
     {
-        private List<GroupMembershipExistenceResult> _results = new List<GroupMembershipExistenceResult>();
+        private List<GroupMembershipExistenceResult> _results = AWSConfigs.InitializeCollections ? new List<GroupMembershipExistenceResult>() : null;
 
         /// <summary>
         /// Gets and sets the property Results. 
@@ -51,7 +51,7 @@ namespace Amazon.IdentityStore.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

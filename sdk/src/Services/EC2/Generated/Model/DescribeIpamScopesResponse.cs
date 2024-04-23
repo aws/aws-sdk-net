@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeIpamScopesResponse : AmazonWebServiceResponse
     {
-        private List<IpamScope> _ipamScopes = new List<IpamScope>();
+        private List<IpamScope> _ipamScopes = AWSConfigs.InitializeCollections ? new List<IpamScope>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if IpamScopes property is set
         internal bool IsSetIpamScopes()
         {
-            return this._ipamScopes != null && this._ipamScopes.Count > 0; 
+            return this._ipamScopes != null && (this._ipamScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

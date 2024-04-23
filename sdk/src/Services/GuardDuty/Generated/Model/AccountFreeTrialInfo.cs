@@ -35,7 +35,7 @@ namespace Amazon.GuardDuty.Model
     {
         private string _accountId;
         private DataSourcesFreeTrial _dataSources;
-        private List<FreeTrialFeatureConfigurationResult> _features = new List<FreeTrialFeatureConfigurationResult>();
+        private List<FreeTrialFeatureConfigurationResult> _features = AWSConfigs.InitializeCollections ? new List<FreeTrialFeatureConfigurationResult>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -89,7 +89,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

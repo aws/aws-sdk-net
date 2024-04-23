@@ -34,7 +34,7 @@ namespace Amazon.StepFunctions.Model
     public partial class ListStateMachinesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StateMachineListItem> _stateMachines = new List<StateMachineListItem>();
+        private List<StateMachineListItem> _stateMachines = AWSConfigs.InitializeCollections ? new List<StateMachineListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.StepFunctions.Model
         // Check to see if StateMachines property is set
         internal bool IsSetStateMachines()
         {
-            return this._stateMachines != null && this._stateMachines.Count > 0; 
+            return this._stateMachines != null && (this._stateMachines.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

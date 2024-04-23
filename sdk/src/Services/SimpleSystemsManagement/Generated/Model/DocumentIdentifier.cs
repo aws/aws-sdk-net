@@ -41,11 +41,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _documentVersion;
         private string _name;
         private string _owner;
-        private List<string> _platformTypes = new List<string>();
-        private List<DocumentRequires> _requires = new List<DocumentRequires>();
+        private List<string> _platformTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DocumentRequires> _requires = AWSConfigs.InitializeCollections ? new List<DocumentRequires>() : null;
         private ReviewStatus _reviewStatus;
         private string _schemaVersion;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _targetType;
         private string _versionName;
 
@@ -225,7 +225,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if PlatformTypes property is set
         internal bool IsSetPlatformTypes()
         {
-            return this._platformTypes != null && this._platformTypes.Count > 0; 
+            return this._platformTypes != null && (this._platformTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -245,7 +245,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Requires property is set
         internal bool IsSetRequires()
         {
-            return this._requires != null && this._requires.Count > 0; 
+            return this._requires != null && (this._requires.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -300,7 +300,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _accountNumber;
         private string _additionalInformation;
         private Address _address;
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Address _billingAddress;
         private string _birthDate;
         private string _businessEmailAddress;
@@ -44,7 +44,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _businessPhoneNumber;
         private string _emailAddress;
         private string _firstName;
-        private List<FoundByKeyValue> _foundByItems = new List<FoundByKeyValue>();
+        private List<FoundByKeyValue> _foundByItems = AWSConfigs.InitializeCollections ? new List<FoundByKeyValue>() : null;
         private Gender _gender;
         private string _genderString;
         private string _homePhoneNumber;
@@ -132,7 +132,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -311,7 +311,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if FoundByItems property is set
         internal bool IsSetFoundByItems()
         {
-            return this._foundByItems != null && this._foundByItems.Count > 0; 
+            return this._foundByItems != null && (this._foundByItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

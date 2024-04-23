@@ -201,7 +201,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DetectLabelsRequest : AmazonRekognitionRequest
     {
-        private List<string> _features = new List<string>();
+        private List<string> _features = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Image _image;
         private int? _maxLabels;
         private float? _minConfidence;
@@ -225,7 +225,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

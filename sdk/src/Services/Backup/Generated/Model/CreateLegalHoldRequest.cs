@@ -40,7 +40,7 @@ namespace Amazon.Backup.Model
         private string _description;
         private string _idempotencyToken;
         private RecoveryPointSelection _recoveryPointSelection;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _title;
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.Backup.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

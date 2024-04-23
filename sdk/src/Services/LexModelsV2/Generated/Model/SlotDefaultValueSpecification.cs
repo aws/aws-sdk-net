@@ -33,7 +33,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class SlotDefaultValueSpecification
     {
-        private List<SlotDefaultValue> _defaultValueList = new List<SlotDefaultValue>();
+        private List<SlotDefaultValue> _defaultValueList = AWSConfigs.InitializeCollections ? new List<SlotDefaultValue>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultValueList. 
@@ -52,7 +52,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if DefaultValueList property is set
         internal bool IsSetDefaultValueList()
         {
-            return this._defaultValueList != null && this._defaultValueList.Count > 0; 
+            return this._defaultValueList != null && (this._defaultValueList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

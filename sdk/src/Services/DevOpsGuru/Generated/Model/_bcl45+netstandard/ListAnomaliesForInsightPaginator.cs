@@ -45,13 +45,13 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the ReactiveAnomalies
         /// </summary>
         public IPaginatedEnumerable<ReactiveAnomalySummary> ReactiveAnomalies => 
-            new PaginatedResultKeyResponse<ListAnomaliesForInsightResponse, ReactiveAnomalySummary>(this, (i) => i.ReactiveAnomalies);
+            new PaginatedResultKeyResponse<ListAnomaliesForInsightResponse, ReactiveAnomalySummary>(this, (i) => i.ReactiveAnomalies ?? new List<ReactiveAnomalySummary>());
 
         /// <summary>
         /// Enumerable containing all of the ProactiveAnomalies
         /// </summary>
         public IPaginatedEnumerable<ProactiveAnomalySummary> ProactiveAnomalies => 
-            new PaginatedResultKeyResponse<ListAnomaliesForInsightResponse, ProactiveAnomalySummary>(this, (i) => i.ProactiveAnomalies);
+            new PaginatedResultKeyResponse<ListAnomaliesForInsightResponse, ProactiveAnomalySummary>(this, (i) => i.ProactiveAnomalies ?? new List<ProactiveAnomalySummary>());
 
         internal ListAnomaliesForInsightPaginator(IAmazonDevOpsGuru client, ListAnomaliesForInsightRequest request)
         {

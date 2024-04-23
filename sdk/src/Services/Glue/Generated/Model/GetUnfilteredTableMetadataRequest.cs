@@ -30,7 +30,8 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUnfilteredTableMetadata operation.
-    /// Retrieves table metadata from the Data Catalog that contains unfiltered metadata.
+    /// Allows a third-party analytical engine to retrieve unfiltered table metadata from
+    /// the Data Catalog.
     /// 
     ///  
     /// <para>
@@ -43,11 +44,13 @@ namespace Amazon.Glue.Model
         private string _catalogId;
         private string _databaseName;
         private string _name;
-        private List<string> _permissions = new List<string>();
+        private string _parentResourceArn;
+        private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private QuerySessionContext _querySessionContext;
         private string _region;
+        private string _rootResourceArn;
         private SupportedDialect _supportedDialect;
-        private List<string> _supportedPermissionTypes = new List<string>();
+        private List<string> _supportedPermissionTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AuditContext. 
@@ -125,6 +128,25 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ParentResourceArn. 
+        /// <para>
+        /// The resource ARN of the view.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ParentResourceArn
+        {
+            get { return this._parentResourceArn; }
+            set { this._parentResourceArn = value; }
+        }
+
+        // Check to see if ParentResourceArn property is set
+        internal bool IsSetParentResourceArn()
+        {
+            return this._parentResourceArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Permissions. 
         /// <para>
         /// The Lake Formation data permissions of the caller on the table. Used to authorize
@@ -140,7 +162,7 @@ namespace Amazon.Glue.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,6 +205,25 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RootResourceArn. 
+        /// <para>
+        /// The resource ARN of the root view in a chain of nested views.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string RootResourceArn
+        {
+            get { return this._rootResourceArn; }
+            set { this._rootResourceArn = value; }
+        }
+
+        // Check to see if RootResourceArn property is set
+        internal bool IsSetRootResourceArn()
+        {
+            return this._rootResourceArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SupportedDialect. 
         /// <para>
         /// A structure specifying the dialect and dialect version used by the query engine.
@@ -203,7 +244,47 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SupportedPermissionTypes. 
         /// <para>
-        /// (Required) A list of supported permission types. 
+        /// Indicates the level of filtering a third-party analytical engine is capable of enforcing
+        /// when calling the <c>GetUnfilteredTableMetadata</c> API operation. Accepted values
+        /// are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>COLUMN_PERMISSION</c> - Column permissions ensure that users can access only specific
+        /// columns in the table. If there are particular columns contain sensitive data, data
+        /// lake administrators can define column filters that exclude access to specific columns.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CELL_FILTER_PERMISSION</c> - Cell-level filtering combines column filtering (include
+        /// or exclude columns) and row filter expressions to restrict access to individual elements
+        /// in the table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NESTED_PERMISSION</c> - Nested permissions combines cell-level filtering and nested
+        /// column filtering to restrict access to columns and/or nested columns in specific rows
+        /// based on row filter expressions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NESTED_CELL_PERMISSION</c> - Nested cell permissions combines nested permission
+        /// with nested cell-level filtering. This allows different subsets of nested columns
+        /// to be restricted based on an array of row filter expressions. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note: Each of these permission types follows a hierarchical order where each subsequent
+        /// permission type includes all permission of the previous type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Important: If you provide a supported permission type that doesn't match the user's
+        /// level of permissions on the table, then Lake Formation raises an exception. For example,
+        /// if the third-party engine calling the <c>GetUnfilteredTableMetadata</c> operation
+        /// can enforce only column-level filtering, and the user has nested cell filtering applied
+        /// on the table, Lake Formation throws an exception, and will not return unfiltered table
+        /// metadata and data access credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -216,7 +297,7 @@ namespace Amazon.Glue.Model
         // Check to see if SupportedPermissionTypes property is set
         internal bool IsSetSupportedPermissionTypes()
         {
-            return this._supportedPermissionTypes != null && this._supportedPermissionTypes.Count > 0; 
+            return this._supportedPermissionTypes != null && (this._supportedPermissionTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllowDataLoss", StringUtils.FromBool(publicRequest.AllowDataLoss));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGlobalClusterIdentifier())
                 {
                     request.Parameters.Add("GlobalClusterIdentifier", StringUtils.FromString(publicRequest.GlobalClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSwitchover())
                 {
                     request.Parameters.Add("Switchover", StringUtils.FromBool(publicRequest.Switchover));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetDbClusterIdentifier())
                 {
                     request.Parameters.Add("TargetDbClusterIdentifier", StringUtils.FromString(publicRequest.TargetDbClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

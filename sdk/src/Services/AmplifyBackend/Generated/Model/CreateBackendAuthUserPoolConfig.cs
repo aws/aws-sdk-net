@@ -38,7 +38,7 @@ namespace Amazon.AmplifyBackend.Model
         private CreateBackendAuthMFAConfig _mfa;
         private CreateBackendAuthOAuthConfig _oAuth;
         private CreateBackendAuthPasswordPolicyConfig _passwordPolicy;
-        private List<string> _requiredSignUpAttributes = new List<string>();
+        private List<string> _requiredSignUpAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SignInMethod _signInMethod;
         private string _userPoolName;
         private CreateBackendAuthVerificationMessageConfig _verificationMessage;
@@ -135,7 +135,7 @@ namespace Amazon.AmplifyBackend.Model
         // Check to see if RequiredSignUpAttributes property is set
         internal bool IsSetRequiredSignUpAttributes()
         {
-            return this._requiredSignUpAttributes != null && this._requiredSignUpAttributes.Count > 0; 
+            return this._requiredSignUpAttributes != null && (this._requiredSignUpAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

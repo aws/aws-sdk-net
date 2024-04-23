@@ -34,7 +34,7 @@ namespace Amazon.AppRunner.Model
     public partial class ListServicesForAutoScalingConfigurationResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _serviceArnList = new List<string>();
+        private List<string> _serviceArnList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if ServiceArnList property is set
         internal bool IsSetServiceArnList()
         {
-            return this._serviceArnList != null && this._serviceArnList.Count > 0; 
+            return this._serviceArnList != null && (this._serviceArnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

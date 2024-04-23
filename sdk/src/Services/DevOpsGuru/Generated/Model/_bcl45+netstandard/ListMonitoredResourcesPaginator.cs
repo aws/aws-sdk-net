@@ -45,7 +45,7 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the MonitoredResourceIdentifiers
         /// </summary>
         public IPaginatedEnumerable<MonitoredResourceIdentifier> MonitoredResourceIdentifiers => 
-            new PaginatedResultKeyResponse<ListMonitoredResourcesResponse, MonitoredResourceIdentifier>(this, (i) => i.MonitoredResourceIdentifiers);
+            new PaginatedResultKeyResponse<ListMonitoredResourcesResponse, MonitoredResourceIdentifier>(this, (i) => i.MonitoredResourceIdentifiers ?? new List<MonitoredResourceIdentifier>());
 
         internal ListMonitoredResourcesPaginator(IAmazonDevOpsGuru client, ListMonitoredResourcesRequest request)
         {

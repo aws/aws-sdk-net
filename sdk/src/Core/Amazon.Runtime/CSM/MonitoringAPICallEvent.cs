@@ -79,7 +79,6 @@ namespace Amazon.Runtime.Internal
         /// Contains the full text of the
         /// Aws exception message returned in the response to the final attempt at
         /// fulfilling this API call.The value of this entry has a maximum length limit
-     
         /// of 512.
         /// </summary>
         public string FinalAWSExceptionMessage { get; internal set; }

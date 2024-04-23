@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the CacheSecurityGroups
         /// </summary>
         public IPaginatedEnumerable<CacheSecurityGroup> CacheSecurityGroups => 
-            new PaginatedResultKeyResponse<DescribeCacheSecurityGroupsResponse, CacheSecurityGroup>(this, (i) => i.CacheSecurityGroups);
+            new PaginatedResultKeyResponse<DescribeCacheSecurityGroupsResponse, CacheSecurityGroup>(this, (i) => i.CacheSecurityGroups ?? new List<CacheSecurityGroup>());
 
         internal DescribeCacheSecurityGroupsPaginator(IAmazonElastiCache client, DescribeCacheSecurityGroupsRequest request)
         {

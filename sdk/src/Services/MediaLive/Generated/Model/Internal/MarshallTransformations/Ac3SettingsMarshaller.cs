@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Ac3Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttenuationControl())
             {
                 context.Writer.WritePropertyName("attenuationControl");
@@ -54,7 +57,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Bitrate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Bitrate);
+                }
             }
 
             if(requestObject.IsSetBitstreamMode())
@@ -102,3 +112,4 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

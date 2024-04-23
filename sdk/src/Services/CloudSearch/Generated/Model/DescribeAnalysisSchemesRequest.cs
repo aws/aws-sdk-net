@@ -40,7 +40,7 @@ namespace Amazon.CloudSearch.Model
     /// </summary>
     public partial class DescribeAnalysisSchemesRequest : AmazonCloudSearchRequest
     {
-        private List<string> _analysisSchemeNames = new List<string>();
+        private List<string> _analysisSchemeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _deployed;
         private string _domainName;
 
@@ -59,7 +59,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if AnalysisSchemeNames property is set
         internal bool IsSetAnalysisSchemeNames()
         {
-            return this._analysisSchemeNames != null && this._analysisSchemeNames.Count > 0; 
+            return this._analysisSchemeNames != null && (this._analysisSchemeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

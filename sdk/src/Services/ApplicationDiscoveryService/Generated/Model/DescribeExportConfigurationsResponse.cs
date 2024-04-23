@@ -33,7 +33,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class DescribeExportConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<ExportInfo> _exportsInfo = new List<ExportInfo>();
+        private List<ExportInfo> _exportsInfo = AWSConfigs.InitializeCollections ? new List<ExportInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if ExportsInfo property is set
         internal bool IsSetExportsInfo()
         {
-            return this._exportsInfo != null && this._exportsInfo.Count > 0; 
+            return this._exportsInfo != null && (this._exportsInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the SpotPriceHistory
         /// </summary>
         public IPaginatedEnumerable<SpotPrice> SpotPriceHistory => 
-            new PaginatedResultKeyResponse<DescribeSpotPriceHistoryResponse, SpotPrice>(this, (i) => i.SpotPriceHistory);
+            new PaginatedResultKeyResponse<DescribeSpotPriceHistoryResponse, SpotPrice>(this, (i) => i.SpotPriceHistory ?? new List<SpotPrice>());
 
         internal DescribeSpotPriceHistoryPaginator(IAmazonEC2 client, DescribeSpotPriceHistoryRequest request)
         {

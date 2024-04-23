@@ -33,13 +33,13 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class QueryResponse : AmazonWebServiceResponse
     {
-        private List<FacetResult> _facetResults = new List<FacetResult>();
-        private List<FeaturedResultsItem> _featuredResultsItems = new List<FeaturedResultsItem>();
+        private List<FacetResult> _facetResults = AWSConfigs.InitializeCollections ? new List<FacetResult>() : null;
+        private List<FeaturedResultsItem> _featuredResultsItems = AWSConfigs.InitializeCollections ? new List<FeaturedResultsItem>() : null;
         private string _queryId;
-        private List<QueryResultItem> _resultItems = new List<QueryResultItem>();
-        private List<SpellCorrectedQuery> _spellCorrectedQueries = new List<SpellCorrectedQuery>();
+        private List<QueryResultItem> _resultItems = AWSConfigs.InitializeCollections ? new List<QueryResultItem>() : null;
+        private List<SpellCorrectedQuery> _spellCorrectedQueries = AWSConfigs.InitializeCollections ? new List<SpellCorrectedQuery>() : null;
         private int? _totalNumberOfResults;
-        private List<Warning> _warnings = new List<Warning>();
+        private List<Warning> _warnings = AWSConfigs.InitializeCollections ? new List<Warning>() : null;
 
         /// <summary>
         /// Gets and sets the property FacetResults. 
@@ -57,7 +57,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FacetResults property is set
         internal bool IsSetFacetResults()
         {
-            return this._facetResults != null && this._facetResults.Count > 0; 
+            return this._facetResults != null && (this._facetResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FeaturedResultsItems property is set
         internal bool IsSetFeaturedResultsItems()
         {
-            return this._featuredResultsItems != null && this._featuredResultsItems.Count > 0; 
+            return this._featuredResultsItems != null && (this._featuredResultsItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ResultItems property is set
         internal bool IsSetResultItems()
         {
-            return this._resultItems != null && this._resultItems.Count > 0; 
+            return this._resultItems != null && (this._resultItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SpellCorrectedQueries property is set
         internal bool IsSetSpellCorrectedQueries()
         {
-            return this._spellCorrectedQueries != null && this._spellCorrectedQueries.Count > 0; 
+            return this._spellCorrectedQueries != null && (this._spellCorrectedQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

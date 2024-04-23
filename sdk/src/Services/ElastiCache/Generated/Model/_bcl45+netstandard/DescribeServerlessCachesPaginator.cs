@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the ServerlessCaches
         /// </summary>
         public IPaginatedEnumerable<ServerlessCache> ServerlessCaches => 
-            new PaginatedResultKeyResponse<DescribeServerlessCachesResponse, ServerlessCache>(this, (i) => i.ServerlessCaches);
+            new PaginatedResultKeyResponse<DescribeServerlessCachesResponse, ServerlessCache>(this, (i) => i.ServerlessCaches ?? new List<ServerlessCache>());
 
         internal DescribeServerlessCachesPaginator(IAmazonElastiCache client, DescribeServerlessCachesRequest request)
         {

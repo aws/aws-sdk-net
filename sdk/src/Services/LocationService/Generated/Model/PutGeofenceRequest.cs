@@ -37,7 +37,7 @@ namespace Amazon.LocationService.Model
     {
         private string _collectionName;
         private string _geofenceId;
-        private Dictionary<string, string> _geofenceProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _geofenceProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private GeofenceGeometry _geometry;
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.LocationService.Model
         // Check to see if GeofenceProperties property is set
         internal bool IsSetGeofenceProperties()
         {
-            return this._geofenceProperties != null && this._geofenceProperties.Count > 0; 
+            return this._geofenceProperties != null && (this._geofenceProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

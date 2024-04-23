@@ -34,6 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class LocalIpDetails
     {
         private string _ipAddressV4;
+        private string _ipAddressV6;
 
         /// <summary>
         /// Gets and sets the property IpAddressV4. 
@@ -52,6 +53,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetIpAddressV4()
         {
             return this._ipAddressV4 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressV6. 
+        /// <para>
+        /// The IPv6 local address of the connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string IpAddressV6
+        {
+            get { return this._ipAddressV6; }
+            set { this._ipAddressV6 = value; }
+        }
+
+        // Check to see if IpAddressV6 property is set
+        internal bool IsSetIpAddressV6()
+        {
+            return this._ipAddressV6 != null;
         }
 
     }

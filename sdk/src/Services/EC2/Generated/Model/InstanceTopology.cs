@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         private string _groupName;
         private string _instanceId;
         private string _instanceType;
-        private List<string> _networkNodes = new List<string>();
+        private List<string> _networkNodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _zoneId;
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.EC2.Model
         // Check to see if NetworkNodes property is set
         internal bool IsSetNetworkNodes()
         {
-            return this._networkNodes != null && this._networkNodes.Count > 0; 
+            return this._networkNodes != null && (this._networkNodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("CreateBucketConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     if(publicRequest.CreateBucketConfiguration.IsSetLocationConstraint())
-                        xmlWriter.WriteElementString("LocationConstraint", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.CreateBucketConfiguration.LocationConstraint));                    
+                        xmlWriter.WriteElementString("LocationConstraint", StringUtils.FromString(publicRequest.CreateBucketConfiguration.LocationConstraint));
 
 
                     xmlWriter.WriteEndElement();
@@ -149,3 +150,4 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
     }    
 }
+#pragma warning restore CS0612,CS0618

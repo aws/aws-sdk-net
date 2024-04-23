@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class AuthenticateCognitoActionConfig
     {
-        private Dictionary<string, string> _authenticationRequestExtraParams = new Dictionary<string, string>();
+        private Dictionary<string, string> _authenticationRequestExtraParams = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AuthenticateCognitoActionConditionalBehaviorEnum _onUnauthenticatedRequest;
         private string _scope;
         private string _sessionCookieName;
@@ -58,7 +58,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if AuthenticationRequestExtraParams property is set
         internal bool IsSetAuthenticationRequestExtraParams()
         {
-            return this._authenticationRequestExtraParams != null && this._authenticationRequestExtraParams.Count > 0; 
+            return this._authenticationRequestExtraParams != null && (this._authenticationRequestExtraParams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -42,7 +42,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the cross-account attachment that specifies the
         /// endpoints (resources) that can be added to accelerators and principals that have permission
-        /// to add the endpoints to accelerators.
+        /// to add the endpoints.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

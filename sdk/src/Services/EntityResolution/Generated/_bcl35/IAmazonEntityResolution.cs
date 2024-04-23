@@ -65,6 +65,69 @@ namespace Amazon.EntityResolution
 
 
         
+        #region  AddPolicyStatement
+
+
+        /// <summary>
+        /// Adds a policy statement object. To retrieve a list of existing policy statements,
+        /// use the <c>GetPolicy</c> API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddPolicyStatement service method.</param>
+        /// 
+        /// <returns>The response from the AddPolicyStatement service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/AddPolicyStatement">REST API Reference for AddPolicyStatement Operation</seealso>
+        AddPolicyStatementResponse AddPolicyStatement(AddPolicyStatementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddPolicyStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddPolicyStatement operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddPolicyStatement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/AddPolicyStatement">REST API Reference for AddPolicyStatement Operation</seealso>
+        IAsyncResult BeginAddPolicyStatement(AddPolicyStatementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddPolicyStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddPolicyStatement.</param>
+        /// 
+        /// <returns>Returns a  AddPolicyStatementResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/AddPolicyStatement">REST API Reference for AddPolicyStatement Operation</seealso>
+        AddPolicyStatementResponse EndAddPolicyStatement(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateIdMappingWorkflow
 
 
@@ -128,6 +191,72 @@ namespace Amazon.EntityResolution
         /// <returns>Returns a  CreateIdMappingWorkflowResult from EntityResolution.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdMappingWorkflow">REST API Reference for CreateIdMappingWorkflow Operation</seealso>
         CreateIdMappingWorkflowResponse EndCreateIdMappingWorkflow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateIdNamespace
+
+
+        /// <summary>
+        /// Creates an ID namespace object which will help customers provide metadata explaining
+        /// their dataset and how to use it. Each ID namespace must have a unique name. To modify
+        /// an existing ID namespace, use the <c>UpdateIdNamespace</c> API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdNamespace service method.</param>
+        /// 
+        /// <returns>The response from the CreateIdNamespace service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Entity Resolution account limits. The error message describes the limit exceeded.
+        /// <c>HTTP Status Code: 402</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdNamespace">REST API Reference for CreateIdNamespace Operation</seealso>
+        CreateIdNamespaceResponse CreateIdNamespace(CreateIdNamespaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIdNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdNamespace operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIdNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdNamespace">REST API Reference for CreateIdNamespace Operation</seealso>
+        IAsyncResult BeginCreateIdNamespace(CreateIdNamespaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIdNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIdNamespace.</param>
+        /// 
+        /// <returns>Returns a  CreateIdNamespaceResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdNamespace">REST API Reference for CreateIdNamespace Operation</seealso>
+        CreateIdNamespaceResponse EndCreateIdNamespace(IAsyncResult asyncResult);
 
         #endregion
         
@@ -277,6 +406,11 @@ namespace Amazon.EntityResolution
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
         /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// <c>HTTP Status Code: 500</c>
@@ -319,6 +453,60 @@ namespace Amazon.EntityResolution
 
         #endregion
         
+        #region  DeleteIdNamespace
+
+
+        /// <summary>
+        /// Deletes the <c>IdNamespace</c> with a given name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdNamespace service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIdNamespace service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdNamespace">REST API Reference for DeleteIdNamespace Operation</seealso>
+        DeleteIdNamespaceResponse DeleteIdNamespace(DeleteIdNamespaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIdNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdNamespace operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIdNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdNamespace">REST API Reference for DeleteIdNamespace Operation</seealso>
+        IAsyncResult BeginDeleteIdNamespace(DeleteIdNamespaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIdNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIdNamespace.</param>
+        /// 
+        /// <returns>Returns a  DeleteIdNamespaceResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdNamespace">REST API Reference for DeleteIdNamespace Operation</seealso>
+        DeleteIdNamespaceResponse EndDeleteIdNamespace(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteMatchingWorkflow
 
 
@@ -331,6 +519,11 @@ namespace Amazon.EntityResolution
         /// <returns>The response from the DeleteMatchingWorkflow service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <c>HTTP Status Code: 400</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
@@ -371,6 +564,68 @@ namespace Amazon.EntityResolution
         /// <returns>Returns a  DeleteMatchingWorkflowResult from EntityResolution.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteMatchingWorkflow">REST API Reference for DeleteMatchingWorkflow Operation</seealso>
         DeleteMatchingWorkflowResponse EndDeleteMatchingWorkflow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePolicyStatement
+
+
+        /// <summary>
+        /// Deletes the policy statement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyStatement service method.</param>
+        /// 
+        /// <returns>The response from the DeletePolicyStatement service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeletePolicyStatement">REST API Reference for DeletePolicyStatement Operation</seealso>
+        DeletePolicyStatementResponse DeletePolicyStatement(DeletePolicyStatementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePolicyStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyStatement operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicyStatement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeletePolicyStatement">REST API Reference for DeletePolicyStatement Operation</seealso>
+        IAsyncResult BeginDeletePolicyStatement(DeletePolicyStatementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePolicyStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePolicyStatement.</param>
+        /// 
+        /// <returns>Returns a  DeletePolicyStatementResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeletePolicyStatement">REST API Reference for DeletePolicyStatement Operation</seealso>
+        DeletePolicyStatementResponse EndDeletePolicyStatement(IAsyncResult asyncResult);
 
         #endregion
         
@@ -551,6 +806,63 @@ namespace Amazon.EntityResolution
 
         #endregion
         
+        #region  GetIdNamespace
+
+
+        /// <summary>
+        /// Returns the <c>IdNamespace</c> with a given name, if it exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdNamespace service method.</param>
+        /// 
+        /// <returns>The response from the GetIdNamespace service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdNamespace">REST API Reference for GetIdNamespace Operation</seealso>
+        GetIdNamespaceResponse GetIdNamespace(GetIdNamespaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdNamespace operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdNamespace">REST API Reference for GetIdNamespace Operation</seealso>
+        IAsyncResult BeginGetIdNamespace(GetIdNamespaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIdNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdNamespace.</param>
+        /// 
+        /// <returns>Returns a  GetIdNamespaceResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdNamespace">REST API Reference for GetIdNamespace Operation</seealso>
+        GetIdNamespaceResponse EndGetIdNamespace(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetMatchId
 
 
@@ -720,6 +1032,63 @@ namespace Amazon.EntityResolution
         /// <returns>Returns a  GetMatchingWorkflowResult from EntityResolution.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingWorkflow">REST API Reference for GetMatchingWorkflow Operation</seealso>
         GetMatchingWorkflowResponse EndGetMatchingWorkflow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPolicy
+
+
+        /// <summary>
+        /// Returns the resource-based policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        GetPolicyResponse GetPolicy(GetPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetPolicyResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -946,6 +1315,60 @@ namespace Amazon.EntityResolution
         /// <returns>Returns a  ListIdMappingWorkflowsResult from EntityResolution.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingWorkflows">REST API Reference for ListIdMappingWorkflows Operation</seealso>
         ListIdMappingWorkflowsResponse EndListIdMappingWorkflows(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListIdNamespaces
+
+
+        /// <summary>
+        /// Returns a list of all ID namespaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdNamespaces service method.</param>
+        /// 
+        /// <returns>The response from the ListIdNamespaces service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdNamespaces">REST API Reference for ListIdNamespaces Operation</seealso>
+        ListIdNamespacesResponse ListIdNamespaces(ListIdNamespacesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIdNamespaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIdNamespaces operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdNamespaces
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdNamespaces">REST API Reference for ListIdNamespaces Operation</seealso>
+        IAsyncResult BeginListIdNamespaces(ListIdNamespacesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIdNamespaces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdNamespaces.</param>
+        /// 
+        /// <returns>Returns a  ListIdNamespacesResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdNamespaces">REST API Reference for ListIdNamespaces Operation</seealso>
+        ListIdNamespacesResponse EndListIdNamespaces(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1220,6 +1643,68 @@ namespace Amazon.EntityResolution
         /// <returns>Returns a  ListTagsForResourceResult from EntityResolution.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutPolicy
+
+
+        /// <summary>
+        /// Updates the resource-based policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutPolicy service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
+        PutPolicyResponse PutPolicy(PutPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPolicy operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
+        IAsyncResult BeginPutPolicy(PutPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutPolicyResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
+        PutPolicyResponse EndPutPolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1523,6 +2008,63 @@ namespace Amazon.EntityResolution
         /// <returns>Returns a  UpdateIdMappingWorkflowResult from EntityResolution.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdMappingWorkflow">REST API Reference for UpdateIdMappingWorkflow Operation</seealso>
         UpdateIdMappingWorkflowResponse EndUpdateIdMappingWorkflow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateIdNamespace
+
+
+        /// <summary>
+        /// Updates an existing ID namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdNamespace service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIdNamespace service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdNamespace">REST API Reference for UpdateIdNamespace Operation</seealso>
+        UpdateIdNamespaceResponse UpdateIdNamespace(UpdateIdNamespaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIdNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdNamespace operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIdNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdNamespace">REST API Reference for UpdateIdNamespace Operation</seealso>
+        IAsyncResult BeginUpdateIdNamespace(UpdateIdNamespaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateIdNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIdNamespace.</param>
+        /// 
+        /// <returns>Returns a  UpdateIdNamespaceResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdNamespace">REST API Reference for UpdateIdNamespace Operation</seealso>
+        UpdateIdNamespaceResponse EndUpdateIdNamespace(IAsyncResult asyncResult);
 
         #endregion
         

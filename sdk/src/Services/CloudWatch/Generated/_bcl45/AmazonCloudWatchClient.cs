@@ -2581,6 +2581,13 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
+        /// If you have enabled unified cross-account observability, and this account is a monitoring
+        /// account, the metric can be in the same account or a source account. You can specify
+        /// the account ID in the object you specify in the <c>SingleMetricAnomalyDetector</c>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch
         /// Anomaly Detection</a>.
         /// </para>
@@ -2618,6 +2625,13 @@ namespace Amazon.CloudWatch
         /// Creates an anomaly detection model for a CloudWatch metric. You can use the model
         /// to display a band of expected normal values when the metric is graphed.
         /// 
+        ///  
+        /// <para>
+        /// If you have enabled unified cross-account observability, and this account is a monitoring
+        /// account, the metric can be in the same account or a source account. You can specify
+        /// the account ID in the object you specify in the <c>SingleMetricAnomalyDetector</c>
+        /// parameter.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch
@@ -2682,10 +2696,25 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// Currently, the only alarm actions that can be taken by composite alarms are notifying
-        /// SNS topics.
+        /// Composite alarms can take the following actions:
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Notify Amazon SNS topics.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke Lambda functions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create OpsItems in Systems Manager Ops Center.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create incidents in Systems Manager Incident Manager.
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// It is possible to create a loop or cycle of composite alarms, where composite alarm
         /// A depends on composite alarm B, and composite alarm B also depends on composite alarm
@@ -2768,10 +2797,25 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// Currently, the only alarm actions that can be taken by composite alarms are notifying
-        /// SNS topics.
+        /// Composite alarms can take the following actions:
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Notify Amazon SNS topics.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke Lambda functions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create OpsItems in Systems Manager Ops Center.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create incidents in Systems Manager Incident Manager.
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// It is possible to create a loop or cycle of composite alarms, where composite alarm
         /// A depends on composite alarm B, and composite alarm B also depends on composite alarm
@@ -3287,10 +3331,10 @@ namespace Amazon.CloudWatch
         /// <para>
         /// You can publish either individual data points in the <c>Value</c> field, or arrays
         /// of values and the number of times each value occurred during the period by using the
-        /// <c>Values</c> and <c>Counts</c> fields in the <c>MetricDatum</c> structure. Using
-        /// the <c>Values</c> and <c>Counts</c> method enables you to publish up to 150 values
-        /// per metric with one <c>PutMetricData</c> request, and supports retrieving percentile
-        /// statistics on this data.
+        /// <c>Values</c> and <c>Counts</c> fields in the <c>MetricData</c> structure. Using the
+        /// <c>Values</c> and <c>Counts</c> method enables you to publish up to 150 values per
+        /// metric with one <c>PutMetricData</c> request, and supports retrieving percentile statistics
+        /// on this data.
         /// </para>
         ///  
         /// <para>
@@ -3381,10 +3425,10 @@ namespace Amazon.CloudWatch
         /// <para>
         /// You can publish either individual data points in the <c>Value</c> field, or arrays
         /// of values and the number of times each value occurred during the period by using the
-        /// <c>Values</c> and <c>Counts</c> fields in the <c>MetricDatum</c> structure. Using
-        /// the <c>Values</c> and <c>Counts</c> method enables you to publish up to 150 values
-        /// per metric with one <c>PutMetricData</c> request, and supports retrieving percentile
-        /// statistics on this data.
+        /// <c>Values</c> and <c>Counts</c> fields in the <c>MetricData</c> structure. Using the
+        /// <c>Values</c> and <c>Counts</c> method enables you to publish up to 150 values per
+        /// metric with one <c>PutMetricData</c> request, and supports retrieving percentile statistics
+        /// on this data.
         /// </para>
         ///  
         /// <para>

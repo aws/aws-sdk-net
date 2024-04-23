@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetDevEndpointsRequest : AmazonGlueRequest
     {
-        private List<string> _devEndpointNames = new List<string>();
+        private List<string> _devEndpointNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DevEndpointNames. 
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         // Check to see if DevEndpointNames property is set
         internal bool IsSetDevEndpointNames()
         {
-            return this._devEndpointNames != null && this._devEndpointNames.Count > 0; 
+            return this._devEndpointNames != null && (this._devEndpointNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

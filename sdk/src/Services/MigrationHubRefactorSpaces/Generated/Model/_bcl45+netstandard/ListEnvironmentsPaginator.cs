@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Enumerable containing all of the EnvironmentSummaryList
         /// </summary>
         public IPaginatedEnumerable<EnvironmentSummary> EnvironmentSummaryList => 
-            new PaginatedResultKeyResponse<ListEnvironmentsResponse, EnvironmentSummary>(this, (i) => i.EnvironmentSummaryList);
+            new PaginatedResultKeyResponse<ListEnvironmentsResponse, EnvironmentSummary>(this, (i) => i.EnvironmentSummaryList ?? new List<EnvironmentSummary>());
 
         internal ListEnvironmentsPaginator(IAmazonMigrationHubRefactorSpaces client, ListEnvironmentsRequest request)
         {

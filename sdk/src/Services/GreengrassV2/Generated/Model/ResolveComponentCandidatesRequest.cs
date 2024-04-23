@@ -58,7 +58,7 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class ResolveComponentCandidatesRequest : AmazonGreengrassV2Request
     {
-        private List<ComponentCandidate> _componentCandidates = new List<ComponentCandidate>();
+        private List<ComponentCandidate> _componentCandidates = AWSConfigs.InitializeCollections ? new List<ComponentCandidate>() : null;
         private ComponentPlatform _platform;
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if ComponentCandidates property is set
         internal bool IsSetComponentCandidates()
         {
-            return this._componentCandidates != null && this._componentCandidates.Count > 0; 
+            return this._componentCandidates != null && (this._componentCandidates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

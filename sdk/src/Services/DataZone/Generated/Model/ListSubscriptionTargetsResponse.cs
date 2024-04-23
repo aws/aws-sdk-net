@@ -33,7 +33,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class ListSubscriptionTargetsResponse : AmazonWebServiceResponse
     {
-        private List<SubscriptionTargetSummary> _items = new List<SubscriptionTargetSummary>();
+        private List<SubscriptionTargetSummary> _items = AWSConfigs.InitializeCollections ? new List<SubscriptionTargetSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Enumerable containing all of the ManagedActionHistoryItems
         /// </summary>
         public IPaginatedEnumerable<ManagedActionHistoryItem> ManagedActionHistoryItems => 
-            new PaginatedResultKeyResponse<DescribeEnvironmentManagedActionHistoryResponse, ManagedActionHistoryItem>(this, (i) => i.ManagedActionHistoryItems);
+            new PaginatedResultKeyResponse<DescribeEnvironmentManagedActionHistoryResponse, ManagedActionHistoryItem>(this, (i) => i.ManagedActionHistoryItems ?? new List<ManagedActionHistoryItem>());
 
         internal DescribeEnvironmentManagedActionHistoryPaginator(IAmazonElasticBeanstalk client, DescribeEnvironmentManagedActionHistoryRequest request)
         {

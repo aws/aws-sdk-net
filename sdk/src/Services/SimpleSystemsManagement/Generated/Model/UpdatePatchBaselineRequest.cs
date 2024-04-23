@@ -43,17 +43,17 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class UpdatePatchBaselineRequest : AmazonSimpleSystemsManagementRequest
     {
         private PatchRuleGroup _approvalRules;
-        private List<string> _approvedPatches = new List<string>();
+        private List<string> _approvedPatches = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PatchComplianceLevel _approvedPatchesComplianceLevel;
         private bool? _approvedPatchesEnableNonSecurity;
         private string _baselineId;
         private string _description;
         private PatchFilterGroup _globalFilters;
         private string _name;
-        private List<string> _rejectedPatches = new List<string>();
+        private List<string> _rejectedPatches = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PatchAction _rejectedPatchesAction;
         private bool? _replace;
-        private List<PatchSource> _sources = new List<PatchSource>();
+        private List<PatchSource> _sources = AWSConfigs.InitializeCollections ? new List<PatchSource>() : null;
 
         /// <summary>
         /// Gets and sets the property ApprovalRules. 
@@ -96,7 +96,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ApprovedPatches property is set
         internal bool IsSetApprovedPatches()
         {
-            return this._approvedPatches != null && this._approvedPatches.Count > 0; 
+            return this._approvedPatches != null && (this._approvedPatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if RejectedPatches property is set
         internal bool IsSetRejectedPatches()
         {
-            return this._rejectedPatches != null && this._rejectedPatches.Count > 0; 
+            return this._rejectedPatches != null && (this._rejectedPatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -253,11 +253,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <c>BLOCK</c> </b>: Packages in the <c>RejectedPatches</c> list, and packages
-        /// that include them as dependencies, aren't installed under any circumstances. If a
-        /// package was installed before it was added to the <c>Rejected</c> patches list, it
-        /// is considered non-compliant with the patch baseline, and its status is reported as
-        /// <c>InstalledRejected</c>.
+        ///  <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include
+        /// them as dependencies, aren't installed by Patch Manager under any circumstances. If
+        /// a package was installed before it was added to the <b>Rejected patches</b> list, or
+        /// is installed outside of Patch Manager afterward, it's considered noncompliant with
+        /// the patch baseline and its status is reported as <i>InstalledRejected</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -310,7 +310,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

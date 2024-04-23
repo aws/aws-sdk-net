@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,10 +64,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomFileSystemConfigs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CustomFileSystemConfig, CustomFileSystemConfigUnmarshaller>(CustomFileSystemConfigUnmarshaller.Instance);
+                    unmarshalledObject.CustomFileSystemConfigs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CustomPosixUserConfig", targetDepth))
+                {
+                    var unmarshaller = CustomPosixUserConfigUnmarshaller.Instance;
+                    unmarshalledObject.CustomPosixUserConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExecutionRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JupyterLabAppSettings", targetDepth))
+                {
+                    var unmarshaller = JupyterLabAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.JupyterLabAppSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("JupyterServerAppSettings", targetDepth))
@@ -85,6 +104,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SpaceStorageSettings", targetDepth))
+                {
+                    var unmarshaller = DefaultSpaceStorageSettingsUnmarshaller.Instance;
+                    unmarshalledObject.SpaceStorageSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,3 +131,4 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

@@ -45,7 +45,7 @@ namespace Amazon.ServiceQuotas.Model
         /// Enumerable containing all of the RequestedQuotas
         /// </summary>
         public IPaginatedEnumerable<RequestedServiceQuotaChange> RequestedQuotas => 
-            new PaginatedResultKeyResponse<ListRequestedServiceQuotaChangeHistoryByQuotaResponse, RequestedServiceQuotaChange>(this, (i) => i.RequestedQuotas);
+            new PaginatedResultKeyResponse<ListRequestedServiceQuotaChangeHistoryByQuotaResponse, RequestedServiceQuotaChange>(this, (i) => i.RequestedQuotas ?? new List<RequestedServiceQuotaChange>());
 
         internal ListRequestedServiceQuotaChangeHistoryByQuotaPaginator(IAmazonServiceQuotas client, ListRequestedServiceQuotaChangeHistoryByQuotaRequest request)
         {

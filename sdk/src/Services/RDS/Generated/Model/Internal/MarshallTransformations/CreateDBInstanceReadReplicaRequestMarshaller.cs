@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,54 +63,72 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllocatedStorage", StringUtils.FromInt(publicRequest.AllocatedStorage));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
                     request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(publicRequest.AutoMinorVersionUpgrade));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAvailabilityZone())
                 {
                     request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
                 }
+#pragma warning restore CS0612,CS0618
+                if(publicRequest.IsSetCACertificateIdentifier())
+                {
+                    request.Parameters.Add("CACertificateIdentifier", StringUtils.FromString(publicRequest.CACertificateIdentifier));
+                }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCopyTagsToSnapshot())
                 {
                     request.Parameters.Add("CopyTagsToSnapshot", StringUtils.FromBool(publicRequest.CopyTagsToSnapshot));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCustomIamInstanceProfile())
                 {
                     request.Parameters.Add("CustomIamInstanceProfile", StringUtils.FromString(publicRequest.CustomIamInstanceProfile));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBInstanceClass())
                 {
                     request.Parameters.Add("DBInstanceClass", StringUtils.FromString(publicRequest.DBInstanceClass));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBInstanceIdentifier())
                 {
                     request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBParameterGroupName())
                 {
                     request.Parameters.Add("DBParameterGroupName", StringUtils.FromString(publicRequest.DBParameterGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBSubnetGroupName())
                 {
                     request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(publicRequest.DBSubnetGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDedicatedLogVolume())
                 {
                     request.Parameters.Add("DedicatedLogVolume", StringUtils.FromBool(publicRequest.DedicatedLogVolume));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeletionProtection())
                 {
                     request.Parameters.Add("DeletionProtection", StringUtils.FromBool(publicRequest.DeletionProtection));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDomain())
                 {
                     request.Parameters.Add("Domain", StringUtils.FromString(publicRequest.Domain));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDomainAuthSecretArn())
                 {
                     request.Parameters.Add("DomainAuthSecretArn", StringUtils.FromString(publicRequest.DomainAuthSecretArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDomainDnsIps())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -119,18 +138,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDomainFqdn())
                 {
                     request.Parameters.Add("DomainFqdn", StringUtils.FromString(publicRequest.DomainFqdn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDomainIAMRoleName())
                 {
                     request.Parameters.Add("DomainIAMRoleName", StringUtils.FromString(publicRequest.DomainIAMRoleName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDomainOu())
                 {
                     request.Parameters.Add("DomainOu", StringUtils.FromString(publicRequest.DomainOu));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableCloudwatchLogsExports())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -140,66 +163,82 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableCustomerOwnedIp())
                 {
                     request.Parameters.Add("EnableCustomerOwnedIp", StringUtils.FromBool(publicRequest.EnableCustomerOwnedIp));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableIAMDatabaseAuthentication())
                 {
                     request.Parameters.Add("EnableIAMDatabaseAuthentication", StringUtils.FromBool(publicRequest.EnableIAMDatabaseAuthentication));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnablePerformanceInsights())
                 {
                     request.Parameters.Add("EnablePerformanceInsights", StringUtils.FromBool(publicRequest.EnablePerformanceInsights));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIops())
                 {
                     request.Parameters.Add("Iops", StringUtils.FromInt(publicRequest.Iops));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxAllocatedStorage())
                 {
                     request.Parameters.Add("MaxAllocatedStorage", StringUtils.FromInt(publicRequest.MaxAllocatedStorage));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMonitoringInterval())
                 {
                     request.Parameters.Add("MonitoringInterval", StringUtils.FromInt(publicRequest.MonitoringInterval));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMonitoringRoleArn())
                 {
                     request.Parameters.Add("MonitoringRoleArn", StringUtils.FromString(publicRequest.MonitoringRoleArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMultiAZ())
                 {
                     request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkType())
                 {
                     request.Parameters.Add("NetworkType", StringUtils.FromString(publicRequest.NetworkType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptionGroupName())
                 {
                     request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPerformanceInsightsKMSKeyId())
                 {
                     request.Parameters.Add("PerformanceInsightsKMSKeyId", StringUtils.FromString(publicRequest.PerformanceInsightsKMSKeyId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPerformanceInsightsRetentionPeriod())
                 {
                     request.Parameters.Add("PerformanceInsightsRetentionPeriod", StringUtils.FromInt(publicRequest.PerformanceInsightsRetentionPeriod));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPort())
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPreSignedUrl())
                 {
                     request.Parameters.Add("PreSignedUrl", StringUtils.FromString(publicRequest.PreSignedUrl));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetProcessorFeatures())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -209,37 +248,46 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("ProcessorFeatures" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("ProcessorFeatures" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReplicaMode())
                 {
                     request.Parameters.Add("ReplicaMode", StringUtils.FromString(publicRequest.ReplicaMode));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceDBClusterIdentifier())
                 {
                     request.Parameters.Add("SourceDBClusterIdentifier", StringUtils.FromString(publicRequest.SourceDBClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceDBInstanceIdentifier())
                 {
                     request.Parameters.Add("SourceDBInstanceIdentifier", StringUtils.FromString(publicRequest.SourceDBInstanceIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStorageThroughput())
                 {
                     request.Parameters.Add("StorageThroughput", StringUtils.FromInt(publicRequest.StorageThroughput));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStorageType())
                 {
                     request.Parameters.Add("StorageType", StringUtils.FromString(publicRequest.StorageType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -249,21 +297,26 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUpgradeStorageConfig())
                 {
                     request.Parameters.Add("UpgradeStorageConfig", StringUtils.FromBool(publicRequest.UpgradeStorageConfig));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUseDefaultProcessorFeatures())
                 {
                     request.Parameters.Add("UseDefaultProcessorFeatures", StringUtils.FromBool(publicRequest.UseDefaultProcessorFeatures));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -273,6 +326,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

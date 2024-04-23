@@ -45,7 +45,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Enumerable containing all of the Crls
         /// </summary>
         public IPaginatedEnumerable<CrlDetail> Crls => 
-            new PaginatedResultKeyResponse<ListCrlsResponse, CrlDetail>(this, (i) => i.Crls);
+            new PaginatedResultKeyResponse<ListCrlsResponse, CrlDetail>(this, (i) => i.Crls ?? new List<CrlDetail>());
 
         internal ListCrlsPaginator(IAmazonIAMRolesAnywhere client, ListCrlsRequest request)
         {

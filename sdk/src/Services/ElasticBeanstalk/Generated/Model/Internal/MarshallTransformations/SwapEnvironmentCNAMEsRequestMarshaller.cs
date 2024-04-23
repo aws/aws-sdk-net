@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DestinationEnvironmentId", StringUtils.FromString(publicRequest.DestinationEnvironmentId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinationEnvironmentName())
                 {
                     request.Parameters.Add("DestinationEnvironmentName", StringUtils.FromString(publicRequest.DestinationEnvironmentName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceEnvironmentId())
                 {
                     request.Parameters.Add("SourceEnvironmentId", StringUtils.FromString(publicRequest.SourceEnvironmentId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceEnvironmentName())
                 {
                     request.Parameters.Add("SourceEnvironmentName", StringUtils.FromString(publicRequest.SourceEnvironmentName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

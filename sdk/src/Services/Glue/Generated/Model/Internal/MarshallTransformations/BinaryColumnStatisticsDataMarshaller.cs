@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BinaryColumnStatisticsData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAverageLength())
             {
                 context.Writer.WritePropertyName("AverageLength");
-                context.Writer.Write(requestObject.AverageLength);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.AverageLength))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AverageLength));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.AverageLength);
+                }
             }
 
             if(requestObject.IsSetMaximumLength())
@@ -72,3 +82,4 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

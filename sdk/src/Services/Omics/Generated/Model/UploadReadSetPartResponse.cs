@@ -38,8 +38,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        ///  An identifier used to confirm that parts are being added to the intended upload.
-        /// 
+        /// An identifier used to confirm that parts are being added to the intended upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

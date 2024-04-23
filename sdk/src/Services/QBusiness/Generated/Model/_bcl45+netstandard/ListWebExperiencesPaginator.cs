@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the WebExperiences
         /// </summary>
         public IPaginatedEnumerable<WebExperience> WebExperiences => 
-            new PaginatedResultKeyResponse<ListWebExperiencesResponse, WebExperience>(this, (i) => i.WebExperiences);
+            new PaginatedResultKeyResponse<ListWebExperiencesResponse, WebExperience>(this, (i) => i.WebExperiences ?? new List<WebExperience>());
 
         internal ListWebExperiencesPaginator(IAmazonQBusiness client, ListWebExperiencesRequest request)
         {

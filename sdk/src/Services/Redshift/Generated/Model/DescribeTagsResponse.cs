@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeTagsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<TaggedResource> _taggedResources = new List<TaggedResource>();
+        private List<TaggedResource> _taggedResources = AWSConfigs.InitializeCollections ? new List<TaggedResource>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -74,7 +74,7 @@ namespace Amazon.Redshift.Model
         // Check to see if TaggedResources property is set
         internal bool IsSetTaggedResources()
         {
-            return this._taggedResources != null && this._taggedResources.Count > 0; 
+            return this._taggedResources != null && (this._taggedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

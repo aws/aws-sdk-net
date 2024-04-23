@@ -45,7 +45,7 @@ namespace Amazon.MediaConvert.Model
         /// Enumerable containing all of the JobTemplates
         /// </summary>
         public IPaginatedEnumerable<JobTemplate> JobTemplates => 
-            new PaginatedResultKeyResponse<ListJobTemplatesResponse, JobTemplate>(this, (i) => i.JobTemplates);
+            new PaginatedResultKeyResponse<ListJobTemplatesResponse, JobTemplate>(this, (i) => i.JobTemplates ?? new List<JobTemplate>());
 
         internal ListJobTemplatesPaginator(IAmazonMediaConvert client, ListJobTemplatesRequest request)
         {

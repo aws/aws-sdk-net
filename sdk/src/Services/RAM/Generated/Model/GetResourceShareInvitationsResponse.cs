@@ -34,7 +34,7 @@ namespace Amazon.RAM.Model
     public partial class GetResourceShareInvitationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceShareInvitation> _resourceShareInvitations = new List<ResourceShareInvitation>();
+        private List<ResourceShareInvitation> _resourceShareInvitations = AWSConfigs.InitializeCollections ? new List<ResourceShareInvitation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.RAM.Model
         // Check to see if ResourceShareInvitations property is set
         internal bool IsSetResourceShareInvitations()
         {
-            return this._resourceShareInvitations != null && this._resourceShareInvitations.Count > 0; 
+            return this._resourceShareInvitations != null && (this._resourceShareInvitations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

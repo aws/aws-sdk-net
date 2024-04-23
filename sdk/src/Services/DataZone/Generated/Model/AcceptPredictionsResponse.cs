@@ -38,7 +38,10 @@ namespace Amazon.DataZone.Model
         private string _revision;
 
         /// <summary>
-        /// Gets and sets the property AssetId.
+        /// Gets and sets the property AssetId. 
+        /// <para>
+        /// The ID of the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AssetId
@@ -54,7 +57,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainId.
+        /// Gets and sets the property DomainId. 
+        /// <para>
+        /// The identifier of the Amazon DataZone domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DomainId
@@ -70,7 +76,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision.
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// The revision that is to be made to the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string Revision

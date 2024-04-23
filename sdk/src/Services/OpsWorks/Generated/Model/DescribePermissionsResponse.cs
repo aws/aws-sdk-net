@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribePermissionsResponse : AmazonWebServiceResponse
     {
-        private List<Permission> _permissions = new List<Permission>();
+        private List<Permission> _permissions = AWSConfigs.InitializeCollections ? new List<Permission>() : null;
 
         /// <summary>
         /// Gets and sets the property Permissions. 
@@ -66,7 +66,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

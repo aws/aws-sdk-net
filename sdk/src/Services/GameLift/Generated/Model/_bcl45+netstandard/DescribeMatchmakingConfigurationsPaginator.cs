@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the Configurations
         /// </summary>
         public IPaginatedEnumerable<MatchmakingConfiguration> Configurations => 
-            new PaginatedResultKeyResponse<DescribeMatchmakingConfigurationsResponse, MatchmakingConfiguration>(this, (i) => i.Configurations);
+            new PaginatedResultKeyResponse<DescribeMatchmakingConfigurationsResponse, MatchmakingConfiguration>(this, (i) => i.Configurations ?? new List<MatchmakingConfiguration>());
 
         internal DescribeMatchmakingConfigurationsPaginator(IAmazonGameLift client, DescribeMatchmakingConfigurationsRequest request)
         {

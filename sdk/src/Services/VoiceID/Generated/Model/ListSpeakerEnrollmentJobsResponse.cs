@@ -33,7 +33,7 @@ namespace Amazon.VoiceID.Model
     /// </summary>
     public partial class ListSpeakerEnrollmentJobsResponse : AmazonWebServiceResponse
     {
-        private List<SpeakerEnrollmentJobSummary> _jobSummaries = new List<SpeakerEnrollmentJobSummary>();
+        private List<SpeakerEnrollmentJobSummary> _jobSummaries = AWSConfigs.InitializeCollections ? new List<SpeakerEnrollmentJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.VoiceID.Model
         // Check to see if JobSummaries property is set
         internal bool IsSetJobSummaries()
         {
-            return this._jobSummaries != null && this._jobSummaries.Count > 0; 
+            return this._jobSummaries != null && (this._jobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

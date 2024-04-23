@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeInstanceConnectEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<Ec2InstanceConnectEndpoint> _instanceConnectEndpoints = new List<Ec2InstanceConnectEndpoint>();
+        private List<Ec2InstanceConnectEndpoint> _instanceConnectEndpoints = AWSConfigs.InitializeCollections ? new List<Ec2InstanceConnectEndpoint>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceConnectEndpoints property is set
         internal bool IsSetInstanceConnectEndpoints()
         {
-            return this._instanceConnectEndpoints != null && this._instanceConnectEndpoints.Count > 0; 
+            return this._instanceConnectEndpoints != null && (this._instanceConnectEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

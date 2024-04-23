@@ -33,7 +33,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class TaskPropertiesOverride
     {
-        private List<TaskContainerOverrides> _containers = new List<TaskContainerOverrides>();
+        private List<TaskContainerOverrides> _containers = AWSConfigs.InitializeCollections ? new List<TaskContainerOverrides>() : null;
 
         /// <summary>
         /// Gets and sets the property Containers. 
@@ -50,7 +50,7 @@ namespace Amazon.Batch.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

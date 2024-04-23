@@ -37,7 +37,7 @@ namespace Amazon.CloudTrailData.Model
     /// </summary>
     public partial class PutAuditEventsRequest : AmazonCloudTrailDataRequest
     {
-        private List<AuditEvent> _auditEvents = new List<AuditEvent>();
+        private List<AuditEvent> _auditEvents = AWSConfigs.InitializeCollections ? new List<AuditEvent>() : null;
         private string _channelArn;
         private string _externalId;
 
@@ -58,7 +58,7 @@ namespace Amazon.CloudTrailData.Model
         // Check to see if AuditEvents property is set
         internal bool IsSetAuditEvents()
         {
-            return this._auditEvents != null && this._auditEvents.Count > 0; 
+            return this._auditEvents != null && (this._auditEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

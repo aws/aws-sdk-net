@@ -36,8 +36,8 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EksContainerResourceRequirements
     {
-        private Dictionary<string, string> _limits = new Dictionary<string, string>();
-        private Dictionary<string, string> _requests = new Dictionary<string, string>();
+        private Dictionary<string, string> _limits = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _requests = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Limits. 
@@ -86,7 +86,7 @@ namespace Amazon.Batch.Model
         // Check to see if Limits property is set
         internal bool IsSetLimits()
         {
-            return this._limits != null && this._limits.Count > 0; 
+            return this._limits != null && (this._limits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.Batch.Model
         // Check to see if Requests property is set
         internal bool IsSetRequests()
         {
-            return this._requests != null && this._requests.Count > 0; 
+            return this._requests != null && (this._requests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

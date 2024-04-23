@@ -45,7 +45,7 @@ namespace Amazon.StepFunctions.Model
         /// Enumerable containing all of the StateMachines
         /// </summary>
         public IPaginatedEnumerable<StateMachineListItem> StateMachines => 
-            new PaginatedResultKeyResponse<ListStateMachinesResponse, StateMachineListItem>(this, (i) => i.StateMachines);
+            new PaginatedResultKeyResponse<ListStateMachinesResponse, StateMachineListItem>(this, (i) => i.StateMachines ?? new List<StateMachineListItem>());
 
         internal ListStateMachinesPaginator(IAmazonStepFunctions client, ListStateMachinesRequest request)
         {

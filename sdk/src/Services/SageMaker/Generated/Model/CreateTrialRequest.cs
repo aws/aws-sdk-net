@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model
         private string _displayName;
         private string _experimentName;
         private MetadataProperties _metadataProperties;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _trialName;
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

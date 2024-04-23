@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the VpcEndpointConnections
         /// </summary>
         public IPaginatedEnumerable<VpcEndpointConnection> VpcEndpointConnections => 
-            new PaginatedResultKeyResponse<DescribeVpcEndpointConnectionsResponse, VpcEndpointConnection>(this, (i) => i.VpcEndpointConnections);
+            new PaginatedResultKeyResponse<DescribeVpcEndpointConnectionsResponse, VpcEndpointConnection>(this, (i) => i.VpcEndpointConnections ?? new List<VpcEndpointConnection>());
 
         internal DescribeVpcEndpointConnectionsPaginator(IAmazonEC2 client, DescribeVpcEndpointConnectionsRequest request)
         {

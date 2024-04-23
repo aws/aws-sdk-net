@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class DescribeSchedulingPoliciesRequest : AmazonBatchRequest
     {
-        private List<string> _arns = new List<string>();
+        private List<string> _arns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arns. 
@@ -52,7 +52,7 @@ namespace Amazon.Batch.Model
         // Check to see if Arns property is set
         internal bool IsSetArns()
         {
-            return this._arns != null && this._arns.Count > 0; 
+            return this._arns != null && (this._arns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

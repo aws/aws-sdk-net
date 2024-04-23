@@ -33,7 +33,7 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class ListGroupsForEntityResponse : AmazonWebServiceResponse
     {
-        private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
+        private List<GroupIdentifier> _groups = AWSConfigs.InitializeCollections ? new List<GroupIdentifier>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

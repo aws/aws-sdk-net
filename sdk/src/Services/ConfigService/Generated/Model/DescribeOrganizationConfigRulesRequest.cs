@@ -63,7 +63,7 @@ namespace Amazon.ConfigService.Model
     {
         private int? _limit;
         private string _nextToken;
-        private List<string> _organizationConfigRuleNames = new List<string>();
+        private List<string> _organizationConfigRuleNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -121,7 +121,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if OrganizationConfigRuleNames property is set
         internal bool IsSetOrganizationConfigRuleNames()
         {
-            return this._organizationConfigRuleNames != null && this._organizationConfigRuleNames.Count > 0; 
+            return this._organizationConfigRuleNames != null && (this._organizationConfigRuleNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,8 +33,8 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class BatchDisassociateAnalyticsDataSetResponse : AmazonWebServiceResponse
     {
-        private List<string> _deleted = new List<string>();
-        private List<ErrorResult> _errors = new List<ErrorResult>();
+        private List<string> _deleted = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ErrorResult> _errors = AWSConfigs.InitializeCollections ? new List<ErrorResult>() : null;
 
         /// <summary>
         /// Gets and sets the property Deleted. 
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if Deleted property is set
         internal bool IsSetDeleted()
         {
-            return this._deleted != null && this._deleted.Count > 0; 
+            return this._deleted != null && (this._deleted.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribeMaintenanceWindowExecutionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<MaintenanceWindowExecution> _windowExecutions = new List<MaintenanceWindowExecution>();
+        private List<MaintenanceWindowExecution> _windowExecutions = AWSConfigs.InitializeCollections ? new List<MaintenanceWindowExecution>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if WindowExecutions property is set
         internal bool IsSetWindowExecutions()
         {
-            return this._windowExecutions != null && this._windowExecutions.Count > 0; 
+            return this._windowExecutions != null && (this._windowExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

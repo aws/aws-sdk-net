@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeBlueGreenDeploymentsResponse : AmazonWebServiceResponse
     {
-        private List<BlueGreenDeployment> _blueGreenDeployments = new List<BlueGreenDeployment>();
+        private List<BlueGreenDeployment> _blueGreenDeployments = AWSConfigs.InitializeCollections ? new List<BlueGreenDeployment>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         // Check to see if BlueGreenDeployments property is set
         internal bool IsSetBlueGreenDeployments()
         {
-            return this._blueGreenDeployments != null && this._blueGreenDeployments.Count > 0; 
+            return this._blueGreenDeployments != null && (this._blueGreenDeployments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

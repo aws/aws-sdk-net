@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     unmarshalledObject.ApplicationVersionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RuntimeEnvironment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeEnvironment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SnapshotCreationTimestamp", targetDepth))
@@ -106,3 +113,4 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

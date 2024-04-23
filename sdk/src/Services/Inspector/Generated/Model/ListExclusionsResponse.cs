@@ -33,7 +33,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class ListExclusionsResponse : AmazonWebServiceResponse
     {
-        private List<string> _exclusionArns = new List<string>();
+        private List<string> _exclusionArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Inspector.Model
         // Check to see if ExclusionArns property is set
         internal bool IsSetExclusionArns()
         {
-            return this._exclusionArns != null && this._exclusionArns.Count > 0; 
+            return this._exclusionArns != null && (this._exclusionArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class TransitGatewayMulticastDeregisteredGroupMembers
     {
-        private List<string> _deregisteredNetworkInterfaceIds = new List<string>();
+        private List<string> _deregisteredNetworkInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _groupIpAddress;
         private string _transitGatewayMulticastDomainId;
 
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if DeregisteredNetworkInterfaceIds property is set
         internal bool IsSetDeregisteredNetworkInterfaceIds()
         {
-            return this._deregisteredNetworkInterfaceIds != null && this._deregisteredNetworkInterfaceIds.Count > 0; 
+            return this._deregisteredNetworkInterfaceIds != null && (this._deregisteredNetworkInterfaceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -71,7 +71,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// The value must be less than or equal to <c>IdleTTL</c>.
+        /// The value must be greater than or equal to <c>IdleTTL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

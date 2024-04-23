@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.CellFilters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsMultiDialectView", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsMultiDialectView = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsProtected", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsProtected = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsRegisteredWithLakeFormation", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -85,6 +98,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RowFilter", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RowFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Table", targetDepth))
@@ -172,3 +191,4 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         private string _description;
         private string _endpointId;
         private string _endpointUrl;
-        private List<AwsEventsEndpointEventBusesDetails> _eventBuses = new List<AwsEventsEndpointEventBusesDetails>();
+        private List<AwsEventsEndpointEventBusesDetails> _eventBuses = AWSConfigs.InitializeCollections ? new List<AwsEventsEndpointEventBusesDetails>() : null;
         private string _name;
         private AwsEventsEndpointReplicationConfigDetails _replicationConfig;
         private string _roleArn;
@@ -134,7 +134,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if EventBuses property is set
         internal bool IsSetEventBuses()
         {
-            return this._eventBuses != null && this._eventBuses.Count > 0; 
+            return this._eventBuses != null && (this._eventBuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

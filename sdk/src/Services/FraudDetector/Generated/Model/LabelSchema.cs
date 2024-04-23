@@ -33,7 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class LabelSchema
     {
-        private Dictionary<string, List<string>> _labelMapper = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _labelMapper = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private UnlabeledEventsTreatment _unlabeledEventsTreatment;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if LabelMapper property is set
         internal bool IsSetLabelMapper()
         {
-            return this._labelMapper != null && this._labelMapper.Count > 0; 
+            return this._labelMapper != null && (this._labelMapper.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

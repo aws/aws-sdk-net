@@ -45,7 +45,7 @@ namespace Amazon.MediaLive.Model
         /// Enumerable containing all of the Multiplexes
         /// </summary>
         public IPaginatedEnumerable<MultiplexSummary> Multiplexes => 
-            new PaginatedResultKeyResponse<ListMultiplexesResponse, MultiplexSummary>(this, (i) => i.Multiplexes);
+            new PaginatedResultKeyResponse<ListMultiplexesResponse, MultiplexSummary>(this, (i) => i.Multiplexes ?? new List<MultiplexSummary>());
 
         internal ListMultiplexesPaginator(IAmazonMediaLive client, ListMultiplexesRequest request)
         {

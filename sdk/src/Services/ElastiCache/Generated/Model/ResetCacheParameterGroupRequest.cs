@@ -38,7 +38,7 @@ namespace Amazon.ElastiCache.Model
     public partial class ResetCacheParameterGroupRequest : AmazonElastiCacheRequest
     {
         private string _cacheParameterGroupName;
-        private List<ParameterNameValue> _parameterNameValues = new List<ParameterNameValue>();
+        private List<ParameterNameValue> _parameterNameValues = AWSConfigs.InitializeCollections ? new List<ParameterNameValue>() : null;
         private bool? _resetAllParameters;
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ParameterNameValues property is set
         internal bool IsSetParameterNameValues()
         {
-            return this._parameterNameValues != null && this._parameterNameValues.Count > 0; 
+            return this._parameterNameValues != null && (this._parameterNameValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

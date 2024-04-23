@@ -45,7 +45,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Enumerable containing all of the CrossAccountAttachments
         /// </summary>
         public IPaginatedEnumerable<Attachment> CrossAccountAttachments => 
-            new PaginatedResultKeyResponse<ListCrossAccountAttachmentsResponse, Attachment>(this, (i) => i.CrossAccountAttachments);
+            new PaginatedResultKeyResponse<ListCrossAccountAttachmentsResponse, Attachment>(this, (i) => i.CrossAccountAttachments ?? new List<Attachment>());
 
         internal ListCrossAccountAttachmentsPaginator(IAmazonGlobalAccelerator client, ListCrossAccountAttachmentsRequest request)
         {

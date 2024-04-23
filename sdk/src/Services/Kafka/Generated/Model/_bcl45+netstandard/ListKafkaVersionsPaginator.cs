@@ -45,7 +45,7 @@ namespace Amazon.Kafka.Model
         /// Enumerable containing all of the KafkaVersions
         /// </summary>
         public IPaginatedEnumerable<KafkaVersion> KafkaVersions => 
-            new PaginatedResultKeyResponse<ListKafkaVersionsResponse, KafkaVersion>(this, (i) => i.KafkaVersions);
+            new PaginatedResultKeyResponse<ListKafkaVersionsResponse, KafkaVersion>(this, (i) => i.KafkaVersions ?? new List<KafkaVersion>());
 
         internal ListKafkaVersionsPaginator(IAmazonKafka client, ListKafkaVersionsRequest request)
         {

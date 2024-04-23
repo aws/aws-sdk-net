@@ -33,7 +33,7 @@ namespace Amazon.Mobile.Model
     /// </summary>
     public partial class ListBundlesResponse : AmazonWebServiceResponse
     {
-        private List<BundleDetails> _bundleList = new List<BundleDetails>();
+        private List<BundleDetails> _bundleList = AWSConfigs.InitializeCollections ? new List<BundleDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Mobile.Model
         // Check to see if BundleList property is set
         internal bool IsSetBundleList()
         {
-            return this._bundleList != null && this._bundleList.Count > 0; 
+            return this._bundleList != null && (this._bundleList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

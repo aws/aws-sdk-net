@@ -33,7 +33,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class ListConnectorEntitiesResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, List<ConnectorEntity>> _connectorEntityMap = new Dictionary<string, List<ConnectorEntity>>();
+        private Dictionary<string, List<ConnectorEntity>> _connectorEntityMap = AWSConfigs.InitializeCollections ? new Dictionary<string, List<ConnectorEntity>>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.Appflow.Model
         // Check to see if ConnectorEntityMap property is set
         internal bool IsSetConnectorEntityMap()
         {
-            return this._connectorEntityMap != null && this._connectorEntityMap.Count > 0; 
+            return this._connectorEntityMap != null && (this._connectorEntityMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

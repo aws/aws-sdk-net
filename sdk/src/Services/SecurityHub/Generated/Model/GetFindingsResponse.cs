@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class GetFindingsResponse : AmazonWebServiceResponse
     {
-        private List<AwsSecurityFinding> _findings = new List<AwsSecurityFinding>();
+        private List<AwsSecurityFinding> _findings = AWSConfigs.InitializeCollections ? new List<AwsSecurityFinding>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

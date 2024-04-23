@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the EdgePackagingJobSummaries
         /// </summary>
         public IPaginatedEnumerable<EdgePackagingJobSummary> EdgePackagingJobSummaries => 
-            new PaginatedResultKeyResponse<ListEdgePackagingJobsResponse, EdgePackagingJobSummary>(this, (i) => i.EdgePackagingJobSummaries);
+            new PaginatedResultKeyResponse<ListEdgePackagingJobsResponse, EdgePackagingJobSummary>(this, (i) => i.EdgePackagingJobSummaries ?? new List<EdgePackagingJobSummary>());
 
         internal ListEdgePackagingJobsPaginator(IAmazonSageMaker client, ListEdgePackagingJobsRequest request)
         {

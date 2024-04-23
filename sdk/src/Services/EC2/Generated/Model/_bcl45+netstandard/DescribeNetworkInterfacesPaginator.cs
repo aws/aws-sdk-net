@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the NetworkInterfaces
         /// </summary>
         public IPaginatedEnumerable<NetworkInterface> NetworkInterfaces => 
-            new PaginatedResultKeyResponse<DescribeNetworkInterfacesResponse, NetworkInterface>(this, (i) => i.NetworkInterfaces);
+            new PaginatedResultKeyResponse<DescribeNetworkInterfacesResponse, NetworkInterface>(this, (i) => i.NetworkInterfaces ?? new List<NetworkInterface>());
 
         internal DescribeNetworkInterfacesPaginator(IAmazonEC2 client, DescribeNetworkInterfacesRequest request)
         {

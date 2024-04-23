@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model
     public partial class BatchAssociateScramSecretResponse : AmazonWebServiceResponse
     {
         private string _clusterArn;
-        private List<UnprocessedScramSecret> _unprocessedScramSecrets = new List<UnprocessedScramSecret>();
+        private List<UnprocessedScramSecret> _unprocessedScramSecrets = AWSConfigs.InitializeCollections ? new List<UnprocessedScramSecret>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterArn.             
@@ -69,7 +69,7 @@ namespace Amazon.Kafka.Model
         // Check to see if UnprocessedScramSecrets property is set
         internal bool IsSetUnprocessedScramSecrets()
         {
-            return this._unprocessedScramSecrets != null && this._unprocessedScramSecrets.Count > 0; 
+            return this._unprocessedScramSecrets != null && (this._unprocessedScramSecrets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

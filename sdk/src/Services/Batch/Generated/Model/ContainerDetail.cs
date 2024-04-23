@@ -33,9 +33,9 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class ContainerDetail
     {
-        private List<string> _command = new List<string>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _containerInstanceArn;
-        private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private List<KeyValuePair> _environment = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
         private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
         private int? _exitCode;
@@ -47,21 +47,21 @@ namespace Amazon.Batch.Model
         private LogConfiguration _logConfiguration;
         private string _logStreamName;
         private int? _memory;
-        private List<MountPoint> _mountPoints = new List<MountPoint>();
+        private List<MountPoint> _mountPoints = AWSConfigs.InitializeCollections ? new List<MountPoint>() : null;
         private NetworkConfiguration _networkConfiguration;
-        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
+        private List<NetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
         private bool? _privileged;
         private bool? _readonlyRootFilesystem;
         private string _reason;
         private RepositoryCredentials _repositoryCredentials;
-        private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
+        private List<ResourceRequirement> _resourceRequirements = AWSConfigs.InitializeCollections ? new List<ResourceRequirement>() : null;
         private RuntimePlatform _runtimePlatform;
-        private List<Secret> _secrets = new List<Secret>();
+        private List<Secret> _secrets = AWSConfigs.InitializeCollections ? new List<Secret>() : null;
         private string _taskArn;
-        private List<Ulimit> _ulimits = new List<Ulimit>();
+        private List<Ulimit> _ulimits = AWSConfigs.InitializeCollections ? new List<Ulimit>() : null;
         private string _user;
         private int? _vcpus;
-        private List<Volume> _volumes = new List<Volume>();
+        private List<Volume> _volumes = AWSConfigs.InitializeCollections ? new List<Volume>() : null;
 
         /// <summary>
         /// Gets and sets the property Command. 
@@ -78,7 +78,7 @@ namespace Amazon.Batch.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.Batch.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -390,7 +390,7 @@ namespace Amazon.Batch.Model
         // Check to see if MountPoints property is set
         internal bool IsSetMountPoints()
         {
-            return this._mountPoints != null && this._mountPoints.Count > 0; 
+            return this._mountPoints != null && (this._mountPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -427,7 +427,7 @@ namespace Amazon.Batch.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -530,7 +530,7 @@ namespace Amazon.Batch.Model
         // Check to see if ResourceRequirements property is set
         internal bool IsSetResourceRequirements()
         {
-            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
+            return this._resourceRequirements != null && (this._resourceRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -567,7 +567,7 @@ namespace Amazon.Batch.Model
         // Check to see if Secrets property is set
         internal bool IsSetSecrets()
         {
-            return this._secrets != null && this._secrets.Count > 0; 
+            return this._secrets != null && (this._secrets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -614,7 +614,7 @@ namespace Amazon.Batch.Model
         // Check to see if Ulimits property is set
         internal bool IsSetUlimits()
         {
-            return this._ulimits != null && this._ulimits.Count > 0; 
+            return this._ulimits != null && (this._ulimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -687,7 +687,7 @@ namespace Amazon.Batch.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

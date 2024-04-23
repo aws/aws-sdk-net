@@ -45,7 +45,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// Enumerable containing all of the IdentitySources
         /// </summary>
         public IPaginatedEnumerable<IdentitySourceItem> IdentitySources => 
-            new PaginatedResultKeyResponse<ListIdentitySourcesResponse, IdentitySourceItem>(this, (i) => i.IdentitySources);
+            new PaginatedResultKeyResponse<ListIdentitySourcesResponse, IdentitySourceItem>(this, (i) => i.IdentitySources ?? new List<IdentitySourceItem>());
 
         internal ListIdentitySourcesPaginator(IAmazonVerifiedPermissions client, ListIdentitySourcesRequest request)
         {

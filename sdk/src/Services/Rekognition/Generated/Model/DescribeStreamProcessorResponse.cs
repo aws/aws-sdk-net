@@ -41,7 +41,7 @@ namespace Amazon.Rekognition.Model
         private string _name;
         private StreamProcessorNotificationChannel _notificationChannel;
         private StreamProcessorOutput _output;
-        private List<RegionOfInterest> _regionsOfInterest = new List<RegionOfInterest>();
+        private List<RegionOfInterest> _regionsOfInterest = AWSConfigs.InitializeCollections ? new List<RegionOfInterest>() : null;
         private string _roleArn;
         private StreamProcessorSettings _settings;
         private StreamProcessorStatus _status;
@@ -214,7 +214,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if RegionsOfInterest property is set
         internal bool IsSetRegionsOfInterest()
         {
-            return this._regionsOfInterest != null && this._regionsOfInterest.Count > 0; 
+            return this._regionsOfInterest != null && (this._regionsOfInterest.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

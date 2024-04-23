@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the Templates
         /// </summary>
         public IPaginatedEnumerable<ProvisioningTemplateSummary> Templates => 
-            new PaginatedResultKeyResponse<ListProvisioningTemplatesResponse, ProvisioningTemplateSummary>(this, (i) => i.Templates);
+            new PaginatedResultKeyResponse<ListProvisioningTemplatesResponse, ProvisioningTemplateSummary>(this, (i) => i.Templates ?? new List<ProvisioningTemplateSummary>());
 
         internal ListProvisioningTemplatesPaginator(IAmazonIoT client, ListProvisioningTemplatesRequest request)
         {

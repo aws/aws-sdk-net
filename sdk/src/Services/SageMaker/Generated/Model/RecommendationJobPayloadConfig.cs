@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class RecommendationJobPayloadConfig
     {
         private string _samplePayloadUrl;
-        private List<string> _supportedContentTypes = new List<string>();
+        private List<string> _supportedContentTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SamplePayloadUrl. 
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SupportedContentTypes property is set
         internal bool IsSetSupportedContentTypes()
         {
-            return this._supportedContentTypes != null && this._supportedContentTypes.Count > 0; 
+            return this._supportedContentTypes != null && (this._supportedContentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

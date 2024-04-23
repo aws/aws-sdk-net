@@ -34,7 +34,7 @@ namespace Amazon.Kinesis.Model
     public partial class ListShardsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Shard> _shards = new List<Shard>();
+        private List<Shard> _shards = AWSConfigs.InitializeCollections ? new List<Shard>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -86,7 +86,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if Shards property is set
         internal bool IsSetShards()
         {
-            return this._shards != null && this._shards.Count > 0; 
+            return this._shards != null && (this._shards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

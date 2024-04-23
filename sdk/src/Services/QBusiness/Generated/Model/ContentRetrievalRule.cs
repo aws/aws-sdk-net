@@ -29,17 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Rules for retrieving content from data sources connected to a Amazon Q application
+    /// Rules for retrieving content from data sources connected to a Amazon Q Business application
     /// for a specific topic control configuration.
     /// </summary>
     public partial class ContentRetrievalRule
     {
-        private List<EligibleDataSource> _eligibleDataSources = new List<EligibleDataSource>();
+        private List<EligibleDataSource> _eligibleDataSources = AWSConfigs.InitializeCollections ? new List<EligibleDataSource>() : null;
 
         /// <summary>
         /// Gets and sets the property EligibleDataSources. 
         /// <para>
-        /// Specifies data sources in a Amazon Q application to use for content generation.
+        /// Specifies data sources in a Amazon Q Business application to use for content generation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -52,7 +52,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if EligibleDataSources property is set
         internal bool IsSetEligibleDataSources()
         {
-            return this._eligibleDataSources != null && this._eligibleDataSources.Count > 0; 
+            return this._eligibleDataSources != null && (this._eligibleDataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

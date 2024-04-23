@@ -45,19 +45,19 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the CloudFormation
         /// </summary>
         public IPaginatedEnumerable<CloudFormationHealth> CloudFormation => 
-            new PaginatedResultKeyResponse<DescribeResourceCollectionHealthResponse, CloudFormationHealth>(this, (i) => i.CloudFormation);
+            new PaginatedResultKeyResponse<DescribeResourceCollectionHealthResponse, CloudFormationHealth>(this, (i) => i.CloudFormation ?? new List<CloudFormationHealth>());
 
         /// <summary>
         /// Enumerable containing all of the Service
         /// </summary>
         public IPaginatedEnumerable<ServiceHealth> Service => 
-            new PaginatedResultKeyResponse<DescribeResourceCollectionHealthResponse, ServiceHealth>(this, (i) => i.Service);
+            new PaginatedResultKeyResponse<DescribeResourceCollectionHealthResponse, ServiceHealth>(this, (i) => i.Service ?? new List<ServiceHealth>());
 
         /// <summary>
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<TagHealth> Tags => 
-            new PaginatedResultKeyResponse<DescribeResourceCollectionHealthResponse, TagHealth>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<DescribeResourceCollectionHealthResponse, TagHealth>(this, (i) => i.Tags ?? new List<TagHealth>());
 
         internal DescribeResourceCollectionHealthPaginator(IAmazonDevOpsGuru client, DescribeResourceCollectionHealthRequest request)
         {

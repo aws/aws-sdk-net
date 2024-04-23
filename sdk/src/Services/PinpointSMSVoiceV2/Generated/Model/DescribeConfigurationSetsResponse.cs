@@ -33,7 +33,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribeConfigurationSetsResponse : AmazonWebServiceResponse
     {
-        private List<ConfigurationSetInformation> _configurationSets = new List<ConfigurationSetInformation>();
+        private List<ConfigurationSetInformation> _configurationSets = AWSConfigs.InitializeCollections ? new List<ConfigurationSetInformation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if ConfigurationSets property is set
         internal bool IsSetConfigurationSets()
         {
-            return this._configurationSets != null && this._configurationSets.Count > 0; 
+            return this._configurationSets != null && (this._configurationSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

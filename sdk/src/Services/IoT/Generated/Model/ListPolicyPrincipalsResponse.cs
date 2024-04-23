@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ListPolicyPrincipalsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<string> _principals = new List<string>();
+        private List<string> _principals = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -70,7 +70,7 @@ namespace Amazon.IoT.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

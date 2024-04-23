@@ -34,7 +34,7 @@ namespace Amazon.AppConfigData.Model
     /// </summary>
     public partial class BadRequestDetails
     {
-        private Dictionary<string, InvalidParameterDetail> _invalidParameters = new Dictionary<string, InvalidParameterDetail>();
+        private Dictionary<string, InvalidParameterDetail> _invalidParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, InvalidParameterDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property InvalidParameters. 
@@ -51,7 +51,7 @@ namespace Amazon.AppConfigData.Model
         // Check to see if InvalidParameters property is set
         internal bool IsSetInvalidParameters()
         {
-            return this._invalidParameters != null && this._invalidParameters.Count > 0; 
+            return this._invalidParameters != null && (this._invalidParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

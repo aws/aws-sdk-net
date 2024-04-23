@@ -40,7 +40,7 @@ namespace Amazon.Omics.Model
         private int? _maxRuns;
         private string _name;
         private string _requestId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxCpus. 
@@ -83,7 +83,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property MaxGpus. 
         /// <para>
-        ///  The maximum GPUs that can be used by a run group. 
+        /// The maximum GPUs that can be used by a run group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
@@ -171,7 +171,7 @@ namespace Amazon.Omics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

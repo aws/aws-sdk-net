@@ -45,7 +45,7 @@ namespace Amazon.Comprehend.Model
         /// Enumerable containing all of the EndpointPropertiesList
         /// </summary>
         public IPaginatedEnumerable<EndpointProperties> EndpointPropertiesList => 
-            new PaginatedResultKeyResponse<ListEndpointsResponse, EndpointProperties>(this, (i) => i.EndpointPropertiesList);
+            new PaginatedResultKeyResponse<ListEndpointsResponse, EndpointProperties>(this, (i) => i.EndpointPropertiesList ?? new List<EndpointProperties>());
 
         internal ListEndpointsPaginator(IAmazonComprehend client, ListEndpointsRequest request)
         {

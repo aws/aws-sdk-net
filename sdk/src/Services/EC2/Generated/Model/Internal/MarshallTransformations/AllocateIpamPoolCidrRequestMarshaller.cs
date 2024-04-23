@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,10 +68,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCidr())
                 {
                     request.Parameters.Add("Cidr", StringUtils.FromString(publicRequest.Cidr));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
@@ -79,10 +82,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDisallowedCidrs())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -92,18 +97,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpamPoolId())
                 {
                     request.Parameters.Add("IpamPoolId", StringUtils.FromString(publicRequest.IpamPoolId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetmaskLength())
                 {
                     request.Parameters.Add("NetmaskLength", StringUtils.FromInt(publicRequest.NetmaskLength));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPreviewNextCidr())
                 {
                     request.Parameters.Add("PreviewNextCidr", StringUtils.FromBool(publicRequest.PreviewNextCidr));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

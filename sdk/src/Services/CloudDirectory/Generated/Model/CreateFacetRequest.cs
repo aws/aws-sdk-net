@@ -35,7 +35,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class CreateFacetRequest : AmazonCloudDirectoryRequest
     {
-        private List<FacetAttribute> _attributes = new List<FacetAttribute>();
+        private List<FacetAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<FacetAttribute>() : null;
         private FacetStyle _facetStyle;
         private string _name;
         private ObjectType _objectType;
@@ -56,7 +56,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

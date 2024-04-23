@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Provides the SAML 2.0 compliant identity provider (IdP) configuration information
-    /// Amazon Q needs to deploy a Amazon Q web experience.
+    /// Amazon Q Business needs to deploy a Amazon Q Business web experience.
     /// </summary>
     public partial class SamlConfiguration
     {
@@ -62,8 +62,8 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role assumed by users when they authenticate
-        /// into their Amazon Q web experience, containing the relevant Amazon Q permissions for
-        /// conversing with Amazon Q.
+        /// into their Amazon Q Business web experience, containing the relevant Amazon Q Business
+        /// permissions for conversing with Amazon Q Business.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1284)]

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,28 +46,58 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BoundingBox requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("Height");
-                context.Writer.Write(requestObject.Height);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Height))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Height));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Height);
+                }
             }
 
             if(requestObject.IsSetLeft())
             {
                 context.Writer.WritePropertyName("Left");
-                context.Writer.Write(requestObject.Left);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Left))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Left));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Left);
+                }
             }
 
             if(requestObject.IsSetTop())
             {
                 context.Writer.WritePropertyName("Top");
-                context.Writer.Write(requestObject.Top);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Top))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Top));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Top);
+                }
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("Width");
-                context.Writer.Write(requestObject.Width);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Width))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Width));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Width);
+                }
             }
 
         }
@@ -78,3 +109,4 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

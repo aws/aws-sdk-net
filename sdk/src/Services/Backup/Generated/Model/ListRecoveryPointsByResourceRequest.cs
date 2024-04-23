@@ -41,9 +41,42 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ListRecoveryPointsByResourceRequest : AmazonBackupRequest
     {
+        private bool? _managedByAWSBackupOnly;
         private int? _maxResults;
         private string _nextToken;
         private string _resourceArn;
+
+        /// <summary>
+        /// Gets and sets the property ManagedByAWSBackupOnly. 
+        /// <para>
+        /// This attribute filters recovery points based on ownership.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this is set to <c>TRUE</c>, the response will contain recovery points associated
+        /// with the selected resources that are managed by Backup.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this is set to <c>FALSE</c>, the response will contain all recovery points associated
+        /// with the selected resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: Boolean
+        /// </para>
+        /// </summary>
+        public bool ManagedByAWSBackupOnly
+        {
+            get { return this._managedByAWSBackupOnly.GetValueOrDefault(); }
+            set { this._managedByAWSBackupOnly = value; }
+        }
+
+        // Check to see if ManagedByAWSBackupOnly property is set
+        internal bool IsSetManagedByAWSBackupOnly()
+        {
+            return this._managedByAWSBackupOnly.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ListMembersResponse : AmazonWebServiceResponse
     {
-        private List<Member> _members = new List<Member>();
+        private List<Member> _members = AWSConfigs.InitializeCollections ? new List<Member>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

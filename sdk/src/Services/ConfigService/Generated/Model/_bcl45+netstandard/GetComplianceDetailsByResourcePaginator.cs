@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the EvaluationResults
         /// </summary>
         public IPaginatedEnumerable<EvaluationResult> EvaluationResults => 
-            new PaginatedResultKeyResponse<GetComplianceDetailsByResourceResponse, EvaluationResult>(this, (i) => i.EvaluationResults);
+            new PaginatedResultKeyResponse<GetComplianceDetailsByResourceResponse, EvaluationResult>(this, (i) => i.EvaluationResults ?? new List<EvaluationResult>());
 
         internal GetComplianceDetailsByResourcePaginator(IAmazonConfigService client, GetComplianceDetailsByResourceRequest request)
         {

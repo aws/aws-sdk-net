@@ -37,7 +37,7 @@ namespace Amazon.SageMaker.Model
         private DockerSettings _dockerSettings;
         private ExecutionRoleIdentityConfig _executionRoleIdentityConfig;
         private RStudioServerProDomainSettings _rStudioServerProDomainSettings;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DockerSettings. 
@@ -112,7 +112,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

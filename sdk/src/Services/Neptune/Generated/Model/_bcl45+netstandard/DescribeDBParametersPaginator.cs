@@ -45,7 +45,7 @@ namespace Amazon.Neptune.Model
         /// Enumerable containing all of the Parameters
         /// </summary>
         public IPaginatedEnumerable<Parameter> Parameters => 
-            new PaginatedResultKeyResponse<DescribeDBParametersResponse, Parameter>(this, (i) => i.Parameters);
+            new PaginatedResultKeyResponse<DescribeDBParametersResponse, Parameter>(this, (i) => i.Parameters ?? new List<Parameter>());
 
         internal DescribeDBParametersPaginator(IAmazonNeptune client, DescribeDBParametersRequest request)
         {

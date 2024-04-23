@@ -34,11 +34,11 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class ListLogSourcesRequest : AmazonSecurityLakeRequest
     {
-        private List<string> _accounts = new List<string>();
+        private List<string> _accounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _regions = new List<string>();
-        private List<LogSourceResource> _sources = new List<LogSourceResource>();
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<LogSourceResource> _sources = AWSConfigs.InitializeCollections ? new List<LogSourceResource>() : null;
 
         /// <summary>
         /// Gets and sets the property Accounts. 
@@ -55,7 +55,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Accounts property is set
         internal bool IsSetAccounts()
         {
-            return this._accounts != null && this._accounts.Count > 0; 
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

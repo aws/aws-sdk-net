@@ -44,7 +44,7 @@ namespace Amazon.NetworkMonitor.Model
         private Protocol _protocol;
         private string _sourceArn;
         private ProbeState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The destination IP address for the monitor. This will be either an IPv4 or IPv6 address.
+        /// The destination IP address for the monitor. This must be either an IPv4 or IPv6 address.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -143,7 +143,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property PacketSize. 
         /// <para>
-        /// The size of the packets sent between the source and destination. This will be a number
+        /// The size of the packets sent between the source and destination. This must be a number
         /// between <c>56</c> and <c>8500</c>.
         /// </para>
         /// </summary>
@@ -201,7 +201,7 @@ namespace Amazon.NetworkMonitor.Model
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol used for the network traffic between the <c>source</c> and <c>destination</c>.
-        /// This will be either <c>TCP</c> or <c>ICMP</c>.
+        /// This must be either <c>TCP</c> or <c>ICMP</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -270,7 +270,7 @@ namespace Amazon.NetworkMonitor.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

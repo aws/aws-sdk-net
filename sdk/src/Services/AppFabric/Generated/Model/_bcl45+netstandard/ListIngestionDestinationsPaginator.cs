@@ -45,7 +45,7 @@ namespace Amazon.AppFabric.Model
         /// Enumerable containing all of the IngestionDestinations
         /// </summary>
         public IPaginatedEnumerable<IngestionDestinationSummary> IngestionDestinations => 
-            new PaginatedResultKeyResponse<ListIngestionDestinationsResponse, IngestionDestinationSummary>(this, (i) => i.IngestionDestinations);
+            new PaginatedResultKeyResponse<ListIngestionDestinationsResponse, IngestionDestinationSummary>(this, (i) => i.IngestionDestinations ?? new List<IngestionDestinationSummary>());
 
         internal ListIngestionDestinationsPaginator(IAmazonAppFabric client, ListIngestionDestinationsRequest request)
         {

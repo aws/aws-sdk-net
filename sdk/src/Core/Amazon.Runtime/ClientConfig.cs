@@ -131,7 +131,7 @@ namespace Amazon.Runtime
 #if BCL
         private static WebProxy GetWebProxyWithCredentials(string value)
 #else
-        private static Amazon.Runtime.Internal.Util.WebProxy? GetWebProxyWithCredentials(string value)
+        private static Amazon.Runtime.Internal.Util.WebProxy GetWebProxyWithCredentials(string value)
 #endif
         {
             if (!string.IsNullOrEmpty(value))
@@ -254,7 +254,9 @@ namespace Amazon.Runtime
                     this.regionEndpoint =
                         RegionEndpoint.GetBySystemName(
                             value.SystemName.Replace("fips-", "").Replace("-fips", ""));
+#pragma warning disable CS0612,CS0618
                     this.RegionEndpoint.OriginalSystemName = value.SystemName;
+#pragma warning restore CS0612,CS0618
                 }
             }
         }
@@ -415,11 +417,12 @@ namespace Amazon.Runtime
 
         internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
         {
+#pragma warning disable CS0612,CS0618
             var endpoint = 
                 regionEndpoint.GetEndpointForService(
                     config.RegionEndpointServiceName, 
                     config.ToGetEndpointForServiceOptions());
-
+#pragma warning restore CS0612,CS0618
             string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", config.UseHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
             return url;
         }
@@ -752,18 +755,18 @@ namespace Amazon.Runtime
         protected virtual void Initialize()
         {
         }
-        
-#if BCL35
+
         /// <summary>
+        /// .NET Framework 3.5
+        /// ------------------
         /// Overrides the default request timeout value.
         /// This field does not impact Begin*/End* calls. A manual timeout must be implemented.
-        /// </summary>
-#elif BCL45
-        /// <summary>
+        /// 
+        /// .NET Framework 4.5
+        /// ------------------
         /// Overrides the default request timeout value.
         /// This field does not impact *Async calls. A manual timeout (for instance, using CancellationToken) must be implemented.
         /// </summary>
-#endif
         /// <remarks>
         /// <para>
         /// If the value is set, the value is assigned to the Timeout property of the HttpWebRequest/HttpClient object used
@@ -801,8 +804,6 @@ namespace Amazon.Runtime
         /// <summary>
         /// Generates a <see cref="CancellationToken"/> based on the value
         /// for <see cref="DefaultConfiguration.TimeToFirstByteTimeout"/>.
-        /// <para />
-        /// NOTE: <see cref="Amazon.Runtime.HttpWebRequestMessage.GetResponseAsync"/> uses 
         /// </summary>
         internal CancellationToken BuildDefaultCancellationToken()
         {
@@ -1022,7 +1023,7 @@ namespace Amazon.Runtime
         /// and the SDK has determined that there is a difference between local
         /// and server times.
         /// 
-        /// If <seealso cref="CorrectForClockSkew"/> is set to true, this
+        /// If <seealso cref="AWSConfigs.CorrectForClockSkew"/> is set to true, this
         /// value will still be set to the correction, but it will not be used by the
         /// SDK and clock skew errors will not be retried.
         /// </summary>
@@ -1036,7 +1037,9 @@ namespace Amazon.Runtime
                 }
                 else
                 {
+#pragma warning disable CS0612,CS0618
                     string endpoint = DetermineServiceURL();
+#pragma warning restore CS0612,CS0618
                     return CorrectClockSkew.GetClockCorrectionForEndpoint(endpoint);
                 }
             }
@@ -1173,7 +1176,7 @@ namespace Amazon.Runtime
         /// If CacheHttpClient is set to true then HttpClientCacheSize controls the number of HttpClients cached.
         /// <para>
         /// The default value is 1 which is suitable for Windows and for all other platforms that have HttpClient
-        /// implementations using <see cref="System.Net.Http.SocketsHttpHandler"/> (.NET Core 2.1 and higher).
+        /// implementations using System.Net.Http.SocketsHttpHandler (.NET Core 2.1 and higher).
         /// </para>
         /// </summary>
         public int HttpClientCacheSize

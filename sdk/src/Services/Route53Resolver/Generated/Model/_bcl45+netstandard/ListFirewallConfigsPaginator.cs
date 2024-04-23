@@ -45,7 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// Enumerable containing all of the FirewallConfigs
         /// </summary>
         public IPaginatedEnumerable<FirewallConfig> FirewallConfigs => 
-            new PaginatedResultKeyResponse<ListFirewallConfigsResponse, FirewallConfig>(this, (i) => i.FirewallConfigs);
+            new PaginatedResultKeyResponse<ListFirewallConfigsResponse, FirewallConfig>(this, (i) => i.FirewallConfigs ?? new List<FirewallConfig>());
 
         internal ListFirewallConfigsPaginator(IAmazonRoute53Resolver client, ListFirewallConfigsRequest request)
         {

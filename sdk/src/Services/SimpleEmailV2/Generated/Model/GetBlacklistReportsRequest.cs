@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class GetBlacklistReportsRequest : AmazonSimpleEmailServiceV2Request
     {
-        private List<string> _blacklistItemNames = new List<string>();
+        private List<string> _blacklistItemNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BlacklistItemNames. 
@@ -54,7 +54,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if BlacklistItemNames property is set
         internal bool IsSetBlacklistItemNames()
         {
-            return this._blacklistItemNames != null && this._blacklistItemNames.Count > 0; 
+            return this._blacklistItemNames != null && (this._blacklistItemNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

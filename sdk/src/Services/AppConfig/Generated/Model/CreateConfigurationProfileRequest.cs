@@ -92,9 +92,9 @@ namespace Amazon.AppConfig.Model
         private string _locationUri;
         private string _name;
         private string _retrievalRoleArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _type;
-        private List<Validator> _validators = new List<Validator>();
+        private List<Validator> _validators = AWSConfigs.InitializeCollections ? new List<Validator>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -272,7 +272,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Validators property is set
         internal bool IsSetValidators()
         {
-            return this._validators != null && this._validators.Count > 0; 
+            return this._validators != null && (this._validators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

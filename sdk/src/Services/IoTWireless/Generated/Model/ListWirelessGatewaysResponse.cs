@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     public partial class ListWirelessGatewaysResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WirelessGatewayStatistics> _wirelessGatewayList = new List<WirelessGatewayStatistics>();
+        private List<WirelessGatewayStatistics> _wirelessGatewayList = AWSConfigs.InitializeCollections ? new List<WirelessGatewayStatistics>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if WirelessGatewayList property is set
         internal bool IsSetWirelessGatewayList()
         {
-            return this._wirelessGatewayList != null && this._wirelessGatewayList.Count > 0; 
+            return this._wirelessGatewayList != null && (this._wirelessGatewayList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

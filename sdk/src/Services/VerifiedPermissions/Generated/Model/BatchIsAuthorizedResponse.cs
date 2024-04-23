@@ -33,7 +33,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// </summary>
     public partial class BatchIsAuthorizedResponse : AmazonWebServiceResponse
     {
-        private List<BatchIsAuthorizedOutputItem> _results = new List<BatchIsAuthorizedOutputItem>();
+        private List<BatchIsAuthorizedOutputItem> _results = AWSConfigs.InitializeCollections ? new List<BatchIsAuthorizedOutputItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Results. 
@@ -52,7 +52,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

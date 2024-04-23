@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Delete Agent Response
+    /// This is the response object from the DeleteAgent operation.
     /// </summary>
     public partial class DeleteAgentResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,10 @@ namespace Amazon.BedrockAgent.Model
         private AgentStatus _agentStatus;
 
         /// <summary>
-        /// Gets and sets the property AgentId.
+        /// Gets and sets the property AgentId. 
+        /// <para>
+        /// The unique identifier of the agent that was deleted.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentId
@@ -53,7 +56,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentStatus.
+        /// Gets and sets the property AgentStatus. 
+        /// <para>
+        /// The status of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentStatus AgentStatus

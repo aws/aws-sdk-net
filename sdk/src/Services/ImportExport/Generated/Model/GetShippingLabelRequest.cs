@@ -39,7 +39,7 @@ namespace Amazon.ImportExport.Model
         private string _city;
         private string _company;
         private string _country;
-        private List<string> _jobIds = new List<string>();
+        private List<string> _jobIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _phoneNumber;
         private string _postalCode;
@@ -121,7 +121,7 @@ namespace Amazon.ImportExport.Model
         // Check to see if JobIds property is set
         internal bool IsSetJobIds()
         {
-            return this._jobIds != null && this._jobIds.Count > 0; 
+            return this._jobIds != null && (this._jobIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

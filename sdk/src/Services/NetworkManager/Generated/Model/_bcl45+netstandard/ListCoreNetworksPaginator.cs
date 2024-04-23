@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the CoreNetworks
         /// </summary>
         public IPaginatedEnumerable<CoreNetworkSummary> CoreNetworks => 
-            new PaginatedResultKeyResponse<ListCoreNetworksResponse, CoreNetworkSummary>(this, (i) => i.CoreNetworks);
+            new PaginatedResultKeyResponse<ListCoreNetworksResponse, CoreNetworkSummary>(this, (i) => i.CoreNetworks ?? new List<CoreNetworkSummary>());
 
         internal ListCoreNetworksPaginator(IAmazonNetworkManager client, ListCoreNetworksRequest request)
         {

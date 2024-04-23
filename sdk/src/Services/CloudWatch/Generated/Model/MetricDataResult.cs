@@ -37,10 +37,10 @@ namespace Amazon.CloudWatch.Model
     {
         private string _id;
         private string _label;
-        private List<MessageData> _messages = new List<MessageData>();
+        private List<MessageData> _messages = AWSConfigs.InitializeCollections ? new List<MessageData>() : null;
         private StatusCode _statusCode;
-        private List<DateTime> _timestamps = new List<DateTime>();
-        private List<double> _values = new List<double>();
+        private List<DateTime> _timestamps = AWSConfigs.InitializeCollections ? new List<DateTime>() : null;
+        private List<double> _values = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -94,7 +94,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Timestamps property is set
         internal bool IsSetTimestamps()
         {
-            return this._timestamps != null && this._timestamps.Count > 0; 
+            return this._timestamps != null && (this._timestamps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

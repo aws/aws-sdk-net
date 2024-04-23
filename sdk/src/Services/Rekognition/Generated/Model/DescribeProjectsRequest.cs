@@ -40,10 +40,10 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DescribeProjectsRequest : AmazonRekognitionRequest
     {
-        private List<string> _features = new List<string>();
+        private List<string> _features = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _projectNames = new List<string>();
+        private List<string> _projectNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Features. 
@@ -62,7 +62,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if ProjectNames property is set
         internal bool IsSetProjectNames()
         {
-            return this._projectNames != null && this._projectNames.Count > 0; 
+            return this._projectNames != null && (this._projectNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

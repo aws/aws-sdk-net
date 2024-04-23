@@ -33,13 +33,14 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ListApplicationsResponse : AmazonWebServiceResponse
     {
-        private List<Application> _applications = new List<Application>();
+        private List<Application> _applications = AWSConfigs.InitializeCollections ? new List<Application>() : null;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
-        /// An array of summary information on the configuration of one or more Amazon Q applications.
+        /// An array of summary information on the configuration of one or more Amazon Q Business
+        /// applications.
         /// </para>
         /// </summary>
         public List<Application> Applications
@@ -51,14 +52,14 @@ namespace Amazon.QBusiness.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Amazon Q returns this token. You can use this token
-        /// in a subsequent request to retrieve the next set of applications.
+        /// If the response is truncated, Amazon Q Business returns this token. You can use this
+        /// token in a subsequent request to retrieve the next set of applications.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

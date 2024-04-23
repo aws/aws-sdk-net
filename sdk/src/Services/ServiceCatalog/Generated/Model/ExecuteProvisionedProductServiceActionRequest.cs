@@ -36,7 +36,7 @@ namespace Amazon.ServiceCatalog.Model
     {
         private string _acceptLanguage;
         private string _executeToken;
-        private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _provisionedProductId;
         private string _serviceActionId;
 
@@ -107,7 +107,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

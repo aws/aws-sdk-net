@@ -45,7 +45,7 @@ namespace Amazon.FMS.Model
         /// Enumerable containing all of the PolicyList
         /// </summary>
         public IPaginatedEnumerable<PolicySummary> PolicyList => 
-            new PaginatedResultKeyResponse<ListPoliciesResponse, PolicySummary>(this, (i) => i.PolicyList);
+            new PaginatedResultKeyResponse<ListPoliciesResponse, PolicySummary>(this, (i) => i.PolicyList ?? new List<PolicySummary>());
 
         internal ListPoliciesPaginator(IAmazonFMS client, ListPoliciesRequest request)
         {

@@ -39,14 +39,14 @@ namespace Amazon.WorkSpaces.Model
         private string _directoryId;
         private string _directoryName;
         private WorkspaceDirectoryType _directoryType;
-        private List<string> _dnsIpAddresses = new List<string>();
+        private List<string> _dnsIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _iamRoleId;
-        private List<string> _ipGroupIds = new List<string>();
+        private List<string> _ipGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _registrationCode;
         private SamlProperties _samlProperties;
         private SelfservicePermissions _selfservicePermissions;
         private WorkspaceDirectoryState _state;
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Tenancy _tenancy;
         private WorkspaceAccessProperties _workspaceAccessProperties;
         private DefaultWorkspaceCreationProperties _workspaceCreationProperties;
@@ -178,7 +178,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if DnsIpAddresses property is set
         internal bool IsSetDnsIpAddresses()
         {
-            return this._dnsIpAddresses != null && this._dnsIpAddresses.Count > 0; 
+            return this._dnsIpAddresses != null && (this._dnsIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if IpGroupIds property is set
         internal bool IsSetIpGroupIds()
         {
-            return this._ipGroupIds != null && this._ipGroupIds.Count > 0; 
+            return this._ipGroupIds != null && (this._ipGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -314,7 +314,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

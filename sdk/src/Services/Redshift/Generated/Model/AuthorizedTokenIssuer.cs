@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class AuthorizedTokenIssuer
     {
-        private List<string> _authorizedAudiencesList = new List<string>();
+        private List<string> _authorizedAudiencesList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _trustedTokenIssuerArn;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Redshift.Model
         // Check to see if AuthorizedAudiencesList property is set
         internal bool IsSetAuthorizedAudiencesList()
         {
-            return this._authorizedAudiencesList != null && this._authorizedAudiencesList.Count > 0; 
+            return this._authorizedAudiencesList != null && (this._authorizedAudiencesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

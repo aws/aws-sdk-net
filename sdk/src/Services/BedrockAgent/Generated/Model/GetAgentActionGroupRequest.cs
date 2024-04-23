@@ -30,7 +30,7 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAgentActionGroup operation.
-    /// Gets an Action Group for existing Amazon Bedrock Agent Version
+    /// Gets information about an action group for an agent.
     /// </summary>
     public partial class GetAgentActionGroupRequest : AmazonBedrockAgentRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ActionGroupId. 
         /// <para>
-        /// Id generated at the server side when an Agent Action Group is created
+        /// The unique identifier of the action group for which to get information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent that the action group belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// Version number generated when a version is created
+        /// The version of the agent that the action group belongs to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

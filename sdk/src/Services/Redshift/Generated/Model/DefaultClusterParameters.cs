@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
     {
         private string _marker;
         private string _parameterGroupFamily;
-        private List<Parameter> _parameters = new List<Parameter>();
+        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -95,7 +95,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

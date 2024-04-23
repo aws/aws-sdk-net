@@ -33,7 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class RuleResult
     {
-        private List<string> _outcomes = new List<string>();
+        private List<string> _outcomes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ruleId;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Outcomes property is set
         internal bool IsSetOutcomes()
         {
-            return this._outcomes != null && this._outcomes.Count > 0; 
+            return this._outcomes != null && (this._outcomes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

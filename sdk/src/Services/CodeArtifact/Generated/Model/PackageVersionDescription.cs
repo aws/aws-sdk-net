@@ -36,7 +36,7 @@ namespace Amazon.CodeArtifact.Model
         private string _displayName;
         private PackageFormat _format;
         private string _homePage;
-        private List<LicenseInfo> _licenses = new List<LicenseInfo>();
+        private List<LicenseInfo> _licenses = AWSConfigs.InitializeCollections ? new List<LicenseInfo>() : null;
         private string _awsNamespace;
         private PackageVersionOrigin _origin;
         private string _packageName;
@@ -120,14 +120,14 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Licenses property is set
         internal bool IsSetLicenses()
         {
-            return this._licenses != null && this._licenses.Count > 0; 
+            return this._licenses != null && (this._licenses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the package version. The package version component that specifies
-        /// its namespace depends on its type. For example:
+        /// The namespace of the package version. The package component that specifies its namespace
+        /// depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -135,16 +135,16 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <c>scope</c>. 
+        ///  The namespace of an npm or Swift package version is its <c>scope</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The namespace of a generic package is its <c>namespace</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  Python and NuGet package versions do not contain a corresponding component, package
         /// versions of those formats do not have a namespace. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  The namespace of a generic package is its <c>namespace</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

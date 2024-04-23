@@ -45,7 +45,7 @@ namespace Amazon.Route53Domains.Model
         /// Enumerable containing all of the Operations
         /// </summary>
         public IPaginatedEnumerable<OperationSummary> Operations => 
-            new PaginatedResultKeyResponse<ListOperationsResponse, OperationSummary>(this, (i) => i.Operations);
+            new PaginatedResultKeyResponse<ListOperationsResponse, OperationSummary>(this, (i) => i.Operations ?? new List<OperationSummary>());
 
         internal ListOperationsPaginator(IAmazonRoute53Domains client, ListOperationsRequest request)
         {

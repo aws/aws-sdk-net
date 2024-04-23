@@ -35,7 +35,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class ListAssessmentRunsRequest : AmazonInspectorRequest
     {
-        private List<string> _assessmentTemplateArns = new List<string>();
+        private List<string> _assessmentTemplateArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AssessmentRunFilter _filter;
         private int? _maxResults;
         private string _nextToken;
@@ -56,7 +56,7 @@ namespace Amazon.Inspector.Model
         // Check to see if AssessmentTemplateArns property is set
         internal bool IsSetAssessmentTemplateArns()
         {
-            return this._assessmentTemplateArns != null && this._assessmentTemplateArns.Count > 0; 
+            return this._assessmentTemplateArns != null && (this._assessmentTemplateArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -61,8 +61,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Bucket", targetDepth + 1))
                     {
+                        if (response.Buckets == null)
+                        {
+                            response.Buckets = new List<S3Bucket>();
+                        }
                         response.Buckets.Add(BucketUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                     if (context.TestExpression("Owner", targetDepth))

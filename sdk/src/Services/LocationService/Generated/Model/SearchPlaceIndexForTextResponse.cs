@@ -33,7 +33,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class SearchPlaceIndexForTextResponse : AmazonWebServiceResponse
     {
-        private List<SearchForTextResult> _results = new List<SearchForTextResult>();
+        private List<SearchForTextResult> _results = AWSConfigs.InitializeCollections ? new List<SearchForTextResult>() : null;
         private SearchPlaceIndexForTextSummary _summary;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class ListDataCellsFilterResponse : AmazonWebServiceResponse
     {
-        private List<DataCellsFilter> _dataCellsFilters = new List<DataCellsFilter>();
+        private List<DataCellsFilter> _dataCellsFilters = AWSConfigs.InitializeCollections ? new List<DataCellsFilter>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if DataCellsFilters property is set
         internal bool IsSetDataCellsFilters()
         {
-            return this._dataCellsFilters != null && this._dataCellsFilters.Count > 0; 
+            return this._dataCellsFilters != null && (this._dataCellsFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

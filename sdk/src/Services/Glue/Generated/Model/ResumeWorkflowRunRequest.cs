@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
     public partial class ResumeWorkflowRunRequest : AmazonGlueRequest
     {
         private string _name;
-        private List<string> _nodeIds = new List<string>();
+        private List<string> _nodeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _runId;
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.Glue.Model
         // Check to see if NodeIds property is set
         internal bool IsSetNodeIds()
         {
-            return this._nodeIds != null && this._nodeIds.Count > 0; 
+            return this._nodeIds != null && (this._nodeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

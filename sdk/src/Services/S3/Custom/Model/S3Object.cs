@@ -27,7 +27,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public class S3Object
     {
-        private List<string> _checksumAlgorithm = new List<string>();
+        private List<string> _checksumAlgorithm = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string eTag;
         private string key;
         private DateTime? lastModified;
@@ -52,7 +52,7 @@ namespace Amazon.S3.Model
         // Check to see if ChecksumAlgorithm property is set
         internal bool IsSetChecksumAlgorithm()
         {
-            return this._checksumAlgorithm != null && this._checksumAlgorithm.Count > 0;
+            return this._checksumAlgorithm != null && (this._checksumAlgorithm.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

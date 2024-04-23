@@ -72,7 +72,7 @@ namespace Amazon.AutoScalingPlans.Model
     /// </summary>
     public partial class CustomizedLoadMetricSpecification
     {
-        private List<MetricDimension> _dimensions = new List<MetricDimension>();
+        private List<MetricDimension> _dimensions = AWSConfigs.InitializeCollections ? new List<MetricDimension>() : null;
         private string _metricName;
         private string _awsNamespace;
         private MetricStatistic _statistic;
@@ -98,7 +98,7 @@ namespace Amazon.AutoScalingPlans.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

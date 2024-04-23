@@ -33,7 +33,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class ListReceiptFiltersResponse : AmazonWebServiceResponse
     {
-        private List<ReceiptFilter> _filters = new List<ReceiptFilter>();
+        private List<ReceiptFilter> _filters = AWSConfigs.InitializeCollections ? new List<ReceiptFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

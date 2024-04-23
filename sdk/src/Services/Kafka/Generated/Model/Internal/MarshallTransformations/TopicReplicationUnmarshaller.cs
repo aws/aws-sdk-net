@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -81,6 +82,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.DetectAndCopyNewTopics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("startingPosition", targetDepth))
+                {
+                    var unmarshaller = ReplicationStartingPositionUnmarshaller.Instance;
+                    unmarshalledObject.StartingPosition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("topicsToExclude", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -112,3 +119,4 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

@@ -55,6 +55,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly ActionType SEND_NOTIFICATION = new ActionType("SEND_NOTIFICATION");
         /// <summary>
+        /// Constant SUBMIT_AUTO_EVALUATION for ActionType
+        /// </summary>
+        public static readonly ActionType SUBMIT_AUTO_EVALUATION = new ActionType("SUBMIT_AUTO_EVALUATION");
+        /// <summary>
         /// Constant UPDATE_CASE for ActionType
         /// </summary>
         public static readonly ActionType UPDATE_CASE = new ActionType("UPDATE_CASE");
@@ -2151,9 +2155,17 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly InstanceStorageResourceType MEDIA_STREAMS = new InstanceStorageResourceType("MEDIA_STREAMS");
         /// <summary>
+        /// Constant REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS = new InstanceStorageResourceType("REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS");
+        /// <summary>
         /// Constant REAL_TIME_CONTACT_ANALYSIS_SEGMENTS for InstanceStorageResourceType
         /// </summary>
         public static readonly InstanceStorageResourceType REAL_TIME_CONTACT_ANALYSIS_SEGMENTS = new InstanceStorageResourceType("REAL_TIME_CONTACT_ANALYSIS_SEGMENTS");
+        /// <summary>
+        /// Constant REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS = new InstanceStorageResourceType("REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS");
         /// <summary>
         /// Constant SCHEDULED_REPORTS for InstanceStorageResourceType
         /// </summary>

@@ -36,7 +36,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string _format;
         private HlsContentProtection _hlsContentProtection;
         private string _name;
-        private List<string> _outputKeys = new List<string>();
+        private List<string> _outputKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PlayReadyDrm _playReadyDrm;
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if OutputKeys property is set
         internal bool IsSetOutputKeys()
         {
-            return this._outputKeys != null && this._outputKeys.Count > 0; 
+            return this._outputKeys != null && (this._outputKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

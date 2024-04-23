@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the EndpointAccessList
         /// </summary>
         public IPaginatedEnumerable<EndpointAccess> EndpointAccessList => 
-            new PaginatedResultKeyResponse<DescribeEndpointAccessResponse, EndpointAccess>(this, (i) => i.EndpointAccessList);
+            new PaginatedResultKeyResponse<DescribeEndpointAccessResponse, EndpointAccess>(this, (i) => i.EndpointAccessList ?? new List<EndpointAccess>());
 
         internal DescribeEndpointAccessPaginator(IAmazonRedshift client, DescribeEndpointAccessRequest request)
         {

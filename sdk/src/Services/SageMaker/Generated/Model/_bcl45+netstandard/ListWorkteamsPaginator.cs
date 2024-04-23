@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the Workteams
         /// </summary>
         public IPaginatedEnumerable<Workteam> Workteams => 
-            new PaginatedResultKeyResponse<ListWorkteamsResponse, Workteam>(this, (i) => i.Workteams);
+            new PaginatedResultKeyResponse<ListWorkteamsResponse, Workteam>(this, (i) => i.Workteams ?? new List<Workteam>());
 
         internal ListWorkteamsPaginator(IAmazonSageMaker client, ListWorkteamsRequest request)
         {

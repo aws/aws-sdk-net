@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListPipelineExecutionStepsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PipelineExecutionStep> _pipelineExecutionSteps = new List<PipelineExecutionStep>();
+        private List<PipelineExecutionStep> _pipelineExecutionSteps = AWSConfigs.InitializeCollections ? new List<PipelineExecutionStep>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if PipelineExecutionSteps property is set
         internal bool IsSetPipelineExecutionSteps()
         {
-            return this._pipelineExecutionSteps != null && this._pipelineExecutionSteps.Count > 0; 
+            return this._pipelineExecutionSteps != null && (this._pipelineExecutionSteps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

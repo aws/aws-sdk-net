@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
     public partial class ModifyInstanceCreditSpecificationRequest : AmazonEC2Request
     {
         private string _clientToken;
-        private List<InstanceCreditSpecificationRequest> _instanceCreditSpecifications = new List<InstanceCreditSpecificationRequest>();
+        private List<InstanceCreditSpecificationRequest> _instanceCreditSpecifications = AWSConfigs.InitializeCollections ? new List<InstanceCreditSpecificationRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceCreditSpecifications property is set
         internal bool IsSetInstanceCreditSpecifications()
         {
-            return this._instanceCreditSpecifications != null && this._instanceCreditSpecifications.Count > 0; 
+            return this._instanceCreditSpecifications != null && (this._instanceCreditSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -39,10 +39,10 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class TaskContainerOverrides
     {
-        private List<string> _command = new List<string>();
-        private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<KeyValuePair> _environment = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
         private string _name;
-        private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
+        private List<ResourceRequirement> _resourceRequirements = AWSConfigs.InitializeCollections ? new List<ResourceRequirement>() : null;
 
         /// <summary>
         /// Gets and sets the property Command. 
@@ -65,7 +65,7 @@ namespace Amazon.Batch.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Batch.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.Batch.Model
         // Check to see if ResourceRequirements property is set
         internal bool IsSetResourceRequirements()
         {
-            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
+            return this._resourceRequirements != null && (this._resourceRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

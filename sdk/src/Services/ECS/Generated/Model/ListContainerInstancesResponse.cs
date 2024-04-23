@@ -33,7 +33,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class ListContainerInstancesResponse : AmazonWebServiceResponse
     {
-        private List<string> _containerInstanceArns = new List<string>();
+        private List<string> _containerInstanceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ECS.Model
         // Check to see if ContainerInstanceArns property is set
         internal bool IsSetContainerInstanceArns()
         {
-            return this._containerInstanceArns != null && this._containerInstanceArns.Count > 0; 
+            return this._containerInstanceArns != null && (this._containerInstanceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

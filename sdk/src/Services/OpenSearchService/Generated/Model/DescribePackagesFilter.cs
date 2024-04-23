@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class DescribePackagesFilter
     {
         private DescribePackagesFilterName _name;
-        private List<string> _value = new List<string>();
+        private List<string> _value = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -70,7 +70,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this._value != null && this._value.Count > 0; 
+            return this._value != null && (this._value.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

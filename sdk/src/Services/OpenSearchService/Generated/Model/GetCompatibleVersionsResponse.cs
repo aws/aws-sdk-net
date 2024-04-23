@@ -33,7 +33,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class GetCompatibleVersionsResponse : AmazonWebServiceResponse
     {
-        private List<CompatibleVersionsMap> _compatibleVersions = new List<CompatibleVersionsMap>();
+        private List<CompatibleVersionsMap> _compatibleVersions = AWSConfigs.InitializeCollections ? new List<CompatibleVersionsMap>() : null;
 
         /// <summary>
         /// Gets and sets the property CompatibleVersions. 
@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if CompatibleVersions property is set
         internal bool IsSetCompatibleVersions()
         {
-            return this._compatibleVersions != null && this._compatibleVersions.Count > 0; 
+            return this._compatibleVersions != null && (this._compatibleVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

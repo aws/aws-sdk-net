@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// Contains the storage configuration of the knowledge base.
     /// </summary>
     public partial class StorageConfiguration
     {
@@ -40,7 +40,10 @@ namespace Amazon.BedrockAgent.Model
         private KnowledgeBaseStorageType _type;
 
         /// <summary>
-        /// Gets and sets the property OpensearchServerlessConfiguration.
+        /// Gets and sets the property OpensearchServerlessConfiguration. 
+        /// <para>
+        /// Contains the storage configuration of the knowledge base in Amazon OpenSearch Service.
+        /// </para>
         /// </summary>
         public OpenSearchServerlessConfiguration OpensearchServerlessConfiguration
         {
@@ -55,7 +58,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PineconeConfiguration.
+        /// Gets and sets the property PineconeConfiguration. 
+        /// <para>
+        /// Contains the storage configuration of the knowledge base in Pinecone.
+        /// </para>
         /// </summary>
         public PineconeConfiguration PineconeConfiguration
         {
@@ -70,7 +76,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RdsConfiguration.
+        /// Gets and sets the property RdsConfiguration. 
+        /// <para>
+        /// Contains details about the storage configuration of the knowledge base in Amazon RDS.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-rds.html">Create
+        /// a vector index in Amazon RDS</a>.
+        /// </para>
         /// </summary>
         public RdsConfiguration RdsConfiguration
         {
@@ -85,7 +96,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RedisEnterpriseCloudConfiguration.
+        /// Gets and sets the property RedisEnterpriseCloudConfiguration. 
+        /// <para>
+        /// Contains the storage configuration of the knowledge base in Redis Enterprise Cloud.
+        /// </para>
         /// </summary>
         public RedisEnterpriseCloudConfiguration RedisEnterpriseCloudConfiguration
         {
@@ -100,7 +114,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The vector store service in which the knowledge base is stored.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public KnowledgeBaseStorageType Type

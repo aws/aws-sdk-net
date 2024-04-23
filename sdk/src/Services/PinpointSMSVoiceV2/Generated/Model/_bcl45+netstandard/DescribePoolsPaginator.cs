@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the Pools
         /// </summary>
         public IPaginatedEnumerable<PoolInformation> Pools => 
-            new PaginatedResultKeyResponse<DescribePoolsResponse, PoolInformation>(this, (i) => i.Pools);
+            new PaginatedResultKeyResponse<DescribePoolsResponse, PoolInformation>(this, (i) => i.Pools ?? new List<PoolInformation>());
 
         internal DescribePoolsPaginator(IAmazonPinpointSMSVoiceV2 client, DescribePoolsRequest request)
         {

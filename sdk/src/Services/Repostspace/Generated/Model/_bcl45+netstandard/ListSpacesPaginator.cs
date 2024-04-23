@@ -45,7 +45,7 @@ namespace Amazon.Repostspace.Model
         /// Enumerable containing all of the Spaces
         /// </summary>
         public IPaginatedEnumerable<SpaceData> Spaces => 
-            new PaginatedResultKeyResponse<ListSpacesResponse, SpaceData>(this, (i) => i.Spaces);
+            new PaginatedResultKeyResponse<ListSpacesResponse, SpaceData>(this, (i) => i.Spaces ?? new List<SpaceData>());
 
         internal ListSpacesPaginator(IAmazonRepostspace client, ListSpacesRequest request)
         {

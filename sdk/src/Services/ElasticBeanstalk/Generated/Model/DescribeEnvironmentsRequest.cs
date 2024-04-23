@@ -35,8 +35,8 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class DescribeEnvironmentsRequest : AmazonElasticBeanstalkRequest
     {
         private string _applicationName;
-        private List<string> _environmentIds = new List<string>();
-        private List<string> _environmentNames = new List<string>();
+        private List<string> _environmentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _environmentNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _includedDeletedBackToUtc;
         private bool? _includeDeleted;
         private int? _maxRecords;
@@ -84,7 +84,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentIds property is set
         internal bool IsSetEnvironmentIds()
         {
-            return this._environmentIds != null && this._environmentIds.Count > 0; 
+            return this._environmentIds != null && (this._environmentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentNames property is set
         internal bool IsSetEnvironmentNames()
         {
-            return this._environmentNames != null && this._environmentNames.Count > 0; 
+            return this._environmentNames != null && (this._environmentNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

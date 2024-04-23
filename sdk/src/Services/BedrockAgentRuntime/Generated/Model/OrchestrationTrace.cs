@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Trace contains intermidate response during orchestration
+    /// Details about the orchestration step, in which the agent determines the order in which
+    /// actions are executed and which knowledge bases are retrieved.
     /// </summary>
     public partial class OrchestrationTrace
     {
@@ -39,7 +40,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         private Rationale _rationale;
 
         /// <summary>
-        /// Gets and sets the property InvocationInput.
+        /// Gets and sets the property InvocationInput. 
+        /// <para>
+        /// Contains information pertaining to the action group or knowledge base that is being
+        /// invoked.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public InvocationInput InvocationInput
@@ -55,7 +60,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ModelInvocationInput.
+        /// Gets and sets the property ModelInvocationInput. 
+        /// <para>
+        /// The input for the orchestration step.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>type</c> is <c>ORCHESTRATION</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>text</c> contains the prompt.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>inferenceConfiguration</c>, <c>parserMode</c>, and <c>overrideLambda</c> values
+        /// are set in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
+        /// object that was set when the agent was created or updated.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public ModelInvocationInput ModelInvocationInput
@@ -71,7 +94,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Observation.
+        /// Gets and sets the property Observation. 
+        /// <para>
+        /// Details about the observation (the output of the action group Lambda or knowledge
+        /// base) made by the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Observation Observation
@@ -87,7 +114,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Rationale.
+        /// Gets and sets the property Rationale. 
+        /// <para>
+        /// Details about the reasoning, based on the input, that the agent uses to justify carrying
+        /// out an action group or getting information from a knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Rationale Rationale

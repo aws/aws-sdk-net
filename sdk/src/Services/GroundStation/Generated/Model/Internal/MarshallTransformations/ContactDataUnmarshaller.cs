@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -141,6 +142,18 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("visibilityEndTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.VisibilityEndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("visibilityStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.VisibilityStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
@@ -160,3 +173,4 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

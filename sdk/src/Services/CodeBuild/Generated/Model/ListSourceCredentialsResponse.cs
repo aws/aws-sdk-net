@@ -33,7 +33,7 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class ListSourceCredentialsResponse : AmazonWebServiceResponse
     {
-        private List<SourceCredentialsInfo> _sourceCredentialsInfos = new List<SourceCredentialsInfo>();
+        private List<SourceCredentialsInfo> _sourceCredentialsInfos = AWSConfigs.InitializeCollections ? new List<SourceCredentialsInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property SourceCredentialsInfos. 
@@ -52,7 +52,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SourceCredentialsInfos property is set
         internal bool IsSetSourceCredentialsInfos()
         {
-            return this._sourceCredentialsInfos != null && this._sourceCredentialsInfos.Count > 0; 
+            return this._sourceCredentialsInfos != null && (this._sourceCredentialsInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

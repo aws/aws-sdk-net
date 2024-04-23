@@ -35,19 +35,19 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class EventFilter
     {
-        private List<string> _availabilityZones = new List<string>();
-        private List<DateTimeRange> _endTimes = new List<DateTimeRange>();
-        private List<string> _entityArns = new List<string>();
-        private List<string> _entityValues = new List<string>();
-        private List<string> _eventArns = new List<string>();
-        private List<string> _eventStatusCodes = new List<string>();
-        private List<string> _eventTypeCategories = new List<string>();
-        private List<string> _eventTypeCodes = new List<string>();
-        private List<DateTimeRange> _lastUpdatedTimes = new List<DateTimeRange>();
-        private List<string> _regions = new List<string>();
-        private List<string> _services = new List<string>();
-        private List<DateTimeRange> _startTimes = new List<DateTimeRange>();
-        private List<Dictionary<string, string>> _tags = new List<Dictionary<string, string>>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DateTimeRange> _endTimes = AWSConfigs.InitializeCollections ? new List<DateTimeRange>() : null;
+        private List<string> _entityArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _entityValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _eventArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _eventStatusCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _eventTypeCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _eventTypeCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DateTimeRange> _lastUpdatedTimes = AWSConfigs.InitializeCollections ? new List<DateTimeRange>() : null;
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _services = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DateTimeRange> _startTimes = AWSConfigs.InitializeCollections ? new List<DateTimeRange>() : null;
+        private List<Dictionary<string, string>> _tags = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -64,7 +64,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EndTimes property is set
         internal bool IsSetEndTimes()
         {
-            return this._endTimes != null && this._endTimes.Count > 0; 
+            return this._endTimes != null && (this._endTimes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EntityArns property is set
         internal bool IsSetEntityArns()
         {
-            return this._entityArns != null && this._entityArns.Count > 0; 
+            return this._entityArns != null && (this._entityArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EntityValues property is set
         internal bool IsSetEntityValues()
         {
-            return this._entityValues != null && this._entityValues.Count > 0; 
+            return this._entityValues != null && (this._entityValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EventArns property is set
         internal bool IsSetEventArns()
         {
-            return this._eventArns != null && this._eventArns.Count > 0; 
+            return this._eventArns != null && (this._eventArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EventStatusCodes property is set
         internal bool IsSetEventStatusCodes()
         {
-            return this._eventStatusCodes != null && this._eventStatusCodes.Count > 0; 
+            return this._eventStatusCodes != null && (this._eventStatusCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EventTypeCategories property is set
         internal bool IsSetEventTypeCategories()
         {
-            return this._eventTypeCategories != null && this._eventTypeCategories.Count > 0; 
+            return this._eventTypeCategories != null && (this._eventTypeCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EventTypeCodes property is set
         internal bool IsSetEventTypeCodes()
         {
-            return this._eventTypeCodes != null && this._eventTypeCodes.Count > 0; 
+            return this._eventTypeCodes != null && (this._eventTypeCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if LastUpdatedTimes property is set
         internal bool IsSetLastUpdatedTimes()
         {
-            return this._lastUpdatedTimes != null && this._lastUpdatedTimes.Count > 0; 
+            return this._lastUpdatedTimes != null && (this._lastUpdatedTimes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -241,7 +241,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -279,7 +279,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if StartTimes property is set
         internal bool IsSetStartTimes()
         {
-            return this._startTimes != null && this._startTimes.Count > 0; 
+            return this._startTimes != null && (this._startTimes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -303,7 +303,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

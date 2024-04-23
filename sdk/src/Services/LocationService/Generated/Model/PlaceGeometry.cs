@@ -33,7 +33,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class PlaceGeometry
     {
-        private List<double> _point = new List<double>();
+        private List<double> _point = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property Point. 
@@ -61,7 +61,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Point property is set
         internal bool IsSetPoint()
         {
-            return this._point != null && this._point.Count > 0; 
+            return this._point != null && (this._point.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

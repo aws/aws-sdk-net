@@ -50,7 +50,7 @@ namespace Amazon.Proton.Model
         private string _environmentName;
         private string _managementAccountId;
         private string _roleArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -208,7 +208,7 @@ namespace Amazon.Proton.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

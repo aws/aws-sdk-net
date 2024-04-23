@@ -196,6 +196,7 @@ namespace Amazon.DynamoDBv2.Model
         /// ARN associated with the table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TableArn
         {
             get { return this._tableArn; }

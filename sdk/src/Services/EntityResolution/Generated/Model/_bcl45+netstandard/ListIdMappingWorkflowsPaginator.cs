@@ -45,7 +45,7 @@ namespace Amazon.EntityResolution.Model
         /// Enumerable containing all of the WorkflowSummaries
         /// </summary>
         public IPaginatedEnumerable<IdMappingWorkflowSummary> WorkflowSummaries => 
-            new PaginatedResultKeyResponse<ListIdMappingWorkflowsResponse, IdMappingWorkflowSummary>(this, (i) => i.WorkflowSummaries);
+            new PaginatedResultKeyResponse<ListIdMappingWorkflowsResponse, IdMappingWorkflowSummary>(this, (i) => i.WorkflowSummaries ?? new List<IdMappingWorkflowSummary>());
 
         internal ListIdMappingWorkflowsPaginator(IAmazonEntityResolution client, ListIdMappingWorkflowsRequest request)
         {

@@ -35,7 +35,7 @@ namespace Amazon.Comprehend.Model
     public partial class AugmentedManifestsListItem
     {
         private string _annotationDataS3Uri;
-        private List<string> _attributeNames = new List<string>();
+        private List<string> _attributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AugmentedManifestsDocumentTypeFormat _documentType;
         private string _s3Uri;
         private string _sourceDocumentsS3Uri;
@@ -90,7 +90,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if AttributeNames property is set
         internal bool IsSetAttributeNames()
         {
-            return this._attributeNames != null && this._attributeNames.Count > 0; 
+            return this._attributeNames != null && (this._attributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

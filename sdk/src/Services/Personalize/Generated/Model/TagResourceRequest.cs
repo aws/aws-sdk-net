@@ -35,7 +35,7 @@ namespace Amazon.Personalize.Model
     public partial class TagResourceRequest : AmazonPersonalizeRequest
     {
         private string _resourceArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -60,7 +60,7 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags to apply to the resource. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging
-        /// Amazon Personalize recources</a>.
+        /// Amazon Personalize resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]
@@ -73,7 +73,7 @@ namespace Amazon.Personalize.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

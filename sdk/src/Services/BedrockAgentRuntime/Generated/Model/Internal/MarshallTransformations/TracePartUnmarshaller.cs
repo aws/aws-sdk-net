@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,6 +76,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("agentVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sessionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -106,3 +113,4 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

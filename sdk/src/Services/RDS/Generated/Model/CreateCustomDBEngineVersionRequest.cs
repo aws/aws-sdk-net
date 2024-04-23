@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         private string _kmsKeyId;
         private string _manifest;
         private string _sourceCustomDbEngineVersionIdentifier;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _useAwsProvidedLatestImage;
 
         /// <summary>
@@ -109,9 +109,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The database engine to use for your custom engine version (CEV). The only supported
-        /// value is <c>custom-oracle-ee</c>.
+        /// The database engine. RDS Custom for Oracle supports the following values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>custom-oracle-ee</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-ee-cdb</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-se2</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-se2-cdb</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]
         public string Engine
@@ -288,7 +304,7 @@ namespace Amazon.RDS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

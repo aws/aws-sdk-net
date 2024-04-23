@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
     public partial class DescribeEngineDefaultParametersRequest : AmazonRDSRequest
     {
         private string _dbParameterGroupFamily;
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private string _marker;
         private int? _maxRecords;
 
@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates DescribeEngineDefaultParametersRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbParameterGroupFamily">The name of the DB parameter group family. Valid Values: <ul> <li>  <c>aurora-mysql5.7</c>  </li> <li>  <c>aurora-mysql8.0</c>  </li> <li>  <c>aurora-postgresql10</c>  </li> <li>  <c>aurora-postgresql11</c>  </li> <li>  <c>aurora-postgresql12</c>  </li> <li>  <c>aurora-postgresql13</c>  </li> <li>  <c>aurora-postgresql14</c>  </li> <li>  <c>custom-oracle-ee-19</c>  </li> <li>  <c>db2-ae</c>  </li> <li>  <c>db2-se</c>  </li> <li>  <c>mariadb10.2</c>  </li> <li>  <c>mariadb10.3</c>  </li> <li>  <c>mariadb10.4</c>  </li> <li>  <c>mariadb10.5</c>  </li> <li>  <c>mariadb10.6</c>  </li> <li>  <c>mysql5.7</c>  </li> <li>  <c>mysql8.0</c>  </li> <li>  <c>oracle-ee-19</c>  </li> <li>  <c>oracle-ee-cdb-19</c>  </li> <li>  <c>oracle-ee-cdb-21</c>  </li> <li>  <c>oracle-se2-19</c>  </li> <li>  <c>oracle-se2-cdb-19</c>  </li> <li>  <c>oracle-se2-cdb-21</c>  </li> <li>  <c>postgres10</c>  </li> <li>  <c>postgres11</c>  </li> <li>  <c>postgres12</c>  </li> <li>  <c>postgres13</c>  </li> <li>  <c>postgres14</c>  </li> <li>  <c>sqlserver-ee-11.0</c>  </li> <li>  <c>sqlserver-ee-12.0</c>  </li> <li>  <c>sqlserver-ee-13.0</c>  </li> <li>  <c>sqlserver-ee-14.0</c>  </li> <li>  <c>sqlserver-ee-15.0</c>  </li> <li>  <c>sqlserver-ex-11.0</c>  </li> <li>  <c>sqlserver-ex-12.0</c>  </li> <li>  <c>sqlserver-ex-13.0</c>  </li> <li>  <c>sqlserver-ex-14.0</c>  </li> <li>  <c>sqlserver-ex-15.0</c>  </li> <li>  <c>sqlserver-se-11.0</c>  </li> <li>  <c>sqlserver-se-12.0</c>  </li> <li>  <c>sqlserver-se-13.0</c>  </li> <li>  <c>sqlserver-se-14.0</c>  </li> <li>  <c>sqlserver-se-15.0</c>  </li> <li>  <c>sqlserver-web-11.0</c>  </li> <li>  <c>sqlserver-web-12.0</c>  </li> <li>  <c>sqlserver-web-13.0</c>  </li> <li>  <c>sqlserver-web-14.0</c>  </li> <li>  <c>sqlserver-web-15.0</c>  </li> </ul></param>
+        /// <param name="dbParameterGroupFamily">The name of the DB parameter group family. Valid Values: <ul> <li>  <c>aurora-mysql5.7</c>  </li> <li>  <c>aurora-mysql8.0</c>  </li> <li>  <c>aurora-postgresql10</c>  </li> <li>  <c>aurora-postgresql11</c>  </li> <li>  <c>aurora-postgresql12</c>  </li> <li>  <c>aurora-postgresql13</c>  </li> <li>  <c>aurora-postgresql14</c>  </li> <li>  <c>custom-oracle-ee-19</c>  </li> <li>  <c>custom-oracle-ee-cdb-19</c>  </li> <li>  <c>db2-ae</c>  </li> <li>  <c>db2-se</c>  </li> <li>  <c>mariadb10.2</c>  </li> <li>  <c>mariadb10.3</c>  </li> <li>  <c>mariadb10.4</c>  </li> <li>  <c>mariadb10.5</c>  </li> <li>  <c>mariadb10.6</c>  </li> <li>  <c>mysql5.7</c>  </li> <li>  <c>mysql8.0</c>  </li> <li>  <c>oracle-ee-19</c>  </li> <li>  <c>oracle-ee-cdb-19</c>  </li> <li>  <c>oracle-ee-cdb-21</c>  </li> <li>  <c>oracle-se2-19</c>  </li> <li>  <c>oracle-se2-cdb-19</c>  </li> <li>  <c>oracle-se2-cdb-21</c>  </li> <li>  <c>postgres10</c>  </li> <li>  <c>postgres11</c>  </li> <li>  <c>postgres12</c>  </li> <li>  <c>postgres13</c>  </li> <li>  <c>postgres14</c>  </li> <li>  <c>sqlserver-ee-11.0</c>  </li> <li>  <c>sqlserver-ee-12.0</c>  </li> <li>  <c>sqlserver-ee-13.0</c>  </li> <li>  <c>sqlserver-ee-14.0</c>  </li> <li>  <c>sqlserver-ee-15.0</c>  </li> <li>  <c>sqlserver-ex-11.0</c>  </li> <li>  <c>sqlserver-ex-12.0</c>  </li> <li>  <c>sqlserver-ex-13.0</c>  </li> <li>  <c>sqlserver-ex-14.0</c>  </li> <li>  <c>sqlserver-ex-15.0</c>  </li> <li>  <c>sqlserver-se-11.0</c>  </li> <li>  <c>sqlserver-se-12.0</c>  </li> <li>  <c>sqlserver-se-13.0</c>  </li> <li>  <c>sqlserver-se-14.0</c>  </li> <li>  <c>sqlserver-se-15.0</c>  </li> <li>  <c>sqlserver-web-11.0</c>  </li> <li>  <c>sqlserver-web-12.0</c>  </li> <li>  <c>sqlserver-web-13.0</c>  </li> <li>  <c>sqlserver-web-14.0</c>  </li> <li>  <c>sqlserver-web-15.0</c>  </li> </ul></param>
         public DescribeEngineDefaultParametersRequest(string dbParameterGroupFamily)
         {
             _dbParameterGroupFamily = dbParameterGroupFamily;
@@ -94,6 +94,10 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>custom-oracle-ee-19</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>custom-oracle-ee-cdb-19</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -285,7 +289,7 @@ namespace Amazon.RDS.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

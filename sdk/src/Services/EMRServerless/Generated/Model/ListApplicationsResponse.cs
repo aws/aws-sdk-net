@@ -33,7 +33,7 @@ namespace Amazon.EMRServerless.Model
     /// </summary>
     public partial class ListApplicationsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationSummary> _applications = new List<ApplicationSummary>();
+        private List<ApplicationSummary> _applications = AWSConfigs.InitializeCollections ? new List<ApplicationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.EMRServerless.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

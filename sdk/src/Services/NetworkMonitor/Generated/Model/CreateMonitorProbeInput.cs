@@ -36,14 +36,14 @@ namespace Amazon.NetworkMonitor.Model
         private string _destination;
         private int? _destinationPort;
         private int? _packetSize;
-        private Dictionary<string, string> _probeTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _probeTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Protocol _protocol;
         private string _sourceArn;
 
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The destination IP address. This will be either <c>IPV4</c> or <c>IPV6</c>.
+        /// The destination IP address. This must be either <c>IPV4</c> or <c>IPV6</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -82,7 +82,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property PacketSize. 
         /// <para>
-        /// The size of the packets sent between the source and destination. This will be a number
+        /// The size of the packets sent between the source and destination. This must be a number
         /// between <c>56</c> and <c>8500</c>.
         /// </para>
         /// </summary>
@@ -115,14 +115,14 @@ namespace Amazon.NetworkMonitor.Model
         // Check to see if ProbeTags property is set
         internal bool IsSetProbeTags()
         {
-            return this._probeTags != null && this._probeTags.Count > 0; 
+            return this._probeTags != null && (this._probeTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol used for the network traffic between the <c>source</c> and <c>destination</c>.
-        /// This will be either <c>TCP</c> or <c>ICMP</c>.
+        /// This must be either <c>TCP</c> or <c>ICMP</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

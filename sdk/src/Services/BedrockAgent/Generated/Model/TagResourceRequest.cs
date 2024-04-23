@@ -30,15 +30,19 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Tag a resource
+    /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
+    /// resources</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class TagResourceRequest : AmazonBedrockAgentRequest
     {
         private string _resourceArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource to tag.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]
         public string ResourceArn
@@ -54,7 +58,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An object containing key-value pairs that define the tags to attach to the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags
@@ -66,7 +73,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

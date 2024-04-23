@@ -34,7 +34,7 @@ namespace Amazon.Chatbot.Model
     public partial class ListMicrosoftTeamsChannelConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TeamsChannelConfiguration> _teamChannelConfigurations = new List<TeamsChannelConfiguration>();
+        private List<TeamsChannelConfiguration> _teamChannelConfigurations = AWSConfigs.InitializeCollections ? new List<TeamsChannelConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. An optional token returned from a prior request.
@@ -68,7 +68,7 @@ namespace Amazon.Chatbot.Model
         // Check to see if TeamChannelConfigurations property is set
         internal bool IsSetTeamChannelConfigurations()
         {
-            return this._teamChannelConfigurations != null && this._teamChannelConfigurations.Count > 0; 
+            return this._teamChannelConfigurations != null && (this._teamChannelConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

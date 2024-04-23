@@ -35,7 +35,7 @@ namespace Amazon.IoTWireless.Model
     {
         private int? _eutranCid;
         private LteLocalId _lteLocalId;
-        private List<LteNmrObj> _lteNmr = new List<LteNmrObj>();
+        private List<LteNmrObj> _lteNmr = AWSConfigs.InitializeCollections ? new List<LteNmrObj>() : null;
         private int? _lteTimingAdvance;
         private int? _mcc;
         private int? _mnc;
@@ -97,7 +97,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if LteNmr property is set
         internal bool IsSetLteNmr()
         {
-            return this._lteNmr != null && this._lteNmr.Count > 0; 
+            return this._lteNmr != null && (this._lteNmr.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

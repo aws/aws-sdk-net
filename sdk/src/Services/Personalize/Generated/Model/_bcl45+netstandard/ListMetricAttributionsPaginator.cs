@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the MetricAttributions
         /// </summary>
         public IPaginatedEnumerable<MetricAttributionSummary> MetricAttributions => 
-            new PaginatedResultKeyResponse<ListMetricAttributionsResponse, MetricAttributionSummary>(this, (i) => i.MetricAttributions);
+            new PaginatedResultKeyResponse<ListMetricAttributionsResponse, MetricAttributionSummary>(this, (i) => i.MetricAttributions ?? new List<MetricAttributionSummary>());
 
         internal ListMetricAttributionsPaginator(IAmazonPersonalize client, ListMetricAttributionsRequest request)
         {

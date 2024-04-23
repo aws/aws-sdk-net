@@ -45,7 +45,7 @@ namespace Amazon.XRay.Model
         /// Enumerable containing all of the SamplingRuleRecords
         /// </summary>
         public IPaginatedEnumerable<SamplingRuleRecord> SamplingRuleRecords => 
-            new PaginatedResultKeyResponse<GetSamplingRulesResponse, SamplingRuleRecord>(this, (i) => i.SamplingRuleRecords);
+            new PaginatedResultKeyResponse<GetSamplingRulesResponse, SamplingRuleRecord>(this, (i) => i.SamplingRuleRecords ?? new List<SamplingRuleRecord>());
 
         internal GetSamplingRulesPaginator(IAmazonXRay client, GetSamplingRulesRequest request)
         {

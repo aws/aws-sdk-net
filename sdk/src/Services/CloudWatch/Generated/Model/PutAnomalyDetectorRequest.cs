@@ -35,6 +35,13 @@ namespace Amazon.CloudWatch.Model
     /// 
     ///  
     /// <para>
+    /// If you have enabled unified cross-account observability, and this account is a monitoring
+    /// account, the metric can be in the same account or a source account. You can specify
+    /// the account ID in the object you specify in the <c>SingleMetricAnomalyDetector</c>
+    /// parameter.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch
     /// Anomaly Detection</a>.
     /// </para>
@@ -42,7 +49,8 @@ namespace Amazon.CloudWatch.Model
     public partial class PutAnomalyDetectorRequest : AmazonCloudWatchRequest
     {
         private AnomalyDetectorConfiguration _configuration;
-        private List<Dimension> _dimensions = new List<Dimension>();
+        private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
+        private MetricCharacteristics _metricCharacteristics;
         private MetricMathAnomalyDetector _metricMathAnomalyDetector;
         private string _metricName;
         private string _awsNamespace;
@@ -90,7 +98,27 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricCharacteristics. 
+        /// <para>
+        /// Use this object to include parameters to provide information about your metric to
+        /// CloudWatch to help it build more accurate anomaly detection models. Currently, it
+        /// includes the <c>PeriodicSpikes</c> parameter.
+        /// </para>
+        /// </summary>
+        public MetricCharacteristics MetricCharacteristics
+        {
+            get { return this._metricCharacteristics; }
+            set { this._metricCharacteristics = value; }
+        }
+
+        // Check to see if MetricCharacteristics property is set
+        internal bool IsSetMetricCharacteristics()
+        {
+            return this._metricCharacteristics != null;
         }
 
         /// <summary>
@@ -210,7 +238,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// the <c>MetricMatchAnomalyDetector</c> parameters of <c>PutAnomalyDetectorInput</c>
+        /// the <c>MetricMathAnomalyDetector</c> parameters of <c>PutAnomalyDetectorInput</c>
         /// 
         /// </para>
         ///  </li> </ul> 

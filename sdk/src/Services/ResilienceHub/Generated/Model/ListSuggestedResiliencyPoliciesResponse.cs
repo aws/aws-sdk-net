@@ -34,7 +34,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class ListSuggestedResiliencyPoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResiliencyPolicy> _resiliencyPolicies = new List<ResiliencyPolicy>();
+        private List<ResiliencyPolicy> _resiliencyPolicies = AWSConfigs.InitializeCollections ? new List<ResiliencyPolicy>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if ResiliencyPolicies property is set
         internal bool IsSetResiliencyPolicies()
         {
-            return this._resiliencyPolicies != null && this._resiliencyPolicies.Count > 0; 
+            return this._resiliencyPolicies != null && (this._resiliencyPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

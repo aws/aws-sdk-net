@@ -39,7 +39,7 @@ namespace Amazon.CloudWatchLogs.Model
         : IEventStreamEvent
     {
         private LiveTailSessionMetadata _sessionMetadata;
-        private List<LiveTailSessionLogEvent> _sessionResults = new List<LiveTailSessionLogEvent>();
+        private List<LiveTailSessionLogEvent> _sessionResults = AWSConfigs.InitializeCollections ? new List<LiveTailSessionLogEvent>() : null;
 
         /// <summary>
         /// Gets and sets the property SessionMetadata. 
@@ -81,7 +81,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if SessionResults property is set
         internal bool IsSetSessionResults()
         {
-            return this._sessionResults != null && this._sessionResults.Count > 0; 
+            return this._sessionResults != null && (this._sessionResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

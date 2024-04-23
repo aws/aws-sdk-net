@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model
     public partial class PolicyInformation
     {
         private string _certPolicyId;
-        private List<PolicyQualifierInfo> _policyQualifiers = new List<PolicyQualifierInfo>();
+        private List<PolicyQualifierInfo> _policyQualifiers = AWSConfigs.InitializeCollections ? new List<PolicyQualifierInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property CertPolicyId. 
@@ -74,7 +74,7 @@ namespace Amazon.ACMPCA.Model
         // Check to see if PolicyQualifiers property is set
         internal bool IsSetPolicyQualifiers()
         {
-            return this._policyQualifiers != null && this._policyQualifiers.Count > 0; 
+            return this._policyQualifiers != null && (this._policyQualifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndTime())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTime));
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyName())
                 {
                     request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartTime())
                 {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

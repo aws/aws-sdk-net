@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -97,6 +98,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.IsApplicable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JiraConfiguration", targetDepth))
+                {
+                    var unmarshaller = JiraConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.JiraConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Notes", targetDepth))
@@ -166,3 +173,4 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

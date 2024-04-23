@@ -34,15 +34,15 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class MetricDatum
     {
-        private List<double> _counts = new List<double>();
-        private List<Dimension> _dimensions = new List<Dimension>();
+        private List<double> _counts = AWSConfigs.InitializeCollections ? new List<double>() : null;
+        private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private string _metricName;
         private StatisticSet _statisticValues;
         private int? _storageResolution;
         private DateTime? _timestampUtc;
         private StandardUnit _unit;
         private double? _value;
-        private List<double> _values = new List<double>();
+        private List<double> _values = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property Counts. 
@@ -67,7 +67,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Counts property is set
         internal bool IsSetCounts()
         {
-            return this._counts != null && this._counts.Count > 0; 
+            return this._counts != null && (this._counts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
 #region Backwards compatible properties

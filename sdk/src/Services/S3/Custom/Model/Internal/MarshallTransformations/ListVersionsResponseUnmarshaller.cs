@@ -99,19 +99,27 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Version", targetDepth))
                     {
+                        if (response.Versions == null)
+                        {
+                            response.Versions = new List<S3ObjectVersion>();
+                        }
+
                         var version = VersionsItemUnmarshaller.Instance.Unmarshall(context);
                         version.BucketName = response.Name;
                         response.Versions.Add(version);
-                            
                         continue;
                     }
                     if (context.TestExpression("DeleteMarker", targetDepth))
                     {
+                        if (response.Versions == null)
+                        {
+                            response.Versions = new List<S3ObjectVersion>();
+                        }
+
                         var version = VersionsItemUnmarshaller.Instance.Unmarshall(context);
                         version.BucketName = response.Name;
                         version.IsDeleteMarker = true;
                         response.Versions.Add(version);
-                            
                         continue;
                     }
                     if (context.TestExpression("Name", targetDepth))

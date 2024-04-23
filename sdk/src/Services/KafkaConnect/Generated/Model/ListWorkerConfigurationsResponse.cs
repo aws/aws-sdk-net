@@ -34,7 +34,7 @@ namespace Amazon.KafkaConnect.Model
     public partial class ListWorkerConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkerConfigurationSummary> _workerConfigurations = new List<WorkerConfigurationSummary>();
+        private List<WorkerConfigurationSummary> _workerConfigurations = AWSConfigs.InitializeCollections ? new List<WorkerConfigurationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.KafkaConnect.Model
         // Check to see if WorkerConfigurations property is set
         internal bool IsSetWorkerConfigurations()
         {
-            return this._workerConfigurations != null && this._workerConfigurations.Count > 0; 
+            return this._workerConfigurations != null && (this._workerConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

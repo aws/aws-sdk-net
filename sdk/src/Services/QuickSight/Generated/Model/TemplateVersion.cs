@@ -34,10 +34,10 @@ namespace Amazon.QuickSight.Model
     public partial class TemplateVersion
     {
         private DateTime? _createdTime;
-        private List<DataSetConfiguration> _dataSetConfigurations = new List<DataSetConfiguration>();
+        private List<DataSetConfiguration> _dataSetConfigurations = AWSConfigs.InitializeCollections ? new List<DataSetConfiguration>() : null;
         private string _description;
-        private List<TemplateError> _errors = new List<TemplateError>();
-        private List<Sheet> _sheets = new List<Sheet>();
+        private List<TemplateError> _errors = AWSConfigs.InitializeCollections ? new List<TemplateError>() : null;
+        private List<Sheet> _sheets = AWSConfigs.InitializeCollections ? new List<Sheet>() : null;
         private string _sourceEntityArn;
         private ResourceStatus _status;
         private string _themeArn;
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataSetConfigurations property is set
         internal bool IsSetDataSetConfigurations()
         {
-            return this._dataSetConfigurations != null && this._dataSetConfigurations.Count > 0; 
+            return this._dataSetConfigurations != null && (this._dataSetConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Sheets property is set
         internal bool IsSetSheets()
         {
-            return this._sheets != null && this._sheets.Count > 0; 
+            return this._sheets != null && (this._sheets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

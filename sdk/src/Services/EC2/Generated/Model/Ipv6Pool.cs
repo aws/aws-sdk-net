@@ -34,9 +34,9 @@ namespace Amazon.EC2.Model
     public partial class Ipv6Pool
     {
         private string _description;
-        private List<PoolCidrBlock> _poolCidrBlocks = new List<PoolCidrBlock>();
+        private List<PoolCidrBlock> _poolCidrBlocks = AWSConfigs.InitializeCollections ? new List<PoolCidrBlock>() : null;
         private string _poolId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if PoolCidrBlocks property is set
         internal bool IsSetPoolCidrBlocks()
         {
-            return this._poolCidrBlocks != null && this._poolCidrBlocks.Count > 0; 
+            return this._poolCidrBlocks != null && (this._poolCidrBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

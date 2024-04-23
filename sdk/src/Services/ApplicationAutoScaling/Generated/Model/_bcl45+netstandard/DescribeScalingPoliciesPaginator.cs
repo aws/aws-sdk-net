@@ -45,7 +45,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Enumerable containing all of the ScalingPolicies
         /// </summary>
         public IPaginatedEnumerable<ScalingPolicy> ScalingPolicies => 
-            new PaginatedResultKeyResponse<DescribeScalingPoliciesResponse, ScalingPolicy>(this, (i) => i.ScalingPolicies);
+            new PaginatedResultKeyResponse<DescribeScalingPoliciesResponse, ScalingPolicy>(this, (i) => i.ScalingPolicies ?? new List<ScalingPolicy>());
 
         internal DescribeScalingPoliciesPaginator(IAmazonApplicationAutoScaling client, DescribeScalingPoliciesRequest request)
         {

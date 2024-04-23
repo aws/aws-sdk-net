@@ -33,7 +33,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class ListCustomRoutingEndpointGroupsResponse : AmazonWebServiceResponse
     {
-        private List<CustomRoutingEndpointGroup> _endpointGroups = new List<CustomRoutingEndpointGroup>();
+        private List<CustomRoutingEndpointGroup> _endpointGroups = AWSConfigs.InitializeCollections ? new List<CustomRoutingEndpointGroup>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if EndpointGroups property is set
         internal bool IsSetEndpointGroups()
         {
-            return this._endpointGroups != null && this._endpointGroups.Count > 0; 
+            return this._endpointGroups != null && (this._endpointGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

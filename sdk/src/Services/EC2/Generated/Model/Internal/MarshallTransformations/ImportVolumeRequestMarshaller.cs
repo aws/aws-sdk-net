@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,32 +63,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetImage())
                 {
                     if(publicRequest.Image.IsSetBytes())
                     {
                         request.Parameters.Add("Image" + "." + "Bytes", StringUtils.FromLong(publicRequest.Image.Bytes));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Image.IsSetFormat())
                     {
                         request.Parameters.Add("Image" + "." + "Format", StringUtils.FromString(publicRequest.Image.Format));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Image.IsSetImportManifestUrl())
                     {
                         request.Parameters.Add("Image" + "." + "ImportManifestUrl", StringUtils.FromString(publicRequest.Image.ImportManifestUrl));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVolume())
                 {
                     if(publicRequest.Volume.IsSetSize())
                     {
                         request.Parameters.Add("Volume" + "." + "Size", StringUtils.FromLong(publicRequest.Volume.Size));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -78,7 +78,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
     public partial class BatchMeterUsageRequest : AmazonAWSMarketplaceMeteringRequest
     {
         private string _productCode;
-        private List<UsageRecord> _usageRecords = new List<UsageRecord>();
+        private List<UsageRecord> _usageRecords = AWSConfigs.InitializeCollections ? new List<UsageRecord>() : null;
 
         /// <summary>
         /// Gets and sets the property ProductCode. 
@@ -117,7 +117,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         // Check to see if UsageRecords property is set
         internal bool IsSetUsageRecords()
         {
-            return this._usageRecords != null && this._usageRecords.Count > 0; 
+            return this._usageRecords != null && (this._usageRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

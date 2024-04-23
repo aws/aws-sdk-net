@@ -33,14 +33,15 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EksPodProperties
     {
-        private List<EksContainer> _containers = new List<EksContainer>();
+        private List<EksContainer> _containers = AWSConfigs.InitializeCollections ? new List<EksContainer>() : null;
         private string _dnsPolicy;
         private bool? _hostNetwork;
-        private List<EksContainer> _initContainers = new List<EksContainer>();
+        private List<ImagePullSecret> _imagePullSecrets = AWSConfigs.InitializeCollections ? new List<ImagePullSecret>() : null;
+        private List<EksContainer> _initContainers = AWSConfigs.InitializeCollections ? new List<EksContainer>() : null;
         private EksMetadata _metadata;
         private string _serviceAccountName;
         private bool? _shareProcessNamespace;
-        private List<EksVolume> _volumes = new List<EksVolume>();
+        private List<EksVolume> _volumes = AWSConfigs.InitializeCollections ? new List<EksVolume>() : null;
 
         /// <summary>
         /// Gets and sets the property Containers. 
@@ -57,7 +58,7 @@ namespace Amazon.Batch.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,6 +113,29 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImagePullSecrets. 
+        /// <para>
+        /// References a Kubernetes secret resource. It holds a list of secrets. These secrets
+        /// help to gain access to pull an images from a private registry.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>ImagePullSecret$name</c> is required when this object is used.
+        /// </para>
+        /// </summary>
+        public List<ImagePullSecret> ImagePullSecrets
+        {
+            get { return this._imagePullSecrets; }
+            set { this._imagePullSecrets = value; }
+        }
+
+        // Check to see if ImagePullSecrets property is set
+        internal bool IsSetImagePullSecrets()
+        {
+            return this._imagePullSecrets != null && (this._imagePullSecrets.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property InitContainers. 
         /// <para>
         /// These containers run before application containers, always runs to completion, and
@@ -135,7 +159,7 @@ namespace Amazon.Batch.Model
         // Check to see if InitContainers property is set
         internal bool IsSetInitContainers()
         {
-            return this._initContainers != null && this._initContainers.Count > 0; 
+            return this._initContainers != null && (this._initContainers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +239,7 @@ namespace Amazon.Batch.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

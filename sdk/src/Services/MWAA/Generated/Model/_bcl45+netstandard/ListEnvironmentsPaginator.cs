@@ -45,7 +45,7 @@ namespace Amazon.MWAA.Model
         /// Enumerable containing all of the Environments
         /// </summary>
         public IPaginatedEnumerable<string> Environments => 
-            new PaginatedResultKeyResponse<ListEnvironmentsResponse, string>(this, (i) => i.Environments);
+            new PaginatedResultKeyResponse<ListEnvironmentsResponse, string>(this, (i) => i.Environments ?? new List<string>());
 
         internal ListEnvironmentsPaginator(IAmazonMWAA client, ListEnvironmentsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the SageMakerImageVersionAliases
         /// </summary>
         public IPaginatedEnumerable<string> SageMakerImageVersionAliases => 
-            new PaginatedResultKeyResponse<ListAliasesResponse, string>(this, (i) => i.SageMakerImageVersionAliases);
+            new PaginatedResultKeyResponse<ListAliasesResponse, string>(this, (i) => i.SageMakerImageVersionAliases ?? new List<string>());
 
         internal ListAliasesPaginator(IAmazonSageMaker client, ListAliasesRequest request)
         {

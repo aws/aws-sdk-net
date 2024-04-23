@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model
     public partial class QueryExecution
     {
         private EngineVersion _engineVersion;
-        private List<string> _executionParameters = new List<string>();
+        private List<string> _executionParameters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _query;
         private QueryExecutionContext _queryExecutionContext;
         private string _queryExecutionId;
@@ -83,7 +83,7 @@ namespace Amazon.Athena.Model
         // Check to see if ExecutionParameters property is set
         internal bool IsSetExecutionParameters()
         {
-            return this._executionParameters != null && this._executionParameters.Count > 0; 
+            return this._executionParameters != null && (this._executionParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -42,7 +42,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class Processor
     {
-        private List<ProcessorParameter> _parameters = new List<ProcessorParameter>();
+        private List<ProcessorParameter> _parameters = AWSConfigs.InitializeCollections ? new List<ProcessorParameter>() : null;
         private ProcessorType _type;
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.KinesisFirehose.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

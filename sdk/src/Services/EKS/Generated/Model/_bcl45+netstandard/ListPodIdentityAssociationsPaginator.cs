@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the Associations
         /// </summary>
         public IPaginatedEnumerable<PodIdentityAssociationSummary> Associations => 
-            new PaginatedResultKeyResponse<ListPodIdentityAssociationsResponse, PodIdentityAssociationSummary>(this, (i) => i.Associations);
+            new PaginatedResultKeyResponse<ListPodIdentityAssociationsResponse, PodIdentityAssociationSummary>(this, (i) => i.Associations ?? new List<PodIdentityAssociationSummary>());
 
         internal ListPodIdentityAssociationsPaginator(IAmazonEKS client, ListPodIdentityAssociationsRequest request)
         {

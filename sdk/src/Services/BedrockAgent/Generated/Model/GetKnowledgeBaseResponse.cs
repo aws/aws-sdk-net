@@ -36,7 +36,10 @@ namespace Amazon.BedrockAgent.Model
         private KnowledgeBase _knowledgeBase;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBase.
+        /// Gets and sets the property KnowledgeBase. 
+        /// <para>
+        /// Contains details about the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public KnowledgeBase KnowledgeBase

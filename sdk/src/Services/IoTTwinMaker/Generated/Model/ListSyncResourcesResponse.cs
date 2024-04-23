@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class ListSyncResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SyncResourceSummary> _syncResources = new List<SyncResourceSummary>();
+        private List<SyncResourceSummary> _syncResources = AWSConfigs.InitializeCollections ? new List<SyncResourceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if SyncResources property is set
         internal bool IsSetSyncResources()
         {
-            return this._syncResources != null && this._syncResources.Count > 0; 
+            return this._syncResources != null && (this._syncResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

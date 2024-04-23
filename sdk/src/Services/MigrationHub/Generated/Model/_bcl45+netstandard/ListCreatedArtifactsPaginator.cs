@@ -45,7 +45,7 @@ namespace Amazon.MigrationHub.Model
         /// Enumerable containing all of the CreatedArtifactList
         /// </summary>
         public IPaginatedEnumerable<CreatedArtifact> CreatedArtifactList => 
-            new PaginatedResultKeyResponse<ListCreatedArtifactsResponse, CreatedArtifact>(this, (i) => i.CreatedArtifactList);
+            new PaginatedResultKeyResponse<ListCreatedArtifactsResponse, CreatedArtifact>(this, (i) => i.CreatedArtifactList ?? new List<CreatedArtifact>());
 
         internal ListCreatedArtifactsPaginator(IAmazonMigrationHub client, ListCreatedArtifactsRequest request)
         {

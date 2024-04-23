@@ -40,13 +40,19 @@ namespace Amazon.EC2.Model
     /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
     /// and zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The order of the elements in the response, including those within nested structures,
+    /// might vary. Applications should not assume the elements appear in a particular order.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeAvailabilityZonesRequest : AmazonEC2Request
     {
         private bool? _allAvailabilityZones;
-        private List<Filter> _filters = new List<Filter>();
-        private List<string> _zoneIds = new List<string>();
-        private List<string> _zoneNames = new List<string>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _zoneIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _zoneNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllAvailabilityZones. 
@@ -82,7 +88,7 @@ namespace Amazon.EC2.Model
         ///  <c>group-name</c> - For Availability Zones, use the Region name. For Local Zones,
         /// use the name of the group associated with the Local Zone (for example, <c>us-west-2-lax-1</c>)
         /// For Wavelength Zones, use the name of the group associated with the Wavelength Zone
-        /// (for example, <c>us-east-1-wl1-bos-wlz-1</c>).
+        /// (for example, <c>us-east-1-wl1</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -140,7 +146,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +164,7 @@ namespace Amazon.EC2.Model
         // Check to see if ZoneIds property is set
         internal bool IsSetZoneIds()
         {
-            return this._zoneIds != null && this._zoneIds.Count > 0; 
+            return this._zoneIds != null && (this._zoneIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -176,7 +182,7 @@ namespace Amazon.EC2.Model
         // Check to see if ZoneNames property is set
         internal bool IsSetZoneNames()
         {
-            return this._zoneNames != null && this._zoneNames.Count > 0; 
+            return this._zoneNames != null && (this._zoneNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

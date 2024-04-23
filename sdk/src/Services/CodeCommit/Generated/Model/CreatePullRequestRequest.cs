@@ -36,7 +36,7 @@ namespace Amazon.CodeCommit.Model
     {
         private string _clientRequestToken;
         private string _description;
-        private List<Target> _targets = new List<Target>();
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
         private string _title;
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,8 +37,8 @@ namespace Amazon.DataZone.Model
         private string _createdBy;
         private string _description;
         private string _domainId;
-        private List<ProjectDeletionError> _failureReasons = new List<ProjectDeletionError>();
-        private List<string> _glossaryTerms = new List<string>();
+        private List<ProjectDeletionError> _failureReasons = AWSConfigs.InitializeCollections ? new List<ProjectDeletionError>() : null;
+        private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private DateTime? _lastUpdatedAt;
         private string _name;
@@ -122,7 +122,8 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property FailureReasons. 
         /// <para>
-        /// Reasons for failed project deletion
+        /// Specifies the error message that is returned if the operation cannot be successfully
+        /// completed.
         /// </para>
         /// </summary>
         public List<ProjectDeletionError> FailureReasons
@@ -134,7 +135,7 @@ namespace Amazon.DataZone.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.DataZone.Model
         // Check to see if GlossaryTerms property is set
         internal bool IsSetGlossaryTerms()
         {
-            return this._glossaryTerms != null && this._glossaryTerms.Count > 0; 
+            return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +216,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property ProjectStatus. 
         /// <para>
-        /// Status of the project
+        /// The status of the project.
         /// </para>
         /// </summary>
         public ProjectStatus ProjectStatus

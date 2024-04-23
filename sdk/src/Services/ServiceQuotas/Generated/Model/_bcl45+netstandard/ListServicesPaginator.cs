@@ -45,7 +45,7 @@ namespace Amazon.ServiceQuotas.Model
         /// Enumerable containing all of the Services
         /// </summary>
         public IPaginatedEnumerable<ServiceInfo> Services => 
-            new PaginatedResultKeyResponse<ListServicesResponse, ServiceInfo>(this, (i) => i.Services);
+            new PaginatedResultKeyResponse<ListServicesResponse, ServiceInfo>(this, (i) => i.Services ?? new List<ServiceInfo>());
 
         internal ListServicesPaginator(IAmazonServiceQuotas client, ListServicesRequest request)
         {

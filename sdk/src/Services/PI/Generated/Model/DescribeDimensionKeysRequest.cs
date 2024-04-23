@@ -42,9 +42,9 @@ namespace Amazon.PI.Model
     /// </summary>
     public partial class DescribeDimensionKeysRequest : AmazonPIRequest
     {
-        private List<string> _additionalMetrics = new List<string>();
+        private List<string> _additionalMetrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _endTime;
-        private Dictionary<string, string> _filter = new Dictionary<string, string>();
+        private Dictionary<string, string> _filter = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DimensionGroup _groupBy;
         private string _identifier;
         private int? _maxResults;
@@ -75,7 +75,7 @@ namespace Amazon.PI.Model
         // Check to see if AdditionalMetrics property is set
         internal bool IsSetAdditionalMetrics()
         {
-            return this._additionalMetrics != null && this._additionalMetrics.Count > 0; 
+            return this._additionalMetrics != null && (this._additionalMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.PI.Model
         // Check to see if Filter property is set
         internal bool IsSetFilter()
         {
-            return this._filter != null && this._filter.Count > 0; 
+            return this._filter != null && (this._filter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

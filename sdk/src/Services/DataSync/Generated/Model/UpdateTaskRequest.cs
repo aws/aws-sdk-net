@@ -35,8 +35,8 @@ namespace Amazon.DataSync.Model
     public partial class UpdateTaskRequest : AmazonDataSyncRequest
     {
         private string _cloudWatchLogGroupArn;
-        private List<FilterRule> _excludes = new List<FilterRule>();
-        private List<FilterRule> _includes = new List<FilterRule>();
+        private List<FilterRule> _excludes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
+        private List<FilterRule> _includes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
         private ManifestConfig _manifestConfig;
         private string _name;
         private Options _options;
@@ -81,7 +81,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Excludes property is set
         internal bool IsSetExcludes()
         {
-            return this._excludes != null && this._excludes.Count > 0; 
+            return this._excludes != null && (this._excludes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Includes property is set
         internal bool IsSetIncludes()
         {
-            return this._includes != null && this._includes.Count > 0; 
+            return this._includes != null && (this._includes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

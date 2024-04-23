@@ -37,7 +37,7 @@ namespace Amazon.MainframeModernization.Model
     {
         private string _applicationId;
         private BatchJobIdentifier _batchJobIdentifier;
-        private Dictionary<string, string> _jobParams = new Dictionary<string, string>();
+        private Dictionary<string, string> _jobParams = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -95,7 +95,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if JobParams property is set
         internal bool IsSetJobParams()
         {
-            return this._jobParams != null && this._jobParams.Count > 0; 
+            return this._jobParams != null && (this._jobParams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// Enumerable containing all of the TemplateStepSummaryList
         /// </summary>
         public IPaginatedEnumerable<TemplateStepSummary> TemplateStepSummaryList => 
-            new PaginatedResultKeyResponse<ListTemplateStepsResponse, TemplateStepSummary>(this, (i) => i.TemplateStepSummaryList);
+            new PaginatedResultKeyResponse<ListTemplateStepsResponse, TemplateStepSummary>(this, (i) => i.TemplateStepSummaryList ?? new List<TemplateStepSummary>());
 
         internal ListTemplateStepsPaginator(IAmazonMigrationHubOrchestrator client, ListTemplateStepsRequest request)
         {

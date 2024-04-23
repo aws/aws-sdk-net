@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the SecurityProfileIdentifiers
         /// </summary>
         public IPaginatedEnumerable<SecurityProfileIdentifier> SecurityProfileIdentifiers => 
-            new PaginatedResultKeyResponse<ListSecurityProfilesResponse, SecurityProfileIdentifier>(this, (i) => i.SecurityProfileIdentifiers);
+            new PaginatedResultKeyResponse<ListSecurityProfilesResponse, SecurityProfileIdentifier>(this, (i) => i.SecurityProfileIdentifiers ?? new List<SecurityProfileIdentifier>());
 
         internal ListSecurityProfilesPaginator(IAmazonIoT client, ListSecurityProfilesRequest request)
         {

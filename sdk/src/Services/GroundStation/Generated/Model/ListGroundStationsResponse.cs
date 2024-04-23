@@ -33,7 +33,7 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class ListGroundStationsResponse : AmazonWebServiceResponse
     {
-        private List<GroundStationData> _groundStationList = new List<GroundStationData>();
+        private List<GroundStationData> _groundStationList = AWSConfigs.InitializeCollections ? new List<GroundStationData>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if GroundStationList property is set
         internal bool IsSetGroundStationList()
         {
-            return this._groundStationList != null && this._groundStationList.Count > 0; 
+            return this._groundStationList != null && (this._groundStationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

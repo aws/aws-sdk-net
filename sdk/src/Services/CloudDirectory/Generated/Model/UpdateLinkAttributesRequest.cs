@@ -35,7 +35,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class UpdateLinkAttributesRequest : AmazonCloudDirectoryRequest
     {
-        private List<LinkAttributeUpdate> _attributeUpdates = new List<LinkAttributeUpdate>();
+        private List<LinkAttributeUpdate> _attributeUpdates = AWSConfigs.InitializeCollections ? new List<LinkAttributeUpdate>() : null;
         private string _directoryArn;
         private TypedLinkSpecifier _typedLinkSpecifier;
 
@@ -55,7 +55,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if AttributeUpdates property is set
         internal bool IsSetAttributeUpdates()
         {
-            return this._attributeUpdates != null && this._attributeUpdates.Count > 0; 
+            return this._attributeUpdates != null && (this._attributeUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

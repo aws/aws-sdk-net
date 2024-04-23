@@ -35,7 +35,7 @@ namespace Amazon.KafkaConnect.Model
     {
         private CapacityDescription _capacity;
         private string _connectorArn;
-        private Dictionary<string, string> _connectorConfiguration = new Dictionary<string, string>();
+        private Dictionary<string, string> _connectorConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _connectorDescription;
         private string _connectorName;
         private ConnectorState _connectorState;
@@ -46,7 +46,7 @@ namespace Amazon.KafkaConnect.Model
         private KafkaClusterEncryptionInTransitDescription _kafkaClusterEncryptionInTransit;
         private string _kafkaConnectVersion;
         private LogDeliveryDescription _logDelivery;
-        private List<PluginDescription> _plugins = new List<PluginDescription>();
+        private List<PluginDescription> _plugins = AWSConfigs.InitializeCollections ? new List<PluginDescription>() : null;
         private string _serviceExecutionRoleArn;
         private StateDescription _stateDescription;
         private WorkerConfigurationDescription _workerConfiguration;
@@ -103,7 +103,7 @@ namespace Amazon.KafkaConnect.Model
         // Check to see if ConnectorConfiguration property is set
         internal bool IsSetConnectorConfiguration()
         {
-            return this._connectorConfiguration != null && this._connectorConfiguration.Count > 0; 
+            return this._connectorConfiguration != null && (this._connectorConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -303,7 +303,7 @@ namespace Amazon.KafkaConnect.Model
         // Check to see if Plugins property is set
         internal bool IsSetPlugins()
         {
-            return this._plugins != null && this._plugins.Count > 0; 
+            return this._plugins != null && (this._plugins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

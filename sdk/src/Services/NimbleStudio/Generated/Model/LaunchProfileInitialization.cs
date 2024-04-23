@@ -40,14 +40,14 @@ namespace Amazon.NimbleStudio.Model
     public partial class LaunchProfileInitialization
     {
         private LaunchProfileInitializationActiveDirectory _activeDirectory;
-        private List<string> _ec2SecurityGroupIds = new List<string>();
+        private List<string> _ec2SecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _launchProfileId;
         private string _launchProfileProtocolVersion;
         private string _launchPurpose;
         private string _name;
         private LaunchProfilePlatform _platform;
-        private List<LaunchProfileInitializationScript> _systemInitializationScripts = new List<LaunchProfileInitializationScript>();
-        private List<LaunchProfileInitializationScript> _userInitializationScripts = new List<LaunchProfileInitializationScript>();
+        private List<LaunchProfileInitializationScript> _systemInitializationScripts = AWSConfigs.InitializeCollections ? new List<LaunchProfileInitializationScript>() : null;
+        private List<LaunchProfileInitializationScript> _userInitializationScripts = AWSConfigs.InitializeCollections ? new List<LaunchProfileInitializationScript>() : null;
 
         /// <summary>
         /// Gets and sets the property ActiveDirectory. 
@@ -83,7 +83,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Ec2SecurityGroupIds property is set
         internal bool IsSetEc2SecurityGroupIds()
         {
-            return this._ec2SecurityGroupIds != null && this._ec2SecurityGroupIds.Count > 0; 
+            return this._ec2SecurityGroupIds != null && (this._ec2SecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if SystemInitializationScripts property is set
         internal bool IsSetSystemInitializationScripts()
         {
-            return this._systemInitializationScripts != null && this._systemInitializationScripts.Count > 0; 
+            return this._systemInitializationScripts != null && (this._systemInitializationScripts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -214,7 +214,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if UserInitializationScripts property is set
         internal bool IsSetUserInitializationScripts()
         {
-            return this._userInitializationScripts != null && this._userInitializationScripts.Count > 0; 
+            return this._userInitializationScripts != null && (this._userInitializationScripts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

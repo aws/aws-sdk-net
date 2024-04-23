@@ -33,7 +33,7 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class ExportAssetsToS3ResponseDetails
     {
-        private List<AssetDestinationEntry> _assetDestinations = new List<AssetDestinationEntry>();
+        private List<AssetDestinationEntry> _assetDestinations = AWSConfigs.InitializeCollections ? new List<AssetDestinationEntry>() : null;
         private string _dataSetId;
         private ExportServerSideEncryption _encryption;
         private string _revisionId;
@@ -54,7 +54,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if AssetDestinations property is set
         internal bool IsSetAssetDestinations()
         {
-            return this._assetDestinations != null && this._assetDestinations.Count > 0; 
+            return this._assetDestinations != null && (this._assetDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -74,7 +74,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private string _accessToken;
         private string _attributeName;
-        private Dictionary<string, string> _clientMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _clientMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessToken. 
@@ -169,7 +169,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ClientMetadata property is set
         internal bool IsSetClientMetadata()
         {
-            return this._clientMetadata != null && this._clientMetadata.Count > 0; 
+            return this._clientMetadata != null && (this._clientMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

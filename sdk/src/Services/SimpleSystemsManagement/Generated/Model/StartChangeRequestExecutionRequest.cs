@@ -42,11 +42,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _clientToken;
         private string _documentName;
         private string _documentVersion;
-        private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
-        private List<Runbook> _runbooks = new List<Runbook>();
+        private Dictionary<string, List<string>> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
+        private List<Runbook> _runbooks = AWSConfigs.InitializeCollections ? new List<Runbook>() : null;
         private DateTime? _scheduledEndTime;
         private DateTime? _scheduledTime;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoApprove. 
@@ -194,7 +194,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Runbooks property is set
         internal bool IsSetRunbooks()
         {
-            return this._runbooks != null && this._runbooks.Count > 0; 
+            return this._runbooks != null && (this._runbooks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -294,7 +294,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

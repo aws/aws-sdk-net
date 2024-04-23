@@ -45,7 +45,7 @@ namespace Amazon.GroundStation.Model
         /// Enumerable containing all of the DataflowEndpointGroupList
         /// </summary>
         public IPaginatedEnumerable<DataflowEndpointListItem> DataflowEndpointGroupList => 
-            new PaginatedResultKeyResponse<ListDataflowEndpointGroupsResponse, DataflowEndpointListItem>(this, (i) => i.DataflowEndpointGroupList);
+            new PaginatedResultKeyResponse<ListDataflowEndpointGroupsResponse, DataflowEndpointListItem>(this, (i) => i.DataflowEndpointGroupList ?? new List<DataflowEndpointListItem>());
 
         internal ListDataflowEndpointGroupsPaginator(IAmazonGroundStation client, ListDataflowEndpointGroupsRequest request)
         {

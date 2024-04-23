@@ -45,7 +45,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// Enumerable containing all of the TokenBalances
         /// </summary>
         public IPaginatedEnumerable<TokenBalance> TokenBalances => 
-            new PaginatedResultKeyResponse<ListTokenBalancesResponse, TokenBalance>(this, (i) => i.TokenBalances);
+            new PaginatedResultKeyResponse<ListTokenBalancesResponse, TokenBalance>(this, (i) => i.TokenBalances ?? new List<TokenBalance>());
 
         internal ListTokenBalancesPaginator(IAmazonManagedBlockchainQuery client, ListTokenBalancesRequest request)
         {

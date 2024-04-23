@@ -33,12 +33,12 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags associated with the Amazon Q application or data source.
+        /// A list of tags associated with the Amazon Q Business application or data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -51,7 +51,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

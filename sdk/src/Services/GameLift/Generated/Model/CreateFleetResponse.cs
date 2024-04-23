@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model
     public partial class CreateFleetResponse : AmazonWebServiceResponse
     {
         private FleetAttributes _fleetAttributes;
-        private List<LocationState> _locationStates = new List<LocationState>();
+        private List<LocationState> _locationStates = AWSConfigs.InitializeCollections ? new List<LocationState>() : null;
 
         /// <summary>
         /// Gets and sets the property FleetAttributes. 
@@ -74,7 +74,7 @@ namespace Amazon.GameLift.Model
         // Check to see if LocationStates property is set
         internal bool IsSetLocationStates()
         {
-            return this._locationStates != null && this._locationStates.Count > 0; 
+            return this._locationStates != null && (this._locationStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

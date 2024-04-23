@@ -45,7 +45,7 @@ namespace Amazon.Organizations.Model
         /// Enumerable containing all of the DelegatedAdministrators
         /// </summary>
         public IPaginatedEnumerable<DelegatedAdministrator> DelegatedAdministrators => 
-            new PaginatedResultKeyResponse<ListDelegatedAdministratorsResponse, DelegatedAdministrator>(this, (i) => i.DelegatedAdministrators);
+            new PaginatedResultKeyResponse<ListDelegatedAdministratorsResponse, DelegatedAdministrator>(this, (i) => i.DelegatedAdministrators ?? new List<DelegatedAdministrator>());
 
         internal ListDelegatedAdministratorsPaginator(IAmazonOrganizations client, ListDelegatedAdministratorsRequest request)
         {

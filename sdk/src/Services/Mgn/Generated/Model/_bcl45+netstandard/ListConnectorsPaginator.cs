@@ -45,7 +45,7 @@ namespace Amazon.Mgn.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<Connector> Items => 
-            new PaginatedResultKeyResponse<ListConnectorsResponse, Connector>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListConnectorsResponse, Connector>(this, (i) => i.Items ?? new List<Connector>());
 
         internal ListConnectorsPaginator(IAmazonMgn client, ListConnectorsRequest request)
         {

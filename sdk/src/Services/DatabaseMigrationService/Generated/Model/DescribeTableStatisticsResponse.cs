@@ -35,7 +35,7 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private string _marker;
         private string _replicationTaskArn;
-        private List<TableStatistics> _tableStatistics = new List<TableStatistics>();
+        private List<TableStatistics> _tableStatistics = AWSConfigs.InitializeCollections ? new List<TableStatistics>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -90,7 +90,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if TableStatistics property is set
         internal bool IsSetTableStatistics()
         {
-            return this._tableStatistics != null && this._tableStatistics.Count > 0; 
+            return this._tableStatistics != null && (this._tableStatistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

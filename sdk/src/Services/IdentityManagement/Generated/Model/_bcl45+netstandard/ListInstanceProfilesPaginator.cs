@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the InstanceProfiles
         /// </summary>
         public IPaginatedEnumerable<InstanceProfile> InstanceProfiles => 
-            new PaginatedResultKeyResponse<ListInstanceProfilesResponse, InstanceProfile>(this, (i) => i.InstanceProfiles);
+            new PaginatedResultKeyResponse<ListInstanceProfilesResponse, InstanceProfile>(this, (i) => i.InstanceProfiles ?? new List<InstanceProfile>());
 
         internal ListInstanceProfilesPaginator(IAmazonIdentityManagementService client, ListInstanceProfilesRequest request)
         {

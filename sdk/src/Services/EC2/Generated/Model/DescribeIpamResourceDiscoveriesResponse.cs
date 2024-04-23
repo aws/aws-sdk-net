@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeIpamResourceDiscoveriesResponse : AmazonWebServiceResponse
     {
-        private List<IpamResourceDiscovery> _ipamResourceDiscoveries = new List<IpamResourceDiscovery>();
+        private List<IpamResourceDiscovery> _ipamResourceDiscoveries = AWSConfigs.InitializeCollections ? new List<IpamResourceDiscovery>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if IpamResourceDiscoveries property is set
         internal bool IsSetIpamResourceDiscoveries()
         {
-            return this._ipamResourceDiscoveries != null && this._ipamResourceDiscoveries.Count > 0; 
+            return this._ipamResourceDiscoveries != null && (this._ipamResourceDiscoveries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

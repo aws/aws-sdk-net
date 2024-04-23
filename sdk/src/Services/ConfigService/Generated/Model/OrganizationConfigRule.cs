@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class OrganizationConfigRule
     {
-        private List<string> _excludedAccounts = new List<string>();
+        private List<string> _excludedAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastUpdateTime;
         private string _organizationConfigRuleArn;
         private string _organizationConfigRuleName;
@@ -58,7 +58,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ExcludedAccounts property is set
         internal bool IsSetExcludedAccounts()
         {
-            return this._excludedAccounts != null && this._excludedAccounts.Count > 0; 
+            return this._excludedAccounts != null && (this._excludedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

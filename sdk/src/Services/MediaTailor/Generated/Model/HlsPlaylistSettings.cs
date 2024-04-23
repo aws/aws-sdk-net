@@ -33,7 +33,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class HlsPlaylistSettings
     {
-        private List<string> _adMarkupType = new List<string>();
+        private List<string> _adMarkupType = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _manifestWindowSeconds;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if AdMarkupType property is set
         internal bool IsSetAdMarkupType()
         {
-            return this._adMarkupType != null && this._adMarkupType.Count > 0; 
+            return this._adMarkupType != null && (this._adMarkupType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

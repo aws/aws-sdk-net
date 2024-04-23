@@ -35,7 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     {
         private string _nextToken;
         private string _registrationArn;
-        private List<RegistrationAssociationMetadata> _registrationAssociations = new List<RegistrationAssociationMetadata>();
+        private List<RegistrationAssociationMetadata> _registrationAssociations = AWSConfigs.InitializeCollections ? new List<RegistrationAssociationMetadata>() : null;
         private string _registrationId;
         private string _registrationType;
 
@@ -94,7 +94,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if RegistrationAssociations property is set
         internal bool IsSetRegistrationAssociations()
         {
-            return this._registrationAssociations != null && this._registrationAssociations.Count > 0; 
+            return this._registrationAssociations != null && (this._registrationAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

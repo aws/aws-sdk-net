@@ -48,10 +48,10 @@ namespace Amazon.EC2.Model
     public partial class GetSpotPlacementScoresRequest : AmazonEC2Request
     {
         private InstanceRequirementsWithMetadataRequest _instanceRequirementsWithMetadata;
-        private List<string> _instanceTypes = new List<string>();
+        private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _regionNames = new List<string>();
+        private List<string> _regionNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _singleAvailabilityZone;
         private int? _targetCapacity;
         private TargetCapacityUnitType _targetCapacityUnitType;
@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceTypes property is set
         internal bool IsSetInstanceTypes()
         {
-            return this._instanceTypes != null && this._instanceTypes.Count > 0; 
+            return this._instanceTypes != null && (this._instanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Amazon.EC2.Model
         // Check to see if RegionNames property is set
         internal bool IsSetRegionNames()
         {
-            return this._regionNames != null && this._regionNames.Count > 0; 
+            return this._regionNames != null && (this._regionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

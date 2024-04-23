@@ -45,7 +45,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Enumerable containing all of the RepositoryAssociationSummaries
         /// </summary>
         public IPaginatedEnumerable<RepositoryAssociationSummary> RepositoryAssociationSummaries => 
-            new PaginatedResultKeyResponse<ListRepositoryAssociationsResponse, RepositoryAssociationSummary>(this, (i) => i.RepositoryAssociationSummaries);
+            new PaginatedResultKeyResponse<ListRepositoryAssociationsResponse, RepositoryAssociationSummary>(this, (i) => i.RepositoryAssociationSummaries ?? new List<RepositoryAssociationSummary>());
 
         internal ListRepositoryAssociationsPaginator(IAmazonCodeGuruReviewer client, ListRepositoryAssociationsRequest request)
         {

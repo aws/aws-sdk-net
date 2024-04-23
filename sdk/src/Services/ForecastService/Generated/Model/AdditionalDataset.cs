@@ -59,7 +59,7 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class AdditionalDataset
     {
-        private Dictionary<string, List<string>> _configuration = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _configuration = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _name;
 
         /// <summary>
@@ -359,7 +359,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if Configuration property is set
         internal bool IsSetConfiguration()
         {
-            return this._configuration != null && this._configuration.Count > 0; 
+            return this._configuration != null && (this._configuration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

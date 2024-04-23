@@ -33,19 +33,19 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsDynamoDbTableDetails
     {
-        private List<AwsDynamoDbTableAttributeDefinition> _attributeDefinitions = new List<AwsDynamoDbTableAttributeDefinition>();
+        private List<AwsDynamoDbTableAttributeDefinition> _attributeDefinitions = AWSConfigs.InitializeCollections ? new List<AwsDynamoDbTableAttributeDefinition>() : null;
         private AwsDynamoDbTableBillingModeSummary _billingModeSummary;
         private string _creationDateTime;
         private bool? _deletionProtectionEnabled;
-        private List<AwsDynamoDbTableGlobalSecondaryIndex> _globalSecondaryIndexes = new List<AwsDynamoDbTableGlobalSecondaryIndex>();
+        private List<AwsDynamoDbTableGlobalSecondaryIndex> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<AwsDynamoDbTableGlobalSecondaryIndex>() : null;
         private string _globalTableVersion;
         private int? _itemCount;
-        private List<AwsDynamoDbTableKeySchema> _keySchema = new List<AwsDynamoDbTableKeySchema>();
+        private List<AwsDynamoDbTableKeySchema> _keySchema = AWSConfigs.InitializeCollections ? new List<AwsDynamoDbTableKeySchema>() : null;
         private string _latestStreamArn;
         private string _latestStreamLabel;
-        private List<AwsDynamoDbTableLocalSecondaryIndex> _localSecondaryIndexes = new List<AwsDynamoDbTableLocalSecondaryIndex>();
+        private List<AwsDynamoDbTableLocalSecondaryIndex> _localSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<AwsDynamoDbTableLocalSecondaryIndex>() : null;
         private AwsDynamoDbTableProvisionedThroughput _provisionedThroughput;
-        private List<AwsDynamoDbTableReplica> _replicas = new List<AwsDynamoDbTableReplica>();
+        private List<AwsDynamoDbTableReplica> _replicas = AWSConfigs.InitializeCollections ? new List<AwsDynamoDbTableReplica>() : null;
         private AwsDynamoDbTableRestoreSummary _restoreSummary;
         private AwsDynamoDbTableSseDescription _sseDescription;
         private AwsDynamoDbTableStreamSpecification _streamSpecification;
@@ -69,7 +69,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AttributeDefinitions property is set
         internal bool IsSetAttributeDefinitions()
         {
-            return this._attributeDefinitions != null && this._attributeDefinitions.Count > 0; 
+            return this._attributeDefinitions != null && (this._attributeDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,10 +97,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string CreationDateTime
         {
@@ -148,7 +170,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if GlobalSecondaryIndexes property is set
         internal bool IsSetGlobalSecondaryIndexes()
         {
-            return this._globalSecondaryIndexes != null && this._globalSecondaryIndexes.Count > 0; 
+            return this._globalSecondaryIndexes != null && (this._globalSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -202,7 +224,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if KeySchema property is set
         internal bool IsSetKeySchema()
         {
-            return this._keySchema != null && this._keySchema.Count > 0; 
+            return this._keySchema != null && (this._keySchema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -256,7 +278,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if LocalSecondaryIndexes property is set
         internal bool IsSetLocalSecondaryIndexes()
         {
-            return this._localSecondaryIndexes != null && this._localSecondaryIndexes.Count > 0; 
+            return this._localSecondaryIndexes != null && (this._localSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -292,7 +314,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Replicas property is set
         internal bool IsSetReplicas()
         {
-            return this._replicas != null && this._replicas.Count > 0; 
+            return this._replicas != null && (this._replicas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.SnowDeviceManagement.Model
     public partial class ListTasksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TaskSummary> _tasks = new List<TaskSummary>();
+        private List<TaskSummary> _tasks = AWSConfigs.InitializeCollections ? new List<TaskSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SnowDeviceManagement.Model
         // Check to see if Tasks property is set
         internal bool IsSetTasks()
         {
-            return this._tasks != null && this._tasks.Count > 0; 
+            return this._tasks != null && (this._tasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

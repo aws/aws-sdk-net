@@ -33,7 +33,7 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class ListDataLakeExceptionsResponse : AmazonWebServiceResponse
     {
-        private List<DataLakeException> _exceptions = new List<DataLakeException>();
+        private List<DataLakeException> _exceptions = AWSConfigs.InitializeCollections ? new List<DataLakeException>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Exceptions property is set
         internal bool IsSetExceptions()
         {
-            return this._exceptions != null && this._exceptions.Count > 0; 
+            return this._exceptions != null && (this._exceptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

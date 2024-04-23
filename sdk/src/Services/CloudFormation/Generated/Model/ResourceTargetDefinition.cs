@@ -34,9 +34,31 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class ResourceTargetDefinition
     {
+        private string _afterValue;
         private ResourceAttribute _attribute;
+        private AttributeChangeType _attributeChangeType;
+        private string _beforeValue;
         private string _name;
+        private string _path;
         private RequiresRecreation _requiresRecreation;
+
+        /// <summary>
+        /// Gets and sets the property AfterValue. 
+        /// <para>
+        /// The value of the property after the change is executed. Large values can be truncated.
+        /// </para>
+        /// </summary>
+        public string AfterValue
+        {
+            get { return this._afterValue; }
+            set { this._afterValue = value; }
+        }
+
+        // Check to see if AfterValue property is set
+        internal bool IsSetAfterValue()
+        {
+            return this._afterValue != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Attribute. 
@@ -55,6 +77,55 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAttribute()
         {
             return this._attribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttributeChangeType. 
+        /// <para>
+        /// The type of change to be made to the property if the change is executed.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Add</c> The item will be added.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Remove</c> The item will be removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Modify</c> The item will be modified.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AttributeChangeType AttributeChangeType
+        {
+            get { return this._attributeChangeType; }
+            set { this._attributeChangeType = value; }
+        }
+
+        // Check to see if AttributeChangeType property is set
+        internal bool IsSetAttributeChangeType()
+        {
+            return this._attributeChangeType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BeforeValue. 
+        /// <para>
+        /// The value of the property before the change is executed. Large values can be truncated.
+        /// </para>
+        /// </summary>
+        public string BeforeValue
+        {
+            get { return this._beforeValue; }
+            set { this._beforeValue = value; }
+        }
+
+        // Check to see if BeforeValue property is set
+        internal bool IsSetBeforeValue()
+        {
+            return this._beforeValue != null;
         }
 
         /// <summary>
@@ -77,13 +148,31 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The property path of the property.
+        /// </para>
+        /// </summary>
+        public string Path
+        {
+            get { return this._path; }
+            set { this._path = value; }
+        }
+
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this._path != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RequiresRecreation. 
         /// <para>
         /// If the <c>Attribute</c> value is <c>Properties</c>, indicates whether a change to
         /// this property causes the resource to be recreated. The value can be <c>Never</c>,
         /// <c>Always</c>, or <c>Conditionally</c>. To determine the conditions for a <c>Conditionally</c>
         /// recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-        /// in the CloudFormation User Guide.
+        /// in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public RequiresRecreation RequiresRecreation

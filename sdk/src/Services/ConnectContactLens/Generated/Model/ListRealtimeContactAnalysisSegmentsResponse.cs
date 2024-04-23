@@ -34,7 +34,7 @@ namespace Amazon.ConnectContactLens.Model
     public partial class ListRealtimeContactAnalysisSegmentsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RealtimeContactAnalysisSegment> _segments = new List<RealtimeContactAnalysisSegment>();
+        private List<RealtimeContactAnalysisSegment> _segments = AWSConfigs.InitializeCollections ? new List<RealtimeContactAnalysisSegment>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -87,7 +87,7 @@ namespace Amazon.ConnectContactLens.Model
         // Check to see if Segments property is set
         internal bool IsSetSegments()
         {
-            return this._segments != null && this._segments.Count > 0; 
+            return this._segments != null && (this._segments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

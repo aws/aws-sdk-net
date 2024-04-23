@@ -33,14 +33,14 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class GetTemplateSummaryResponse : AmazonWebServiceResponse
     {
-        private List<string> _capabilities = new List<string>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _capabilitiesReason;
-        private List<string> _declaredTransforms = new List<string>();
+        private List<string> _declaredTransforms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _metadata;
-        private List<ParameterDeclaration> _parameters = new List<ParameterDeclaration>();
-        private List<ResourceIdentifierSummary> _resourceIdentifierSummaries = new List<ResourceIdentifierSummary>();
-        private List<string> _resourceTypes = new List<string>();
+        private List<ParameterDeclaration> _parameters = AWSConfigs.InitializeCollections ? new List<ParameterDeclaration>() : null;
+        private List<ResourceIdentifierSummary> _resourceIdentifierSummaries = AWSConfigs.InitializeCollections ? new List<ResourceIdentifierSummary>() : null;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _version;
         private Warnings _warnings;
 
@@ -68,7 +68,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if DeclaredTransforms property is set
         internal bool IsSetDeclaredTransforms()
         {
-            return this._declaredTransforms != null && this._declaredTransforms.Count > 0; 
+            return this._declaredTransforms != null && (this._declaredTransforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceIdentifierSummaries property is set
         internal bool IsSetResourceIdentifierSummaries()
         {
-            return this._resourceIdentifierSummaries != null && this._resourceIdentifierSummaries.Count > 0; 
+            return this._resourceIdentifierSummaries != null && (this._resourceIdentifierSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

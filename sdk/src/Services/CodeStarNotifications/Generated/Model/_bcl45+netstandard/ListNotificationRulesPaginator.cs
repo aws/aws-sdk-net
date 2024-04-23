@@ -45,7 +45,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// Enumerable containing all of the NotificationRules
         /// </summary>
         public IPaginatedEnumerable<NotificationRuleSummary> NotificationRules => 
-            new PaginatedResultKeyResponse<ListNotificationRulesResponse, NotificationRuleSummary>(this, (i) => i.NotificationRules);
+            new PaginatedResultKeyResponse<ListNotificationRulesResponse, NotificationRuleSummary>(this, (i) => i.NotificationRules ?? new List<NotificationRuleSummary>());
 
         internal ListNotificationRulesPaginator(IAmazonCodeStarNotifications client, ListNotificationRulesRequest request)
         {

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -61,15 +62,15 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateTrafficPolicyRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
+                xmlWriter.WriteStartElement("CreateTrafficPolicyRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Name));                    
+                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
                 if(publicRequest.IsSetDocument())
-                    xmlWriter.WriteElementString("Document", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Document));                    
+                    xmlWriter.WriteElementString("Document", StringUtils.FromString(publicRequest.Document));
 
                 if(publicRequest.IsSetComment())
-                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Comment));                    
+                    xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.Comment));
 
 
                 xmlWriter.WriteEndElement();
@@ -108,3 +109,4 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
     }    
 }
+#pragma warning restore CS0612,CS0618

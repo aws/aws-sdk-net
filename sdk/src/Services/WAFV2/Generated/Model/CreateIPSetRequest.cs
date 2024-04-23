@@ -37,12 +37,12 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class CreateIPSetRequest : AmazonWAFV2Request
     {
-        private List<string> _addresses = new List<string>();
+        private List<string> _addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private IPAddressVersion _ipAddressVersion;
         private string _name;
         private Scope _scope;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Addresses. 
@@ -113,7 +113,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Addresses property is set
         internal bool IsSetAddresses()
         {
-            return this._addresses != null && this._addresses.Count > 0; 
+            return this._addresses != null && (this._addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

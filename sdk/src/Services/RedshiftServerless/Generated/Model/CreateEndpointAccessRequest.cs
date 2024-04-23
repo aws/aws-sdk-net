@@ -36,8 +36,8 @@ namespace Amazon.RedshiftServerless.Model
     {
         private string _endpointName;
         private string _ownerAccount;
-        private List<string> _subnetIds = new List<string>();
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workgroupName;
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

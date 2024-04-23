@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model
     public partial class MediaStreamSourceConfigurationRequest
     {
         private EncodingName _encodingName;
-        private List<InputConfigurationRequest> _inputConfigurations = new List<InputConfigurationRequest>();
+        private List<InputConfigurationRequest> _inputConfigurations = AWSConfigs.InitializeCollections ? new List<InputConfigurationRequest>() : null;
         private string _mediaStreamName;
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if InputConfigurations property is set
         internal bool IsSetInputConfigurations()
         {
-            return this._inputConfigurations != null && this._inputConfigurations.Count > 0; 
+            return this._inputConfigurations != null && (this._inputConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class EmptyVisual
     {
-        private List<VisualCustomAction> _actions = new List<VisualCustomAction>();
+        private List<VisualCustomAction> _actions = AWSConfigs.InitializeCollections ? new List<VisualCustomAction>() : null;
         private string _dataSetIdentifier;
         private string _visualId;
 
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

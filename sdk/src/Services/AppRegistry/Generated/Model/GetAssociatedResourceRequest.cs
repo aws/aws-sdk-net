@@ -38,7 +38,7 @@ namespace Amazon.AppRegistry.Model
         private int? _maxResults;
         private string _nextToken;
         private string _resource;
-        private List<string> _resourceTagStatus = new List<string>();
+        private List<string> _resourceTagStatus = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ResourceType _resourceType;
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.AppRegistry.Model
         // Check to see if ResourceTagStatus property is set
         internal bool IsSetResourceTagStatus()
         {
-            return this._resourceTagStatus != null && this._resourceTagStatus.Count > 0; 
+            return this._resourceTagStatus != null && (this._resourceTagStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

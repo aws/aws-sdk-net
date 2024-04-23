@@ -33,7 +33,7 @@ namespace Amazon.RDSDataService.Model
     /// </summary>
     public partial class ExecuteSqlResponse : AmazonWebServiceResponse
     {
-        private List<SqlStatementResult> _sqlStatementResults = new List<SqlStatementResult>();
+        private List<SqlStatementResult> _sqlStatementResults = AWSConfigs.InitializeCollections ? new List<SqlStatementResult>() : null;
 
         /// <summary>
         /// Gets and sets the property SqlStatementResults. 
@@ -50,7 +50,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if SqlStatementResults property is set
         internal bool IsSetSqlStatementResults()
         {
-            return this._sqlStatementResults != null && this._sqlStatementResults.Count > 0; 
+            return this._sqlStatementResults != null && (this._sqlStatementResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

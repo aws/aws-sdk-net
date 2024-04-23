@@ -33,7 +33,7 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ListActionExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<ActionExecutionDetail> _actionExecutionDetails = new List<ActionExecutionDetail>();
+        private List<ActionExecutionDetail> _actionExecutionDetails = AWSConfigs.InitializeCollections ? new List<ActionExecutionDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if ActionExecutionDetails property is set
         internal bool IsSetActionExecutionDetails()
         {
-            return this._actionExecutionDetails != null && this._actionExecutionDetails.Count > 0; 
+            return this._actionExecutionDetails != null && (this._actionExecutionDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

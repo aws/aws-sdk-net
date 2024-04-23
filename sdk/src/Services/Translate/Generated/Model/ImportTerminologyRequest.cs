@@ -49,7 +49,7 @@ namespace Amazon.Translate.Model
         private EncryptionKey _encryptionKey;
         private MergeStrategy _mergeStrategy;
         private string _name;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TerminologyData _terminologyData;
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.Translate.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

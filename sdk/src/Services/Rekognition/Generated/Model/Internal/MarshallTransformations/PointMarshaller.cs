@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Point requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetX())
             {
                 context.Writer.WritePropertyName("X");
-                context.Writer.Write(requestObject.X);
+                if(StringUtils.IsSpecialFloatValue(requestObject.X))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.X));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.X);
+                }
             }
 
             if(requestObject.IsSetY())
             {
                 context.Writer.WritePropertyName("Y");
-                context.Writer.Write(requestObject.Y);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Y))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Y));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Y);
+                }
             }
 
         }
@@ -66,3 +83,4 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

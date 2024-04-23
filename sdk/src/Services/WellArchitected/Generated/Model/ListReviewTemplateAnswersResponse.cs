@@ -33,7 +33,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ListReviewTemplateAnswersResponse : AmazonWebServiceResponse
     {
-        private List<ReviewTemplateAnswerSummary> _answerSummaries = new List<ReviewTemplateAnswerSummary>();
+        private List<ReviewTemplateAnswerSummary> _answerSummaries = AWSConfigs.InitializeCollections ? new List<ReviewTemplateAnswerSummary>() : null;
         private string _lensAlias;
         private string _nextToken;
         private string _templateArn;
@@ -53,7 +53,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if AnswerSummaries property is set
         internal bool IsSetAnswerSummaries()
         {
-            return this._answerSummaries != null && this._answerSummaries.Count > 0; 
+            return this._answerSummaries != null && (this._answerSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         private int? _allocationDefaultNetmaskLength;
         private int? _allocationMaxNetmaskLength;
         private int? _allocationMinNetmaskLength;
-        private List<IpamResourceTag> _allocationResourceTags = new List<IpamResourceTag>();
+        private List<IpamResourceTag> _allocationResourceTags = AWSConfigs.InitializeCollections ? new List<IpamResourceTag>() : null;
         private bool? _autoImport;
         private IpamPoolAwsService _awsService;
         private string _description;
@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         private IpamPoolSourceResource _sourceResource;
         private IpamPoolState _state;
         private string _stateMessage;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AddressFamily. 
@@ -162,7 +162,7 @@ namespace Amazon.EC2.Model
         // Check to see if AllocationResourceTags property is set
         internal bool IsSetAllocationResourceTags()
         {
-            return this._allocationResourceTags != null && this._allocationResourceTags.Count > 0; 
+            return this._allocationResourceTags != null && (this._allocationResourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -542,7 +542,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

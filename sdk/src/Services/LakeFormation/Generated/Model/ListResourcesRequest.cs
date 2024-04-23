@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class ListResourcesRequest : AmazonLakeFormationRequest
     {
-        private List<FilterCondition> _filterConditionList = new List<FilterCondition>();
+        private List<FilterCondition> _filterConditionList = AWSConfigs.InitializeCollections ? new List<FilterCondition>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -54,7 +54,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if FilterConditionList property is set
         internal bool IsSetFilterConditionList()
         {
-            return this._filterConditionList != null && this._filterConditionList.Count > 0; 
+            return this._filterConditionList != null && (this._filterConditionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -46,14 +46,14 @@ namespace Amazon.DynamoDBv2.Model
     {
         private MemoryStream _b;
         private bool? _bool;
-        private List<MemoryStream> _bs = new List<MemoryStream>();
-        private List<AttributeValue> _l = new List<AttributeValue>();
-        private Dictionary<string, AttributeValue> _m = new Dictionary<string, AttributeValue>();
+        private List<MemoryStream> _bs = AWSConfigs.InitializeCollections ? new List<MemoryStream>() : null;
+        private List<AttributeValue> _l = AWSConfigs.InitializeCollections ? new List<AttributeValue>() : null;
+        private Dictionary<string, AttributeValue> _m = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
         private string _n;
-        private List<string> _ns = new List<string>();
+        private List<string> _ns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _null;
         private string _s;
-        private List<string> _ss = new List<string>();
+        private List<string> _ss = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -163,7 +163,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if BS property is set
         internal bool IsSetBS()
         {
-            return this._bs != null && this._bs.Count > 0; 
+            return this._bs != null && (this._bs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -307,7 +307,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if NS property is set
         internal bool IsSetNS()
         {
-            return this._ns != null && this._ns.Count > 0; 
+            return this._ns != null && (this._ns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -373,7 +373,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if SS property is set
         internal bool IsSetSS()
         {
-            return this._ss != null && this._ss.Count > 0; 
+            return this._ss != null && (this._ss.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

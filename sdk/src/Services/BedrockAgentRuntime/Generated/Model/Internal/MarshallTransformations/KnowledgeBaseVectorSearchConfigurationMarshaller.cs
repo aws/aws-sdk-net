@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,19 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KnowledgeBaseVectorSearchConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetFilter())
+            {
+                context.Writer.WritePropertyName("filter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RetrievalFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.Filter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNumberOfResults())
             {
                 context.Writer.WritePropertyName("numberOfResults");
@@ -66,3 +80,4 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribePublicIpv4PoolsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PublicIpv4Pool> _publicIpv4Pools = new List<PublicIpv4Pool>();
+        private List<PublicIpv4Pool> _publicIpv4Pools = AWSConfigs.InitializeCollections ? new List<PublicIpv4Pool>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if PublicIpv4Pools property is set
         internal bool IsSetPublicIpv4Pools()
         {
-            return this._publicIpv4Pools != null && this._publicIpv4Pools.Count > 0; 
+            return this._publicIpv4Pools != null && (this._publicIpv4Pools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

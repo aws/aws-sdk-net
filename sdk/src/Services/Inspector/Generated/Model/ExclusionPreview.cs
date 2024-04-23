@@ -34,10 +34,10 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class ExclusionPreview
     {
-        private List<Attribute> _attributes = new List<Attribute>();
+        private List<Attribute> _attributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
         private string _description;
         private string _recommendation;
-        private List<Scope> _scopes = new List<Scope>();
+        private List<Scope> _scopes = AWSConfigs.InitializeCollections ? new List<Scope>() : null;
         private string _title;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Scopes property is set
         internal bool IsSetScopes()
         {
-            return this._scopes != null && this._scopes.Count > 0; 
+            return this._scopes != null && (this._scopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

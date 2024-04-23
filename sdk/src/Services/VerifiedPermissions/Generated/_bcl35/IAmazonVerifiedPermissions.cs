@@ -307,6 +307,185 @@ namespace Amazon.VerifiedPermissions
 
         #endregion
         
+        #region  BatchIsAuthorizedWithToken
+
+
+        /// <summary>
+        /// Makes a series of decisions about multiple authorization requests for one token. The
+        /// principal in this request comes from an external identity source in the form of an
+        /// identity or access token, formatted as a <a href="https://wikipedia.org/wiki/JSON_Web_Token">JSON
+        /// web token (JWT)</a>. The information in the parameters can also define additional
+        /// context that Verified Permissions can include in the evaluations.
+        /// 
+        ///  
+        /// <para>
+        /// The request is evaluated against all policies in the specified policy store that match
+        /// the entities that you provide in the entities declaration and in the token. The result
+        /// of the decisions is a series of <c>Allow</c> or <c>Deny</c> responses, along with
+        /// the IDs of the policies that produced each decision.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>entities</c> of a <c>BatchIsAuthorizedWithToken</c> API request can contain
+        /// up to 100 resources and up to 99 user groups. The <c>requests</c> of a <c>BatchIsAuthorizedWithToken</c>
+        /// API request can contain up to 30 requests.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchIsAuthorizedWithToken</c> operation doesn't have its own IAM permission.
+        /// To authorize this operation for Amazon Web Services principals, include the permission
+        /// <c>verifiedpermissions:IsAuthorizedWithToken</c> in their IAM policies.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchIsAuthorizedWithToken service method.</param>
+        /// 
+        /// <returns>The response from the BatchIsAuthorizedWithToken service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ResourceNotFoundException">
+        /// The request failed because it references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorizedWithToken">REST API Reference for BatchIsAuthorizedWithToken Operation</seealso>
+        BatchIsAuthorizedWithTokenResponse BatchIsAuthorizedWithToken(BatchIsAuthorizedWithTokenRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchIsAuthorizedWithToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchIsAuthorizedWithToken operation on AmazonVerifiedPermissionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchIsAuthorizedWithToken
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorizedWithToken">REST API Reference for BatchIsAuthorizedWithToken Operation</seealso>
+        IAsyncResult BeginBatchIsAuthorizedWithToken(BatchIsAuthorizedWithTokenRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchIsAuthorizedWithToken operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchIsAuthorizedWithToken.</param>
+        /// 
+        /// <returns>Returns a  BatchIsAuthorizedWithTokenResult from VerifiedPermissions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorizedWithToken">REST API Reference for BatchIsAuthorizedWithToken Operation</seealso>
+        BatchIsAuthorizedWithTokenResponse EndBatchIsAuthorizedWithToken(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateIdentitySource
 
 
@@ -351,9 +530,8 @@ namespace Amazon.VerifiedPermissions
         ///  </note> <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -538,9 +716,8 @@ namespace Amazon.VerifiedPermissions
         ///  </note> <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -713,9 +890,8 @@ namespace Amazon.VerifiedPermissions
         ///  </note> <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -884,9 +1060,8 @@ namespace Amazon.VerifiedPermissions
         ///  <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2631,18 +2806,7 @@ namespace Amazon.VerifiedPermissions
         /// is either <c>Allow</c> or <c>Deny</c>, along with a list of the policies that resulted
         /// in the decision.
         /// 
-        ///  <important> 
-        /// <para>
-        /// If you specify the <c>identityToken</c> parameter, then this operation derives the
-        /// principal from that token. You must not also include that principal in the <c>entities</c>
-        /// parameter or the operation fails and reports a conflict between the two entity sources.
-        /// </para>
         ///  
-        /// <para>
-        /// If you provide only an <c>accessToken</c>, then you can include the entity as part
-        /// of the <c>entities</c> parameter to provide additional attributes.
-        /// </para>
-        ///  </important> 
         /// <para>
         /// At this time, Verified Permissions accepts tokens from only Amazon Cognito.
         /// </para>
@@ -3434,9 +3598,8 @@ namespace Amazon.VerifiedPermissions
         ///  <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3605,9 +3768,8 @@ namespace Amazon.VerifiedPermissions
         ///  <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3780,7 +3942,7 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you edit a static policy, You can change only certain elements of a static policy:
+        /// When you edit a static policy, you can change only certain elements of a static policy:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3817,9 +3979,8 @@ namespace Amazon.VerifiedPermissions
         ///  </li> </ul> </note> <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3986,9 +4147,8 @@ namespace Amazon.VerifiedPermissions
         ///  <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4160,9 +4320,8 @@ namespace Amazon.VerifiedPermissions
         ///  </important> <note> 
         /// <para>
         /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
-        /// consistent</a> </i>. It can take a few seconds for a new or changed element to be
-        /// propagate through the service and be visible in the results of other Verified Permissions
-        /// operations.
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
         /// </para>
         ///  </note>
         /// </summary>

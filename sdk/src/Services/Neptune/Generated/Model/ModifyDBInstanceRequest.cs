@@ -49,7 +49,7 @@ namespace Amazon.Neptune.Model
         private string _dbInstanceIdentifier;
         private string _dbParameterGroupName;
         private int? _dbPortNumber;
-        private List<string> _dbSecurityGroups = new List<string>();
+        private List<string> _dbSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _dbSubnetGroupName;
         private bool? _deletionProtection;
         private string _domain;
@@ -73,7 +73,7 @@ namespace Amazon.Neptune.Model
         private string _storageType;
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
@@ -389,7 +389,7 @@ namespace Amazon.Neptune.Model
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
+            return this._dbSecurityGroups != null && (this._dbSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -983,7 +983,7 @@ namespace Amazon.Neptune.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

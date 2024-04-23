@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceCreditSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -71,13 +73,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("InstanceCreditSpecification" + "." + publicRequestlistValueIndex + "." + "CpuCredits", StringUtils.FromString(publicRequestlistValue.CpuCredits));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetInstanceId())
                         {
                             request.Parameters.Add("InstanceCreditSpecification" + "." + publicRequestlistValueIndex + "." + "InstanceId", StringUtils.FromString(publicRequestlistValue.InstanceId));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

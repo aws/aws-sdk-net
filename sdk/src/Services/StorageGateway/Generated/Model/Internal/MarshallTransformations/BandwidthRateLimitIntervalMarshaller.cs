@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BandwidthRateLimitInterval requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAverageDownloadRateLimitInBitsPerSec())
             {
                 context.Writer.WritePropertyName("AverageDownloadRateLimitInBitsPerSec");
@@ -101,3 +104,4 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

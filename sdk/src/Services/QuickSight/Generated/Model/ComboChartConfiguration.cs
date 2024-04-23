@@ -44,7 +44,7 @@ namespace Amazon.QuickSight.Model
         private DataLabelOptions _lineDataLabels;
         private AxisDisplayOptions _primaryYAxisDisplayOptions;
         private ChartAxisLabelOptions _primaryYAxisLabelOptions;
-        private List<ReferenceLine> _referenceLines = new List<ReferenceLine>();
+        private List<ReferenceLine> _referenceLines = AWSConfigs.InitializeCollections ? new List<ReferenceLine>() : null;
         private AxisDisplayOptions _secondaryYAxisDisplayOptions;
         private ChartAxisLabelOptions _secondaryYAxisLabelOptions;
         private SingleAxisOptions _singleAxisOptions;
@@ -293,7 +293,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ReferenceLines property is set
         internal bool IsSetReferenceLines()
         {
-            return this._referenceLines != null && this._referenceLines.Count > 0; 
+            return this._referenceLines != null && (this._referenceLines.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

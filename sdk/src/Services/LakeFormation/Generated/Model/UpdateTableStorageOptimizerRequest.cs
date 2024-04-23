@@ -36,7 +36,7 @@ namespace Amazon.LakeFormation.Model
     {
         private string _catalogId;
         private string _databaseName;
-        private Dictionary<string, Dictionary<string, string>> _storageOptimizerConfig = new Dictionary<string, Dictionary<string, string>>();
+        private Dictionary<string, Dictionary<string, string>> _storageOptimizerConfig = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
         private string _tableName;
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if StorageOptimizerConfig property is set
         internal bool IsSetStorageOptimizerConfig()
         {
-            return this._storageOptimizerConfig != null && this._storageOptimizerConfig.Count > 0; 
+            return this._storageOptimizerConfig != null && (this._storageOptimizerConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

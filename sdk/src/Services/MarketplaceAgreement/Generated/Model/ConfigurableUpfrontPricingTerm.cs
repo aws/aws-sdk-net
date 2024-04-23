@@ -36,7 +36,7 @@ namespace Amazon.MarketplaceAgreement.Model
     {
         private ConfigurableUpfrontPricingTermConfiguration _configuration;
         private string _currencyCode;
-        private List<ConfigurableUpfrontRateCardItem> _rateCards = new List<ConfigurableUpfrontRateCardItem>();
+        private List<ConfigurableUpfrontRateCardItem> _rateCards = AWSConfigs.InitializeCollections ? new List<ConfigurableUpfrontRateCardItem>() : null;
         private string _type;
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.MarketplaceAgreement.Model
         // Check to see if RateCards property is set
         internal bool IsSetRateCards()
         {
-            return this._rateCards != null && this._rateCards.Count > 0; 
+            return this._rateCards != null && (this._rateCards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

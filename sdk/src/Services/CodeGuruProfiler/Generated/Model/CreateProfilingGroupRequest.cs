@@ -38,7 +38,7 @@ namespace Amazon.CodeGuruProfiler.Model
         private string _clientToken;
         private ComputePlatform _computePlatform;
         private string _profilingGroupName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentOrchestrationConfig. 
@@ -135,7 +135,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

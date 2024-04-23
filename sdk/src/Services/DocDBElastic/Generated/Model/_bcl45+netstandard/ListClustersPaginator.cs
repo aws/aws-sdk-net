@@ -45,7 +45,7 @@ namespace Amazon.DocDBElastic.Model
         /// Enumerable containing all of the Clusters
         /// </summary>
         public IPaginatedEnumerable<ClusterInList> Clusters => 
-            new PaginatedResultKeyResponse<ListClustersResponse, ClusterInList>(this, (i) => i.Clusters);
+            new PaginatedResultKeyResponse<ListClustersResponse, ClusterInList>(this, (i) => i.Clusters ?? new List<ClusterInList>());
 
         internal ListClustersPaginator(IAmazonDocDBElastic client, ListClustersRequest request)
         {

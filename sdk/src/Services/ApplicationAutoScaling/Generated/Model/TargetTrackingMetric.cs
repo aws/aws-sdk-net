@@ -38,7 +38,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// </summary>
     public partial class TargetTrackingMetric
     {
-        private List<TargetTrackingMetricDimension> _dimensions = new List<TargetTrackingMetricDimension>();
+        private List<TargetTrackingMetricDimension> _dimensions = AWSConfigs.InitializeCollections ? new List<TargetTrackingMetricDimension>() : null;
         private string _metricName;
         private string _awsNamespace;
 
@@ -65,7 +65,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

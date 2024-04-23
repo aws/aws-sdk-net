@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ManagedDataIdentifierSummary> Items => 
-            new PaginatedResultKeyResponse<ListManagedDataIdentifiersResponse, ManagedDataIdentifierSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListManagedDataIdentifiersResponse, ManagedDataIdentifierSummary>(this, (i) => i.Items ?? new List<ManagedDataIdentifierSummary>());
 
         internal ListManagedDataIdentifiersPaginator(IAmazonMacie2 client, ListManagedDataIdentifiersRequest request)
         {

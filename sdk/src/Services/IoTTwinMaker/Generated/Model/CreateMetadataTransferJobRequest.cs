@@ -37,7 +37,7 @@ namespace Amazon.IoTTwinMaker.Model
         private string _description;
         private DestinationConfiguration _destination;
         private string _metadataTransferJobId;
-        private List<SourceConfiguration> _sources = new List<SourceConfiguration>();
+        private List<SourceConfiguration> _sources = AWSConfigs.InitializeCollections ? new List<SourceConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -112,7 +112,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

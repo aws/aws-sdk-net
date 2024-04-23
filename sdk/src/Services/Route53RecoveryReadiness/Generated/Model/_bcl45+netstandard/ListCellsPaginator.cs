@@ -45,7 +45,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         /// Enumerable containing all of the Cells
         /// </summary>
         public IPaginatedEnumerable<CellOutput> Cells => 
-            new PaginatedResultKeyResponse<ListCellsResponse, CellOutput>(this, (i) => i.Cells);
+            new PaginatedResultKeyResponse<ListCellsResponse, CellOutput>(this, (i) => i.Cells ?? new List<CellOutput>());
 
         internal ListCellsPaginator(IAmazonRoute53RecoveryReadiness client, ListCellsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class ListFunctionsByCodeSigningConfigResponse : AmazonWebServiceResponse
     {
-        private List<string> _functionArns = new List<string>();
+        private List<string> _functionArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Lambda.Model
         // Check to see if FunctionArns property is set
         internal bool IsSetFunctionArns()
         {
-            return this._functionArns != null && this._functionArns.Count > 0; 
+            return this._functionArns != null && (this._functionArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

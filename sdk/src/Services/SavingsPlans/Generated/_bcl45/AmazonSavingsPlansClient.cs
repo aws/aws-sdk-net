@@ -38,11 +38,11 @@ namespace Amazon.SavingsPlans
     /// <summary>
     /// <para>Implementation for accessing SavingsPlans</para>
     ///
-    /// Savings Plans are a pricing model that offer significant savings on AWS usage (for
-    /// example, on Amazon EC2 instances). You commit to a consistent amount of usage, in
-    /// USD per hour, for a term of 1 or 3 years, and receive a lower price for that usage.
-    /// For more information, see the <a href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">AWS
-    /// Savings Plans User Guide</a>.
+    /// Savings Plans are a pricing model that offer significant savings on Amazon Web Services
+    /// usage (for example, on Amazon EC2 instances). You commit to a consistent amount of
+    /// usage per hour, in the specified currency, for a term of one or three years, and receive
+    /// a lower price for that usage. For more information, see the <a href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">Amazon
+    /// Web Services Savings Plans User Guide</a>.
     /// </summary>
     public partial class AmazonSavingsPlansClient : AmazonServiceClient, IAmazonSavingsPlans
     {
@@ -385,7 +385,7 @@ namespace Amazon.SavingsPlans
 
 
         /// <summary>
-        /// Describes the specified Savings Plans rates.
+        /// Describes the rates for the specified Savings Plan.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSavingsPlanRates service method.</param>
         /// 
@@ -408,7 +408,7 @@ namespace Amazon.SavingsPlans
 
 
         /// <summary>
-        /// Describes the specified Savings Plans rates.
+        /// Describes the rates for the specified Savings Plan.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSavingsPlanRates service method.</param>
         /// <param name="cancellationToken">
@@ -491,7 +491,7 @@ namespace Amazon.SavingsPlans
 
 
         /// <summary>
-        /// Describes the specified Savings Plans offering rates.
+        /// Describes the offering rates for the specified Savings Plans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSavingsPlansOfferingRates service method.</param>
         /// 
@@ -514,7 +514,7 @@ namespace Amazon.SavingsPlans
 
 
         /// <summary>
-        /// Describes the specified Savings Plans offering rates.
+        /// Describes the offering rates for the specified Savings Plans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSavingsPlansOfferingRates service method.</param>
         /// <param name="cancellationToken">
@@ -544,7 +544,7 @@ namespace Amazon.SavingsPlans
 
 
         /// <summary>
-        /// Describes the specified Savings Plans offerings.
+        /// Describes the offerings for the specified Savings Plans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSavingsPlansOfferings service method.</param>
         /// 
@@ -567,7 +567,7 @@ namespace Amazon.SavingsPlans
 
 
         /// <summary>
-        /// Describes the specified Savings Plans offerings.
+        /// Describes the offerings for the specified Savings Plans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSavingsPlansOfferings service method.</param>
         /// <param name="cancellationToken">
@@ -648,6 +648,71 @@ namespace Amazon.SavingsPlans
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ReturnSavingsPlan
+
+
+        /// <summary>
+        /// Returns the specified Savings Plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReturnSavingsPlan service method.</param>
+        /// 
+        /// <returns>The response from the ReturnSavingsPlan service method, as returned by SavingsPlans.</returns>
+        /// <exception cref="Amazon.SavingsPlans.Model.InternalServerException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ValidationException">
+        /// One of the input parameters is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ReturnSavingsPlan">REST API Reference for ReturnSavingsPlan Operation</seealso>
+        public virtual ReturnSavingsPlanResponse ReturnSavingsPlan(ReturnSavingsPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReturnSavingsPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReturnSavingsPlanResponseUnmarshaller.Instance;
+
+            return Invoke<ReturnSavingsPlanResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the specified Savings Plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReturnSavingsPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReturnSavingsPlan service method, as returned by SavingsPlans.</returns>
+        /// <exception cref="Amazon.SavingsPlans.Model.InternalServerException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ValidationException">
+        /// One of the input parameters is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ReturnSavingsPlan">REST API Reference for ReturnSavingsPlan Operation</seealso>
+        public virtual Task<ReturnSavingsPlanResponse> ReturnSavingsPlanAsync(ReturnSavingsPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReturnSavingsPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReturnSavingsPlanResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ReturnSavingsPlanResponse>(request, options, cancellationToken);
         }
 
         #endregion

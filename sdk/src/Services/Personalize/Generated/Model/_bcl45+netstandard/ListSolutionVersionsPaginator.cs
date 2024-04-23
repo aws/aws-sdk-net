@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the SolutionVersions
         /// </summary>
         public IPaginatedEnumerable<SolutionVersionSummary> SolutionVersions => 
-            new PaginatedResultKeyResponse<ListSolutionVersionsResponse, SolutionVersionSummary>(this, (i) => i.SolutionVersions);
+            new PaginatedResultKeyResponse<ListSolutionVersionsResponse, SolutionVersionSummary>(this, (i) => i.SolutionVersions ?? new List<SolutionVersionSummary>());
 
         internal ListSolutionVersionsPaginator(IAmazonPersonalize client, ListSolutionVersionsRequest request)
         {

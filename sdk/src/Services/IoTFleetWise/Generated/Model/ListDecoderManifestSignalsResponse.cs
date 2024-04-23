@@ -34,7 +34,7 @@ namespace Amazon.IoTFleetWise.Model
     public partial class ListDecoderManifestSignalsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SignalDecoder> _signalDecoders = new List<SignalDecoder>();
+        private List<SignalDecoder> _signalDecoders = AWSConfigs.InitializeCollections ? new List<SignalDecoder>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if SignalDecoders property is set
         internal bool IsSetSignalDecoders()
         {
-            return this._signalDecoders != null && this._signalDecoders.Count > 0; 
+            return this._signalDecoders != null && (this._signalDecoders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

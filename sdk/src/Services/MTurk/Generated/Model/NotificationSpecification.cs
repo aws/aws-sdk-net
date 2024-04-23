@@ -35,7 +35,7 @@ namespace Amazon.MTurk.Model
     public partial class NotificationSpecification
     {
         private string _destination;
-        private List<string> _eventTypes = new List<string>();
+        private List<string> _eventTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private NotificationTransport _transport;
         private string _version;
 
@@ -92,7 +92,7 @@ namespace Amazon.MTurk.Model
         // Check to see if EventTypes property is set
         internal bool IsSetEventTypes()
         {
-            return this._eventTypes != null && this._eventTypes.Count > 0; 
+            return this._eventTypes != null && (this._eventTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

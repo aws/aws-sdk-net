@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ApplyModes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ApplyModes == null)
+                        {
+                            unmarshalledObject.ApplyModes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ApplyModes.Add(item);
                         continue;
@@ -70,6 +75,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ContextAttributes/member", targetDepth))
                     {
                         var unmarshaller = ContextAttributeUnmarshaller.Instance;
+                        if (unmarshalledObject.ContextAttributes == null)
+                        {
+                            unmarshalledObject.ContextAttributes = new List<ContextAttribute>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ContextAttributes.Add(item);
                         continue;
@@ -95,6 +104,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Parameters/member", targetDepth))
                     {
                         var unmarshaller = RecommendedActionParameterUnmarshaller.Instance;
+                        if (unmarshalledObject.Parameters == null)
+                        {
+                            unmarshalledObject.Parameters = new List<RecommendedActionParameter>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Parameters.Add(item);
                         continue;
@@ -146,3 +159,4 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

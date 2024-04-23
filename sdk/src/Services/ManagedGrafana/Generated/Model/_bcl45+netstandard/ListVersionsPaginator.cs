@@ -45,7 +45,7 @@ namespace Amazon.ManagedGrafana.Model
         /// Enumerable containing all of the GrafanaVersions
         /// </summary>
         public IPaginatedEnumerable<string> GrafanaVersions => 
-            new PaginatedResultKeyResponse<ListVersionsResponse, string>(this, (i) => i.GrafanaVersions);
+            new PaginatedResultKeyResponse<ListVersionsResponse, string>(this, (i) => i.GrafanaVersions ?? new List<string>());
 
         internal ListVersionsPaginator(IAmazonManagedGrafana client, ListVersionsRequest request)
         {

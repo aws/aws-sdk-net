@@ -45,7 +45,7 @@ namespace Amazon.BackupGateway.Model
         /// Enumerable containing all of the VirtualMachines
         /// </summary>
         public IPaginatedEnumerable<VirtualMachine> VirtualMachines => 
-            new PaginatedResultKeyResponse<ListVirtualMachinesResponse, VirtualMachine>(this, (i) => i.VirtualMachines);
+            new PaginatedResultKeyResponse<ListVirtualMachinesResponse, VirtualMachine>(this, (i) => i.VirtualMachines ?? new List<VirtualMachine>());
 
         internal ListVirtualMachinesPaginator(IAmazonBackupGateway client, ListVirtualMachinesRequest request)
         {

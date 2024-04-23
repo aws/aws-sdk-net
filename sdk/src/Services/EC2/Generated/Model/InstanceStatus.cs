@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class InstanceStatus
     {
         private string _availabilityZone;
-        private List<InstanceStatusEvent> _events = new List<InstanceStatusEvent>();
+        private List<InstanceStatusEvent> _events = AWSConfigs.InitializeCollections ? new List<InstanceStatusEvent>() : null;
         private string _instanceId;
         private InstanceState _instanceState;
         private string _outpostArn;
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

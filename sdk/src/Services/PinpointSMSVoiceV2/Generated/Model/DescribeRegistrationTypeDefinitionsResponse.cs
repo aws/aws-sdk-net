@@ -34,7 +34,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class DescribeRegistrationTypeDefinitionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RegistrationTypeDefinition> _registrationTypeDefinitions = new List<RegistrationTypeDefinition>();
+        private List<RegistrationTypeDefinition> _registrationTypeDefinitions = AWSConfigs.InitializeCollections ? new List<RegistrationTypeDefinition>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if RegistrationTypeDefinitions property is set
         internal bool IsSetRegistrationTypeDefinitions()
         {
-            return this._registrationTypeDefinitions != null && this._registrationTypeDefinitions.Count > 0; 
+            return this._registrationTypeDefinitions != null && (this._registrationTypeDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

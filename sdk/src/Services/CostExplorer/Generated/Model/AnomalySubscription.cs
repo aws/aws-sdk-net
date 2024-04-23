@@ -56,8 +56,8 @@ namespace Amazon.CostExplorer.Model
     {
         private string _accountId;
         private AnomalySubscriptionFrequency _frequency;
-        private List<string> _monitorArnList = new List<string>();
-        private List<Subscriber> _subscribers = new List<Subscriber>();
+        private List<string> _monitorArnList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Subscriber> _subscribers = AWSConfigs.InitializeCollections ? new List<Subscriber>() : null;
         private string _subscriptionArn;
         private string _subscriptionName;
         private double? _threshold;
@@ -120,7 +120,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if MonitorArnList property is set
         internal bool IsSetMonitorArnList()
         {
-            return this._monitorArnList != null && this._monitorArnList.Count > 0; 
+            return this._monitorArnList != null && (this._monitorArnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Subscribers property is set
         internal bool IsSetSubscribers()
         {
-            return this._subscribers != null && this._subscribers.Count > 0; 
+            return this._subscribers != null && (this._subscribers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

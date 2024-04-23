@@ -45,7 +45,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the Totals
         /// </summary>
         public IPaginatedEnumerable<UsageTotal> Totals => 
-            new PaginatedResultKeyResponse<ListUsageTotalsResponse, UsageTotal>(this, (i) => i.Totals);
+            new PaginatedResultKeyResponse<ListUsageTotalsResponse, UsageTotal>(this, (i) => i.Totals ?? new List<UsageTotal>());
 
         internal ListUsageTotalsPaginator(IAmazonInspector2 client, ListUsageTotalsRequest request)
         {

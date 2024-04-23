@@ -45,7 +45,7 @@ namespace Amazon.GroundStation.Model
         /// Enumerable containing all of the Ephemerides
         /// </summary>
         public IPaginatedEnumerable<EphemerisItem> Ephemerides => 
-            new PaginatedResultKeyResponse<ListEphemeridesResponse, EphemerisItem>(this, (i) => i.Ephemerides);
+            new PaginatedResultKeyResponse<ListEphemeridesResponse, EphemerisItem>(this, (i) => i.Ephemerides ?? new List<EphemerisItem>());
 
         internal ListEphemeridesPaginator(IAmazonGroundStation client, ListEphemeridesRequest request)
         {

@@ -32,7 +32,7 @@ namespace Amazon.QConnect
     public partial class AmazonQConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("QConnect", "3.7.303.15");
+            InternalSDKUtils.BuildUserAgentString("QConnect", "3.7.304.6");
 
         private string _userAgent = UserAgentString;
         ///<summary>

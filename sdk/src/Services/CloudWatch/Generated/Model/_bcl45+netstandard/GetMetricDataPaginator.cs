@@ -45,13 +45,13 @@ namespace Amazon.CloudWatch.Model
         /// Enumerable containing all of the MetricDataResults
         /// </summary>
         public IPaginatedEnumerable<MetricDataResult> MetricDataResults => 
-            new PaginatedResultKeyResponse<GetMetricDataResponse, MetricDataResult>(this, (i) => i.MetricDataResults);
+            new PaginatedResultKeyResponse<GetMetricDataResponse, MetricDataResult>(this, (i) => i.MetricDataResults ?? new List<MetricDataResult>());
 
         /// <summary>
         /// Enumerable containing all of the Messages
         /// </summary>
         public IPaginatedEnumerable<MessageData> Messages => 
-            new PaginatedResultKeyResponse<GetMetricDataResponse, MessageData>(this, (i) => i.Messages);
+            new PaginatedResultKeyResponse<GetMetricDataResponse, MessageData>(this, (i) => i.Messages ?? new List<MessageData>());
 
         internal GetMetricDataPaginator(IAmazonCloudWatch client, GetMetricDataRequest request)
         {

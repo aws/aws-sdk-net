@@ -33,7 +33,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DescribeFileCachesResponse : AmazonWebServiceResponse
     {
-        private List<FileCache> _fileCaches = new List<FileCache>();
+        private List<FileCache> _fileCaches = AWSConfigs.InitializeCollections ? new List<FileCache>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.FSx.Model
         // Check to see if FileCaches property is set
         internal bool IsSetFileCaches()
         {
-            return this._fileCaches != null && this._fileCaches.Count > 0; 
+            return this._fileCaches != null && (this._fileCaches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

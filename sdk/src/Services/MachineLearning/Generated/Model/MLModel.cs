@@ -56,7 +56,7 @@ namespace Amazon.MachineLearning.Model
         private DateTime? _startedAt;
         private EntityStatus _status;
         private string _trainingDataSourceId;
-        private Dictionary<string, string> _trainingParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _trainingParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Algorithm. 
@@ -494,7 +494,7 @@ namespace Amazon.MachineLearning.Model
         // Check to see if TrainingParameters property is set
         internal bool IsSetTrainingParameters()
         {
-            return this._trainingParameters != null && this._trainingParameters.Count > 0; 
+            return this._trainingParameters != null && (this._trainingParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

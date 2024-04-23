@@ -45,7 +45,7 @@ namespace Amazon.KafkaConnect.Model
         /// Enumerable containing all of the WorkerConfigurations
         /// </summary>
         public IPaginatedEnumerable<WorkerConfigurationSummary> WorkerConfigurations => 
-            new PaginatedResultKeyResponse<ListWorkerConfigurationsResponse, WorkerConfigurationSummary>(this, (i) => i.WorkerConfigurations);
+            new PaginatedResultKeyResponse<ListWorkerConfigurationsResponse, WorkerConfigurationSummary>(this, (i) => i.WorkerConfigurations ?? new List<WorkerConfigurationSummary>());
 
         internal ListWorkerConfigurationsPaginator(IAmazonKafkaConnect client, ListWorkerConfigurationsRequest request)
         {

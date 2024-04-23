@@ -33,7 +33,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class ListGatewayInstancesResponse : AmazonWebServiceResponse
     {
-        private List<ListedGatewayInstance> _instances = new List<ListedGatewayInstance>();
+        private List<ListedGatewayInstance> _instances = AWSConfigs.InitializeCollections ? new List<ListedGatewayInstance>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

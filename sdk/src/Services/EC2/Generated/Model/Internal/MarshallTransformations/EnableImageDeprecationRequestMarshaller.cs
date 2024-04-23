@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -60,12 +61,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetDeprecateAt())
                 {
-                    request.Parameters.Add("DeprecateAt", StringUtils.FromDateTimeToISO8601(publicRequest.DeprecateAt));
+                    request.Parameters.Add("DeprecateAt", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DeprecateAt));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetImageId())
                 {
                     request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(M2tsSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAudioBufferModel())
             {
                 context.Writer.WritePropertyName("audioBufferModel");
@@ -169,7 +172,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFragmentTime())
             {
                 context.Writer.WritePropertyName("fragmentTime");
-                context.Writer.Write(requestObject.FragmentTime);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.FragmentTime))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FragmentTime));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.FragmentTime);
+                }
             }
 
             if(requestObject.IsSetKlvMetadata())
@@ -199,7 +209,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNullPacketBitrate())
             {
                 context.Writer.WritePropertyName("nullPacketBitrate");
-                context.Writer.Write(requestObject.NullPacketBitrate);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.NullPacketBitrate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NullPacketBitrate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NullPacketBitrate);
+                }
             }
 
             if(requestObject.IsSetPatInterval())
@@ -230,6 +247,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("pmtPid");
                 context.Writer.Write(requestObject.PmtPid);
+            }
+
+            if(requestObject.IsSetPreventBufferUnderflow())
+            {
+                context.Writer.WritePropertyName("preventBufferUnderflow");
+                context.Writer.Write(requestObject.PreventBufferUnderflow);
             }
 
             if(requestObject.IsSetPrivateMetadataPid())
@@ -300,7 +323,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentationTime())
             {
                 context.Writer.WritePropertyName("segmentationTime");
-                context.Writer.Write(requestObject.SegmentationTime);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SegmentationTime))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SegmentationTime));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.SegmentationTime);
+                }
             }
 
             if(requestObject.IsSetTimedMetadataPid())
@@ -330,3 +360,4 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

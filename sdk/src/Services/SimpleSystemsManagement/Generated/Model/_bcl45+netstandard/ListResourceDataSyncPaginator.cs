@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the ResourceDataSyncItems
         /// </summary>
         public IPaginatedEnumerable<ResourceDataSyncItem> ResourceDataSyncItems => 
-            new PaginatedResultKeyResponse<ListResourceDataSyncResponse, ResourceDataSyncItem>(this, (i) => i.ResourceDataSyncItems);
+            new PaginatedResultKeyResponse<ListResourceDataSyncResponse, ResourceDataSyncItem>(this, (i) => i.ResourceDataSyncItems ?? new List<ResourceDataSyncItem>());
 
         internal ListResourceDataSyncPaginator(IAmazonSimpleSystemsManagement client, ListResourceDataSyncRequest request)
         {

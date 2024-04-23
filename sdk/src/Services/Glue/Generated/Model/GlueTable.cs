@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GlueTable
     {
-        private Dictionary<string, string> _additionalOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _catalogId;
         private string _connectionName;
         private string _databaseName;
@@ -66,7 +66,7 @@ namespace Amazon.Glue.Model
         // Check to see if AdditionalOptions property is set
         internal bool IsSetAdditionalOptions()
         {
-            return this._additionalOptions != null && this._additionalOptions.Count > 0; 
+            return this._additionalOptions != null && (this._additionalOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

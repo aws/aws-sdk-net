@@ -35,7 +35,7 @@ namespace Amazon.FSx.Model
     public partial class NFSDataRepositoryConfiguration
     {
         private AutoExportPolicy _autoExportPolicy;
-        private List<string> _dnsIps = new List<string>();
+        private List<string> _dnsIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private NfsVersion _version;
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.FSx.Model
         // Check to see if DnsIps property is set
         internal bool IsSetDnsIps()
         {
-            return this._dnsIps != null && this._dnsIps.Count > 0; 
+            return this._dnsIps != null && (this._dnsIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

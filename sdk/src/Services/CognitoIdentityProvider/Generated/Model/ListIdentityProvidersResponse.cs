@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class ListIdentityProvidersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProviderDescription> _providers = new List<ProviderDescription>();
+        private List<ProviderDescription> _providers = AWSConfigs.InitializeCollections ? new List<ProviderDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if Providers property is set
         internal bool IsSetProviders()
         {
-            return this._providers != null && this._providers.Count > 0; 
+            return this._providers != null && (this._providers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

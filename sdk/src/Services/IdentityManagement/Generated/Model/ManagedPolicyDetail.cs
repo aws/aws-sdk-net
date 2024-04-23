@@ -56,7 +56,7 @@ namespace Amazon.IdentityManagement.Model
         private int? _permissionsBoundaryUsageCount;
         private string _policyId;
         private string _policyName;
-        private List<PolicyVersion> _policyVersionList = new List<PolicyVersion>();
+        private List<PolicyVersion> _policyVersionList = AWSConfigs.InitializeCollections ? new List<PolicyVersion>() : null;
         private DateTime? _updateDate;
 
         /// <summary>
@@ -280,7 +280,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyVersionList property is set
         internal bool IsSetPolicyVersionList()
         {
-            return this._policyVersionList != null && this._policyVersionList.Count > 0; 
+            return this._policyVersionList != null && (this._policyVersionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

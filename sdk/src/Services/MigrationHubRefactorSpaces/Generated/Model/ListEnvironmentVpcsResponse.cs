@@ -33,7 +33,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// </summary>
     public partial class ListEnvironmentVpcsResponse : AmazonWebServiceResponse
     {
-        private List<EnvironmentVpc> _environmentVpcList = new List<EnvironmentVpc>();
+        private List<EnvironmentVpc> _environmentVpcList = AWSConfigs.InitializeCollections ? new List<EnvironmentVpc>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         // Check to see if EnvironmentVpcList property is set
         internal bool IsSetEnvironmentVpcList()
         {
-            return this._environmentVpcList != null && this._environmentVpcList.Count > 0; 
+            return this._environmentVpcList != null && (this._environmentVpcList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

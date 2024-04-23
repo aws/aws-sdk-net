@@ -45,7 +45,7 @@ namespace Amazon.Mgn.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<Wave> Items => 
-            new PaginatedResultKeyResponse<ListWavesResponse, Wave>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListWavesResponse, Wave>(this, (i) => i.Items ?? new List<Wave>());
 
         internal ListWavesPaginator(IAmazonMgn client, ListWavesRequest request)
         {

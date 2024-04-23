@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCacheBehaviors())
@@ -92,6 +94,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.CacheBehaviorSettings, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetCertificateName())
+                {
+                    context.Writer.WritePropertyName("certificateName");
+                    context.Writer.Write(publicRequest.CertificateName);
                 }
 
                 if(publicRequest.IsSetDefaultCacheBehavior())
@@ -128,6 +136,18 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetUseDefaultCertificate())
+                {
+                    context.Writer.WritePropertyName("useDefaultCertificate");
+                    context.Writer.Write(publicRequest.UseDefaultCertificate);
+                }
+
+                if(publicRequest.IsSetViewerMinimumTlsProtocolVersion())
+                {
+                    context.Writer.WritePropertyName("viewerMinimumTlsProtocolVersion");
+                    context.Writer.Write(publicRequest.ViewerMinimumTlsProtocolVersion);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -156,3 +176,4 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

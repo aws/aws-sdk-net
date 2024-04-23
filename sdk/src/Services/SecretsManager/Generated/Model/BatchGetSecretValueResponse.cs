@@ -33,9 +33,9 @@ namespace Amazon.SecretsManager.Model
     /// </summary>
     public partial class BatchGetSecretValueResponse : AmazonWebServiceResponse
     {
-        private List<APIErrorType> _errors = new List<APIErrorType>();
+        private List<APIErrorType> _errors = AWSConfigs.InitializeCollections ? new List<APIErrorType>() : null;
         private string _nextToken;
-        private List<SecretValueEntry> _secretValues = new List<SecretValueEntry>();
+        private List<SecretValueEntry> _secretValues = AWSConfigs.InitializeCollections ? new List<SecretValueEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -53,7 +53,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if SecretValues property is set
         internal bool IsSetSecretValues()
         {
-            return this._secretValues != null && this._secretValues.Count > 0; 
+            return this._secretValues != null && (this._secretValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

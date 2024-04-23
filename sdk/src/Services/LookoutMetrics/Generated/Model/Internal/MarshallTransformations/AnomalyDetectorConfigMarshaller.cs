@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnomalyDetectorConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnomalyDetectorFrequency())
             {
                 context.Writer.WritePropertyName("AnomalyDetectorFrequency");
@@ -60,3 +63,4 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

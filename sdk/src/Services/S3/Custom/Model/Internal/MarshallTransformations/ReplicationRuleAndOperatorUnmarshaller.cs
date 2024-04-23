@@ -42,8 +42,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Tag", targetDepth))
                     {
+                        if (ruleAndOperator.Tags == null)
+                        {
+                            ruleAndOperator.Tags = new List<Tag>();
+                        }
                         ruleAndOperator.Tags.Add(TagUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                 }

@@ -34,7 +34,7 @@ namespace Amazon.Panorama.Model
     public partial class ListApplicationInstanceNodeInstancesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<NodeInstance> _nodeInstances = new List<NodeInstance>();
+        private List<NodeInstance> _nodeInstances = AWSConfigs.InitializeCollections ? new List<NodeInstance>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Panorama.Model
         // Check to see if NodeInstances property is set
         internal bool IsSetNodeInstances()
         {
-            return this._nodeInstances != null && this._nodeInstances.Count > 0; 
+            return this._nodeInstances != null && (this._nodeInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

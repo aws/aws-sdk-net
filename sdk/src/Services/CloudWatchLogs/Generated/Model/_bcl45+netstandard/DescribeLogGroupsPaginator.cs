@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all of the LogGroups
         /// </summary>
         public IPaginatedEnumerable<LogGroup> LogGroups => 
-            new PaginatedResultKeyResponse<DescribeLogGroupsResponse, LogGroup>(this, (i) => i.LogGroups);
+            new PaginatedResultKeyResponse<DescribeLogGroupsResponse, LogGroup>(this, (i) => i.LogGroups ?? new List<LogGroup>());
 
         internal DescribeLogGroupsPaginator(IAmazonCloudWatchLogs client, DescribeLogGroupsRequest request)
         {

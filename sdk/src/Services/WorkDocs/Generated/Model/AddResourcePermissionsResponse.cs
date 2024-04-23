@@ -33,7 +33,7 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class AddResourcePermissionsResponse : AmazonWebServiceResponse
     {
-        private List<ShareResult> _shareResults = new List<ShareResult>();
+        private List<ShareResult> _shareResults = AWSConfigs.InitializeCollections ? new List<ShareResult>() : null;
 
         /// <summary>
         /// Gets and sets the property ShareResults. 
@@ -50,7 +50,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if ShareResults property is set
         internal bool IsSetShareResults()
         {
-            return this._shareResults != null && this._shareResults.Count > 0; 
+            return this._shareResults != null && (this._shareResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

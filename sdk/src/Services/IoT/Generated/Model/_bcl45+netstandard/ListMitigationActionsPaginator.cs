@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the ActionIdentifiers
         /// </summary>
         public IPaginatedEnumerable<MitigationActionIdentifier> ActionIdentifiers => 
-            new PaginatedResultKeyResponse<ListMitigationActionsResponse, MitigationActionIdentifier>(this, (i) => i.ActionIdentifiers);
+            new PaginatedResultKeyResponse<ListMitigationActionsResponse, MitigationActionIdentifier>(this, (i) => i.ActionIdentifiers ?? new List<MitigationActionIdentifier>());
 
         internal ListMitigationActionsPaginator(IAmazonIoT client, ListMitigationActionsRequest request)
         {

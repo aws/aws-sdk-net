@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model
     public partial class ListRoomsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Room> _rooms = new List<Room>();
+        private List<Room> _rooms = AWSConfigs.InitializeCollections ? new List<Room>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Chime.Model
         // Check to see if Rooms property is set
         internal bool IsSetRooms()
         {
-            return this._rooms != null && this._rooms.Count > 0; 
+            return this._rooms != null && (this._rooms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

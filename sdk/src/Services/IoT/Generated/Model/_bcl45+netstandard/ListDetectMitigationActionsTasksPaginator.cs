@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the Tasks
         /// </summary>
         public IPaginatedEnumerable<DetectMitigationActionsTaskSummary> Tasks => 
-            new PaginatedResultKeyResponse<ListDetectMitigationActionsTasksResponse, DetectMitigationActionsTaskSummary>(this, (i) => i.Tasks);
+            new PaginatedResultKeyResponse<ListDetectMitigationActionsTasksResponse, DetectMitigationActionsTaskSummary>(this, (i) => i.Tasks ?? new List<DetectMitigationActionsTaskSummary>());
 
         internal ListDetectMitigationActionsTasksPaginator(IAmazonIoT client, ListDetectMitigationActionsTasksRequest request)
         {

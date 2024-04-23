@@ -33,7 +33,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class ListAccessPreviewsResponse : AmazonWebServiceResponse
     {
-        private List<AccessPreviewSummary> _accessPreviews = new List<AccessPreviewSummary>();
+        private List<AccessPreviewSummary> _accessPreviews = AWSConfigs.InitializeCollections ? new List<AccessPreviewSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if AccessPreviews property is set
         internal bool IsSetAccessPreviews()
         {
-            return this._accessPreviews != null && this._accessPreviews.Count > 0; 
+            return this._accessPreviews != null && (this._accessPreviews.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

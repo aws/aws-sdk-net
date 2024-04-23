@@ -50,7 +50,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class PutConformancePackRequest : AmazonConfigServiceRequest
     {
-        private List<ConformancePackInputParameter> _conformancePackInputParameters = new List<ConformancePackInputParameter>();
+        private List<ConformancePackInputParameter> _conformancePackInputParameters = AWSConfigs.InitializeCollections ? new List<ConformancePackInputParameter>() : null;
         private string _conformancePackName;
         private string _deliveryS3Bucket;
         private string _deliveryS3KeyPrefix;
@@ -74,7 +74,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConformancePackInputParameters property is set
         internal bool IsSetConformancePackInputParameters()
         {
-            return this._conformancePackInputParameters != null && this._conformancePackInputParameters.Count > 0; 
+            return this._conformancePackInputParameters != null && (this._conformancePackInputParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

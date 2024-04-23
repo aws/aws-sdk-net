@@ -33,8 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class RuleGroupSourceStatelessRuleMatchAttributesTcpFlags
     {
-        private List<string> _flags = new List<string>();
-        private List<string> _masks = new List<string>();
+        private List<string> _flags = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _masks = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Flags. 
@@ -53,7 +53,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Flags property is set
         internal bool IsSetFlags()
         {
-            return this._flags != null && this._flags.Count > 0; 
+            return this._flags != null && (this._flags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Masks property is set
         internal bool IsSetMasks()
         {
-            return this._masks != null && this._masks.Count > 0; 
+            return this._masks != null && (this._masks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

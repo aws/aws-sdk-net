@@ -33,7 +33,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class SearchProfilesResponse : AmazonWebServiceResponse
     {
-        private List<Profile> _items = new List<Profile>();
+        private List<Profile> _items = AWSConfigs.InitializeCollections ? new List<Profile>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

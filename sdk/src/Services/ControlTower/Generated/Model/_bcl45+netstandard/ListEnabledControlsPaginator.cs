@@ -45,7 +45,7 @@ namespace Amazon.ControlTower.Model
         /// Enumerable containing all of the EnabledControls
         /// </summary>
         public IPaginatedEnumerable<EnabledControlSummary> EnabledControls => 
-            new PaginatedResultKeyResponse<ListEnabledControlsResponse, EnabledControlSummary>(this, (i) => i.EnabledControls);
+            new PaginatedResultKeyResponse<ListEnabledControlsResponse, EnabledControlSummary>(this, (i) => i.EnabledControls ?? new List<EnabledControlSummary>());
 
         internal ListEnabledControlsPaginator(IAmazonControlTower client, ListEnabledControlsRequest request)
         {

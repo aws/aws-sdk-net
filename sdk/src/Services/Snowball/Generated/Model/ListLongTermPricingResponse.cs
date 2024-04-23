@@ -33,7 +33,7 @@ namespace Amazon.Snowball.Model
     /// </summary>
     public partial class ListLongTermPricingResponse : AmazonWebServiceResponse
     {
-        private List<LongTermPricingListEntry> _longTermPricingEntries = new List<LongTermPricingListEntry>();
+        private List<LongTermPricingListEntry> _longTermPricingEntries = AWSConfigs.InitializeCollections ? new List<LongTermPricingListEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Snowball.Model
         // Check to see if LongTermPricingEntries property is set
         internal bool IsSetLongTermPricingEntries()
         {
-            return this._longTermPricingEntries != null && this._longTermPricingEntries.Count > 0; 
+            return this._longTermPricingEntries != null && (this._longTermPricingEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

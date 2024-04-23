@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model
     /// </summary>
     public partial class ShareRule
     {
-        private List<string> _targetAccounts = new List<string>();
+        private List<string> _targetAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _unshareInterval;
         private RetentionIntervalUnitValues _unshareIntervalUnit;
 
@@ -54,7 +54,7 @@ namespace Amazon.DLM.Model
         // Check to see if TargetAccounts property is set
         internal bool IsSetTargetAccounts()
         {
-            return this._targetAccounts != null && this._targetAccounts.Count > 0; 
+            return this._targetAccounts != null && (this._targetAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

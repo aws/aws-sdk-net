@@ -35,14 +35,14 @@ namespace Amazon.Neptunedata.Model
     {
         private string _dbEngineVersion;
         private string _dfeQueryEngine;
-        private Dictionary<string, Amazon.Runtime.Documents.Document> _features = new Dictionary<string, Amazon.Runtime.Documents.Document>();
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _features = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
         private QueryLanguageVersion _gremlin;
-        private Dictionary<string, string> _labMode = new Dictionary<string, string>();
+        private Dictionary<string, string> _labMode = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private QueryLanguageVersion _opencypher;
         private string _role;
         private int? _rollingBackTrxCount;
         private string _rollingBackTrxEarliestStartTime;
-        private Dictionary<string, string> _settings = new Dictionary<string, string>();
+        private Dictionary<string, string> _settings = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private QueryLanguageVersion _sparql;
         private string _startTime;
         private string _status;
@@ -102,7 +102,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if LabMode property is set
         internal bool IsSetLabMode()
         {
-            return this._labMode != null && this._labMode.Count > 0; 
+            return this._labMode != null && (this._labMode.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -236,7 +236,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if Settings property is set
         internal bool IsSetSettings()
         {
-            return this._settings != null && this._settings.Count > 0; 
+            return this._settings != null && (this._settings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

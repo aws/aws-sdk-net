@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model
     public partial class ListWhatIfForecastsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WhatIfForecastSummary> _whatIfForecasts = new List<WhatIfForecastSummary>();
+        private List<WhatIfForecastSummary> _whatIfForecasts = AWSConfigs.InitializeCollections ? new List<WhatIfForecastSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if WhatIfForecasts property is set
         internal bool IsSetWhatIfForecasts()
         {
-            return this._whatIfForecasts != null && this._whatIfForecasts.Count > 0; 
+            return this._whatIfForecasts != null && (this._whatIfForecasts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

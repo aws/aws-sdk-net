@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsWafWebAclRule
     {
         private WafAction _action;
-        private List<WafExcludedRule> _excludedRules = new List<WafExcludedRule>();
+        private List<WafExcludedRule> _excludedRules = AWSConfigs.InitializeCollections ? new List<WafExcludedRule>() : null;
         private WafOverrideAction _overrideAction;
         private int? _priority;
         private string _ruleId;
@@ -74,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ExcludedRules property is set
         internal bool IsSetExcludedRules()
         {
-            return this._excludedRules != null && this._excludedRules.Count > 0; 
+            return this._excludedRules != null && (this._excludedRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

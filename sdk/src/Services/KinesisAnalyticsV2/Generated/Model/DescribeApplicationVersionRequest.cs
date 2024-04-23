@@ -36,7 +36,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+    /// This operation is supported only for Managed Service for Apache Flink.
     /// </para>
     ///  </note>
     /// </summary>

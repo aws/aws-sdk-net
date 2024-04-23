@@ -34,7 +34,7 @@ namespace Amazon.IotData.Model
     public partial class ListNamedShadowsForThingResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _results = new List<string>();
+        private List<string> _results = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _timestamp;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.IotData.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

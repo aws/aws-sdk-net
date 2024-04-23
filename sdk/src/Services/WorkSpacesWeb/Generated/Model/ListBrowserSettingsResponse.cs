@@ -33,7 +33,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class ListBrowserSettingsResponse : AmazonWebServiceResponse
     {
-        private List<BrowserSettingsSummary> _browserSettings = new List<BrowserSettingsSummary>();
+        private List<BrowserSettingsSummary> _browserSettings = AWSConfigs.InitializeCollections ? new List<BrowserSettingsSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if BrowserSettings property is set
         internal bool IsSetBrowserSettings()
         {
-            return this._browserSettings != null && this._browserSettings.Count > 0; 
+            return this._browserSettings != null && (this._browserSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

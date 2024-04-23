@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AttributeValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetN())
             {
                 context.Writer.WritePropertyName("N");
-                context.Writer.Write(requestObject.N);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.N))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.N));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.N);
+                }
             }
 
             if(requestObject.IsSetS())
@@ -91,3 +101,4 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

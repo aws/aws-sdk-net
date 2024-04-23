@@ -34,7 +34,9 @@ namespace Amazon.WorkSpaces.Model
     /// 
     ///  
     /// <para>
-    /// You cannot reboot a WorkSpace unless its state is <c>AVAILABLE</c> or <c>UNHEALTHY</c>.
+    /// You cannot reboot a WorkSpace unless its state is <c>AVAILABLE</c>, <c>UNHEALTHY</c>,
+    /// or <c>REBOOTING</c>. Reboot a WorkSpace in the <c>REBOOTING</c> state only if your
+    /// WorkSpace has been stuck in the <c>REBOOTING</c> state for over 20 minutes.
     /// </para>
     ///  
     /// <para>
@@ -43,7 +45,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class RebootWorkspacesRequest : AmazonWorkSpacesRequest
     {
-        private List<RebootRequest> _rebootWorkspaceRequests = new List<RebootRequest>();
+        private List<RebootRequest> _rebootWorkspaceRequests = AWSConfigs.InitializeCollections ? new List<RebootRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property RebootWorkspaceRequests. 
@@ -61,7 +63,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if RebootWorkspaceRequests property is set
         internal bool IsSetRebootWorkspaceRequests()
         {
-            return this._rebootWorkspaceRequests != null && this._rebootWorkspaceRequests.Count > 0; 
+            return this._rebootWorkspaceRequests != null && (this._rebootWorkspaceRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

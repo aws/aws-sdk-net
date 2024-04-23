@@ -45,7 +45,7 @@ namespace Amazon.Bedrock.Model
         /// Enumerable containing all of the ModelSummaries
         /// </summary>
         public IPaginatedEnumerable<CustomModelSummary> ModelSummaries => 
-            new PaginatedResultKeyResponse<ListCustomModelsResponse, CustomModelSummary>(this, (i) => i.ModelSummaries);
+            new PaginatedResultKeyResponse<ListCustomModelsResponse, CustomModelSummary>(this, (i) => i.ModelSummaries ?? new List<CustomModelSummary>());
 
         internal ListCustomModelsPaginator(IAmazonBedrock client, ListCustomModelsRequest request)
         {

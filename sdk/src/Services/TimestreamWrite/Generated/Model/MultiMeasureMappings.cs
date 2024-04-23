@@ -33,7 +33,7 @@ namespace Amazon.TimestreamWrite.Model
     /// </summary>
     public partial class MultiMeasureMappings
     {
-        private List<MultiMeasureAttributeMapping> _multiMeasureAttributeMappings = new List<MultiMeasureAttributeMapping>();
+        private List<MultiMeasureAttributeMapping> _multiMeasureAttributeMappings = AWSConfigs.InitializeCollections ? new List<MultiMeasureAttributeMapping>() : null;
         private string _targetMultiMeasureName;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.TimestreamWrite.Model
         // Check to see if MultiMeasureAttributeMappings property is set
         internal bool IsSetMultiMeasureAttributeMappings()
         {
-            return this._multiMeasureAttributeMappings != null && this._multiMeasureAttributeMappings.Count > 0; 
+            return this._multiMeasureAttributeMappings != null && (this._multiMeasureAttributeMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

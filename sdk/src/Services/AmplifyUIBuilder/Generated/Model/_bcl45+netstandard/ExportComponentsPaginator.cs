@@ -45,7 +45,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Enumerable containing all of the Entities
         /// </summary>
         public IPaginatedEnumerable<Component> Entities => 
-            new PaginatedResultKeyResponse<ExportComponentsResponse, Component>(this, (i) => i.Entities);
+            new PaginatedResultKeyResponse<ExportComponentsResponse, Component>(this, (i) => i.Entities ?? new List<Component>());
 
         internal ExportComponentsPaginator(IAmazonAmplifyUIBuilder client, ExportComponentsRequest request)
         {

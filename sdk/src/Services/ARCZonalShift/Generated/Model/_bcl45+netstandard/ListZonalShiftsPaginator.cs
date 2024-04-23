@@ -45,7 +45,7 @@ namespace Amazon.ARCZonalShift.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ZonalShiftSummary> Items => 
-            new PaginatedResultKeyResponse<ListZonalShiftsResponse, ZonalShiftSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListZonalShiftsResponse, ZonalShiftSummary>(this, (i) => i.Items ?? new List<ZonalShiftSummary>());
 
         internal ListZonalShiftsPaginator(IAmazonARCZonalShift client, ListZonalShiftsRequest request)
         {

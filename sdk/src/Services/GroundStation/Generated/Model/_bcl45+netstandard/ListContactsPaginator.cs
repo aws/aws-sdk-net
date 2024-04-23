@@ -45,7 +45,7 @@ namespace Amazon.GroundStation.Model
         /// Enumerable containing all of the ContactList
         /// </summary>
         public IPaginatedEnumerable<ContactData> ContactList => 
-            new PaginatedResultKeyResponse<ListContactsResponse, ContactData>(this, (i) => i.ContactList);
+            new PaginatedResultKeyResponse<ListContactsResponse, ContactData>(this, (i) => i.ContactList ?? new List<ContactData>());
 
         internal ListContactsPaginator(IAmazonGroundStation client, ListContactsRequest request)
         {

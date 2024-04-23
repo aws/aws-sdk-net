@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class StartWorkflowRunRequest : AmazonGlueRequest
     {
         private string _name;
-        private Dictionary<string, string> _runProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _runProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -71,7 +71,7 @@ namespace Amazon.Glue.Model
         // Check to see if RunProperties property is set
         internal bool IsSetRunProperties()
         {
-            return this._runProperties != null && this._runProperties.Count > 0; 
+            return this._runProperties != null && (this._runProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

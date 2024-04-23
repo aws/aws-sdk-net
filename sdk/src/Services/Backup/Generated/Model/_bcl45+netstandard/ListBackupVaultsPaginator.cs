@@ -45,7 +45,7 @@ namespace Amazon.Backup.Model
         /// Enumerable containing all of the BackupVaultList
         /// </summary>
         public IPaginatedEnumerable<BackupVaultListMember> BackupVaultList => 
-            new PaginatedResultKeyResponse<ListBackupVaultsResponse, BackupVaultListMember>(this, (i) => i.BackupVaultList);
+            new PaginatedResultKeyResponse<ListBackupVaultsResponse, BackupVaultListMember>(this, (i) => i.BackupVaultList ?? new List<BackupVaultListMember>());
 
         internal ListBackupVaultsPaginator(IAmazonBackup client, ListBackupVaultsRequest request)
         {

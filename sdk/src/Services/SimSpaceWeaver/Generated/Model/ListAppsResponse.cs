@@ -33,7 +33,7 @@ namespace Amazon.SimSpaceWeaver.Model
     /// </summary>
     public partial class ListAppsResponse : AmazonWebServiceResponse
     {
-        private List<SimulationAppMetadata> _apps = new List<SimulationAppMetadata>();
+        private List<SimulationAppMetadata> _apps = AWSConfigs.InitializeCollections ? new List<SimulationAppMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimSpaceWeaver.Model
         // Check to see if Apps property is set
         internal bool IsSetApps()
         {
-            return this._apps != null && this._apps.Count > 0; 
+            return this._apps != null && (this._apps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class PutTargetsResponse : AmazonWebServiceResponse
     {
-        private List<PutTargetsResultEntry> _failedEntries = new List<PutTargetsResultEntry>();
+        private List<PutTargetsResultEntry> _failedEntries = AWSConfigs.InitializeCollections ? new List<PutTargetsResultEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedEntries. 
@@ -50,7 +50,7 @@ namespace Amazon.CloudWatchEvents.Model
         // Check to see if FailedEntries property is set
         internal bool IsSetFailedEntries()
         {
-            return this._failedEntries != null && this._failedEntries.Count > 0; 
+            return this._failedEntries != null && (this._failedEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

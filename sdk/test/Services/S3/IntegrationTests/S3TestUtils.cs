@@ -267,7 +267,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // List all the versions of all the objects in the bucket.
                 listVersionsResponse = client.ListVersions(listVersionsRequest);
 
-                if (listVersionsResponse.Versions.Count == 0)
+                if (listVersionsResponse.Versions == null || listVersionsResponse.Versions.Count == 0)
                 {
                     // If the bucket has no objects we're finished
                     return;

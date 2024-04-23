@@ -75,7 +75,7 @@ namespace Amazon.Rekognition.Model
     public partial class StartLabelDetectionRequest : AmazonRekognitionRequest
     {
         private string _clientRequestToken;
-        private List<string> _features = new List<string>();
+        private List<string> _features = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _jobTag;
         private float? _minConfidence;
         private NotificationChannel _notificationChannel;
@@ -121,7 +121,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

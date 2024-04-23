@@ -40,9 +40,9 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class InstanceRequirementsWithMetadataRequest
     {
-        private List<string> _architectureTypes = new List<string>();
+        private List<string> _architectureTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private InstanceRequirementsRequest _instanceRequirements;
-        private List<string> _virtualizationTypes = new List<string>();
+        private List<string> _virtualizationTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ArchitectureTypes. 
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         // Check to see if ArchitectureTypes property is set
         internal bool IsSetArchitectureTypes()
         {
-            return this._architectureTypes != null && this._architectureTypes.Count > 0; 
+            return this._architectureTypes != null && (this._architectureTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         // Check to see if VirtualizationTypes property is set
         internal bool IsSetVirtualizationTypes()
         {
-            return this._virtualizationTypes != null && this._virtualizationTypes.Count > 0; 
+            return this._virtualizationTypes != null && (this._virtualizationTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

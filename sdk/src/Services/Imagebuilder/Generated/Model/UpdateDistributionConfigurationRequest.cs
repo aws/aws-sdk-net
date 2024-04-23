@@ -38,7 +38,7 @@ namespace Amazon.Imagebuilder.Model
         private string _clientToken;
         private string _description;
         private string _distributionConfigurationArn;
-        private List<Distribution> _distributions = new List<Distribution>();
+        private List<Distribution> _distributions = AWSConfigs.InitializeCollections ? new List<Distribution>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -116,7 +116,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Distributions property is set
         internal bool IsSetDistributions()
         {
-            return this._distributions != null && this._distributions.Count > 0; 
+            return this._distributions != null && (this._distributions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

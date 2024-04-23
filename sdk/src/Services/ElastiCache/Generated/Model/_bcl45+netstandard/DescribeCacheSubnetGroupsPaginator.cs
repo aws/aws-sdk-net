@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the CacheSubnetGroups
         /// </summary>
         public IPaginatedEnumerable<CacheSubnetGroup> CacheSubnetGroups => 
-            new PaginatedResultKeyResponse<DescribeCacheSubnetGroupsResponse, CacheSubnetGroup>(this, (i) => i.CacheSubnetGroups);
+            new PaginatedResultKeyResponse<DescribeCacheSubnetGroupsResponse, CacheSubnetGroup>(this, (i) => i.CacheSubnetGroups ?? new List<CacheSubnetGroup>());
 
         internal DescribeCacheSubnetGroupsPaginator(IAmazonElastiCache client, DescribeCacheSubnetGroupsRequest request)
         {

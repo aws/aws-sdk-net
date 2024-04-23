@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,49 +63,61 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeliverCrossAccountRole())
                 {
                     request.Parameters.Add("DeliverCrossAccountRole", StringUtils.FromString(publicRequest.DeliverCrossAccountRole));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeliverLogsPermissionArn())
                 {
                     request.Parameters.Add("DeliverLogsPermissionArn", StringUtils.FromString(publicRequest.DeliverLogsPermissionArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinationOptions())
                 {
                     if(publicRequest.DestinationOptions.IsSetFileFormat())
                     {
                         request.Parameters.Add("DestinationOptions" + "." + "FileFormat", StringUtils.FromString(publicRequest.DestinationOptions.FileFormat));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.DestinationOptions.IsSetHiveCompatiblePartitions())
                     {
                         request.Parameters.Add("DestinationOptions" + "." + "HiveCompatiblePartitions", StringUtils.FromBool(publicRequest.DestinationOptions.HiveCompatiblePartitions));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.DestinationOptions.IsSetPerHourPartition())
                     {
                         request.Parameters.Add("DestinationOptions" + "." + "PerHourPartition", StringUtils.FromBool(publicRequest.DestinationOptions.PerHourPartition));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLogDestination())
                 {
                     request.Parameters.Add("LogDestination", StringUtils.FromString(publicRequest.LogDestination));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLogDestinationType())
                 {
                     request.Parameters.Add("LogDestinationType", StringUtils.FromString(publicRequest.LogDestinationType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLogFormat())
                 {
                     request.Parameters.Add("LogFormat", StringUtils.FromString(publicRequest.LogFormat));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLogGroupName())
                 {
                     request.Parameters.Add("LogGroupName", StringUtils.FromString(publicRequest.LogGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxAggregationInterval())
                 {
                     request.Parameters.Add("MaxAggregationInterval", StringUtils.FromInt(publicRequest.MaxAggregationInterval));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -114,10 +127,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceType())
                 {
                     request.Parameters.Add("ResourceType", StringUtils.FromString(publicRequest.ResourceType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -127,6 +142,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -136,20 +152,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTrafficType())
                 {
                     request.Parameters.Add("TrafficType", StringUtils.FromString(publicRequest.TrafficType));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

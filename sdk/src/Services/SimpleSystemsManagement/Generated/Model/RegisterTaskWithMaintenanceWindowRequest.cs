@@ -44,10 +44,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _name;
         private int? _priority;
         private string _serviceRoleArn;
-        private List<Target> _targets = new List<Target>();
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
         private string _taskArn;
         private MaintenanceWindowTaskInvocationParameters _taskInvocationParameters;
-        private Dictionary<string, MaintenanceWindowTaskParameterValueExpression> _taskParameters = new Dictionary<string, MaintenanceWindowTaskParameterValueExpression>();
+        private Dictionary<string, MaintenanceWindowTaskParameterValueExpression> _taskParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, MaintenanceWindowTaskParameterValueExpression>() : null;
         private MaintenanceWindowTaskType _taskType;
         private string _windowId;
 
@@ -294,21 +294,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see the following topics in the in the <i>Amazon Web Services
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
+        /// service-linked roles for Systems Manager</a> in the in the <i>Amazon Web Services
         /// Systems Manager User Guide</i>:
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-        /// service-linked roles for Systems Manager</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-        /// I use a service-linked role or a custom service role to run maintenance window tasks?
-        /// </a> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string ServiceRoleArn
         {
@@ -364,7 +353,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -429,7 +418,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if TaskParameters property is set
         internal bool IsSetTaskParameters()
         {
-            return this._taskParameters != null && this._taskParameters.Count > 0; 
+            return this._taskParameters != null && (this._taskParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceRequirements())
                 {
                     if(publicRequest.InstanceRequirements.IsSetAcceleratorCount())
@@ -75,11 +77,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "AcceleratorCount" + "." + "Max", StringUtils.FromInt(publicRequest.InstanceRequirements.AcceleratorCount.Max));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.InstanceRequirements.AcceleratorCount.IsSetMin())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "AcceleratorCount" + "." + "Min", StringUtils.FromInt(publicRequest.InstanceRequirements.AcceleratorCount.Min));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetAcceleratorManufacturers())
                     {
                         int publicRequestInstanceRequirementslistValueIndex = 1;
@@ -89,6 +94,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestInstanceRequirementslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetAcceleratorNames())
                     {
                         int publicRequestInstanceRequirementslistValueIndex = 1;
@@ -98,17 +104,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestInstanceRequirementslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetAcceleratorTotalMemoryMiB())
                     {
                         if(publicRequest.InstanceRequirements.AcceleratorTotalMemoryMiB.IsSetMax())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "AcceleratorTotalMemoryMiB" + "." + "Max", StringUtils.FromInt(publicRequest.InstanceRequirements.AcceleratorTotalMemoryMiB.Max));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.InstanceRequirements.AcceleratorTotalMemoryMiB.IsSetMin())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "AcceleratorTotalMemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequest.InstanceRequirements.AcceleratorTotalMemoryMiB.Min));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetAcceleratorTypes())
                     {
                         int publicRequestInstanceRequirementslistValueIndex = 1;
@@ -118,6 +128,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestInstanceRequirementslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetAllowedInstanceTypes())
                     {
                         int publicRequestInstanceRequirementslistValueIndex = 1;
@@ -127,25 +138,31 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestInstanceRequirementslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetBareMetal())
                     {
                         request.Parameters.Add("InstanceRequirements" + "." + "BareMetal", StringUtils.FromString(publicRequest.InstanceRequirements.BareMetal));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetBaselineEbsBandwidthMbps())
                     {
                         if(publicRequest.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMax())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Max", StringUtils.FromInt(publicRequest.InstanceRequirements.BaselineEbsBandwidthMbps.Max));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMin())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequest.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetBurstablePerformance())
                     {
                         request.Parameters.Add("InstanceRequirements" + "." + "BurstablePerformance", StringUtils.FromString(publicRequest.InstanceRequirements.BurstablePerformance));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetCpuManufacturers())
                     {
                         int publicRequestInstanceRequirementslistValueIndex = 1;
@@ -155,6 +172,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestInstanceRequirementslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetExcludedInstanceTypes())
                     {
                         int publicRequestInstanceRequirementslistValueIndex = 1;
@@ -164,6 +182,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestInstanceRequirementslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetInstanceGenerations())
                     {
                         int publicRequestInstanceRequirementslistValueIndex = 1;
@@ -173,10 +192,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestInstanceRequirementslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetLocalStorage())
                     {
                         request.Parameters.Add("InstanceRequirements" + "." + "LocalStorage", StringUtils.FromString(publicRequest.InstanceRequirements.LocalStorage));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetLocalStorageTypes())
                     {
                         int publicRequestInstanceRequirementslistValueIndex = 1;
@@ -186,97 +207,123 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestInstanceRequirementslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice())
                     {
                         request.Parameters.Add("InstanceRequirements" + "." + "MaxSpotPriceAsPercentageOfOptimalOnDemandPrice", StringUtils.FromInt(publicRequest.InstanceRequirements.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetMemoryGiBPerVCpu())
                     {
                         if(publicRequest.InstanceRequirements.MemoryGiBPerVCpu.IsSetMax())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "MemoryGiBPerVCpu" + "." + "Max", StringUtils.FromDouble(publicRequest.InstanceRequirements.MemoryGiBPerVCpu.Max));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.InstanceRequirements.MemoryGiBPerVCpu.IsSetMin())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "MemoryGiBPerVCpu" + "." + "Min", StringUtils.FromDouble(publicRequest.InstanceRequirements.MemoryGiBPerVCpu.Min));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetMemoryMiB())
                     {
                         if(publicRequest.InstanceRequirements.MemoryMiB.IsSetMax())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "MemoryMiB" + "." + "Max", StringUtils.FromInt(publicRequest.InstanceRequirements.MemoryMiB.Max));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.InstanceRequirements.MemoryMiB.IsSetMin())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "MemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequest.InstanceRequirements.MemoryMiB.Min));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetNetworkBandwidthGbps())
                     {
                         if(publicRequest.InstanceRequirements.NetworkBandwidthGbps.IsSetMax())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "NetworkBandwidthGbps" + "." + "Max", StringUtils.FromDouble(publicRequest.InstanceRequirements.NetworkBandwidthGbps.Max));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.InstanceRequirements.NetworkBandwidthGbps.IsSetMin())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "NetworkBandwidthGbps" + "." + "Min", StringUtils.FromDouble(publicRequest.InstanceRequirements.NetworkBandwidthGbps.Min));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetNetworkInterfaceCount())
                     {
                         if(publicRequest.InstanceRequirements.NetworkInterfaceCount.IsSetMax())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "NetworkInterfaceCount" + "." + "Max", StringUtils.FromInt(publicRequest.InstanceRequirements.NetworkInterfaceCount.Max));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.InstanceRequirements.NetworkInterfaceCount.IsSetMin())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "NetworkInterfaceCount" + "." + "Min", StringUtils.FromInt(publicRequest.InstanceRequirements.NetworkInterfaceCount.Min));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetOnDemandMaxPricePercentageOverLowestPrice())
                     {
                         request.Parameters.Add("InstanceRequirements" + "." + "OnDemandMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequest.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetRequireHibernateSupport())
                     {
                         request.Parameters.Add("InstanceRequirements" + "." + "RequireHibernateSupport", StringUtils.FromBool(publicRequest.InstanceRequirements.RequireHibernateSupport));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetSpotMaxPricePercentageOverLowestPrice())
                     {
                         request.Parameters.Add("InstanceRequirements" + "." + "SpotMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequest.InstanceRequirements.SpotMaxPricePercentageOverLowestPrice));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetTotalLocalStorageGB())
                     {
                         if(publicRequest.InstanceRequirements.TotalLocalStorageGB.IsSetMax())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "TotalLocalStorageGB" + "." + "Max", StringUtils.FromDouble(publicRequest.InstanceRequirements.TotalLocalStorageGB.Max));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.InstanceRequirements.TotalLocalStorageGB.IsSetMin())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "TotalLocalStorageGB" + "." + "Min", StringUtils.FromDouble(publicRequest.InstanceRequirements.TotalLocalStorageGB.Min));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceRequirements.IsSetVCpuCount())
                     {
                         if(publicRequest.InstanceRequirements.VCpuCount.IsSetMax())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "VCpuCount" + "." + "Max", StringUtils.FromInt(publicRequest.InstanceRequirements.VCpuCount.Max));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.InstanceRequirements.VCpuCount.IsSetMin())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "VCpuCount" + "." + "Min", StringUtils.FromInt(publicRequest.InstanceRequirements.VCpuCount.Min));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVirtualizationTypes())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -286,6 +333,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -34,7 +34,7 @@ namespace Amazon.IoTEvents.Model
     public partial class ListInputRoutingsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RoutedResource> _routedResources = new List<RoutedResource>();
+        private List<RoutedResource> _routedResources = AWSConfigs.InitializeCollections ? new List<RoutedResource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if RoutedResources property is set
         internal bool IsSetRoutedResources()
         {
-            return this._routedResources != null && this._routedResources.Count > 0; 
+            return this._routedResources != null && (this._routedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

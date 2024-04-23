@@ -39,7 +39,7 @@ namespace Amazon.ElastiCache.Model
         private string _engine;
         private string _minimumEngineVersion;
         private string _status;
-        private List<string> _userGroupIds = new List<string>();
+        private List<string> _userGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _userId;
         private string _userName;
 
@@ -166,7 +166,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UserGroupIds property is set
         internal bool IsSetUserGroupIds()
         {
-            return this._userGroupIds != null && this._userGroupIds.Count > 0; 
+            return this._userGroupIds != null && (this._userGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -43,7 +43,7 @@ namespace Amazon.LexModelsV2.Model
         private string _parentSlotTypeSignature;
         private string _slotTypeId;
         private string _slotTypeName;
-        private List<SlotTypeValue> _slotTypeValues = new List<SlotTypeValue>();
+        private List<SlotTypeValue> _slotTypeValues = AWSConfigs.InitializeCollections ? new List<SlotTypeValue>() : null;
         private SlotValueSelectionSetting _valueSelectionSetting;
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SlotTypeValues property is set
         internal bool IsSetSlotTypeValues()
         {
-            return this._slotTypeValues != null && this._slotTypeValues.Count > 0; 
+            return this._slotTypeValues != null && (this._slotTypeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

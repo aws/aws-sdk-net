@@ -33,7 +33,7 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class GetOutpostInstanceTypesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceTypeItem> _instanceTypes = new List<InstanceTypeItem>();
+        private List<InstanceTypeItem> _instanceTypes = AWSConfigs.InitializeCollections ? new List<InstanceTypeItem>() : null;
         private string _nextToken;
         private string _outpostArn;
         private string _outpostId;
@@ -50,7 +50,7 @@ namespace Amazon.Outposts.Model
         // Check to see if InstanceTypes property is set
         internal bool IsSetInstanceTypes()
         {
-            return this._instanceTypes != null && this._instanceTypes.Count > 0; 
+            return this._instanceTypes != null && (this._instanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

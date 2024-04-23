@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the ClusterSubnetGroups
         /// </summary>
         public IPaginatedEnumerable<ClusterSubnetGroup> ClusterSubnetGroups => 
-            new PaginatedResultKeyResponse<DescribeClusterSubnetGroupsResponse, ClusterSubnetGroup>(this, (i) => i.ClusterSubnetGroups);
+            new PaginatedResultKeyResponse<DescribeClusterSubnetGroupsResponse, ClusterSubnetGroup>(this, (i) => i.ClusterSubnetGroups ?? new List<ClusterSubnetGroup>());
 
         internal DescribeClusterSubnetGroupsPaginator(IAmazonRedshift client, DescribeClusterSubnetGroupsRequest request)
         {

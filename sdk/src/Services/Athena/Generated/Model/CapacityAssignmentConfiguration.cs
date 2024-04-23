@@ -37,7 +37,7 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class CapacityAssignmentConfiguration
     {
-        private List<CapacityAssignment> _capacityAssignments = new List<CapacityAssignment>();
+        private List<CapacityAssignment> _capacityAssignments = AWSConfigs.InitializeCollections ? new List<CapacityAssignment>() : null;
         private string _capacityReservationName;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Athena.Model
         // Check to see if CapacityAssignments property is set
         internal bool IsSetCapacityAssignments()
         {
-            return this._capacityAssignments != null && this._capacityAssignments.Count > 0; 
+            return this._capacityAssignments != null && (this._capacityAssignments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

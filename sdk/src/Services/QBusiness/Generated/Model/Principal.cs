@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Provides user and group information used for filtering documents to use for generating
-    /// Amazon Q conversation responses.
+    /// Amazon Q Business conversation responses.
     /// </summary>
     public partial class Principal
     {

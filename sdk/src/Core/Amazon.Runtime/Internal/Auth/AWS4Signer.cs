@@ -658,7 +658,9 @@ namespace Amazon.Runtime.Internal.Auth
             // client config properties.
             if (alternateEndpoint != null)
             {
+#pragma warning disable CS0612,CS0618
                 var serviceEndpoint = alternateEndpoint.GetEndpointForService(serviceName, clientConfig.ToGetEndpointForServiceOptions());
+#pragma warning restore CS0612,CS0618
                 if (serviceEndpoint.AuthRegion != null)
                     return serviceEndpoint.AuthRegion;
 
@@ -687,6 +689,7 @@ namespace Amazon.Runtime.Internal.Auth
             var endpoint = clientConfig.RegionEndpoint;
             if (endpoint != null)
             {
+#pragma warning disable CS0612,CS0618
                 var serviceEndpoint = endpoint.GetEndpointForService(serviceName, clientConfig.ToGetEndpointForServiceOptions());
                 if (!string.IsNullOrEmpty(serviceEndpoint.AuthRegion))
                     return serviceEndpoint.AuthRegion;
@@ -695,7 +698,7 @@ namespace Amazon.Runtime.Internal.Auth
                 var overrideRegion = RegionEndpoint.GetRegionEndpointOverride(endpoint);
                 if (overrideRegion != null)
                     return overrideRegion.SystemName;
-
+#pragma warning restore CS0612,CS0618
                 return endpoint.SystemName; 
             }
 
@@ -705,8 +708,10 @@ namespace Amazon.Runtime.Internal.Auth
         public static string DetermineService(IClientConfig clientConfig)
         {
             return (!string.IsNullOrEmpty(clientConfig.AuthenticationServiceName)) 
-                ? clientConfig.AuthenticationServiceName 
+                ? clientConfig.AuthenticationServiceName
+#pragma warning disable CS0612, CS0618
                 : AWSSDKUtils.DetermineService(clientConfig.DetermineServiceURL());
+#pragma warning restore CS0612,CS0618
         }
 
         /// <summary>

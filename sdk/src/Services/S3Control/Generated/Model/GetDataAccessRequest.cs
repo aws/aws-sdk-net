@@ -43,7 +43,7 @@ namespace Amazon.S3Control.Model
     /// <para>
     /// The IAM role that S3 Access Grants assumes must have the following permissions specified
     /// in the trust policy when registering the location: <c>sts:AssumeRole</c>, for directory
-    /// users or groups <c>sts:SetContext</c>, and for IAM users or roles <c>sts:SourceIdentity</c>.
+    /// users or groups <c>sts:SetContext</c>, and for IAM users or roles <c>sts:SetSourceIdentity</c>.
     /// 
     /// </para>
     ///  </dd> </dl>

@@ -36,7 +36,6 @@ namespace Amazon.WorkSpacesThinClient.Model
     {
         private string _desiredSoftwareSetId;
         private string _id;
-        private string _kmsKeyArn;
         private string _name;
         private SoftwareSetUpdateSchedule _softwareSetUpdateSchedule;
 
@@ -75,25 +74,6 @@ namespace Amazon.WorkSpacesThinClient.Model
         internal bool IsSetId()
         {
             return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string KmsKeyArn
-        {
-            get { return this._kmsKeyArn; }
-            set { this._kmsKeyArn = value; }
-        }
-
-        // Check to see if KmsKeyArn property is set
-        internal bool IsSetKmsKeyArn()
-        {
-            return this._kmsKeyArn != null;
         }
 
         /// <summary>

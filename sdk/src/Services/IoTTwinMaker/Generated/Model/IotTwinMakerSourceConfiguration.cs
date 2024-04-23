@@ -33,7 +33,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class IotTwinMakerSourceConfiguration
     {
-        private List<IotTwinMakerSourceConfigurationFilter> _filters = new List<IotTwinMakerSourceConfigurationFilter>();
+        private List<IotTwinMakerSourceConfigurationFilter> _filters = AWSConfigs.InitializeCollections ? new List<IotTwinMakerSourceConfigurationFilter>() : null;
         private string _workspace;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,8 +37,8 @@ namespace Amazon.SageMakerGeospatial.Model
         private string _description;
         private string _descriptionPageUrl;
         private string _name;
-        private List<Filter> _supportedFilters = new List<Filter>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<Filter> _supportedFilters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DataCollectionType _type;
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if SupportedFilters property is set
         internal bool IsSetSupportedFilters()
         {
-            return this._supportedFilters != null && this._supportedFilters.Count > 0; 
+            return this._supportedFilters != null && (this._supportedFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

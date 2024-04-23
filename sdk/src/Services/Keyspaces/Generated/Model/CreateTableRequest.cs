@@ -56,10 +56,10 @@ namespace Amazon.Keyspaces.Model
         private EncryptionSpecification _encryptionSpecification;
         private string _keyspaceName;
         private PointInTimeRecovery _pointInTimeRecovery;
-        private List<ReplicaSpecification> _replicaSpecifications = new List<ReplicaSpecification>();
+        private List<ReplicaSpecification> _replicaSpecifications = AWSConfigs.InitializeCollections ? new List<ReplicaSpecification>() : null;
         private SchemaDefinition _schemaDefinition;
         private string _tableName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TimeToLive _ttl;
 
         /// <summary>
@@ -331,7 +331,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if ReplicaSpecifications property is set
         internal bool IsSetReplicaSpecifications()
         {
-            return this._replicaSpecifications != null && this._replicaSpecifications.Count > 0; 
+            return this._replicaSpecifications != null && (this._replicaSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -449,7 +449,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

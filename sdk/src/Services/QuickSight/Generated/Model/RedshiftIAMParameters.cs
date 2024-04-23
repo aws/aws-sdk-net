@@ -37,7 +37,7 @@ namespace Amazon.QuickSight.Model
     public partial class RedshiftIAMParameters
     {
         private bool? _autoCreateDatabaseUser;
-        private List<string> _databaseGroups = new List<string>();
+        private List<string> _databaseGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _databaseUser;
         private string _roleArn;
 
@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DatabaseGroups property is set
         internal bool IsSetDatabaseGroups()
         {
-            return this._databaseGroups != null && this._databaseGroups.Count > 0; 
+            return this._databaseGroups != null && (this._databaseGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

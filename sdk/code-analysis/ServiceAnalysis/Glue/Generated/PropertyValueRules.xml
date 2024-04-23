@@ -1672,8 +1672,18 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetUnfilteredTableMetadataRequest.ParentResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetUnfilteredTableMetadataRequest.Region</property>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetUnfilteredTableMetadataRequest.RootResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetUnfilteredTableMetadataResponse.QueryAuthorizationId</property>
@@ -1683,6 +1693,11 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.GetUnfilteredTableMetadataResponse.ResourceArn</property>
     <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetUnfilteredTableMetadataResponse.RowFilter</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -5394,6 +5409,24 @@
     <property>Amazon.Glue.Model.UserDefinedFunctionInput.OwnerName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ViewDefinition.Definer</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ViewRepresentation.DialectVersion</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ViewRepresentation.ViewExpandedText</property>
+    <max>409600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ViewRepresentation.ViewOriginalText</property>
+    <max>409600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Workflow.Name</property>

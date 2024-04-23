@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetAlarmsResponse : AmazonWebServiceResponse
     {
-        private List<Alarm> _alarms = new List<Alarm>();
+        private List<Alarm> _alarms = AWSConfigs.InitializeCollections ? new List<Alarm>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Alarms property is set
         internal bool IsSetAlarms()
         {
-            return this._alarms != null && this._alarms.Count > 0; 
+            return this._alarms != null && (this._alarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

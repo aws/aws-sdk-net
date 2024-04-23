@@ -33,8 +33,8 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DescribeAlarmsResponse : AmazonWebServiceResponse
     {
-        private List<CompositeAlarm> _compositeAlarms = new List<CompositeAlarm>();
-        private List<MetricAlarm> _metricAlarms = new List<MetricAlarm>();
+        private List<CompositeAlarm> _compositeAlarms = AWSConfigs.InitializeCollections ? new List<CompositeAlarm>() : null;
+        private List<MetricAlarm> _metricAlarms = AWSConfigs.InitializeCollections ? new List<MetricAlarm>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if CompositeAlarms property is set
         internal bool IsSetCompositeAlarms()
         {
-            return this._compositeAlarms != null && this._compositeAlarms.Count > 0; 
+            return this._compositeAlarms != null && (this._compositeAlarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if MetricAlarms property is set
         internal bool IsSetMetricAlarms()
         {
-            return this._metricAlarms != null && this._metricAlarms.Count > 0; 
+            return this._metricAlarms != null && (this._metricAlarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

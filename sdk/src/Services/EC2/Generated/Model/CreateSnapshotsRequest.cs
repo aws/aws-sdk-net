@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private InstanceSpecification _instanceSpecification;
         private string _outpostArn;
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property CopyTagsFromSource. 
@@ -135,9 +135,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
         /// Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// EBS User Guide</i>.
         /// </para>
         /// </summary>
         public string OutpostArn
@@ -167,7 +167,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -37,7 +37,7 @@ namespace Amazon.Route53.Model
     #endif
     public partial class InvalidChangeBatchException : AmazonRoute53Exception
     {
-        private List<string> _messages = new List<string>();
+        private List<string> _messages = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Constructs a new InvalidChangeBatchException with the specified error
@@ -136,7 +136,7 @@ namespace Amazon.Route53.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,8 +34,8 @@ namespace Amazon.ResilienceHub.Model
     public partial class BatchUpdateRecommendationStatusResponse : AmazonWebServiceResponse
     {
         private string _appArn;
-        private List<BatchUpdateRecommendationStatusFailedEntry> _failedEntries = new List<BatchUpdateRecommendationStatusFailedEntry>();
-        private List<BatchUpdateRecommendationStatusSuccessfulEntry> _successfulEntries = new List<BatchUpdateRecommendationStatusSuccessfulEntry>();
+        private List<BatchUpdateRecommendationStatusFailedEntry> _failedEntries = AWSConfigs.InitializeCollections ? new List<BatchUpdateRecommendationStatusFailedEntry>() : null;
+        private List<BatchUpdateRecommendationStatusSuccessfulEntry> _successfulEntries = AWSConfigs.InitializeCollections ? new List<BatchUpdateRecommendationStatusSuccessfulEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
@@ -77,7 +77,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if FailedEntries property is set
         internal bool IsSetFailedEntries()
         {
-            return this._failedEntries != null && this._failedEntries.Count > 0; 
+            return this._failedEntries != null && (this._failedEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if SuccessfulEntries property is set
         internal bool IsSetSuccessfulEntries()
         {
-            return this._successfulEntries != null && this._successfulEntries.Count > 0; 
+            return this._successfulEntries != null && (this._successfulEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

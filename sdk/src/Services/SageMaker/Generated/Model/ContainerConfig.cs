@@ -33,9 +33,9 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ContainerConfig
     {
-        private List<string> _containerArguments = new List<string>();
-        private List<string> _containerEntrypoint = new List<string>();
-        private Dictionary<string, string> _containerEnvironmentVariables = new Dictionary<string, string>();
+        private List<string> _containerArguments = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _containerEntrypoint = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _containerEnvironmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerArguments. 
@@ -53,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ContainerArguments property is set
         internal bool IsSetContainerArguments()
         {
-            return this._containerArguments != null && this._containerArguments.Count > 0; 
+            return this._containerArguments != null && (this._containerArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ContainerEntrypoint property is set
         internal bool IsSetContainerEntrypoint()
         {
-            return this._containerEntrypoint != null && this._containerEntrypoint.Count > 0; 
+            return this._containerEntrypoint != null && (this._containerEntrypoint.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ContainerEnvironmentVariables property is set
         internal bool IsSetContainerEnvironmentVariables()
         {
-            return this._containerEnvironmentVariables != null && this._containerEnvironmentVariables.Count > 0; 
+            return this._containerEnvironmentVariables != null && (this._containerEnvironmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

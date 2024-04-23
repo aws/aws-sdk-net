@@ -41,8 +41,8 @@ namespace Amazon.ServiceDiscovery.Model
         private HealthStatusFilter _healthStatus;
         private int? _maxResults;
         private string _namespaceName;
-        private Dictionary<string, string> _optionalParameters = new Dictionary<string, string>();
-        private Dictionary<string, string> _queryParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _optionalParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _queryParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _serviceName;
 
         /// <summary>
@@ -107,7 +107,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property NamespaceName. 
         /// <para>
         /// The <c>HttpName</c> name of the namespace. It's found in the <c>HttpProperties</c>
-        /// member of the <c>Properties</c> member of the namespace.
+        /// member of the <c>Properties</c> member of the namespace. In most cases, <c>Name</c>
+        /// and <c>HttpName</c> match. However, if you reuse <c>Name</c> for namespace creation,
+        /// a generated hash is added to <c>HttpName</c> to distinguish the two.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -142,7 +144,7 @@ namespace Amazon.ServiceDiscovery.Model
         // Check to see if OptionalParameters property is set
         internal bool IsSetOptionalParameters()
         {
-            return this._optionalParameters != null && this._optionalParameters.Count > 0; 
+            return this._optionalParameters != null && (this._optionalParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -162,7 +164,7 @@ namespace Amazon.ServiceDiscovery.Model
         // Check to see if QueryParameters property is set
         internal bool IsSetQueryParameters()
         {
-            return this._queryParameters != null && this._queryParameters.Count > 0; 
+            return this._queryParameters != null && (this._queryParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

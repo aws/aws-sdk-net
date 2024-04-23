@@ -36,7 +36,7 @@ namespace Amazon.Macie2.Model
     {
         private JobComparator _comparator;
         private string _key;
-        private List<TagValuePair> _tagValues = new List<TagValuePair>();
+        private List<TagValuePair> _tagValues = AWSConfigs.InitializeCollections ? new List<TagValuePair>() : null;
         private TagTarget _target;
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.Macie2.Model
         // Check to see if TagValues property is set
         internal bool IsSetTagValues()
         {
-            return this._tagValues != null && this._tagValues.Count > 0; 
+            return this._tagValues != null && (this._tagValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

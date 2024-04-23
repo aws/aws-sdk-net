@@ -63,14 +63,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Deleted", targetDepth))
                     {
+                        if (response.DeletedObjects == null)
+                        {
+                            response.DeletedObjects = new List<DeletedObject>();
+                        }
+
                         response.DeletedObjects.Add(DeletedObjectUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                     if (context.TestExpression("Error", targetDepth))
                     {
+                        if (response.DeleteErrors == null)
+                        {
+                            response.DeleteErrors = new List<DeleteError>();
+                        }
+
                         response.DeleteErrors.Add(ErrorsItemUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                 }

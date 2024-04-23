@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model
     public partial class GetSensitiveDataOccurrencesResponse : AmazonWebServiceResponse
     {
         private string _error;
-        private Dictionary<string, List<DetectedDataDetails>> _sensitiveDataOccurrences = new Dictionary<string, List<DetectedDataDetails>>();
+        private Dictionary<string, List<DetectedDataDetails>> _sensitiveDataOccurrences = AWSConfigs.InitializeCollections ? new Dictionary<string, List<DetectedDataDetails>>() : null;
         private RevealRequestStatus _status;
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Macie2.Model
         // Check to see if SensitiveDataOccurrences property is set
         internal bool IsSetSensitiveDataOccurrences()
         {
-            return this._sensitiveDataOccurrences != null && this._sensitiveDataOccurrences.Count > 0; 
+            return this._sensitiveDataOccurrences != null && (this._sensitiveDataOccurrences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

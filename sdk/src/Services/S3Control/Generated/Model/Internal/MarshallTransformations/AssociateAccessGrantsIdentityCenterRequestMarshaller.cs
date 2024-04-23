@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,9 +67,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("AssociateAccessGrantsIdentityCenterRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
+                xmlWriter.WriteStartElement("AssociateAccessGrantsIdentityCenterRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetIdentityCenterArn())
-                    xmlWriter.WriteElementString("IdentityCenterArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.IdentityCenterArn));                    
+                    xmlWriter.WriteElementString("IdentityCenterArn", StringUtils.FromString(publicRequest.IdentityCenterArn));
 
 
                 xmlWriter.WriteEndElement();
@@ -108,3 +109,4 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
     }    
 }
+#pragma warning restore CS0612,CS0618

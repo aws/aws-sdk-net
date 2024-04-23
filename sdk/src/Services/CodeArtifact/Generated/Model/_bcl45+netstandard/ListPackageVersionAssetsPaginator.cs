@@ -45,7 +45,7 @@ namespace Amazon.CodeArtifact.Model
         /// Enumerable containing all of the Assets
         /// </summary>
         public IPaginatedEnumerable<AssetSummary> Assets => 
-            new PaginatedResultKeyResponse<ListPackageVersionAssetsResponse, AssetSummary>(this, (i) => i.Assets);
+            new PaginatedResultKeyResponse<ListPackageVersionAssetsResponse, AssetSummary>(this, (i) => i.Assets ?? new List<AssetSummary>());
 
         internal ListPackageVersionAssetsPaginator(IAmazonCodeArtifact client, ListPackageVersionAssetsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.MarketplaceAgreement.Model
     /// </summary>
     public partial class SearchAgreementsResponse : AmazonWebServiceResponse
     {
-        private List<AgreementViewSummary> _agreementViewSummaries = new List<AgreementViewSummary>();
+        private List<AgreementViewSummary> _agreementViewSummaries = AWSConfigs.InitializeCollections ? new List<AgreementViewSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.MarketplaceAgreement.Model
         // Check to see if AgreementViewSummaries property is set
         internal bool IsSetAgreementViewSummaries()
         {
-            return this._agreementViewSummaries != null && this._agreementViewSummaries.Count > 0; 
+            return this._agreementViewSummaries != null && (this._agreementViewSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

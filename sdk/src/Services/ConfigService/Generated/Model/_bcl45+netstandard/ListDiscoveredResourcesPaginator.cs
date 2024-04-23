@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the ResourceIdentifiers
         /// </summary>
         public IPaginatedEnumerable<ResourceIdentifier> ResourceIdentifiers => 
-            new PaginatedResultKeyResponse<ListDiscoveredResourcesResponse, ResourceIdentifier>(this, (i) => i.ResourceIdentifiers);
+            new PaginatedResultKeyResponse<ListDiscoveredResourcesResponse, ResourceIdentifier>(this, (i) => i.ResourceIdentifiers ?? new List<ResourceIdentifier>());
 
         internal ListDiscoveredResourcesPaginator(IAmazonConfigService client, ListDiscoveredResourcesRequest request)
         {

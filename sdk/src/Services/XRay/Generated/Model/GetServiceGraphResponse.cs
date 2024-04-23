@@ -36,7 +36,7 @@ namespace Amazon.XRay.Model
         private bool? _containsOldGroupVersions;
         private DateTime? _endTime;
         private string _nextToken;
-        private List<Service> _services = new List<Service>();
+        private List<Service> _services = AWSConfigs.InitializeCollections ? new List<Service>() : null;
         private DateTime? _startTime;
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.XRay.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

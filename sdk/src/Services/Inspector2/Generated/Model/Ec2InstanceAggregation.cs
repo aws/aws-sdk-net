@@ -33,10 +33,10 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class Ec2InstanceAggregation
     {
-        private List<StringFilter> _amis = new List<StringFilter>();
-        private List<StringFilter> _instanceIds = new List<StringFilter>();
-        private List<MapFilter> _instanceTags = new List<MapFilter>();
-        private List<StringFilter> _operatingSystems = new List<StringFilter>();
+        private List<StringFilter> _amis = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _instanceIds = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<MapFilter> _instanceTags = AWSConfigs.InitializeCollections ? new List<MapFilter>() : null;
+        private List<StringFilter> _operatingSystems = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private Ec2InstanceSortBy _sortBy;
         private SortOrder _sortOrder;
 
@@ -56,7 +56,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Amis property is set
         internal bool IsSetAmis()
         {
-            return this._amis != null && this._amis.Count > 0; 
+            return this._amis != null && (this._amis.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
+            return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if InstanceTags property is set
         internal bool IsSetInstanceTags()
         {
-            return this._instanceTags != null && this._instanceTags.Count > 0; 
+            return this._instanceTags != null && (this._instanceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if OperatingSystems property is set
         internal bool IsSetOperatingSystems()
         {
-            return this._operatingSystems != null && this._operatingSystems.Count > 0; 
+            return this._operatingSystems != null && (this._operatingSystems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

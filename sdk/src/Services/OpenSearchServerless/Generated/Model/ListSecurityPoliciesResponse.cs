@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchServerless.Model
     public partial class ListSecurityPoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SecurityPolicySummary> _securityPolicySummaries = new List<SecurityPolicySummary>();
+        private List<SecurityPolicySummary> _securityPolicySummaries = AWSConfigs.InitializeCollections ? new List<SecurityPolicySummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if SecurityPolicySummaries property is set
         internal bool IsSetSecurityPolicySummaries()
         {
-            return this._securityPolicySummaries != null && this._securityPolicySummaries.Count > 0; 
+            return this._securityPolicySummaries != null && (this._securityPolicySummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A collection of default EBS storage settings that applies to private spaces created
-    /// within a domain or user profile.
+    /// A collection of default EBS storage settings that apply to spaces created within a
+    /// domain or user profile.
     /// </summary>
     public partial class DefaultEbsStorageSettings
     {
@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultEbsVolumeSizeInGb. 
         /// <para>
-        /// The default size of the EBS storage volume for a private space.
+        /// The default size of the EBS storage volume for a space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=16384)]
@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaximumEbsVolumeSizeInGb. 
         /// <para>
-        /// The maximum size of the EBS storage volume for a private space.
+        /// The maximum size of the EBS storage volume for a space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=16384)]

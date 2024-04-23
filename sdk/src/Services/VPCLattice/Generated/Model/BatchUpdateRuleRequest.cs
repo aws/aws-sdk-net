@@ -36,7 +36,7 @@ namespace Amazon.VPCLattice.Model
     public partial class BatchUpdateRuleRequest : AmazonVPCLatticeRequest
     {
         private string _listenerIdentifier;
-        private List<RuleUpdate> _rules = new List<RuleUpdate>();
+        private List<RuleUpdate> _rules = AWSConfigs.InitializeCollections ? new List<RuleUpdate>() : null;
         private string _serviceIdentifier;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.VPCLattice.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

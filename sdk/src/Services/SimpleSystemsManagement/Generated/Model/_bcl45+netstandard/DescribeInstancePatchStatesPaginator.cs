@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the InstancePatchStates
         /// </summary>
         public IPaginatedEnumerable<InstancePatchState> InstancePatchStates => 
-            new PaginatedResultKeyResponse<DescribeInstancePatchStatesResponse, InstancePatchState>(this, (i) => i.InstancePatchStates);
+            new PaginatedResultKeyResponse<DescribeInstancePatchStatesResponse, InstancePatchState>(this, (i) => i.InstancePatchStates ?? new List<InstancePatchState>());
 
         internal DescribeInstancePatchStatesPaginator(IAmazonSimpleSystemsManagement client, DescribeInstancePatchStatesRequest request)
         {

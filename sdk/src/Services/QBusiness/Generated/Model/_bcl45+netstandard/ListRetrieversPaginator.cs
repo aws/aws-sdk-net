@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the Retrievers
         /// </summary>
         public IPaginatedEnumerable<Retriever> Retrievers => 
-            new PaginatedResultKeyResponse<ListRetrieversResponse, Retriever>(this, (i) => i.Retrievers);
+            new PaginatedResultKeyResponse<ListRetrieversResponse, Retriever>(this, (i) => i.Retrievers ?? new List<Retriever>());
 
         internal ListRetrieversPaginator(IAmazonQBusiness client, ListRetrieversRequest request)
         {

@@ -36,8 +36,8 @@ namespace Amazon.ECS.Model
     public partial class DescribeContainerInstancesRequest : AmazonECSRequest
     {
         private string _cluster;
-        private List<string> _containerInstances = new List<string>();
-        private List<string> _include = new List<string>();
+        private List<string> _containerInstances = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _include = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -76,7 +76,7 @@ namespace Amazon.ECS.Model
         // Check to see if ContainerInstances property is set
         internal bool IsSetContainerInstances()
         {
-            return this._containerInstances != null && this._containerInstances.Count > 0; 
+            return this._containerInstances != null && (this._containerInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.ECS.Model
         // Check to see if Include property is set
         internal bool IsSetInclude()
         {
-            return this._include != null && this._include.Count > 0; 
+            return this._include != null && (this._include.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

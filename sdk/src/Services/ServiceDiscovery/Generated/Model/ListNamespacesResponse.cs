@@ -33,7 +33,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// </summary>
     public partial class ListNamespacesResponse : AmazonWebServiceResponse
     {
-        private List<NamespaceSummary> _namespaces = new List<NamespaceSummary>();
+        private List<NamespaceSummary> _namespaces = AWSConfigs.InitializeCollections ? new List<NamespaceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ServiceDiscovery.Model
         // Check to see if Namespaces property is set
         internal bool IsSetNamespaces()
         {
-            return this._namespaces != null && this._namespaces.Count > 0; 
+            return this._namespaces != null && (this._namespaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

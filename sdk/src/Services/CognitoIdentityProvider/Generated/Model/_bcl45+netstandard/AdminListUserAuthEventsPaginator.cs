@@ -45,7 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Enumerable containing all of the AuthEvents
         /// </summary>
         public IPaginatedEnumerable<AuthEventType> AuthEvents => 
-            new PaginatedResultKeyResponse<AdminListUserAuthEventsResponse, AuthEventType>(this, (i) => i.AuthEvents);
+            new PaginatedResultKeyResponse<AdminListUserAuthEventsResponse, AuthEventType>(this, (i) => i.AuthEvents ?? new List<AuthEventType>());
 
         internal AdminListUserAuthEventsPaginator(IAmazonCognitoIdentityProvider client, AdminListUserAuthEventsRequest request)
         {

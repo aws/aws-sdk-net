@@ -49,7 +49,7 @@ namespace Amazon.PaymentCryptography.Model
     /// <para>
     /// You should delete a key only when you are sure that you don't need to use it anymore
     /// and no other parties are utilizing this key. If you aren't sure, consider deactivating
-    /// it instead by calling <a>StopKeyUsage</a>.
+    /// it instead by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>.
     /// </para>
     ///  
     /// <para>
@@ -62,15 +62,18 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>RestoreKey</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RestoreKey.html">RestoreKey</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>StartKeyUsage</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>StopKeyUsage</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

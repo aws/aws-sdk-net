@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDescription())
@@ -100,7 +102,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTrainingDataEndTime())
                 {
                     context.Writer.WritePropertyName("trainingDataEndTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.TrainingDataEndTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.TrainingDataEndTime));
                 }
 
                 if(publicRequest.IsSetTrainingDatasetArn())
@@ -112,7 +114,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTrainingDataStartTime())
                 {
                     context.Writer.WritePropertyName("trainingDataStartTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.TrainingDataStartTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.TrainingDataStartTime));
                 }
 
                 writer.WriteObjectEnd();
@@ -143,3 +145,4 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

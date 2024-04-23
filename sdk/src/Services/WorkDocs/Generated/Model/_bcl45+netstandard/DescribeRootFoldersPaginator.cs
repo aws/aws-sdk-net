@@ -45,7 +45,7 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the Folders
         /// </summary>
         public IPaginatedEnumerable<FolderMetadata> Folders => 
-            new PaginatedResultKeyResponse<DescribeRootFoldersResponse, FolderMetadata>(this, (i) => i.Folders);
+            new PaginatedResultKeyResponse<DescribeRootFoldersResponse, FolderMetadata>(this, (i) => i.Folders ?? new List<FolderMetadata>());
 
         internal DescribeRootFoldersPaginator(IAmazonWorkDocs client, DescribeRootFoldersRequest request)
         {

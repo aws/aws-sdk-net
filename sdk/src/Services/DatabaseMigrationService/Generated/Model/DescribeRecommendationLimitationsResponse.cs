@@ -33,7 +33,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DescribeRecommendationLimitationsResponse : AmazonWebServiceResponse
     {
-        private List<Limitation> _limitations = new List<Limitation>();
+        private List<Limitation> _limitations = AWSConfigs.InitializeCollections ? new List<Limitation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Limitations property is set
         internal bool IsSetLimitations()
         {
-            return this._limitations != null && this._limitations.Count > 0; 
+            return this._limitations != null && (this._limitations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

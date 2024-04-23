@@ -45,7 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// Enumerable containing all of the VTLDevices
         /// </summary>
         public IPaginatedEnumerable<VTLDevice> VTLDevices => 
-            new PaginatedResultKeyResponse<DescribeVTLDevicesResponse, VTLDevice>(this, (i) => i.VTLDevices);
+            new PaginatedResultKeyResponse<DescribeVTLDevicesResponse, VTLDevice>(this, (i) => i.VTLDevices ?? new List<VTLDevice>());
 
         internal DescribeVTLDevicesPaginator(IAmazonStorageGateway client, DescribeVTLDevicesRequest request)
         {

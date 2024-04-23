@@ -45,13 +45,12 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public class JsonUnmarshallerContext : UnmarshallerContext
     {
-        private const string DELIMITER = "/";        
+        private const string DELIMITER = "/";
         #region Private members
 
         private StreamReader streamReader = null;
         private JsonReader jsonReader = null;
         private JsonPathStack stack = new JsonPathStack();
-        private string currentField;
         private JsonToken? currentToken = null;
         private bool disposed = false;
         private bool wasPeeked = false;
@@ -377,7 +376,6 @@ namespace Amazon.Runtime.Internal.Transform
                         stack.Pop();
                     }
                 }
-                currentField = null;
             }
             else if (currentToken.Value == JsonToken.PropertyName)
             {

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.CreateBillOfMaterialsImportJob(Amazon.SupplyChain.Model.CreateBillOfMaterialsImportJobRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.CreateBillOfMaterialsImportJob(Amazon.SupplyChain.Model.CreateBillOfMaterialsImportJobRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.CreateBillOfMaterialsImportJobRequest" />
+            <member name="T:Amazon.SupplyChain.Model.CreateBillOfMaterialsImportJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke CreateBillOfMaterialsImportJob"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.GetBillOfMaterialsImportJob(Amazon.SupplyChain.Model.GetBillOfMaterialsImportJobRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.GetBillOfMaterialsImportJob(Amazon.SupplyChain.Model.GetBillOfMaterialsImportJobRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.GetBillOfMaterialsImportJobRequest" />
+            <member name="T:Amazon.SupplyChain.Model.GetBillOfMaterialsImportJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke GetBillOfMaterialsImportJob for a successful job"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.GetBillOfMaterialsImportJob(Amazon.SupplyChain.Model.GetBillOfMaterialsImportJobRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.GetBillOfMaterialsImportJob(Amazon.SupplyChain.Model.GetBillOfMaterialsImportJobRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.GetBillOfMaterialsImportJobRequest" />
+            <member name="T:Amazon.SupplyChain.Model.GetBillOfMaterialsImportJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke GetBillOfMaterialsImportJob for an in-progress job"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for inboundorder event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for inboundorderline event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for inboundorderlineschedule event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for forecast event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for inventorylevel event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-5" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for outboundorderline event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-6" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for outboundshipment event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-7" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for processheader event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-8" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for processoperation event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-9" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for processproduct event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-10" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for reservation event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-11" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for shipment event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-12" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for shipmentstop event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-13" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for shipmentstoporder event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-14" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.SendDataIntegrationEvent(Amazon.SupplyChain.Model.SendDataIntegrationEventRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventRequest" />
+            <member name="T:Amazon.SupplyChain.Model.SendDataIntegrationEventResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful SendDataIntegrationEvent for supplyplan event type"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-15" />
+            </example>
+        </value>
+    </doc>
+</docs>

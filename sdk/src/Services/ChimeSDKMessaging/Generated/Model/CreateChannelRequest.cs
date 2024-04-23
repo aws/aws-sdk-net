@@ -51,13 +51,13 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _clientRequestToken;
         private ElasticChannelConfiguration _elasticChannelConfiguration;
         private ExpirationSettings _expirationSettings;
-        private List<string> _memberArns = new List<string>();
+        private List<string> _memberArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _metadata;
         private ChannelMode _mode;
-        private List<string> _moderatorArns = new List<string>();
+        private List<string> _moderatorArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private ChannelPrivacy _privacy;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
@@ -189,7 +189,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if MemberArns property is set
         internal bool IsSetMemberArns()
         {
-            return this._memberArns != null && this._memberArns.Count > 0; 
+            return this._memberArns != null && (this._memberArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if ModeratorArns property is set
         internal bool IsSetModeratorArns()
         {
-            return this._moderatorArns != null && this._moderatorArns.Count > 0; 
+            return this._moderatorArns != null && (this._moderatorArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -305,7 +305,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

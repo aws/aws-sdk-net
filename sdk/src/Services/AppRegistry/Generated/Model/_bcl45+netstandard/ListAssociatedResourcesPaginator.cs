@@ -45,7 +45,7 @@ namespace Amazon.AppRegistry.Model
         /// Enumerable containing all of the Resources
         /// </summary>
         public IPaginatedEnumerable<ResourceInfo> Resources => 
-            new PaginatedResultKeyResponse<ListAssociatedResourcesResponse, ResourceInfo>(this, (i) => i.Resources);
+            new PaginatedResultKeyResponse<ListAssociatedResourcesResponse, ResourceInfo>(this, (i) => i.Resources ?? new List<ResourceInfo>());
 
         internal ListAssociatedResourcesPaginator(IAmazonAppRegistry client, ListAssociatedResourcesRequest request)
         {

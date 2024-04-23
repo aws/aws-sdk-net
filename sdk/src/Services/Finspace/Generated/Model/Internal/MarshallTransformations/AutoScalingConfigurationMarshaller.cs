@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoScalingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoScalingMetric())
             {
                 context.Writer.WritePropertyName("autoScalingMetric");
@@ -60,7 +63,14 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricTarget())
             {
                 context.Writer.WritePropertyName("metricTarget");
-                context.Writer.Write(requestObject.MetricTarget);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricTarget))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricTarget));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MetricTarget);
+                }
             }
 
             if(requestObject.IsSetMinNodeCount())
@@ -72,13 +82,27 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScaleInCooldownSeconds())
             {
                 context.Writer.WritePropertyName("scaleInCooldownSeconds");
-                context.Writer.Write(requestObject.ScaleInCooldownSeconds);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ScaleInCooldownSeconds))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScaleInCooldownSeconds));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ScaleInCooldownSeconds);
+                }
             }
 
             if(requestObject.IsSetScaleOutCooldownSeconds())
             {
                 context.Writer.WritePropertyName("scaleOutCooldownSeconds");
-                context.Writer.Write(requestObject.ScaleOutCooldownSeconds);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ScaleOutCooldownSeconds);
+                }
             }
 
         }
@@ -90,3 +114,4 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

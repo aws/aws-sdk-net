@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the IpamPoolCidrs
         /// </summary>
         public IPaginatedEnumerable<IpamPoolCidr> IpamPoolCidrs => 
-            new PaginatedResultKeyResponse<GetIpamPoolCidrsResponse, IpamPoolCidr>(this, (i) => i.IpamPoolCidrs);
+            new PaginatedResultKeyResponse<GetIpamPoolCidrsResponse, IpamPoolCidr>(this, (i) => i.IpamPoolCidrs ?? new List<IpamPoolCidr>());
 
         internal GetIpamPoolCidrsPaginator(IAmazonEC2 client, GetIpamPoolCidrsRequest request)
         {

@@ -37,7 +37,7 @@ namespace Amazon.NetworkMonitor.Model
         private string _monitorArn;
         private string _monitorName;
         private MonitorState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AggregationPeriod. 
@@ -84,7 +84,7 @@ namespace Amazon.NetworkMonitor.Model
         /// The name of the monitor.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string MonitorName
         {
             get { return this._monitorName; }
@@ -132,7 +132,7 @@ namespace Amazon.NetworkMonitor.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class DescribeVpcPeeringConnectionsResponse : AmazonWebServiceResponse
     {
-        private List<VpcPeeringConnection> _vpcPeeringConnections = new List<VpcPeeringConnection>();
+        private List<VpcPeeringConnection> _vpcPeeringConnections = AWSConfigs.InitializeCollections ? new List<VpcPeeringConnection>() : null;
 
         /// <summary>
         /// Gets and sets the property VpcPeeringConnections. 
@@ -50,7 +50,7 @@ namespace Amazon.GameLift.Model
         // Check to see if VpcPeeringConnections property is set
         internal bool IsSetVpcPeeringConnections()
         {
-            return this._vpcPeeringConnections != null && this._vpcPeeringConnections.Count > 0; 
+            return this._vpcPeeringConnections != null && (this._vpcPeeringConnections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

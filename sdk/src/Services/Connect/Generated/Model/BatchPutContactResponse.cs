@@ -33,8 +33,8 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class BatchPutContactResponse : AmazonWebServiceResponse
     {
-        private List<FailedRequest> _failedRequestList = new List<FailedRequest>();
-        private List<SuccessfulRequest> _successfulRequestList = new List<SuccessfulRequest>();
+        private List<FailedRequest> _failedRequestList = AWSConfigs.InitializeCollections ? new List<FailedRequest>() : null;
+        private List<SuccessfulRequest> _successfulRequestList = AWSConfigs.InitializeCollections ? new List<SuccessfulRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedRequestList. 
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if FailedRequestList property is set
         internal bool IsSetFailedRequestList()
         {
-            return this._failedRequestList != null && this._failedRequestList.Count > 0; 
+            return this._failedRequestList != null && (this._failedRequestList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         // Check to see if SuccessfulRequestList property is set
         internal bool IsSetSuccessfulRequestList()
         {
-            return this._successfulRequestList != null && this._successfulRequestList.Count > 0; 
+            return this._successfulRequestList != null && (this._successfulRequestList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

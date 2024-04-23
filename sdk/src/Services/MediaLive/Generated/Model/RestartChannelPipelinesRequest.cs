@@ -35,7 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class RestartChannelPipelinesRequest : AmazonMediaLiveRequest
     {
         private string _channelId;
-        private List<string> _pipelineIds = new List<string>();
+        private List<string> _pipelineIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ChannelId. ID of channel
@@ -66,7 +66,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if PipelineIds property is set
         internal bool IsSetPipelineIds()
         {
-            return this._pipelineIds != null && this._pipelineIds.Count > 0; 
+            return this._pipelineIds != null && (this._pipelineIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

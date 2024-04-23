@@ -36,7 +36,7 @@ namespace Amazon.NetworkFirewall.Model
     public partial class CIDRSummary
     {
         private int? _availableCIDRCount;
-        private Dictionary<string, IPSetMetadata> _ipSetReferences = new Dictionary<string, IPSetMetadata>();
+        private Dictionary<string, IPSetMetadata> _ipSetReferences = AWSConfigs.InitializeCollections ? new Dictionary<string, IPSetMetadata>() : null;
         private int? _utilizedCIDRCount;
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if IPSetReferences property is set
         internal bool IsSetIPSetReferences()
         {
-            return this._ipSetReferences != null && this._ipSetReferences.Count > 0; 
+            return this._ipSetReferences != null && (this._ipSetReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

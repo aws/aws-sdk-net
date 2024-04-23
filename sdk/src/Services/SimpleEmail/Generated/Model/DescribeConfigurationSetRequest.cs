@@ -41,7 +41,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class DescribeConfigurationSetRequest : AmazonSimpleEmailServiceRequest
     {
-        private List<string> _configurationSetAttributeNames = new List<string>();
+        private List<string> _configurationSetAttributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _configurationSetName;
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if ConfigurationSetAttributeNames property is set
         internal bool IsSetConfigurationSetAttributeNames()
         {
-            return this._configurationSetAttributeNames != null && this._configurationSetAttributeNames.Count > 0; 
+            return this._configurationSetAttributeNames != null && (this._configurationSetAttributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

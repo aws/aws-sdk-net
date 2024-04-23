@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ListPackagesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PackageSummary> _packageSummaries = new List<PackageSummary>();
+        private List<PackageSummary> _packageSummaries = AWSConfigs.InitializeCollections ? new List<PackageSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.IoT.Model
         // Check to see if PackageSummaries property is set
         internal bool IsSetPackageSummaries()
         {
-            return this._packageSummaries != null && this._packageSummaries.Count > 0; 
+            return this._packageSummaries != null && (this._packageSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

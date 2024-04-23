@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class RowAlternateColorOptions
     {
-        private List<string> _rowAlternateColors = new List<string>();
+        private List<string> _rowAlternateColors = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WidgetStatus _status;
         private WidgetStatus _usePrimaryBackgroundColor;
 
@@ -53,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if RowAlternateColors property is set
         internal bool IsSetRowAlternateColors()
         {
-            return this._rowAlternateColors != null && this._rowAlternateColors.Count > 0; 
+            return this._rowAlternateColors != null && (this._rowAlternateColors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

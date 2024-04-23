@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class AnalysisSourceTemplate
     {
         private string _arn;
-        private List<DataSetReference> _dataSetReferences = new List<DataSetReference>();
+        private List<DataSetReference> _dataSetReferences = AWSConfigs.InitializeCollections ? new List<DataSetReference>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataSetReferences property is set
         internal bool IsSetDataSetReferences()
         {
-            return this._dataSetReferences != null && this._dataSetReferences.Count > 0; 
+            return this._dataSetReferences != null && (this._dataSetReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

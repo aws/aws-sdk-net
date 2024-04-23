@@ -37,7 +37,7 @@ namespace Amazon.MediaTailor.Model
         private string _alertMessage;
         private AlertCategory _category;
         private DateTime? _lastModifiedTime;
-        private List<string> _relatedResourceArns = new List<string>();
+        private List<string> _relatedResourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceArn;
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if RelatedResourceArns property is set
         internal bool IsSetRelatedResourceArns()
         {
-            return this._relatedResourceArns != null && this._relatedResourceArns.Count > 0; 
+            return this._relatedResourceArns != null && (this._relatedResourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

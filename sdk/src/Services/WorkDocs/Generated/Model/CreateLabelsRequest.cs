@@ -35,7 +35,7 @@ namespace Amazon.WorkDocs.Model
     public partial class CreateLabelsRequest : AmazonWorkDocsRequest
     {
         private string _authenticationToken;
-        private List<string> _labels = new List<string>();
+        private List<string> _labels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceId;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

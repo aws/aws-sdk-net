@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
         /// Enumerable containing all of the ClusterArns
         /// </summary>
         public IPaginatedEnumerable<string> ClusterArns => 
-            new PaginatedResultKeyResponse<ListClustersResponse, string>(this, (i) => i.ClusterArns);
+            new PaginatedResultKeyResponse<ListClustersResponse, string>(this, (i) => i.ClusterArns ?? new List<string>());
 
         internal ListClustersPaginator(IAmazonECS client, ListClustersRequest request)
         {

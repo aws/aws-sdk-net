@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model
     public partial class ListTableStorageOptimizersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StorageOptimizer> _storageOptimizerList = new List<StorageOptimizer>();
+        private List<StorageOptimizer> _storageOptimizerList = AWSConfigs.InitializeCollections ? new List<StorageOptimizer>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if StorageOptimizerList property is set
         internal bool IsSetStorageOptimizerList()
         {
-            return this._storageOptimizerList != null && this._storageOptimizerList.Count > 0; 
+            return this._storageOptimizerList != null && (this._storageOptimizerList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

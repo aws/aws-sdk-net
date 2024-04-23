@@ -33,8 +33,8 @@ namespace Amazon.ECRPublic.Model
     /// </summary>
     public partial class BatchCheckLayerAvailabilityResponse : AmazonWebServiceResponse
     {
-        private List<LayerFailure> _failures = new List<LayerFailure>();
-        private List<Layer> _layers = new List<Layer>();
+        private List<LayerFailure> _failures = AWSConfigs.InitializeCollections ? new List<LayerFailure>() : null;
+        private List<Layer> _layers = AWSConfigs.InitializeCollections ? new List<Layer>() : null;
 
         /// <summary>
         /// Gets and sets the property Failures. 
@@ -51,7 +51,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if Layers property is set
         internal bool IsSetLayers()
         {
-            return this._layers != null && this._layers.Count > 0; 
+            return this._layers != null && (this._layers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -41,7 +41,7 @@ namespace Amazon.DirectoryService.Model
     public partial class DescribeConditionalForwardersRequest : AmazonDirectoryServiceRequest
     {
         private string _directoryId;
-        private List<string> _remoteDomainNames = new List<string>();
+        private List<string> _remoteDomainNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
@@ -79,7 +79,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if RemoteDomainNames property is set
         internal bool IsSetRemoteDomainNames()
         {
-            return this._remoteDomainNames != null && this._remoteDomainNames.Count > 0; 
+            return this._remoteDomainNames != null && (this._remoteDomainNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

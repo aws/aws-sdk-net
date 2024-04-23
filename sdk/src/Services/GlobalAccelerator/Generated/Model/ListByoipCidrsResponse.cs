@@ -33,7 +33,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class ListByoipCidrsResponse : AmazonWebServiceResponse
     {
-        private List<ByoipCidr> _byoipCidrs = new List<ByoipCidr>();
+        private List<ByoipCidr> _byoipCidrs = AWSConfigs.InitializeCollections ? new List<ByoipCidr>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if ByoipCidrs property is set
         internal bool IsSetByoipCidrs()
         {
-            return this._byoipCidrs != null && this._byoipCidrs.Count > 0; 
+            return this._byoipCidrs != null && (this._byoipCidrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

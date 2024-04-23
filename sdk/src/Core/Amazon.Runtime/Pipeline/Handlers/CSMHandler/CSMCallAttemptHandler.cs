@@ -81,7 +81,7 @@ namespace Amazon.Runtime.Internal
             finally
             {
                 CSMCallAttemptMetricsCapture(executionContext.RequestContext, executionContext.ResponseContext);
-                CSMUtilities.SerializetoJsonAndPostOverUDPAsync(executionContext.RequestContext.CSMCallAttempt).ConfigureAwait(false);
+                _ = CSMUtilities.SerializetoJsonAndPostOverUDPAsync(executionContext.RequestContext.CSMCallAttempt);
             }
         }
 #elif AWS_APM_API

@@ -36,7 +36,7 @@ namespace Amazon.OSIS.Model
         private BufferOptions _bufferOptions;
         private DateTime? _createdAt;
         private EncryptionAtRestOptions _encryptionAtRestOptions;
-        private List<string> _ingestEndpointUrls = new List<string>();
+        private List<string> _ingestEndpointUrls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastUpdatedAt;
         private LogPublishingOptions _logPublishingOptions;
         private int? _maxUnits;
@@ -44,11 +44,11 @@ namespace Amazon.OSIS.Model
         private string _pipelineArn;
         private string _pipelineConfigurationBody;
         private string _pipelineName;
-        private List<ServiceVpcEndpoint> _serviceVpcEndpoints = new List<ServiceVpcEndpoint>();
+        private List<ServiceVpcEndpoint> _serviceVpcEndpoints = AWSConfigs.InitializeCollections ? new List<ServiceVpcEndpoint>() : null;
         private PipelineStatus _status;
         private PipelineStatusReason _statusReason;
-        private List<Tag> _tags = new List<Tag>();
-        private List<VpcEndpoint> _vpcEndpoints = new List<VpcEndpoint>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<VpcEndpoint> _vpcEndpoints = AWSConfigs.InitializeCollections ? new List<VpcEndpoint>() : null;
 
         /// <summary>
         /// Gets and sets the property BufferOptions.
@@ -113,7 +113,7 @@ namespace Amazon.OSIS.Model
         // Check to see if IngestEndpointUrls property is set
         internal bool IsSetIngestEndpointUrls()
         {
-            return this._ingestEndpointUrls != null && this._ingestEndpointUrls.Count > 0; 
+            return this._ingestEndpointUrls != null && (this._ingestEndpointUrls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -257,7 +257,7 @@ namespace Amazon.OSIS.Model
         // Check to see if ServiceVpcEndpoints property is set
         internal bool IsSetServiceVpcEndpoints()
         {
-            return this._serviceVpcEndpoints != null && this._serviceVpcEndpoints.Count > 0; 
+            return this._serviceVpcEndpoints != null && (this._serviceVpcEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -311,7 +311,7 @@ namespace Amazon.OSIS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -329,7 +329,7 @@ namespace Amazon.OSIS.Model
         // Check to see if VpcEndpoints property is set
         internal bool IsSetVpcEndpoints()
         {
-            return this._vpcEndpoints != null && this._vpcEndpoints.Count > 0; 
+            return this._vpcEndpoints != null && (this._vpcEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

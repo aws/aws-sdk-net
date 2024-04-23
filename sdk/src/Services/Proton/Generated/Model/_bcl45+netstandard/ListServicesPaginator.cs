@@ -45,7 +45,7 @@ namespace Amazon.Proton.Model
         /// Enumerable containing all of the Services
         /// </summary>
         public IPaginatedEnumerable<ServiceSummary> Services => 
-            new PaginatedResultKeyResponse<ListServicesResponse, ServiceSummary>(this, (i) => i.Services);
+            new PaginatedResultKeyResponse<ListServicesResponse, ServiceSummary>(this, (i) => i.Services ?? new List<ServiceSummary>());
 
         internal ListServicesPaginator(IAmazonProton client, ListServicesRequest request)
         {

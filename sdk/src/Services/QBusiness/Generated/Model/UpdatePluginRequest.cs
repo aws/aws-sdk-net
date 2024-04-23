@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePlugin operation.
-    /// Updates an Amazon Q plugin.
+    /// Updates an Amazon Q Business plugin.
     /// </summary>
     public partial class UpdatePluginRequest : AmazonQBusinessRequest
     {

@@ -30,25 +30,52 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSolution operation.
-    /// Creates the configuration for training a model. A trained model is known as a solution
-    /// version. After the configuration is created, you train the model (create a solution
-    /// version) by calling the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
-    /// operation. Every time you call <c>CreateSolutionVersion</c>, a new version of the
-    /// solution is created.
-    /// 
-    ///  
+    /// <important> 
     /// <para>
-    /// After creating a solution version, you check its accuracy by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_GetSolutionMetrics.html">GetSolutionMetrics</a>.
-    /// When you are satisfied with the version, you deploy it using <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
-    /// The campaign provides recommendations to a client through the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
-    /// API.
+    /// After you create a solution, you can’t change its configuration. By default, all new
+    /// solutions use automatic training. With automatic training, you incur training costs
+    /// while your solution is active. You can't stop automatic training for a solution. To
+    /// avoid unnecessary costs, make sure to delete the solution when you are finished. For
+    /// information about training costs, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
+    /// Personalize pricing</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// Creates the configuration for training a model (creating a solution version). This
+    /// configuration includes the recipe to use for model training and optional training
+    /// configuration, such as columns to use in training and feature transformation parameters.
+    /// For more information about configuring a solution, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
+    /// and configuring a solution</a>. 
     /// </para>
     ///  
     /// <para>
-    /// To train a model, Amazon Personalize requires training data and a recipe. The training
-    /// data comes from the dataset group that you provide in the request. A recipe specifies
-    /// the training algorithm and a feature transformation. You can specify one of the predefined
-    /// recipes provided by Amazon Personalize. 
+    ///  By default, new solutions use automatic training to create solution versions every
+    /// 7 days. You can change the training frequency. Automatic solution version creation
+    /// starts one hour after the solution is ACTIVE. If you manually create a solution version
+    /// within the hour, the solution skips the first automatic training. For more information,
+    /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html">Configuring
+    /// automatic training</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  To turn off automatic training, set <c>performAutoTraining</c> to false. If you turn
+    /// off automatic training, you must manually create a solution version by calling the
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
+    /// operation.
+    /// </para>
+    ///  
+    /// <para>
+    /// After training starts, you can get the solution version's Amazon Resource Name (ARN)
+    /// with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a>
+    /// API operation. To get its status, use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// After training completes you can evaluate model accuracy by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_GetSolutionMetrics.html">GetSolutionMetrics</a>.
+    /// When you are satisfied with the solution version, you deploy it using <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
+    /// The campaign provides recommendations to a client through the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+    /// API.
     /// </para>
     ///  <note> 
     /// <para>
@@ -74,7 +101,7 @@ namespace Amazon.Personalize.Model
     ///  </li> </ul> 
     /// <para>
     /// To get the status of the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>.
-    /// Wait until the status shows as ACTIVE before calling <c>CreateSolutionVersion</c>.
+    /// If you use manual training, the status must be ACTIVE before you call <c>CreateSolutionVersion</c>.
     /// </para>
     ///  
     /// <para>
@@ -118,10 +145,11 @@ namespace Amazon.Personalize.Model
         private string _eventType;
         private string _name;
         private bool? _performAutoML;
+        private bool? _performAutoTraining;
         private bool? _performhpo;
         private string _recipeArn;
         private SolutionConfig _solutionConfig;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DatasetGroupArn. 
@@ -221,6 +249,42 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PerformAutoTraining. 
+        /// <para>
+        /// Whether the solution uses automatic training to create new solution versions (trained
+        /// models). The default is <c>True</c> and the solution automatically creates new solution
+        /// versions every 7 days. You can change the training frequency by specifying a <c>schedulingExpression</c>
+        /// in the <c>AutoTrainingConfig</c> as part of solution configuration. For more information
+        /// about automatic training, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html">Configuring
+        /// automatic training</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Automatic solution version creation starts one hour after the solution is ACTIVE.
+        /// If you manually create a solution version within the hour, the solution skips the
+        /// first automatic training. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  After training starts, you can get the solution version's Amazon Resource Name (ARN)
+        /// with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a>
+        /// API operation. To get its status, use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool PerformAutoTraining
+        {
+            get { return this._performAutoTraining.GetValueOrDefault(); }
+            set { this._performAutoTraining = value; }
+        }
+
+        // Check to see if PerformAutoTraining property is set
+        internal bool IsSetPerformAutoTraining()
+        {
+            return this._performAutoTraining.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PerformHPO. 
         /// <para>
         /// Whether to perform hyperparameter optimization (HPO) on the specified or selected
@@ -308,7 +372,7 @@ namespace Amazon.Personalize.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

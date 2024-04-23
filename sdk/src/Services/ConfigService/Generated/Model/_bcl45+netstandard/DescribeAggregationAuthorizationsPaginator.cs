@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the AggregationAuthorizations
         /// </summary>
         public IPaginatedEnumerable<AggregationAuthorization> AggregationAuthorizations => 
-            new PaginatedResultKeyResponse<DescribeAggregationAuthorizationsResponse, AggregationAuthorization>(this, (i) => i.AggregationAuthorizations);
+            new PaginatedResultKeyResponse<DescribeAggregationAuthorizationsResponse, AggregationAuthorization>(this, (i) => i.AggregationAuthorizations ?? new List<AggregationAuthorization>());
 
         internal DescribeAggregationAuthorizationsPaginator(IAmazonConfigService client, DescribeAggregationAuthorizationsRequest request)
         {

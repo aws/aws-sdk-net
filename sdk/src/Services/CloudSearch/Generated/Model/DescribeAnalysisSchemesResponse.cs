@@ -34,7 +34,7 @@ namespace Amazon.CloudSearch.Model
     /// </summary>
     public partial class DescribeAnalysisSchemesResponse : AmazonWebServiceResponse
     {
-        private List<AnalysisSchemeStatus> _analysisSchemes = new List<AnalysisSchemeStatus>();
+        private List<AnalysisSchemeStatus> _analysisSchemes = AWSConfigs.InitializeCollections ? new List<AnalysisSchemeStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalysisSchemes. 
@@ -52,7 +52,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if AnalysisSchemes property is set
         internal bool IsSetAnalysisSchemes()
         {
-            return this._analysisSchemes != null && this._analysisSchemes.Count > 0; 
+            return this._analysisSchemes != null && (this._analysisSchemes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

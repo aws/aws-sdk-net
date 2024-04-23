@@ -34,7 +34,7 @@ namespace Amazon.SSMContacts.Model
     public partial class ListPageReceiptsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Receipt> _receipts = new List<Receipt>();
+        private List<Receipt> _receipts = AWSConfigs.InitializeCollections ? new List<Receipt>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if Receipts property is set
         internal bool IsSetReceipts()
         {
-            return this._receipts != null && this._receipts.Count > 0; 
+            return this._receipts != null && (this._receipts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

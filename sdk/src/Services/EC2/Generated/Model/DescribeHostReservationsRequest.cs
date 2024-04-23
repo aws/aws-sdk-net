@@ -34,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeHostReservationsRequest : AmazonEC2Request
     {
-        private List<Filter> _filter = new List<Filter>();
-        private List<string> _hostReservationIdSet = new List<string>();
+        private List<Filter> _filter = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _hostReservationIdSet = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filter property is set
         internal bool IsSetFilter()
         {
-            return this._filter != null && this._filter.Count > 0; 
+            return this._filter != null && (this._filter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         // Check to see if HostReservationIdSet property is set
         internal bool IsSetHostReservationIdSet()
         {
-            return this._hostReservationIdSet != null && this._hostReservationIdSet.Count > 0; 
+            return this._hostReservationIdSet != null && (this._hostReservationIdSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

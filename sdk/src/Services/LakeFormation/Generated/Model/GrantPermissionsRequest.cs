@@ -42,8 +42,8 @@ namespace Amazon.LakeFormation.Model
     public partial class GrantPermissionsRequest : AmazonLakeFormationRequest
     {
         private string _catalogId;
-        private List<string> _permissions = new List<string>();
-        private List<string> _permissionsWithGrantOption = new List<string>();
+        private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _permissionsWithGrantOption = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DataLakePrincipal _principal;
         private Resource _resource;
 
@@ -87,7 +87,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if PermissionsWithGrantOption property is set
         internal bool IsSetPermissionsWithGrantOption()
         {
-            return this._permissionsWithGrantOption != null && this._permissionsWithGrantOption.Count > 0; 
+            return this._permissionsWithGrantOption != null && (this._permissionsWithGrantOption.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

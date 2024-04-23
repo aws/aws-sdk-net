@@ -33,7 +33,7 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class HttpRouteAction
     {
-        private List<WeightedTarget> _weightedTargets = new List<WeightedTarget>();
+        private List<WeightedTarget> _weightedTargets = AWSConfigs.InitializeCollections ? new List<WeightedTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property WeightedTargets. 
@@ -52,7 +52,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if WeightedTargets property is set
         internal bool IsSetWeightedTargets()
         {
-            return this._weightedTargets != null && this._weightedTargets.Count > 0; 
+            return this._weightedTargets != null && (this._weightedTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

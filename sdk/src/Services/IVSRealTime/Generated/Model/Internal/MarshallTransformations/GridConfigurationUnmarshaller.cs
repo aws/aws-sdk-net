@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,30 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.FeaturedParticipantAttribute = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("gridGap", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.GridGap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("omitStoppedVideo", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.OmitStoppedVideo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("videoAspectRatio", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VideoAspectRatio = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("videoFillMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VideoFillMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
@@ -88,3 +113,4 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

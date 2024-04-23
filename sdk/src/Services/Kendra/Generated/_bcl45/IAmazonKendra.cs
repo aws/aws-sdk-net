@@ -2032,8 +2032,8 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Deletes an existing Amazon Kendra index. An exception is not thrown if the index is
-        /// already being deleted. While the index is being deleted, the <c>Status</c> field returned
+        /// Deletes an Amazon Kendra index. An exception is not thrown if the index is already
+        /// being deleted. While the index is being deleted, the <c>Status</c> field returned
         /// by a call to the <c>DescribeIndex</c> API is set to <c>DELETING</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
@@ -2070,8 +2070,8 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Deletes an existing Amazon Kendra index. An exception is not thrown if the index is
-        /// already being deleted. While the index is being deleted, the <c>Status</c> field returned
+        /// Deletes an Amazon Kendra index. An exception is not thrown if the index is already
+        /// being deleted. While the index is being deleted, the <c>Status</c> field returned
         /// by a call to the <c>DescribeIndex</c> API is set to <c>DELETING</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
@@ -2334,7 +2334,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Deletes an existing Amazon Kendra thesaurus.
+        /// Deletes an Amazon Kendra thesaurus.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteThesaurus service method.</param>
         /// 
@@ -2370,7 +2370,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Deletes an existing Amazon Kendra thesaurus.
+        /// Deletes an Amazon Kendra thesaurus.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteThesaurus service method.</param>
         /// <param name="cancellationToken">
@@ -2776,7 +2776,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets information about an existing Amazon Kendra index.
+        /// Gets information about an Amazon Kendra index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIndex service method.</param>
         /// 
@@ -2808,7 +2808,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets information about an existing Amazon Kendra index.
+        /// Gets information about an Amazon Kendra index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIndex service method.</param>
         /// <param name="cancellationToken">
@@ -3116,7 +3116,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets information about an existing Amazon Kendra thesaurus.
+        /// Gets information about an Amazon Kendra thesaurus.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeThesaurus service method.</param>
         /// 
@@ -3148,7 +3148,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets information about an existing Amazon Kendra thesaurus.
+        /// Gets information about an Amazon Kendra thesaurus.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeThesaurus service method.</param>
         /// <param name="cancellationToken">
@@ -5518,7 +5518,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Updates an existing Amazon Kendra data source connector.
+        /// Updates an Amazon Kendra data source connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource service method.</param>
         /// 
@@ -5554,7 +5554,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Updates an existing Amazon Kendra data source connector.
+        /// Updates an Amazon Kendra data source connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -5766,7 +5766,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Updates an existing Amazon Kendra index.
+        /// Updates an Amazon Kendra index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIndex service method.</param>
         /// 
@@ -5807,7 +5807,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Updates an existing Amazon Kendra index.
+        /// Updates an Amazon Kendra index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIndex service method.</param>
         /// <param name="cancellationToken">

@@ -36,7 +36,7 @@ namespace Amazon.CodeDeploy.Model
     public partial class BatchGetApplicationRevisionsRequest : AmazonCodeDeployRequest
     {
         private string _applicationName;
-        private List<RevisionLocation> _revisions = new List<RevisionLocation>();
+        private List<RevisionLocation> _revisions = AWSConfigs.InitializeCollections ? new List<RevisionLocation>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -75,7 +75,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if Revisions property is set
         internal bool IsSetRevisions()
         {
-            return this._revisions != null && this._revisions.Count > 0; 
+            return this._revisions != null && (this._revisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

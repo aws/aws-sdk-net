@@ -33,7 +33,7 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class ListQueuedMessagesResponse : AmazonWebServiceResponse
     {
-        private List<DownlinkQueueMessage> _downlinkQueueMessagesList = new List<DownlinkQueueMessage>();
+        private List<DownlinkQueueMessage> _downlinkQueueMessagesList = AWSConfigs.InitializeCollections ? new List<DownlinkQueueMessage>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if DownlinkQueueMessagesList property is set
         internal bool IsSetDownlinkQueueMessagesList()
         {
-            return this._downlinkQueueMessagesList != null && this._downlinkQueueMessagesList.Count > 0; 
+            return this._downlinkQueueMessagesList != null && (this._downlinkQueueMessagesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

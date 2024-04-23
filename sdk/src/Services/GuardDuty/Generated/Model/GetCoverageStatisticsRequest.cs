@@ -39,7 +39,7 @@ namespace Amazon.GuardDuty.Model
     {
         private string _detectorId;
         private CoverageFilterCriteria _filterCriteria;
-        private List<string> _statisticsType = new List<string>();
+        private List<string> _statisticsType = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
@@ -94,7 +94,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if StatisticsType property is set
         internal bool IsSetStatisticsType()
         {
-            return this._statisticsType != null && this._statisticsType.Count > 0; 
+            return this._statisticsType != null && (this._statisticsType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

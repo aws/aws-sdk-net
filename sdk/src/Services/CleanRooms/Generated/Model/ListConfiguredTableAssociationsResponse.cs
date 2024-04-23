@@ -33,7 +33,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ListConfiguredTableAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<ConfiguredTableAssociationSummary> _configuredTableAssociationSummaries = new List<ConfiguredTableAssociationSummary>();
+        private List<ConfiguredTableAssociationSummary> _configuredTableAssociationSummaries = AWSConfigs.InitializeCollections ? new List<ConfiguredTableAssociationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if ConfiguredTableAssociationSummaries property is set
         internal bool IsSetConfiguredTableAssociationSummaries()
         {
-            return this._configuredTableAssociationSummaries != null && this._configuredTableAssociationSummaries.Count > 0; 
+            return this._configuredTableAssociationSummaries != null && (this._configuredTableAssociationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

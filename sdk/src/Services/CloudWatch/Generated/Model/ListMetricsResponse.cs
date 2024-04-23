@@ -33,9 +33,9 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class ListMetricsResponse : AmazonWebServiceResponse
     {
-        private List<Metric> _metrics = new List<Metric>();
+        private List<Metric> _metrics = AWSConfigs.InitializeCollections ? new List<Metric>() : null;
         private string _nextToken;
-        private List<string> _owningAccounts = new List<string>();
+        private List<string> _owningAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Metrics. 
@@ -52,7 +52,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if OwningAccounts property is set
         internal bool IsSetOwningAccounts()
         {
-            return this._owningAccounts != null && this._owningAccounts.Count > 0; 
+            return this._owningAccounts != null && (this._owningAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

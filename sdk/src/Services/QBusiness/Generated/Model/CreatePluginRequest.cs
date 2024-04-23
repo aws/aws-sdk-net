@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlugin operation.
-    /// Creates an Amazon Q plugin.
+    /// Creates an Amazon Q Business plugin.
     /// </summary>
     public partial class CreatePluginRequest : AmazonQBusinessRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.QBusiness.Model
         private string _clientToken;
         private string _displayName;
         private string _serverUrl;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private PluginType _type;
 
         /// <summary>
@@ -80,7 +80,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token that you provide to identify the request to create your Amazon Q plugin.
+        /// A token that you provide to identify the request to create your Amazon Q Business
+        /// plugin.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -153,7 +154,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _botVersion;
-        private List<CustomVocabularyItem> _customVocabularyItems = new List<CustomVocabularyItem>();
+        private List<CustomVocabularyItem> _customVocabularyItems = AWSConfigs.InitializeCollections ? new List<CustomVocabularyItem>() : null;
         private string _localeId;
         private string _nextToken;
 
@@ -92,7 +92,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if CustomVocabularyItems property is set
         internal bool IsSetCustomVocabularyItems()
         {
-            return this._customVocabularyItems != null && this._customVocabularyItems.Count > 0; 
+            return this._customVocabularyItems != null && (this._customVocabularyItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -40,8 +40,8 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class GitConfiguration
     {
-        private List<GitPullRequestFilter> _pullRequest = new List<GitPullRequestFilter>();
-        private List<GitPushFilter> _push = new List<GitPushFilter>();
+        private List<GitPullRequestFilter> _pullRequest = AWSConfigs.InitializeCollections ? new List<GitPullRequestFilter>() : null;
+        private List<GitPushFilter> _push = AWSConfigs.InitializeCollections ? new List<GitPushFilter>() : null;
         private string _sourceActionName;
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if PullRequest property is set
         internal bool IsSetPullRequest()
         {
-            return this._pullRequest != null && this._pullRequest.Count > 0; 
+            return this._pullRequest != null && (this._pullRequest.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Push property is set
         internal bool IsSetPush()
         {
-            return this._push != null && this._push.Count > 0; 
+            return this._push != null && (this._push.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Transfer.Model
         /// Enumerable containing all of the Agreements
         /// </summary>
         public IPaginatedEnumerable<ListedAgreement> Agreements => 
-            new PaginatedResultKeyResponse<ListAgreementsResponse, ListedAgreement>(this, (i) => i.Agreements);
+            new PaginatedResultKeyResponse<ListAgreementsResponse, ListedAgreement>(this, (i) => i.Agreements ?? new List<ListedAgreement>());
 
         internal ListAgreementsPaginator(IAmazonTransfer client, ListAgreementsRequest request)
         {

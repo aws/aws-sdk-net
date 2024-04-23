@@ -34,7 +34,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ListResourceScansResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceScanSummary> _resourceScanSummaries = new List<ResourceScanSummary>();
+        private List<ResourceScanSummary> _resourceScanSummaries = AWSConfigs.InitializeCollections ? new List<ResourceScanSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceScanSummaries property is set
         internal bool IsSetResourceScanSummaries()
         {
-            return this._resourceScanSummaries != null && this._resourceScanSummaries.Count > 0; 
+            return this._resourceScanSummaries != null && (this._resourceScanSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -35,7 +35,7 @@ namespace Amazon.IoTEventsData.Model
     /// </summary>
     public partial class BatchDisableAlarmRequest : AmazonIoTEventsDataRequest
     {
-        private List<DisableAlarmActionRequest> _disableActionRequests = new List<DisableAlarmActionRequest>();
+        private List<DisableAlarmActionRequest> _disableActionRequests = AWSConfigs.InitializeCollections ? new List<DisableAlarmActionRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property DisableActionRequests. 
@@ -53,7 +53,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if DisableActionRequests property is set
         internal bool IsSetDisableActionRequests()
         {
-            return this._disableActionRequests != null && this._disableActionRequests.Count > 0; 
+            return this._disableActionRequests != null && (this._disableActionRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

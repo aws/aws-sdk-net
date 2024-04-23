@@ -45,7 +45,7 @@ namespace Amazon.SnowDeviceManagement.Model
         /// Enumerable containing all of the Tasks
         /// </summary>
         public IPaginatedEnumerable<TaskSummary> Tasks => 
-            new PaginatedResultKeyResponse<ListTasksResponse, TaskSummary>(this, (i) => i.Tasks);
+            new PaginatedResultKeyResponse<ListTasksResponse, TaskSummary>(this, (i) => i.Tasks ?? new List<TaskSummary>());
 
         internal ListTasksPaginator(IAmazonSnowDeviceManagement client, ListTasksRequest request)
         {

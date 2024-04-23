@@ -175,6 +175,52 @@ namespace Amazon.ManagedBlockchainQuery
 
 
     /// <summary>
+    /// Constants used for properties of type ListFilteredTransactionEventsSortBy.
+    /// </summary>
+    public class ListFilteredTransactionEventsSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BlockchainInstant for ListFilteredTransactionEventsSortBy
+        /// </summary>
+        public static readonly ListFilteredTransactionEventsSortBy BlockchainInstant = new ListFilteredTransactionEventsSortBy("blockchainInstant");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListFilteredTransactionEventsSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListFilteredTransactionEventsSortBy FindValue(string value)
+        {
+            return FindValue<ListFilteredTransactionEventsSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListFilteredTransactionEventsSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ListTransactionsSortBy.
     /// </summary>
     public class ListTransactionsSortBy : ConstantClass

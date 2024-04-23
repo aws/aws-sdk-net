@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
         private Group _group;
         private bool? _isTruncated;
         private string _marker;
-        private List<User> _users = new List<User>();
+        private List<User> _users = AWSConfigs.InitializeCollections ? new List<User>() : null;
 
         /// <summary>
         /// Gets and sets the property Group. 
@@ -114,7 +114,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// Enumerable containing all of the ResolverRules
         /// </summary>
         public IPaginatedEnumerable<ResolverRule> ResolverRules => 
-            new PaginatedResultKeyResponse<ListResolverRulesResponse, ResolverRule>(this, (i) => i.ResolverRules);
+            new PaginatedResultKeyResponse<ListResolverRulesResponse, ResolverRule>(this, (i) => i.ResolverRules ?? new List<ResolverRule>());
 
         internal ListResolverRulesPaginator(IAmazonRoute53Resolver client, ListResolverRulesRequest request)
         {

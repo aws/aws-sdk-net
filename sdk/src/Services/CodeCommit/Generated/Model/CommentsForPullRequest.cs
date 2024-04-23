@@ -37,7 +37,7 @@ namespace Amazon.CodeCommit.Model
         private string _afterCommitId;
         private string _beforeBlobId;
         private string _beforeCommitId;
-        private List<Comment> _comments = new List<Comment>();
+        private List<Comment> _comments = AWSConfigs.InitializeCollections ? new List<Comment>() : null;
         private Location _location;
         private string _pullRequestId;
         private string _repositoryName;
@@ -133,7 +133,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Comments property is set
         internal bool IsSetComments()
         {
-            return this._comments != null && this._comments.Count > 0; 
+            return this._comments != null && (this._comments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

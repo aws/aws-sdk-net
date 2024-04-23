@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     public partial class ListChannelModeratorsResponse : AmazonWebServiceResponse
     {
         private string _channelArn;
-        private List<ChannelModeratorSummary> _channelModerators = new List<ChannelModeratorSummary>();
+        private List<ChannelModeratorSummary> _channelModerators = AWSConfigs.InitializeCollections ? new List<ChannelModeratorSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if ChannelModerators property is set
         internal bool IsSetChannelModerators()
         {
-            return this._channelModerators != null && this._channelModerators.Count > 0; 
+            return this._channelModerators != null && (this._channelModerators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

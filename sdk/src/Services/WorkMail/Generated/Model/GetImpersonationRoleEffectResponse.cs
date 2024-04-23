@@ -34,7 +34,7 @@ namespace Amazon.WorkMail.Model
     public partial class GetImpersonationRoleEffectResponse : AmazonWebServiceResponse
     {
         private AccessEffect _effect;
-        private List<ImpersonationMatchedRule> _matchedRules = new List<ImpersonationMatchedRule>();
+        private List<ImpersonationMatchedRule> _matchedRules = AWSConfigs.InitializeCollections ? new List<ImpersonationMatchedRule>() : null;
         private ImpersonationRoleType _type;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if MatchedRules property is set
         internal bool IsSetMatchedRules()
         {
-            return this._matchedRules != null && this._matchedRules.Count > 0; 
+            return this._matchedRules != null && (this._matchedRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

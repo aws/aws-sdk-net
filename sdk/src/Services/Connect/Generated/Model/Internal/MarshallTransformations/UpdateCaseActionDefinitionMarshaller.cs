@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateCaseActionDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFields())
             {
                 context.Writer.WritePropertyName("Fields");
@@ -70,3 +73,4 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

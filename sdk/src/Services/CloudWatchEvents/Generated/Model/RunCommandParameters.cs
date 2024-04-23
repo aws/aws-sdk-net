@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class RunCommandParameters
     {
-        private List<RunCommandTarget> _runCommandTargets = new List<RunCommandTarget>();
+        private List<RunCommandTarget> _runCommandTargets = AWSConfigs.InitializeCollections ? new List<RunCommandTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property RunCommandTargets. 
@@ -53,7 +53,7 @@ namespace Amazon.CloudWatchEvents.Model
         // Check to see if RunCommandTargets property is set
         internal bool IsSetRunCommandTargets()
         {
-            return this._runCommandTargets != null && this._runCommandTargets.Count > 0; 
+            return this._runCommandTargets != null && (this._runCommandTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

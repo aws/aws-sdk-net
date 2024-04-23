@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,6 +74,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetActionExecution())
@@ -109,6 +111,23 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
                     var marshaller = AttributeFilterMarshaller.Instance;
                     marshaller.Marshall(publicRequest.AttributeFilter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetChatMode())
+                {
+                    context.Writer.WritePropertyName("chatMode");
+                    context.Writer.Write(publicRequest.ChatMode);
+                }
+
+                if(publicRequest.IsSetChatModeConfiguration())
+                {
+                    context.Writer.WritePropertyName("chatModeConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ChatModeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ChatModeConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -171,3 +190,4 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLaunchTemplateData())
                 {
                     if(publicRequest.LaunchTemplateData.IsSetBlockDeviceMappings())
@@ -73,104 +75,131 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.DeviceName));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetEbs())
                             {
                                 if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetDeleteOnTermination())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.Ebs.DeleteOnTermination));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetEncrypted())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.Ebs.Encrypted));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetIops())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ebs.Iops));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetKmsKeyId())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "KmsKeyId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Ebs.KmsKeyId));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetSnapshotId())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Ebs.SnapshotId));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetThroughput())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ebs.Throughput));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetVolumeSize())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ebs.VolumeSize));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetVolumeType())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "VolumeType", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Ebs.VolumeType));
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetNoDevice())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "NoDevice", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.NoDevice));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetVirtualName())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.VirtualName));
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetCapacityReservationSpecification())
                     {
                         if(publicRequest.LaunchTemplateData.CapacityReservationSpecification.IsSetCapacityReservationPreference())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "CapacityReservationSpecification" + "." + "CapacityReservationPreference", StringUtils.FromString(publicRequest.LaunchTemplateData.CapacityReservationSpecification.CapacityReservationPreference));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.CapacityReservationSpecification.IsSetCapacityReservationTarget())
                         {
                             if(publicRequest.LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.IsSetCapacityReservationId())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "CapacityReservationSpecification" + "." + "CapacityReservationTarget" + "." + "CapacityReservationId", StringUtils.FromString(publicRequest.LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.IsSetCapacityReservationResourceGroupArn())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "CapacityReservationSpecification" + "." + "CapacityReservationTarget" + "." + "CapacityReservationResourceGroupArn", StringUtils.FromString(publicRequest.LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationResourceGroupArn));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetCpuOptions())
                     {
                         if(publicRequest.LaunchTemplateData.CpuOptions.IsSetAmdSevSnp())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "AmdSevSnp", StringUtils.FromString(publicRequest.LaunchTemplateData.CpuOptions.AmdSevSnp));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.CpuOptions.IsSetCoreCount())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "CoreCount", StringUtils.FromInt(publicRequest.LaunchTemplateData.CpuOptions.CoreCount));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.CpuOptions.IsSetThreadsPerCore())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "ThreadsPerCore", StringUtils.FromInt(publicRequest.LaunchTemplateData.CpuOptions.ThreadsPerCore));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetCreditSpecification())
                     {
                         if(publicRequest.LaunchTemplateData.CreditSpecification.IsSetCpuCredits())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "CreditSpecification" + "." + "CpuCredits", StringUtils.FromString(publicRequest.LaunchTemplateData.CreditSpecification.CpuCredits));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetDisableApiStop())
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "DisableApiStop", StringUtils.FromBool(publicRequest.LaunchTemplateData.DisableApiStop));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetDisableApiTermination())
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "DisableApiTermination", StringUtils.FromBool(publicRequest.LaunchTemplateData.DisableApiTermination));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetEbsOptimized())
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "EbsOptimized", StringUtils.FromBool(publicRequest.LaunchTemplateData.EbsOptimized));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetElasticGpuSpecifications())
                     {
                         int publicRequestLaunchTemplateDatalistValueIndex = 1;
@@ -180,9 +209,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "ElasticGpuSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Type", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Type));
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetElasticInferenceAccelerators())
                     {
                         int publicRequestLaunchTemplateDatalistValueIndex = 1;
@@ -192,76 +223,96 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "ElasticInferenceAccelerator" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Count", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Count));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetType())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "ElasticInferenceAccelerator" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Type", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Type));
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetEnclaveOptions())
                     {
                         if(publicRequest.LaunchTemplateData.EnclaveOptions.IsSetEnabled())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "EnclaveOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.LaunchTemplateData.EnclaveOptions.Enabled));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetHibernationOptions())
                     {
                         if(publicRequest.LaunchTemplateData.HibernationOptions.IsSetConfigured())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "HibernationOptions" + "." + "Configured", StringUtils.FromBool(publicRequest.LaunchTemplateData.HibernationOptions.Configured));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetIamInstanceProfile())
                     {
                         if(publicRequest.LaunchTemplateData.IamInstanceProfile.IsSetArn())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "IamInstanceProfile" + "." + "Arn", StringUtils.FromString(publicRequest.LaunchTemplateData.IamInstanceProfile.Arn));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.IamInstanceProfile.IsSetName())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "IamInstanceProfile" + "." + "Name", StringUtils.FromString(publicRequest.LaunchTemplateData.IamInstanceProfile.Name));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetImageId())
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "ImageId", StringUtils.FromString(publicRequest.LaunchTemplateData.ImageId));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetInstanceInitiatedShutdownBehavior())
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "InstanceInitiatedShutdownBehavior", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceInitiatedShutdownBehavior));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetInstanceMarketOptions())
                     {
                         if(publicRequest.LaunchTemplateData.InstanceMarketOptions.IsSetMarketType())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceMarketOptions" + "." + "MarketType", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceMarketOptions.MarketType));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceMarketOptions.IsSetSpotOptions())
                         {
                             if(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.IsSetBlockDurationMinutes())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceMarketOptions" + "." + "SpotOptions" + "." + "BlockDurationMinutes", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.BlockDurationMinutes));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.IsSetInstanceInterruptionBehavior())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceMarketOptions" + "." + "SpotOptions" + "." + "InstanceInterruptionBehavior", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.InstanceInterruptionBehavior));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.IsSetMaxPrice())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceMarketOptions" + "." + "SpotOptions" + "." + "MaxPrice", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.MaxPrice));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.IsSetSpotInstanceType())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceMarketOptions" + "." + "SpotOptions" + "." + "SpotInstanceType", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.SpotInstanceType));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.IsSetValidUntilUtc())
                             {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTimeToISO8601(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.ValidUntilUtc));
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LaunchTemplateData.InstanceMarketOptions.SpotOptions.ValidUntilUtc));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetInstanceRequirements())
                     {
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAcceleratorCount())
@@ -270,11 +321,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorCount" + "." + "Max", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorCount.Max));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorCount.IsSetMin())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorCount" + "." + "Min", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorCount.Min));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAcceleratorManufacturers())
                         {
                             int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
@@ -284,6 +338,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAcceleratorNames())
                         {
                             int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
@@ -293,17 +348,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAcceleratorTotalMemoryMiB())
                         {
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorTotalMemoryMiB.IsSetMax())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorTotalMemoryMiB" + "." + "Max", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorTotalMemoryMiB.Max));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorTotalMemoryMiB.IsSetMin())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorTotalMemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorTotalMemoryMiB.Min));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAcceleratorTypes())
                         {
                             int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
@@ -313,6 +372,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAllowedInstanceTypes())
                         {
                             int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
@@ -322,25 +382,31 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetBareMetal())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "BareMetal", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceRequirements.BareMetal));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetBaselineEbsBandwidthMbps())
                         {
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMax())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Max", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.BaselineEbsBandwidthMbps.Max));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMin())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetBurstablePerformance())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "BurstablePerformance", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceRequirements.BurstablePerformance));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetCpuManufacturers())
                         {
                             int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
@@ -350,6 +416,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetExcludedInstanceTypes())
                         {
                             int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
@@ -359,6 +426,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetInstanceGenerations())
                         {
                             int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
@@ -368,10 +436,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetLocalStorage())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "LocalStorage", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceRequirements.LocalStorage));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetLocalStorageTypes())
                         {
                             int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
@@ -381,101 +451,128 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "MaxSpotPriceAsPercentageOfOptimalOnDemandPrice", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetMemoryGiBPerVCpu())
                         {
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.MemoryGiBPerVCpu.IsSetMax())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "MemoryGiBPerVCpu" + "." + "Max", StringUtils.FromDouble(publicRequest.LaunchTemplateData.InstanceRequirements.MemoryGiBPerVCpu.Max));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.MemoryGiBPerVCpu.IsSetMin())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "MemoryGiBPerVCpu" + "." + "Min", StringUtils.FromDouble(publicRequest.LaunchTemplateData.InstanceRequirements.MemoryGiBPerVCpu.Min));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetMemoryMiB())
                         {
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.MemoryMiB.IsSetMax())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "MemoryMiB" + "." + "Max", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.MemoryMiB.Max));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.MemoryMiB.IsSetMin())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "MemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.MemoryMiB.Min));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetNetworkBandwidthGbps())
                         {
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.IsSetMax())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "NetworkBandwidthGbps" + "." + "Max", StringUtils.FromDouble(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.Max));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.IsSetMin())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "NetworkBandwidthGbps" + "." + "Min", StringUtils.FromDouble(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.Min));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetNetworkInterfaceCount())
                         {
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkInterfaceCount.IsSetMax())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "NetworkInterfaceCount" + "." + "Max", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkInterfaceCount.Max));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkInterfaceCount.IsSetMin())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "NetworkInterfaceCount" + "." + "Min", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkInterfaceCount.Min));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetOnDemandMaxPricePercentageOverLowestPrice())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "OnDemandMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetRequireHibernateSupport())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "RequireHibernateSupport", StringUtils.FromBool(publicRequest.LaunchTemplateData.InstanceRequirements.RequireHibernateSupport));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetSpotMaxPricePercentageOverLowestPrice())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "SpotMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.SpotMaxPricePercentageOverLowestPrice));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetTotalLocalStorageGB())
                         {
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.TotalLocalStorageGB.IsSetMax())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "TotalLocalStorageGB" + "." + "Max", StringUtils.FromDouble(publicRequest.LaunchTemplateData.InstanceRequirements.TotalLocalStorageGB.Max));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.TotalLocalStorageGB.IsSetMin())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "TotalLocalStorageGB" + "." + "Min", StringUtils.FromDouble(publicRequest.LaunchTemplateData.InstanceRequirements.TotalLocalStorageGB.Min));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetVCpuCount())
                         {
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.VCpuCount.IsSetMax())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "VCpuCount" + "." + "Max", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.VCpuCount.Max));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.VCpuCount.IsSetMin())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "VCpuCount" + "." + "Min", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.VCpuCount.Min));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetInstanceType())
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "InstanceType", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceType));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetKernelId())
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "KernelId", StringUtils.FromString(publicRequest.LaunchTemplateData.KernelId));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetKeyName())
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "KeyName", StringUtils.FromString(publicRequest.LaunchTemplateData.KeyName));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetLicenseSpecifications())
                     {
                         int publicRequestLaunchTemplateDatalistValueIndex = 1;
@@ -485,46 +582,58 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "LicenseSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "LicenseConfigurationArn", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.LicenseConfigurationArn));
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetMaintenanceOptions())
                     {
                         if(publicRequest.LaunchTemplateData.MaintenanceOptions.IsSetAutoRecovery())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "MaintenanceOptions" + "." + "AutoRecovery", StringUtils.FromString(publicRequest.LaunchTemplateData.MaintenanceOptions.AutoRecovery));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetMetadataOptions())
                     {
                         if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetHttpEndpoint())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "HttpEndpoint", StringUtils.FromString(publicRequest.LaunchTemplateData.MetadataOptions.HttpEndpoint));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetHttpProtocolIpv6())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "HttpProtocolIpv6", StringUtils.FromString(publicRequest.LaunchTemplateData.MetadataOptions.HttpProtocolIpv6));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetHttpPutResponseHopLimit())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "HttpPutResponseHopLimit", StringUtils.FromInt(publicRequest.LaunchTemplateData.MetadataOptions.HttpPutResponseHopLimit));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetHttpTokens())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "HttpTokens", StringUtils.FromString(publicRequest.LaunchTemplateData.MetadataOptions.HttpTokens));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetInstanceMetadataTags())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "MetadataOptions" + "." + "InstanceMetadataTags", StringUtils.FromString(publicRequest.LaunchTemplateData.MetadataOptions.InstanceMetadataTags));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetMonitoring())
                     {
                         if(publicRequest.LaunchTemplateData.Monitoring.IsSetEnabled())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Monitoring" + "." + "Enabled", StringUtils.FromBool(publicRequest.LaunchTemplateData.Monitoring.Enabled));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetNetworkInterfaces())
                     {
                         int publicRequestLaunchTemplateDatalistValueIndex = 1;
@@ -534,51 +643,64 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "AssociateCarrierIpAddress", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.AssociateCarrierIpAddress));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetAssociatePublicIpAddress())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "AssociatePublicIpAddress", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.AssociatePublicIpAddress));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetConnectionTrackingSpecification())
                             {
                                 if(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.IsSetTcpEstablishedTimeout())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "TcpEstablishedTimeout", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.TcpEstablishedTimeout));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.IsSetUdpStreamTimeout())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpStreamTimeout", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.UdpStreamTimeout));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.IsSetUdpTimeout())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpTimeout", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.UdpTimeout));
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetDeleteOnTermination())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.DeleteOnTermination));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetDescription())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Description", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Description));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetDeviceIndex())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.DeviceIndex));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetEnaSrdSpecification())
                             {
                                 if(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.IsSetEnaSrdEnabled())
                                 {
                                     request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdEnabled", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.EnaSrdEnabled));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.IsSetEnaSrdUdpSpecification())
                                 {
                                     if(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.EnaSrdUdpSpecification.IsSetEnaSrdUdpEnabled())
                                     {
                                         request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdUdpSpecification" + "." + "EnaSrdUdpEnabled", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled));
                                     }
+#pragma warning restore CS0612,CS0618
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetGroups())
                             {
                                 int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
@@ -588,14 +710,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     publicRequestLaunchTemplateDatalistValuelistValueIndex++;
                                 }
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetInterfaceType())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "InterfaceType", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.InterfaceType));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetIpv4PrefixCount())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv4PrefixCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ipv4PrefixCount));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetIpv4Prefixes())
                             {
                                 int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
@@ -605,13 +730,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv4Prefix" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Ipv4Prefix", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Ipv4Prefix));
                                     }
+#pragma warning restore CS0612,CS0618
                                     publicRequestLaunchTemplateDatalistValuelistValueIndex++;
                                 }
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetIpv6AddressCount())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6AddressCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ipv6AddressCount));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetIpv6Addresses())
                             {
                                 int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
@@ -621,13 +749,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Ipv6Address));
                                     }
+#pragma warning restore CS0612,CS0618
                                     publicRequestLaunchTemplateDatalistValuelistValueIndex++;
                                 }
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetIpv6PrefixCount())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6PrefixCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ipv6PrefixCount));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetIpv6Prefixes())
                             {
                                 int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
@@ -637,25 +768,31 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6Prefix" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Ipv6Prefix", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Ipv6Prefix));
                                     }
+#pragma warning restore CS0612,CS0618
                                     publicRequestLaunchTemplateDatalistValuelistValueIndex++;
                                 }
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetNetworkCardIndex())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "NetworkCardIndex", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.NetworkCardIndex));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetNetworkInterfaceId())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "NetworkInterfaceId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.NetworkInterfaceId));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetPrimaryIpv6())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrimaryIpv6", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.PrimaryIpv6));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetPrivateIpAddress())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.PrivateIpAddress));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetPrivateIpAddresses())
                             {
                                 int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
@@ -665,82 +802,103 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValuelistValue.Primary));
                                     }
+#pragma warning restore CS0612,CS0618
                                     if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetPrivateIpAddress())
                                     {
                                         request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.PrivateIpAddress));
                                     }
+#pragma warning restore CS0612,CS0618
                                     publicRequestLaunchTemplateDatalistValuelistValueIndex++;
                                 }
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetSecondaryPrivateIpAddressCount())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "SecondaryPrivateIpAddressCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.SecondaryPrivateIpAddressCount));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetSubnetId())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.SubnetId));
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetPlacement())
                     {
                         if(publicRequest.LaunchTemplateData.Placement.IsSetAffinity())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "Affinity", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.Affinity));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.Placement.IsSetAvailabilityZone())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.AvailabilityZone));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.Placement.IsSetGroupId())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "GroupId", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.GroupId));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.Placement.IsSetGroupName())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "GroupName", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.GroupName));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.Placement.IsSetHostId())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "HostId", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.HostId));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.Placement.IsSetHostResourceGroupArn())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "HostResourceGroupArn", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.HostResourceGroupArn));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.Placement.IsSetPartitionNumber())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "PartitionNumber", StringUtils.FromInt(publicRequest.LaunchTemplateData.Placement.PartitionNumber));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.Placement.IsSetSpreadDomain())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "SpreadDomain", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.SpreadDomain));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.Placement.IsSetTenancy())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "Tenancy", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.Tenancy));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetPrivateDnsNameOptions())
                     {
                         if(publicRequest.LaunchTemplateData.PrivateDnsNameOptions.IsSetEnableResourceNameDnsAAAARecord())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "PrivateDnsNameOptions" + "." + "EnableResourceNameDnsAAAARecord", StringUtils.FromBool(publicRequest.LaunchTemplateData.PrivateDnsNameOptions.EnableResourceNameDnsAAAARecord));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.PrivateDnsNameOptions.IsSetEnableResourceNameDnsARecord())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "PrivateDnsNameOptions" + "." + "EnableResourceNameDnsARecord", StringUtils.FromBool(publicRequest.LaunchTemplateData.PrivateDnsNameOptions.EnableResourceNameDnsARecord));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LaunchTemplateData.PrivateDnsNameOptions.IsSetHostnameType())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "PrivateDnsNameOptions" + "." + "HostnameType", StringUtils.FromString(publicRequest.LaunchTemplateData.PrivateDnsNameOptions.HostnameType));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetRamDiskId())
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "RamDiskId", StringUtils.FromString(publicRequest.LaunchTemplateData.RamDiskId));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetSecurityGroupIds())
                     {
                         int publicRequestLaunchTemplateDatalistValueIndex = 1;
@@ -750,6 +908,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetSecurityGroups())
                     {
                         int publicRequestLaunchTemplateDatalistValueIndex = 1;
@@ -759,6 +918,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetTagSpecifications())
                     {
                         int publicRequestLaunchTemplateDatalistValueIndex = 1;
@@ -768,6 +928,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "TagSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.ResourceType));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLaunchTemplateDatalistValue.IsSetTags())
                             {
                                 int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
@@ -777,41 +938,52 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("LaunchTemplateData" + "." + "TagSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Tag" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Key));
                                     }
+#pragma warning restore CS0612,CS0618
                                     if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetValue())
                                     {
                                         request.Parameters.Add("LaunchTemplateData" + "." + "TagSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Tag" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Value));
                                     }
+#pragma warning restore CS0612,CS0618
                                     publicRequestLaunchTemplateDatalistValuelistValueIndex++;
                                 }
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplateData.IsSetUserData())
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "UserData", StringUtils.FromString(publicRequest.LaunchTemplateData.UserData));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLaunchTemplateId())
                 {
                     request.Parameters.Add("LaunchTemplateId", StringUtils.FromString(publicRequest.LaunchTemplateId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLaunchTemplateName())
                 {
                     request.Parameters.Add("LaunchTemplateName", StringUtils.FromString(publicRequest.LaunchTemplateName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResolveAlias())
                 {
                     request.Parameters.Add("ResolveAlias", StringUtils.FromBool(publicRequest.ResolveAlias));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceVersion())
                 {
                     request.Parameters.Add("SourceVersion", StringUtils.FromString(publicRequest.SourceVersion));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVersionDescription())
                 {
                     request.Parameters.Add("VersionDescription", StringUtils.FromString(publicRequest.VersionDescription));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

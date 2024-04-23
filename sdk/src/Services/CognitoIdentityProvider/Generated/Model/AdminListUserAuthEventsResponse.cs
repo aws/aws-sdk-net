@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class AdminListUserAuthEventsResponse : AmazonWebServiceResponse
     {
-        private List<AuthEventType> _authEvents = new List<AuthEventType>();
+        private List<AuthEventType> _authEvents = AWSConfigs.InitializeCollections ? new List<AuthEventType>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if AuthEvents property is set
         internal bool IsSetAuthEvents()
         {
-            return this._authEvents != null && this._authEvents.Count > 0; 
+            return this._authEvents != null && (this._authEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

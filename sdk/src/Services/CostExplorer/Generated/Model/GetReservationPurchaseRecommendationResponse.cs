@@ -35,7 +35,7 @@ namespace Amazon.CostExplorer.Model
     {
         private ReservationPurchaseRecommendationMetadata _metadata;
         private string _nextPageToken;
-        private List<ReservationPurchaseRecommendation> _recommendations = new List<ReservationPurchaseRecommendation>();
+        private List<ReservationPurchaseRecommendation> _recommendations = AWSConfigs.InitializeCollections ? new List<ReservationPurchaseRecommendation>() : null;
 
         /// <summary>
         /// Gets and sets the property Metadata. 
@@ -90,7 +90,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Recommendations property is set
         internal bool IsSetRecommendations()
         {
-            return this._recommendations != null && this._recommendations.Count > 0; 
+            return this._recommendations != null && (this._recommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class StopDataCollectionByAgentIdsRequest : AmazonApplicationDiscoveryServiceRequest
     {
-        private List<string> _agentIds = new List<string>();
+        private List<string> _agentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentIds. 
@@ -52,7 +52,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if AgentIds property is set
         internal bool IsSetAgentIds()
         {
-            return this._agentIds != null && this._agentIds.Count > 0; 
+            return this._agentIds != null && (this._agentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

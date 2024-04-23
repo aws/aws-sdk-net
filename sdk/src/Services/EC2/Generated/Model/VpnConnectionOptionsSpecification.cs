@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         private bool? _staticRoutesOnly;
         private string _transportTransitGatewayAttachmentId;
         private TunnelInsideIpVersion _tunnelInsideIpVersion;
-        private List<VpnTunnelOptionsSpecification> _tunnelOptions = new List<VpnTunnelOptionsSpecification>();
+        private List<VpnTunnelOptionsSpecification> _tunnelOptions = AWSConfigs.InitializeCollections ? new List<VpnTunnelOptionsSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property EnableAcceleration. 
@@ -264,7 +264,7 @@ namespace Amazon.EC2.Model
         // Check to see if TunnelOptions property is set
         internal bool IsSetTunnelOptions()
         {
-            return this._tunnelOptions != null && this._tunnelOptions.Count > 0; 
+            return this._tunnelOptions != null && (this._tunnelOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

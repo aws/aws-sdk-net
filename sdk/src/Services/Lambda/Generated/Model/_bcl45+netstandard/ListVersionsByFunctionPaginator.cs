@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// Enumerable containing all of the Versions
         /// </summary>
         public IPaginatedEnumerable<FunctionConfiguration> Versions => 
-            new PaginatedResultKeyResponse<ListVersionsByFunctionResponse, FunctionConfiguration>(this, (i) => i.Versions);
+            new PaginatedResultKeyResponse<ListVersionsByFunctionResponse, FunctionConfiguration>(this, (i) => i.Versions ?? new List<FunctionConfiguration>());
 
         internal ListVersionsByFunctionPaginator(IAmazonLambda client, ListVersionsByFunctionRequest request)
         {

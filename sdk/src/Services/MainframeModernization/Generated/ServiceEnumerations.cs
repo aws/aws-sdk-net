@@ -241,6 +241,10 @@ namespace Amazon.MainframeModernization
         /// </summary>
         public static readonly BatchJobExecutionStatus Holding = new BatchJobExecutionStatus("Holding");
         /// <summary>
+        /// Constant Purged for BatchJobExecutionStatus
+        /// </summary>
+        public static readonly BatchJobExecutionStatus Purged = new BatchJobExecutionStatus("Purged");
+        /// <summary>
         /// Constant Running for BatchJobExecutionStatus
         /// </summary>
         public static readonly BatchJobExecutionStatus Running = new BatchJobExecutionStatus("Running");
@@ -585,6 +589,10 @@ namespace Amazon.MainframeModernization
         /// </summary>
         public static readonly ValidationExceptionReason CannotParse = new ValidationExceptionReason("cannotParse");
         /// <summary>
+        /// Constant FeatureNotAvailable for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason FeatureNotAvailable = new ValidationExceptionReason("featureNotAvailable");
+        /// <summary>
         /// Constant FieldValidationFailed for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason FieldValidationFailed = new ValidationExceptionReason("fieldValidationFailed");
@@ -596,6 +604,10 @@ namespace Amazon.MainframeModernization
         /// Constant UnknownOperation for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason UnknownOperation = new ValidationExceptionReason("unknownOperation");
+        /// <summary>
+        /// Constant UnsupportedEngineVersion for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UnsupportedEngineVersion = new ValidationExceptionReason("unsupportedEngineVersion");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -45,7 +45,7 @@ namespace Amazon.RoboMaker.Model
         /// Enumerable containing all of the TemplateSummaries
         /// </summary>
         public IPaginatedEnumerable<TemplateSummary> TemplateSummaries => 
-            new PaginatedResultKeyResponse<ListWorldTemplatesResponse, TemplateSummary>(this, (i) => i.TemplateSummaries);
+            new PaginatedResultKeyResponse<ListWorldTemplatesResponse, TemplateSummary>(this, (i) => i.TemplateSummaries ?? new List<TemplateSummary>());
 
         internal ListWorldTemplatesPaginator(IAmazonRoboMaker client, ListWorldTemplatesRequest request)
         {

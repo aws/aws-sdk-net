@@ -45,7 +45,7 @@ namespace Amazon.Route53Resolver.Model
         /// Enumerable containing all of the FirewallRuleGroupAssociations
         /// </summary>
         public IPaginatedEnumerable<FirewallRuleGroupAssociation> FirewallRuleGroupAssociations => 
-            new PaginatedResultKeyResponse<ListFirewallRuleGroupAssociationsResponse, FirewallRuleGroupAssociation>(this, (i) => i.FirewallRuleGroupAssociations);
+            new PaginatedResultKeyResponse<ListFirewallRuleGroupAssociationsResponse, FirewallRuleGroupAssociation>(this, (i) => i.FirewallRuleGroupAssociations ?? new List<FirewallRuleGroupAssociation>());
 
         internal ListFirewallRuleGroupAssociationsPaginator(IAmazonRoute53Resolver client, ListFirewallRuleGroupAssociationsRequest request)
         {

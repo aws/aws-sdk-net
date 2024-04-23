@@ -45,7 +45,7 @@ namespace Amazon.GreengrassV2.Model
         /// Enumerable containing all of the Deployments
         /// </summary>
         public IPaginatedEnumerable<Deployment> Deployments => 
-            new PaginatedResultKeyResponse<ListDeploymentsResponse, Deployment>(this, (i) => i.Deployments);
+            new PaginatedResultKeyResponse<ListDeploymentsResponse, Deployment>(this, (i) => i.Deployments ?? new List<Deployment>());
 
         internal ListDeploymentsPaginator(IAmazonGreengrassV2 client, ListDeploymentsRequest request)
         {

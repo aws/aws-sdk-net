@@ -45,7 +45,7 @@ namespace Amazon.MediaTailor.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ScheduleEntry> Items => 
-            new PaginatedResultKeyResponse<GetChannelScheduleResponse, ScheduleEntry>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<GetChannelScheduleResponse, ScheduleEntry>(this, (i) => i.Items ?? new List<ScheduleEntry>());
 
         internal GetChannelSchedulePaginator(IAmazonMediaTailor client, GetChannelScheduleRequest request)
         {

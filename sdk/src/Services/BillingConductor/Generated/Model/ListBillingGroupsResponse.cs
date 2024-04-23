@@ -33,7 +33,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class ListBillingGroupsResponse : AmazonWebServiceResponse
     {
-        private List<BillingGroupListElement> _billingGroups = new List<BillingGroupListElement>();
+        private List<BillingGroupListElement> _billingGroups = AWSConfigs.InitializeCollections ? new List<BillingGroupListElement>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if BillingGroups property is set
         internal bool IsSetBillingGroups()
         {
-            return this._billingGroups != null && this._billingGroups.Count > 0; 
+            return this._billingGroups != null && (this._billingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

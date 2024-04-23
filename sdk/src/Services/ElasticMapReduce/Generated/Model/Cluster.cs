@@ -33,11 +33,11 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class Cluster
     {
-        private List<Application> _applications = new List<Application>();
+        private List<Application> _applications = AWSConfigs.InitializeCollections ? new List<Application>() : null;
         private string _autoScalingRole;
         private bool? _autoTerminate;
         private string _clusterArn;
-        private List<Configuration> _configurations = new List<Configuration>();
+        private List<Configuration> _configurations = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
         private string _customAmiId;
         private int? _ebsRootVolumeIops;
         private int? _ebsRootVolumeSize;
@@ -53,7 +53,7 @@ namespace Amazon.ElasticMapReduce.Model
         private int? _normalizedInstanceHours;
         private string _osReleaseLabel;
         private string _outpostArn;
-        private List<PlacementGroupConfig> _placementGroups = new List<PlacementGroupConfig>();
+        private List<PlacementGroupConfig> _placementGroups = AWSConfigs.InitializeCollections ? new List<PlacementGroupConfig>() : null;
         private string _releaseLabel;
         private RepoUpgradeOnBoot _repoUpgradeOnBoot;
         private string _requestedAmiVersion;
@@ -63,7 +63,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _serviceRole;
         private ClusterStatus _status;
         private int? _stepConcurrencyLevel;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _terminationProtected;
         private bool? _unhealthyNodeReplacement;
         private bool? _visibleToAllUsers;
@@ -83,7 +83,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -382,7 +382,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the cluster.
+        /// The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $,
+        /// |, or ` (backtick).
         /// </para>
         /// </summary>
         public string Name
@@ -472,7 +473,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if PlacementGroups property is set
         internal bool IsSetPlacementGroups()
         {
-            return this._placementGroups != null && this._placementGroups.Count > 0; 
+            return this._placementGroups != null && (this._placementGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -671,7 +672,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

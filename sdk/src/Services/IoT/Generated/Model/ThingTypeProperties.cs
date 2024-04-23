@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ThingTypeProperties
     {
-        private List<string> _searchableAttributes = new List<string>();
+        private List<string> _searchableAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _thingTypeDescription;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model
         // Check to see if SearchableAttributes property is set
         internal bool IsSetSearchableAttributes()
         {
-            return this._searchableAttributes != null && this._searchableAttributes.Count > 0; 
+            return this._searchableAttributes != null && (this._searchableAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

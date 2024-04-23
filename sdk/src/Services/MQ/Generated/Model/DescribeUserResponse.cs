@@ -35,7 +35,7 @@ namespace Amazon.MQ.Model
     {
         private string _brokerId;
         private bool? _consoleAccess;
-        private List<string> _groups = new List<string>();
+        private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private UserPendingChanges _pending;
         private bool? _replicationUser;
         private string _username;
@@ -93,7 +93,7 @@ namespace Amazon.MQ.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -71,7 +71,7 @@ namespace Amazon.AuditManager.Model
         private string _assessmentId;
         private string _controlId;
         private string _controlSetId;
-        private List<ManualEvidence> _manualEvidence = new List<ManualEvidence>();
+        private List<ManualEvidence> _manualEvidence = AWSConfigs.InitializeCollections ? new List<ManualEvidence>() : null;
 
         /// <summary>
         /// Gets and sets the property AssessmentId. 
@@ -146,7 +146,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if ManualEvidence property is set
         internal bool IsSetManualEvidence()
         {
-            return this._manualEvidence != null && this._manualEvidence.Count > 0; 
+            return this._manualEvidence != null && (this._manualEvidence.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

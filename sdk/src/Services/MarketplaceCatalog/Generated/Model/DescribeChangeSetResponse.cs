@@ -33,7 +33,7 @@ namespace Amazon.MarketplaceCatalog.Model
     /// </summary>
     public partial class DescribeChangeSetResponse : AmazonWebServiceResponse
     {
-        private List<ChangeSummary> _changeSet = new List<ChangeSummary>();
+        private List<ChangeSummary> _changeSet = AWSConfigs.InitializeCollections ? new List<ChangeSummary>() : null;
         private string _changeSetArn;
         private string _changeSetId;
         private string _changeSetName;
@@ -59,7 +59,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if ChangeSet property is set
         internal bool IsSetChangeSet()
         {
-            return this._changeSet != null && this._changeSet.Count > 0; 
+            return this._changeSet != null && (this._changeSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

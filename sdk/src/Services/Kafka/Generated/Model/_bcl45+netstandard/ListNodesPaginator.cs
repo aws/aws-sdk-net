@@ -45,7 +45,7 @@ namespace Amazon.Kafka.Model
         /// Enumerable containing all of the NodeInfoList
         /// </summary>
         public IPaginatedEnumerable<NodeInfo> NodeInfoList => 
-            new PaginatedResultKeyResponse<ListNodesResponse, NodeInfo>(this, (i) => i.NodeInfoList);
+            new PaginatedResultKeyResponse<ListNodesResponse, NodeInfo>(this, (i) => i.NodeInfoList ?? new List<NodeInfo>());
 
         internal ListNodesPaginator(IAmazonKafka client, ListNodesRequest request)
         {

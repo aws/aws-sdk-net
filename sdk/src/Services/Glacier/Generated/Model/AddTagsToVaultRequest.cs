@@ -40,7 +40,7 @@ namespace Amazon.Glacier.Model
     public partial class AddTagsToVaultRequest : AmazonGlacierRequest
     {
         private string _accountId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _vaultName;
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

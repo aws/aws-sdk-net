@@ -133,7 +133,7 @@ namespace Amazon.Runtime.Documents
         /// </summary>
         public bool IsDictionary() => Type == DocumentType.Dictionary;
         /// <summary>
-        /// Returns the Document's backing value as a <see cref="Dictionary{string,Document}"/>.
+        /// Returns the Document's backing value.
         /// </summary>
         /// <exception cref="InvalidDocumentTypeConversionException">Thrown if <see cref="Type"/> is not <see cref="DocumentType.Dictionary"/></exception>
         public Dictionary<string, Document> AsDictionary()
@@ -440,7 +440,7 @@ namespace Amazon.Runtime.Documents
                 case JsonType.String:
                     return new Document(jsonData.GetString());
                 case JsonType.Array:
-                    return new Document(jsonData.Values.OfType<object>().Select(FromObject).ToArray());
+                    return new Document(jsonData.Cast<JsonData>().Select(FromObject).ToArray());
                 case JsonType.Object:
                     var dictionary = new Dictionary<string, Document>();
                     Copy(jsonData, dictionary);

@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the ViolationEvents
         /// </summary>
         public IPaginatedEnumerable<ViolationEvent> ViolationEvents => 
-            new PaginatedResultKeyResponse<ListViolationEventsResponse, ViolationEvent>(this, (i) => i.ViolationEvents);
+            new PaginatedResultKeyResponse<ListViolationEventsResponse, ViolationEvent>(this, (i) => i.ViolationEvents ?? new List<ViolationEvent>());
 
         internal ListViolationEventsPaginator(IAmazonIoT client, ListViolationEventsRequest request)
         {

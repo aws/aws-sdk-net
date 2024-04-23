@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the Scopes
         /// </summary>
         public IPaginatedEnumerable<ScopeDetails> Scopes => 
-            new PaginatedResultKeyResponse<ListApplicationAccessScopesResponse, ScopeDetails>(this, (i) => i.Scopes);
+            new PaginatedResultKeyResponse<ListApplicationAccessScopesResponse, ScopeDetails>(this, (i) => i.Scopes ?? new List<ScopeDetails>());
 
         internal ListApplicationAccessScopesPaginator(IAmazonSSOAdmin client, ListApplicationAccessScopesRequest request)
         {

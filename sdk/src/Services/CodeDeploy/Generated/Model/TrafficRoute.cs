@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class TrafficRoute
     {
-        private List<string> _listenerArns = new List<string>();
+        private List<string> _listenerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ListenerArns. 
@@ -53,7 +53,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if ListenerArns property is set
         internal bool IsSetListenerArns()
         {
-            return this._listenerArns != null && this._listenerArns.Count > 0; 
+            return this._listenerArns != null && (this._listenerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

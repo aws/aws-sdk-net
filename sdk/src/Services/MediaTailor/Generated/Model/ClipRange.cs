@@ -34,6 +34,7 @@ namespace Amazon.MediaTailor.Model
     public partial class ClipRange
     {
         private long? _endOffsetMillis;
+        private long? _startOffsetMillis;
 
         /// <summary>
         /// Gets and sets the property EndOffsetMillis. 
@@ -42,7 +43,6 @@ namespace Amazon.MediaTailor.Model
         /// the VOD source associated with the program.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public long EndOffsetMillis
         {
             get { return this._endOffsetMillis.GetValueOrDefault(); }
@@ -53,6 +53,25 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetEndOffsetMillis()
         {
             return this._endOffsetMillis.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartOffsetMillis. 
+        /// <para>
+        /// The start offset of the clip range, in milliseconds. This offset truncates the start
+        /// at the number of milliseconds into the duration of the VOD source.
+        /// </para>
+        /// </summary>
+        public long StartOffsetMillis
+        {
+            get { return this._startOffsetMillis.GetValueOrDefault(); }
+            set { this._startOffsetMillis = value; }
+        }
+
+        // Check to see if StartOffsetMillis property is set
+        internal bool IsSetStartOffsetMillis()
+        {
+            return this._startOffsetMillis.HasValue; 
         }
 
     }

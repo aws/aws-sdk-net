@@ -42,9 +42,9 @@ namespace Amazon.APIGateway.Model
         private string _documentationVersion;
         private string _restApiId;
         private string _stageName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _tracingEnabled;
-        private Dictionary<string, string> _variables = new Dictionary<string, string>();
+        private Dictionary<string, string> _variables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CacheClusterEnabled. 
@@ -213,7 +213,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

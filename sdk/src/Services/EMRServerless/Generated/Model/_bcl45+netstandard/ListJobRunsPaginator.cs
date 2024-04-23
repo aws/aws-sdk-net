@@ -45,7 +45,7 @@ namespace Amazon.EMRServerless.Model
         /// Enumerable containing all of the JobRuns
         /// </summary>
         public IPaginatedEnumerable<JobRunSummary> JobRuns => 
-            new PaginatedResultKeyResponse<ListJobRunsResponse, JobRunSummary>(this, (i) => i.JobRuns);
+            new PaginatedResultKeyResponse<ListJobRunsResponse, JobRunSummary>(this, (i) => i.JobRuns ?? new List<JobRunSummary>());
 
         internal ListJobRunsPaginator(IAmazonEMRServerless client, ListJobRunsRequest request)
         {

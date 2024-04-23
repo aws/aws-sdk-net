@@ -42,7 +42,7 @@ namespace Amazon.OpsWorks.Model
         private string _deploymentId;
         private int? _duration;
         private string _iamUserArn;
-        private List<string> _instanceIds = new List<string>();
+        private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stackId;
         private string _status;
 
@@ -234,7 +234,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
+            return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

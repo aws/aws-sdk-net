@@ -45,7 +45,7 @@ namespace Amazon.Honeycode.Model
         /// Enumerable containing all of the TableColumns
         /// </summary>
         public IPaginatedEnumerable<TableColumn> TableColumns => 
-            new PaginatedResultKeyResponse<ListTableColumnsResponse, TableColumn>(this, (i) => i.TableColumns);
+            new PaginatedResultKeyResponse<ListTableColumnsResponse, TableColumn>(this, (i) => i.TableColumns ?? new List<TableColumn>());
 
         internal ListTableColumnsPaginator(IAmazonHoneycode client, ListTableColumnsRequest request)
         {

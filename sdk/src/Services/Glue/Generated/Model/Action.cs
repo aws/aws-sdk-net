@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Action
     {
-        private Dictionary<string, string> _arguments = new Dictionary<string, string>();
+        private Dictionary<string, string> _arguments = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _crawlerName;
         private string _jobName;
         private NotificationProperty _notificationProperty;
@@ -73,7 +73,7 @@ namespace Amazon.Glue.Model
         // Check to see if Arguments property is set
         internal bool IsSetArguments()
         {
-            return this._arguments != null && this._arguments.Count > 0; 
+            return this._arguments != null && (this._arguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

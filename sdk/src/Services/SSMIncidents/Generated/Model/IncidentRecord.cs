@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model
     public partial class IncidentRecord
     {
         private string _arn;
-        private List<AutomationExecution> _automationExecutions = new List<AutomationExecution>();
+        private List<AutomationExecution> _automationExecutions = AWSConfigs.InitializeCollections ? new List<AutomationExecution>() : null;
         private ChatChannel _chatChannel;
         private DateTime? _creationTime;
         private string _dedupeString;
@@ -42,7 +42,7 @@ namespace Amazon.SSMIncidents.Model
         private IncidentRecordSource _incidentRecordSource;
         private string _lastModifiedBy;
         private DateTime? _lastModifiedTime;
-        private List<NotificationTargetItem> _notificationTargets = new List<NotificationTargetItem>();
+        private List<NotificationTargetItem> _notificationTargets = AWSConfigs.InitializeCollections ? new List<NotificationTargetItem>() : null;
         private DateTime? _resolvedTime;
         private IncidentRecordStatus _status;
         private string _summary;
@@ -83,7 +83,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if AutomationExecutions property is set
         internal bool IsSetAutomationExecutions()
         {
-            return this._automationExecutions != null && this._automationExecutions.Count > 0; 
+            return this._automationExecutions != null && (this._automationExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if NotificationTargets property is set
         internal bool IsSetNotificationTargets()
         {
-            return this._notificationTargets != null && this._notificationTargets.Count > 0; 
+            return this._notificationTargets != null && (this._notificationTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

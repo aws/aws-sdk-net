@@ -48,7 +48,7 @@ namespace Amazon.Connect.Model
     public partial class BatchPutContactRequest : AmazonConnectRequest
     {
         private string _clientToken;
-        private List<ContactDataRequest> _contactDataRequestList = new List<ContactDataRequest>();
+        private List<ContactDataRequest> _contactDataRequestList = AWSConfigs.InitializeCollections ? new List<ContactDataRequest>() : null;
         private string _instanceId;
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.Connect.Model
         // Check to see if ContactDataRequestList property is set
         internal bool IsSetContactDataRequestList()
         {
-            return this._contactDataRequestList != null && this._contactDataRequestList.Count > 0; 
+            return this._contactDataRequestList != null && (this._contactDataRequestList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Enumerable containing all of the SnapshotCopyConfigurations
         /// </summary>
         public IPaginatedEnumerable<SnapshotCopyConfiguration> SnapshotCopyConfigurations => 
-            new PaginatedResultKeyResponse<ListSnapshotCopyConfigurationsResponse, SnapshotCopyConfiguration>(this, (i) => i.SnapshotCopyConfigurations);
+            new PaginatedResultKeyResponse<ListSnapshotCopyConfigurationsResponse, SnapshotCopyConfiguration>(this, (i) => i.SnapshotCopyConfigurations ?? new List<SnapshotCopyConfiguration>());
 
         internal ListSnapshotCopyConfigurationsPaginator(IAmazonRedshiftServerless client, ListSnapshotCopyConfigurationsRequest request)
         {

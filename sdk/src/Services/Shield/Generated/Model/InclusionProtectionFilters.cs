@@ -37,9 +37,9 @@ namespace Amazon.Shield.Model
     /// </summary>
     public partial class InclusionProtectionFilters
     {
-        private List<string> _protectionNames = new List<string>();
-        private List<string> _resourceArns = new List<string>();
-        private List<string> _resourceTypes = new List<string>();
+        private List<string> _protectionNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ProtectionNames. 
@@ -57,7 +57,7 @@ namespace Amazon.Shield.Model
         // Check to see if ProtectionNames property is set
         internal bool IsSetProtectionNames()
         {
-            return this._protectionNames != null && this._protectionNames.Count > 0; 
+            return this._protectionNames != null && (this._protectionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.Shield.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.Shield.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

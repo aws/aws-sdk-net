@@ -45,7 +45,7 @@ namespace Amazon.CleanRooms.Model
         /// Enumerable containing all of the AnalysisTemplateSummaries
         /// </summary>
         public IPaginatedEnumerable<AnalysisTemplateSummary> AnalysisTemplateSummaries => 
-            new PaginatedResultKeyResponse<ListAnalysisTemplatesResponse, AnalysisTemplateSummary>(this, (i) => i.AnalysisTemplateSummaries);
+            new PaginatedResultKeyResponse<ListAnalysisTemplatesResponse, AnalysisTemplateSummary>(this, (i) => i.AnalysisTemplateSummaries ?? new List<AnalysisTemplateSummary>());
 
         internal ListAnalysisTemplatesPaginator(IAmazonCleanRooms client, ListAnalysisTemplatesRequest request)
         {

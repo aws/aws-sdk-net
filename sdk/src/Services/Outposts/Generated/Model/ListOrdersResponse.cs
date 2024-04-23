@@ -34,7 +34,7 @@ namespace Amazon.Outposts.Model
     public partial class ListOrdersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OrderSummary> _orders = new List<OrderSummary>();
+        private List<OrderSummary> _orders = AWSConfigs.InitializeCollections ? new List<OrderSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -67,7 +67,7 @@ namespace Amazon.Outposts.Model
         // Check to see if Orders property is set
         internal bool IsSetOrders()
         {
-            return this._orders != null && this._orders.Count > 0; 
+            return this._orders != null && (this._orders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

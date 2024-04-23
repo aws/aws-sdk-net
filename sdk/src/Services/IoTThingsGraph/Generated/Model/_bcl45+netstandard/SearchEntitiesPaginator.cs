@@ -45,7 +45,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// Enumerable containing all of the Descriptions
         /// </summary>
         public IPaginatedEnumerable<EntityDescription> Descriptions => 
-            new PaginatedResultKeyResponse<SearchEntitiesResponse, EntityDescription>(this, (i) => i.Descriptions);
+            new PaginatedResultKeyResponse<SearchEntitiesResponse, EntityDescription>(this, (i) => i.Descriptions ?? new List<EntityDescription>());
 
         internal SearchEntitiesPaginator(IAmazonIoTThingsGraph client, SearchEntitiesRequest request)
         {

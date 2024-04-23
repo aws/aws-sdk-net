@@ -45,7 +45,7 @@ namespace Amazon.BillingConductor.Model
         /// Enumerable containing all of the BillingGroupCostReports
         /// </summary>
         public IPaginatedEnumerable<BillingGroupCostReportElement> BillingGroupCostReports => 
-            new PaginatedResultKeyResponse<ListBillingGroupCostReportsResponse, BillingGroupCostReportElement>(this, (i) => i.BillingGroupCostReports);
+            new PaginatedResultKeyResponse<ListBillingGroupCostReportsResponse, BillingGroupCostReportElement>(this, (i) => i.BillingGroupCostReports ?? new List<BillingGroupCostReportElement>());
 
         internal ListBillingGroupCostReportsPaginator(IAmazonBillingConductor client, ListBillingGroupCostReportsRequest request)
         {

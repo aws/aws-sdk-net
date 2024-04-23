@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class CriteriaBlockForJob
     {
-        private List<CriteriaForJob> _and = new List<CriteriaForJob>();
+        private List<CriteriaForJob> _and = AWSConfigs.InitializeCollections ? new List<CriteriaForJob>() : null;
 
         /// <summary>
         /// Gets and sets the property And. 
@@ -53,7 +53,7 @@ namespace Amazon.Macie2.Model
         // Check to see if And property is set
         internal bool IsSetAnd()
         {
-            return this._and != null && this._and.Count > 0; 
+            return this._and != null && (this._and.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

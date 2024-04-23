@@ -33,7 +33,7 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class DescribeSourceServersResponse : AmazonWebServiceResponse
     {
-        private List<SourceServer> _items = new List<SourceServer>();
+        private List<SourceServer> _items = AWSConfigs.InitializeCollections ? new List<SourceServer>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Mgn.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

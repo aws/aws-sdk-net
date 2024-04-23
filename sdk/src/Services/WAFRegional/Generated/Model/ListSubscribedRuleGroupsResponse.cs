@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model
     public partial class ListSubscribedRuleGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<SubscribedRuleGroupSummary> _ruleGroups = new List<SubscribedRuleGroupSummary>();
+        private List<SubscribedRuleGroupSummary> _ruleGroups = AWSConfigs.InitializeCollections ? new List<SubscribedRuleGroupSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -73,7 +73,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if RuleGroups property is set
         internal bool IsSetRuleGroups()
         {
-            return this._ruleGroups != null && this._ruleGroups.Count > 0; 
+            return this._ruleGroups != null && (this._ruleGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

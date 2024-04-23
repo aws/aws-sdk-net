@@ -238,7 +238,9 @@ namespace Amazon.Runtime.Credentials.Internal
                                 RefreshState = new RefreshState
                                 {
                                     FailedLastRefreshAttempt = true,
+#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                                     BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30)
+#pragma warning restore CS0612,CS0618 // Type or member is obsolete
                                 }
                             };
 
@@ -489,7 +491,9 @@ namespace Amazon.Runtime.Credentials.Internal
                                 RefreshState = new RefreshState
                                 {
                                     FailedLastRefreshAttempt = true,
+#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                                     BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30)
+#pragma warning restore CS0612,CS0618 // Type or member is obsolete
                                 }
                             };
 

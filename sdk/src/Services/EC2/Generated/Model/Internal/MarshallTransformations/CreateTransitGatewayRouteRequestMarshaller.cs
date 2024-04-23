@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Blackhole", StringUtils.FromBool(publicRequest.Blackhole));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinationCidrBlock())
                 {
                     request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransitGatewayAttachmentId())
                 {
                     request.Parameters.Add("TransitGatewayAttachmentId", StringUtils.FromString(publicRequest.TransitGatewayAttachmentId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransitGatewayRouteTableId())
                 {
                     request.Parameters.Add("TransitGatewayRouteTableId", StringUtils.FromString(publicRequest.TransitGatewayRouteTableId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

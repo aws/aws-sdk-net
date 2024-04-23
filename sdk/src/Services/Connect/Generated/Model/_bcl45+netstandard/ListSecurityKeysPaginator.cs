@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the SecurityKeys
         /// </summary>
         public IPaginatedEnumerable<SecurityKey> SecurityKeys => 
-            new PaginatedResultKeyResponse<ListSecurityKeysResponse, SecurityKey>(this, (i) => i.SecurityKeys);
+            new PaginatedResultKeyResponse<ListSecurityKeysResponse, SecurityKey>(this, (i) => i.SecurityKeys ?? new List<SecurityKey>());
 
         internal ListSecurityKeysPaginator(IAmazonConnect client, ListSecurityKeysRequest request)
         {

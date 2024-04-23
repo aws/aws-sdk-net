@@ -387,7 +387,7 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         IPropertyBag EndpointAttributes { get; set; }
 
-        //// <summary>
+        /// <summary>
         /// The selected compression algorithm to be used to compress the payload of the request.
         /// </summary>
         CompressionEncodingAlgorithm CompressionAlgorithm { get; set; }

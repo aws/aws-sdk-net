@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the InventoryDeletions
         /// </summary>
         public IPaginatedEnumerable<InventoryDeletionStatusItem> InventoryDeletions => 
-            new PaginatedResultKeyResponse<DescribeInventoryDeletionsResponse, InventoryDeletionStatusItem>(this, (i) => i.InventoryDeletions);
+            new PaginatedResultKeyResponse<DescribeInventoryDeletionsResponse, InventoryDeletionStatusItem>(this, (i) => i.InventoryDeletions ?? new List<InventoryDeletionStatusItem>());
 
         internal DescribeInventoryDeletionsPaginator(IAmazonSimpleSystemsManagement client, DescribeInventoryDeletionsRequest request)
         {

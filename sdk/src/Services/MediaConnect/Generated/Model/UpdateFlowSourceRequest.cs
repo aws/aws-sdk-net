@@ -43,7 +43,7 @@ namespace Amazon.MediaConnect.Model
         private int? _maxBitrate;
         private int? _maxLatency;
         private int? _maxSyncBuffer;
-        private List<MediaStreamSourceConfigurationRequest> _mediaStreamSourceConfigurations = new List<MediaStreamSourceConfigurationRequest>();
+        private List<MediaStreamSourceConfigurationRequest> _mediaStreamSourceConfigurations = AWSConfigs.InitializeCollections ? new List<MediaStreamSourceConfigurationRequest>() : null;
         private int? _minLatency;
         private Protocol _protocol;
         private int? _senderControlPort;
@@ -214,7 +214,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if MediaStreamSourceConfigurations property is set
         internal bool IsSetMediaStreamSourceConfigurations()
         {
-            return this._mediaStreamSourceConfigurations != null && this._mediaStreamSourceConfigurations.Count > 0; 
+            return this._mediaStreamSourceConfigurations != null && (this._mediaStreamSourceConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

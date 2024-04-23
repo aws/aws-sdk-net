@@ -35,7 +35,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class CreateCustomRoutingEndpointGroupRequest : AmazonGlobalAcceleratorRequest
     {
-        private List<CustomRoutingDestinationConfiguration> _destinationConfigurations = new List<CustomRoutingDestinationConfiguration>();
+        private List<CustomRoutingDestinationConfiguration> _destinationConfigurations = AWSConfigs.InitializeCollections ? new List<CustomRoutingDestinationConfiguration>() : null;
         private string _endpointGroupRegion;
         private string _idempotencyToken;
         private string _listenerArn;
@@ -57,7 +57,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if DestinationConfigurations property is set
         internal bool IsSetDestinationConfigurations()
         {
-            return this._destinationConfigurations != null && this._destinationConfigurations.Count > 0; 
+            return this._destinationConfigurations != null && (this._destinationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the PendingAggregationRequests
         /// </summary>
         public IPaginatedEnumerable<PendingAggregationRequest> PendingAggregationRequests => 
-            new PaginatedResultKeyResponse<DescribePendingAggregationRequestsResponse, PendingAggregationRequest>(this, (i) => i.PendingAggregationRequests);
+            new PaginatedResultKeyResponse<DescribePendingAggregationRequestsResponse, PendingAggregationRequest>(this, (i) => i.PendingAggregationRequests ?? new List<PendingAggregationRequest>());
 
         internal DescribePendingAggregationRequestsPaginator(IAmazonConfigService client, DescribePendingAggregationRequestsRequest request)
         {

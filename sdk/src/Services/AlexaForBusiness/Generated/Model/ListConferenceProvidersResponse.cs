@@ -33,7 +33,7 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class ListConferenceProvidersResponse : AmazonWebServiceResponse
     {
-        private List<ConferenceProvider> _conferenceProviders = new List<ConferenceProvider>();
+        private List<ConferenceProvider> _conferenceProviders = AWSConfigs.InitializeCollections ? new List<ConferenceProvider>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if ConferenceProviders property is set
         internal bool IsSetConferenceProviders()
         {
-            return this._conferenceProviders != null && this._conferenceProviders.Count > 0; 
+            return this._conferenceProviders != null && (this._conferenceProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

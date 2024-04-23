@@ -33,9 +33,9 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class KernelGatewayAppSettings
     {
-        private List<CustomImage> _customImages = new List<CustomImage>();
+        private List<CustomImage> _customImages = AWSConfigs.InitializeCollections ? new List<CustomImage>() : null;
         private ResourceSpec _defaultResourceSpec;
-        private List<string> _lifecycleConfigArns = new List<string>();
+        private List<string> _lifecycleConfigArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomImages. 
@@ -53,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CustomImages property is set
         internal bool IsSetCustomImages()
         {
-            return this._customImages != null && this._customImages.Count > 0; 
+            return this._customImages != null && (this._customImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if LifecycleConfigArns property is set
         internal bool IsSetLifecycleConfigArns()
         {
-            return this._lifecycleConfigArns != null && this._lifecycleConfigArns.Count > 0; 
+            return this._lifecycleConfigArns != null && (this._lifecycleConfigArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

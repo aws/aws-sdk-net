@@ -39,12 +39,15 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class UpdateDistributionRequest : AmazonLightsailRequest
     {
-        private List<CacheBehaviorPerPath> _cacheBehaviors = new List<CacheBehaviorPerPath>();
+        private List<CacheBehaviorPerPath> _cacheBehaviors = AWSConfigs.InitializeCollections ? new List<CacheBehaviorPerPath>() : null;
         private CacheSettings _cacheBehaviorSettings;
+        private string _certificateName;
         private CacheBehavior _defaultCacheBehavior;
         private string _distributionName;
         private bool? _isEnabled;
         private InputOrigin _origin;
+        private bool? _useDefaultCertificate;
+        private ViewerMinimumTlsProtocolVersionEnum _viewerMinimumTlsProtocolVersion;
 
         /// <summary>
         /// Gets and sets the property CacheBehaviors. 
@@ -61,7 +64,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if CacheBehaviors property is set
         internal bool IsSetCacheBehaviors()
         {
-            return this._cacheBehaviors != null && this._cacheBehaviors.Count > 0; 
+            return this._cacheBehaviors != null && (this._cacheBehaviors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -86,6 +89,33 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetCacheBehaviorSettings()
         {
             return this._cacheBehaviorSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateName. 
+        /// <para>
+        /// The name of the SSL/TLS certificate that you want to attach to the distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only certificates with a status of <c>ISSUED</c> can be attached to a distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+        /// action to get a list of certificate names that you can specify.
+        /// </para>
+        /// </summary>
+        public string CertificateName
+        {
+            get { return this._certificateName; }
+            set { this._certificateName = value; }
+        }
+
+        // Check to see if CertificateName property is set
+        internal bool IsSetCertificateName()
+        {
+            return this._certificateName != null;
         }
 
         /// <summary>
@@ -169,6 +199,49 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetOrigin()
         {
             return this._origin != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseDefaultCertificate. 
+        /// <para>
+        /// Indicates whether the default SSL/TLS certificate is attached to the distribution.
+        /// The default value is <c>true</c>. When <c>true</c>, the distribution uses the default
+        /// domain name such as <c>d111111abcdef8.cloudfront.net</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Set this value to <c>false</c> to attach a new certificate to the distribution.
+        /// </para>
+        /// </summary>
+        public bool UseDefaultCertificate
+        {
+            get { return this._useDefaultCertificate.GetValueOrDefault(); }
+            set { this._useDefaultCertificate = value; }
+        }
+
+        // Check to see if UseDefaultCertificate property is set
+        internal bool IsSetUseDefaultCertificate()
+        {
+            return this._useDefaultCertificate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViewerMinimumTlsProtocolVersion. 
+        /// <para>
+        /// Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate
+        /// that's attached to the distribution.
+        /// </para>
+        /// </summary>
+        public ViewerMinimumTlsProtocolVersionEnum ViewerMinimumTlsProtocolVersion
+        {
+            get { return this._viewerMinimumTlsProtocolVersion; }
+            set { this._viewerMinimumTlsProtocolVersion = value; }
+        }
+
+        // Check to see if ViewerMinimumTlsProtocolVersion property is set
+        internal bool IsSetViewerMinimumTlsProtocolVersion()
+        {
+            return this._viewerMinimumTlsProtocolVersion != null;
         }
 
     }

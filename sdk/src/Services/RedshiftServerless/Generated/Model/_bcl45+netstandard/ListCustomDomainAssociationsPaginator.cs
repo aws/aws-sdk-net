@@ -45,7 +45,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Enumerable containing all of the Associations
         /// </summary>
         public IPaginatedEnumerable<Association> Associations => 
-            new PaginatedResultKeyResponse<ListCustomDomainAssociationsResponse, Association>(this, (i) => i.Associations);
+            new PaginatedResultKeyResponse<ListCustomDomainAssociationsResponse, Association>(this, (i) => i.Associations ?? new List<Association>());
 
         internal ListCustomDomainAssociationsPaginator(IAmazonRedshiftServerless client, ListCustomDomainAssociationsRequest request)
         {

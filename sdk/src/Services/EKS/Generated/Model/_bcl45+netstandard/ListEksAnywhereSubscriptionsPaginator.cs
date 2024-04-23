@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the Subscriptions
         /// </summary>
         public IPaginatedEnumerable<EksAnywhereSubscription> Subscriptions => 
-            new PaginatedResultKeyResponse<ListEksAnywhereSubscriptionsResponse, EksAnywhereSubscription>(this, (i) => i.Subscriptions);
+            new PaginatedResultKeyResponse<ListEksAnywhereSubscriptionsResponse, EksAnywhereSubscription>(this, (i) => i.Subscriptions ?? new List<EksAnywhereSubscription>());
 
         internal ListEksAnywhereSubscriptionsPaginator(IAmazonEKS client, ListEksAnywhereSubscriptionsRequest request)
         {

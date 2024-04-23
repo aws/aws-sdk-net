@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     public partial class ListWorkflowStepsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkflowStepSummary> _workflowStepsSummary = new List<WorkflowStepSummary>();
+        private List<WorkflowStepSummary> _workflowStepsSummary = AWSConfigs.InitializeCollections ? new List<WorkflowStepSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if WorkflowStepsSummary property is set
         internal bool IsSetWorkflowStepsSummary()
         {
-            return this._workflowStepsSummary != null && this._workflowStepsSummary.Count > 0; 
+            return this._workflowStepsSummary != null && (this._workflowStepsSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

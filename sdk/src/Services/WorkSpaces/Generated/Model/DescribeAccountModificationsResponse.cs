@@ -33,7 +33,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeAccountModificationsResponse : AmazonWebServiceResponse
     {
-        private List<AccountModification> _accountModifications = new List<AccountModification>();
+        private List<AccountModification> _accountModifications = AWSConfigs.InitializeCollections ? new List<AccountModification>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if AccountModifications property is set
         internal bool IsSetAccountModifications()
         {
-            return this._accountModifications != null && this._accountModifications.Count > 0; 
+            return this._accountModifications != null && (this._accountModifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

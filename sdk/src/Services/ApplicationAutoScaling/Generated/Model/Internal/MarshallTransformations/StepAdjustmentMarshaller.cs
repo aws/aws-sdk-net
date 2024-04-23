@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StepAdjustment requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMetricIntervalLowerBound())
             {
                 context.Writer.WritePropertyName("MetricIntervalLowerBound");
-                context.Writer.Write(requestObject.MetricIntervalLowerBound);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalLowerBound))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalLowerBound));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MetricIntervalLowerBound);
+                }
             }
 
             if(requestObject.IsSetMetricIntervalUpperBound())
             {
                 context.Writer.WritePropertyName("MetricIntervalUpperBound");
-                context.Writer.Write(requestObject.MetricIntervalUpperBound);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalUpperBound))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalUpperBound));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MetricIntervalUpperBound);
+                }
             }
 
             if(requestObject.IsSetScalingAdjustment())
@@ -72,3 +89,4 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

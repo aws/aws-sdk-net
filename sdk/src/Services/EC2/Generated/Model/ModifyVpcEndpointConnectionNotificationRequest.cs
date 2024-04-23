@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyVpcEndpointConnectionNotificationRequest : AmazonEC2Request
     {
-        private List<string> _connectionEvents = new List<string>();
+        private List<string> _connectionEvents = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _connectionNotificationArn;
         private string _connectionNotificationId;
 
@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         // Check to see if ConnectionEvents property is set
         internal bool IsSetConnectionEvents()
         {
-            return this._connectionEvents != null && this._connectionEvents.Count > 0; 
+            return this._connectionEvents != null && (this._connectionEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

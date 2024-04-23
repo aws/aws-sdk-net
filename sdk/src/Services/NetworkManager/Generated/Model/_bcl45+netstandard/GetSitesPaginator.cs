@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the Sites
         /// </summary>
         public IPaginatedEnumerable<Site> Sites => 
-            new PaginatedResultKeyResponse<GetSitesResponse, Site>(this, (i) => i.Sites);
+            new PaginatedResultKeyResponse<GetSitesResponse, Site>(this, (i) => i.Sites ?? new List<Site>());
 
         internal GetSitesPaginator(IAmazonNetworkManager client, GetSitesRequest request)
         {

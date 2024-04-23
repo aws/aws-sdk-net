@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// Enumerable containing all of the FunctionUrlConfigs
         /// </summary>
         public IPaginatedEnumerable<FunctionUrlConfig> FunctionUrlConfigs => 
-            new PaginatedResultKeyResponse<ListFunctionUrlConfigsResponse, FunctionUrlConfig>(this, (i) => i.FunctionUrlConfigs);
+            new PaginatedResultKeyResponse<ListFunctionUrlConfigsResponse, FunctionUrlConfig>(this, (i) => i.FunctionUrlConfigs ?? new List<FunctionUrlConfig>());
 
         internal ListFunctionUrlConfigsPaginator(IAmazonLambda client, ListFunctionUrlConfigsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class LaunchActionsStatus
     {
-        private List<LaunchActionRun> _runs = new List<LaunchActionRun>();
+        private List<LaunchActionRun> _runs = AWSConfigs.InitializeCollections ? new List<LaunchActionRun>() : null;
         private string _ssmAgentDiscoveryDatetime;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Drs.Model
         // Check to see if Runs property is set
         internal bool IsSetRuns()
         {
-            return this._runs != null && this._runs.Count > 0; 
+            return this._runs != null && (this._runs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

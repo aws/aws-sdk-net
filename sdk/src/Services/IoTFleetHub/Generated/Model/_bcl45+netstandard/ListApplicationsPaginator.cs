@@ -45,7 +45,7 @@ namespace Amazon.IoTFleetHub.Model
         /// Enumerable containing all of the ApplicationSummaries
         /// </summary>
         public IPaginatedEnumerable<ApplicationSummary> ApplicationSummaries => 
-            new PaginatedResultKeyResponse<ListApplicationsResponse, ApplicationSummary>(this, (i) => i.ApplicationSummaries);
+            new PaginatedResultKeyResponse<ListApplicationsResponse, ApplicationSummary>(this, (i) => i.ApplicationSummaries ?? new List<ApplicationSummary>());
 
         internal ListApplicationsPaginator(IAmazonIoTFleetHub client, ListApplicationsRequest request)
         {

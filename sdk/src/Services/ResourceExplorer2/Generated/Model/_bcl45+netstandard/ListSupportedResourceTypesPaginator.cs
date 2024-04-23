@@ -45,7 +45,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// Enumerable containing all of the ResourceTypes
         /// </summary>
         public IPaginatedEnumerable<SupportedResourceType> ResourceTypes => 
-            new PaginatedResultKeyResponse<ListSupportedResourceTypesResponse, SupportedResourceType>(this, (i) => i.ResourceTypes);
+            new PaginatedResultKeyResponse<ListSupportedResourceTypesResponse, SupportedResourceType>(this, (i) => i.ResourceTypes ?? new List<SupportedResourceType>());
 
         internal ListSupportedResourceTypesPaginator(IAmazonResourceExplorer2 client, ListSupportedResourceTypesRequest request)
         {

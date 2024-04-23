@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
         private DateTime? _createdTime;
         private TaskTemplateDefaults _defaults;
         private string _description;
-        private List<TaskTemplateField> _fields = new List<TaskTemplateField>();
+        private List<TaskTemplateField> _fields = AWSConfigs.InitializeCollections ? new List<TaskTemplateField>() : null;
         private string _id;
         private string _instanceId;
         private DateTime? _lastModifiedTime;
@@ -173,7 +173,7 @@ namespace Amazon.Connect.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// The identifier of the data source Amazon Q will generate responses from.
+    /// The identifier of the data source Amazon Q Business will generate responses from.
     /// </summary>
     public partial class EligibleDataSource
     {

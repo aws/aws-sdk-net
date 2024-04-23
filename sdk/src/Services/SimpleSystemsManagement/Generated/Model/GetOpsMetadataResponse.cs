@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetOpsMetadataResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, MetadataValue> _metadata = new Dictionary<string, MetadataValue>();
+        private Dictionary<string, MetadataValue> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, MetadataValue>() : null;
         private string _nextToken;
         private string _resourceId;
 
@@ -53,7 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

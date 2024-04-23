@@ -52,13 +52,13 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class CreateMeetingWithAttendeesRequest : AmazonChimeRequest
     {
-        private List<CreateAttendeeRequestItem> _attendees = new List<CreateAttendeeRequestItem>();
+        private List<CreateAttendeeRequestItem> _attendees = AWSConfigs.InitializeCollections ? new List<CreateAttendeeRequestItem>() : null;
         private string _clientRequestToken;
         private string _externalMeetingId;
         private string _mediaRegion;
         private string _meetingHostId;
         private MeetingNotificationConfiguration _notificationsConfiguration;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Attendees. 
@@ -76,7 +76,7 @@ namespace Amazon.Chime.Model
         // Check to see if Attendees property is set
         internal bool IsSetAttendees()
         {
-            return this._attendees != null && this._attendees.Count > 0; 
+            return this._attendees != null && (this._attendees.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Amazon.Chime.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

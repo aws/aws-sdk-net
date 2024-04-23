@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(IdMappingWorkflowInputSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputSourceARN())
             {
                 context.Writer.WritePropertyName("inputSourceARN");
@@ -57,6 +60,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SchemaName);
             }
 
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
+            }
+
         }
 
         /// <summary>
@@ -66,3 +75,4 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

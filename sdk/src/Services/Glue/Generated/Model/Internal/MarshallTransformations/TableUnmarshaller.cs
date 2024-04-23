@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -97,6 +98,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = FederatedTableUnmarshaller.Instance;
                     unmarshalledObject.FederatedTable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsMultiDialectView", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsMultiDialectView = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsRegisteredWithLakeFormation", targetDepth))
@@ -177,6 +184,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.VersionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ViewDefinition", targetDepth))
+                {
+                    var unmarshaller = ViewDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.ViewDefinition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ViewExpandedText", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -208,3 +221,4 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

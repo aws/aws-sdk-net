@@ -45,7 +45,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Enumerable containing all of the UsageLimits
         /// </summary>
         public IPaginatedEnumerable<UsageLimit> UsageLimits => 
-            new PaginatedResultKeyResponse<ListUsageLimitsResponse, UsageLimit>(this, (i) => i.UsageLimits);
+            new PaginatedResultKeyResponse<ListUsageLimitsResponse, UsageLimit>(this, (i) => i.UsageLimits ?? new List<UsageLimit>());
 
         internal ListUsageLimitsPaginator(IAmazonRedshiftServerless client, ListUsageLimitsRequest request)
         {

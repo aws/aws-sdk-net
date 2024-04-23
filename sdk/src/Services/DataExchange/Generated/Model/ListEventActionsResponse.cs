@@ -33,7 +33,7 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class ListEventActionsResponse : AmazonWebServiceResponse
     {
-        private List<EventActionEntry> _eventActions = new List<EventActionEntry>();
+        private List<EventActionEntry> _eventActions = AWSConfigs.InitializeCollections ? new List<EventActionEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if EventActions property is set
         internal bool IsSetEventActions()
         {
-            return this._eventActions != null && this._eventActions.Count > 0; 
+            return this._eventActions != null && (this._eventActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

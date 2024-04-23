@@ -45,7 +45,7 @@ namespace Amazon.Comprehend.Model
         /// Enumerable containing all of the PiiEntitiesDetectionJobPropertiesList
         /// </summary>
         public IPaginatedEnumerable<PiiEntitiesDetectionJobProperties> PiiEntitiesDetectionJobPropertiesList => 
-            new PaginatedResultKeyResponse<ListPiiEntitiesDetectionJobsResponse, PiiEntitiesDetectionJobProperties>(this, (i) => i.PiiEntitiesDetectionJobPropertiesList);
+            new PaginatedResultKeyResponse<ListPiiEntitiesDetectionJobsResponse, PiiEntitiesDetectionJobProperties>(this, (i) => i.PiiEntitiesDetectionJobPropertiesList ?? new List<PiiEntitiesDetectionJobProperties>());
 
         internal ListPiiEntitiesDetectionJobsPaginator(IAmazonComprehend client, ListPiiEntitiesDetectionJobsRequest request)
         {

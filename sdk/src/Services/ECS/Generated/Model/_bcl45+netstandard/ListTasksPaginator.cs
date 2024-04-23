@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
         /// Enumerable containing all of the TaskArns
         /// </summary>
         public IPaginatedEnumerable<string> TaskArns => 
-            new PaginatedResultKeyResponse<ListTasksResponse, string>(this, (i) => i.TaskArns);
+            new PaginatedResultKeyResponse<ListTasksResponse, string>(this, (i) => i.TaskArns ?? new List<string>());
 
         internal ListTasksPaginator(IAmazonECS client, ListTasksRequest request)
         {

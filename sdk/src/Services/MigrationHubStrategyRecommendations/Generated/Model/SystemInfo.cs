@@ -35,7 +35,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     {
         private string _cpuArchitecture;
         private string _fileSystemType;
-        private List<NetworkInfo> _networkInfoList = new List<NetworkInfo>();
+        private List<NetworkInfo> _networkInfoList = AWSConfigs.InitializeCollections ? new List<NetworkInfo>() : null;
         private OSInfo _osInfo;
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if NetworkInfoList property is set
         internal bool IsSetNetworkInfoList()
         {
-            return this._networkInfoList != null && this._networkInfoList.Count > 0; 
+            return this._networkInfoList != null && (this._networkInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

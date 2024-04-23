@@ -238,6 +238,10 @@ namespace Amazon.Transfer
         /// Constant SIGNING for CertificateUsageType
         /// </summary>
         public static readonly CertificateUsageType SIGNING = new CertificateUsageType("SIGNING");
+        /// <summary>
+        /// Constant TLS for CertificateUsageType
+        /// </summary>
+        public static readonly CertificateUsageType TLS = new CertificateUsageType("TLS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -492,6 +496,10 @@ namespace Amazon.Transfer
         /// Constant AES256_CBC for EncryptionAlg
         /// </summary>
         public static readonly EncryptionAlg AES256_CBC = new EncryptionAlg("AES256_CBC");
+        /// <summary>
+        /// Constant DES_EDE3_CBC for EncryptionAlg
+        /// </summary>
+        public static readonly EncryptionAlg DES_EDE3_CBC = new EncryptionAlg("DES_EDE3_CBC");
         /// <summary>
         /// Constant NONE for EncryptionAlg
         /// </summary>
@@ -1190,6 +1198,106 @@ namespace Amazon.Transfer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Protocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecurityPolicyProtocol.
+    /// </summary>
+    public class SecurityPolicyProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FTPS for SecurityPolicyProtocol
+        /// </summary>
+        public static readonly SecurityPolicyProtocol FTPS = new SecurityPolicyProtocol("FTPS");
+        /// <summary>
+        /// Constant SFTP for SecurityPolicyProtocol
+        /// </summary>
+        public static readonly SecurityPolicyProtocol SFTP = new SecurityPolicyProtocol("SFTP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecurityPolicyProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityPolicyProtocol FindValue(string value)
+        {
+            return FindValue<SecurityPolicyProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityPolicyProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecurityPolicyResourceType.
+    /// </summary>
+    public class SecurityPolicyResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTOR for SecurityPolicyResourceType
+        /// </summary>
+        public static readonly SecurityPolicyResourceType CONNECTOR = new SecurityPolicyResourceType("CONNECTOR");
+        /// <summary>
+        /// Constant SERVER for SecurityPolicyResourceType
+        /// </summary>
+        public static readonly SecurityPolicyResourceType SERVER = new SecurityPolicyResourceType("SERVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecurityPolicyResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityPolicyResourceType FindValue(string value)
+        {
+            return FindValue<SecurityPolicyResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityPolicyResourceType(string value)
         {
             return FindValue(value);
         }

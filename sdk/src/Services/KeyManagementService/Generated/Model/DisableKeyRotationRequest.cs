@@ -85,6 +85,14 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <a>GetKeyRotationStatus</a> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListKeyRotations</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RotateKeyOnDemand</a> 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For

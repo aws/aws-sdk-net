@@ -128,7 +128,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property RetryAfterSeconds. 
         /// <para>
-        /// The container of the <c>retryAfterSeconds</c> value.
+        /// Specifies the <c>retryAfterSeconds</c> value.
         /// </para>
         /// </summary>
         public int RetryAfterSeconds

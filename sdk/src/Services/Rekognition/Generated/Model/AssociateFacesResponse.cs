@@ -33,8 +33,8 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class AssociateFacesResponse : AmazonWebServiceResponse
     {
-        private List<AssociatedFace> _associatedFaces = new List<AssociatedFace>();
-        private List<UnsuccessfulFaceAssociation> _unsuccessfulFaceAssociations = new List<UnsuccessfulFaceAssociation>();
+        private List<AssociatedFace> _associatedFaces = AWSConfigs.InitializeCollections ? new List<AssociatedFace>() : null;
+        private List<UnsuccessfulFaceAssociation> _unsuccessfulFaceAssociations = AWSConfigs.InitializeCollections ? new List<UnsuccessfulFaceAssociation>() : null;
         private UserStatus _userStatus;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if AssociatedFaces property is set
         internal bool IsSetAssociatedFaces()
         {
-            return this._associatedFaces != null && this._associatedFaces.Count > 0; 
+            return this._associatedFaces != null && (this._associatedFaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if UnsuccessfulFaceAssociations property is set
         internal bool IsSetUnsuccessfulFaceAssociations()
         {
-            return this._unsuccessfulFaceAssociations != null && this._unsuccessfulFaceAssociations.Count > 0; 
+            return this._unsuccessfulFaceAssociations != null && (this._unsuccessfulFaceAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

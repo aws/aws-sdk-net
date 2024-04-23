@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListApprovedOriginsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _origins = new List<string>();
+        private List<string> _origins = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         // Check to see if Origins property is set
         internal bool IsSetOrigins()
         {
-            return this._origins != null && this._origins.Count > 0; 
+            return this._origins != null && (this._origins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the Candidates
         /// </summary>
         public IPaginatedEnumerable<AutoMLCandidate> Candidates => 
-            new PaginatedResultKeyResponse<ListCandidatesForAutoMLJobResponse, AutoMLCandidate>(this, (i) => i.Candidates);
+            new PaginatedResultKeyResponse<ListCandidatesForAutoMLJobResponse, AutoMLCandidate>(this, (i) => i.Candidates ?? new List<AutoMLCandidate>());
 
         internal ListCandidatesForAutoMLJobPaginator(IAmazonSageMaker client, ListCandidatesForAutoMLJobRequest request)
         {

@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class GetConnectionsFilter
     {
         private ConnectionType _connectionType;
-        private List<string> _matchCriteria = new List<string>();
+        private List<string> _matchCriteria = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectionType. 
@@ -72,7 +72,7 @@ namespace Amazon.Glue.Model
         // Check to see if MatchCriteria property is set
         internal bool IsSetMatchCriteria()
         {
-            return this._matchCriteria != null && this._matchCriteria.Count > 0; 
+            return this._matchCriteria != null && (this._matchCriteria.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

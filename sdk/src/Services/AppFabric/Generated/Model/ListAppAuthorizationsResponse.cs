@@ -33,7 +33,7 @@ namespace Amazon.AppFabric.Model
     /// </summary>
     public partial class ListAppAuthorizationsResponse : AmazonWebServiceResponse
     {
-        private List<AppAuthorizationSummary> _appAuthorizationSummaryList = new List<AppAuthorizationSummary>();
+        private List<AppAuthorizationSummary> _appAuthorizationSummaryList = AWSConfigs.InitializeCollections ? new List<AppAuthorizationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AppFabric.Model
         // Check to see if AppAuthorizationSummaryList property is set
         internal bool IsSetAppAuthorizationSummaryList()
         {
-            return this._appAuthorizationSummaryList != null && this._appAuthorizationSummaryList.Count > 0; 
+            return this._appAuthorizationSummaryList != null && (this._appAuthorizationSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

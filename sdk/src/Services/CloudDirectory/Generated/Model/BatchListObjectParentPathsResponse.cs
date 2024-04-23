@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model
     public partial class BatchListObjectParentPathsResponse
     {
         private string _nextToken;
-        private List<PathToObjectIdentifiers> _pathToObjectIdentifiersList = new List<PathToObjectIdentifiers>();
+        private List<PathToObjectIdentifiers> _pathToObjectIdentifiersList = AWSConfigs.InitializeCollections ? new List<PathToObjectIdentifiers>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if PathToObjectIdentifiersList property is set
         internal bool IsSetPathToObjectIdentifiersList()
         {
-            return this._pathToObjectIdentifiersList != null && this._pathToObjectIdentifiersList.Count > 0; 
+            return this._pathToObjectIdentifiersList != null && (this._pathToObjectIdentifiersList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

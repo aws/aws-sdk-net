@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the EvaluationResults
         /// </summary>
         public IPaginatedEnumerable<EvaluationResult> EvaluationResults => 
-            new PaginatedResultKeyResponse<SimulatePrincipalPolicyResponse, EvaluationResult>(this, (i) => i.EvaluationResults);
+            new PaginatedResultKeyResponse<SimulatePrincipalPolicyResponse, EvaluationResult>(this, (i) => i.EvaluationResults ?? new List<EvaluationResult>());
 
         internal SimulatePrincipalPolicyPaginator(IAmazonIdentityManagementService client, SimulatePrincipalPolicyRequest request)
         {

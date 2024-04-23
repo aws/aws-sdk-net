@@ -29,7 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Knowledge base input query.
+    /// Contains the query made to the knowledge base.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+    /// request</a> – in the <c>retrievalQuery</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class KnowledgeBaseQuery
     {
@@ -38,7 +49,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// Knowledge base input query in text
+        /// The text of the query made to the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]

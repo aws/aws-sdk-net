@@ -36,7 +36,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class BatchDetectDominantLanguageRequest : AmazonComprehendRequest
     {
-        private List<string> _textList = new List<string>();
+        private List<string> _textList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TextList. 
@@ -56,7 +56,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if TextList property is set
         internal bool IsSetTextList()
         {
-            return this._textList != null && this._textList.Count > 0; 
+            return this._textList != null && (this._textList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

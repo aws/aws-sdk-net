@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the LogTargetConfigurations
         /// </summary>
         public IPaginatedEnumerable<LogTargetConfiguration> LogTargetConfigurations => 
-            new PaginatedResultKeyResponse<ListV2LoggingLevelsResponse, LogTargetConfiguration>(this, (i) => i.LogTargetConfigurations);
+            new PaginatedResultKeyResponse<ListV2LoggingLevelsResponse, LogTargetConfiguration>(this, (i) => i.LogTargetConfigurations ?? new List<LogTargetConfiguration>());
 
         internal ListV2LoggingLevelsPaginator(IAmazonIoT client, ListV2LoggingLevelsRequest request)
         {

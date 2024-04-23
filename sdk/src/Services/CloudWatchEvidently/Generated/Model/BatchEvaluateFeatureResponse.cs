@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </summary>
     public partial class BatchEvaluateFeatureResponse : AmazonWebServiceResponse
     {
-        private List<EvaluationResult> _results = new List<EvaluationResult>();
+        private List<EvaluationResult> _results = AWSConfigs.InitializeCollections ? new List<EvaluationResult>() : null;
 
         /// <summary>
         /// Gets and sets the property Results. 
@@ -51,7 +51,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the Insights
         /// </summary>
         public IPaginatedEnumerable<InsightSummary> Insights => 
-            new PaginatedResultKeyResponse<ListInsightsResponse, InsightSummary>(this, (i) => i.Insights);
+            new PaginatedResultKeyResponse<ListInsightsResponse, InsightSummary>(this, (i) => i.Insights ?? new List<InsightSummary>());
 
         internal ListInsightsPaginator(IAmazonEKS client, ListInsightsRequest request)
         {

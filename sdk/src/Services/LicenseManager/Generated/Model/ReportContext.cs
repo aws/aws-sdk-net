@@ -33,7 +33,7 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class ReportContext
     {
-        private List<string> _licenseConfigurationArns = new List<string>();
+        private List<string> _licenseConfigurationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArns. 
@@ -52,7 +52,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if LicenseConfigurationArns property is set
         internal bool IsSetLicenseConfigurationArns()
         {
-            return this._licenseConfigurationArns != null && this._licenseConfigurationArns.Count > 0; 
+            return this._licenseConfigurationArns != null && (this._licenseConfigurationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

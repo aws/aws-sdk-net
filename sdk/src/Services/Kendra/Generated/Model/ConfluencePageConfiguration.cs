@@ -33,7 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class ConfluencePageConfiguration
     {
-        private List<ConfluencePageToIndexFieldMapping> _pageFieldMappings = new List<ConfluencePageToIndexFieldMapping>();
+        private List<ConfluencePageToIndexFieldMapping> _pageFieldMappings = AWSConfigs.InitializeCollections ? new List<ConfluencePageToIndexFieldMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property PageFieldMappings. 
@@ -60,7 +60,7 @@ namespace Amazon.Kendra.Model
         // Check to see if PageFieldMappings property is set
         internal bool IsSetPageFieldMappings()
         {
-            return this._pageFieldMappings != null && this._pageFieldMappings.Count > 0; 
+            return this._pageFieldMappings != null && (this._pageFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

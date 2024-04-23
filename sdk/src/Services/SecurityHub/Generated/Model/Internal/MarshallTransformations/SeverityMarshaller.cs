@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Severity requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLabel())
             {
                 context.Writer.WritePropertyName("Label");
@@ -66,7 +69,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProduct())
             {
                 context.Writer.WritePropertyName("Product");
-                context.Writer.Write(requestObject.Product);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Product))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Product));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Product);
+                }
             }
 
         }
@@ -78,3 +88,4 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

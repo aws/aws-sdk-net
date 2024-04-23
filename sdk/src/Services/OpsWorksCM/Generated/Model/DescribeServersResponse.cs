@@ -34,7 +34,7 @@ namespace Amazon.OpsWorksCM.Model
     public partial class DescribeServersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<CMServer> _servers = new List<CMServer>();
+        private List<CMServer> _servers = AWSConfigs.InitializeCollections ? new List<CMServer>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -95,7 +95,7 @@ namespace Amazon.OpsWorksCM.Model
         // Check to see if Servers property is set
         internal bool IsSetServers()
         {
-            return this._servers != null && this._servers.Count > 0; 
+            return this._servers != null && (this._servers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

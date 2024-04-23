@@ -45,7 +45,7 @@ namespace Amazon.Proton.Model
         /// Enumerable containing all of the EnvironmentAccountConnections
         /// </summary>
         public IPaginatedEnumerable<EnvironmentAccountConnectionSummary> EnvironmentAccountConnections => 
-            new PaginatedResultKeyResponse<ListEnvironmentAccountConnectionsResponse, EnvironmentAccountConnectionSummary>(this, (i) => i.EnvironmentAccountConnections);
+            new PaginatedResultKeyResponse<ListEnvironmentAccountConnectionsResponse, EnvironmentAccountConnectionSummary>(this, (i) => i.EnvironmentAccountConnections ?? new List<EnvironmentAccountConnectionSummary>());
 
         internal ListEnvironmentAccountConnectionsPaginator(IAmazonProton client, ListEnvironmentAccountConnectionsRequest request)
         {

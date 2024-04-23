@@ -63,10 +63,10 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         private bool? _excludeCompliantResources;
         private bool? _includeComplianceDetails;
         private string _paginationToken;
-        private List<string> _resourceARNList = new List<string>();
+        private List<string> _resourceARNList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _resourcesPerPage;
-        private List<string> _resourceTypeFilters = new List<string>();
-        private List<TagFilter> _tagFilters = new List<TagFilter>();
+        private List<string> _resourceTypeFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<TagFilter> _tagFilters = AWSConfigs.InitializeCollections ? new List<TagFilter>() : null;
         private int? _tagsPerPage;
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if ResourceARNList property is set
         internal bool IsSetResourceARNList()
         {
-            return this._resourceARNList != null && this._resourceARNList.Count > 0; 
+            return this._resourceARNList != null && (this._resourceARNList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -226,7 +226,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if ResourceTypeFilters property is set
         internal bool IsSetResourceTypeFilters()
         {
-            return this._resourceTypeFilters != null && this._resourceTypeFilters.Count > 0; 
+            return this._resourceTypeFilters != null && (this._resourceTypeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if TagFilters property is set
         internal bool IsSetTagFilters()
         {
-            return this._tagFilters != null && this._tagFilters.Count > 0; 
+            return this._tagFilters != null && (this._tagFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

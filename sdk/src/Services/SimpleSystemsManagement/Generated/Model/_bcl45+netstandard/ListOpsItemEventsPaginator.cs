@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<OpsItemEventSummary> Summaries => 
-            new PaginatedResultKeyResponse<ListOpsItemEventsResponse, OpsItemEventSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<ListOpsItemEventsResponse, OpsItemEventSummary>(this, (i) => i.Summaries ?? new List<OpsItemEventSummary>());
 
         internal ListOpsItemEventsPaginator(IAmazonSimpleSystemsManagement client, ListOpsItemEventsRequest request)
         {

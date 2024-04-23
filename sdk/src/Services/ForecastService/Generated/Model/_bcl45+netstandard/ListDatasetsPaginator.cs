@@ -45,7 +45,7 @@ namespace Amazon.ForecastService.Model
         /// Enumerable containing all of the Datasets
         /// </summary>
         public IPaginatedEnumerable<DatasetSummary> Datasets => 
-            new PaginatedResultKeyResponse<ListDatasetsResponse, DatasetSummary>(this, (i) => i.Datasets);
+            new PaginatedResultKeyResponse<ListDatasetsResponse, DatasetSummary>(this, (i) => i.Datasets ?? new List<DatasetSummary>());
 
         internal ListDatasetsPaginator(IAmazonForecastService client, ListDatasetsRequest request)
         {

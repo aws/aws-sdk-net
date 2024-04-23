@@ -35,7 +35,7 @@ namespace Amazon.Transfer.Model
     {
         private string _nextToken;
         private string _serverId;
-        private List<ListedUser> _users = new List<ListedUser>();
+        private List<ListedUser> _users = AWSConfigs.InitializeCollections ? new List<ListedUser>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -94,7 +94,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

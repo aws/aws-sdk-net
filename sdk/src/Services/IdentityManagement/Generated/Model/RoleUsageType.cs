@@ -41,7 +41,7 @@ namespace Amazon.IdentityManagement.Model
     public partial class RoleUsageType
     {
         private string _region;
-        private List<string> _resources = new List<string>();
+        private List<string> _resources = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Region. 
@@ -77,7 +77,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

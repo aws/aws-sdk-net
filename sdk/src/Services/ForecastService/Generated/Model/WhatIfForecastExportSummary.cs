@@ -40,7 +40,7 @@ namespace Amazon.ForecastService.Model
         private DateTime? _lastModificationTime;
         private string _message;
         private string _status;
-        private List<string> _whatIfForecastArns = new List<string>();
+        private List<string> _whatIfForecastArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _whatIfForecastExportArn;
         private string _whatIfForecastExportName;
 
@@ -197,7 +197,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if WhatIfForecastArns property is set
         internal bool IsSetWhatIfForecastArns()
         {
-            return this._whatIfForecastArns != null && this._whatIfForecastArns.Count > 0; 
+            return this._whatIfForecastArns != null && (this._whatIfForecastArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

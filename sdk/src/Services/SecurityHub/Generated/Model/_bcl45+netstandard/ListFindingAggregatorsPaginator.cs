@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all of the FindingAggregators
         /// </summary>
         public IPaginatedEnumerable<FindingAggregator> FindingAggregators => 
-            new PaginatedResultKeyResponse<ListFindingAggregatorsResponse, FindingAggregator>(this, (i) => i.FindingAggregators);
+            new PaginatedResultKeyResponse<ListFindingAggregatorsResponse, FindingAggregator>(this, (i) => i.FindingAggregators ?? new List<FindingAggregator>());
 
         internal ListFindingAggregatorsPaginator(IAmazonSecurityHub client, ListFindingAggregatorsRequest request)
         {

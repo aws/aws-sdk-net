@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class MetricTransformation
     {
         private double? _defaultValue;
-        private Dictionary<string, string> _dimensions = new Dictionary<string, string>();
+        private Dictionary<string, string> _dimensions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _metricName;
         private string _metricNamespace;
         private string _metricValue;
@@ -96,7 +96,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

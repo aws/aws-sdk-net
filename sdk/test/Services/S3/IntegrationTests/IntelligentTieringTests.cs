@@ -1,4 +1,5 @@
-﻿using Amazon.S3;
+﻿using Amazon;
+using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -266,7 +267,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
 
             var listBucketIntelligentTieringConfigurationsResponse = Client.ListBucketIntelligentTieringConfigurations(listBucketIntelligentTieringConfigurationsRequest);
-            Assert.AreEqual(listBucketIntelligentTieringConfigurationsResponse.IntelligentTieringConfigurationList.Count, 0);
+
+            if (AWSConfigs.InitializeCollections)
+                Assert.AreEqual(listBucketIntelligentTieringConfigurationsResponse.IntelligentTieringConfigurationList.Count, 0);
+            else
+                Assert.IsNull(listBucketIntelligentTieringConfigurationsResponse.IntelligentTieringConfigurationList);
         }
     }
 }

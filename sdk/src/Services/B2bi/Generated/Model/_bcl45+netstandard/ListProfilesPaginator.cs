@@ -45,7 +45,7 @@ namespace Amazon.B2bi.Model
         /// Enumerable containing all of the Profiles
         /// </summary>
         public IPaginatedEnumerable<ProfileSummary> Profiles => 
-            new PaginatedResultKeyResponse<ListProfilesResponse, ProfileSummary>(this, (i) => i.Profiles);
+            new PaginatedResultKeyResponse<ListProfilesResponse, ProfileSummary>(this, (i) => i.Profiles ?? new List<ProfileSummary>());
 
         internal ListProfilesPaginator(IAmazonB2bi client, ListProfilesRequest request)
         {

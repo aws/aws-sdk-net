@@ -45,7 +45,7 @@ namespace Amazon.IotData.Model
         /// Enumerable containing all of the RetainedTopics
         /// </summary>
         public IPaginatedEnumerable<RetainedMessageSummary> RetainedTopics => 
-            new PaginatedResultKeyResponse<ListRetainedMessagesResponse, RetainedMessageSummary>(this, (i) => i.RetainedTopics);
+            new PaginatedResultKeyResponse<ListRetainedMessagesResponse, RetainedMessageSummary>(this, (i) => i.RetainedTopics ?? new List<RetainedMessageSummary>());
 
         internal ListRetainedMessagesPaginator(IAmazonIotData client, ListRetainedMessagesRequest request)
         {

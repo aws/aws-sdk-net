@@ -45,7 +45,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<Tag> Tags => 
-            new PaginatedResultKeyResponse<DescribeTagsResponse, Tag>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<DescribeTagsResponse, Tag>(this, (i) => i.Tags ?? new List<Tag>());
 
         internal DescribeTagsPaginator(IAmazonElasticFileSystem client, DescribeTagsRequest request)
         {

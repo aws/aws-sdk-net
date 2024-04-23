@@ -33,7 +33,7 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class ListDatasetExportJobsResponse : AmazonWebServiceResponse
     {
-        private List<DatasetExportJobSummary> _datasetExportJobs = new List<DatasetExportJobSummary>();
+        private List<DatasetExportJobSummary> _datasetExportJobs = AWSConfigs.InitializeCollections ? new List<DatasetExportJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Personalize.Model
         // Check to see if DatasetExportJobs property is set
         internal bool IsSetDatasetExportJobs()
         {
-            return this._datasetExportJobs != null && this._datasetExportJobs.Count > 0; 
+            return this._datasetExportJobs != null && (this._datasetExportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

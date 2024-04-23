@@ -32,6 +32,13 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeImageAttribute operation.
     /// Describes the specified attribute of the specified AMI. You can specify only one attribute
     /// at a time.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The order of the elements in the response, including those within nested structures,
+    /// might vary. Applications should not assume the elements appear in a particular order.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeImageAttributeRequest : AmazonEC2Request
     {

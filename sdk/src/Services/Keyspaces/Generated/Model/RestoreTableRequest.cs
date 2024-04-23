@@ -104,11 +104,11 @@ namespace Amazon.Keyspaces.Model
         private CapacitySpecification _capacitySpecificationOverride;
         private EncryptionSpecification _encryptionSpecificationOverride;
         private PointInTimeRecovery _pointInTimeRecoveryOverride;
-        private List<ReplicaSpecification> _replicaSpecifications = new List<ReplicaSpecification>();
+        private List<ReplicaSpecification> _replicaSpecifications = AWSConfigs.InitializeCollections ? new List<ReplicaSpecification>() : null;
         private DateTime? _restoreTimestamp;
         private string _sourceKeyspaceName;
         private string _sourceTableName;
-        private List<Tag> _tagsOverride = new List<Tag>();
+        private List<Tag> _tagsOverride = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _targetKeyspaceName;
         private string _targetTableName;
 
@@ -267,7 +267,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if ReplicaSpecifications property is set
         internal bool IsSetReplicaSpecifications()
         {
-            return this._replicaSpecifications != null && this._replicaSpecifications.Count > 0; 
+            return this._replicaSpecifications != null && (this._replicaSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -348,7 +348,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if TagsOverride property is set
         internal bool IsSetTagsOverride()
         {
-            return this._tagsOverride != null && this._tagsOverride.Count > 0; 
+            return this._tagsOverride != null && (this._tagsOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

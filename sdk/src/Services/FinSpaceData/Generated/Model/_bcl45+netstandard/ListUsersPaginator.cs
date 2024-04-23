@@ -45,7 +45,7 @@ namespace Amazon.FinSpaceData.Model
         /// Enumerable containing all of the Users
         /// </summary>
         public IPaginatedEnumerable<User> Users => 
-            new PaginatedResultKeyResponse<ListUsersResponse, User>(this, (i) => i.Users);
+            new PaginatedResultKeyResponse<ListUsersResponse, User>(this, (i) => i.Users ?? new List<User>());
 
         internal ListUsersPaginator(IAmazonFinSpaceData client, ListUsersRequest request)
         {

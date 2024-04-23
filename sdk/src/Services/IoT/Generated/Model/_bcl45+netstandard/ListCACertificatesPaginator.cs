@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the Certificates
         /// </summary>
         public IPaginatedEnumerable<CACertificate> Certificates => 
-            new PaginatedResultKeyResponse<ListCACertificatesResponse, CACertificate>(this, (i) => i.Certificates);
+            new PaginatedResultKeyResponse<ListCACertificatesResponse, CACertificate>(this, (i) => i.Certificates ?? new List<CACertificate>());
 
         internal ListCACertificatesPaginator(IAmazonIoT client, ListCACertificatesRequest request)
         {

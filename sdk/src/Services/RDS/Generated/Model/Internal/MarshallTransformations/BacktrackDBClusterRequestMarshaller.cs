@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -60,20 +61,24 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetBacktrackToUtc())
                 {
-                    request.Parameters.Add("BacktrackTo", StringUtils.FromDateTimeToISO8601(publicRequest.BacktrackToUtc));
+                    request.Parameters.Add("BacktrackTo", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.BacktrackToUtc));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBClusterIdentifier())
                 {
                     request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetForce())
                 {
                     request.Parameters.Add("Force", StringUtils.FromBool(publicRequest.Force));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUseEarliestTimeOnPointInTimeUnavailable())
                 {
                     request.Parameters.Add("UseEarliestTimeOnPointInTimeUnavailable", StringUtils.FromBool(publicRequest.UseEarliestTimeOnPointInTimeUnavailable));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -34,7 +34,7 @@ namespace Amazon.DocDBElastic.Model
     public partial class ListClusterSnapshotsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ClusterSnapshotInList> _snapshots = new List<ClusterSnapshotInList>();
+        private List<ClusterSnapshotInList> _snapshots = AWSConfigs.InitializeCollections ? new List<ClusterSnapshotInList>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -75,7 +75,7 @@ namespace Amazon.DocDBElastic.Model
         // Check to see if Snapshots property is set
         internal bool IsSetSnapshots()
         {
-            return this._snapshots != null && this._snapshots.Count > 0; 
+            return this._snapshots != null && (this._snapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

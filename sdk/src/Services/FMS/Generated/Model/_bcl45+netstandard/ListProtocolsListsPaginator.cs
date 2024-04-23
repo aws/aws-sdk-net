@@ -45,7 +45,7 @@ namespace Amazon.FMS.Model
         /// Enumerable containing all of the ProtocolsLists
         /// </summary>
         public IPaginatedEnumerable<ProtocolsListDataSummary> ProtocolsLists => 
-            new PaginatedResultKeyResponse<ListProtocolsListsResponse, ProtocolsListDataSummary>(this, (i) => i.ProtocolsLists);
+            new PaginatedResultKeyResponse<ListProtocolsListsResponse, ProtocolsListDataSummary>(this, (i) => i.ProtocolsLists ?? new List<ProtocolsListDataSummary>());
 
         internal ListProtocolsListsPaginator(IAmazonFMS client, ListProtocolsListsRequest request)
         {

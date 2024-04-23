@@ -38,7 +38,7 @@ namespace Amazon.Greengrass.Model
         private string _deploymentId;
         private string _deploymentStatus;
         private DeploymentType _deploymentType;
-        private List<ErrorDetail> _errorDetails = new List<ErrorDetail>();
+        private List<ErrorDetail> _errorDetails = AWSConfigs.InitializeCollections ? new List<ErrorDetail>() : null;
         private string _errorMessage;
         private string _groupArn;
 
@@ -131,7 +131,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if ErrorDetails property is set
         internal bool IsSetErrorDetails()
         {
-            return this._errorDetails != null && this._errorDetails.Count > 0; 
+            return this._errorDetails != null && (this._errorDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

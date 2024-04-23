@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model
     public partial class InvalidationList
     {
         private bool? _isTruncated;
-        private List<InvalidationSummary> _items = new List<InvalidationSummary>();
+        private List<InvalidationSummary> _items = AWSConfigs.InitializeCollections ? new List<InvalidationSummary>() : null;
         private string _marker;
         private int? _maxItems;
         private string _nextMarker;
@@ -84,7 +84,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

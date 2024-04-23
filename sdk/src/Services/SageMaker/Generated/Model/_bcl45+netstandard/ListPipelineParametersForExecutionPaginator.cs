@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the PipelineParameters
         /// </summary>
         public IPaginatedEnumerable<Parameter> PipelineParameters => 
-            new PaginatedResultKeyResponse<ListPipelineParametersForExecutionResponse, Parameter>(this, (i) => i.PipelineParameters);
+            new PaginatedResultKeyResponse<ListPipelineParametersForExecutionResponse, Parameter>(this, (i) => i.PipelineParameters ?? new List<Parameter>());
 
         internal ListPipelineParametersForExecutionPaginator(IAmazonSageMaker client, ListPipelineParametersForExecutionRequest request)
         {

@@ -127,12 +127,16 @@ namespace Amazon.S3.Transfer.Internal
             {
                 ListObjectsResponse listResponse = await this._s3Client.ListObjectsAsync(listRequest, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
-                foreach (S3Object s3o in listResponse.S3Objects)
+
+                if (listResponse.S3Objects != null)
                 {
-                    if (ShouldDownload(s3o))
+                    foreach (S3Object s3o in listResponse.S3Objects)
                     {
-                        this._totalBytes += s3o.Size;
-                        objs.Add(s3o);
+                        if (ShouldDownload(s3o))
+                        {
+                            this._totalBytes += s3o.Size;
+                            objs.Add(s3o);
+                        }
                     }
                 }
                 listRequest.Marker = listResponse.NextMarker;
@@ -147,12 +151,16 @@ namespace Amazon.S3.Transfer.Internal
             {
                 ListObjectsV2Response listResponse = await this._s3Client.ListObjectsV2Async(listRequestV2, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
-                foreach (S3Object s3o in listResponse.S3Objects)
+
+                if (listResponse.S3Objects != null)
                 {
-                    if (ShouldDownload(s3o))
+                    foreach (S3Object s3o in listResponse.S3Objects)
                     {
-                        this._totalBytes += s3o.Size;
-                        objs.Add(s3o);
+                        if (ShouldDownload(s3o))
+                        {
+                            this._totalBytes += s3o.Size;
+                            objs.Add(s3o);
+                        }
                     }
                 }
                 listRequestV2.ContinuationToken = listResponse.NextContinuationToken;

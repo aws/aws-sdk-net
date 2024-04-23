@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the CustomerManagedPolicyReferences
         /// </summary>
         public IPaginatedEnumerable<CustomerManagedPolicyReference> CustomerManagedPolicyReferences => 
-            new PaginatedResultKeyResponse<ListCustomerManagedPolicyReferencesInPermissionSetResponse, CustomerManagedPolicyReference>(this, (i) => i.CustomerManagedPolicyReferences);
+            new PaginatedResultKeyResponse<ListCustomerManagedPolicyReferencesInPermissionSetResponse, CustomerManagedPolicyReference>(this, (i) => i.CustomerManagedPolicyReferences ?? new List<CustomerManagedPolicyReference>());
 
         internal ListCustomerManagedPolicyReferencesInPermissionSetPaginator(IAmazonSSOAdmin client, ListCustomerManagedPolicyReferencesInPermissionSetRequest request)
         {

@@ -34,11 +34,13 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class CreateIntegrationRequest : AmazonRDSRequest
     {
-        private Dictionary<string, string> _additionalEncryptionContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _dataFilter;
+        private string _description;
         private string _integrationName;
         private string _kmsKeyId;
         private string _sourceArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _targetArn;
 
         /// <summary>
@@ -62,7 +64,50 @@ namespace Amazon.RDS.Model
         // Check to see if AdditionalEncryptionContext property is set
         internal bool IsSetAdditionalEncryptionContext()
         {
-            return this._additionalEncryptionContext != null && this._additionalEncryptionContext.Count > 0; 
+            return this._additionalEncryptionContext != null && (this._additionalEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataFilter. 
+        /// <para>
+        /// Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data
+        /// filtering for Aurora zero-ETL integrations with Amazon Redshift</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Integrations with Aurora MySQL source DB clusters only
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25600)]
+        public string DataFilter
+        {
+            get { return this._dataFilter; }
+            set { this._dataFilter = value; }
+        }
+
+        // Check to see if DataFilter property is set
+        internal bool IsSetDataFilter()
+        {
+            return this._dataFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the integration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
@@ -135,7 +180,7 @@ namespace Amazon.RDS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

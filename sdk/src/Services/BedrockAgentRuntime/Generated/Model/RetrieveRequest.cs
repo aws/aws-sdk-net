@@ -30,7 +30,7 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the Retrieve operation.
-    /// Retrieve from knowledge base.
+    /// Queries a knowledge base and retrieves information from it.
     /// </summary>
     public partial class RetrieveRequest : AmazonBedrockAgentRuntimeRequest
     {
@@ -40,7 +40,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private KnowledgeBaseQuery _retrievalQuery;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base to query.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
         public string KnowledgeBaseId
@@ -56,7 +59,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If there are more results than can fit in the response, the response returns a <c>nextToken</c>.
+        /// Use this token in the <c>nextToken</c> field of another request to retrieve the next
+        /// batch of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string NextToken
@@ -72,7 +80,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RetrievalConfiguration.
+        /// Gets and sets the property RetrievalConfiguration. 
+        /// <para>
+        /// Contains configurations for the knowledge base query and retrieval process. For more
+        /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+        /// configurations</a>.
+        /// </para>
         /// </summary>
         public KnowledgeBaseRetrievalConfiguration RetrievalConfiguration
         {
@@ -87,7 +100,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RetrievalQuery.
+        /// Gets and sets the property RetrievalQuery. 
+        /// <para>
+        /// Contains the query to send the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public KnowledgeBaseQuery RetrievalQuery

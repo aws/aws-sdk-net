@@ -45,7 +45,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<EnvironmentProfileSummary> Items => 
-            new PaginatedResultKeyResponse<ListEnvironmentProfilesResponse, EnvironmentProfileSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListEnvironmentProfilesResponse, EnvironmentProfileSummary>(this, (i) => i.Items ?? new List<EnvironmentProfileSummary>());
 
         internal ListEnvironmentProfilesPaginator(IAmazonDataZone client, ListEnvironmentProfilesRequest request)
         {

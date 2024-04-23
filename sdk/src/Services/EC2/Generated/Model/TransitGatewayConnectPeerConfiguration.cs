@@ -33,8 +33,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class TransitGatewayConnectPeerConfiguration
     {
-        private List<TransitGatewayAttachmentBgpConfiguration> _bgpConfigurations = new List<TransitGatewayAttachmentBgpConfiguration>();
-        private List<string> _insideCidrBlocks = new List<string>();
+        private List<TransitGatewayAttachmentBgpConfiguration> _bgpConfigurations = AWSConfigs.InitializeCollections ? new List<TransitGatewayAttachmentBgpConfiguration>() : null;
+        private List<string> _insideCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _peerAddress;
         private ProtocolValue _protocol;
         private string _transitGatewayAddress;
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         // Check to see if BgpConfigurations property is set
         internal bool IsSetBgpConfigurations()
         {
-            return this._bgpConfigurations != null && this._bgpConfigurations.Count > 0; 
+            return this._bgpConfigurations != null && (this._bgpConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         // Check to see if InsideCidrBlocks property is set
         internal bool IsSetInsideCidrBlocks()
         {
-            return this._insideCidrBlocks != null && this._insideCidrBlocks.Count > 0; 
+            return this._insideCidrBlocks != null && (this._insideCidrBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

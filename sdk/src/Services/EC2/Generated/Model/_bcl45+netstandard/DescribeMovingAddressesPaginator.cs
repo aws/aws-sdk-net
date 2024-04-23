@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the MovingAddressStatuses
         /// </summary>
         public IPaginatedEnumerable<MovingAddressStatus> MovingAddressStatuses => 
-            new PaginatedResultKeyResponse<DescribeMovingAddressesResponse, MovingAddressStatus>(this, (i) => i.MovingAddressStatuses);
+            new PaginatedResultKeyResponse<DescribeMovingAddressesResponse, MovingAddressStatus>(this, (i) => i.MovingAddressStatuses ?? new List<MovingAddressStatus>());
 
         internal DescribeMovingAddressesPaginator(IAmazonEC2 client, DescribeMovingAddressesRequest request)
         {

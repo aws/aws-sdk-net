@@ -33,7 +33,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class DescribeAppBlockBuilderAppBlockAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<AppBlockBuilderAppBlockAssociation> _appBlockBuilderAppBlockAssociations = new List<AppBlockBuilderAppBlockAssociation>();
+        private List<AppBlockBuilderAppBlockAssociation> _appBlockBuilderAppBlockAssociations = AWSConfigs.InitializeCollections ? new List<AppBlockBuilderAppBlockAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AppStream.Model
         // Check to see if AppBlockBuilderAppBlockAssociations property is set
         internal bool IsSetAppBlockBuilderAppBlockAssociations()
         {
-            return this._appBlockBuilderAppBlockAssociations != null && this._appBlockBuilderAppBlockAssociations.Count > 0; 
+            return this._appBlockBuilderAppBlockAssociations != null && (this._appBlockBuilderAppBlockAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeNetworkInsightsAccessScopesResponse : AmazonWebServiceResponse
     {
-        private List<NetworkInsightsAccessScope> _networkInsightsAccessScopes = new List<NetworkInsightsAccessScope>();
+        private List<NetworkInsightsAccessScope> _networkInsightsAccessScopes = AWSConfigs.InitializeCollections ? new List<NetworkInsightsAccessScope>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if NetworkInsightsAccessScopes property is set
         internal bool IsSetNetworkInsightsAccessScopes()
         {
-            return this._networkInsightsAccessScopes != null && this._networkInsightsAccessScopes.Count > 0; 
+            return this._networkInsightsAccessScopes != null && (this._networkInsightsAccessScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

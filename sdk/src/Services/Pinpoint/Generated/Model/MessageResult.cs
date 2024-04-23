@@ -76,10 +76,6 @@ namespace Amazon.Pinpoint.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// TIMEOUT - The message couldn't be sent within the timeout period.
-        /// </para>
-        /// </li> <li>
-        /// <para>
         /// UNKNOWN_FAILURE - An unknown error occurred.
         /// </para>
         /// </li></ul>

@@ -33,7 +33,7 @@ namespace Amazon.EMRContainers.Model
     /// </summary>
     public partial class ConfigurationOverrides
     {
-        private List<Configuration> _applicationConfiguration = new List<Configuration>();
+        private List<Configuration> _applicationConfiguration = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
         private MonitoringConfiguration _monitoringConfiguration;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if ApplicationConfiguration property is set
         internal bool IsSetApplicationConfiguration()
         {
-            return this._applicationConfiguration != null && this._applicationConfiguration.Count > 0; 
+            return this._applicationConfiguration != null && (this._applicationConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

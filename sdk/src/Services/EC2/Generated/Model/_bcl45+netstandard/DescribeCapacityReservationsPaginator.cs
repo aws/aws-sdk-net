@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the CapacityReservations
         /// </summary>
         public IPaginatedEnumerable<CapacityReservation> CapacityReservations => 
-            new PaginatedResultKeyResponse<DescribeCapacityReservationsResponse, CapacityReservation>(this, (i) => i.CapacityReservations);
+            new PaginatedResultKeyResponse<DescribeCapacityReservationsResponse, CapacityReservation>(this, (i) => i.CapacityReservations ?? new List<CapacityReservation>());
 
         internal DescribeCapacityReservationsPaginator(IAmazonEC2 client, DescribeCapacityReservationsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.Schemas.Model
         /// Enumerable containing all of the Registries
         /// </summary>
         public IPaginatedEnumerable<RegistrySummary> Registries => 
-            new PaginatedResultKeyResponse<ListRegistriesResponse, RegistrySummary>(this, (i) => i.Registries);
+            new PaginatedResultKeyResponse<ListRegistriesResponse, RegistrySummary>(this, (i) => i.Registries ?? new List<RegistrySummary>());
 
         internal ListRegistriesPaginator(IAmazonSchemas client, ListRegistriesRequest request)
         {

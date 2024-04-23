@@ -37,7 +37,7 @@ namespace Amazon.S3Control.Model
         private bool? _confirmationRequired;
         private DateTime? _creationTime;
         private string _description;
-        private List<JobFailure> _failureReasons = new List<JobFailure>();
+        private List<JobFailure> _failureReasons = AWSConfigs.InitializeCollections ? new List<JobFailure>() : null;
         private S3GeneratedManifestDescriptor _generatedManifestDescriptor;
         private string _jobArn;
         private string _jobId;
@@ -126,7 +126,7 @@ namespace Amazon.S3Control.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

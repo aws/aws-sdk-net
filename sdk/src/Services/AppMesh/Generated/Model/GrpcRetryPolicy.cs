@@ -38,11 +38,11 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class GrpcRetryPolicy
     {
-        private List<string> _grpcRetryEvents = new List<string>();
-        private List<string> _httpRetryEvents = new List<string>();
+        private List<string> _grpcRetryEvents = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _httpRetryEvents = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _maxRetries;
         private Duration _perRetryTimeout;
-        private List<string> _tcpRetryEvents = new List<string>();
+        private List<string> _tcpRetryEvents = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GrpcRetryEvents. 
@@ -60,7 +60,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if GrpcRetryEvents property is set
         internal bool IsSetGrpcRetryEvents()
         {
-            return this._grpcRetryEvents != null && this._grpcRetryEvents.Count > 0; 
+            return this._grpcRetryEvents != null && (this._grpcRetryEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if HttpRetryEvents property is set
         internal bool IsSetHttpRetryEvents()
         {
-            return this._httpRetryEvents != null && this._httpRetryEvents.Count > 0; 
+            return this._httpRetryEvents != null && (this._httpRetryEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if TcpRetryEvents property is set
         internal bool IsSetTcpRetryEvents()
         {
-            return this._tcpRetryEvents != null && this._tcpRetryEvents.Count > 0; 
+            return this._tcpRetryEvents != null && (this._tcpRetryEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

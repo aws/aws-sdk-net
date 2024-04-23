@@ -30,13 +30,7 @@ namespace Amazon.IoTFleetHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
-    /// Updates information about a Fleet Hub for a AWS IoT Device Management web application.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
+    /// Updates information about a Fleet Hub for IoT Device Management web application.
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonIoTFleetHubRequest
     {

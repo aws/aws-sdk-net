@@ -34,9 +34,9 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class EventTypeFilter
     {
-        private List<string> _eventTypeCategories = new List<string>();
-        private List<string> _eventTypeCodes = new List<string>();
-        private List<string> _services = new List<string>();
+        private List<string> _eventTypeCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _eventTypeCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _services = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EventTypeCategories. 
@@ -56,7 +56,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EventTypeCategories property is set
         internal bool IsSetEventTypeCategories()
         {
-            return this._eventTypeCategories != null && this._eventTypeCategories.Count > 0; 
+            return this._eventTypeCategories != null && (this._eventTypeCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EventTypeCodes property is set
         internal bool IsSetEventTypeCodes()
         {
-            return this._eventTypeCodes != null && this._eventTypeCodes.Count > 0; 
+            return this._eventTypeCodes != null && (this._eventTypeCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model
     public partial class DescribeReplicationGroupsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ReplicationGroup> _replicationGroups = new List<ReplicationGroup>();
+        private List<ReplicationGroup> _replicationGroups = AWSConfigs.InitializeCollections ? new List<ReplicationGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -70,7 +70,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReplicationGroups property is set
         internal bool IsSetReplicationGroups()
         {
-            return this._replicationGroups != null && this._replicationGroups.Count > 0; 
+            return this._replicationGroups != null && (this._replicationGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

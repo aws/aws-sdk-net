@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class DescribeReplicationTaskAssessmentRunsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ReplicationTaskAssessmentRun> _replicationTaskAssessmentRuns = new List<ReplicationTaskAssessmentRun>();
+        private List<ReplicationTaskAssessmentRun> _replicationTaskAssessmentRuns = AWSConfigs.InitializeCollections ? new List<ReplicationTaskAssessmentRun>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +71,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if ReplicationTaskAssessmentRuns property is set
         internal bool IsSetReplicationTaskAssessmentRuns()
         {
-            return this._replicationTaskAssessmentRuns != null && this._replicationTaskAssessmentRuns.Count > 0; 
+            return this._replicationTaskAssessmentRuns != null && (this._replicationTaskAssessmentRuns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

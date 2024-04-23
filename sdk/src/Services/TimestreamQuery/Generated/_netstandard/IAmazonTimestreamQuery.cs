@@ -361,7 +361,7 @@ namespace Amazon.TimestreamQuery
         /// <summary>
         /// A synchronous operation that allows you to submit a query with parameters to be stored
         /// by Timestream for later running. Timestream only supports using this operation with
-        /// the <c>PrepareQueryRequest$ValidateOnly</c> set to <c>true</c>.
+        /// <c>ValidateOnly</c> set to <c>true</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PrepareQuery service method.</param>
         /// <param name="cancellationToken">

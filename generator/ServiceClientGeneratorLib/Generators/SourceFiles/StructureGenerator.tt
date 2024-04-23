@@ -152,7 +152,7 @@ namespace <#=this.Config.Namespace#>.Model
                     if (member.IsExcluded)
                         continue;
 #>
-        private <#=member.DetermineType()#><#= member.IsNullable ? "?" : "" #> <#=member.VariableName#><#= member.ShouldInstantiate ? string.Format(" = new {0}();", member.DetermineType()) : ";"#>
+        private <#=member.DetermineType()#><#= member.IsNullable && !member.UseNullable ? "?" : "" #> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
 <#
                 }
 #>
@@ -215,7 +215,7 @@ namespace <#=this.Config.Namespace#>.Model
 <#
                     }
 #>
-        <#=member.AccessModifier#> <#=member.DetermineType()#><#=member.UseNullable ? "?" : ""#> <#=member.PropertyName#>
+        <#=member.AccessModifier#> <#=member.DetermineType()#> <#=member.PropertyName#>
         {
 <#
                     if(member.IsNullable && !member.UseNullable)
@@ -298,7 +298,7 @@ namespace <#=this.Config.Namespace#>.Model
                     else if (member.IsMap || member.IsList)
                     {
 #>
-            return this.<#=member.VariableName#> != null && this.<#=member.VariableName#>.Count > 0; 
+            return this.<#=member.VariableName#> != null && (this.<#=member.VariableName#>.Count > 0 || !AWSConfigs.InitializeCollections); 
 <#
                     }
                     else if (member.IsDocument)
@@ -402,7 +402,7 @@ namespace <#=this.Config.Namespace#>.Model
                         if (member.IsExcluded || !member.IsBackwardsCompatibleDateTimeProperty)
                             continue;
 #>
-        private <#=member.DetermineType()#><#= member.IsNullable ? "?" : "" #> <#=member.BackwardCompatibilityVariableName#><#= member.ShouldInstantiate ? string.Format(" = new {0}();", member.DetermineType()) : ";"#>
+        private <#=member.DetermineType()#><#= member.IsNullable ? "?" : "" #> <#=member.BackwardCompatibilityVariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
 <#
                     }
 #>

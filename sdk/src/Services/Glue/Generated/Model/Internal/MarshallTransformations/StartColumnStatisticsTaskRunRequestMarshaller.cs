@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCatalogID())
@@ -99,7 +101,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSampleSize())
                 {
                     context.Writer.WritePropertyName("SampleSize");
-                    context.Writer.Write(publicRequest.SampleSize);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.SampleSize))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.SampleSize));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.SampleSize);
+                    }
                 }
 
                 if(publicRequest.IsSetSecurityConfiguration())
@@ -142,3 +151,4 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

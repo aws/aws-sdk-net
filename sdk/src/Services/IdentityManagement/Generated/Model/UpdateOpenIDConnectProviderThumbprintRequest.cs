@@ -65,7 +65,7 @@ namespace Amazon.IdentityManagement.Model
     public partial class UpdateOpenIDConnectProviderThumbprintRequest : AmazonIdentityManagementServiceRequest
     {
         private string _openIDConnectProviderArn;
-        private List<string> _thumbprintList = new List<string>();
+        private List<string> _thumbprintList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property OpenIDConnectProviderArn. 
@@ -110,7 +110,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ThumbprintList property is set
         internal bool IsSetThumbprintList()
         {
-            return this._thumbprintList != null && this._thumbprintList.Count > 0; 
+            return this._thumbprintList != null && (this._thumbprintList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -47,7 +47,7 @@ namespace Amazon.WAF.Model
     /// </summary>
     public partial class GeoMatchSet
     {
-        private List<GeoMatchConstraint> _geoMatchConstraints = new List<GeoMatchConstraint>();
+        private List<GeoMatchConstraint> _geoMatchConstraints = AWSConfigs.InitializeCollections ? new List<GeoMatchConstraint>() : null;
         private string _geoMatchSetId;
         private string _name;
 
@@ -68,7 +68,7 @@ namespace Amazon.WAF.Model
         // Check to see if GeoMatchConstraints property is set
         internal bool IsSetGeoMatchConstraints()
         {
-            return this._geoMatchConstraints != null && this._geoMatchConstraints.Count > 0; 
+            return this._geoMatchConstraints != null && (this._geoMatchConstraints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

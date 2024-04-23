@@ -33,8 +33,8 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GaugeChartFieldWells
     {
-        private List<MeasureField> _targetValues = new List<MeasureField>();
-        private List<MeasureField> _values = new List<MeasureField>();
+        private List<MeasureField> _targetValues = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
+        private List<MeasureField> _values = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
 
         /// <summary>
         /// Gets and sets the property TargetValues. 
@@ -52,7 +52,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TargetValues property is set
         internal bool IsSetTargetValues()
         {
-            return this._targetValues != null && this._targetValues.Count > 0; 
+            return this._targetValues != null && (this._targetValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

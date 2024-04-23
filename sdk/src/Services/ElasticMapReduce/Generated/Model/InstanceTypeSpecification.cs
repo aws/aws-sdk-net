@@ -42,9 +42,9 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _bidPrice;
         private double? _bidPriceAsPercentageOfOnDemandPrice;
-        private List<Configuration> _configurations = new List<Configuration>();
+        private List<Configuration> _configurations = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
         private string _customAmiId;
-        private List<EbsBlockDevice> _ebsBlockDevices = new List<EbsBlockDevice>();
+        private List<EbsBlockDevice> _ebsBlockDevices = AWSConfigs.InitializeCollections ? new List<EbsBlockDevice>() : null;
         private bool? _ebsOptimized;
         private string _instanceType;
         private int? _weightedCapacity;
@@ -106,7 +106,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if EbsBlockDevices property is set
         internal bool IsSetEbsBlockDevices()
         {
-            return this._ebsBlockDevices != null && this._ebsBlockDevices.Count > 0; 
+            return this._ebsBlockDevices != null && (this._ebsBlockDevices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

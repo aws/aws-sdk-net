@@ -33,10 +33,10 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class ECSServiceRecommendationOption
     {
-        private List<ContainerRecommendation> _containerRecommendations = new List<ContainerRecommendation>();
+        private List<ContainerRecommendation> _containerRecommendations = AWSConfigs.InitializeCollections ? new List<ContainerRecommendation>() : null;
         private int? _cpu;
         private int? _memory;
-        private List<ECSServiceProjectedUtilizationMetric> _projectedUtilizationMetrics = new List<ECSServiceProjectedUtilizationMetric>();
+        private List<ECSServiceProjectedUtilizationMetric> _projectedUtilizationMetrics = AWSConfigs.InitializeCollections ? new List<ECSServiceProjectedUtilizationMetric>() : null;
         private SavingsOpportunity _savingsOpportunity;
         private ECSSavingsOpportunityAfterDiscounts _savingsOpportunityAfterDiscounts;
 
@@ -56,7 +56,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if ContainerRecommendations property is set
         internal bool IsSetContainerRecommendations()
         {
-            return this._containerRecommendations != null && this._containerRecommendations.Count > 0; 
+            return this._containerRecommendations != null && (this._containerRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if ProjectedUtilizationMetrics property is set
         internal bool IsSetProjectedUtilizationMetrics()
         {
-            return this._projectedUtilizationMetrics != null && this._projectedUtilizationMetrics.Count > 0; 
+            return this._projectedUtilizationMetrics != null && (this._projectedUtilizationMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

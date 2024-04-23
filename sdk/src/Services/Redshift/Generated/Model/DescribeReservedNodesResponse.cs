@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeReservedNodesResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ReservedNode> _reservedNodes = new List<ReservedNode>();
+        private List<ReservedNode> _reservedNodes = AWSConfigs.InitializeCollections ? new List<ReservedNode>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -74,7 +74,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ReservedNodes property is set
         internal bool IsSetReservedNodes()
         {
-            return this._reservedNodes != null && this._reservedNodes.Count > 0; 
+            return this._reservedNodes != null && (this._reservedNodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

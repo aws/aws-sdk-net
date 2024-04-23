@@ -33,7 +33,7 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class GetAuthorizationTokenResponse : AmazonWebServiceResponse
     {
-        private List<AuthorizationData> _authorizationData = new List<AuthorizationData>();
+        private List<AuthorizationData> _authorizationData = AWSConfigs.InitializeCollections ? new List<AuthorizationData>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthorizationData. 
@@ -51,7 +51,7 @@ namespace Amazon.ECR.Model
         // Check to see if AuthorizationData property is set
         internal bool IsSetAuthorizationData()
         {
-            return this._authorizationData != null && this._authorizationData.Count > 0; 
+            return this._authorizationData != null && (this._authorizationData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

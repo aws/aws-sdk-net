@@ -45,7 +45,7 @@ namespace Amazon.Drs.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<JobLog> Items => 
-            new PaginatedResultKeyResponse<DescribeJobLogItemsResponse, JobLog>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<DescribeJobLogItemsResponse, JobLog>(this, (i) => i.Items ?? new List<JobLog>());
 
         internal DescribeJobLogItemsPaginator(IAmazonDrs client, DescribeJobLogItemsRequest request)
         {

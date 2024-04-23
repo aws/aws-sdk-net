@@ -46,7 +46,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeLoadBasedAutoScalingRequest : AmazonOpsWorksRequest
     {
-        private List<string> _layerIds = new List<string>();
+        private List<string> _layerIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LayerIds. 
@@ -64,7 +64,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if LayerIds property is set
         internal bool IsSetLayerIds()
         {
-            return this._layerIds != null && this._layerIds.Count > 0; 
+            return this._layerIds != null && (this._layerIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

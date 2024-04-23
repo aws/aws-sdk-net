@@ -33,7 +33,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class UsageTopAccountsResult
     {
-        private List<UsageTopAccountResult> _accounts = new List<UsageTopAccountResult>();
+        private List<UsageTopAccountResult> _accounts = AWSConfigs.InitializeCollections ? new List<UsageTopAccountResult>() : null;
         private UsageFeature _feature;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Accounts property is set
         internal bool IsSetAccounts()
         {
-            return this._accounts != null && this._accounts.Count > 0; 
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

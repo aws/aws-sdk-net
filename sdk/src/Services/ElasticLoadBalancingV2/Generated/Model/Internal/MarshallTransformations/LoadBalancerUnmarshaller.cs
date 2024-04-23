@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AvailabilityZones/member", targetDepth))
                     {
                         var unmarshaller = AvailabilityZoneUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailabilityZones == null)
+                        {
+                            unmarshalledObject.AvailabilityZones = new List<AvailabilityZone>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
@@ -118,6 +123,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SecurityGroups/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SecurityGroups == null)
+                        {
+                            unmarshalledObject.SecurityGroups = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SecurityGroups.Add(item);
                         continue;
@@ -175,3 +184,4 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

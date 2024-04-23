@@ -45,7 +45,7 @@ namespace Amazon.CloudTrail.Model
         /// Enumerable containing all of the Imports
         /// </summary>
         public IPaginatedEnumerable<ImportsListItem> Imports => 
-            new PaginatedResultKeyResponse<ListImportsResponse, ImportsListItem>(this, (i) => i.Imports);
+            new PaginatedResultKeyResponse<ListImportsResponse, ImportsListItem>(this, (i) => i.Imports ?? new List<ImportsListItem>());
 
         internal ListImportsPaginator(IAmazonCloudTrail client, ListImportsRequest request)
         {

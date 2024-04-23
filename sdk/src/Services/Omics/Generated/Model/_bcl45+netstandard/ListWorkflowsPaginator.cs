@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<WorkflowListItem> Items => 
-            new PaginatedResultKeyResponse<ListWorkflowsResponse, WorkflowListItem>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListWorkflowsResponse, WorkflowListItem>(this, (i) => i.Items ?? new List<WorkflowListItem>());
 
         internal ListWorkflowsPaginator(IAmazonOmics client, ListWorkflowsRequest request)
         {

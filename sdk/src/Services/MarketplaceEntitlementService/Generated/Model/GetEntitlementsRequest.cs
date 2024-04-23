@@ -35,7 +35,7 @@ namespace Amazon.MarketplaceEntitlementService.Model
     /// </summary>
     public partial class GetEntitlementsRequest : AmazonMarketplaceEntitlementServiceRequest
     {
-        private Dictionary<string, List<string>> _filter = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _filter = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _productCode;
@@ -57,7 +57,7 @@ namespace Amazon.MarketplaceEntitlementService.Model
         // Check to see if Filter property is set
         internal bool IsSetFilter()
         {
-            return this._filter != null && this._filter.Count > 0; 
+            return this._filter != null && (this._filter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Amazon.Elasticsearch.Model
     public partial class StorageType
     {
         private string _storageSubTypeName;
-        private List<StorageTypeLimit> _storageTypeLimits = new List<StorageTypeLimit>();
+        private List<StorageTypeLimit> _storageTypeLimits = AWSConfigs.InitializeCollections ? new List<StorageTypeLimit>() : null;
         private string _storageTypeName;
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if StorageTypeLimits property is set
         internal bool IsSetStorageTypeLimits()
         {
-            return this._storageTypeLimits != null && this._storageTypeLimits.Count > 0; 
+            return this._storageTypeLimits != null && (this._storageTypeLimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

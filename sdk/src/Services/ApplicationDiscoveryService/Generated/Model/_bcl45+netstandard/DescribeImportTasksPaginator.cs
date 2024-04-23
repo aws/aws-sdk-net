@@ -45,7 +45,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Enumerable containing all of the Tasks
         /// </summary>
         public IPaginatedEnumerable<ImportTask> Tasks => 
-            new PaginatedResultKeyResponse<DescribeImportTasksResponse, ImportTask>(this, (i) => i.Tasks);
+            new PaginatedResultKeyResponse<DescribeImportTasksResponse, ImportTask>(this, (i) => i.Tasks ?? new List<ImportTask>());
 
         internal DescribeImportTasksPaginator(IAmazonApplicationDiscoveryService client, DescribeImportTasksRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the FlowDefinitionSummaries
         /// </summary>
         public IPaginatedEnumerable<FlowDefinitionSummary> FlowDefinitionSummaries => 
-            new PaginatedResultKeyResponse<ListFlowDefinitionsResponse, FlowDefinitionSummary>(this, (i) => i.FlowDefinitionSummaries);
+            new PaginatedResultKeyResponse<ListFlowDefinitionsResponse, FlowDefinitionSummary>(this, (i) => i.FlowDefinitionSummaries ?? new List<FlowDefinitionSummary>());
 
         internal ListFlowDefinitionsPaginator(IAmazonSageMaker client, ListFlowDefinitionsRequest request)
         {

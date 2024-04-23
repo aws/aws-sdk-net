@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the ActivationJobs
         /// </summary>
         public IPaginatedEnumerable<ActivateReadSetJobItem> ActivationJobs => 
-            new PaginatedResultKeyResponse<ListReadSetActivationJobsResponse, ActivateReadSetJobItem>(this, (i) => i.ActivationJobs);
+            new PaginatedResultKeyResponse<ListReadSetActivationJobsResponse, ActivateReadSetJobItem>(this, (i) => i.ActivationJobs ?? new List<ActivateReadSetJobItem>());
 
         internal ListReadSetActivationJobsPaginator(IAmazonOmics client, ListReadSetActivationJobsRequest request)
         {

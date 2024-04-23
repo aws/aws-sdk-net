@@ -58,16 +58,17 @@ namespace Amazon.EC2.Model
         private string _description;
         private bool? _multiRegion;
         private string _networkBorderGroup;
-        private List<TagSpecification> _poolTagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _poolTagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private bool? _publiclyAdvertisable;
 
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
         /// The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix
-        /// that you can specify is /24. The most specific IPv6 prefix you can specify is /56.
-        /// The address range cannot overlap with another address range that you've brought to
-        /// this or another Region.
+        /// that you can specify is /24. The most specific IPv6 address range that you can bring
+        /// is /48 for CIDRs that are publicly advertisable and /56 for CIDRs that are not publicly
+        /// advertisable. The address range cannot overlap with another address range that you've
+        /// brought to this or another Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -197,7 +198,7 @@ namespace Amazon.EC2.Model
         // Check to see if PoolTagSpecifications property is set
         internal bool IsSetPoolTagSpecifications()
         {
-            return this._poolTagSpecifications != null && this._poolTagSpecifications.Count > 0; 
+            return this._poolTagSpecifications != null && (this._poolTagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

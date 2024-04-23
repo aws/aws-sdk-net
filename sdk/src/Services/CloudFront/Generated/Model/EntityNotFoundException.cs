@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The Key Value Store entity was not found.
+    /// The key value store entity was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

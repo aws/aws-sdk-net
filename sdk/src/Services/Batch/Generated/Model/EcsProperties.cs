@@ -33,7 +33,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EcsProperties
     {
-        private List<EcsTaskProperties> _taskProperties = new List<EcsTaskProperties>();
+        private List<EcsTaskProperties> _taskProperties = AWSConfigs.InitializeCollections ? new List<EcsTaskProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property TaskProperties. 
@@ -56,7 +56,7 @@ namespace Amazon.Batch.Model
         // Check to see if TaskProperties property is set
         internal bool IsSetTaskProperties()
         {
-            return this._taskProperties != null && this._taskProperties.Count > 0; 
+            return this._taskProperties != null && (this._taskProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

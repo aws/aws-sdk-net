@@ -35,7 +35,7 @@ namespace Amazon.CloudSearchDomain.Model
     {
         private string _cursor;
         private long? _found;
-        private List<Hit> _hit = new List<Hit>();
+        private List<Hit> _hit = AWSConfigs.InitializeCollections ? new List<Hit>() : null;
         private long? _start;
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.CloudSearchDomain.Model
         // Check to see if Hit property is set
         internal bool IsSetHit()
         {
-            return this._hit != null && this._hit.Count > 0; 
+            return this._hit != null && (this._hit.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

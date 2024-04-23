@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model
     public partial class ListTagsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceTag> _resourceTagList = new List<ResourceTag>();
+        private List<ResourceTag> _resourceTagList = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if ResourceTagList property is set
         internal bool IsSetResourceTagList()
         {
-            return this._resourceTagList != null && this._resourceTagList.Count > 0; 
+            return this._resourceTagList != null && (this._resourceTagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

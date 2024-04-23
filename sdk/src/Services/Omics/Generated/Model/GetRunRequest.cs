@@ -34,7 +34,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class GetRunRequest : AmazonOmicsRequest
     {
-        private List<string> _export = new List<string>();
+        private List<string> _export = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Omics.Model
         // Check to see if Export property is set
         internal bool IsSetExport()
         {
-            return this._export != null && this._export.Count > 0; 
+            return this._export != null && (this._export.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

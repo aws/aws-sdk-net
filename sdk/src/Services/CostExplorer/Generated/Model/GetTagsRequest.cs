@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         private int? _maxResults;
         private string _nextPageToken;
         private string _searchString;
-        private List<SortDefinition> _sortBy = new List<SortDefinition>();
+        private List<SortDefinition> _sortBy = AWSConfigs.InitializeCollections ? new List<SortDefinition>() : null;
         private string _tagKey;
         private DateInterval _timePeriod;
 
@@ -177,7 +177,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if SortBy property is set
         internal bool IsSetSortBy()
         {
-            return this._sortBy != null && this._sortBy.Count > 0; 
+            return this._sortBy != null && (this._sortBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

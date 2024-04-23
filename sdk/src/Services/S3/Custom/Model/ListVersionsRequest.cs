@@ -83,7 +83,7 @@ namespace Amazon.S3.Model
         private string keyMarker;
         private int? maxKeys;
         private string prefix;
-        private List<string> _optionalObjectAttributes = new List<string>();
+        private List<string> _optionalObjectAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RequestPayer _requestPayer;
         private string versionIdMarker;
         private EncodingType encoding;
@@ -182,7 +182,7 @@ namespace Amazon.S3.Model
         // Check to see if OptionalObjectAttributes property is set
         internal bool IsSetOptionalObjectAttributes()
         {
-            return this._optionalObjectAttributes != null && this._optionalObjectAttributes.Count > 0;
+            return this._optionalObjectAttributes != null && (this._optionalObjectAttributes.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

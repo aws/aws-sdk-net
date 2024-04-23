@@ -34,7 +34,7 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class ListPlatformBranchesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PlatformBranchSummary> _platformBranchSummaryList = new List<PlatformBranchSummary>();
+        private List<PlatformBranchSummary> _platformBranchSummaryList = AWSConfigs.InitializeCollections ? new List<PlatformBranchSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if PlatformBranchSummaryList property is set
         internal bool IsSetPlatformBranchSummaryList()
         {
-            return this._platformBranchSummaryList != null && this._platformBranchSummaryList.Count > 0; 
+            return this._platformBranchSummaryList != null && (this._platformBranchSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

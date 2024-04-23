@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContentFeedbackData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetGenerativeContentFeedbackData())
             {
                 context.Writer.WritePropertyName("generativeContentFeedbackData");
@@ -65,3 +68,4 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

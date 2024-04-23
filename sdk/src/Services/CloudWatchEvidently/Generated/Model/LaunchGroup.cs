@@ -35,7 +35,7 @@ namespace Amazon.CloudWatchEvidently.Model
     public partial class LaunchGroup
     {
         private string _description;
-        private Dictionary<string, string> _featureVariations = new Dictionary<string, string>();
+        private Dictionary<string, string> _featureVariations = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if FeatureVariations property is set
         internal bool IsSetFeatureVariations()
         {
-            return this._featureVariations != null && this._featureVariations.Count > 0; 
+            return this._featureVariations != null && (this._featureVariations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

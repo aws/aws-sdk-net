@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeConformancePackStatusResponse : AmazonWebServiceResponse
     {
-        private List<ConformancePackStatusDetail> _conformancePackStatusDetails = new List<ConformancePackStatusDetail>();
+        private List<ConformancePackStatusDetail> _conformancePackStatusDetails = AWSConfigs.InitializeCollections ? new List<ConformancePackStatusDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConformancePackStatusDetails property is set
         internal bool IsSetConformancePackStatusDetails()
         {
-            return this._conformancePackStatusDetails != null && this._conformancePackStatusDetails.Count > 0; 
+            return this._conformancePackStatusDetails != null && (this._conformancePackStatusDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

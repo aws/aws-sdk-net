@@ -38,7 +38,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     /// </summary>
     public partial class AssertionRule
     {
-        private List<string> _assertedControls = new List<string>();
+        private List<string> _assertedControls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _controlPanelArn;
         private string _name;
         private string _owner;
@@ -65,7 +65,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         // Check to see if AssertedControls property is set
         internal bool IsSetAssertedControls()
         {
-            return this._assertedControls != null && this._assertedControls.Count > 0; 
+            return this._assertedControls != null && (this._assertedControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

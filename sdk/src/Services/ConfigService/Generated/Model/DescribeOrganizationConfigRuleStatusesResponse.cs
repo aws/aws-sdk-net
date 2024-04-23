@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model
     public partial class DescribeOrganizationConfigRuleStatusesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OrganizationConfigRuleStatus> _organizationConfigRuleStatuses = new List<OrganizationConfigRuleStatus>();
+        private List<OrganizationConfigRuleStatus> _organizationConfigRuleStatuses = AWSConfigs.InitializeCollections ? new List<OrganizationConfigRuleStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if OrganizationConfigRuleStatuses property is set
         internal bool IsSetOrganizationConfigRuleStatuses()
         {
-            return this._organizationConfigRuleStatuses != null && this._organizationConfigRuleStatuses.Count > 0; 
+            return this._organizationConfigRuleStatuses != null && (this._organizationConfigRuleStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

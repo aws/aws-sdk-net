@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the DeviceFleetSummaries
         /// </summary>
         public IPaginatedEnumerable<DeviceFleetSummary> DeviceFleetSummaries => 
-            new PaginatedResultKeyResponse<ListDeviceFleetsResponse, DeviceFleetSummary>(this, (i) => i.DeviceFleetSummaries);
+            new PaginatedResultKeyResponse<ListDeviceFleetsResponse, DeviceFleetSummary>(this, (i) => i.DeviceFleetSummaries ?? new List<DeviceFleetSummary>());
 
         internal ListDeviceFleetsPaginator(IAmazonSageMaker client, ListDeviceFleetsRequest request)
         {

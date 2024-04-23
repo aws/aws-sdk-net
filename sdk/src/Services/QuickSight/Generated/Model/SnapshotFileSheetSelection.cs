@@ -36,7 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private SnapshotFileSheetSelectionScope _selectionScope;
         private string _sheetId;
-        private List<string> _visualIds = new List<string>();
+        private List<string> _visualIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SelectionScope. 
@@ -110,7 +110,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if VisualIds property is set
         internal bool IsSetVisualIds()
         {
-            return this._visualIds != null && this._visualIds.Count > 0; 
+            return this._visualIds != null && (this._visualIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

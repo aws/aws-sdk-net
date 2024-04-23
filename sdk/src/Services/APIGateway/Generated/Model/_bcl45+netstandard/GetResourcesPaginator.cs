@@ -45,7 +45,7 @@ namespace Amazon.APIGateway.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<Resource> Items => 
-            new PaginatedResultKeyResponse<GetResourcesResponse, Resource>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<GetResourcesResponse, Resource>(this, (i) => i.Items ?? new List<Resource>());
 
         internal GetResourcesPaginator(IAmazonAPIGateway client, GetResourcesRequest request)
         {

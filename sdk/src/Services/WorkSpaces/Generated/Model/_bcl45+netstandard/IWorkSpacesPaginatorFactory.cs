@@ -49,5 +49,10 @@ namespace Amazon.WorkSpaces.Model
         /// Paginator for DescribeWorkspaces operation
         ///</summary>
         IDescribeWorkspacesPaginator DescribeWorkspaces(DescribeWorkspacesRequest request);
+
+        /// <summary>
+        /// Paginator for ListAccountLinks operation
+        ///</summary>
+        IListAccountLinksPaginator ListAccountLinks(ListAccountLinksRequest request);
     }
 }

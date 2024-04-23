@@ -37,9 +37,9 @@ namespace Amazon.EC2.Model
         private string _description;
         private bool? _fipsEnabled;
         private string _lastUpdatedTime;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _verifiedAccessInstanceId;
-        private List<VerifiedAccessTrustProviderCondensed> _verifiedAccessTrustProviders = new List<VerifiedAccessTrustProviderCondensed>();
+        private List<VerifiedAccessTrustProviderCondensed> _verifiedAccessTrustProviders = AWSConfigs.InitializeCollections ? new List<VerifiedAccessTrustProviderCondensed>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -129,7 +129,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Amazon.EC2.Model
         // Check to see if VerifiedAccessTrustProviders property is set
         internal bool IsSetVerifiedAccessTrustProviders()
         {
-            return this._verifiedAccessTrustProviders != null && this._verifiedAccessTrustProviders.Count > 0; 
+            return this._verifiedAccessTrustProviders != null && (this._verifiedAccessTrustProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

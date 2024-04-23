@@ -34,7 +34,7 @@ namespace Amazon.VPCLattice.Model
     /// </summary>
     public partial class ForwardAction
     {
-        private List<WeightedTargetGroup> _targetGroups = new List<WeightedTargetGroup>();
+        private List<WeightedTargetGroup> _targetGroups = AWSConfigs.InitializeCollections ? new List<WeightedTargetGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property TargetGroups. 
@@ -61,7 +61,7 @@ namespace Amazon.VPCLattice.Model
         // Check to see if TargetGroups property is set
         internal bool IsSetTargetGroups()
         {
-            return this._targetGroups != null && this._targetGroups.Count > 0; 
+            return this._targetGroups != null && (this._targetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -39,7 +39,7 @@ namespace Amazon.CodePipeline.Model
         private string _errorCode;
         private string _errorMessage;
         private DateTime? _lastTriggered;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _url;
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

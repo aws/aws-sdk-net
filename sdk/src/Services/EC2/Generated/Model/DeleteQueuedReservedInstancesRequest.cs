@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteQueuedReservedInstancesRequest : AmazonEC2Request
     {
-        private List<string> _reservedInstancesIds = new List<string>();
+        private List<string> _reservedInstancesIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ReservedInstancesIds. 
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if ReservedInstancesIds property is set
         internal bool IsSetReservedInstancesIds()
         {
-            return this._reservedInstancesIds != null && this._reservedInstancesIds.Count > 0; 
+            return this._reservedInstancesIds != null && (this._reservedInstancesIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

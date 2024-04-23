@@ -33,7 +33,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class Observations
     {
-        private List<string> _text = new List<string>();
+        private List<string> _text = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Text. 
@@ -50,7 +50,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Text property is set
         internal bool IsSetText()
         {
-            return this._text != null && this._text.Count > 0; 
+            return this._text != null && (this._text.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

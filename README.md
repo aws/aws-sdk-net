@@ -256,6 +256,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This release adds operations that support customers using the AWS Toolkits and Amazon CodeCatalyst, a unified software development service that helps developers develop, deploy, and maintain applications in the cloud. For more information, see the documentation.
 * [AWSSDK.CodeCommit](https://www.nuget.org/packages/AWSSDK.CodeCommit/)
 	* AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.
+* [AWSSDK.CodeConnections](https://www.nuget.org/packages/AWSSDK.CodeConnections/)
+	* Duplicating the CodeStar Connections service into the new, rebranded AWS CodeConnections service.
 * [AWSSDK.CodeDeploy](https://www.nuget.org/packages/AWSSDK.CodeDeploy/)
 	* AWS CodeDeploy is a service that automates code deployments. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications.
 * [AWSSDK.CodeGuruProfiler](https://www.nuget.org/packages/AWSSDK.CodeGuruProfiler/)
@@ -298,6 +300,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This release adds 5 new APIs: CreateParticipantConnection, DisconnectParticipant, GetTranscript, SendEvent, and SendMessage. For Amazon Connect chat, you can use them to programmatically perform participant actions on the configured Amazon Connect instance. Learn more here: https://docs.aws.amazon.com/connect-participant/latest/APIReference/Welcome.html
 * [AWSSDK.ConnectWisdomService](https://www.nuget.org/packages/AWSSDK.ConnectWisdomService/)
 	* Released Amazon Connect Wisdom, a feature of Amazon Connect, which provides real-time recommendations and search functionality in general availability (GA).  For more information, see https://docs.aws.amazon.com/wisdom/latest/APIReference/Welcome.html.
+* [AWSSDK.ControlCatalog](https://www.nuget.org/packages/AWSSDK.ControlCatalog/)
+	* This is the initial SDK release for AWS Control Catalog, a central catalog for AWS managed controls. This release includes 3 new APIs - ListDomains, ListObjectives, and ListCommonControls - that vend high-level data to categorize controls across the AWS platform.
 * [AWSSDK.ControlTower](https://www.nuget.org/packages/AWSSDK.ControlTower/)
 	* This release contains the first SDK for AWS Control Tower. It introduces  a new set of APIs: EnableControl, DisableControl, GetControlOperation, and ListEnabledControls.
 * [AWSSDK.CostAndUsageReport](https://www.nuget.org/packages/AWSSDK.CostAndUsageReport/)
@@ -320,6 +324,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Initial release of Amazon DataZone
 * [AWSSDK.DAX](https://www.nuget.org/packages/AWSSDK.DAX/)
 	* Amazon DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for DynamoDB that delivers up to a 10x performance improvement - from milliseconds to microseconds - even at millions of requests per second. DAX does all the heavy lifting required to add in-memory acceleration to your DynamoDB tables, without requiring developers to manage cache invalidation, data population, or cluster management.
+* [AWSSDK.Deadline](https://www.nuget.org/packages/AWSSDK.Deadline/)
+	* AWS Deadline Cloud is a new fully managed service that helps customers set up, deploy, and scale rendering projects in minutes, so they can improve the efficiency of their rendering pipelines and take on more projects.
 * [AWSSDK.Detective](https://www.nuget.org/packages/AWSSDK.Detective/)
 	* This is the initial release of Amazon Detective.
 * [AWSSDK.DeviceFarm](https://www.nuget.org/packages/AWSSDK.DeviceFarm/)
@@ -462,8 +468,6 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* General availability (GA) for AWS IoT Fleetwise. It adds AWS IoT Fleetwise to AWS SDK. For more information, see https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/Welcome.html.
 * [AWSSDK.IoTJobsDataPlane](https://www.nuget.org/packages/AWSSDK.IoTJobsDataPlane/)
 	* This release adds support for new the service called Iot Jobs. This client is built for the device SDK to use Iot Jobs Device specific APIs.
-* [AWSSDK.IoTRoboRunner](https://www.nuget.org/packages/AWSSDK.IoTRoboRunner/)
-	* AWS IoT RoboRunner is a new service that makes it easy to build applications that help multi-vendor robots work together seamlessly. See the IoT RoboRunner developer guide for more details on getting started. https://docs.aws.amazon.com/iotroborunner/latest/dev/iotroborunner-welcome.html
 * [AWSSDK.IoTSecureTunneling](https://www.nuget.org/packages/AWSSDK.IoTSecureTunneling/)
 	* This release adds support for IoT Secure Tunneling to remote access devices behind restricted firewalls.
 * [AWSSDK.IoTSiteWise](https://www.nuget.org/packages/AWSSDK.IoTSiteWise/)
@@ -714,6 +718,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
 * [AWSSDK.Route53Domains](https://www.nuget.org/packages/AWSSDK.Route53Domains/)
 	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
+* [AWSSDK.Route53Profiles](https://www.nuget.org/packages/AWSSDK.Route53Profiles/)
+	* Route 53 Profiles allows you to apply a central DNS configuration across many VPCs regardless of account.
 * [AWSSDK.Route53RecoveryCluster](https://www.nuget.org/packages/AWSSDK.Route53RecoveryCluster/)
 	* Amazon Route 53 Application Recovery Controller's routing control - Routing Control Data Plane APIs help you update the state (On/Off) of the routing controls to reroute traffic across application replicas in a 100% available manner.
 * [AWSSDK.Route53RecoveryControlConfig](https://www.nuget.org/packages/AWSSDK.Route53RecoveryControlConfig/)
@@ -812,6 +818,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Introducing CloudWatch Synthetics. This is the first public release of CloudWatch Synthetics.
 * [AWSSDK.Textract](https://www.nuget.org/packages/AWSSDK.Textract/)
 	* Amazon Textract enables you to add document text detection and analysis to your applications. You provide a document image to the Amazon Textract API, and the service detects the document text. Amazon Textract works with formatted text and can detect words and lines of words that are located close to each other. It can also analyze a document for items such as related text, tables, key-value pairs, and selection elements.
+* [AWSSDK.TimestreamInfluxDB](https://www.nuget.org/packages/AWSSDK.TimestreamInfluxDB/)
+	* This is the initial SDK release for Amazon Timestream for InfluxDB. Amazon Timestream for InfluxDB is a new time-series database engine that makes it easy for application developers and DevOps teams to run InfluxDB databases on AWS for near real-time time-series applications using open source APIs.
 * [AWSSDK.TimestreamQuery](https://www.nuget.org/packages/AWSSDK.TimestreamQuery/)
 	* (New Service) Amazon Timestream is a fast, scalable, fully managed, purpose-built time series database that makes it easy to store and analyze trillions of time series data points per day.
 * [AWSSDK.TimestreamWrite](https://www.nuget.org/packages/AWSSDK.TimestreamWrite/)

@@ -52,7 +52,7 @@ namespace Amazon.WAF.Model
     {
         private string _clientIP;
         private string _country;
-        private List<HTTPHeader> _headers = new List<HTTPHeader>();
+        private List<HTTPHeader> _headers = AWSConfigs.InitializeCollections ? new List<HTTPHeader>() : null;
         private string _httpVersion;
         private string _method;
         private string _uri;
@@ -124,7 +124,7 @@ namespace Amazon.WAF.Model
         // Check to see if Headers property is set
         internal bool IsSetHeaders()
         {
-            return this._headers != null && this._headers.Count > 0; 
+            return this._headers != null && (this._headers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.RoboMaker.Model
         private string _destination;
         private string _name;
         private string _s3Bucket;
-        private List<S3KeyOutput> _s3Keys = new List<S3KeyOutput>();
+        private List<S3KeyOutput> _s3Keys = AWSConfigs.InitializeCollections ? new List<S3KeyOutput>() : null;
         private DataSourceType _type;
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if S3Keys property is set
         internal bool IsSetS3Keys()
         {
-            return this._s3Keys != null && this._s3Keys.Count > 0; 
+            return this._s3Keys != null && (this._s3Keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

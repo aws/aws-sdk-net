@@ -45,7 +45,7 @@ namespace Amazon.XRay.Model
         /// Enumerable containing all of the SamplingStatisticSummaries
         /// </summary>
         public IPaginatedEnumerable<SamplingStatisticSummary> SamplingStatisticSummaries => 
-            new PaginatedResultKeyResponse<GetSamplingStatisticSummariesResponse, SamplingStatisticSummary>(this, (i) => i.SamplingStatisticSummaries);
+            new PaginatedResultKeyResponse<GetSamplingStatisticSummariesResponse, SamplingStatisticSummary>(this, (i) => i.SamplingStatisticSummaries ?? new List<SamplingStatisticSummary>());
 
         internal GetSamplingStatisticSummariesPaginator(IAmazonXRay client, GetSamplingStatisticSummariesRequest request)
         {

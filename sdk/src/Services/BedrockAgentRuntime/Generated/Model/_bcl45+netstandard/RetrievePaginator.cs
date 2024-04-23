@@ -45,7 +45,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Enumerable containing all of the RetrievalResults
         /// </summary>
         public IPaginatedEnumerable<KnowledgeBaseRetrievalResult> RetrievalResults => 
-            new PaginatedResultKeyResponse<RetrieveResponse, KnowledgeBaseRetrievalResult>(this, (i) => i.RetrievalResults);
+            new PaginatedResultKeyResponse<RetrieveResponse, KnowledgeBaseRetrievalResult>(this, (i) => i.RetrievalResults ?? new List<KnowledgeBaseRetrievalResult>());
 
         internal RetrievePaginator(IAmazonBedrockAgentRuntime client, RetrieveRequest request)
         {

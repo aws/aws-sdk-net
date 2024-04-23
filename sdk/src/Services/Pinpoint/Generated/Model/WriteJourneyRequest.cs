@@ -33,7 +33,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class WriteJourneyRequest
     {
-        private Dictionary<string, Activity> _activities = new Dictionary<string, Activity>();
+        private Dictionary<string, Activity> _activities = AWSConfigs.InitializeCollections ? new Dictionary<string, Activity>() : null;
         private ClosedDays _closedDays;
         private string _creationDate;
         private JourneyChannelSettings _journeyChannelSettings;
@@ -50,7 +50,7 @@ namespace Amazon.Pinpoint.Model
         private string _startActivity;
         private StartCondition _startCondition;
         private State _state;
-        private List<string> _timezoneEstimationMethods = new List<string>();
+        private List<string> _timezoneEstimationMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _waitForQuietTime;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Activities property is set
         internal bool IsSetActivities()
         {
-            return this._activities != null && this._activities.Count > 0; 
+            return this._activities != null && (this._activities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -443,7 +443,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if TimezoneEstimationMethods property is set
         internal bool IsSetTimezoneEstimationMethods()
         {
-            return this._timezoneEstimationMethods != null && this._timezoneEstimationMethods.Count > 0; 
+            return this._timezoneEstimationMethods != null && (this._timezoneEstimationMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

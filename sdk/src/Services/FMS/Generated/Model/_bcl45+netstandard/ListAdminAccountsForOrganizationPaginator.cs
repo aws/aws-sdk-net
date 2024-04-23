@@ -45,7 +45,7 @@ namespace Amazon.FMS.Model
         /// Enumerable containing all of the AdminAccounts
         /// </summary>
         public IPaginatedEnumerable<AdminAccountSummary> AdminAccounts => 
-            new PaginatedResultKeyResponse<ListAdminAccountsForOrganizationResponse, AdminAccountSummary>(this, (i) => i.AdminAccounts);
+            new PaginatedResultKeyResponse<ListAdminAccountsForOrganizationResponse, AdminAccountSummary>(this, (i) => i.AdminAccounts ?? new List<AdminAccountSummary>());
 
         internal ListAdminAccountsForOrganizationPaginator(IAmazonFMS client, ListAdminAccountsForOrganizationRequest request)
         {

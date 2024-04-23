@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the FargateProfileNames
         /// </summary>
         public IPaginatedEnumerable<string> FargateProfileNames => 
-            new PaginatedResultKeyResponse<ListFargateProfilesResponse, string>(this, (i) => i.FargateProfileNames);
+            new PaginatedResultKeyResponse<ListFargateProfilesResponse, string>(this, (i) => i.FargateProfileNames ?? new List<string>());
 
         internal ListFargateProfilesPaginator(IAmazonEKS client, ListFargateProfilesRequest request)
         {

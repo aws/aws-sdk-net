@@ -34,12 +34,12 @@ namespace Amazon.Textract.Model
     public partial class GetDocumentAnalysisResponse : AmazonWebServiceResponse
     {
         private string _analyzeDocumentModelVersion;
-        private List<Block> _blocks = new List<Block>();
+        private List<Block> _blocks = AWSConfigs.InitializeCollections ? new List<Block>() : null;
         private DocumentMetadata _documentMetadata;
         private JobStatus _jobStatus;
         private string _nextToken;
         private string _statusMessage;
-        private List<Warning> _warnings = new List<Warning>();
+        private List<Warning> _warnings = AWSConfigs.InitializeCollections ? new List<Warning>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalyzeDocumentModelVersion.
@@ -71,7 +71,7 @@ namespace Amazon.Textract.Model
         // Check to see if Blocks property is set
         internal bool IsSetBlocks()
         {
-            return this._blocks != null && this._blocks.Count > 0; 
+            return this._blocks != null && (this._blocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Amazon.Textract.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

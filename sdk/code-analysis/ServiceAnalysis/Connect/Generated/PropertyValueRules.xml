@@ -2055,7 +2055,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchQueuesRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchQueuesRequest.NextToken</property>
@@ -2116,7 +2116,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchRoutingProfilesRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchRoutingProfilesRequest.NextToken</property>
@@ -2156,7 +2156,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchUsersRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchUsersRequest.NextToken</property>
@@ -4216,6 +4216,11 @@
     <property>Amazon.Connect.Model.StringReference.Value</property>
     <min>0</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SubmitAutoEvaluationActionDefinition.EvaluationFormId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SuccessfulRequest.ContactId</property>

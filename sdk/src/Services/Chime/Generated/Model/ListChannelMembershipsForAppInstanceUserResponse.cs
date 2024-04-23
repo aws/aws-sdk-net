@@ -33,7 +33,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class ListChannelMembershipsForAppInstanceUserResponse : AmazonWebServiceResponse
     {
-        private List<ChannelMembershipForAppInstanceUserSummary> _channelMemberships = new List<ChannelMembershipForAppInstanceUserSummary>();
+        private List<ChannelMembershipForAppInstanceUserSummary> _channelMemberships = AWSConfigs.InitializeCollections ? new List<ChannelMembershipForAppInstanceUserSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Chime.Model
         // Check to see if ChannelMemberships property is set
         internal bool IsSetChannelMemberships()
         {
-            return this._channelMemberships != null && this._channelMemberships.Count > 0; 
+            return this._channelMemberships != null && (this._channelMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

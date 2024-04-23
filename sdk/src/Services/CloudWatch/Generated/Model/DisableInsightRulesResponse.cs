@@ -33,7 +33,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DisableInsightRulesResponse : AmazonWebServiceResponse
     {
-        private List<PartialFailure> _failures = new List<PartialFailure>();
+        private List<PartialFailure> _failures = AWSConfigs.InitializeCollections ? new List<PartialFailure>() : null;
 
         /// <summary>
         /// Gets and sets the property Failures. 
@@ -51,7 +51,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

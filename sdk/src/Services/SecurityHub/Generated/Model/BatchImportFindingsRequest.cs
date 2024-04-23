@@ -113,7 +113,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchImportFindingsRequest : AmazonSecurityHubRequest
     {
-        private List<AwsSecurityFinding> _findings = new List<AwsSecurityFinding>();
+        private List<AwsSecurityFinding> _findings = AWSConfigs.InitializeCollections ? new List<AwsSecurityFinding>() : null;
 
         /// <summary>
         /// Gets and sets the property Findings. 
@@ -133,7 +133,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

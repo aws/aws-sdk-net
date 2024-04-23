@@ -33,7 +33,7 @@ namespace Amazon.TimestreamWrite.Model
     /// </summary>
     public partial class ListBatchLoadTasksResponse : AmazonWebServiceResponse
     {
-        private List<BatchLoadTask> _batchLoadTasks = new List<BatchLoadTask>();
+        private List<BatchLoadTask> _batchLoadTasks = AWSConfigs.InitializeCollections ? new List<BatchLoadTask>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.TimestreamWrite.Model
         // Check to see if BatchLoadTasks property is set
         internal bool IsSetBatchLoadTasks()
         {
-            return this._batchLoadTasks != null && this._batchLoadTasks.Count > 0; 
+            return this._batchLoadTasks != null && (this._batchLoadTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

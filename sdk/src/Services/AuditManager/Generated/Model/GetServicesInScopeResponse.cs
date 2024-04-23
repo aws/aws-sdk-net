@@ -33,7 +33,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class GetServicesInScopeResponse : AmazonWebServiceResponse
     {
-        private List<ServiceMetadata> _serviceMetadata = new List<ServiceMetadata>();
+        private List<ServiceMetadata> _serviceMetadata = AWSConfigs.InitializeCollections ? new List<ServiceMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property ServiceMetadata. 
@@ -50,7 +50,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if ServiceMetadata property is set
         internal bool IsSetServiceMetadata()
         {
-            return this._serviceMetadata != null && this._serviceMetadata.Count > 0; 
+            return this._serviceMetadata != null && (this._serviceMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

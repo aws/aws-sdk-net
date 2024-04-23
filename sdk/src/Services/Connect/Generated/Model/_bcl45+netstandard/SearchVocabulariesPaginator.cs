@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the VocabularySummaryList
         /// </summary>
         public IPaginatedEnumerable<VocabularySummary> VocabularySummaryList => 
-            new PaginatedResultKeyResponse<SearchVocabulariesResponse, VocabularySummary>(this, (i) => i.VocabularySummaryList);
+            new PaginatedResultKeyResponse<SearchVocabulariesResponse, VocabularySummary>(this, (i) => i.VocabularySummaryList ?? new List<VocabularySummary>());
 
         internal SearchVocabulariesPaginator(IAmazonConnect client, SearchVocabulariesRequest request)
         {

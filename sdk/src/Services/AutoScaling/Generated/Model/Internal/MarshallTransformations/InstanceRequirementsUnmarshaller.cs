@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AcceleratorManufacturers/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AcceleratorManufacturers == null)
+                        {
+                            unmarshalledObject.AcceleratorManufacturers = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AcceleratorManufacturers.Add(item);
                         continue;
@@ -70,6 +75,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AcceleratorNames/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AcceleratorNames == null)
+                        {
+                            unmarshalledObject.AcceleratorNames = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AcceleratorNames.Add(item);
                         continue;
@@ -83,6 +92,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AcceleratorTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AcceleratorTypes == null)
+                        {
+                            unmarshalledObject.AcceleratorTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AcceleratorTypes.Add(item);
                         continue;
@@ -90,6 +103,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AllowedInstanceTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AllowedInstanceTypes == null)
+                        {
+                            unmarshalledObject.AllowedInstanceTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AllowedInstanceTypes.Add(item);
                         continue;
@@ -115,6 +132,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CpuManufacturers/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.CpuManufacturers == null)
+                        {
+                            unmarshalledObject.CpuManufacturers = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CpuManufacturers.Add(item);
                         continue;
@@ -122,6 +143,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ExcludedInstanceTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ExcludedInstanceTypes == null)
+                        {
+                            unmarshalledObject.ExcludedInstanceTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ExcludedInstanceTypes.Add(item);
                         continue;
@@ -129,6 +154,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("InstanceGenerations/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.InstanceGenerations == null)
+                        {
+                            unmarshalledObject.InstanceGenerations = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.InstanceGenerations.Add(item);
                         continue;
@@ -142,6 +171,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LocalStorageTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.LocalStorageTypes == null)
+                        {
+                            unmarshalledObject.LocalStorageTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LocalStorageTypes.Add(item);
                         continue;
@@ -241,3 +274,4 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

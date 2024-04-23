@@ -36,9 +36,11 @@ namespace Amazon.Omics.Model
         private string _arn;
         private DateTime? _creationTime;
         private string _description;
+        private ETagAlgorithmFamily _eTagAlgorithmFamily;
         private string _fallbackLocation;
         private string _id;
         private string _name;
+        private SequenceStoreS3Access _s3Access;
         private SseConfig _sseConfig;
 
         /// <summary>
@@ -99,9 +101,27 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ETagAlgorithmFamily. 
+        /// <para>
+        /// The algorithm family of the ETag.
+        /// </para>
+        /// </summary>
+        public ETagAlgorithmFamily ETagAlgorithmFamily
+        {
+            get { return this._eTagAlgorithmFamily; }
+            set { this._eTagAlgorithmFamily = value; }
+        }
+
+        // Check to see if ETagAlgorithmFamily property is set
+        internal bool IsSetETagAlgorithmFamily()
+        {
+            return this._eTagAlgorithmFamily != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FallbackLocation. 
         /// <para>
-        ///  An S3 location that is used to store files that have failed a direct upload. 
+        /// An S3 location that is used to store files that have failed a direct upload.
         /// </para>
         /// </summary>
         public string FallbackLocation
@@ -152,6 +172,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Access. 
+        /// <para>
+        /// The S3 metadata of a sequence store, including the ARN and S3 URI of the S3 bucket.
+        /// </para>
+        /// </summary>
+        public SequenceStoreS3Access S3Access
+        {
+            get { return this._s3Access; }
+            set { this._s3Access = value; }
+        }
+
+        // Check to see if S3Access property is set
+        internal bool IsSetS3Access()
+        {
+            return this._s3Access != null;
         }
 
         /// <summary>

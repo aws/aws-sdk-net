@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model
     public partial class RecommendationRelatedEvent
     {
         private string _name;
-        private List<RecommendationRelatedEventResource> _resources = new List<RecommendationRelatedEventResource>();
+        private List<RecommendationRelatedEventResource> _resources = AWSConfigs.InitializeCollections ? new List<RecommendationRelatedEventResource>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -72,7 +72,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

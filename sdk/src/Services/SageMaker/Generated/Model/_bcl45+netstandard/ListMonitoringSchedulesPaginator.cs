@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the MonitoringScheduleSummaries
         /// </summary>
         public IPaginatedEnumerable<MonitoringScheduleSummary> MonitoringScheduleSummaries => 
-            new PaginatedResultKeyResponse<ListMonitoringSchedulesResponse, MonitoringScheduleSummary>(this, (i) => i.MonitoringScheduleSummaries);
+            new PaginatedResultKeyResponse<ListMonitoringSchedulesResponse, MonitoringScheduleSummary>(this, (i) => i.MonitoringScheduleSummaries ?? new List<MonitoringScheduleSummary>());
 
         internal ListMonitoringSchedulesPaginator(IAmazonSageMaker client, ListMonitoringSchedulesRequest request)
         {

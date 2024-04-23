@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model
     public partial class AnomalyGroupStatistics
     {
         private string _evaluationStartDate;
-        private List<ItemizedMetricStats> _itemizedMetricStatsList = new List<ItemizedMetricStats>();
+        private List<ItemizedMetricStats> _itemizedMetricStatsList = AWSConfigs.InitializeCollections ? new List<ItemizedMetricStats>() : null;
         private int? _totalCount;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if ItemizedMetricStatsList property is set
         internal bool IsSetItemizedMetricStatsList()
         {
-            return this._itemizedMetricStatsList != null && this._itemizedMetricStatsList.Count > 0; 
+            return this._itemizedMetricStatsList != null && (this._itemizedMetricStatsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

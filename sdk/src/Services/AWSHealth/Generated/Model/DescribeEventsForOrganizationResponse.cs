@@ -33,7 +33,7 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class DescribeEventsForOrganizationResponse : AmazonWebServiceResponse
     {
-        private List<OrganizationEvent> _events = new List<OrganizationEvent>();
+        private List<OrganizationEvent> _events = AWSConfigs.InitializeCollections ? new List<OrganizationEvent>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

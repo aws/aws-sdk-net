@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -90,6 +91,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TrustStoreRevocations/member", targetDepth))
                     {
                         var unmarshaller = DescribeTrustStoreRevocationUnmarshaller.Instance;
+                        if (response.TrustStoreRevocations == null)
+                        {
+                            response.TrustStoreRevocations = new List<DescribeTrustStoreRevocation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TrustStoreRevocations.Add(item);
                         continue;
@@ -150,3 +155,4 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

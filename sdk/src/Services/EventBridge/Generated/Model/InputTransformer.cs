@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model
     /// </summary>
     public partial class InputTransformer
     {
-        private Dictionary<string, string> _inputPathsMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _inputPathsMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _inputTemplate;
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.EventBridge.Model
         // Check to see if InputPathsMap property is set
         internal bool IsSetInputPathsMap()
         {
-            return this._inputPathsMap != null && this._inputPathsMap.Count > 0; 
+            return this._inputPathsMap != null && (this._inputPathsMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

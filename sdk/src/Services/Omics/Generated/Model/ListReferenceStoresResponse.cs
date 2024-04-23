@@ -34,7 +34,7 @@ namespace Amazon.Omics.Model
     public partial class ListReferenceStoresResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReferenceStoreDetail> _referenceStores = new List<ReferenceStoreDetail>();
+        private List<ReferenceStoreDetail> _referenceStores = AWSConfigs.InitializeCollections ? new List<ReferenceStoreDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Omics.Model
         // Check to see if ReferenceStores property is set
         internal bool IsSetReferenceStores()
         {
-            return this._referenceStores != null && this._referenceStores.Count > 0; 
+            return this._referenceStores != null && (this._referenceStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

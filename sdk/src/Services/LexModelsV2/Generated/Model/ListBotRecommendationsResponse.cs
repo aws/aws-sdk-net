@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class ListBotRecommendationsResponse : AmazonWebServiceResponse
     {
         private string _botId;
-        private List<BotRecommendationSummary> _botRecommendationSummaries = new List<BotRecommendationSummary>();
+        private List<BotRecommendationSummary> _botRecommendationSummaries = AWSConfigs.InitializeCollections ? new List<BotRecommendationSummary>() : null;
         private string _botVersion;
         private string _localeId;
         private string _nextToken;
@@ -76,7 +76,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotRecommendationSummaries property is set
         internal bool IsSetBotRecommendationSummaries()
         {
-            return this._botRecommendationSummaries != null && this._botRecommendationSummaries.Count > 0; 
+            return this._botRecommendationSummaries != null && (this._botRecommendationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

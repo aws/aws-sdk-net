@@ -42,7 +42,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class IPSet
     {
-        private List<string> _addresses = new List<string>();
+        private List<string> _addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _arn;
         private string _description;
         private string _id;
@@ -118,7 +118,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Addresses property is set
         internal bool IsSetAddresses()
         {
-            return this._addresses != null && this._addresses.Count > 0; 
+            return this._addresses != null && (this._addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

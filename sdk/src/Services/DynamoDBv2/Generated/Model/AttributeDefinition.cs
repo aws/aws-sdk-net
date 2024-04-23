@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents an attribute for describing the key schema for the table and indexes.
+    /// Represents an attribute for describing the schema for the table and indexes.
     /// </summary>
     public partial class AttributeDefinition
     {

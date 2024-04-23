@@ -112,14 +112,14 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class GetMetricStatisticsRequest : AmazonCloudWatchRequest
     {
-        private List<Dimension> _dimensions = new List<Dimension>();
+        private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private DateTime? _endTimeUtc;
-        private List<string> _extendedStatistics = new List<string>();
+        private List<string> _extendedStatistics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _metricName;
         private string _awsNamespace;
         private int? _period;
         private DateTime? _startTimeUtc;
-        private List<string> _statistics = new List<string>();
+        private List<string> _statistics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private StandardUnit _unit;
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if ExtendedStatistics property is set
         internal bool IsSetExtendedStatistics()
         {
-            return this._extendedStatistics != null && this._extendedStatistics.Count > 0; 
+            return this._extendedStatistics != null && (this._extendedStatistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -349,7 +349,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Statistics property is set
         internal bool IsSetStatistics()
         {
-            return this._statistics != null && this._statistics.Count > 0; 
+            return this._statistics != null && (this._statistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

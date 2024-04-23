@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the Users
         /// </summary>
         public IPaginatedEnumerable<User> Users => 
-            new PaginatedResultKeyResponse<ListUsersResponse, User>(this, (i) => i.Users);
+            new PaginatedResultKeyResponse<ListUsersResponse, User>(this, (i) => i.Users ?? new List<User>());
 
         internal ListUsersPaginator(IAmazonIdentityManagementService client, ListUsersRequest request)
         {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// parameters included in action group invocation
+    /// A parameter for the API request or function.
     /// </summary>
     public partial class Parameter
     {
@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of parameter
+        /// The name of the parameter.
         /// </para>
         /// </summary>
         public string Name
@@ -58,7 +58,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type of parameter
+        /// The type of the parameter.
         /// </para>
         /// </summary>
         public string Type
@@ -76,7 +76,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Value of parameter
+        /// The value of the parameter.
         /// </para>
         /// </summary>
         public string Value

@@ -30,7 +30,7 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAgentKnowledgeBase operation.
-    /// Gets a knowledge base associated to an existing Amazon Bedrock Agent Version
+    /// Gets information about a knowledge base associated with an agent.
     /// </summary>
     public partial class GetAgentKnowledgeBaseRequest : AmazonBedrockAgentRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent with which the knowledge base is associated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// Version number generated when a version is created
+        /// The version of the agent with which the knowledge base is associated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -79,7 +79,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// Id generated at the server side when a Knowledge Base is associated
+        /// The unique identifier of the knowledge base associated with the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

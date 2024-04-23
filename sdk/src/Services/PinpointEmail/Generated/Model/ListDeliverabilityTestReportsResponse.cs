@@ -34,7 +34,7 @@ namespace Amazon.PinpointEmail.Model
     /// </summary>
     public partial class ListDeliverabilityTestReportsResponse : AmazonWebServiceResponse
     {
-        private List<DeliverabilityTestReport> _deliverabilityTestReports = new List<DeliverabilityTestReport>();
+        private List<DeliverabilityTestReport> _deliverabilityTestReports = AWSConfigs.InitializeCollections ? new List<DeliverabilityTestReport>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if DeliverabilityTestReports property is set
         internal bool IsSetDeliverabilityTestReports()
         {
-            return this._deliverabilityTestReports != null && this._deliverabilityTestReports.Count > 0; 
+            return this._deliverabilityTestReports != null && (this._deliverabilityTestReports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

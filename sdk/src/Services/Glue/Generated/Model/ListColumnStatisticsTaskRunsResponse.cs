@@ -33,7 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class ListColumnStatisticsTaskRunsResponse : AmazonWebServiceResponse
     {
-        private List<string> _columnStatisticsTaskRunIds = new List<string>();
+        private List<string> _columnStatisticsTaskRunIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if ColumnStatisticsTaskRunIds property is set
         internal bool IsSetColumnStatisticsTaskRunIds()
         {
-            return this._columnStatisticsTaskRunIds != null && this._columnStatisticsTaskRunIds.Count > 0; 
+            return this._columnStatisticsTaskRunIds != null && (this._columnStatisticsTaskRunIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

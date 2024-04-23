@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the ClientVpnTargetNetworks
         /// </summary>
         public IPaginatedEnumerable<TargetNetwork> ClientVpnTargetNetworks => 
-            new PaginatedResultKeyResponse<DescribeClientVpnTargetNetworksResponse, TargetNetwork>(this, (i) => i.ClientVpnTargetNetworks);
+            new PaginatedResultKeyResponse<DescribeClientVpnTargetNetworksResponse, TargetNetwork>(this, (i) => i.ClientVpnTargetNetworks ?? new List<TargetNetwork>());
 
         internal DescribeClientVpnTargetNetworksPaginator(IAmazonEC2 client, DescribeClientVpnTargetNetworksRequest request)
         {

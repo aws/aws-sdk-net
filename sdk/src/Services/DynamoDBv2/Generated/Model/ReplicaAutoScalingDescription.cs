@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ReplicaAutoScalingDescription
     {
-        private List<ReplicaGlobalSecondaryIndexAutoScalingDescription> _globalSecondaryIndexes = new List<ReplicaGlobalSecondaryIndexAutoScalingDescription>();
+        private List<ReplicaGlobalSecondaryIndexAutoScalingDescription> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<ReplicaGlobalSecondaryIndexAutoScalingDescription>() : null;
         private string _regionName;
         private AutoScalingSettingsDescription _replicaProvisionedReadCapacityAutoScalingSettings;
         private AutoScalingSettingsDescription _replicaProvisionedWriteCapacityAutoScalingSettings;
@@ -54,7 +54,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if GlobalSecondaryIndexes property is set
         internal bool IsSetGlobalSecondaryIndexes()
         {
-            return this._globalSecondaryIndexes != null && this._globalSecondaryIndexes.Count > 0; 
+            return this._globalSecondaryIndexes != null && (this._globalSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

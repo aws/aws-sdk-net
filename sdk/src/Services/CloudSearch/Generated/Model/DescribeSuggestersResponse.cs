@@ -33,7 +33,7 @@ namespace Amazon.CloudSearch.Model
     /// </summary>
     public partial class DescribeSuggestersResponse : AmazonWebServiceResponse
     {
-        private List<SuggesterStatus> _suggesters = new List<SuggesterStatus>();
+        private List<SuggesterStatus> _suggesters = AWSConfigs.InitializeCollections ? new List<SuggesterStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property Suggesters. 
@@ -51,7 +51,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Suggesters property is set
         internal bool IsSetSuggesters()
         {
-            return this._suggesters != null && this._suggesters.Count > 0; 
+            return this._suggesters != null && (this._suggesters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.CodeCatalyst.Model
     /// </summary>
     public partial class ListSourceRepositoriesResponse : AmazonWebServiceResponse
     {
-        private List<ListSourceRepositoriesItem> _items = new List<ListSourceRepositoriesItem>();
+        private List<ListSourceRepositoriesItem> _items = AWSConfigs.InitializeCollections ? new List<ListSourceRepositoriesItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CodeCatalyst.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

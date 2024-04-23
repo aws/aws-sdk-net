@@ -33,7 +33,7 @@ namespace Amazon.Amplify.Model
     /// </summary>
     public partial class ListBackendEnvironmentsResponse : AmazonWebServiceResponse
     {
-        private List<BackendEnvironment> _backendEnvironments = new List<BackendEnvironment>();
+        private List<BackendEnvironment> _backendEnvironments = AWSConfigs.InitializeCollections ? new List<BackendEnvironment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Amplify.Model
         // Check to see if BackendEnvironments property is set
         internal bool IsSetBackendEnvironments()
         {
-            return this._backendEnvironments != null && this._backendEnvironments.Count > 0; 
+            return this._backendEnvironments != null && (this._backendEnvironments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

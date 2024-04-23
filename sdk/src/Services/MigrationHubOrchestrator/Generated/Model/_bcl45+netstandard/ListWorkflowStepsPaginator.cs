@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// Enumerable containing all of the WorkflowStepsSummary
         /// </summary>
         public IPaginatedEnumerable<WorkflowStepSummary> WorkflowStepsSummary => 
-            new PaginatedResultKeyResponse<ListWorkflowStepsResponse, WorkflowStepSummary>(this, (i) => i.WorkflowStepsSummary);
+            new PaginatedResultKeyResponse<ListWorkflowStepsResponse, WorkflowStepSummary>(this, (i) => i.WorkflowStepsSummary ?? new List<WorkflowStepSummary>());
 
         internal ListWorkflowStepsPaginator(IAmazonMigrationHubOrchestrator client, ListWorkflowStepsRequest request)
         {

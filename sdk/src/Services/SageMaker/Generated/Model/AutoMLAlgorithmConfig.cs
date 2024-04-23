@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class AutoMLAlgorithmConfig
     {
-        private List<string> _autoMLAlgorithms = new List<string>();
+        private List<string> _autoMLAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoMLAlgorithms. 
@@ -113,7 +113,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AutoMLAlgorithms property is set
         internal bool IsSetAutoMLAlgorithms()
         {
-            return this._autoMLAlgorithms != null && this._autoMLAlgorithms.Count > 0; 
+            return this._autoMLAlgorithms != null && (this._autoMLAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

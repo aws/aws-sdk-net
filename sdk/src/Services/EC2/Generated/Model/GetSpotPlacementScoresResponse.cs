@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class GetSpotPlacementScoresResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SpotPlacementScore> _spotPlacementScores = new List<SpotPlacementScore>();
+        private List<SpotPlacementScore> _spotPlacementScores = AWSConfigs.InitializeCollections ? new List<SpotPlacementScore>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model
         // Check to see if SpotPlacementScores property is set
         internal bool IsSetSpotPlacementScores()
         {
-            return this._spotPlacementScores != null && this._spotPlacementScores.Count > 0; 
+            return this._spotPlacementScores != null && (this._spotPlacementScores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

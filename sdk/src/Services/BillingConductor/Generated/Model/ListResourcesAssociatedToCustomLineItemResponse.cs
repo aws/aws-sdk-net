@@ -34,7 +34,7 @@ namespace Amazon.BillingConductor.Model
     public partial class ListResourcesAssociatedToCustomLineItemResponse : AmazonWebServiceResponse
     {
         private string _arn;
-        private List<ListResourcesAssociatedToCustomLineItemResponseElement> _associatedResources = new List<ListResourcesAssociatedToCustomLineItemResponseElement>();
+        private List<ListResourcesAssociatedToCustomLineItemResponseElement> _associatedResources = AWSConfigs.InitializeCollections ? new List<ListResourcesAssociatedToCustomLineItemResponseElement>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if AssociatedResources property is set
         internal bool IsSetAssociatedResources()
         {
-            return this._associatedResources != null && this._associatedResources.Count > 0; 
+            return this._associatedResources != null && (this._associatedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

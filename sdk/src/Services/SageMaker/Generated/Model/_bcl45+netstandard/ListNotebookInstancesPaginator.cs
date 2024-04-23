@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the NotebookInstances
         /// </summary>
         public IPaginatedEnumerable<NotebookInstanceSummary> NotebookInstances => 
-            new PaginatedResultKeyResponse<ListNotebookInstancesResponse, NotebookInstanceSummary>(this, (i) => i.NotebookInstances);
+            new PaginatedResultKeyResponse<ListNotebookInstancesResponse, NotebookInstanceSummary>(this, (i) => i.NotebookInstances ?? new List<NotebookInstanceSummary>());
 
         internal ListNotebookInstancesPaginator(IAmazonSageMaker client, ListNotebookInstancesRequest request)
         {

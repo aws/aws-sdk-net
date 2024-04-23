@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateEndpointWeightsAndCapacitiesRequest : AmazonSageMakerRequest
     {
-        private List<DesiredWeightAndCapacity> _desiredWeightsAndCapacities = new List<DesiredWeightAndCapacity>();
+        private List<DesiredWeightAndCapacity> _desiredWeightsAndCapacities = AWSConfigs.InitializeCollections ? new List<DesiredWeightAndCapacity>() : null;
         private string _endpointName;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if DesiredWeightsAndCapacities property is set
         internal bool IsSetDesiredWeightsAndCapacities()
         {
-            return this._desiredWeightsAndCapacities != null && this._desiredWeightsAndCapacities.Count > 0; 
+            return this._desiredWeightsAndCapacities != null && (this._desiredWeightsAndCapacities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

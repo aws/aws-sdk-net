@@ -45,7 +45,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         /// Enumerable containing all of the CrossAccountAuthorizations
         /// </summary>
         public IPaginatedEnumerable<string> CrossAccountAuthorizations => 
-            new PaginatedResultKeyResponse<ListCrossAccountAuthorizationsResponse, string>(this, (i) => i.CrossAccountAuthorizations);
+            new PaginatedResultKeyResponse<ListCrossAccountAuthorizationsResponse, string>(this, (i) => i.CrossAccountAuthorizations ?? new List<string>());
 
         internal ListCrossAccountAuthorizationsPaginator(IAmazonRoute53RecoveryReadiness client, ListCrossAccountAuthorizationsRequest request)
         {

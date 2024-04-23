@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 var context = new JsonMarshallerContext(request, writer);
                 context.Writer.WriteObjectStart();
 
@@ -101,3 +103,4 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

@@ -37,15 +37,15 @@ namespace Amazon.ComprehendMedical.Model
     /// </summary>
     public partial class ICD10CMEntity
     {
-        private List<ICD10CMAttribute> _attributes = new List<ICD10CMAttribute>();
+        private List<ICD10CMAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<ICD10CMAttribute>() : null;
         private int? _beginOffset;
         private ICD10CMEntityCategory _category;
         private int? _endOffset;
-        private List<ICD10CMConcept> _icd10cmConcepts = new List<ICD10CMConcept>();
+        private List<ICD10CMConcept> _icd10cmConcepts = AWSConfigs.InitializeCollections ? new List<ICD10CMConcept>() : null;
         private int? _id;
         private float? _score;
         private string _text;
-        private List<ICD10CMTrait> _traits = new List<ICD10CMTrait>();
+        private List<ICD10CMTrait> _traits = AWSConfigs.InitializeCollections ? new List<ICD10CMTrait>() : null;
         private ICD10CMEntityType _type;
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if ICD10CMConcepts property is set
         internal bool IsSetICD10CMConcepts()
         {
-            return this._icd10cmConcepts != null && this._icd10cmConcepts.Count > 0; 
+            return this._icd10cmConcepts != null && (this._icd10cmConcepts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Traits property is set
         internal bool IsSetTraits()
         {
-            return this._traits != null && this._traits.Count > 0; 
+            return this._traits != null && (this._traits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

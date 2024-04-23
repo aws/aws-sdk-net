@@ -33,7 +33,7 @@ namespace Amazon.EMRContainers.Model
     /// </summary>
     public partial class ListJobRunsResponse : AmazonWebServiceResponse
     {
-        private List<JobRun> _jobRuns = new List<JobRun>();
+        private List<JobRun> _jobRuns = AWSConfigs.InitializeCollections ? new List<JobRun>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if JobRuns property is set
         internal bool IsSetJobRuns()
         {
-            return this._jobRuns != null && this._jobRuns.Count > 0; 
+            return this._jobRuns != null && (this._jobRuns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

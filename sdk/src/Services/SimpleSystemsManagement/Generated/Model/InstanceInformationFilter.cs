@@ -42,7 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class InstanceInformationFilter
     {
         private InstanceInformationFilterKey _key;
-        private List<string> _valueSet = new List<string>();
+        private List<string> _valueSet = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Key. 
@@ -79,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ValueSet property is set
         internal bool IsSetValueSet()
         {
-            return this._valueSet != null && this._valueSet.Count > 0; 
+            return this._valueSet != null && (this._valueSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

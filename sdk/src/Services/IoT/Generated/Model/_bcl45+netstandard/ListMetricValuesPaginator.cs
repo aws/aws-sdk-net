@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the MetricDatumList
         /// </summary>
         public IPaginatedEnumerable<MetricDatum> MetricDatumList => 
-            new PaginatedResultKeyResponse<ListMetricValuesResponse, MetricDatum>(this, (i) => i.MetricDatumList);
+            new PaginatedResultKeyResponse<ListMetricValuesResponse, MetricDatum>(this, (i) => i.MetricDatumList ?? new List<MetricDatum>());
 
         internal ListMetricValuesPaginator(IAmazonIoT client, ListMetricValuesRequest request)
         {

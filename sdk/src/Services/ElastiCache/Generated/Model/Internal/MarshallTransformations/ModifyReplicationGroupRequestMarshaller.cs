@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,30 +63,37 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAuthToken())
                 {
                     request.Parameters.Add("AuthToken", StringUtils.FromString(publicRequest.AuthToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAuthTokenUpdateStrategy())
                 {
                     request.Parameters.Add("AuthTokenUpdateStrategy", StringUtils.FromString(publicRequest.AuthTokenUpdateStrategy));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAutomaticFailoverEnabled())
                 {
                     request.Parameters.Add("AutomaticFailoverEnabled", StringUtils.FromBool(publicRequest.AutomaticFailoverEnabled));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
                     request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(publicRequest.AutoMinorVersionUpgrade));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCacheNodeType())
                 {
                     request.Parameters.Add("CacheNodeType", StringUtils.FromString(publicRequest.CacheNodeType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCacheParameterGroupName())
                 {
                     request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(publicRequest.CacheParameterGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCacheSecurityGroupNames())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -95,18 +103,22 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClusterMode())
                 {
                     request.Parameters.Add("ClusterMode", StringUtils.FromString(publicRequest.ClusterMode));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngineVersion())
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpDiscovery())
                 {
                     request.Parameters.Add("IpDiscovery", StringUtils.FromString(publicRequest.IpDiscovery));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLogDeliveryConfigurations())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -120,70 +132,89 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("LogDeliveryConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DestinationDetails" + "." + "CloudWatchLogsDetails" + "." + "LogGroup", StringUtils.FromString(publicRequestlistValue.DestinationDetails.CloudWatchLogsDetails.LogGroup));
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.DestinationDetails.IsSetKinesisFirehoseDetails())
                             {
                                 if(publicRequestlistValue.DestinationDetails.KinesisFirehoseDetails.IsSetDeliveryStream())
                                 {
                                     request.Parameters.Add("LogDeliveryConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DestinationDetails" + "." + "KinesisFirehoseDetails" + "." + "DeliveryStream", StringUtils.FromString(publicRequestlistValue.DestinationDetails.KinesisFirehoseDetails.DeliveryStream));
                                 }
+#pragma warning restore CS0612,CS0618
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetDestinationType())
                         {
                             request.Parameters.Add("LogDeliveryConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DestinationType", StringUtils.FromString(publicRequestlistValue.DestinationType));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetEnabled())
                         {
                             request.Parameters.Add("LogDeliveryConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Enabled", StringUtils.FromBool(publicRequestlistValue.Enabled));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetLogFormat())
                         {
                             request.Parameters.Add("LogDeliveryConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LogFormat", StringUtils.FromString(publicRequestlistValue.LogFormat));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetLogType())
                         {
                             request.Parameters.Add("LogDeliveryConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LogType", StringUtils.FromString(publicRequestlistValue.LogType));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMultiAZEnabled())
                 {
                     request.Parameters.Add("MultiAZEnabled", StringUtils.FromBool(publicRequest.MultiAZEnabled));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNodeGroupId())
                 {
                     request.Parameters.Add("NodeGroupId", StringUtils.FromString(publicRequest.NodeGroupId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNotificationTopicArn())
                 {
                     request.Parameters.Add("NotificationTopicArn", StringUtils.FromString(publicRequest.NotificationTopicArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNotificationTopicStatus())
                 {
                     request.Parameters.Add("NotificationTopicStatus", StringUtils.FromString(publicRequest.NotificationTopicStatus));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrimaryClusterId())
                 {
                     request.Parameters.Add("PrimaryClusterId", StringUtils.FromString(publicRequest.PrimaryClusterId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveUserGroups())
                 {
                     request.Parameters.Add("RemoveUserGroups", StringUtils.FromBool(publicRequest.RemoveUserGroups));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReplicationGroupDescription())
                 {
                     request.Parameters.Add("ReplicationGroupDescription", StringUtils.FromString(publicRequest.ReplicationGroupDescription));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReplicationGroupId())
                 {
                     request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -193,26 +224,32 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotRetentionLimit())
                 {
                     request.Parameters.Add("SnapshotRetentionLimit", StringUtils.FromInt(publicRequest.SnapshotRetentionLimit));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshottingClusterId())
                 {
                     request.Parameters.Add("SnapshottingClusterId", StringUtils.FromString(publicRequest.SnapshottingClusterId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotWindow())
                 {
                     request.Parameters.Add("SnapshotWindow", StringUtils.FromString(publicRequest.SnapshotWindow));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransitEncryptionEnabled())
                 {
                     request.Parameters.Add("TransitEncryptionEnabled", StringUtils.FromBool(publicRequest.TransitEncryptionEnabled));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransitEncryptionMode())
                 {
                     request.Parameters.Add("TransitEncryptionMode", StringUtils.FromString(publicRequest.TransitEncryptionMode));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserGroupIdsToAdd())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -222,6 +259,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserGroupIdsToRemove())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -231,6 +269,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

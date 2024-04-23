@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Ipv6CidrAssociations
         /// </summary>
         public IPaginatedEnumerable<Ipv6CidrAssociation> Ipv6CidrAssociations => 
-            new PaginatedResultKeyResponse<GetAssociatedIpv6PoolCidrsResponse, Ipv6CidrAssociation>(this, (i) => i.Ipv6CidrAssociations);
+            new PaginatedResultKeyResponse<GetAssociatedIpv6PoolCidrsResponse, Ipv6CidrAssociation>(this, (i) => i.Ipv6CidrAssociations ?? new List<Ipv6CidrAssociation>());
 
         internal GetAssociatedIpv6PoolCidrsPaginator(IAmazonEC2 client, GetAssociatedIpv6PoolCidrsRequest request)
         {

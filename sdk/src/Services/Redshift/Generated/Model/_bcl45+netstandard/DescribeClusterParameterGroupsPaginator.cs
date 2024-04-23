@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the ParameterGroups
         /// </summary>
         public IPaginatedEnumerable<ClusterParameterGroup> ParameterGroups => 
-            new PaginatedResultKeyResponse<DescribeClusterParameterGroupsResponse, ClusterParameterGroup>(this, (i) => i.ParameterGroups);
+            new PaginatedResultKeyResponse<DescribeClusterParameterGroupsResponse, ClusterParameterGroup>(this, (i) => i.ParameterGroups ?? new List<ClusterParameterGroup>());
 
         internal DescribeClusterParameterGroupsPaginator(IAmazonRedshift client, DescribeClusterParameterGroupsRequest request)
         {

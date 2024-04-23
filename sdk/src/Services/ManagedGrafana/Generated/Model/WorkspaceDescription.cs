@@ -37,11 +37,12 @@ namespace Amazon.ManagedGrafana.Model
         private AccountAccessType _accountAccessType;
         private AuthenticationSummary _authentication;
         private DateTime? _created;
-        private List<string> _dataSources = new List<string>();
+        private List<string> _dataSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _endpoint;
         private bool? _freeTrialConsumed;
         private DateTime? _freeTrialExpiration;
+        private string _grafanaToken;
         private string _grafanaVersion;
         private string _id;
         private DateTime? _licenseExpiration;
@@ -49,13 +50,13 @@ namespace Amazon.ManagedGrafana.Model
         private DateTime? _modified;
         private string _name;
         private NetworkAccessConfiguration _networkAccessControl;
-        private List<string> _notificationDestinations = new List<string>();
-        private List<string> _organizationalUnits = new List<string>();
+        private List<string> _notificationDestinations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _organizationalUnits = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _organizationRoleName;
         private PermissionType _permissionType;
         private string _stackSetName;
         private WorkspaceStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VpcConfiguration _vpcConfiguration;
         private string _workspaceRoleArn;
 
@@ -142,7 +143,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if DataSources property is set
         internal bool IsSetDataSources()
         {
-            return this._dataSources != null && this._dataSources.Count > 0; 
+            return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,6 +190,11 @@ namespace Amazon.ManagedGrafana.Model
         /// Specifies whether this workspace has already fully used its free trial for Grafana
         /// Enterprise.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool FreeTrialConsumed
         {
@@ -208,6 +214,11 @@ namespace Amazon.ManagedGrafana.Model
         /// If this workspace is currently in the free trial period for Grafana Enterprise, this
         /// value specifies when that free trial ends.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DateTime FreeTrialExpiration
         {
@@ -219,6 +230,27 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetFreeTrialExpiration()
         {
             return this._freeTrialExpiration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GrafanaToken. 
+        /// <para>
+        /// The token that ties this workspace to a Grafana Labs account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+        /// with Grafana Labs</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=36)]
+        public string GrafanaToken
+        {
+            get { return this._grafanaToken; }
+            set { this._grafanaToken = value; }
+        }
+
+        // Check to see if GrafanaToken property is set
+        internal bool IsSetGrafanaToken()
+        {
+            return this._grafanaToken != null;
         }
 
         /// <summary>
@@ -262,8 +294,10 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property LicenseExpiration. 
         /// <para>
-        /// If this workspace has a full Grafana Enterprise license, this specifies when the license
-        /// ends and will need to be renewed.
+        /// If this workspace has a full Grafana Enterprise license purchased through Amazon Web
+        /// Services Marketplace, this specifies when the license ends and will need to be renewed.
+        /// Purchasing the Enterprise plugins option through Amazon Managed Grafana does not have
+        /// an expiration. It is valid until the license is removed.
         /// </para>
         /// </summary>
         public DateTime LicenseExpiration
@@ -281,9 +315,13 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property LicenseType. 
         /// <para>
-        /// Specifies whether this workspace has a full Grafana Enterprise license or a free trial
-        /// license.
+        /// Specifies whether this workspace has a full Grafana Enterprise license.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+        /// </para>
+        ///  </note>
         /// </summary>
         public LicenseType LicenseType
         {
@@ -370,7 +408,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if NotificationDestinations property is set
         internal bool IsSetNotificationDestinations()
         {
-            return this._notificationDestinations != null && this._notificationDestinations.Count > 0; 
+            return this._notificationDestinations != null && (this._notificationDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -390,7 +428,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if OrganizationalUnits property is set
         internal bool IsSetOrganizationalUnits()
         {
-            return this._organizationalUnits != null && this._organizationalUnits.Count > 0; 
+            return this._organizationalUnits != null && (this._organizationalUnits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -508,7 +546,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

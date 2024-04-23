@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StartShotDetectionFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMinSegmentConfidence())
             {
                 context.Writer.WritePropertyName("MinSegmentConfidence");
-                context.Writer.Write(requestObject.MinSegmentConfidence);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinSegmentConfidence))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinSegmentConfidence));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinSegmentConfidence);
+                }
             }
 
         }
@@ -60,3 +70,4 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

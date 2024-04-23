@@ -39,7 +39,7 @@ namespace Amazon.CodeStarconnections.Model
         private string _encryptionKeyArn;
         private string _ownerId;
         private string _repositoryName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectionArn. 
@@ -136,7 +136,7 @@ namespace Amazon.CodeStarconnections.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

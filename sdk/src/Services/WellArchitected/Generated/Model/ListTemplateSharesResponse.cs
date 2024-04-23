@@ -35,7 +35,7 @@ namespace Amazon.WellArchitected.Model
     {
         private string _nextToken;
         private string _templateArn;
-        private List<TemplateShareSummary> _templateShareSummaries = new List<TemplateShareSummary>();
+        private List<TemplateShareSummary> _templateShareSummaries = AWSConfigs.InitializeCollections ? new List<TemplateShareSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -86,7 +86,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if TemplateShareSummaries property is set
         internal bool IsSetTemplateShareSummaries()
         {
-            return this._templateShareSummaries != null && this._templateShareSummaries.Count > 0; 
+            return this._templateShareSummaries != null && (this._templateShareSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

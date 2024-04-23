@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </summary>
     public partial class ListExperimentsResponse : AmazonWebServiceResponse
     {
-        private List<Experiment> _experiments = new List<Experiment>();
+        private List<Experiment> _experiments = AWSConfigs.InitializeCollections ? new List<Experiment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Experiments property is set
         internal bool IsSetExperiments()
         {
-            return this._experiments != null && this._experiments.Count > 0; 
+            return this._experiments != null && (this._experiments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

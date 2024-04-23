@@ -45,7 +45,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Enumerable containing all of the RuleGroups
         /// </summary>
         public IPaginatedEnumerable<RuleGroupMetadata> RuleGroups => 
-            new PaginatedResultKeyResponse<ListRuleGroupsResponse, RuleGroupMetadata>(this, (i) => i.RuleGroups);
+            new PaginatedResultKeyResponse<ListRuleGroupsResponse, RuleGroupMetadata>(this, (i) => i.RuleGroups ?? new List<RuleGroupMetadata>());
 
         internal ListRuleGroupsPaginator(IAmazonNetworkFirewall client, ListRuleGroupsRequest request)
         {

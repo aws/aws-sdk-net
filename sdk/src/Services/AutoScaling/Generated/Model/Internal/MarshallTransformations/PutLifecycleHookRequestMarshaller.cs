@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,34 +63,42 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDefaultResult())
                 {
                     request.Parameters.Add("DefaultResult", StringUtils.FromString(publicRequest.DefaultResult));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHeartbeatTimeout())
                 {
                     request.Parameters.Add("HeartbeatTimeout", StringUtils.FromInt(publicRequest.HeartbeatTimeout));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLifecycleHookName())
                 {
                     request.Parameters.Add("LifecycleHookName", StringUtils.FromString(publicRequest.LifecycleHookName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLifecycleTransition())
                 {
                     request.Parameters.Add("LifecycleTransition", StringUtils.FromString(publicRequest.LifecycleTransition));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNotificationMetadata())
                 {
                     request.Parameters.Add("NotificationMetadata", StringUtils.FromString(publicRequest.NotificationMetadata));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNotificationTargetARN())
                 {
                     request.Parameters.Add("NotificationTargetARN", StringUtils.FromString(publicRequest.NotificationTargetARN));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRoleARN())
                 {
                     request.Parameters.Add("RoleARN", StringUtils.FromString(publicRequest.RoleARN));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

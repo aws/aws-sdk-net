@@ -33,7 +33,7 @@ namespace Amazon.Private5G.Model
     /// </summary>
     public partial class ListDeviceIdentifiersResponse : AmazonWebServiceResponse
     {
-        private List<DeviceIdentifier> _deviceIdentifiers = new List<DeviceIdentifier>();
+        private List<DeviceIdentifier> _deviceIdentifiers = AWSConfigs.InitializeCollections ? new List<DeviceIdentifier>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Private5G.Model
         // Check to see if DeviceIdentifiers property is set
         internal bool IsSetDeviceIdentifiers()
         {
-            return this._deviceIdentifiers != null && this._deviceIdentifiers.Count > 0; 
+            return this._deviceIdentifiers != null && (this._deviceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

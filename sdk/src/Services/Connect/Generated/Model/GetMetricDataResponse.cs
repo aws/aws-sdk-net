@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class GetMetricDataResponse : AmazonWebServiceResponse
     {
-        private List<HistoricalMetricResult> _metricResults = new List<HistoricalMetricResult>();
+        private List<HistoricalMetricResult> _metricResults = AWSConfigs.InitializeCollections ? new List<HistoricalMetricResult>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Connect.Model
         // Check to see if MetricResults property is set
         internal bool IsSetMetricResults()
         {
-            return this._metricResults != null && this._metricResults.Count > 0; 
+            return this._metricResults != null && (this._metricResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

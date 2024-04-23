@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     public partial class WorkflowStepOutputUnion
     {
         private int? _integerValue;
-        private List<string> _listOfStringValue = new List<string>();
+        private List<string> _listOfStringValue = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stringValue;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if ListOfStringValue property is set
         internal bool IsSetListOfStringValue()
         {
-            return this._listOfStringValue != null && this._listOfStringValue.Count > 0; 
+            return this._listOfStringValue != null && (this._listOfStringValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

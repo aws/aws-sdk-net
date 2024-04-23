@@ -43,7 +43,7 @@ namespace Amazon.Comprehend.Model
         private Geometry _geometry;
         private string _id;
         private int? _page;
-        private List<RelationshipsListItem> _relationships = new List<RelationshipsListItem>();
+        private List<RelationshipsListItem> _relationships = AWSConfigs.InitializeCollections ? new List<RelationshipsListItem>() : null;
         private string _text;
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Relationships property is set
         internal bool IsSetRelationships()
         {
-            return this._relationships != null && this._relationships.Count > 0; 
+            return this._relationships != null && (this._relationships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

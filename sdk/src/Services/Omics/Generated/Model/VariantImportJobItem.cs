@@ -33,7 +33,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class VariantImportJobItem
     {
-        private Dictionary<string, string> _annotationFields = new Dictionary<string, string>();
+        private Dictionary<string, string> _annotationFields = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _completionTime;
         private DateTime? _creationTime;
         private string _destinationName;
@@ -58,7 +58,7 @@ namespace Amazon.Omics.Model
         // Check to see if AnnotationFields property is set
         internal bool IsSetAnnotationFields()
         {
-            return this._annotationFields != null && this._annotationFields.Count > 0; 
+            return this._annotationFields != null && (this._annotationFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

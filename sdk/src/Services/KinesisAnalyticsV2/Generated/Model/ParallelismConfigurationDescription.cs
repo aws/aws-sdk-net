@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes parameters for how a Flink-based Kinesis Data Analytics application executes
+    /// Describes parameters for how a Managed Service for Apache Flink application executes
     /// multiple tasks simultaneously.
     /// </summary>
     public partial class ParallelismConfigurationDescription
@@ -43,7 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property AutoScalingEnabled. 
         /// <para>
-        /// Describes whether the Kinesis Data Analytics service can increase the parallelism
+        /// Describes whether the Managed Service for Apache Flink service can increase the parallelism
         /// of the application in response to increased throughput.
         /// </para>
         /// </summary>
@@ -62,8 +62,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationType. 
         /// <para>
-        /// Describes whether the application uses the default parallelism for the Kinesis Data
-        /// Analytics service. 
+        /// Describes whether the application uses the default parallelism for the Managed Service
+        /// for Apache Flink service. 
         /// </para>
         /// </summary>
         public ConfigurationType ConfigurationType
@@ -81,10 +81,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CurrentParallelism. 
         /// <para>
-        /// Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics
-        /// application can perform. If <c>AutoScalingEnabled</c> is set to True, Kinesis Data
-        /// Analytics can increase this value in response to application load. The service can
-        /// increase this value up to the maximum parallelism, which is <c>ParalellismPerKPU</c>
+        /// Describes the current number of parallel tasks that a Managed Service for Apache Flink
+        /// application can perform. If <c>AutoScalingEnabled</c> is set to True, Managed Service
+        /// for Apache Flink can increase this value in response to application load. The service
+        /// can increase this value up to the maximum parallelism, which is <c>ParalellismPerKPU</c>
         /// times the maximum KPUs for the application. The maximum KPUs for an application is
         /// 32 by default, and can be increased by requesting a limit increase. If application
         /// load is reduced, the service can reduce the <c>CurrentParallelism</c> value down to
@@ -107,14 +107,14 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property Parallelism. 
         /// <para>
-        /// Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics
-        /// application can perform. If <c>AutoScalingEnabled</c> is set to True, then Kinesis
-        /// Data Analytics can increase the <c>CurrentParallelism</c> value in response to application
-        /// load. The service can increase <c>CurrentParallelism</c> up to the maximum parallelism,
-        /// which is <c>ParalellismPerKPU</c> times the maximum KPUs for the application. The
-        /// maximum KPUs for an application is 32 by default, and can be increased by requesting
-        /// a limit increase. If application load is reduced, the service can reduce the <c>CurrentParallelism</c>
-        /// value down to the <c>Parallelism</c> setting.
+        /// Describes the initial number of parallel tasks that a Managed Service for Apache Flink
+        /// application can perform. If <c>AutoScalingEnabled</c> is set to True, then Managed
+        /// Service for Apache Flink can increase the <c>CurrentParallelism</c> value in response
+        /// to application load. The service can increase <c>CurrentParallelism</c> up to the
+        /// maximum parallelism, which is <c>ParalellismPerKPU</c> times the maximum KPUs for
+        /// the application. The maximum KPUs for an application is 32 by default, and can be
+        /// increased by requesting a limit increase. If application load is reduced, the service
+        /// can reduce the <c>CurrentParallelism</c> value down to the <c>Parallelism</c> setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -133,7 +133,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ParallelismPerKPU. 
         /// <para>
-        /// Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application
+        /// Describes the number of parallel tasks that a Managed Service for Apache Flink application
         /// can perform per Kinesis Processing Unit (KPU) used by the application.
         /// </para>
         /// </summary>

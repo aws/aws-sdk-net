@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EndpointLocation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCity())
             {
                 context.Writer.WritePropertyName("City");
@@ -60,13 +63,27 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatitude())
             {
                 context.Writer.WritePropertyName("Latitude");
-                context.Writer.Write(requestObject.Latitude);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Latitude))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Latitude));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Latitude);
+                }
             }
 
             if(requestObject.IsSetLongitude())
             {
                 context.Writer.WritePropertyName("Longitude");
-                context.Writer.Write(requestObject.Longitude);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Longitude))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Longitude));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Longitude);
+                }
             }
 
             if(requestObject.IsSetPostalCode())
@@ -90,3 +107,4 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

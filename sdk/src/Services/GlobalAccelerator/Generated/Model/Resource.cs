@@ -29,21 +29,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// An Amazon Web Services resource that is supported by Global Accelerator and can be
-    /// added as an endpoint for an accelerator.
+    /// A resource is one of the following: the ARN for an Amazon Web Services resource that
+    /// is supported by Global Accelerator to be added as an endpoint, or a CIDR range that
+    /// specifies a bring your own IP (BYOIP) address pool.
     /// </summary>
     public partial class Resource
     {
+        private string _cidr;
         private string _endpointId;
         private string _region;
 
         /// <summary>
-        /// Gets and sets the property EndpointId. 
+        /// Gets and sets the property Cidr. 
         /// <para>
-        /// The endpoint ID for the endpoint (Amazon Web Services resource).
+        /// An IP address range, in CIDR format, that is specified as resource. The address must
+        /// be provisioned and advertised in Global Accelerator by following the bring your own
+        /// IP address (BYOIP) process for Global Accelerator
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+        /// your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Max=255)]
+        public string Cidr
+        {
+            get { return this._cidr; }
+            set { this._cidr = value; }
+        }
+
+        // Check to see if Cidr property is set
+        internal bool IsSetCidr()
+        {
+            return this._cidr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointId. 
+        /// <para>
+        /// The endpoint ID for the endpoint that is specified as a Amazon Web Services resource.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// An endpoint ID for the cross-account feature is the ARN of an Amazon Web Services
+        /// resource, such as a Network Load Balancer, that Global Accelerator supports as an
+        /// endpoint for an accelerator.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
         public string EndpointId
         {
             get { return this._endpointId; }
@@ -59,7 +94,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The Amazon Web Services Region where a resource is located.
+        /// The Amazon Web Services Region where a shared endpoint resource is located.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

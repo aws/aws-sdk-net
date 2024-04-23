@@ -33,7 +33,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class ListFiltersResponse : AmazonWebServiceResponse
     {
-        private List<string> _filterNames = new List<string>();
+        private List<string> _filterNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if FilterNames property is set
         internal bool IsSetFilterNames()
         {
-            return this._filterNames != null && this._filterNames.Count > 0; 
+            return this._filterNames != null && (this._filterNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

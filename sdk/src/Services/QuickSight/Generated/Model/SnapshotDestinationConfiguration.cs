@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SnapshotDestinationConfiguration
     {
-        private List<SnapshotS3DestinationConfiguration> _s3Destinations = new List<SnapshotS3DestinationConfiguration>();
+        private List<SnapshotS3DestinationConfiguration> _s3Destinations = AWSConfigs.InitializeCollections ? new List<SnapshotS3DestinationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property S3Destinations. 
@@ -54,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if S3Destinations property is set
         internal bool IsSetS3Destinations()
         {
-            return this._s3Destinations != null && this._s3Destinations.Count > 0; 
+            return this._s3Destinations != null && (this._s3Destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

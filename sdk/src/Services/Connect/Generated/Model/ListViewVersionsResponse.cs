@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListViewVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ViewVersionSummary> _viewVersionSummaryList = new List<ViewVersionSummary>();
+        private List<ViewVersionSummary> _viewVersionSummaryList = AWSConfigs.InitializeCollections ? new List<ViewVersionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Connect.Model
         // Check to see if ViewVersionSummaryList property is set
         internal bool IsSetViewVersionSummaryList()
         {
-            return this._viewVersionSummaryList != null && this._viewVersionSummaryList.Count > 0; 
+            return this._viewVersionSummaryList != null && (this._viewVersionSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

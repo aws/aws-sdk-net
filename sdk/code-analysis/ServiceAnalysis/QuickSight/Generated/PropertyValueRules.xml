@@ -2963,6 +2963,10 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.AssetBundleImportJobWarning.Message</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.AssetBundleImportSource.Body</property>
     <min>0</min>
     <max>20971520</max>
@@ -3277,7 +3281,7 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CustomSql.SqlQuery</property>
     <min>1</min>
-    <max>65536</max>
+    <max>168000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.Dashboard.DashboardId</property>
@@ -3549,6 +3553,16 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DefaultFilterControlConfiguration.Title</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DefaultTextAreaControlOptions.Delimiter</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DestinationParameterValueConfiguration.SourceField</property>
     <min>1</min>
     <max>512</max>
@@ -3638,6 +3652,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.FilledMapVisual.VisualId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.FilterCrossSheetControl.FilterControlId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.FilterCrossSheetControl.SourceFilterId</property>
     <min>1</min>
     <max>512</max>
     <pattern>[\w\-]+</pattern>

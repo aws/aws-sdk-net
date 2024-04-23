@@ -34,7 +34,7 @@ namespace Amazon.CodeCatalyst.Model
     /// </summary>
     public partial class ListProjectsRequest : AmazonCodeCatalystRequest
     {
-        private List<ProjectListFilter> _filters = new List<ProjectListFilter>();
+        private List<ProjectListFilter> _filters = AWSConfigs.InitializeCollections ? new List<ProjectListFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _spaceName;
@@ -54,7 +54,7 @@ namespace Amazon.CodeCatalyst.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.FinSpaceData.Model
         /// Enumerable containing all of the PermissionGroups
         /// </summary>
         public IPaginatedEnumerable<PermissionGroup> PermissionGroups => 
-            new PaginatedResultKeyResponse<ListPermissionGroupsResponse, PermissionGroup>(this, (i) => i.PermissionGroups);
+            new PaginatedResultKeyResponse<ListPermissionGroupsResponse, PermissionGroup>(this, (i) => i.PermissionGroups ?? new List<PermissionGroup>());
 
         internal ListPermissionGroupsPaginator(IAmazonFinSpaceData client, ListPermissionGroupsRequest request)
         {

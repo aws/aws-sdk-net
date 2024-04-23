@@ -45,7 +45,7 @@ namespace Amazon.KeyManagementService.Model
         /// Enumerable containing all of the Aliases
         /// </summary>
         public IPaginatedEnumerable<AliasListEntry> Aliases => 
-            new PaginatedResultKeyResponse<ListAliasesResponse, AliasListEntry>(this, (i) => i.Aliases);
+            new PaginatedResultKeyResponse<ListAliasesResponse, AliasListEntry>(this, (i) => i.Aliases ?? new List<AliasListEntry>());
 
         internal ListAliasesPaginator(IAmazonKeyManagementService client, ListAliasesRequest request)
         {
@@ -69,7 +69,7 @@ namespace Amazon.KeyManagementService.Model
                 marker = response.NextMarker;
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(marker));
+            while (response.Truncated);
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -90,7 +90,7 @@ namespace Amazon.KeyManagementService.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(marker));
+            while (response.Truncated);
         }
 #endif
     }

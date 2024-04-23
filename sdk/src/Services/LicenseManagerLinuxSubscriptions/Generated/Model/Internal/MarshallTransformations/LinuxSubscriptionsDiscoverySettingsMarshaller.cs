@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransfo
         /// <returns></returns>
         public void Marshall(LinuxSubscriptionsDiscoverySettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetOrganizationIntegration())
             {
                 context.Writer.WritePropertyName("OrganizationIntegration");
@@ -71,3 +74,4 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransfo
 
     }
 }
+#pragma warning restore CS0612,CS0618

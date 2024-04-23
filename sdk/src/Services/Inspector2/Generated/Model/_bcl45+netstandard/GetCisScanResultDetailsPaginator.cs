@@ -45,7 +45,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the ScanResultDetails
         /// </summary>
         public IPaginatedEnumerable<CisScanResultDetails> ScanResultDetails => 
-            new PaginatedResultKeyResponse<GetCisScanResultDetailsResponse, CisScanResultDetails>(this, (i) => i.ScanResultDetails);
+            new PaginatedResultKeyResponse<GetCisScanResultDetailsResponse, CisScanResultDetails>(this, (i) => i.ScanResultDetails ?? new List<CisScanResultDetails>());
 
         internal GetCisScanResultDetailsPaginator(IAmazonInspector2 client, GetCisScanResultDetailsRequest request)
         {

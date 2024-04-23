@@ -35,9 +35,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     public partial class CreateMediaStreamPipelineRequest : AmazonChimeSDKMediaPipelinesRequest
     {
         private string _clientRequestToken;
-        private List<MediaStreamSink> _sinks = new List<MediaStreamSink>();
-        private List<MediaStreamSource> _sources = new List<MediaStreamSource>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<MediaStreamSink> _sinks = AWSConfigs.InitializeCollections ? new List<MediaStreamSink>() : null;
+        private List<MediaStreamSource> _sources = AWSConfigs.InitializeCollections ? new List<MediaStreamSource>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -74,7 +74,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Sinks property is set
         internal bool IsSetSinks()
         {
-            return this._sinks != null && this._sinks.Count > 0; 
+            return this._sinks != null && (this._sinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

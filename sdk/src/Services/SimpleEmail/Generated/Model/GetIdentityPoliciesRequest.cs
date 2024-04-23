@@ -54,7 +54,7 @@ namespace Amazon.SimpleEmail.Model
     public partial class GetIdentityPoliciesRequest : AmazonSimpleEmailServiceRequest
     {
         private string _identity;
-        private List<string> _policyNames = new List<string>();
+        private List<string> _policyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Identity. 
@@ -99,7 +99,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this._policyNames != null && this._policyNames.Count > 0; 
+            return this._policyNames != null && (this._policyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

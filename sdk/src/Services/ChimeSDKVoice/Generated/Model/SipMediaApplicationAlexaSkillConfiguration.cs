@@ -33,7 +33,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class SipMediaApplicationAlexaSkillConfiguration
     {
-        private List<string> _alexaSkillIds = new List<string>();
+        private List<string> _alexaSkillIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AlexaSkillStatus _alexaSkillStatus;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if AlexaSkillIds property is set
         internal bool IsSetAlexaSkillIds()
         {
-            return this._alexaSkillIds != null && this._alexaSkillIds.Count > 0; 
+            return this._alexaSkillIds != null && (this._alexaSkillIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,8 +36,8 @@ namespace Amazon.Kafka.Model
         private DateTime? _creationTime;
         private string _currentVersion;
         private bool? _isReplicatorReference;
-        private List<KafkaClusterSummary> _kafkaClustersSummary = new List<KafkaClusterSummary>();
-        private List<ReplicationInfoSummary> _replicationInfoSummaryList = new List<ReplicationInfoSummary>();
+        private List<KafkaClusterSummary> _kafkaClustersSummary = AWSConfigs.InitializeCollections ? new List<KafkaClusterSummary>() : null;
+        private List<ReplicationInfoSummary> _replicationInfoSummaryList = AWSConfigs.InitializeCollections ? new List<ReplicationInfoSummary>() : null;
         private string _replicatorArn;
         private string _replicatorName;
         private string _replicatorResourceArn;
@@ -112,7 +112,7 @@ namespace Amazon.Kafka.Model
         // Check to see if KafkaClustersSummary property is set
         internal bool IsSetKafkaClustersSummary()
         {
-            return this._kafkaClustersSummary != null && this._kafkaClustersSummary.Count > 0; 
+            return this._kafkaClustersSummary != null && (this._kafkaClustersSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.Kafka.Model
         // Check to see if ReplicationInfoSummaryList property is set
         internal bool IsSetReplicationInfoSummaryList()
         {
-            return this._replicationInfoSummaryList != null && this._replicationInfoSummaryList.Count > 0; 
+            return this._replicationInfoSummaryList != null && (this._replicationInfoSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -44,13 +44,13 @@ namespace Amazon.NetworkMonitor.Model
         private Protocol _protocol;
         private string _sourceArn;
         private ProbeState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _vpcId;
 
         /// <summary>
         /// Gets and sets the property AddressFamily. 
         /// <para>
-        /// The updated IP address family. This will be either <c>IPV4</c> or <c>IPV6</c>.
+        /// The updated IP address family. This must be either <c>IPV4</c> or <c>IPV6</c>.
         /// </para>
         /// </summary>
         public AddressFamily AddressFamily
@@ -105,7 +105,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property DestinationPort. 
         /// <para>
-        /// The updated destination port. This will be a number between <c>1</c> and <c>65536</c>.
+        /// The updated destination port. This must be a number between <c>1</c> and <c>65536</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
@@ -267,7 +267,7 @@ namespace Amazon.NetworkMonitor.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

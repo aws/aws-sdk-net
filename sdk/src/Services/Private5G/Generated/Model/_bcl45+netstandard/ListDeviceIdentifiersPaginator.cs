@@ -45,7 +45,7 @@ namespace Amazon.Private5G.Model
         /// Enumerable containing all of the DeviceIdentifiers
         /// </summary>
         public IPaginatedEnumerable<DeviceIdentifier> DeviceIdentifiers => 
-            new PaginatedResultKeyResponse<ListDeviceIdentifiersResponse, DeviceIdentifier>(this, (i) => i.DeviceIdentifiers);
+            new PaginatedResultKeyResponse<ListDeviceIdentifiersResponse, DeviceIdentifier>(this, (i) => i.DeviceIdentifiers ?? new List<DeviceIdentifier>());
 
         internal ListDeviceIdentifiersPaginator(IAmazonPrivate5G client, ListDeviceIdentifiersRequest request)
         {

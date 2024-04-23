@@ -34,7 +34,7 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class ListLicenseConversionTasksRequest : AmazonLicenseManagerRequest
     {
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -54,7 +54,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

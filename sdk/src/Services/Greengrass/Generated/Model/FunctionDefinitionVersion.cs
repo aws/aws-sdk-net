@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model
     public partial class FunctionDefinitionVersion
     {
         private FunctionDefaultConfig _defaultConfig;
-        private List<Function> _functions = new List<Function>();
+        private List<Function> _functions = AWSConfigs.InitializeCollections ? new List<Function>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultConfig. The default configuration that applies to
@@ -66,7 +66,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Functions property is set
         internal bool IsSetFunctions()
         {
-            return this._functions != null && this._functions.Count > 0; 
+            return this._functions != null && (this._functions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

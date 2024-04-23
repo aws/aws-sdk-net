@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SourceRevisionOverride requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActionName())
             {
                 context.Writer.WritePropertyName("actionName");
@@ -72,3 +75,4 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

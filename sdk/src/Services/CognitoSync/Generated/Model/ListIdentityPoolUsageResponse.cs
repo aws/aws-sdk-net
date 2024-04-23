@@ -34,7 +34,7 @@ namespace Amazon.CognitoSync.Model
     public partial class ListIdentityPoolUsageResponse : AmazonWebServiceResponse
     {
         private int? _count;
-        private List<IdentityPoolUsage> _identityPoolUsages = new List<IdentityPoolUsage>();
+        private List<IdentityPoolUsage> _identityPoolUsages = AWSConfigs.InitializeCollections ? new List<IdentityPoolUsage>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -66,7 +66,7 @@ namespace Amazon.CognitoSync.Model
         // Check to see if IdentityPoolUsages property is set
         internal bool IsSetIdentityPoolUsages()
         {
-            return this._identityPoolUsages != null && this._identityPoolUsages.Count > 0; 
+            return this._identityPoolUsages != null && (this._identityPoolUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

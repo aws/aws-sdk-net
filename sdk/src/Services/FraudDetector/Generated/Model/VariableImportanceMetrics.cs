@@ -33,7 +33,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class VariableImportanceMetrics
     {
-        private List<LogOddsMetric> _logOddsMetrics = new List<LogOddsMetric>();
+        private List<LogOddsMetric> _logOddsMetrics = AWSConfigs.InitializeCollections ? new List<LogOddsMetric>() : null;
 
         /// <summary>
         /// Gets and sets the property LogOddsMetrics. 
@@ -50,7 +50,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if LogOddsMetrics property is set
         internal bool IsSetLogOddsMetrics()
         {
-            return this._logOddsMetrics != null && this._logOddsMetrics.Count > 0; 
+            return this._logOddsMetrics != null && (this._logOddsMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

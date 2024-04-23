@@ -33,8 +33,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyHostsResponse : AmazonWebServiceResponse
     {
-        private List<string> _successful = new List<string>();
-        private List<UnsuccessfulItem> _unsuccessful = new List<UnsuccessfulItem>();
+        private List<string> _successful = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<UnsuccessfulItem> _unsuccessful = AWSConfigs.InitializeCollections ? new List<UnsuccessfulItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Successful. 
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Successful property is set
         internal bool IsSetSuccessful()
         {
-            return this._successful != null && this._successful.Count > 0; 
+            return this._successful != null && (this._successful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if Unsuccessful property is set
         internal bool IsSetUnsuccessful()
         {
-            return this._unsuccessful != null && this._unsuccessful.Count > 0; 
+            return this._unsuccessful != null && (this._unsuccessful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

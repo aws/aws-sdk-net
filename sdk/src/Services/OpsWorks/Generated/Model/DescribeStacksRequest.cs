@@ -42,7 +42,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeStacksRequest : AmazonOpsWorksRequest
     {
-        private List<string> _stackIds = new List<string>();
+        private List<string> _stackIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property StackIds. 
@@ -60,7 +60,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if StackIds property is set
         internal bool IsSetStackIds()
         {
-            return this._stackIds != null && this._stackIds.Count > 0; 
+            return this._stackIds != null && (this._stackIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

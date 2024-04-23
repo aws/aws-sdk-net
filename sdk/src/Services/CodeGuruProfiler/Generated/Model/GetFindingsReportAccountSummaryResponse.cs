@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruProfiler.Model
     public partial class GetFindingsReportAccountSummaryResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<FindingsReportSummary> _reportSummaries = new List<FindingsReportSummary>();
+        private List<FindingsReportSummary> _reportSummaries = AWSConfigs.InitializeCollections ? new List<FindingsReportSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -76,7 +76,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if ReportSummaries property is set
         internal bool IsSetReportSummaries()
         {
-            return this._reportSummaries != null && this._reportSummaries.Count > 0; 
+            return this._reportSummaries != null && (this._reportSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

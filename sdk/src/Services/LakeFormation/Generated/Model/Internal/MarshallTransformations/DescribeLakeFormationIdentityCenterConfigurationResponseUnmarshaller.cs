@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,6 +74,18 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InstanceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceShare", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ResourceShare = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShareRecipients", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataLakePrincipal, DataLakePrincipalUnmarshaller>(DataLakePrincipalUnmarshaller.Instance);
+                    response.ShareRecipients = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -142,3 +155,4 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

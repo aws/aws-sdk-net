@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class TimeSeriesConfig
     {
-        private List<string> _groupingAttributeNames = new List<string>();
+        private List<string> _groupingAttributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _itemIdentifierAttributeName;
         private string _targetAttributeName;
         private string _timestampAttributeName;
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if GroupingAttributeNames property is set
         internal bool IsSetGroupingAttributeNames()
         {
-            return this._groupingAttributeNames != null && this._groupingAttributeNames.Count > 0; 
+            return this._groupingAttributeNames != null && (this._groupingAttributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

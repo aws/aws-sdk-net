@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Enumerable containing all of the InstanceGroups
         /// </summary>
         public IPaginatedEnumerable<InstanceGroup> InstanceGroups => 
-            new PaginatedResultKeyResponse<ListInstanceGroupsResponse, InstanceGroup>(this, (i) => i.InstanceGroups);
+            new PaginatedResultKeyResponse<ListInstanceGroupsResponse, InstanceGroup>(this, (i) => i.InstanceGroups ?? new List<InstanceGroup>());
 
         internal ListInstanceGroupsPaginator(IAmazonElasticMapReduce client, ListInstanceGroupsRequest request)
         {

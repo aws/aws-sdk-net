@@ -37,11 +37,14 @@ namespace Amazon.LakeFormation.Model
         private string _catalogId;
         private ExternalFilteringConfiguration _externalFiltering;
         private string _instanceArn;
+        private string _resourceShare;
+        private List<DataLakePrincipal> _shareRecipients = AWSConfigs.InitializeCollections ? new List<DataLakePrincipal>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the integrated application.
+        /// The Amazon Resource Name (ARN) of the Lake Formation application integrated with IAM
+        /// Identity Center.
         /// </para>
         /// </summary>
         public string ApplicationArn
@@ -111,6 +114,54 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetInstanceArn()
         {
             return this._instanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShare. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the RAM share.
+        /// </para>
+        /// </summary>
+        public string ResourceShare
+        {
+            get { return this._resourceShare; }
+            set { this._resourceShare = value; }
+        }
+
+        // Check to see if ResourceShare property is set
+        internal bool IsSetResourceShare()
+        {
+            return this._resourceShare != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareRecipients. 
+        /// <para>
+        /// A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational
+        /// unit ARNs that are allowed to access data managed by Lake Formation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <c>ShareRecipients</c> list includes valid values, a resource share is created
+        /// with the principals you want to have access to the resources as the <c>ShareRecipients</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <c>ShareRecipients</c> value is null or the list is empty, no resource share
+        /// is created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=30)]
+        public List<DataLakePrincipal> ShareRecipients
+        {
+            get { return this._shareRecipients; }
+            set { this._shareRecipients = value; }
+        }
+
+        // Check to see if ShareRecipients property is set
+        internal bool IsSetShareRecipients()
+        {
+            return this._shareRecipients != null && (this._shareRecipients.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.BedrockAgent.Model
         /// Enumerable containing all of the IngestionJobSummaries
         /// </summary>
         public IPaginatedEnumerable<IngestionJobSummary> IngestionJobSummaries => 
-            new PaginatedResultKeyResponse<ListIngestionJobsResponse, IngestionJobSummary>(this, (i) => i.IngestionJobSummaries);
+            new PaginatedResultKeyResponse<ListIngestionJobsResponse, IngestionJobSummary>(this, (i) => i.IngestionJobSummaries ?? new List<IngestionJobSummary>());
 
         internal ListIngestionJobsPaginator(IAmazonBedrockAgent client, ListIngestionJobsRequest request)
         {

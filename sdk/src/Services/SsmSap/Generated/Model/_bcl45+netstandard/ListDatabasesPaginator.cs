@@ -45,7 +45,7 @@ namespace Amazon.SsmSap.Model
         /// Enumerable containing all of the Databases
         /// </summary>
         public IPaginatedEnumerable<DatabaseSummary> Databases => 
-            new PaginatedResultKeyResponse<ListDatabasesResponse, DatabaseSummary>(this, (i) => i.Databases);
+            new PaginatedResultKeyResponse<ListDatabasesResponse, DatabaseSummary>(this, (i) => i.Databases ?? new List<DatabaseSummary>());
 
         internal ListDatabasesPaginator(IAmazonSsmSap client, ListDatabasesRequest request)
         {

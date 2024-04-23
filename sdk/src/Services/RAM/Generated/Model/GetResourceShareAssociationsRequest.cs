@@ -41,7 +41,7 @@ namespace Amazon.RAM.Model
         private string _nextToken;
         private string _principal;
         private string _resourceArn;
-        private List<string> _resourceShareArns = new List<string>();
+        private List<string> _resourceShareArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssociationStatus. 
@@ -201,7 +201,7 @@ namespace Amazon.RAM.Model
         // Check to see if ResourceShareArns property is set
         internal bool IsSetResourceShareArns()
         {
-            return this._resourceShareArns != null && this._resourceShareArns.Count > 0; 
+            return this._resourceShareArns != null && (this._resourceShareArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

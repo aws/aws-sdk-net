@@ -33,7 +33,7 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class ProductInformation
     {
-        private List<ProductInformationFilter> _productInformationFilterList = new List<ProductInformationFilter>();
+        private List<ProductInformationFilter> _productInformationFilterList = AWSConfigs.InitializeCollections ? new List<ProductInformationFilter>() : null;
         private string _resourceType;
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if ProductInformationFilterList property is set
         internal bool IsSetProductInformationFilterList()
         {
-            return this._productInformationFilterList != null && this._productInformationFilterList.Count > 0; 
+            return this._productInformationFilterList != null && (this._productInformationFilterList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

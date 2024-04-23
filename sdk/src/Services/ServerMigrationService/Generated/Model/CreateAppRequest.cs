@@ -39,8 +39,8 @@ namespace Amazon.ServerMigrationService.Model
         private string _description;
         private string _name;
         private string _roleName;
-        private List<ServerGroup> _serverGroups = new List<ServerGroup>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<ServerGroup> _serverGroups = AWSConfigs.InitializeCollections ? new List<ServerGroup>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -131,7 +131,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ServerGroups property is set
         internal bool IsSetServerGroups()
         {
-            return this._serverGroups != null && this._serverGroups.Count > 0; 
+            return this._serverGroups != null && (this._serverGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Ipv6Pools
         /// </summary>
         public IPaginatedEnumerable<Ipv6Pool> Ipv6Pools => 
-            new PaginatedResultKeyResponse<DescribeIpv6PoolsResponse, Ipv6Pool>(this, (i) => i.Ipv6Pools);
+            new PaginatedResultKeyResponse<DescribeIpv6PoolsResponse, Ipv6Pool>(this, (i) => i.Ipv6Pools ?? new List<Ipv6Pool>());
 
         internal DescribeIpv6PoolsPaginator(IAmazonEC2 client, DescribeIpv6PoolsRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetActiveNamesResponse : AmazonWebServiceResponse
     {
-        private List<string> _activeNames = new List<string>();
+        private List<string> _activeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ActiveNames property is set
         internal bool IsSetActiveNames()
         {
-            return this._activeNames != null && this._activeNames.Count > 0; 
+            return this._activeNames != null && (this._activeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

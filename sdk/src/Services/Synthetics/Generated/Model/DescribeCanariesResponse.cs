@@ -33,7 +33,7 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class DescribeCanariesResponse : AmazonWebServiceResponse
     {
-        private List<Canary> _canaries = new List<Canary>();
+        private List<Canary> _canaries = AWSConfigs.InitializeCollections ? new List<Canary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Synthetics.Model
         // Check to see if Canaries property is set
         internal bool IsSetCanaries()
         {
-            return this._canaries != null && this._canaries.Count > 0; 
+            return this._canaries != null && (this._canaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

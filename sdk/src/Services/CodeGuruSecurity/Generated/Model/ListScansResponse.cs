@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruSecurity.Model
     public partial class ListScansResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScanSummary> _summaries = new List<ScanSummary>();
+        private List<ScanSummary> _summaries = AWSConfigs.InitializeCollections ? new List<ScanSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if Summaries property is set
         internal bool IsSetSummaries()
         {
-            return this._summaries != null && this._summaries.Count > 0; 
+            return this._summaries != null && (this._summaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

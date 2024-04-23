@@ -36,7 +36,7 @@ namespace Amazon.DirectoryService.Model
     {
         private string _accountId;
         private string _directoryId;
-        private List<string> _dnsIpAddrs = new List<string>();
+        private List<string> _dnsIpAddrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RadiusSettings _radiusSettings;
         private RadiusStatus _radiusStatus;
         private DirectoryVpcSettingsDescription _vpcSettings;
@@ -92,7 +92,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if DnsIpAddrs property is set
         internal bool IsSetDnsIpAddrs()
         {
-            return this._dnsIpAddrs != null && this._dnsIpAddrs.Count > 0; 
+            return this._dnsIpAddrs != null && (this._dnsIpAddrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

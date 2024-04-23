@@ -83,7 +83,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class AttributeFilter
     {
-        private List<AttributeFilter> _andAllFilters = new List<AttributeFilter>();
+        private List<AttributeFilter> _andAllFilters = AWSConfigs.InitializeCollections ? new List<AttributeFilter>() : null;
         private DocumentAttribute _containsAll;
         private DocumentAttribute _containsAny;
         private DocumentAttribute _equalsTo;
@@ -92,7 +92,7 @@ namespace Amazon.Kendra.Model
         private DocumentAttribute _lessThan;
         private DocumentAttribute _lessThanOrEquals;
         private AttributeFilter _notFilter;
-        private List<AttributeFilter> _orAllFilters = new List<AttributeFilter>();
+        private List<AttributeFilter> _orAllFilters = AWSConfigs.InitializeCollections ? new List<AttributeFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property AndAllFilters. 
@@ -109,7 +109,7 @@ namespace Amazon.Kendra.Model
         // Check to see if AndAllFilters property is set
         internal bool IsSetAndAllFilters()
         {
-            return this._andAllFilters != null && this._andAllFilters.Count > 0; 
+            return this._andAllFilters != null && (this._andAllFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -281,7 +281,7 @@ namespace Amazon.Kendra.Model
         // Check to see if OrAllFilters property is set
         internal bool IsSetOrAllFilters()
         {
-            return this._orAllFilters != null && this._orAllFilters.Count > 0; 
+            return this._orAllFilters != null && (this._orAllFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

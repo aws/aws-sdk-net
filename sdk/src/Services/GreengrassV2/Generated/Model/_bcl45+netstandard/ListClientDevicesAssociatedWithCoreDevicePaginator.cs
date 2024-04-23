@@ -45,7 +45,7 @@ namespace Amazon.GreengrassV2.Model
         /// Enumerable containing all of the AssociatedClientDevices
         /// </summary>
         public IPaginatedEnumerable<AssociatedClientDevice> AssociatedClientDevices => 
-            new PaginatedResultKeyResponse<ListClientDevicesAssociatedWithCoreDeviceResponse, AssociatedClientDevice>(this, (i) => i.AssociatedClientDevices);
+            new PaginatedResultKeyResponse<ListClientDevicesAssociatedWithCoreDeviceResponse, AssociatedClientDevice>(this, (i) => i.AssociatedClientDevices ?? new List<AssociatedClientDevice>());
 
         internal ListClientDevicesAssociatedWithCoreDevicePaginator(IAmazonGreengrassV2 client, ListClientDevicesAssociatedWithCoreDeviceRequest request)
         {

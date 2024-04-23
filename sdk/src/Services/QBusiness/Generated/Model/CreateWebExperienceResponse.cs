@@ -39,7 +39,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property WebExperienceArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of an Amazon Q web experience.
+        ///  The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -58,7 +58,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property WebExperienceId. 
         /// <para>
-        /// The identifier of the Amazon Q web experience.
+        /// The identifier of the Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

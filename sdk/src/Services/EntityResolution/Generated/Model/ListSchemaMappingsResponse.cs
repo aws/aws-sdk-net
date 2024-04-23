@@ -34,7 +34,7 @@ namespace Amazon.EntityResolution.Model
     public partial class ListSchemaMappingsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SchemaMappingSummary> _schemaList = new List<SchemaMappingSummary>();
+        private List<SchemaMappingSummary> _schemaList = AWSConfigs.InitializeCollections ? new List<SchemaMappingSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if SchemaList property is set
         internal bool IsSetSchemaList()
         {
-            return this._schemaList != null && this._schemaList.Count > 0; 
+            return this._schemaList != null && (this._schemaList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

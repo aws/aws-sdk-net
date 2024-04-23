@@ -45,7 +45,7 @@ namespace Amazon.SSMContacts.Model
         /// Enumerable containing all of the RotationShifts
         /// </summary>
         public IPaginatedEnumerable<RotationShift> RotationShifts => 
-            new PaginatedResultKeyResponse<ListPreviewRotationShiftsResponse, RotationShift>(this, (i) => i.RotationShifts);
+            new PaginatedResultKeyResponse<ListPreviewRotationShiftsResponse, RotationShift>(this, (i) => i.RotationShifts ?? new List<RotationShift>());
 
         internal ListPreviewRotationShiftsPaginator(IAmazonSSMContacts client, ListPreviewRotationShiftsRequest request)
         {

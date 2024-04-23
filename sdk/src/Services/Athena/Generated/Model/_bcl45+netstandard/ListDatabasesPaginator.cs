@@ -45,7 +45,7 @@ namespace Amazon.Athena.Model
         /// Enumerable containing all of the DatabaseList
         /// </summary>
         public IPaginatedEnumerable<Database> DatabaseList => 
-            new PaginatedResultKeyResponse<ListDatabasesResponse, Database>(this, (i) => i.DatabaseList);
+            new PaginatedResultKeyResponse<ListDatabasesResponse, Database>(this, (i) => i.DatabaseList ?? new List<Database>());
 
         internal ListDatabasesPaginator(IAmazonAthena client, ListDatabasesRequest request)
         {

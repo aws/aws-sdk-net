@@ -36,15 +36,15 @@ namespace Amazon.MigrationHubOrchestrator.Model
         private DateTime? _creationTime;
         private string _description;
         private string _id;
-        private List<TemplateInput> _inputs = new List<TemplateInput>();
+        private List<TemplateInput> _inputs = AWSConfigs.InitializeCollections ? new List<TemplateInput>() : null;
         private string _name;
         private string _owner;
         private TemplateStatus _status;
         private string _statusMessage;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _templateArn;
         private string _templateClass;
-        private List<Tool> _tools = new List<Tool>();
+        private List<Tool> _tools = AWSConfigs.InitializeCollections ? new List<Tool>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -115,7 +115,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -287,7 +287,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Tools property is set
         internal bool IsSetTools()
         {
-            return this._tools != null && this._tools.Count > 0; 
+            return this._tools != null && (this._tools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

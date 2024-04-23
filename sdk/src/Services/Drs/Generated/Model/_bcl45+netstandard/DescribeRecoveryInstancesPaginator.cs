@@ -45,7 +45,7 @@ namespace Amazon.Drs.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<RecoveryInstance> Items => 
-            new PaginatedResultKeyResponse<DescribeRecoveryInstancesResponse, RecoveryInstance>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<DescribeRecoveryInstancesResponse, RecoveryInstance>(this, (i) => i.Items ?? new List<RecoveryInstance>());
 
         internal DescribeRecoveryInstancesPaginator(IAmazonDrs client, DescribeRecoveryInstancesRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class ListGatewayGroupsResponse : AmazonWebServiceResponse
     {
-        private List<GatewayGroupSummary> _gatewayGroups = new List<GatewayGroupSummary>();
+        private List<GatewayGroupSummary> _gatewayGroups = AWSConfigs.InitializeCollections ? new List<GatewayGroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if GatewayGroups property is set
         internal bool IsSetGatewayGroups()
         {
-            return this._gatewayGroups != null && this._gatewayGroups.Count > 0; 
+            return this._gatewayGroups != null && (this._gatewayGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

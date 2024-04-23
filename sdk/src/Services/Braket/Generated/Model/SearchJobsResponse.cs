@@ -33,7 +33,7 @@ namespace Amazon.Braket.Model
     /// </summary>
     public partial class SearchJobsResponse : AmazonWebServiceResponse
     {
-        private List<JobSummary> _jobs = new List<JobSummary>();
+        private List<JobSummary> _jobs = AWSConfigs.InitializeCollections ? new List<JobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Braket.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

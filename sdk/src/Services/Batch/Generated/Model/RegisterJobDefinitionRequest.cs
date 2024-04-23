@@ -39,12 +39,12 @@ namespace Amazon.Batch.Model
         private EksProperties _eksProperties;
         private string _jobDefinitionName;
         private NodeProperties _nodeProperties;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
-        private List<string> _platformCapabilities = new List<string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _platformCapabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
         private int? _schedulingPriority;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private JobTimeout _timeout;
         private JobDefinitionType _type;
 
@@ -181,7 +181,7 @@ namespace Amazon.Batch.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace Amazon.Batch.Model
         // Check to see if PlatformCapabilities property is set
         internal bool IsSetPlatformCapabilities()
         {
-            return this._platformCapabilities != null && this._platformCapabilities.Count > 0; 
+            return this._platformCapabilities != null && (this._platformCapabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -300,7 +300,7 @@ namespace Amazon.Batch.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

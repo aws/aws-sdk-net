@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ListCommandInvocationsResponse : AmazonWebServiceResponse
     {
-        private List<CommandInvocation> _commandInvocations = new List<CommandInvocation>();
+        private List<CommandInvocation> _commandInvocations = AWSConfigs.InitializeCollections ? new List<CommandInvocation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if CommandInvocations property is set
         internal bool IsSetCommandInvocations()
         {
-            return this._commandInvocations != null && this._commandInvocations.Count > 0; 
+            return this._commandInvocations != null && (this._commandInvocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

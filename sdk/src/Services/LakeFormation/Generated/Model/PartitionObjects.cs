@@ -33,8 +33,8 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class PartitionObjects
     {
-        private List<TableObject> _objects = new List<TableObject>();
-        private List<string> _partitionValues = new List<string>();
+        private List<TableObject> _objects = AWSConfigs.InitializeCollections ? new List<TableObject>() : null;
+        private List<string> _partitionValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Objects. 
@@ -51,7 +51,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if Objects property is set
         internal bool IsSetObjects()
         {
-            return this._objects != null && this._objects.Count > 0; 
+            return this._objects != null && (this._objects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if PartitionValues property is set
         internal bool IsSetPartitionValues()
         {
-            return this._partitionValues != null && this._partitionValues.Count > 0; 
+            return this._partitionValues != null && (this._partitionValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class CreateTopicRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TopicDetails _topic;
         private string _topicId;
 
@@ -75,7 +75,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

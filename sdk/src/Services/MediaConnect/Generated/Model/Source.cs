@@ -40,7 +40,7 @@ namespace Amazon.MediaConnect.Model
         private GatewayBridgeSource _gatewayBridgeSource;
         private string _ingestIp;
         private int? _ingestPort;
-        private List<MediaStreamSourceConfiguration> _mediaStreamSourceConfigurations = new List<MediaStreamSourceConfiguration>();
+        private List<MediaStreamSourceConfiguration> _mediaStreamSourceConfigurations = AWSConfigs.InitializeCollections ? new List<MediaStreamSourceConfiguration>() : null;
         private string _name;
         private int? _senderControlPort;
         private string _senderIpAddress;
@@ -176,7 +176,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if MediaStreamSourceConfigurations property is set
         internal bool IsSetMediaStreamSourceConfigurations()
         {
-            return this._mediaStreamSourceConfigurations != null && this._mediaStreamSourceConfigurations.Count > 0; 
+            return this._mediaStreamSourceConfigurations != null && (this._mediaStreamSourceConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

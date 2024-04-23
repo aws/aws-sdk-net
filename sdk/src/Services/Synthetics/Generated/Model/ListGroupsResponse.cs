@@ -33,7 +33,7 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class ListGroupsResponse : AmazonWebServiceResponse
     {
-        private List<GroupSummary> _groups = new List<GroupSummary>();
+        private List<GroupSummary> _groups = AWSConfigs.InitializeCollections ? new List<GroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Synthetics.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

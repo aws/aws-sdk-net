@@ -34,7 +34,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class ListRegistrationAssociationsRequest : AmazonPinpointSMSVoiceV2Request
     {
-        private List<RegistrationAssociationFilter> _filters = new List<RegistrationAssociationFilter>();
+        private List<RegistrationAssociationFilter> _filters = AWSConfigs.InitializeCollections ? new List<RegistrationAssociationFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _registrationId;
@@ -55,7 +55,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

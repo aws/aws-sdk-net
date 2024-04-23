@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class CustomDataIdentifiers
     {
-        private List<CustomDetection> _detections = new List<CustomDetection>();
+        private List<CustomDetection> _detections = AWSConfigs.InitializeCollections ? new List<CustomDetection>() : null;
         private long? _totalCount;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Detections property is set
         internal bool IsSetDetections()
         {
-            return this._detections != null && this._detections.Count > 0; 
+            return this._detections != null && (this._detections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

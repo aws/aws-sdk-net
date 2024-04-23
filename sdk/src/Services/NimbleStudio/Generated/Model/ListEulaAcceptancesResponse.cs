@@ -33,7 +33,7 @@ namespace Amazon.NimbleStudio.Model
     /// </summary>
     public partial class ListEulaAcceptancesResponse : AmazonWebServiceResponse
     {
-        private List<EulaAcceptance> _eulaAcceptances = new List<EulaAcceptance>();
+        private List<EulaAcceptance> _eulaAcceptances = AWSConfigs.InitializeCollections ? new List<EulaAcceptance>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if EulaAcceptances property is set
         internal bool IsSetEulaAcceptances()
         {
-            return this._eulaAcceptances != null && this._eulaAcceptances.Count > 0; 
+            return this._eulaAcceptances != null && (this._eulaAcceptances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

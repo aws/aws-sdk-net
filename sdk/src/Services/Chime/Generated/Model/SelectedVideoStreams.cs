@@ -34,8 +34,8 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class SelectedVideoStreams
     {
-        private List<string> _attendeeIds = new List<string>();
-        private List<string> _externalUserIds = new List<string>();
+        private List<string> _attendeeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _externalUserIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AttendeeIds. 
@@ -53,7 +53,7 @@ namespace Amazon.Chime.Model
         // Check to see if AttendeeIds property is set
         internal bool IsSetAttendeeIds()
         {
-            return this._attendeeIds != null && this._attendeeIds.Count > 0; 
+            return this._attendeeIds != null && (this._attendeeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Chime.Model
         // Check to see if ExternalUserIds property is set
         internal bool IsSetExternalUserIds()
         {
-            return this._externalUserIds != null && this._externalUserIds.Count > 0; 
+            return this._externalUserIds != null && (this._externalUserIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

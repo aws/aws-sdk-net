@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListProcessingJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProcessingJobSummary> _processingJobSummaries = new List<ProcessingJobSummary>();
+        private List<ProcessingJobSummary> _processingJobSummaries = AWSConfigs.InitializeCollections ? new List<ProcessingJobSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProcessingJobSummaries property is set
         internal bool IsSetProcessingJobSummaries()
         {
-            return this._processingJobSummaries != null && this._processingJobSummaries.Count > 0; 
+            return this._processingJobSummaries != null && (this._processingJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

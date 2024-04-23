@@ -34,10 +34,10 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateModelPackageRequest : AmazonSageMakerRequest
     {
-        private List<AdditionalInferenceSpecificationDefinition> _additionalInferenceSpecificationsToAdd = new List<AdditionalInferenceSpecificationDefinition>();
+        private List<AdditionalInferenceSpecificationDefinition> _additionalInferenceSpecificationsToAdd = AWSConfigs.InitializeCollections ? new List<AdditionalInferenceSpecificationDefinition>() : null;
         private string _approvalDescription;
-        private Dictionary<string, string> _customerMetadataProperties = new Dictionary<string, string>();
-        private List<string> _customerMetadataPropertiesToRemove = new List<string>();
+        private Dictionary<string, string> _customerMetadataProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _customerMetadataPropertiesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private InferenceSpecification _inferenceSpecification;
         private ModelApprovalStatus _modelApprovalStatus;
         private string _modelPackageArn;
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AdditionalInferenceSpecificationsToAdd property is set
         internal bool IsSetAdditionalInferenceSpecificationsToAdd()
         {
-            return this._additionalInferenceSpecificationsToAdd != null && this._additionalInferenceSpecificationsToAdd.Count > 0; 
+            return this._additionalInferenceSpecificationsToAdd != null && (this._additionalInferenceSpecificationsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CustomerMetadataProperties property is set
         internal bool IsSetCustomerMetadataProperties()
         {
-            return this._customerMetadataProperties != null && this._customerMetadataProperties.Count > 0; 
+            return this._customerMetadataProperties != null && (this._customerMetadataProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CustomerMetadataPropertiesToRemove property is set
         internal bool IsSetCustomerMetadataPropertiesToRemove()
         {
-            return this._customerMetadataPropertiesToRemove != null && this._customerMetadataPropertiesToRemove.Count > 0; 
+            return this._customerMetadataPropertiesToRemove != null && (this._customerMetadataPropertiesToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

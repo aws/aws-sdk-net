@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class UpdateCaseActionDefinition
     {
-        private List<FieldValue> _fields = new List<FieldValue>();
+        private List<FieldValue> _fields = AWSConfigs.InitializeCollections ? new List<FieldValue>() : null;
 
         /// <summary>
         /// Gets and sets the property Fields. 
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

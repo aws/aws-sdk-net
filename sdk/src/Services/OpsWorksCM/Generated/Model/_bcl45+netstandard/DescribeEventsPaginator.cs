@@ -45,7 +45,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Enumerable containing all of the ServerEvents
         /// </summary>
         public IPaginatedEnumerable<ServerEvent> ServerEvents => 
-            new PaginatedResultKeyResponse<DescribeEventsResponse, ServerEvent>(this, (i) => i.ServerEvents);
+            new PaginatedResultKeyResponse<DescribeEventsResponse, ServerEvent>(this, (i) => i.ServerEvents ?? new List<ServerEvent>());
 
         internal DescribeEventsPaginator(IAmazonOpsWorksCM client, DescribeEventsRequest request)
         {

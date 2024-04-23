@@ -33,7 +33,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class ListTrackerConsumersResponse : AmazonWebServiceResponse
     {
-        private List<string> _consumerArns = new List<string>();
+        private List<string> _consumerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.LocationService.Model
         // Check to see if ConsumerArns property is set
         internal bool IsSetConsumerArns()
         {
-            return this._consumerArns != null && this._consumerArns.Count > 0; 
+            return this._consumerArns != null && (this._consumerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

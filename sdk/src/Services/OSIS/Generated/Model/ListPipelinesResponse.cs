@@ -34,7 +34,7 @@ namespace Amazon.OSIS.Model
     public partial class ListPipelinesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PipelineSummary> _pipelines = new List<PipelineSummary>();
+        private List<PipelineSummary> _pipelines = AWSConfigs.InitializeCollections ? new List<PipelineSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.OSIS.Model
         // Check to see if Pipelines property is set
         internal bool IsSetPipelines()
         {
-            return this._pipelines != null && this._pipelines.Count > 0; 
+            return this._pipelines != null && (this._pipelines.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

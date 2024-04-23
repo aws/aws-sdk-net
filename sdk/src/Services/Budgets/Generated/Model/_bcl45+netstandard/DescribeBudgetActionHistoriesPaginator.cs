@@ -45,7 +45,7 @@ namespace Amazon.Budgets.Model
         /// Enumerable containing all of the ActionHistories
         /// </summary>
         public IPaginatedEnumerable<ActionHistory> ActionHistories => 
-            new PaginatedResultKeyResponse<DescribeBudgetActionHistoriesResponse, ActionHistory>(this, (i) => i.ActionHistories);
+            new PaginatedResultKeyResponse<DescribeBudgetActionHistoriesResponse, ActionHistory>(this, (i) => i.ActionHistories ?? new List<ActionHistory>());
 
         internal DescribeBudgetActionHistoriesPaginator(IAmazonBudgets client, DescribeBudgetActionHistoriesRequest request)
         {

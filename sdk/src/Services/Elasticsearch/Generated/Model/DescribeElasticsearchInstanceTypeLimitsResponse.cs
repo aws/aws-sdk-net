@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class DescribeElasticsearchInstanceTypeLimitsResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, Limits> _limitsByRole = new Dictionary<string, Limits>();
+        private Dictionary<string, Limits> _limitsByRole = AWSConfigs.InitializeCollections ? new Dictionary<string, Limits>() : null;
 
         /// <summary>
         /// Gets and sets the property LimitsByRole.
@@ -48,7 +48,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if LimitsByRole property is set
         internal bool IsSetLimitsByRole()
         {
-            return this._limitsByRole != null && this._limitsByRole.Count > 0; 
+            return this._limitsByRole != null && (this._limitsByRole.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

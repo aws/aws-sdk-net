@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all of the Deliveries
         /// </summary>
         public IPaginatedEnumerable<Delivery> Deliveries => 
-            new PaginatedResultKeyResponse<DescribeDeliveriesResponse, Delivery>(this, (i) => i.Deliveries);
+            new PaginatedResultKeyResponse<DescribeDeliveriesResponse, Delivery>(this, (i) => i.Deliveries ?? new List<Delivery>());
 
         internal DescribeDeliveriesPaginator(IAmazonCloudWatchLogs client, DescribeDeliveriesRequest request)
         {

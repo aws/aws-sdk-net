@@ -34,7 +34,7 @@ namespace Amazon.PinpointEmail.Model
     /// </summary>
     public partial class ListEmailIdentitiesResponse : AmazonWebServiceResponse
     {
-        private List<IdentityInfo> _emailIdentities = new List<IdentityInfo>();
+        private List<IdentityInfo> _emailIdentities = AWSConfigs.InitializeCollections ? new List<IdentityInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if EmailIdentities property is set
         internal bool IsSetEmailIdentities()
         {
-            return this._emailIdentities != null && this._emailIdentities.Count > 0; 
+            return this._emailIdentities != null && (this._emailIdentities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

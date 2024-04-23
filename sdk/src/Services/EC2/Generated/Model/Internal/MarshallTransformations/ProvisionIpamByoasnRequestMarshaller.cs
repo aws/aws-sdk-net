@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,21 +63,26 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Asn", StringUtils.FromString(publicRequest.Asn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAsnAuthorizationContext())
                 {
                     if(publicRequest.AsnAuthorizationContext.IsSetMessage())
                     {
                         request.Parameters.Add("AsnAuthorizationContext" + "." + "Message", StringUtils.FromString(publicRequest.AsnAuthorizationContext.Message));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.AsnAuthorizationContext.IsSetSignature())
                     {
                         request.Parameters.Add("AsnAuthorizationContext" + "." + "Signature", StringUtils.FromString(publicRequest.AsnAuthorizationContext.Signature));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpamId())
                 {
                     request.Parameters.Add("IpamId", StringUtils.FromString(publicRequest.IpamId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

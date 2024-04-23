@@ -35,9 +35,9 @@ namespace Amazon.Transfer.Model
     public partial class CreateProfileRequest : AmazonTransferRequest
     {
         private string _as2Id;
-        private List<string> _certificateIds = new List<string>();
+        private List<string> _certificateIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ProfileType _profileType;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property As2Id. 
@@ -78,7 +78,7 @@ namespace Amazon.Transfer.Model
         // Check to see if CertificateIds property is set
         internal bool IsSetCertificateIds()
         {
-            return this._certificateIds != null && this._certificateIds.Count > 0; 
+            return this._certificateIds != null && (this._certificateIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

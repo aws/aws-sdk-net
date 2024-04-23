@@ -30,15 +30,15 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds one or more key-value tags to a Kinesis Data Analytics application. Note that
-    /// the maximum number of application tags includes system tags. The maximum number of
-    /// user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+    /// Adds one or more key-value tags to a Managed Service for Apache Flink application.
+    /// Note that the maximum number of application tags includes system tags. The maximum
+    /// number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
     /// Tagging</a>.
     /// </summary>
     public partial class TagResourceRequest : AmazonKinesisAnalyticsV2Request
     {
         private string _resourceARN;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
@@ -75,7 +75,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

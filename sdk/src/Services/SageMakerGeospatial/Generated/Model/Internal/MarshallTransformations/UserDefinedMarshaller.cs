@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UserDefined requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("Unit");
@@ -54,7 +57,14 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Value);
+                }
             }
 
         }
@@ -66,3 +76,4 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

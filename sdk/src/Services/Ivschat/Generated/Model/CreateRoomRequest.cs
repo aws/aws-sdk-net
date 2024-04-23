@@ -34,12 +34,12 @@ namespace Amazon.Ivschat.Model
     /// </summary>
     public partial class CreateRoomRequest : AmazonIvschatRequest
     {
-        private List<string> _loggingConfigurationIdentifiers = new List<string>();
+        private List<string> _loggingConfigurationIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maximumMessageLength;
         private int? _maximumMessageRatePerSecond;
         private MessageReviewHandler _messageReviewHandler;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property LoggingConfigurationIdentifiers. 
@@ -57,7 +57,7 @@ namespace Amazon.Ivschat.Model
         // Check to see if LoggingConfigurationIdentifiers property is set
         internal bool IsSetLoggingConfigurationIdentifiers()
         {
-            return this._loggingConfigurationIdentifiers != null && this._loggingConfigurationIdentifiers.Count > 0; 
+            return this._loggingConfigurationIdentifiers != null && (this._loggingConfigurationIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Amazon.Ivschat.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

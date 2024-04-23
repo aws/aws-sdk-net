@@ -39,6 +39,7 @@ namespace Amazon.WAFV2.Model
     #endif
     public partial class WAFLimitsExceededException : AmazonWAFV2Exception
     {
+        private string _sourceType;
 
         /// <summary>
         /// Constructs a new WAFLimitsExceededException with the specified error
@@ -100,6 +101,7 @@ namespace Amazon.WAFV2.Model
         protected WAFLimitsExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.SourceType = (string)info.GetValue("SourceType", typeof(string));
         }
 
         /// <summary>
@@ -120,8 +122,27 @@ namespace Amazon.WAFV2.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("SourceType", this.SourceType);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// Source type for the exception. 
+        /// </para>
+        /// </summary>
+        public string SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
+        }
 
     }
 }

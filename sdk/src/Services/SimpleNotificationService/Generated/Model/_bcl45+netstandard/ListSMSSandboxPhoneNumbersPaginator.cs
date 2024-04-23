@@ -45,7 +45,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Enumerable containing all of the PhoneNumbers
         /// </summary>
         public IPaginatedEnumerable<SMSSandboxPhoneNumber> PhoneNumbers => 
-            new PaginatedResultKeyResponse<ListSMSSandboxPhoneNumbersResponse, SMSSandboxPhoneNumber>(this, (i) => i.PhoneNumbers);
+            new PaginatedResultKeyResponse<ListSMSSandboxPhoneNumbersResponse, SMSSandboxPhoneNumber>(this, (i) => i.PhoneNumbers ?? new List<SMSSandboxPhoneNumber>());
 
         internal ListSMSSandboxPhoneNumbersPaginator(IAmazonSimpleNotificationService client, ListSMSSandboxPhoneNumbersRequest request)
         {

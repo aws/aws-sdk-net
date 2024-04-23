@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the TransitGatewayPolicyTables
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayPolicyTable> TransitGatewayPolicyTables => 
-            new PaginatedResultKeyResponse<DescribeTransitGatewayPolicyTablesResponse, TransitGatewayPolicyTable>(this, (i) => i.TransitGatewayPolicyTables);
+            new PaginatedResultKeyResponse<DescribeTransitGatewayPolicyTablesResponse, TransitGatewayPolicyTable>(this, (i) => i.TransitGatewayPolicyTables ?? new List<TransitGatewayPolicyTable>());
 
         internal DescribeTransitGatewayPolicyTablesPaginator(IAmazonEC2 client, DescribeTransitGatewayPolicyTablesRequest request)
         {

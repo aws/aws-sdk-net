@@ -56,7 +56,7 @@ namespace Amazon.TranscribeService.Model
     public partial class CreateMedicalVocabularyRequest : AmazonTranscribeServiceRequest
     {
         private LanguageCode _languageCode;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vocabularyFileUri;
         private string _vocabularyName;
 
@@ -102,7 +102,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

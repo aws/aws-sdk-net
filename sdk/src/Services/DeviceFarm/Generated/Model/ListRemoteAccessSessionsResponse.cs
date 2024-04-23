@@ -35,7 +35,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListRemoteAccessSessionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RemoteAccessSession> _remoteAccessSessions = new List<RemoteAccessSession>();
+        private List<RemoteAccessSession> _remoteAccessSessions = AWSConfigs.InitializeCollections ? new List<RemoteAccessSession>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if RemoteAccessSessions property is set
         internal bool IsSetRemoteAccessSessions()
         {
-            return this._remoteAccessSessions != null && this._remoteAccessSessions.Count > 0; 
+            return this._remoteAccessSessions != null && (this._remoteAccessSessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

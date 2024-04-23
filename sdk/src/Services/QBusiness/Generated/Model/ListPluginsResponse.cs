@@ -34,14 +34,14 @@ namespace Amazon.QBusiness.Model
     public partial class ListPluginsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Plugin> _plugins = new List<Plugin>();
+        private List<Plugin> _plugins = AWSConfigs.InitializeCollections ? new List<Plugin>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the <c>maxResults</c> response was incomplete because there is more data to retrieve,
-        /// Amazon Q returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of plugins.
+        /// Amazon Q Business returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of plugins.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]
@@ -72,7 +72,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Plugins property is set
         internal bool IsSetPlugins()
         {
-            return this._plugins != null && this._plugins.Count > 0; 
+            return this._plugins != null && (this._plugins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

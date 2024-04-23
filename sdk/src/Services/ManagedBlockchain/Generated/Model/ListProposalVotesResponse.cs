@@ -34,7 +34,7 @@ namespace Amazon.ManagedBlockchain.Model
     public partial class ListProposalVotesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VoteSummary> _proposalVotes = new List<VoteSummary>();
+        private List<VoteSummary> _proposalVotes = AWSConfigs.InitializeCollections ? new List<VoteSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ManagedBlockchain.Model
         // Check to see if ProposalVotes property is set
         internal bool IsSetProposalVotes()
         {
-            return this._proposalVotes != null && this._proposalVotes.Count > 0; 
+            return this._proposalVotes != null && (this._proposalVotes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

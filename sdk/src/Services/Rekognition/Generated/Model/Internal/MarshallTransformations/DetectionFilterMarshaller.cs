@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,22 +46,45 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DetectionFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMinBoundingBoxHeight())
             {
                 context.Writer.WritePropertyName("MinBoundingBoxHeight");
-                context.Writer.Write(requestObject.MinBoundingBoxHeight);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinBoundingBoxHeight))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinBoundingBoxHeight));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinBoundingBoxHeight);
+                }
             }
 
             if(requestObject.IsSetMinBoundingBoxWidth())
             {
                 context.Writer.WritePropertyName("MinBoundingBoxWidth");
-                context.Writer.Write(requestObject.MinBoundingBoxWidth);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinBoundingBoxWidth))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinBoundingBoxWidth));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinBoundingBoxWidth);
+                }
             }
 
             if(requestObject.IsSetMinConfidence())
             {
                 context.Writer.WritePropertyName("MinConfidence");
-                context.Writer.Write(requestObject.MinConfidence);
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinConfidence))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinConfidence));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinConfidence);
+                }
             }
 
         }
@@ -72,3 +96,4 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

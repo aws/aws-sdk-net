@@ -34,12 +34,12 @@ namespace Amazon.Elasticsearch.Model
     public partial class ChangeProgressStatusDetails
     {
         private string _changeId;
-        private List<ChangeProgressStage> _changeProgressStages = new List<ChangeProgressStage>();
-        private List<string> _completedProperties = new List<string>();
+        private List<ChangeProgressStage> _changeProgressStages = AWSConfigs.InitializeCollections ? new List<ChangeProgressStage>() : null;
+        private List<string> _completedProperties = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ConfigChangeStatus _configChangeStatus;
         private InitiatedBy _initiatedBy;
         private DateTime? _lastUpdatedTime;
-        private List<string> _pendingProperties = new List<string>();
+        private List<string> _pendingProperties = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _startTime;
         private OverallChangeStatus _status;
         private int? _totalNumberOfStages;
@@ -78,7 +78,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if ChangeProgressStages property is set
         internal bool IsSetChangeProgressStages()
         {
-            return this._changeProgressStages != null && this._changeProgressStages.Count > 0; 
+            return this._changeProgressStages != null && (this._changeProgressStages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if CompletedProperties property is set
         internal bool IsSetCompletedProperties()
         {
-            return this._completedProperties != null && this._completedProperties.Count > 0; 
+            return this._completedProperties != null && (this._completedProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if PendingProperties property is set
         internal bool IsSetPendingProperties()
         {
-            return this._pendingProperties != null && this._pendingProperties.Count > 0; 
+            return this._pendingProperties != null && (this._pendingProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

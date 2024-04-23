@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SchemaChangeRequestDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChanges())
             {
                 context.Writer.WritePropertyName("Changes");
@@ -64,7 +67,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSchemaChangeAt())
             {
                 context.Writer.WritePropertyName("SchemaChangeAt");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.SchemaChangeAt));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.SchemaChangeAt));
             }
 
         }
@@ -76,3 +79,4 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

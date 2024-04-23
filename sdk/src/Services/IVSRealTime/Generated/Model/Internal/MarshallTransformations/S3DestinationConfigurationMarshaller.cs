@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3DestinationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEncoderConfigurationArns())
             {
                 context.Writer.WritePropertyName("encoderConfigurationArns");
@@ -82,3 +85,4 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

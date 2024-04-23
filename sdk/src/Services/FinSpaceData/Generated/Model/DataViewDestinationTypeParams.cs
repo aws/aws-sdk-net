@@ -35,7 +35,7 @@ namespace Amazon.FinSpaceData.Model
     {
         private string _destinationType;
         private ExportFileFormat _s3DestinationExportFileFormat;
-        private Dictionary<string, string> _s3DestinationExportFileFormatOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _s3DestinationExportFileFormatOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property DestinationType. 
@@ -116,7 +116,7 @@ namespace Amazon.FinSpaceData.Model
         // Check to see if S3DestinationExportFileFormatOptions property is set
         internal bool IsSetS3DestinationExportFileFormatOptions()
         {
-            return this._s3DestinationExportFileFormatOptions != null && this._s3DestinationExportFileFormatOptions.Count > 0; 
+            return this._s3DestinationExportFileFormatOptions != null && (this._s3DestinationExportFileFormatOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

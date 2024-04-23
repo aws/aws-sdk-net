@@ -34,7 +34,7 @@ namespace Amazon.SageMakerGeospatial.Model
     public partial class ListVectorEnrichmentJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ListVectorEnrichmentJobOutputConfig> _vectorEnrichmentJobSummaries = new List<ListVectorEnrichmentJobOutputConfig>();
+        private List<ListVectorEnrichmentJobOutputConfig> _vectorEnrichmentJobSummaries = AWSConfigs.InitializeCollections ? new List<ListVectorEnrichmentJobOutputConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if VectorEnrichmentJobSummaries property is set
         internal bool IsSetVectorEnrichmentJobSummaries()
         {
-            return this._vectorEnrichmentJobSummaries != null && this._vectorEnrichmentJobSummaries.Count > 0; 
+            return this._vectorEnrichmentJobSummaries != null && (this._vectorEnrichmentJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -42,7 +42,9 @@ namespace ServiceClientGenerator
 
                 if (string.IsNullOrEmpty(options.SelfServiceModel))
                 {
-                    ConcurrentDictionary<string, string> generatedFiles = new ConcurrentDictionary<string, string>();
+                    ConcurrentDictionary<string, byte> generatedFiles = new ConcurrentDictionary<string, byte>();
+                    ConcurrentDictionary<string, byte> generatedUnitTestFiles = new ConcurrentDictionary<string, byte>();
+                    
                     GeneratorDriver.GenerateCoreProjects(generationManifest, options);
                     GeneratorDriver.GeneratePartitions(options);
                     Console.WriteLine($"Setting MaxDegreeOfParallelism = {Environment.ProcessorCount * 2}");
@@ -61,15 +63,20 @@ namespace ServiceClientGenerator
                         driver.Execute();
                         foreach (var file in driver.FilesWrittenToGeneratorFolder)
                         {
-                            generatedFiles.TryAdd(file, file);
+                            generatedFiles.TryAdd(file, 0);
                         }
-                        GeneratorDriver.UpdateUnitTestProjects(generationManifest, options, driver.ServiceUnitTestFilesRoot, serviceConfig);
+                        var generatedTestFiles = GeneratorDriver.UpdateUnitTestProjects(generationManifest, options, driver.ServiceUnitTestFilesRoot, serviceConfig);
+                        foreach (var file in generatedTestFiles)
+                        {
+                            generatedUnitTestFiles.TryAdd(file, 0);
+                        }                        
                     });
 
-                    var files = new HashSet<string>(generatedFiles.Values);
+                    var files = new HashSet<string>(generatedFiles.Keys);
+                    var testFiles = new HashSet<string>(generatedUnitTestFiles.Keys);
 
                     if (!options.SkipRemoveOrphanCleanup)
-                        GeneratorDriver.RemoveOrphanedShapesAndServices(files, options.SdkRootFolder);
+                        GeneratorDriver.RemoveOrphanedShapesAndServices(files, testFiles, options.SdkRootFolder);
 
                     GeneratorDriver.UpdateUnitTestProjects(generationManifest, options);
                     GeneratorDriver.UpdateSolutionFiles(generationManifest, options);
@@ -106,7 +113,7 @@ namespace ServiceClientGenerator
                     // Skip orphan clean for DynamoDB because of the complex nature of DynamoDB and DynamoDB Streams
                     if (!serviceConfig.ClassName.StartsWith("DynamoDB") && !options.SkipRemoveOrphanCleanup)
                     {
-                        GeneratorDriver.RemoveOrphanedShapes(driver.FilesWrittenToGeneratorFolder, driver.GeneratedFilesRoot);
+                        GeneratorDriver.RemoveOrphanedShapes(driver.FilesWrittenToGeneratorFolder, null, driver.GeneratedFilesRoot);
                     }
                 }
             }

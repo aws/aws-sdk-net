@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the EdgeDeploymentPlanSummaries
         /// </summary>
         public IPaginatedEnumerable<EdgeDeploymentPlanSummary> EdgeDeploymentPlanSummaries => 
-            new PaginatedResultKeyResponse<ListEdgeDeploymentPlansResponse, EdgeDeploymentPlanSummary>(this, (i) => i.EdgeDeploymentPlanSummaries);
+            new PaginatedResultKeyResponse<ListEdgeDeploymentPlansResponse, EdgeDeploymentPlanSummary>(this, (i) => i.EdgeDeploymentPlanSummaries ?? new List<EdgeDeploymentPlanSummary>());
 
         internal ListEdgeDeploymentPlansPaginator(IAmazonSageMaker client, ListEdgeDeploymentPlansRequest request)
         {

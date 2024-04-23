@@ -36,7 +36,7 @@ namespace Amazon.SimpleNotificationService.Model
     {
         private string _id;
         private string _message;
-        private Dictionary<string, MessageAttributeValue> _messageAttributes = new Dictionary<string, MessageAttributeValue>();
+        private Dictionary<string, MessageAttributeValue> _messageAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, MessageAttributeValue>() : null;
         private string _messageDeduplicationId;
         private string _messageGroupId;
         private string _messageStructure;
@@ -107,7 +107,7 @@ namespace Amazon.SimpleNotificationService.Model
         // Check to see if MessageAttributes property is set
         internal bool IsSetMessageAttributes()
         {
-            return this._messageAttributes != null && this._messageAttributes.Count > 0; 
+            return this._messageAttributes != null && (this._messageAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

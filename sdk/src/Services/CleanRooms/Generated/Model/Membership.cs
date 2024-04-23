@@ -42,7 +42,7 @@ namespace Amazon.CleanRooms.Model
         private DateTime? _createTime;
         private MembershipProtectedQueryResultConfiguration _defaultResultConfiguration;
         private string _id;
-        private List<string> _memberAbilities = new List<string>();
+        private List<string> _memberAbilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MembershipPaymentConfiguration _paymentConfiguration;
         private MembershipQueryLogStatus _queryLogStatus;
         private MembershipStatus _status;
@@ -236,7 +236,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if MemberAbilities property is set
         internal bool IsSetMemberAbilities()
         {
-            return this._memberAbilities != null && this._memberAbilities.Count > 0; 
+            return this._memberAbilities != null && (this._memberAbilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

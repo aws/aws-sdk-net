@@ -33,7 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class ListFaqsResponse : AmazonWebServiceResponse
     {
-        private List<FaqSummary> _faqSummaryItems = new List<FaqSummary>();
+        private List<FaqSummary> _faqSummaryItems = AWSConfigs.InitializeCollections ? new List<FaqSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FaqSummaryItems property is set
         internal bool IsSetFaqSummaryItems()
         {
-            return this._faqSummaryItems != null && this._faqSummaryItems.Count > 0; 
+            return this._faqSummaryItems != null && (this._faqSummaryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

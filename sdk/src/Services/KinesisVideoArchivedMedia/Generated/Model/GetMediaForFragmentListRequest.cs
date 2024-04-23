@@ -77,7 +77,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </summary>
     public partial class GetMediaForFragmentListRequest : AmazonKinesisVideoArchivedMediaRequest
     {
-        private List<string> _fragments = new List<string>();
+        private List<string> _fragments = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _streamARN;
         private string _streamName;
 
@@ -98,7 +98,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         // Check to see if Fragments property is set
         internal bool IsSetFragments()
         {
-            return this._fragments != null && this._fragments.Count > 0; 
+            return this._fragments != null && (this._fragments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

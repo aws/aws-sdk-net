@@ -33,7 +33,7 @@ namespace Amazon.KinesisVideoSignalingChannels.Model
     /// </summary>
     public partial class GetIceServerConfigResponse : AmazonWebServiceResponse
     {
-        private List<IceServer> _iceServerList = new List<IceServer>();
+        private List<IceServer> _iceServerList = AWSConfigs.InitializeCollections ? new List<IceServer>() : null;
 
         /// <summary>
         /// Gets and sets the property IceServerList. 
@@ -50,7 +50,7 @@ namespace Amazon.KinesisVideoSignalingChannels.Model
         // Check to see if IceServerList property is set
         internal bool IsSetIceServerList()
         {
-            return this._iceServerList != null && this._iceServerList.Count > 0; 
+            return this._iceServerList != null && (this._iceServerList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

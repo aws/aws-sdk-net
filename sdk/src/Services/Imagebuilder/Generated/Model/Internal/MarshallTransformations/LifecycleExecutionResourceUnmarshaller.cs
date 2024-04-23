@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,6 +76,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("endTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("imageUris", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -97,6 +104,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<LifecycleExecutionSnapshotResource, LifecycleExecutionSnapshotResourceUnmarshaller>(LifecycleExecutionSnapshotResourceUnmarshaller.Instance);
                     unmarshalledObject.Snapshots = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))
@@ -124,3 +137,4 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

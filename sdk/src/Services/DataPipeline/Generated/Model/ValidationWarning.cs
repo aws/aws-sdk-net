@@ -35,7 +35,7 @@ namespace Amazon.DataPipeline.Model
     public partial class ValidationWarning
     {
         private string _id;
-        private List<string> _warnings = new List<string>();
+        private List<string> _warnings = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -71,7 +71,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

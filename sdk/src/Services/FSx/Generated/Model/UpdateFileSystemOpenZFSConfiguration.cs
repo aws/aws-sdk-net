@@ -33,13 +33,13 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class UpdateFileSystemOpenZFSConfiguration
     {
-        private List<string> _addRouteTableIds = new List<string>();
+        private List<string> _addRouteTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _automaticBackupRetentionDays;
         private bool? _copyTagsToBackups;
         private bool? _copyTagsToVolumes;
         private string _dailyAutomaticBackupStartTime;
         private DiskIopsConfiguration _diskIopsConfiguration;
-        private List<string> _removeRouteTableIds = new List<string>();
+        private List<string> _removeRouteTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
 
@@ -60,7 +60,7 @@ namespace Amazon.FSx.Model
         // Check to see if AddRouteTableIds property is set
         internal bool IsSetAddRouteTableIds()
         {
-            return this._addRouteTableIds != null && this._addRouteTableIds.Count > 0; 
+            return this._addRouteTableIds != null && (this._addRouteTableIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.FSx.Model
         // Check to see if RemoveRouteTableIds property is set
         internal bool IsSetRemoveRouteTableIds()
         {
-            return this._removeRouteTableIds != null && this._removeRouteTableIds.Count > 0; 
+            return this._removeRouteTableIds != null && (this._removeRouteTableIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

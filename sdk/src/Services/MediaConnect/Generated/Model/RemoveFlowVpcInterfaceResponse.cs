@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model
     public partial class RemoveFlowVpcInterfaceResponse : AmazonWebServiceResponse
     {
         private string _flowArn;
-        private List<string> _nonDeletedNetworkInterfaceIds = new List<string>();
+        private List<string> _nonDeletedNetworkInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcInterfaceName;
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if NonDeletedNetworkInterfaceIds property is set
         internal bool IsSetNonDeletedNetworkInterfaceIds()
         {
-            return this._nonDeletedNetworkInterfaceIds != null && this._nonDeletedNetworkInterfaceIds.Count > 0; 
+            return this._nonDeletedNetworkInterfaceIds != null && (this._nonDeletedNetworkInterfaceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

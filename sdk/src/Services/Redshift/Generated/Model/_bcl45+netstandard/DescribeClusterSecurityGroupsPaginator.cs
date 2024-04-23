@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the ClusterSecurityGroups
         /// </summary>
         public IPaginatedEnumerable<ClusterSecurityGroup> ClusterSecurityGroups => 
-            new PaginatedResultKeyResponse<DescribeClusterSecurityGroupsResponse, ClusterSecurityGroup>(this, (i) => i.ClusterSecurityGroups);
+            new PaginatedResultKeyResponse<DescribeClusterSecurityGroupsResponse, ClusterSecurityGroup>(this, (i) => i.ClusterSecurityGroups ?? new List<ClusterSecurityGroup>());
 
         internal DescribeClusterSecurityGroupsPaginator(IAmazonRedshift client, DescribeClusterSecurityGroupsRequest request)
         {

@@ -36,7 +36,7 @@ namespace Amazon.NetworkManager.Model
     #endif
     public partial class CoreNetworkPolicyException : AmazonNetworkManagerException
     {
-        private List<CoreNetworkPolicyError> _errors = new List<CoreNetworkPolicyError>();
+        private List<CoreNetworkPolicyError> _errors = AWSConfigs.InitializeCollections ? new List<CoreNetworkPolicyError>() : null;
 
         /// <summary>
         /// Constructs a new CoreNetworkPolicyException with the specified error
@@ -138,7 +138,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

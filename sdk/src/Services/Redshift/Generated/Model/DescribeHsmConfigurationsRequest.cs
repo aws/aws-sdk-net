@@ -53,8 +53,8 @@ namespace Amazon.Redshift.Model
         private string _hsmConfigurationIdentifier;
         private string _marker;
         private int? _maxRecords;
-        private List<string> _tagKeys = new List<string>();
-        private List<string> _tagValues = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _tagValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property HsmConfigurationIdentifier. 
@@ -150,7 +150,7 @@ namespace Amazon.Redshift.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Amazon.Redshift.Model
         // Check to see if TagValues property is set
         internal bool IsSetTagValues()
         {
-            return this._tagValues != null && this._tagValues.Count > 0; 
+            return this._tagValues != null && (this._tagValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

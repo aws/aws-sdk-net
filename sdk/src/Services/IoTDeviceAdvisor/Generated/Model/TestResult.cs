@@ -33,7 +33,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
     /// </summary>
     public partial class TestResult
     {
-        private List<GroupResult> _groups = new List<GroupResult>();
+        private List<GroupResult> _groups = AWSConfigs.InitializeCollections ? new List<GroupResult>() : null;
 
         /// <summary>
         /// Gets and sets the property Groups. 
@@ -50,7 +50,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

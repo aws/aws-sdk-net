@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class BatchDeleteClusterSnapshotsRequest : AmazonRedshiftRequest
     {
-        private List<DeleteClusterSnapshotMessage> _identifiers = new List<DeleteClusterSnapshotMessage>();
+        private List<DeleteClusterSnapshotMessage> _identifiers = AWSConfigs.InitializeCollections ? new List<DeleteClusterSnapshotMessage>() : null;
 
         /// <summary>
         /// Gets and sets the property Identifiers. 
@@ -52,7 +52,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Identifiers property is set
         internal bool IsSetIdentifiers()
         {
-            return this._identifiers != null && this._identifiers.Count > 0; 
+            return this._identifiers != null && (this._identifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

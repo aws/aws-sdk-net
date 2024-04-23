@@ -104,14 +104,14 @@ namespace Amazon.GameLift.Model
         private CertificateConfiguration _certificateConfiguration;
         private ComputeType _computeType;
         private string _description;
-        private List<IpPermission> _ec2InboundPermissions = new List<IpPermission>();
+        private List<IpPermission> _ec2InboundPermissions = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
         private EC2InstanceType _ec2InstanceType;
         private FleetType _fleetType;
         private string _instanceRoleArn;
         private InstanceRoleCredentialsProvider _instanceRoleCredentialsProvider;
-        private List<LocationConfiguration> _locations = new List<LocationConfiguration>();
-        private List<string> _logPaths = new List<string>();
-        private List<string> _metricGroups = new List<string>();
+        private List<LocationConfiguration> _locations = AWSConfigs.InitializeCollections ? new List<LocationConfiguration>() : null;
+        private List<string> _logPaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _metricGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
         private string _peerVpcAwsAccountId;
@@ -121,7 +121,7 @@ namespace Amazon.GameLift.Model
         private string _scriptId;
         private string _serverLaunchParameters;
         private string _serverLaunchPath;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AnywhereConfiguration. 
@@ -256,7 +256,7 @@ namespace Amazon.GameLift.Model
         // Check to see if EC2InboundPermissions property is set
         internal bool IsSetEC2InboundPermissions()
         {
-            return this._ec2InboundPermissions != null && this._ec2InboundPermissions.Count > 0; 
+            return this._ec2InboundPermissions != null && (this._ec2InboundPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -376,7 +376,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Locations property is set
         internal bool IsSetLocations()
         {
-            return this._locations != null && this._locations.Count > 0; 
+            return this._locations != null && (this._locations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -398,7 +398,7 @@ namespace Amazon.GameLift.Model
         // Check to see if LogPaths property is set
         internal bool IsSetLogPaths()
         {
-            return this._logPaths != null && this._logPaths.Count > 0; 
+            return this._logPaths != null && (this._logPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -420,7 +420,7 @@ namespace Amazon.GameLift.Model
         // Check to see if MetricGroups property is set
         internal bool IsSetMetricGroups()
         {
-            return this._metricGroups != null && this._metricGroups.Count > 0; 
+            return this._metricGroups != null && (this._metricGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -646,7 +646,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

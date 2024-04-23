@@ -33,8 +33,8 @@ namespace Amazon.ResourceExplorer2.Model
     /// </summary>
     public partial class BatchGetViewResponse : AmazonWebServiceResponse
     {
-        private List<BatchGetViewError> _errors = new List<BatchGetViewError>();
-        private List<View> _views = new List<View>();
+        private List<BatchGetViewError> _errors = AWSConfigs.InitializeCollections ? new List<BatchGetViewError>() : null;
+        private List<View> _views = AWSConfigs.InitializeCollections ? new List<View>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -52,7 +52,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if Views property is set
         internal bool IsSetViews()
         {
-            return this._views != null && this._views.Count > 0; 
+            return this._views != null && (this._views.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

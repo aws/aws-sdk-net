@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,36 +67,46 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("AnalysisScheme" + "." + "AnalysisOptions" + "." + "AlgorithmicStemming", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisOptions.AlgorithmicStemming));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.AnalysisScheme.AnalysisOptions.IsSetJapaneseTokenizationDictionary())
                         {
                             request.Parameters.Add("AnalysisScheme" + "." + "AnalysisOptions" + "." + "JapaneseTokenizationDictionary", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisOptions.JapaneseTokenizationDictionary));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.AnalysisScheme.AnalysisOptions.IsSetStemmingDictionary())
                         {
                             request.Parameters.Add("AnalysisScheme" + "." + "AnalysisOptions" + "." + "StemmingDictionary", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisOptions.StemmingDictionary));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.AnalysisScheme.AnalysisOptions.IsSetStopwords())
                         {
                             request.Parameters.Add("AnalysisScheme" + "." + "AnalysisOptions" + "." + "Stopwords", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisOptions.Stopwords));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.AnalysisScheme.AnalysisOptions.IsSetSynonyms())
                         {
                             request.Parameters.Add("AnalysisScheme" + "." + "AnalysisOptions" + "." + "Synonyms", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisOptions.Synonyms));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.AnalysisScheme.IsSetAnalysisSchemeLanguage())
                     {
                         request.Parameters.Add("AnalysisScheme" + "." + "AnalysisSchemeLanguage", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisSchemeLanguage));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.AnalysisScheme.IsSetAnalysisSchemeName())
                     {
                         request.Parameters.Add("AnalysisScheme" + "." + "AnalysisSchemeName", StringUtils.FromString(publicRequest.AnalysisScheme.AnalysisSchemeName));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDomainName())
                 {
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

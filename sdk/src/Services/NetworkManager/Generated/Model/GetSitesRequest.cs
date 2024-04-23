@@ -37,7 +37,7 @@ namespace Amazon.NetworkManager.Model
         private string _globalNetworkId;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _siteIds = new List<string>();
+        private List<string> _siteIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GlobalNetworkId. 
@@ -111,7 +111,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if SiteIds property is set
         internal bool IsSetSiteIds()
         {
-            return this._siteIds != null && this._siteIds.Count > 0; 
+            return this._siteIds != null && (this._siteIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class ListInvestigationsResponse : AmazonWebServiceResponse
     {
-        private List<InvestigationDetail> _investigationDetails = new List<InvestigationDetail>();
+        private List<InvestigationDetail> _investigationDetails = AWSConfigs.InitializeCollections ? new List<InvestigationDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Detective.Model
         // Check to see if InvestigationDetails property is set
         internal bool IsSetInvestigationDetails()
         {
-            return this._investigationDetails != null && this._investigationDetails.Count > 0; 
+            return this._investigationDetails != null && (this._investigationDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

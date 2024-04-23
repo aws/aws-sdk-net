@@ -36,10 +36,10 @@ namespace Amazon.EC2.Model
         private string _description;
         private string _groupId;
         private string _groupName;
-        private List<IpPermission> _ipPermissions = new List<IpPermission>();
-        private List<IpPermission> _ipPermissionsEgress = new List<IpPermission>();
+        private List<IpPermission> _ipPermissions = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
+        private List<IpPermission> _ipPermissionsEgress = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
         private string _ownerId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.EC2.Model
         // Check to see if IpPermissions property is set
         internal bool IsSetIpPermissions()
         {
-            return this._ipPermissions != null && this._ipPermissions.Count > 0; 
+            return this._ipPermissions != null && (this._ipPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.EC2.Model
         // Check to see if IpPermissionsEgress property is set
         internal bool IsSetIpPermissionsEgress()
         {
-            return this._ipPermissionsEgress != null && this._ipPermissionsEgress.Count > 0; 
+            return this._ipPermissionsEgress != null && (this._ipPermissionsEgress.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -38,7 +38,10 @@ namespace Amazon.DataZone.Model
         private ListingStatus _status;
 
         /// <summary>
-        /// Gets and sets the property ListingId.
+        /// Gets and sets the property ListingId. 
+        /// <para>
+        /// The ID of the listing (a record of an asset at a given time).
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ListingId
@@ -54,7 +57,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ListingRevision.
+        /// Gets and sets the property ListingRevision. 
+        /// <para>
+        /// The revision of a listing.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string ListingRevision
@@ -70,7 +76,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Specifies the status of the listing.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ListingStatus Status

@@ -33,7 +33,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class ListDatasetEntriesResponse : AmazonWebServiceResponse
     {
-        private List<string> _datasetEntries = new List<string>();
+        private List<string> _datasetEntries = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if DatasetEntries property is set
         internal bool IsSetDatasetEntries()
         {
-            return this._datasetEntries != null && this._datasetEntries.Count > 0; 
+            return this._datasetEntries != null && (this._datasetEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

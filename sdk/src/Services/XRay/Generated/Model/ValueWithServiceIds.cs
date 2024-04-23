@@ -34,7 +34,7 @@ namespace Amazon.XRay.Model
     public partial class ValueWithServiceIds
     {
         private AnnotationValue _annotationValue;
-        private List<ServiceId> _serviceIds = new List<ServiceId>();
+        private List<ServiceId> _serviceIds = AWSConfigs.InitializeCollections ? new List<ServiceId>() : null;
 
         /// <summary>
         /// Gets and sets the property AnnotationValue. 
@@ -69,7 +69,7 @@ namespace Amazon.XRay.Model
         // Check to see if ServiceIds property is set
         internal bool IsSetServiceIds()
         {
-            return this._serviceIds != null && this._serviceIds.Count > 0; 
+            return this._serviceIds != null && (this._serviceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

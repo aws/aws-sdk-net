@@ -58,7 +58,7 @@ namespace Amazon.WAF.Model
     public partial class ByteMatchSet
     {
         private string _byteMatchSetId;
-        private List<ByteMatchTuple> _byteMatchTuples = new List<ByteMatchTuple>();
+        private List<ByteMatchTuple> _byteMatchTuples = AWSConfigs.InitializeCollections ? new List<ByteMatchTuple>() : null;
         private string _name;
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.WAF.Model
         // Check to see if ByteMatchTuples property is set
         internal bool IsSetByteMatchTuples()
         {
-            return this._byteMatchTuples != null && this._byteMatchTuples.Count > 0; 
+            return this._byteMatchTuples != null && (this._byteMatchTuples.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

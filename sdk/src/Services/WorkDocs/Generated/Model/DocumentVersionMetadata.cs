@@ -43,9 +43,9 @@ namespace Amazon.WorkDocs.Model
         private string _name;
         private string _signature;
         private long? _size;
-        private Dictionary<string, string> _source = new Dictionary<string, string>();
+        private Dictionary<string, string> _source = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DocumentStatusType _status;
-        private Dictionary<string, string> _thumbnail = new Dictionary<string, string>();
+        private Dictionary<string, string> _thumbnail = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContentCreatedTimestamp. 
@@ -247,7 +247,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Source property is set
         internal bool IsSetSource()
         {
-            return this._source != null && this._source.Count > 0; 
+            return this._source != null && (this._source.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -283,7 +283,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Thumbnail property is set
         internal bool IsSetThumbnail()
         {
-            return this._thumbnail != null && this._thumbnail.Count > 0; 
+            return this._thumbnail != null && (this._thumbnail.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

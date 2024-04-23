@@ -45,7 +45,7 @@ namespace Amazon.Glue.Model
         /// Enumerable containing all of the PartitionIndexDescriptorList
         /// </summary>
         public IPaginatedEnumerable<PartitionIndexDescriptor> PartitionIndexDescriptorList => 
-            new PaginatedResultKeyResponse<GetPartitionIndexesResponse, PartitionIndexDescriptor>(this, (i) => i.PartitionIndexDescriptorList);
+            new PaginatedResultKeyResponse<GetPartitionIndexesResponse, PartitionIndexDescriptor>(this, (i) => i.PartitionIndexDescriptorList ?? new List<PartitionIndexDescriptor>());
 
         internal GetPartitionIndexesPaginator(IAmazonGlue client, GetPartitionIndexesRequest request)
         {

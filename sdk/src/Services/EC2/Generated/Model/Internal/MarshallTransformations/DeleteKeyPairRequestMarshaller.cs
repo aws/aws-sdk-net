@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KeyName", StringUtils.FromString(publicRequest.KeyName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetKeyPairId())
                 {
                     request.Parameters.Add("KeyPairId", StringUtils.FromString(publicRequest.KeyPairId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

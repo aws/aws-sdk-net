@@ -40,7 +40,7 @@ namespace Amazon.Inspector.Model
         private string _agentId;
         private string _assessmentRunArn;
         private string _autoScalingGroup;
-        private List<TelemetryMetadata> _telemetryMetadata = new List<TelemetryMetadata>();
+        private List<TelemetryMetadata> _telemetryMetadata = AWSConfigs.InitializeCollections ? new List<TelemetryMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentHealth. 
@@ -172,7 +172,7 @@ namespace Amazon.Inspector.Model
         // Check to see if TelemetryMetadata property is set
         internal bool IsSetTelemetryMetadata()
         {
-            return this._telemetryMetadata != null && this._telemetryMetadata.Count > 0; 
+            return this._telemetryMetadata != null && (this._telemetryMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

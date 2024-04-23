@@ -29,21 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// An endpoint (Amazon Web Services resource) that is listed in a cross-account attachment
-    /// and can be added to an accelerator by specified principals, that are also listed in
-    /// the attachment.
+    /// An endpoint (Amazon Web Services resource) or an IP address range, in CIDR format,
+    /// that is listed in a cross-account attachment. A cross-account resource can be added
+    /// to an accelerator by specified principals, which are also listed in the attachment.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html">
+    /// Working with cross-account attachments and resources in Global Accelerator</a> in
+    /// the <i> Global Accelerator Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CrossAccountResource
     {
         private string _attachmentArn;
+        private string _cidr;
         private string _endpointId;
 
         /// <summary>
         /// Gets and sets the property AttachmentArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the cross-account attachment that specifies the
-        /// endpoints (resources) that can be added to accelerators and principals that have permission
-        /// to add the endpoints to accelerators.
+        /// resources (endpoints or CIDR range) that can be added to accelerators and principals
+        /// that have permission to add them.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -57,6 +65,32 @@ namespace Amazon.GlobalAccelerator.Model
         internal bool IsSetAttachmentArn()
         {
             return this._attachmentArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cidr. 
+        /// <para>
+        /// An IP address range, in CIDR format, that is specified as an Amazon Web Services resource.
+        /// The address must be provisioned and advertised in Global Accelerator by following
+        /// the bring your own IP address (BYOIP) process for Global Accelerator.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+        /// your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string Cidr
+        {
+            get { return this._cidr; }
+            set { this._cidr = value; }
+        }
+
+        // Check to see if Cidr property is set
+        internal bool IsSetCidr()
+        {
+            return this._cidr != null;
         }
 
         /// <summary>

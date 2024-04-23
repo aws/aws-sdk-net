@@ -33,7 +33,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class ListAllowListsResponse : AmazonWebServiceResponse
     {
-        private List<AllowListSummary> _allowLists = new List<AllowListSummary>();
+        private List<AllowListSummary> _allowLists = AWSConfigs.InitializeCollections ? new List<AllowListSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Macie2.Model
         // Check to see if AllowLists property is set
         internal bool IsSetAllowLists()
         {
-            return this._allowLists != null && this._allowLists.Count > 0; 
+            return this._allowLists != null && (this._allowLists.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class LegGeometry
     {
-        private List<List<double>> _lineString = new List<List<double>>();
+        private List<List<double>> _lineString = AWSConfigs.InitializeCollections ? new List<List<double>>() : null;
 
         /// <summary>
         /// Gets and sets the property LineString. 
@@ -62,7 +62,7 @@ namespace Amazon.LocationService.Model
         // Check to see if LineString property is set
         internal bool IsSetLineString()
         {
-            return this._lineString != null && this._lineString.Count > 0; 
+            return this._lineString != null && (this._lineString.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

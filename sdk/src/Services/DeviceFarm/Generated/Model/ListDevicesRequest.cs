@@ -35,7 +35,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListDevicesRequest : AmazonDeviceFarmRequest
     {
         private string _arn;
-        private List<DeviceFilter> _filters = new List<DeviceFilter>();
+        private List<DeviceFilter> _filters = AWSConfigs.InitializeCollections ? new List<DeviceFilter>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

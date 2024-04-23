@@ -33,7 +33,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetDimensionValuesResponse : AmazonWebServiceResponse
     {
-        private List<DimensionValuesWithAttributes> _dimensionValues = new List<DimensionValuesWithAttributes>();
+        private List<DimensionValuesWithAttributes> _dimensionValues = AWSConfigs.InitializeCollections ? new List<DimensionValuesWithAttributes>() : null;
         private string _nextPageToken;
         private int? _returnSize;
         private int? _totalSize;
@@ -208,7 +208,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if DimensionValues property is set
         internal bool IsSetDimensionValues()
         {
-            return this._dimensionValues != null && this._dimensionValues.Count > 0; 
+            return this._dimensionValues != null && (this._dimensionValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

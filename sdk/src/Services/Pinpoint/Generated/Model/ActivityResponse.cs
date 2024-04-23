@@ -36,7 +36,7 @@ namespace Amazon.Pinpoint.Model
         private string _applicationId;
         private string _campaignId;
         private string _end;
-        private Dictionary<string, string> _executionMetrics = new Dictionary<string, string>();
+        private Dictionary<string, string> _executionMetrics = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _id;
         private string _result;
         private string _scheduledStart;
@@ -122,7 +122,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if ExecutionMetrics property is set
         internal bool IsSetExecutionMetrics()
         {
-            return this._executionMetrics != null && this._executionMetrics.Count > 0; 
+            return this._executionMetrics != null && (this._executionMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

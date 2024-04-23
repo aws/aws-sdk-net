@@ -45,7 +45,7 @@ namespace Amazon.Snowball.Model
         /// Enumerable containing all of the CompatibleImages
         /// </summary>
         public IPaginatedEnumerable<CompatibleImage> CompatibleImages => 
-            new PaginatedResultKeyResponse<ListCompatibleImagesResponse, CompatibleImage>(this, (i) => i.CompatibleImages);
+            new PaginatedResultKeyResponse<ListCompatibleImagesResponse, CompatibleImage>(this, (i) => i.CompatibleImages ?? new List<CompatibleImage>());
 
         internal ListCompatibleImagesPaginator(IAmazonSnowball client, ListCompatibleImagesRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the Schemas
         /// </summary>
         public IPaginatedEnumerable<DatasetSchemaSummary> Schemas => 
-            new PaginatedResultKeyResponse<ListSchemasResponse, DatasetSchemaSummary>(this, (i) => i.Schemas);
+            new PaginatedResultKeyResponse<ListSchemasResponse, DatasetSchemaSummary>(this, (i) => i.Schemas ?? new List<DatasetSchemaSummary>());
 
         internal ListSchemasPaginator(IAmazonPersonalize client, ListSchemasRequest request)
         {

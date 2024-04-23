@@ -24,7 +24,7 @@ namespace Amazon.Runtime
     /// </summary>
     /// <remarks>
     /// This class is the focused public projection of the internal class
-    /// <see cref="Amazon.Runtime.Credentials.Internal.SsoToken"/>
+    /// Amazon.Runtime.Credentials.Internal.SsoToken
     /// </remarks>
     [DebuggerDisplay("{"+ nameof(Token) + "}")]
     public class AWSToken

@@ -92,7 +92,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class UpdateIPSetRequest : AmazonWAFV2Request
     {
-        private List<string> _addresses = new List<string>();
+        private List<string> _addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _id;
         private string _lockToken;

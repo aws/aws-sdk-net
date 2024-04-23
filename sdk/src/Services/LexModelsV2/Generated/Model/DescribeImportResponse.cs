@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class DescribeImportResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationDateTime;
-        private List<string> _failureReasons = new List<string>();
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _importedResourceId;
         private string _importedResourceName;
         private string _importId;
@@ -77,7 +77,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

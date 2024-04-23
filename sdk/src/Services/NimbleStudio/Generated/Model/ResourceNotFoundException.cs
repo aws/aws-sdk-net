@@ -37,7 +37,7 @@ namespace Amazon.NimbleStudio.Model
     public partial class ResourceNotFoundException : AmazonNimbleStudioException
     {
         private string _code;
-        private Dictionary<string, string> _context = new Dictionary<string, string>();
+        private Dictionary<string, string> _context = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Constructs a new ResourceNotFoundException with the specified error
@@ -159,7 +159,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Context property is set
         internal bool IsSetContext()
         {
-            return this._context != null && this._context.Count > 0; 
+            return this._context != null && (this._context.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

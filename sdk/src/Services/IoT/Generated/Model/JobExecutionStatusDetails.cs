@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class JobExecutionStatusDetails
     {
-        private Dictionary<string, string> _detailsMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _detailsMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property DetailsMap. 
@@ -50,7 +50,7 @@ namespace Amazon.IoT.Model
         // Check to see if DetailsMap property is set
         internal bool IsSetDetailsMap()
         {
-            return this._detailsMap != null && this._detailsMap.Count > 0; 
+            return this._detailsMap != null && (this._detailsMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -317,6 +317,19 @@ namespace ThirdParty.Json.LitJson
             context.ExpectingValue = false;
         }
 
+        public void Write(bool? boolean)
+        {
+            DoValidation(Condition.Value);
+            PutNewline();
+
+            if (!boolean.HasValue)
+                Put("null");
+            else
+                Put(boolean.Value ? "true" : "false");
+
+            context.ExpectingValue = false;
+        }
+
         public void Write (decimal number)
         {
             DoValidation (Condition.Value);
@@ -349,6 +362,18 @@ namespace ThirdParty.Json.LitJson
             PutNewline ();
 
             Put(Convert.ToString(number, number_format));
+
+            context.ExpectingValue = false;
+        }
+        public void Write(int? number)
+        {
+            DoValidation(Condition.Value);
+            PutNewline();
+
+            if (!number.HasValue)
+                Put("null");
+            else
+                Put(Convert.ToString(number.Value, number_format));
 
             context.ExpectingValue = false;
         }
@@ -399,7 +424,6 @@ namespace ThirdParty.Json.LitJson
             context.ExpectingValue = false;
         }
 
-        [CLSCompliant(false)]
         public void Write (ulong number)
         {
             DoValidation (Condition.Value);

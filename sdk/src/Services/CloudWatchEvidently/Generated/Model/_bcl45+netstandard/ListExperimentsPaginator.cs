@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Enumerable containing all of the Experiments
         /// </summary>
         public IPaginatedEnumerable<Experiment> Experiments => 
-            new PaginatedResultKeyResponse<ListExperimentsResponse, Experiment>(this, (i) => i.Experiments);
+            new PaginatedResultKeyResponse<ListExperimentsResponse, Experiment>(this, (i) => i.Experiments ?? new List<Experiment>());
 
         internal ListExperimentsPaginator(IAmazonCloudWatchEvidently client, ListExperimentsRequest request)
         {

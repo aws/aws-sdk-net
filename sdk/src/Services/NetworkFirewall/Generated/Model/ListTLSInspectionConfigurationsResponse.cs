@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model
     public partial class ListTLSInspectionConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TLSInspectionConfigurationMetadata> _tlsInspectionConfigurations = new List<TLSInspectionConfigurationMetadata>();
+        private List<TLSInspectionConfigurationMetadata> _tlsInspectionConfigurations = AWSConfigs.InitializeCollections ? new List<TLSInspectionConfigurationMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -76,7 +76,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if TLSInspectionConfigurations property is set
         internal bool IsSetTLSInspectionConfigurations()
         {
-            return this._tlsInspectionConfigurations != null && this._tlsInspectionConfigurations.Count > 0; 
+            return this._tlsInspectionConfigurations != null && (this._tlsInspectionConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

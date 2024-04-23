@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model
     public partial class SearchVulnerabilitiesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Vulnerability> _vulnerabilities = new List<Vulnerability>();
+        private List<Vulnerability> _vulnerabilities = AWSConfigs.InitializeCollections ? new List<Vulnerability>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Vulnerabilities property is set
         internal bool IsSetVulnerabilities()
         {
-            return this._vulnerabilities != null && this._vulnerabilities.Count > 0; 
+            return this._vulnerabilities != null && (this._vulnerabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

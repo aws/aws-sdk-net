@@ -34,6 +34,7 @@ namespace Amazon.EntityResolution.Model
     public partial class GetMatchIdResponse : AmazonWebServiceResponse
     {
         private string _matchId;
+        private string _matchRule;
 
         /// <summary>
         /// Gets and sets the property MatchId. 
@@ -51,6 +52,24 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetMatchId()
         {
             return this._matchId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MatchRule. 
+        /// <para>
+        /// The rule the record matched on.
+        /// </para>
+        /// </summary>
+        public string MatchRule
+        {
+            get { return this._matchRule; }
+            set { this._matchRule = value; }
+        }
+
+        // Check to see if MatchRule property is set
+        internal bool IsSetMatchRule()
+        {
+            return this._matchRule != null;
         }
 
     }

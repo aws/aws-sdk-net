@@ -45,7 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all of the AccountLimits
         /// </summary>
         public IPaginatedEnumerable<AccountLimit> AccountLimits => 
-            new PaginatedResultKeyResponse<DescribeAccountLimitsResponse, AccountLimit>(this, (i) => i.AccountLimits);
+            new PaginatedResultKeyResponse<DescribeAccountLimitsResponse, AccountLimit>(this, (i) => i.AccountLimits ?? new List<AccountLimit>());
 
         internal DescribeAccountLimitsPaginator(IAmazonCloudFormation client, DescribeAccountLimitsRequest request)
         {

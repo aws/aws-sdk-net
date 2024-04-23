@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class UpdateReplicationGroupMemberAction
     {
-        private List<ReplicaGlobalSecondaryIndex> _globalSecondaryIndexes = new List<ReplicaGlobalSecondaryIndex>();
+        private List<ReplicaGlobalSecondaryIndex> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<ReplicaGlobalSecondaryIndex>() : null;
         private string _kmsMasterKeyId;
         private ProvisionedThroughputOverride _provisionedThroughputOverride;
         private string _regionName;
@@ -55,7 +55,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if GlobalSecondaryIndexes property is set
         internal bool IsSetGlobalSecondaryIndexes()
         {
-            return this._globalSecondaryIndexes != null && this._globalSecondaryIndexes.Count > 0; 
+            return this._globalSecondaryIndexes != null && (this._globalSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

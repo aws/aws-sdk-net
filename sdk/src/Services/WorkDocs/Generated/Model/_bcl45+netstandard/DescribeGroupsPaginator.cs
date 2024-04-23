@@ -45,7 +45,7 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the Groups
         /// </summary>
         public IPaginatedEnumerable<GroupMetadata> Groups => 
-            new PaginatedResultKeyResponse<DescribeGroupsResponse, GroupMetadata>(this, (i) => i.Groups);
+            new PaginatedResultKeyResponse<DescribeGroupsResponse, GroupMetadata>(this, (i) => i.Groups ?? new List<GroupMetadata>());
 
         internal DescribeGroupsPaginator(IAmazonWorkDocs client, DescribeGroupsRequest request)
         {

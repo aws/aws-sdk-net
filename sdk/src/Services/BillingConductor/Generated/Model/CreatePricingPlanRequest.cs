@@ -38,8 +38,8 @@ namespace Amazon.BillingConductor.Model
         private string _clientToken;
         private string _description;
         private string _name;
-        private List<string> _pricingRuleArns = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _pricingRuleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -115,7 +115,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if PricingRuleArns property is set
         internal bool IsSetPricingRuleArns()
         {
-            return this._pricingRuleArns != null && this._pricingRuleArns.Count > 0; 
+            return this._pricingRuleArns != null && (this._pricingRuleArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

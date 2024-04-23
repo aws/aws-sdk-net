@@ -40,7 +40,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class BatchGetMetricDataRequest : AmazonSimpleEmailServiceV2Request
     {
-        private List<BatchGetMetricDataQuery> _queries = new List<BatchGetMetricDataQuery>();
+        private List<BatchGetMetricDataQuery> _queries = AWSConfigs.InitializeCollections ? new List<BatchGetMetricDataQuery>() : null;
 
         /// <summary>
         /// Gets and sets the property Queries. 
@@ -58,7 +58,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Queries property is set
         internal bool IsSetQueries()
         {
-            return this._queries != null && this._queries.Count > 0; 
+            return this._queries != null && (this._queries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

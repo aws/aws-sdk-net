@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MeetingFeaturesConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttendee())
             {
                 context.Writer.WritePropertyName("Attendee");
@@ -98,3 +101,4 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

@@ -34,7 +34,7 @@ namespace Amazon.Glacier.Model
     public partial class ListMultipartUploadsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<UploadListElement> _uploadsList = new List<UploadListElement>();
+        private List<UploadListElement> _uploadsList = AWSConfigs.InitializeCollections ? new List<UploadListElement>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +71,7 @@ namespace Amazon.Glacier.Model
         // Check to see if UploadsList property is set
         internal bool IsSetUploadsList()
         {
-            return this._uploadsList != null && this._uploadsList.Count > 0; 
+            return this._uploadsList != null && (this._uploadsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

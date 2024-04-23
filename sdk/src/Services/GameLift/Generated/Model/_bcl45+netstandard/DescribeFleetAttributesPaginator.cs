@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the FleetAttributes
         /// </summary>
         public IPaginatedEnumerable<FleetAttributes> FleetAttributes => 
-            new PaginatedResultKeyResponse<DescribeFleetAttributesResponse, FleetAttributes>(this, (i) => i.FleetAttributes);
+            new PaginatedResultKeyResponse<DescribeFleetAttributesResponse, FleetAttributes>(this, (i) => i.FleetAttributes ?? new List<FleetAttributes>());
 
         internal DescribeFleetAttributesPaginator(IAmazonGameLift client, DescribeFleetAttributesRequest request)
         {

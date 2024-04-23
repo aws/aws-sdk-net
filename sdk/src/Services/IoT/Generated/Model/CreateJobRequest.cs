@@ -42,9 +42,9 @@ namespace Amazon.IoT.Model
     {
         private AbortConfig _abortConfig;
         private string _description;
-        private List<string> _destinationPackageVersions = new List<string>();
+        private List<string> _destinationPackageVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _document;
-        private Dictionary<string, string> _documentParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _documentParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _documentSource;
         private JobExecutionsRetryConfig _jobExecutionsRetryConfig;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
@@ -53,8 +53,8 @@ namespace Amazon.IoT.Model
         private string _namespaceId;
         private PresignedUrlConfig _presignedUrlConfig;
         private SchedulingConfig _schedulingConfig;
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _targets = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _targets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TargetSelection _targetSelection;
         private TimeoutConfig _timeoutConfig;
 
@@ -118,7 +118,7 @@ namespace Amazon.IoT.Model
         // Check to see if DestinationPackageVersions property is set
         internal bool IsSetDestinationPackageVersions()
         {
-            return this._destinationPackageVersions != null && this._destinationPackageVersions.Count > 0; 
+            return this._destinationPackageVersions != null && (this._destinationPackageVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Amazon.IoT.Model
         // Check to see if DocumentParameters property is set
         internal bool IsSetDocumentParameters()
         {
-            return this._documentParameters != null && this._documentParameters.Count > 0; 
+            return this._documentParameters != null && (this._documentParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -358,7 +358,7 @@ namespace Amazon.IoT.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -377,7 +377,7 @@ namespace Amazon.IoT.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

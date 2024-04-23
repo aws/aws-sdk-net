@@ -41,7 +41,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private string _field;
         private string _key;
         private string _model;
-        private List<Predicate> _predicates = new List<Predicate>();
+        private List<Predicate> _predicates = AWSConfigs.InitializeCollections ? new List<Predicate>() : null;
         private string _slotName;
         private string _userAttribute;
 
@@ -150,7 +150,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Predicates property is set
         internal bool IsSetPredicates()
         {
-            return this._predicates != null && this._predicates.Count > 0; 
+            return this._predicates != null && (this._predicates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

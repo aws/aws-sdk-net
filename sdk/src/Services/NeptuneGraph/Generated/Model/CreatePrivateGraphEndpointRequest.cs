@@ -31,15 +31,20 @@ namespace Amazon.NeptuneGraph.Model
     /// <summary>
     /// Container for the parameters to the CreatePrivateGraphEndpoint operation.
     /// Create a private graph endpoint to allow private access from to the graph from within
-    /// a VPC. You can attach security groups to the private graph endpoint. VPC endpoint
-    /// charges apply.
+    /// a VPC. You can attach security groups to the private graph endpoint.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// VPC endpoint charges apply.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreatePrivateGraphEndpointRequest : AmazonNeptuneGraphRequest
     {
         private string _graphIdentifier;
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GraphIdentifier. 
@@ -76,7 +81,7 @@ namespace Amazon.NeptuneGraph.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +118,7 @@ namespace Amazon.NeptuneGraph.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

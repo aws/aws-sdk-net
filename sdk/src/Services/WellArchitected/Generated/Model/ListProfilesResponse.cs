@@ -34,7 +34,7 @@ namespace Amazon.WellArchitected.Model
     public partial class ListProfilesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProfileSummary> _profileSummaries = new List<ProfileSummary>();
+        private List<ProfileSummary> _profileSummaries = AWSConfigs.InitializeCollections ? new List<ProfileSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -66,7 +66,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ProfileSummaries property is set
         internal bool IsSetProfileSummaries()
         {
-            return this._profileSummaries != null && this._profileSummaries.Count > 0; 
+            return this._profileSummaries != null && (this._profileSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class DescribeInstanceHealthResponse : AmazonWebServiceResponse
     {
-        private List<InstanceState> _instanceStates = new List<InstanceState>();
+        private List<InstanceState> _instanceStates = AWSConfigs.InitializeCollections ? new List<InstanceState>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceStates. 
@@ -50,7 +50,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if InstanceStates property is set
         internal bool IsSetInstanceStates()
         {
-            return this._instanceStates != null && this._instanceStates.Count > 0; 
+            return this._instanceStates != null && (this._instanceStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

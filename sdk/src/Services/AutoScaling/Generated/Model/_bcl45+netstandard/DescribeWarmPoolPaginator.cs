@@ -45,7 +45,7 @@ namespace Amazon.AutoScaling.Model
         /// Enumerable containing all of the Instances
         /// </summary>
         public IPaginatedEnumerable<Instance> Instances => 
-            new PaginatedResultKeyResponse<DescribeWarmPoolResponse, Instance>(this, (i) => i.Instances);
+            new PaginatedResultKeyResponse<DescribeWarmPoolResponse, Instance>(this, (i) => i.Instances ?? new List<Instance>());
 
         internal DescribeWarmPoolPaginator(IAmazonAutoScaling client, DescribeWarmPoolRequest request)
         {

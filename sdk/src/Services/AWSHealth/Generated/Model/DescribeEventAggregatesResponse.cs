@@ -33,7 +33,7 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class DescribeEventAggregatesResponse : AmazonWebServiceResponse
     {
-        private List<EventAggregate> _eventAggregates = new List<EventAggregate>();
+        private List<EventAggregate> _eventAggregates = AWSConfigs.InitializeCollections ? new List<EventAggregate>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EventAggregates property is set
         internal bool IsSetEventAggregates()
         {
-            return this._eventAggregates != null && this._eventAggregates.Count > 0; 
+            return this._eventAggregates != null && (this._eventAggregates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

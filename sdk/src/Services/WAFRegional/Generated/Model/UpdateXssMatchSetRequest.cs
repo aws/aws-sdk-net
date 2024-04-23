@@ -102,7 +102,7 @@ namespace Amazon.WAFRegional.Model
     public partial class UpdateXssMatchSetRequest : AmazonWAFRegionalRequest
     {
         private string _changeToken;
-        private List<XssMatchSetUpdate> _updates = new List<XssMatchSetUpdate>();
+        private List<XssMatchSetUpdate> _updates = AWSConfigs.InitializeCollections ? new List<XssMatchSetUpdate>() : null;
         private string _xssMatchSetId;
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if Updates property is set
         internal bool IsSetUpdates()
         {
-            return this._updates != null && this._updates.Count > 0; 
+            return this._updates != null && (this._updates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

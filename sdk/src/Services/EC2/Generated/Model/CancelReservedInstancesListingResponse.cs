@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CancelReservedInstancesListingResponse : AmazonWebServiceResponse
     {
-        private List<ReservedInstancesListing> _reservedInstancesListings = new List<ReservedInstancesListing>();
+        private List<ReservedInstancesListing> _reservedInstancesListings = AWSConfigs.InitializeCollections ? new List<ReservedInstancesListing>() : null;
 
         /// <summary>
         /// Gets and sets the property ReservedInstancesListings. 
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         // Check to see if ReservedInstancesListings property is set
         internal bool IsSetReservedInstancesListings()
         {
-            return this._reservedInstancesListings != null && this._reservedInstancesListings.Count > 0; 
+            return this._reservedInstancesListings != null && (this._reservedInstancesListings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

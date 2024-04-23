@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the HistoryRecords
         /// </summary>
         public IPaginatedEnumerable<IpamAddressHistoryRecord> HistoryRecords => 
-            new PaginatedResultKeyResponse<GetIpamAddressHistoryResponse, IpamAddressHistoryRecord>(this, (i) => i.HistoryRecords);
+            new PaginatedResultKeyResponse<GetIpamAddressHistoryResponse, IpamAddressHistoryRecord>(this, (i) => i.HistoryRecords ?? new List<IpamAddressHistoryRecord>());
 
         internal GetIpamAddressHistoryPaginator(IAmazonEC2 client, GetIpamAddressHistoryRequest request)
         {

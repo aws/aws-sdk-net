@@ -110,7 +110,7 @@ namespace Amazon.CloudTrail.Model
     {
         private DateTime? _endTime;
         private EventCategory _eventCategory;
-        private List<LookupAttribute> _lookupAttributes = new List<LookupAttribute>();
+        private List<LookupAttribute> _lookupAttributes = AWSConfigs.InitializeCollections ? new List<LookupAttribute>() : null;
         private int? _maxResults;
         private string _nextToken;
         private DateTime? _startTime;
@@ -169,7 +169,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if LookupAttributes property is set
         internal bool IsSetLookupAttributes()
         {
-            return this._lookupAttributes != null && this._lookupAttributes.Count > 0; 
+            return this._lookupAttributes != null && (this._lookupAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

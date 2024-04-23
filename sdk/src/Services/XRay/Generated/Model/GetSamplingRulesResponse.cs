@@ -34,7 +34,7 @@ namespace Amazon.XRay.Model
     public partial class GetSamplingRulesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SamplingRuleRecord> _samplingRuleRecords = new List<SamplingRuleRecord>();
+        private List<SamplingRuleRecord> _samplingRuleRecords = AWSConfigs.InitializeCollections ? new List<SamplingRuleRecord>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.XRay.Model
         // Check to see if SamplingRuleRecords property is set
         internal bool IsSetSamplingRuleRecords()
         {
-            return this._samplingRuleRecords != null && this._samplingRuleRecords.Count > 0; 
+            return this._samplingRuleRecords != null && (this._samplingRuleRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

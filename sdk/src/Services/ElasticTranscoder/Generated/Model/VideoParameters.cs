@@ -36,7 +36,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string _aspectRatio;
         private string _bitRate;
         private string _codec;
-        private Dictionary<string, string> _codecOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _codecOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _displayAspectRatio;
         private string _fixedGOP;
         private string _frameRate;
@@ -47,7 +47,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string _paddingPolicy;
         private string _resolution;
         private string _sizingPolicy;
-        private List<PresetWatermark> _watermarks = new List<PresetWatermark>();
+        private List<PresetWatermark> _watermarks = AWSConfigs.InitializeCollections ? new List<PresetWatermark>() : null;
 
         /// <summary>
         /// Gets and sets the property AspectRatio. <important> 
@@ -436,7 +436,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if CodecOptions property is set
         internal bool IsSetCodecOptions()
         {
-            return this._codecOptions != null && this._codecOptions.Count > 0; 
+            return this._codecOptions != null && (this._codecOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -936,7 +936,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Watermarks property is set
         internal bool IsSetWatermarks()
         {
-            return this._watermarks != null && this._watermarks.Count > 0; 
+            return this._watermarks != null && (this._watermarks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

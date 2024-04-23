@@ -35,7 +35,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         private JobAlbumArt _albumArt;
         private Captions _captions;
-        private List<Clip> _composition = new List<Clip>();
+        private List<Clip> _composition = AWSConfigs.InitializeCollections ? new List<Clip>() : null;
         private Encryption _encryption;
         private string _key;
         private string _presetId;
@@ -43,7 +43,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string _segmentDuration;
         private Encryption _thumbnailEncryption;
         private string _thumbnailPattern;
-        private List<JobWatermark> _watermarks = new List<JobWatermark>();
+        private List<JobWatermark> _watermarks = AWSConfigs.InitializeCollections ? new List<JobWatermark>() : null;
 
         /// <summary>
         /// Gets and sets the property AlbumArt. 
@@ -167,7 +167,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Composition property is set
         internal bool IsSetComposition()
         {
-            return this._composition != null && this._composition.Count > 0; 
+            return this._composition != null && (this._composition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -390,7 +390,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Watermarks property is set
         internal bool IsSetWatermarks()
         {
-            return this._watermarks != null && this._watermarks.Count > 0; 
+            return this._watermarks != null && (this._watermarks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

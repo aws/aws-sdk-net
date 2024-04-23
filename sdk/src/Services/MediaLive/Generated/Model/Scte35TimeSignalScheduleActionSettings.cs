@@ -33,7 +33,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class Scte35TimeSignalScheduleActionSettings
     {
-        private List<Scte35Descriptor> _scte35Descriptors = new List<Scte35Descriptor>();
+        private List<Scte35Descriptor> _scte35Descriptors = AWSConfigs.InitializeCollections ? new List<Scte35Descriptor>() : null;
 
         /// <summary>
         /// Gets and sets the property Scte35Descriptors. The list of SCTE-35 descriptors accompanying
@@ -49,7 +49,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Scte35Descriptors property is set
         internal bool IsSetScte35Descriptors()
         {
-            return this._scte35Descriptors != null && this._scte35Descriptors.Count > 0; 
+            return this._scte35Descriptors != null && (this._scte35Descriptors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

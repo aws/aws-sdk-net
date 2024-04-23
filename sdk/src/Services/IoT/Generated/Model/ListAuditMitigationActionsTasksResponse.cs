@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model
     public partial class ListAuditMitigationActionsTasksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<AuditMitigationActionsTaskMetadata> _tasks = new List<AuditMitigationActionsTaskMetadata>();
+        private List<AuditMitigationActionsTaskMetadata> _tasks = AWSConfigs.InitializeCollections ? new List<AuditMitigationActionsTaskMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.IoT.Model
         // Check to see if Tasks property is set
         internal bool IsSetTasks()
         {
-            return this._tasks != null && this._tasks.Count > 0; 
+            return this._tasks != null && (this._tasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

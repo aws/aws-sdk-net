@@ -34,14 +34,14 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class CompleteMultipartReadSetUploadRequest : AmazonOmicsRequest
     {
-        private List<CompleteReadSetUploadPartListItem> _parts = new List<CompleteReadSetUploadPartListItem>();
+        private List<CompleteReadSetUploadPartListItem> _parts = AWSConfigs.InitializeCollections ? new List<CompleteReadSetUploadPartListItem>() : null;
         private string _sequenceStoreId;
         private string _uploadId;
 
         /// <summary>
         /// Gets and sets the property Parts. 
         /// <para>
-        ///  The individual uploads or parts of a multipart upload. 
+        /// The individual uploads or parts of a multipart upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -54,13 +54,13 @@ namespace Amazon.Omics.Model
         // Check to see if Parts property is set
         internal bool IsSetParts()
         {
-            return this._parts != null && this._parts.Count > 0; 
+            return this._parts != null && (this._parts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property SequenceStoreId. 
         /// <para>
-        ///  The sequence store ID for the store involved in the multipart upload. 
+        /// The sequence store ID for the store involved in the multipart upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]
@@ -79,7 +79,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property UploadId. 
         /// <para>
-        ///  The ID for the multipart upload. 
+        /// The ID for the multipart upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]

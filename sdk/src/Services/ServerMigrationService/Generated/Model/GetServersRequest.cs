@@ -41,7 +41,7 @@ namespace Amazon.ServerMigrationService.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<VmServerAddress> _vmServerAddressList = new List<VmServerAddress>();
+        private List<VmServerAddress> _vmServerAddressList = AWSConfigs.InitializeCollections ? new List<VmServerAddress>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -96,7 +96,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if VmServerAddressList property is set
         internal bool IsSetVmServerAddressList()
         {
-            return this._vmServerAddressList != null && this._vmServerAddressList.Count > 0; 
+            return this._vmServerAddressList != null && (this._vmServerAddressList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

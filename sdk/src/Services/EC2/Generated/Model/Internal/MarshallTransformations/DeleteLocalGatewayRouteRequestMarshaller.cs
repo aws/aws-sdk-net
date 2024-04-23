@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,14 +63,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinationPrefixListId())
                 {
                     request.Parameters.Add("DestinationPrefixListId", StringUtils.FromString(publicRequest.DestinationPrefixListId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLocalGatewayRouteTableId())
                 {
                     request.Parameters.Add("LocalGatewayRouteTableId", StringUtils.FromString(publicRequest.LocalGatewayRouteTableId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

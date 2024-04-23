@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the ExportJobs
         /// </summary>
         public IPaginatedEnumerable<ExportReadSetJobDetail> ExportJobs => 
-            new PaginatedResultKeyResponse<ListReadSetExportJobsResponse, ExportReadSetJobDetail>(this, (i) => i.ExportJobs);
+            new PaginatedResultKeyResponse<ListReadSetExportJobsResponse, ExportReadSetJobDetail>(this, (i) => i.ExportJobs ?? new List<ExportReadSetJobDetail>());
 
         internal ListReadSetExportJobsPaginator(IAmazonOmics client, ListReadSetExportJobsRequest request)
         {

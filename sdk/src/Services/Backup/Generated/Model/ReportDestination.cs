@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model
     public partial class ReportDestination
     {
         private string _s3BucketName;
-        private List<string> _s3Keys = new List<string>();
+        private List<string> _s3Keys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property S3BucketName. 
@@ -69,7 +69,7 @@ namespace Amazon.Backup.Model
         // Check to see if S3Keys property is set
         internal bool IsSetS3Keys()
         {
-            return this._s3Keys != null && this._s3Keys.Count > 0; 
+            return this._s3Keys != null && (this._s3Keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

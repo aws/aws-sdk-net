@@ -33,7 +33,7 @@ namespace Amazon.Shield.Model
     /// </summary>
     public partial class DescribeAttackStatisticsResponse : AmazonWebServiceResponse
     {
-        private List<AttackStatisticsDataItem> _dataItems = new List<AttackStatisticsDataItem>();
+        private List<AttackStatisticsDataItem> _dataItems = AWSConfigs.InitializeCollections ? new List<AttackStatisticsDataItem>() : null;
         private TimeRange _timeRange;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Shield.Model
         // Check to see if DataItems property is set
         internal bool IsSetDataItems()
         {
-            return this._dataItems != null && this._dataItems.Count > 0; 
+            return this._dataItems != null && (this._dataItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

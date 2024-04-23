@@ -37,7 +37,7 @@ namespace Amazon.GuardDuty.Model
         private string _comments;
         private string _detectorId;
         private Feedback _feedback;
-        private List<string> _findingIds = new List<string>();
+        private List<string> _findingIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Comments. 
@@ -111,7 +111,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if FindingIds property is set
         internal bool IsSetFindingIds()
         {
-            return this._findingIds != null && this._findingIds.Count > 0; 
+            return this._findingIds != null && (this._findingIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class BatchGetDeploymentsResponse : AmazonWebServiceResponse
     {
-        private List<DeploymentInfo> _deploymentsInfo = new List<DeploymentInfo>();
+        private List<DeploymentInfo> _deploymentsInfo = AWSConfigs.InitializeCollections ? new List<DeploymentInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property DeploymentsInfo. 
@@ -50,7 +50,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if DeploymentsInfo property is set
         internal bool IsSetDeploymentsInfo()
         {
-            return this._deploymentsInfo != null && this._deploymentsInfo.Count > 0; 
+            return this._deploymentsInfo != null && (this._deploymentsInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

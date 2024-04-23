@@ -52,14 +52,14 @@ namespace Amazon.RDS.Model
         private string _dbInstanceIdentifier;
         private string _dbParameterGroupName;
         private int? _dbPortNumber;
-        private List<string> _dbSecurityGroups = new List<string>();
+        private List<string> _dbSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _dbSubnetGroupName;
         private bool? _dedicatedLogVolume;
         private bool? _deletionProtection;
         private bool? _disableDomain;
         private string _domain;
         private string _domainAuthSecretArn;
-        private List<string> _domainDnsIps = new List<string>();
+        private List<string> _domainDnsIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _domainFqdn;
         private string _domainIAMRoleName;
         private string _domainOu;
@@ -85,7 +85,7 @@ namespace Amazon.RDS.Model
         private int? _performanceInsightsRetentionPeriod;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
-        private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
+        private List<ProcessorFeature> _processorFeatures = AWSConfigs.InitializeCollections ? new List<ProcessorFeature>() : null;
         private int? _promotionTier;
         private bool? _publiclyAccessible;
         private ReplicaMode _replicaMode;
@@ -96,7 +96,7 @@ namespace Amazon.RDS.Model
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
         private bool? _useDefaultProcessorFeatures;
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -128,6 +128,17 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For the valid values for allocated storage for each engine, see <c>CreateDBInstance</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When you increase the allocated storage for a DB instance that uses Provisioned IOPS
+        /// (<c>gp3</c>, <c>io1</c>, or <c>io2</c> storage type), you must also specify the <c>Iops</c>
+        /// parameter. You can use the current value for <c>Iops</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int AllocatedStorage
         {
@@ -704,7 +715,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
+            return this._dbSecurityGroups != null && (this._dbSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -888,7 +899,7 @@ namespace Amazon.RDS.Model
         // Check to see if DomainDnsIps property is set
         internal bool IsSetDomainDnsIps()
         {
-            return this._domainDnsIps != null && this._domainDnsIps.Count > 0; 
+            return this._domainDnsIps != null && (this._domainDnsIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1227,6 +1238,11 @@ namespace Amazon.RDS.Model
         /// supplied must be at least 10% greater than the current value. Values that are not
         /// at least 10% greater than the existing value are rounded up so that they are 10% greater
         /// than the current value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you increase the Provisioned IOPS, you must also specify the <c>AllocatedStorage</c>
+        /// parameter. You can use the current value for <c>AllocatedStorage</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1978,7 +1994,7 @@ namespace Amazon.RDS.Model
         // Check to see if ProcessorFeatures property is set
         internal bool IsSetProcessorFeatures()
         {
-            return this._processorFeatures != null && this._processorFeatures.Count > 0; 
+            return this._processorFeatures != null && (this._processorFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -2200,8 +2216,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify Provisioned IOPS (<c>io1</c>), you must also include a value for the
-        /// <c>Iops</c> parameter.
+        /// If you specify <c>io1</c>, <c>io2</c>, or <c>gp3</c> you must also include a value
+        /// for the <c>Iops</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -2219,7 +2235,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>gp2 | gp3 | io1 | standard</c> 
+        /// Valid Values: <c>gp2 | gp3 | io1 | io2 | standard</c> 
         /// </para>
         ///  
         /// <para>
@@ -2343,7 +2359,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

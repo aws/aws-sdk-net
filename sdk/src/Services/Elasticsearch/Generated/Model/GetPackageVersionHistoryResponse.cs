@@ -35,7 +35,7 @@ namespace Amazon.Elasticsearch.Model
     {
         private string _nextToken;
         private string _packageID;
-        private List<PackageVersionHistory> _packageVersionHistoryList = new List<PackageVersionHistory>();
+        private List<PackageVersionHistory> _packageVersionHistoryList = AWSConfigs.InitializeCollections ? new List<PackageVersionHistory>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -82,7 +82,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if PackageVersionHistoryList property is set
         internal bool IsSetPackageVersionHistoryList()
         {
-            return this._packageVersionHistoryList != null && this._packageVersionHistoryList.Count > 0; 
+            return this._packageVersionHistoryList != null && (this._packageVersionHistoryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

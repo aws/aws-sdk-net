@@ -34,7 +34,7 @@ namespace Amazon.CloudFront.Model
     public partial class DistributionIdList
     {
         private bool? _isTruncated;
-        private List<string> _items = new List<string>();
+        private List<string> _items = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _marker;
         private int? _maxItems;
         private string _nextMarker;
@@ -76,7 +76,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

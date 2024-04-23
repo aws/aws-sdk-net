@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestAssociationTargetlistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.AssociationTarget.IsSetInstanceIds())
                     {
                         int publicRequestAssociationTargetlistValueIndex = 1;
@@ -78,6 +80,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestAssociationTargetlistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.AssociationTarget.IsSetInstanceTags())
                     {
                         int publicRequestAssociationTargetlistValueIndex = 1;
@@ -87,18 +90,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("AssociationTarget" + "." + "InstanceTag" + "." + publicRequestAssociationTargetlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestAssociationTargetlistValue.Key));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestAssociationTargetlistValue.IsSetValue())
                             {
                                 request.Parameters.Add("AssociationTarget" + "." + "InstanceTag" + "." + publicRequestAssociationTargetlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestAssociationTargetlistValue.Value));
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestAssociationTargetlistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceEventWindowId())
                 {
                     request.Parameters.Add("InstanceEventWindowId", StringUtils.FromString(publicRequest.InstanceEventWindowId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

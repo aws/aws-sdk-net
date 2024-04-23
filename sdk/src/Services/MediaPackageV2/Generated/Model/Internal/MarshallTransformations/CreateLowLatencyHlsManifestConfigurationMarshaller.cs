@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateLowLatencyHlsManifestConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChildManifestName())
             {
                 context.Writer.WritePropertyName("ChildManifestName");
@@ -100,3 +103,4 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

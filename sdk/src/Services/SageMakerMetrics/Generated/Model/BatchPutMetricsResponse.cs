@@ -33,7 +33,7 @@ namespace Amazon.SageMakerMetrics.Model
     /// </summary>
     public partial class BatchPutMetricsResponse : AmazonWebServiceResponse
     {
-        private List<BatchPutMetricsError> _errors = new List<BatchPutMetricsError>();
+        private List<BatchPutMetricsError> _errors = AWSConfigs.InitializeCollections ? new List<BatchPutMetricsError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +51,7 @@ namespace Amazon.SageMakerMetrics.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

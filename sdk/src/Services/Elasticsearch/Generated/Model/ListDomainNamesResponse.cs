@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class ListDomainNamesResponse : AmazonWebServiceResponse
     {
-        private List<DomainInfo> _domainNames = new List<DomainInfo>();
+        private List<DomainInfo> _domainNames = AWSConfigs.InitializeCollections ? new List<DomainInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property DomainNames. 
@@ -51,7 +51,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if DomainNames property is set
         internal bool IsSetDomainNames()
         {
-            return this._domainNames != null && this._domainNames.Count > 0; 
+            return this._domainNames != null && (this._domainNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

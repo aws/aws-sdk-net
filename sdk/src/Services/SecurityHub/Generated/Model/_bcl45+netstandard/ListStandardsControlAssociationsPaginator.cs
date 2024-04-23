@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all of the StandardsControlAssociationSummaries
         /// </summary>
         public IPaginatedEnumerable<StandardsControlAssociationSummary> StandardsControlAssociationSummaries => 
-            new PaginatedResultKeyResponse<ListStandardsControlAssociationsResponse, StandardsControlAssociationSummary>(this, (i) => i.StandardsControlAssociationSummaries);
+            new PaginatedResultKeyResponse<ListStandardsControlAssociationsResponse, StandardsControlAssociationSummary>(this, (i) => i.StandardsControlAssociationSummaries ?? new List<StandardsControlAssociationSummary>());
 
         internal ListStandardsControlAssociationsPaginator(IAmazonSecurityHub client, ListStandardsControlAssociationsRequest request)
         {

@@ -33,8 +33,8 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class TestSetDiscrepancyErrors
     {
-        private List<TestSetIntentDiscrepancyItem> _intentDiscrepancies = new List<TestSetIntentDiscrepancyItem>();
-        private List<TestSetSlotDiscrepancyItem> _slotDiscrepancies = new List<TestSetSlotDiscrepancyItem>();
+        private List<TestSetIntentDiscrepancyItem> _intentDiscrepancies = AWSConfigs.InitializeCollections ? new List<TestSetIntentDiscrepancyItem>() : null;
+        private List<TestSetSlotDiscrepancyItem> _slotDiscrepancies = AWSConfigs.InitializeCollections ? new List<TestSetSlotDiscrepancyItem>() : null;
 
         /// <summary>
         /// Gets and sets the property IntentDiscrepancies. 
@@ -53,7 +53,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if IntentDiscrepancies property is set
         internal bool IsSetIntentDiscrepancies()
         {
-            return this._intentDiscrepancies != null && this._intentDiscrepancies.Count > 0; 
+            return this._intentDiscrepancies != null && (this._intentDiscrepancies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SlotDiscrepancies property is set
         internal bool IsSetSlotDiscrepancies()
         {
-            return this._slotDiscrepancies != null && this._slotDiscrepancies.Count > 0; 
+            return this._slotDiscrepancies != null && (this._slotDiscrepancies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

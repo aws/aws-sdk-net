@@ -46,7 +46,6 @@ namespace Amazon.WorkSpacesThinClient.Model
         private string _pendingSoftwareSetId;
         private SoftwareSetUpdateMode _softwareSetUpdateMode;
         private SoftwareSetUpdateSchedule _softwareSetUpdateSchedule;
-        private EmbeddedTag _tags;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -287,25 +286,6 @@ namespace Amazon.WorkSpacesThinClient.Model
         internal bool IsSetSoftwareSetUpdateSchedule()
         {
             return this._softwareSetUpdateSchedule != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tag keys and optional values for the resource.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public EmbeddedTag Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null;
         }
 
         /// <summary>

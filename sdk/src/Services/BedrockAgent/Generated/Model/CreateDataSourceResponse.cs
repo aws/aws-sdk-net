@@ -36,7 +36,10 @@ namespace Amazon.BedrockAgent.Model
         private DataSource _dataSource;
 
         /// <summary>
-        /// Gets and sets the property DataSource.
+        /// Gets and sets the property DataSource. 
+        /// <para>
+        /// Contains details about the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataSource DataSource

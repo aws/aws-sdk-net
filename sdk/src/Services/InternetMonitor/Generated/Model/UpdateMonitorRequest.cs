@@ -49,8 +49,8 @@ namespace Amazon.InternetMonitor.Model
         private InternetMeasurementsLogDelivery _internetMeasurementsLogDelivery;
         private int? _maxCityNetworksToMonitor;
         private string _monitorName;
-        private List<string> _resourcesToAdd = new List<string>();
-        private List<string> _resourcesToRemove = new List<string>();
+        private List<string> _resourcesToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourcesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MonitorConfigState _status;
         private int? _trafficPercentageToMonitor;
 
@@ -189,7 +189,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if ResourcesToAdd property is set
         internal bool IsSetResourcesToAdd()
         {
-            return this._resourcesToAdd != null && this._resourcesToAdd.Count > 0; 
+            return this._resourcesToAdd != null && (this._resourcesToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if ResourcesToRemove property is set
         internal bool IsSetResourcesToRemove()
         {
-            return this._resourcesToRemove != null && this._resourcesToRemove.Count > 0; 
+            return this._resourcesToRemove != null && (this._resourcesToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

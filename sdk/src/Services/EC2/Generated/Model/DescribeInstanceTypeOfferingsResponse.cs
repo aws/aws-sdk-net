@@ -33,13 +33,13 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeInstanceTypeOfferingsResponse : AmazonWebServiceResponse
     {
-        private List<InstanceTypeOffering> _instanceTypeOfferings = new List<InstanceTypeOffering>();
+        private List<InstanceTypeOffering> _instanceTypeOfferings = AWSConfigs.InitializeCollections ? new List<InstanceTypeOffering>() : null;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property InstanceTypeOfferings. 
         /// <para>
-        /// The instance types offered.
+        /// The instance types offered in the location.
         /// </para>
         /// </summary>
         public List<InstanceTypeOffering> InstanceTypeOfferings
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceTypeOfferings property is set
         internal bool IsSetInstanceTypeOfferings()
         {
-            return this._instanceTypeOfferings != null && this._instanceTypeOfferings.Count > 0; 
+            return this._instanceTypeOfferings != null && (this._instanceTypeOfferings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

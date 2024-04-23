@@ -34,7 +34,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     public partial class DescribeScalingActivitiesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScalingActivity> _scalingActivities = new List<ScalingActivity>();
+        private List<ScalingActivity> _scalingActivities = AWSConfigs.InitializeCollections ? new List<ScalingActivity>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if ScalingActivities property is set
         internal bool IsSetScalingActivities()
         {
-            return this._scalingActivities != null && this._scalingActivities.Count > 0; 
+            return this._scalingActivities != null && (this._scalingActivities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

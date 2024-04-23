@@ -160,7 +160,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the environment.
+        /// </para>
         /// </summary>
         public string Name
         {

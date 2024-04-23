@@ -34,9 +34,9 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class SearchForSuggestionsResult
     {
-        private List<string> _categories = new List<string>();
+        private List<string> _categories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _placeId;
-        private List<string> _supplementalCategories = new List<string>();
+        private List<string> _supplementalCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _text;
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Categories property is set
         internal bool IsSetCategories()
         {
-            return this._categories != null && this._categories.Count > 0; 
+            return this._categories != null && (this._categories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.LocationService.Model
         // Check to see if SupplementalCategories property is set
         internal bool IsSetSupplementalCategories()
         {
-            return this._supplementalCategories != null && this._supplementalCategories.Count > 0; 
+            return this._supplementalCategories != null && (this._supplementalCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

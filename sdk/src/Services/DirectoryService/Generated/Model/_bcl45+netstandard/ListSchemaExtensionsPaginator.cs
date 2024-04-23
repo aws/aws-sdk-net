@@ -45,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// Enumerable containing all of the SchemaExtensionsInfo
         /// </summary>
         public IPaginatedEnumerable<SchemaExtensionInfo> SchemaExtensionsInfo => 
-            new PaginatedResultKeyResponse<ListSchemaExtensionsResponse, SchemaExtensionInfo>(this, (i) => i.SchemaExtensionsInfo);
+            new PaginatedResultKeyResponse<ListSchemaExtensionsResponse, SchemaExtensionInfo>(this, (i) => i.SchemaExtensionsInfo ?? new List<SchemaExtensionInfo>());
 
         internal ListSchemaExtensionsPaginator(IAmazonDirectoryService client, ListSchemaExtensionsRequest request)
         {

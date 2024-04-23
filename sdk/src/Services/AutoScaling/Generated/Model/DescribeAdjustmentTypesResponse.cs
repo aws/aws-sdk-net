@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeAdjustmentTypesResponse : AmazonWebServiceResponse
     {
-        private List<AdjustmentType> _adjustmentTypes = new List<AdjustmentType>();
+        private List<AdjustmentType> _adjustmentTypes = AWSConfigs.InitializeCollections ? new List<AdjustmentType>() : null;
 
         /// <summary>
         /// Gets and sets the property AdjustmentTypes. 
@@ -50,7 +50,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AdjustmentTypes property is set
         internal bool IsSetAdjustmentTypes()
         {
-            return this._adjustmentTypes != null && this._adjustmentTypes.Count > 0; 
+            return this._adjustmentTypes != null && (this._adjustmentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

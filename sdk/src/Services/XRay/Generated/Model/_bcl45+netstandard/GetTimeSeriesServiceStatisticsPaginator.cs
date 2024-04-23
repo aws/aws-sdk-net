@@ -45,7 +45,7 @@ namespace Amazon.XRay.Model
         /// Enumerable containing all of the TimeSeriesServiceStatistics
         /// </summary>
         public IPaginatedEnumerable<TimeSeriesServiceStatistics> TimeSeriesServiceStatistics => 
-            new PaginatedResultKeyResponse<GetTimeSeriesServiceStatisticsResponse, TimeSeriesServiceStatistics>(this, (i) => i.TimeSeriesServiceStatistics);
+            new PaginatedResultKeyResponse<GetTimeSeriesServiceStatisticsResponse, TimeSeriesServiceStatistics>(this, (i) => i.TimeSeriesServiceStatistics ?? new List<TimeSeriesServiceStatistics>());
 
         internal GetTimeSeriesServiceStatisticsPaginator(IAmazonXRay client, GetTimeSeriesServiceStatisticsRequest request)
         {

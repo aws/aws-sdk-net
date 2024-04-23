@@ -45,7 +45,7 @@ namespace Amazon.ForecastService.Model
         /// Enumerable containing all of the Explainabilities
         /// </summary>
         public IPaginatedEnumerable<ExplainabilitySummary> Explainabilities => 
-            new PaginatedResultKeyResponse<ListExplainabilitiesResponse, ExplainabilitySummary>(this, (i) => i.Explainabilities);
+            new PaginatedResultKeyResponse<ListExplainabilitiesResponse, ExplainabilitySummary>(this, (i) => i.Explainabilities ?? new List<ExplainabilitySummary>());
 
         internal ListExplainabilitiesPaginator(IAmazonForecastService client, ListExplainabilitiesRequest request)
         {

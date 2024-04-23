@@ -33,7 +33,7 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class ListTemplateActionsResponse : AmazonWebServiceResponse
     {
-        private List<TemplateActionDocument> _items = new List<TemplateActionDocument>();
+        private List<TemplateActionDocument> _items = AWSConfigs.InitializeCollections ? new List<TemplateActionDocument>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Mgn.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

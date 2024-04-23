@@ -33,7 +33,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class ListIndexResponse : AmazonWebServiceResponse
     {
-        private List<IndexAttachment> _indexAttachments = new List<IndexAttachment>();
+        private List<IndexAttachment> _indexAttachments = AWSConfigs.InitializeCollections ? new List<IndexAttachment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if IndexAttachments property is set
         internal bool IsSetIndexAttachments()
         {
-            return this._indexAttachments != null && this._indexAttachments.Count > 0; 
+            return this._indexAttachments != null && (this._indexAttachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,8 +33,8 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class Participants
     {
-        private List<GroupMetadata> _groups = new List<GroupMetadata>();
-        private List<UserMetadata> _users = new List<UserMetadata>();
+        private List<GroupMetadata> _groups = AWSConfigs.InitializeCollections ? new List<GroupMetadata>() : null;
+        private List<UserMetadata> _users = AWSConfigs.InitializeCollections ? new List<UserMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property Groups. 
@@ -51,7 +51,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

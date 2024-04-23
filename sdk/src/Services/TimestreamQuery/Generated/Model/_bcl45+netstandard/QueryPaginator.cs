@@ -45,7 +45,7 @@ namespace Amazon.TimestreamQuery.Model
         /// Enumerable containing all of the Rows
         /// </summary>
         public IPaginatedEnumerable<Row> Rows => 
-            new PaginatedResultKeyResponse<QueryResponse, Row>(this, (i) => i.Rows);
+            new PaginatedResultKeyResponse<QueryResponse, Row>(this, (i) => i.Rows ?? new List<Row>());
 
         internal QueryPaginator(IAmazonTimestreamQuery client, QueryRequest request)
         {

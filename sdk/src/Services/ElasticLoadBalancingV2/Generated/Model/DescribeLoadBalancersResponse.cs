@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class DescribeLoadBalancersResponse : AmazonWebServiceResponse
     {
-        private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
+        private List<LoadBalancer> _loadBalancers = AWSConfigs.InitializeCollections ? new List<LoadBalancer>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if LoadBalancers property is set
         internal bool IsSetLoadBalancers()
         {
-            return this._loadBalancers != null && this._loadBalancers.Count > 0; 
+            return this._loadBalancers != null && (this._loadBalancers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

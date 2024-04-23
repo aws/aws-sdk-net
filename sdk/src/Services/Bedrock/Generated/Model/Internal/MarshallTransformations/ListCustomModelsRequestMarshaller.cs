@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,10 +64,10 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 request.Parameters.Add("baseModelArnEquals", StringUtils.FromString(publicRequest.BaseModelArnEquals));
             
             if (publicRequest.IsSetCreationTimeAfter())
-                request.Parameters.Add("creationTimeAfter", StringUtils.FromDateTimeToISO8601(publicRequest.CreationTimeAfter));
+                request.Parameters.Add("creationTimeAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreationTimeAfter));
             
             if (publicRequest.IsSetCreationTimeBefore())
-                request.Parameters.Add("creationTimeBefore", StringUtils.FromDateTimeToISO8601(publicRequest.CreationTimeBefore));
+                request.Parameters.Add("creationTimeBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreationTimeBefore));
             
             if (publicRequest.IsSetFoundationModelArnEquals())
                 request.Parameters.Add("foundationModelArnEquals", StringUtils.FromString(publicRequest.FoundationModelArnEquals));
@@ -110,3 +111,4 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

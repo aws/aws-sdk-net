@@ -33,9 +33,9 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class Content
     {
-        private List<Audio> _audioList = new List<Audio>();
-        private List<Ssml> _ssmlList = new List<Ssml>();
-        private List<Text> _textList = new List<Text>();
+        private List<Audio> _audioList = AWSConfigs.InitializeCollections ? new List<Audio>() : null;
+        private List<Ssml> _ssmlList = AWSConfigs.InitializeCollections ? new List<Ssml>() : null;
+        private List<Text> _textList = AWSConfigs.InitializeCollections ? new List<Text>() : null;
 
         /// <summary>
         /// Gets and sets the property AudioList. 
@@ -53,7 +53,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if AudioList property is set
         internal bool IsSetAudioList()
         {
-            return this._audioList != null && this._audioList.Count > 0; 
+            return this._audioList != null && (this._audioList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if SsmlList property is set
         internal bool IsSetSsmlList()
         {
-            return this._ssmlList != null && this._ssmlList.Count > 0; 
+            return this._ssmlList != null && (this._ssmlList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if TextList property is set
         internal bool IsSetTextList()
         {
-            return this._textList != null && this._textList.Count > 0; 
+            return this._textList != null && (this._textList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

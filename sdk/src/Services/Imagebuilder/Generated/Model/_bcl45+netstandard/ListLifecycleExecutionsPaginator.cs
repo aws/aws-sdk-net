@@ -45,7 +45,7 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all of the LifecycleExecutions
         /// </summary>
         public IPaginatedEnumerable<LifecycleExecution> LifecycleExecutions => 
-            new PaginatedResultKeyResponse<ListLifecycleExecutionsResponse, LifecycleExecution>(this, (i) => i.LifecycleExecutions);
+            new PaginatedResultKeyResponse<ListLifecycleExecutionsResponse, LifecycleExecution>(this, (i) => i.LifecycleExecutions ?? new List<LifecycleExecution>());
 
         internal ListLifecycleExecutionsPaginator(IAmazonImagebuilder client, ListLifecycleExecutionsRequest request)
         {

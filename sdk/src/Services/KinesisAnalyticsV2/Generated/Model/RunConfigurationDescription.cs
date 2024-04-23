@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the starting properties for a Kinesis Data Analytics application.
+    /// Describes the starting properties for a Managed Service for Apache Flink application.
     /// </summary>
     public partial class RunConfigurationDescription
     {

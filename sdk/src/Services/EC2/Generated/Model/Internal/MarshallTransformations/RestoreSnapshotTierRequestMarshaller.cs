@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,14 +63,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PermanentRestore", StringUtils.FromBool(publicRequest.PermanentRestore));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotId())
                 {
                     request.Parameters.Add("SnapshotId", StringUtils.FromString(publicRequest.SnapshotId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemporaryRestoreDays())
                 {
                     request.Parameters.Add("TemporaryRestoreDays", StringUtils.FromInt(publicRequest.TemporaryRestoreDays));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

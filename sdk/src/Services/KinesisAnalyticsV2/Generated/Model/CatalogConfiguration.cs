@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// The configuration parameters for the default Amazon Glue database. You use this database
-    /// for SQL queries that you write in a Kinesis Data Analytics Studio notebook.
+    /// for SQL queries that you write in a Managed Service for Apache Flink Studio notebook.
     /// </summary>
     public partial class CatalogConfiguration
     {
@@ -40,8 +40,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property GlueDataCatalogConfiguration. 
         /// <para>
         /// The configuration parameters for the default Amazon Glue database. You use this database
-        /// for Apache Flink SQL queries and table API transforms that you write in a Kinesis
-        /// Data Analytics Studio notebook.
+        /// for Apache Flink SQL queries and table API transforms that you write in a Managed
+        /// Service for Apache Flink Studio notebook.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

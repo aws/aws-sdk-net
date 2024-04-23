@@ -33,7 +33,7 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class DescribeCommentsResponse : AmazonWebServiceResponse
     {
-        private List<Comment> _comments = new List<Comment>();
+        private List<Comment> _comments = AWSConfigs.InitializeCollections ? new List<Comment>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Comments property is set
         internal bool IsSetComments()
         {
-            return this._comments != null && this._comments.Count > 0; 
+            return this._comments != null && (this._comments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

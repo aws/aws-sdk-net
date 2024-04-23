@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class ListApplicationSnapshotsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SnapshotDetails> _snapshotSummaries = new List<SnapshotDetails>();
+        private List<SnapshotDetails> _snapshotSummaries = AWSConfigs.InitializeCollections ? new List<SnapshotDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if SnapshotSummaries property is set
         internal bool IsSetSnapshotSummaries()
         {
-            return this._snapshotSummaries != null && this._snapshotSummaries.Count > 0; 
+            return this._snapshotSummaries != null && (this._snapshotSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

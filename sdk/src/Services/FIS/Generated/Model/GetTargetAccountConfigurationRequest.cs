@@ -41,7 +41,7 @@ namespace Amazon.FIS.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the target account.
+        /// The Amazon Web Services account ID of the target account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=48)]

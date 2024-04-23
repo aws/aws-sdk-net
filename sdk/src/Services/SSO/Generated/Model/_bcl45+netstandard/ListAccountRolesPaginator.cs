@@ -45,7 +45,7 @@ namespace Amazon.SSO.Model
         /// Enumerable containing all of the RoleList
         /// </summary>
         public IPaginatedEnumerable<RoleInfo> RoleList => 
-            new PaginatedResultKeyResponse<ListAccountRolesResponse, RoleInfo>(this, (i) => i.RoleList);
+            new PaginatedResultKeyResponse<ListAccountRolesResponse, RoleInfo>(this, (i) => i.RoleList ?? new List<RoleInfo>());
 
         internal ListAccountRolesPaginator(IAmazonSSO client, ListAccountRolesRequest request)
         {

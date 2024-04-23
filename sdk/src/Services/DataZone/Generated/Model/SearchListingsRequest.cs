@@ -30,16 +30,16 @@ namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchListings operation.
-    /// Searches listings in Amazon DataZone.
+    /// Searches listings (records of an asset at a given time) in Amazon DataZone.
     /// </summary>
     public partial class SearchListingsRequest : AmazonDataZoneRequest
     {
-        private List<string> _additionalAttributes = new List<string>();
+        private List<string> _additionalAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _domainIdentifier;
         private FilterClause _filters;
         private int? _maxResults;
         private string _nextToken;
-        private List<SearchInItem> _searchIn = new List<SearchInItem>();
+        private List<SearchInItem> _searchIn = AWSConfigs.InitializeCollections ? new List<SearchInItem>() : null;
         private string _searchText;
         private SearchSort _sort;
 
@@ -58,7 +58,7 @@ namespace Amazon.DataZone.Model
         // Check to see if AdditionalAttributes property is set
         internal bool IsSetAdditionalAttributes()
         {
-            return this._additionalAttributes != null && this._additionalAttributes.Count > 0; 
+            return this._additionalAttributes != null && (this._additionalAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,7 +144,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SearchIn.
+        /// Gets and sets the property SearchIn. 
+        /// <para>
+        /// The details of the search.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<SearchInItem> SearchIn
@@ -156,7 +159,7 @@ namespace Amazon.DataZone.Model
         // Check to see if SearchIn property is set
         internal bool IsSetSearchIn()
         {
-            return this._searchIn != null && this._searchIn.Count > 0; 
+            return this._searchIn != null && (this._searchIn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

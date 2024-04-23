@@ -195,7 +195,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property SolutionVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a specific version of the solution.
+        /// The Amazon Resource Name (ARN) of the solution version the campaign uses.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

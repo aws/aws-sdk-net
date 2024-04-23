@@ -175,6 +175,61 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  BatchGetSchemaAnalysisRule
+
+
+        /// <summary>
+        /// Retrieves multiple analysis rule schemas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSchemaAnalysisRule service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetSchemaAnalysisRule service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetSchemaAnalysisRule">REST API Reference for BatchGetSchemaAnalysisRule Operation</seealso>
+        BatchGetSchemaAnalysisRuleResponse BatchGetSchemaAnalysisRule(BatchGetSchemaAnalysisRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetSchemaAnalysisRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSchemaAnalysisRule operation on AmazonCleanRoomsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetSchemaAnalysisRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetSchemaAnalysisRule">REST API Reference for BatchGetSchemaAnalysisRule Operation</seealso>
+        IAsyncResult BeginBatchGetSchemaAnalysisRule(BatchGetSchemaAnalysisRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetSchemaAnalysisRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetSchemaAnalysisRule.</param>
+        /// 
+        /// <returns>Returns a  BatchGetSchemaAnalysisRuleResult from CleanRooms.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetSchemaAnalysisRule">REST API Reference for BatchGetSchemaAnalysisRule Operation</seealso>
+        BatchGetSchemaAnalysisRuleResponse EndBatchGetSchemaAnalysisRule(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateAnalysisTemplate
 
 

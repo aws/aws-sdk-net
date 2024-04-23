@@ -33,7 +33,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class ListControlsResponse : AmazonWebServiceResponse
     {
-        private List<ControlMetadata> _controlMetadataList = new List<ControlMetadata>();
+        private List<ControlMetadata> _controlMetadataList = AWSConfigs.InitializeCollections ? new List<ControlMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if ControlMetadataList property is set
         internal bool IsSetControlMetadataList()
         {
-            return this._controlMetadataList != null && this._controlMetadataList.Count > 0; 
+            return this._controlMetadataList != null && (this._controlMetadataList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

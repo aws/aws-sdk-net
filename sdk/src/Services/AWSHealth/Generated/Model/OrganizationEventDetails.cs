@@ -39,7 +39,7 @@ namespace Amazon.AWSHealth.Model
         private string _awsAccountId;
         private Event _event;
         private EventDescription _eventDescription;
-        private Dictionary<string, string> _eventMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _eventMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -105,7 +105,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EventMetadata property is set
         internal bool IsSetEventMetadata()
         {
-            return this._eventMetadata != null && this._eventMetadata.Count > 0; 
+            return this._eventMetadata != null && (this._eventMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

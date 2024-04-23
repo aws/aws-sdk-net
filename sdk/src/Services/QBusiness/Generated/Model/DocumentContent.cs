@@ -41,8 +41,9 @@ namespace Amazon.QBusiness.Model
         /// <para>
         /// The contents of the document. Documents passed to the <c>blob</c> parameter must be
         /// base64 encoded. Your code might not need to encode the document file bytes if you're
-        /// using an Amazon Web Services SDK to call Amazon Q APIs. If you are calling the Amazon
-        /// Q endpoint directly using REST, you must base64 encode the contents before sending.
+        /// using an Amazon Web Services SDK to call Amazon Q Business APIs. If you are calling
+        /// the Amazon Q Business endpoint directly using REST, you must base64 encode the contents
+        /// before sending.
         /// </para>
         /// </summary>
         public MemoryStream Blob

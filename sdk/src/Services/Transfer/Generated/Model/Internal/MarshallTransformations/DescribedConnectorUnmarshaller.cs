@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -93,6 +94,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.LoggingRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecurityPolicyName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecurityPolicyName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServiceManagedEgressIpAddresses", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -136,3 +143,4 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

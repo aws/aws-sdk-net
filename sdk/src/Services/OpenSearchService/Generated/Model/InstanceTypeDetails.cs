@@ -36,10 +36,10 @@ namespace Amazon.OpenSearchService.Model
     {
         private bool? _advancedSecurityEnabled;
         private bool? _appLogsEnabled;
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _cognitoEnabled;
         private bool? _encryptionEnabled;
-        private List<string> _instanceRole = new List<string>();
+        private List<string> _instanceRole = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OpenSearchPartitionInstanceType _instanceType;
         private bool? _warmEnabled;
 
@@ -94,7 +94,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if InstanceRole property is set
         internal bool IsSetInstanceRole()
         {
-            return this._instanceRole != null && this._instanceRole.Count > 0; 
+            return this._instanceRole != null && (this._instanceRole.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

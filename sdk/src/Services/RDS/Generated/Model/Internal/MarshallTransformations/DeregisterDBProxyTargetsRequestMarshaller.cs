@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBInstanceIdentifiers())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -76,14 +78,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBProxyName())
                 {
                     request.Parameters.Add("DBProxyName", StringUtils.FromString(publicRequest.DBProxyName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetGroupName())
                 {
                     request.Parameters.Add("TargetGroupName", StringUtils.FromString(publicRequest.TargetGroupName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// Enumerable containing all of the Collectors
         /// </summary>
         public IPaginatedEnumerable<Collector> Collectors => 
-            new PaginatedResultKeyResponse<ListCollectorsResponse, Collector>(this, (i) => i.Collectors);
+            new PaginatedResultKeyResponse<ListCollectorsResponse, Collector>(this, (i) => i.Collectors ?? new List<Collector>());
 
         internal ListCollectorsPaginator(IAmazonMigrationHubStrategyRecommendations client, ListCollectorsRequest request)
         {

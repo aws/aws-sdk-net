@@ -44,7 +44,7 @@ namespace Amazon.DataZone.Model
         /// The content of the metadata form.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=75000)]
+        [AWSProperty(Min=0, Max=150000)]
         public string Content
         {
             get { return this._content; }

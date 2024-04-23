@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyAttributes())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -71,21 +73,26 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("PolicyAttributes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AttributeName", StringUtils.FromString(publicRequestlistValue.AttributeName));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetAttributeValue())
                         {
                             request.Parameters.Add("PolicyAttributes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AttributeValue", StringUtils.FromString(publicRequestlistValue.AttributeValue));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyName())
                 {
                     request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyTypeName())
                 {
                     request.Parameters.Add("PolicyTypeName", StringUtils.FromString(publicRequest.PolicyTypeName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

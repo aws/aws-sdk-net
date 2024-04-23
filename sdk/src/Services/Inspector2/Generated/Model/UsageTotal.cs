@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model
     public partial class UsageTotal
     {
         private string _accountId;
-        private List<Usage> _usage = new List<Usage>();
+        private List<Usage> _usage = AWSConfigs.InitializeCollections ? new List<Usage>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -69,7 +69,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Usage property is set
         internal bool IsSetUsage()
         {
-            return this._usage != null && this._usage.Count > 0; 
+            return this._usage != null && (this._usage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

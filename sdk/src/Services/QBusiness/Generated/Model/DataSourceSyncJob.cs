@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Provides information about an Amazon Q data source connector synchronization job.
+    /// Provides information about an Amazon Q Business data source connector synchronization
+    /// job.
     /// </summary>
     public partial class DataSourceSyncJob
     {

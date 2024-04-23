@@ -45,7 +45,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the Findings
         /// </summary>
         public IPaginatedEnumerable<Finding> Findings => 
-            new PaginatedResultKeyResponse<ListFindingsResponse, Finding>(this, (i) => i.Findings);
+            new PaginatedResultKeyResponse<ListFindingsResponse, Finding>(this, (i) => i.Findings ?? new List<Finding>());
 
         internal ListFindingsPaginator(IAmazonInspector2 client, ListFindingsRequest request)
         {

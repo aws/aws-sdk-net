@@ -97,6 +97,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>client_keep_alive.seconds</c> - The client keep alive value, in seconds. The valid
+        /// range is 60-604800 seconds. The default is 3600 seconds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>connection_logs.s3.enabled</c> - Indicates whether connection logs are enabled.
         /// The value is <c>true</c> or <c>false</c>. The default is <c>false</c>.
         /// </para>

@@ -33,7 +33,7 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class ListDomainNamesResponse : AmazonWebServiceResponse
     {
-        private List<DomainNameConfig> _domainNameConfigs = new List<DomainNameConfig>();
+        private List<DomainNameConfig> _domainNameConfigs = AWSConfigs.InitializeCollections ? new List<DomainNameConfig>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AppSync.Model
         // Check to see if DomainNameConfigs property is set
         internal bool IsSetDomainNameConfigs()
         {
-            return this._domainNameConfigs != null && this._domainNameConfigs.Count > 0; 
+            return this._domainNameConfigs != null && (this._domainNameConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

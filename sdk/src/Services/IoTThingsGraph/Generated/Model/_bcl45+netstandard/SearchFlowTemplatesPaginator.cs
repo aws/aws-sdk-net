@@ -45,7 +45,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<FlowTemplateSummary> Summaries => 
-            new PaginatedResultKeyResponse<SearchFlowTemplatesResponse, FlowTemplateSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<SearchFlowTemplatesResponse, FlowTemplateSummary>(this, (i) => i.Summaries ?? new List<FlowTemplateSummary>());
 
         internal SearchFlowTemplatesPaginator(IAmazonIoTThingsGraph client, SearchFlowTemplatesRequest request)
         {

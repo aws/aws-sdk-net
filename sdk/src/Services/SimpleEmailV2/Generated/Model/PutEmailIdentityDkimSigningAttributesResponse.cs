@@ -39,7 +39,7 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class PutEmailIdentityDkimSigningAttributesResponse : AmazonWebServiceResponse
     {
         private DkimStatus _dkimStatus;
-        private List<string> _dkimTokens = new List<string>();
+        private List<string> _dkimTokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DkimStatus. 
@@ -129,7 +129,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if DkimTokens property is set
         internal bool IsSetDkimTokens()
         {
-            return this._dkimTokens != null && this._dkimTokens.Count > 0; 
+            return this._dkimTokens != null && (this._dkimTokens.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

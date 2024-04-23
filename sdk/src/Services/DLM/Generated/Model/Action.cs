@@ -33,7 +33,7 @@ namespace Amazon.DLM.Model
     /// </summary>
     public partial class Action
     {
-        private List<CrossRegionCopyAction> _crossRegionCopy = new List<CrossRegionCopyAction>();
+        private List<CrossRegionCopyAction> _crossRegionCopy = AWSConfigs.InitializeCollections ? new List<CrossRegionCopyAction>() : null;
         private string _name;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.DLM.Model
         // Check to see if CrossRegionCopy property is set
         internal bool IsSetCrossRegionCopy()
         {
-            return this._crossRegionCopy != null && this._crossRegionCopy.Count > 0; 
+            return this._crossRegionCopy != null && (this._crossRegionCopy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

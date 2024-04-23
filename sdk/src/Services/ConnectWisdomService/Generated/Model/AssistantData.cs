@@ -40,7 +40,7 @@ namespace Amazon.ConnectWisdomService.Model
         private string _name;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
         private AssistantStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AssistantType _type;
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

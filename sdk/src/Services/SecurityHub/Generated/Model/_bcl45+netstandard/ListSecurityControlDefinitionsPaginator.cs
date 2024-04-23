@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all of the SecurityControlDefinitions
         /// </summary>
         public IPaginatedEnumerable<SecurityControlDefinition> SecurityControlDefinitions => 
-            new PaginatedResultKeyResponse<ListSecurityControlDefinitionsResponse, SecurityControlDefinition>(this, (i) => i.SecurityControlDefinitions);
+            new PaginatedResultKeyResponse<ListSecurityControlDefinitionsResponse, SecurityControlDefinition>(this, (i) => i.SecurityControlDefinitions ?? new List<SecurityControlDefinition>());
 
         internal ListSecurityControlDefinitionsPaginator(IAmazonSecurityHub client, ListSecurityControlDefinitionsRequest request)
         {

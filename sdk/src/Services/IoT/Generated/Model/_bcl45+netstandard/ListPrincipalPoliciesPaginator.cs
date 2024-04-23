@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the Policies
         /// </summary>
         public IPaginatedEnumerable<Policy> Policies => 
-            new PaginatedResultKeyResponse<ListPrincipalPoliciesResponse, Policy>(this, (i) => i.Policies);
+            new PaginatedResultKeyResponse<ListPrincipalPoliciesResponse, Policy>(this, (i) => i.Policies ?? new List<Policy>());
 
         internal ListPrincipalPoliciesPaginator(IAmazonIoT client, ListPrincipalPoliciesRequest request)
         {

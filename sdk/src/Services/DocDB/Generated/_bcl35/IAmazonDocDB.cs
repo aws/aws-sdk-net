@@ -3066,6 +3066,59 @@ namespace Amazon.DocDB
         StopDBClusterResponse EndStopDBCluster(IAsyncResult asyncResult);
 
         #endregion
+        
+        #region  SwitchoverGlobalCluster
+
+
+        /// <summary>
+        /// Switches over the specified secondary Amazon DocumentDB cluster to be the new primary
+        /// Amazon DocumentDB cluster in the global database cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverGlobalCluster service method.</param>
+        /// 
+        /// <returns>The response from the SwitchoverGlobalCluster service method, as returned by DocDB.</returns>
+        /// <exception cref="Amazon.DocDB.Model.DBClusterNotFoundException">
+        /// <c>DBClusterIdentifier</c> doesn't refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.GlobalClusterNotFoundException">
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global cluster.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidDBClusterStateException">
+        /// The cluster isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.DocDB.Model.InvalidGlobalClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/SwitchoverGlobalCluster">REST API Reference for SwitchoverGlobalCluster Operation</seealso>
+        SwitchoverGlobalClusterResponse SwitchoverGlobalCluster(SwitchoverGlobalClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SwitchoverGlobalCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverGlobalCluster operation on AmazonDocDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSwitchoverGlobalCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/SwitchoverGlobalCluster">REST API Reference for SwitchoverGlobalCluster Operation</seealso>
+        IAsyncResult BeginSwitchoverGlobalCluster(SwitchoverGlobalClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SwitchoverGlobalCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSwitchoverGlobalCluster.</param>
+        /// 
+        /// <returns>Returns a  SwitchoverGlobalClusterResult from DocDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/SwitchoverGlobalCluster">REST API Reference for SwitchoverGlobalCluster Operation</seealso>
+        SwitchoverGlobalClusterResponse EndSwitchoverGlobalCluster(IAsyncResult asyncResult);
+
+        #endregion
                 
         #region DetermineServiceOperationEndpoint
 

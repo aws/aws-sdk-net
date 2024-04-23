@@ -35,8 +35,8 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class PhysicalResource
     {
-        private Dictionary<string, List<string>> _additionalInfo = new Dictionary<string, List<string>>();
-        private List<AppComponent> _appComponents = new List<AppComponent>();
+        private Dictionary<string, List<string>> _additionalInfo = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
+        private List<AppComponent> _appComponents = AWSConfigs.InitializeCollections ? new List<AppComponent>() : null;
         private bool? _excluded;
         private LogicalResourceId _logicalResourceId;
         private string _parentResourceName;
@@ -78,7 +78,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if AdditionalInfo property is set
         internal bool IsSetAdditionalInfo()
         {
-            return this._additionalInfo != null && this._additionalInfo.Count > 0; 
+            return this._additionalInfo != null && (this._additionalInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if AppComponents property is set
         internal bool IsSetAppComponents()
         {
-            return this._appComponents != null && this._appComponents.Count > 0; 
+            return this._appComponents != null && (this._appComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

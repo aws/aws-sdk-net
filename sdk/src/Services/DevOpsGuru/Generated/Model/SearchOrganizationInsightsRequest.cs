@@ -44,7 +44,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class SearchOrganizationInsightsRequest : AmazonDevOpsGuruRequest
     {
-        private List<string> _accountIds = new List<string>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SearchOrganizationInsightsFilters _filters;
         private int? _maxResults;
         private string _nextToken;
@@ -67,7 +67,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

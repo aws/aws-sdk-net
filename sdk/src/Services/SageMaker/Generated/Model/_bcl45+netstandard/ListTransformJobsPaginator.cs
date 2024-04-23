@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the TransformJobSummaries
         /// </summary>
         public IPaginatedEnumerable<TransformJobSummary> TransformJobSummaries => 
-            new PaginatedResultKeyResponse<ListTransformJobsResponse, TransformJobSummary>(this, (i) => i.TransformJobSummaries);
+            new PaginatedResultKeyResponse<ListTransformJobsResponse, TransformJobSummary>(this, (i) => i.TransformJobSummaries ?? new List<TransformJobSummary>());
 
         internal ListTransformJobsPaginator(IAmazonSageMaker client, ListTransformJobsRequest request)
         {

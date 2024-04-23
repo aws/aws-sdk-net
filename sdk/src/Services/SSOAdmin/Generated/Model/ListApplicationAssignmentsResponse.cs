@@ -33,7 +33,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class ListApplicationAssignmentsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationAssignment> _applicationAssignments = new List<ApplicationAssignment>();
+        private List<ApplicationAssignment> _applicationAssignments = AWSConfigs.InitializeCollections ? new List<ApplicationAssignment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if ApplicationAssignments property is set
         internal bool IsSetApplicationAssignments()
         {
-            return this._applicationAssignments != null && this._applicationAssignments.Count > 0; 
+            return this._applicationAssignments != null && (this._applicationAssignments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

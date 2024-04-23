@@ -29,7 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Content of a retrieval result.
+    /// Contains the cited text from the data source.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+    /// response</a> – in the <c>content</c> field
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
+    /// response</a> – in the <c>content</c> field
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+    /// response</a> – in the <c>content</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RetrievalResultContent
     {
@@ -38,7 +59,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// Content of a retrieval result in text
+        /// The cited text from the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,7 +38,7 @@ namespace Amazon.Textract.Model
         private AutoUpdate _autoUpdate;
         private DateTime? _creationTime;
         private string _description;
-        private List<string> _featureTypes = new List<string>();
+        private List<string> _featureTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AdapterId. 
@@ -148,7 +148,7 @@ namespace Amazon.Textract.Model
         // Check to see if FeatureTypes property is set
         internal bool IsSetFeatureTypes()
         {
-            return this._featureTypes != null && this._featureTypes.Count > 0; 
+            return this._featureTypes != null && (this._featureTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

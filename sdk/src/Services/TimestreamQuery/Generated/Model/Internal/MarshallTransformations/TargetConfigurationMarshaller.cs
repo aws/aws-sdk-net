@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TargetConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetTimestreamConfiguration())
             {
                 context.Writer.WritePropertyName("TimestreamConfiguration");
@@ -65,3 +68,4 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the TrialComponentSummaries
         /// </summary>
         public IPaginatedEnumerable<TrialComponentSummary> TrialComponentSummaries => 
-            new PaginatedResultKeyResponse<ListTrialComponentsResponse, TrialComponentSummary>(this, (i) => i.TrialComponentSummaries);
+            new PaginatedResultKeyResponse<ListTrialComponentsResponse, TrialComponentSummary>(this, (i) => i.TrialComponentSummaries ?? new List<TrialComponentSummary>());
 
         internal ListTrialComponentsPaginator(IAmazonSageMaker client, ListTrialComponentsRequest request)
         {

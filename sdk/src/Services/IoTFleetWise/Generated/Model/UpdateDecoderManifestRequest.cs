@@ -42,12 +42,12 @@ namespace Amazon.IoTFleetWise.Model
     {
         private string _description;
         private string _name;
-        private List<NetworkInterface> _networkInterfacesToAdd = new List<NetworkInterface>();
-        private List<string> _networkInterfacesToRemove = new List<string>();
-        private List<NetworkInterface> _networkInterfacesToUpdate = new List<NetworkInterface>();
-        private List<SignalDecoder> _signalDecodersToAdd = new List<SignalDecoder>();
-        private List<string> _signalDecodersToRemove = new List<string>();
-        private List<SignalDecoder> _signalDecodersToUpdate = new List<SignalDecoder>();
+        private List<NetworkInterface> _networkInterfacesToAdd = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
+        private List<string> _networkInterfacesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<NetworkInterface> _networkInterfacesToUpdate = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
+        private List<SignalDecoder> _signalDecodersToAdd = AWSConfigs.InitializeCollections ? new List<SignalDecoder>() : null;
+        private List<string> _signalDecodersToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<SignalDecoder> _signalDecodersToUpdate = AWSConfigs.InitializeCollections ? new List<SignalDecoder>() : null;
         private ManifestStatus _status;
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if NetworkInterfacesToAdd property is set
         internal bool IsSetNetworkInterfacesToAdd()
         {
-            return this._networkInterfacesToAdd != null && this._networkInterfacesToAdd.Count > 0; 
+            return this._networkInterfacesToAdd != null && (this._networkInterfacesToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if NetworkInterfacesToRemove property is set
         internal bool IsSetNetworkInterfacesToRemove()
         {
-            return this._networkInterfacesToRemove != null && this._networkInterfacesToRemove.Count > 0; 
+            return this._networkInterfacesToRemove != null && (this._networkInterfacesToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if NetworkInterfacesToUpdate property is set
         internal bool IsSetNetworkInterfacesToUpdate()
         {
-            return this._networkInterfacesToUpdate != null && this._networkInterfacesToUpdate.Count > 0; 
+            return this._networkInterfacesToUpdate != null && (this._networkInterfacesToUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if SignalDecodersToAdd property is set
         internal bool IsSetSignalDecodersToAdd()
         {
-            return this._signalDecodersToAdd != null && this._signalDecodersToAdd.Count > 0; 
+            return this._signalDecodersToAdd != null && (this._signalDecodersToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if SignalDecodersToRemove property is set
         internal bool IsSetSignalDecodersToRemove()
         {
-            return this._signalDecodersToRemove != null && this._signalDecodersToRemove.Count > 0; 
+            return this._signalDecodersToRemove != null && (this._signalDecodersToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if SignalDecodersToUpdate property is set
         internal bool IsSetSignalDecodersToUpdate()
         {
-            return this._signalDecodersToUpdate != null && this._signalDecodersToUpdate.Count > 0; 
+            return this._signalDecodersToUpdate != null && (this._signalDecodersToUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

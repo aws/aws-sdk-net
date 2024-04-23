@@ -45,7 +45,7 @@ namespace Amazon.MediaLive.Model
         /// Enumerable containing all of the InputDevices
         /// </summary>
         public IPaginatedEnumerable<InputDeviceSummary> InputDevices => 
-            new PaginatedResultKeyResponse<ListInputDevicesResponse, InputDeviceSummary>(this, (i) => i.InputDevices);
+            new PaginatedResultKeyResponse<ListInputDevicesResponse, InputDeviceSummary>(this, (i) => i.InputDevices ?? new List<InputDeviceSummary>());
 
         internal ListInputDevicesPaginator(IAmazonMediaLive client, ListInputDevicesRequest request)
         {

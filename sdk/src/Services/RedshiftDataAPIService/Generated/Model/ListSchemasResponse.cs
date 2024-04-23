@@ -34,7 +34,7 @@ namespace Amazon.RedshiftDataAPIService.Model
     public partial class ListSchemasResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _schemas = new List<string>();
+        private List<string> _schemas = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         // Check to see if Schemas property is set
         internal bool IsSetSchemas()
         {
-            return this._schemas != null && this._schemas.Count > 0; 
+            return this._schemas != null && (this._schemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

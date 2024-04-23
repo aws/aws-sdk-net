@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomImages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CustomImage, CustomImageUnmarshaller>(CustomImageUnmarshaller.Instance);
+                    unmarshalledObject.CustomImages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DefaultResourceSpec", targetDepth))
                 {
                     var unmarshaller = ResourceSpecUnmarshaller.Instance;
@@ -94,3 +101,4 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

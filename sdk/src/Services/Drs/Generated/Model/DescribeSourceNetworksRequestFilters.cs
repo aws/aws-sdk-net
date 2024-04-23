@@ -35,7 +35,7 @@ namespace Amazon.Drs.Model
     {
         private string _originAccountID;
         private string _originRegion;
-        private List<string> _sourceNetworkIDs = new List<string>();
+        private List<string> _sourceNetworkIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property OriginAccountID. 
@@ -92,7 +92,7 @@ namespace Amazon.Drs.Model
         // Check to see if SourceNetworkIDs property is set
         internal bool IsSetSourceNetworkIDs()
         {
-            return this._sourceNetworkIDs != null && this._sourceNetworkIDs.Count > 0; 
+            return this._sourceNetworkIDs != null && (this._sourceNetworkIDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

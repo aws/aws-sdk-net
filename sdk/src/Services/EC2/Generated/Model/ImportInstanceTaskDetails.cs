@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private string _instanceId;
         private PlatformValues _platform;
-        private List<ImportInstanceVolumeDetailItem> _volumes = new List<ImportInstanceVolumeDetailItem>();
+        private List<ImportInstanceVolumeDetailItem> _volumes = AWSConfigs.InitializeCollections ? new List<ImportInstanceVolumeDetailItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -107,7 +107,7 @@ namespace Amazon.EC2.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

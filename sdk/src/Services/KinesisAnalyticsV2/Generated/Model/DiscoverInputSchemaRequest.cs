@@ -73,7 +73,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property InputStartingPositionConfiguration. 
         /// <para>
         /// The point at which you want Kinesis Data Analytics to start reading records from the
-        /// specified streaming source discovery purposes.
+        /// specified streaming source for discovery purposes.
         /// </para>
         /// </summary>
         public InputStartingPositionConfiguration InputStartingPositionConfiguration

@@ -34,10 +34,10 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class Container
     {
-        private List<string> _command = new List<string>();
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _image;
-        private Dictionary<string, string> _ports = new Dictionary<string, string>();
+        private Dictionary<string, string> _ports = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Command. 
@@ -54,7 +54,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Ports property is set
         internal bool IsSetPorts()
         {
-            return this._ports != null && this._ports.Count > 0; 
+            return this._ports != null && (this._ports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

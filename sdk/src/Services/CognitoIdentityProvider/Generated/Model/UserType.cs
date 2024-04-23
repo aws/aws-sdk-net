@@ -33,9 +33,9 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class UserType
     {
-        private List<AttributeType> _attributes = new List<AttributeType>();
+        private List<AttributeType> _attributes = AWSConfigs.InitializeCollections ? new List<AttributeType>() : null;
         private bool? _enabled;
-        private List<MFAOptionType> _mfaOptions = new List<MFAOptionType>();
+        private List<MFAOptionType> _mfaOptions = AWSConfigs.InitializeCollections ? new List<MFAOptionType>() : null;
         private DateTime? _userCreateDate;
         private DateTime? _userLastModifiedDate;
         private string _username;
@@ -56,7 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if MFAOptions property is set
         internal bool IsSetMFAOptions()
         {
-            return this._mfaOptions != null && this._mfaOptions.Count > 0; 
+            return this._mfaOptions != null && (this._mfaOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

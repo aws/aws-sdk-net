@@ -50,10 +50,10 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class SearchPlaceIndexForSuggestionsRequest : AmazonLocationServiceRequest
     {
-        private List<double> _biasPosition = new List<double>();
-        private List<double> _filterBBox = new List<double>();
-        private List<string> _filterCategories = new List<string>();
-        private List<string> _filterCountries = new List<string>();
+        private List<double> _biasPosition = AWSConfigs.InitializeCollections ? new List<double>() : null;
+        private List<double> _filterBBox = AWSConfigs.InitializeCollections ? new List<double>() : null;
+        private List<string> _filterCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _filterCountries = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _indexName;
         private string _key;
         private string _language;
@@ -94,7 +94,7 @@ namespace Amazon.LocationService.Model
         // Check to see if BiasPosition property is set
         internal bool IsSetBiasPosition()
         {
-            return this._biasPosition != null && this._biasPosition.Count > 0; 
+            return this._biasPosition != null && (this._biasPosition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.LocationService.Model
         // Check to see if FilterBBox property is set
         internal bool IsSetFilterBBox()
         {
-            return this._filterBBox != null && this._filterBBox.Count > 0; 
+            return this._filterBBox != null && (this._filterBBox.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Amazon.LocationService.Model
         // Check to see if FilterCategories property is set
         internal bool IsSetFilterCategories()
         {
-            return this._filterCategories != null && this._filterCategories.Count > 0; 
+            return this._filterCategories != null && (this._filterCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Amazon.LocationService.Model
         // Check to see if FilterCountries property is set
         internal bool IsSetFilterCountries()
         {
-            return this._filterCountries != null && this._filterCountries.Count > 0; 
+            return this._filterCountries != null && (this._filterCountries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

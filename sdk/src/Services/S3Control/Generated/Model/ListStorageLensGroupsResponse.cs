@@ -34,7 +34,7 @@ namespace Amazon.S3Control.Model
     public partial class ListStorageLensGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ListStorageLensGroupEntry> _storageLensGroupList = new List<ListStorageLensGroupEntry>();
+        private List<ListStorageLensGroupEntry> _storageLensGroupList = AWSConfigs.InitializeCollections ? new List<ListStorageLensGroupEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.S3Control.Model
         // Check to see if StorageLensGroupList property is set
         internal bool IsSetStorageLensGroupList()
         {
-            return this._storageLensGroupList != null && this._storageLensGroupList.Count > 0; 
+            return this._storageLensGroupList != null && (this._storageLensGroupList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

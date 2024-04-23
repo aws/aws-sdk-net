@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,36 +63,45 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInputStorageLocation())
                 {
                     if(publicRequest.InputStorageLocation.IsSetBucket())
                     {
                         request.Parameters.Add("InputStorageLocation" + "." + "Bucket", StringUtils.FromString(publicRequest.InputStorageLocation.Bucket));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.InputStorageLocation.IsSetKey())
                     {
                         request.Parameters.Add("InputStorageLocation" + "." + "Key", StringUtils.FromString(publicRequest.InputStorageLocation.Key));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLogsStorageLocation())
                 {
                     if(publicRequest.LogsStorageLocation.IsSetBucket())
                     {
                         request.Parameters.Add("LogsStorageLocation" + "." + "Bucket", StringUtils.FromString(publicRequest.LogsStorageLocation.Bucket));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LogsStorageLocation.IsSetKey())
                     {
                         request.Parameters.Add("LogsStorageLocation" + "." + "Key", StringUtils.FromString(publicRequest.LogsStorageLocation.Key));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -101,6 +111,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -110,16 +121,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -67,7 +67,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class LoadBalancerTlsCertificateRenewalSummary
     {
-        private List<LoadBalancerTlsCertificateDomainValidationOption> _domainValidationOptions = new List<LoadBalancerTlsCertificateDomainValidationOption>();
+        private List<LoadBalancerTlsCertificateDomainValidationOption> _domainValidationOptions = AWSConfigs.InitializeCollections ? new List<LoadBalancerTlsCertificateDomainValidationOption>() : null;
         private LoadBalancerTlsCertificateRenewalStatus _renewalStatus;
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if DomainValidationOptions property is set
         internal bool IsSetDomainValidationOptions()
         {
-            return this._domainValidationOptions != null && this._domainValidationOptions.Count > 0; 
+            return this._domainValidationOptions != null && (this._domainValidationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

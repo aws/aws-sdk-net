@@ -78,7 +78,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public class Tagging
     {
-        private List<Tag> tagSet = new List<Tag>();
+        private List<Tag> tagSet = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// TagSet
@@ -95,9 +95,12 @@ namespace Amazon.S3.Model
             {
                 xmlWriter.WriteStartElement("TagSet");
                 {
-                    foreach (var tag in tagSet)
+                    if (this.tagSet != null)
                     {
-                        tag.Marshall("Tag", xmlWriter);
+                        foreach (var tag in tagSet)
+                        {
+                            tag.Marshall("Tag", xmlWriter);
+                        }
                     }
                 }
                 xmlWriter.WriteEndElement();

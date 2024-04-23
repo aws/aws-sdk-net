@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AssociatedRoles/DBClusterRole", targetDepth))
                     {
                         var unmarshaller = DBClusterRoleUnmarshaller.Instance;
+                        if (unmarshalledObject.AssociatedRoles == null)
+                        {
+                            unmarshalledObject.AssociatedRoles = new List<DBClusterRole>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AssociatedRoles.Add(item);
                         continue;
@@ -76,6 +81,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AvailabilityZones/AvailabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailabilityZones == null)
+                        {
+                            unmarshalledObject.AvailabilityZones = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
@@ -137,6 +146,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBClusterMembers/DBClusterMember", targetDepth))
                     {
                         var unmarshaller = DBClusterMemberUnmarshaller.Instance;
+                        if (unmarshalledObject.DBClusterMembers == null)
+                        {
+                            unmarshalledObject.DBClusterMembers = new List<DBClusterMember>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DBClusterMembers.Add(item);
                         continue;
@@ -144,6 +157,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBClusterOptionGroupMemberships/DBClusterOptionGroup", targetDepth))
                     {
                         var unmarshaller = DBClusterOptionGroupStatusUnmarshaller.Instance;
+                        if (unmarshalledObject.DBClusterOptionGroupMemberships == null)
+                        {
+                            unmarshalledObject.DBClusterOptionGroupMemberships = new List<DBClusterOptionGroupStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DBClusterOptionGroupMemberships.Add(item);
                         continue;
@@ -181,6 +198,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EnabledCloudwatchLogsExports/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.EnabledCloudwatchLogsExports == null)
+                        {
+                            unmarshalledObject.EnabledCloudwatchLogsExports = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.EnabledCloudwatchLogsExports.Add(item);
                         continue;
@@ -290,6 +311,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReadReplicaIdentifiers/ReadReplicaIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ReadReplicaIdentifiers == null)
+                        {
+                            unmarshalledObject.ReadReplicaIdentifiers = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ReadReplicaIdentifiers.Add(item);
                         continue;
@@ -327,6 +352,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth))
                     {
                         var unmarshaller = VpcSecurityGroupMembershipUnmarshaller.Instance;
+                        if (unmarshalledObject.VpcSecurityGroups == null)
+                        {
+                            unmarshalledObject.VpcSecurityGroups = new List<VpcSecurityGroupMembership>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.VpcSecurityGroups.Add(item);
                         continue;
@@ -366,3 +395,4 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

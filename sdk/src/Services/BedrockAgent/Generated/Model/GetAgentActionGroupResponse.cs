@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Get Action Group Response
+    /// This is the response object from the GetAgentActionGroup operation.
     /// </summary>
     public partial class GetAgentActionGroupResponse : AmazonWebServiceResponse
     {
         private AgentActionGroup _agentActionGroup;
 
         /// <summary>
-        /// Gets and sets the property AgentActionGroup.
+        /// Gets and sets the property AgentActionGroup. 
+        /// <para>
+        /// Contains details about the action group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentActionGroup AgentActionGroup

@@ -37,7 +37,7 @@ namespace Amazon.RAM.Model
         private string _receiverAccountId;
         private string _receiverArn;
         private string _resourceShareArn;
-        private List<ResourceShareAssociation> _resourceShareAssociations = new List<ResourceShareAssociation>();
+        private List<ResourceShareAssociation> _resourceShareAssociations = AWSConfigs.InitializeCollections ? new List<ResourceShareAssociation>() : null;
         private string _resourceShareInvitationArn;
         private string _resourceShareName;
         private string _senderAccountId;
@@ -133,7 +133,7 @@ namespace Amazon.RAM.Model
         // Check to see if ResourceShareAssociations property is set
         internal bool IsSetResourceShareAssociations()
         {
-            return this._resourceShareAssociations != null && this._resourceShareAssociations.Count > 0; 
+            return this._resourceShareAssociations != null && (this._resourceShareAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

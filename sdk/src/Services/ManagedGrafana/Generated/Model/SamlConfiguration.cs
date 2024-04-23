@@ -33,7 +33,7 @@ namespace Amazon.ManagedGrafana.Model
     /// </summary>
     public partial class SamlConfiguration
     {
-        private List<string> _allowedOrganizations = new List<string>();
+        private List<string> _allowedOrganizations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AssertionAttributes _assertionAttributes;
         private IdpMetadata _idpMetadata;
         private int? _loginValidityDuration;
@@ -56,7 +56,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if AllowedOrganizations property is set
         internal bool IsSetAllowedOrganizations()
         {
-            return this._allowedOrganizations != null && this._allowedOrganizations.Count > 0; 
+            return this._allowedOrganizations != null && (this._allowedOrganizations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

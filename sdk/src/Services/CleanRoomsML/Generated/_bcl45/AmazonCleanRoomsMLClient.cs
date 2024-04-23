@@ -301,7 +301,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -339,7 +339,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -375,7 +375,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -410,7 +410,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -437,9 +437,9 @@ namespace Amazon.CleanRoomsML
 
 
         /// <summary>
-        /// Defines the information necessary to create a training dataset, or seed audience.
-        /// In Clean Rooms ML, the <c>TrainingDataset</c> is metadata that points to a Glue table,
-        /// which is read only during <c>AudienceModel</c> creation.
+        /// Defines the information necessary to create a training dataset. In Clean Rooms ML,
+        /// the <c>TrainingDataset</c> is metadata that points to a Glue table, which is read
+        /// only during <c>AudienceModel</c> creation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrainingDataset service method.</param>
         /// 
@@ -448,7 +448,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -465,9 +465,9 @@ namespace Amazon.CleanRoomsML
 
 
         /// <summary>
-        /// Defines the information necessary to create a training dataset, or seed audience.
-        /// In Clean Rooms ML, the <c>TrainingDataset</c> is metadata that points to a Glue table,
-        /// which is read only during <c>AudienceModel</c> creation.
+        /// Defines the information necessary to create a training dataset. In Clean Rooms ML,
+        /// the <c>TrainingDataset</c> is metadata that points to a Glue table, which is read
+        /// only during <c>AudienceModel</c> creation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrainingDataset service method.</param>
         /// <param name="cancellationToken">
@@ -479,7 +479,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
         /// The request parameters for this request are incorrect.
@@ -510,7 +510,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -543,7 +543,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -577,7 +577,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -610,7 +610,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -646,7 +646,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -681,7 +681,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -776,7 +776,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -811,7 +811,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -1522,7 +1522,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -1557,7 +1557,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -1593,7 +1593,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -1628,7 +1628,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -1784,7 +1784,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.
@@ -1818,7 +1818,7 @@ namespace Amazon.CleanRoomsML
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
-        /// A resource with that name already exists in this region.
+        /// You can't complete this action because another resource depends on this resource.
         /// </exception>
         /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
         /// The resource you are requesting does not exist.

@@ -39,7 +39,7 @@ namespace Amazon.SSMIncidents.Model
     {
         private string _clientToken;
         private string _eventData;
-        private List<EventReference> _eventReferences = new List<EventReference>();
+        private List<EventReference> _eventReferences = AWSConfigs.InitializeCollections ? new List<EventReference>() : null;
         private DateTime? _eventTime;
         private string _eventType;
         private string _incidentRecordArn;
@@ -103,7 +103,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if EventReferences property is set
         internal bool IsSetEventReferences()
         {
-            return this._eventReferences != null && this._eventReferences.Count > 0; 
+            return this._eventReferences != null && (this._eventReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

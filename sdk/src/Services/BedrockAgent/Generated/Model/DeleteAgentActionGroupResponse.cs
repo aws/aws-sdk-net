@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Delete Action Group Response
+    /// This is the response object from the DeleteAgentActionGroup operation.
     /// </summary>
     public partial class DeleteAgentActionGroupResponse : AmazonWebServiceResponse
     {

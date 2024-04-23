@@ -43,7 +43,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     public partial class SearchChannelsRequest : AmazonChimeSDKMessagingRequest
     {
         private string _chimeBearer;
-        private List<SearchField> _fields = new List<SearchField>();
+        private List<SearchField> _fields = AWSConfigs.InitializeCollections ? new List<SearchField>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -82,7 +82,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

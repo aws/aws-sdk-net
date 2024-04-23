@@ -36,7 +36,7 @@ namespace Amazon.ElasticFileSystem.Model
     public partial class PosixUser
     {
         private long? _gid;
-        private List<long> _secondaryGids = new List<long>();
+        private List<long> _secondaryGids = AWSConfigs.InitializeCollections ? new List<long>() : null;
         private long? _uid;
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.ElasticFileSystem.Model
         // Check to see if SecondaryGids property is set
         internal bool IsSetSecondaryGids()
         {
-            return this._secondaryGids != null && this._secondaryGids.Count > 0; 
+            return this._secondaryGids != null && (this._secondaryGids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

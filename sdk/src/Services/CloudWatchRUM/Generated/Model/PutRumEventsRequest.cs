@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchRUM.Model
         private AppMonitorDetails _appMonitorDetails;
         private string _batchId;
         private string _id;
-        private List<RumEvent> _rumEvents = new List<RumEvent>();
+        private List<RumEvent> _rumEvents = AWSConfigs.InitializeCollections ? new List<RumEvent>() : null;
         private UserDetails _userDetails;
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.CloudWatchRUM.Model
         // Check to see if RumEvents property is set
         internal bool IsSetRumEvents()
         {
-            return this._rumEvents != null && this._rumEvents.Count > 0; 
+            return this._rumEvents != null && (this._rumEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

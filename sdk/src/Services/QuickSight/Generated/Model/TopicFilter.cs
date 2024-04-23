@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         private FilterClass _filterClass;
         private string _filterDescription;
         private string _filterName;
-        private List<string> _filterSynonyms = new List<string>();
+        private List<string> _filterSynonyms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private NamedFilterType _filterType;
         private TopicNumericEqualityFilter _numericEqualityFilter;
         private TopicNumericRangeFilter _numericRangeFilter;
@@ -153,7 +153,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FilterSynonyms property is set
         internal bool IsSetFilterSynonyms()
         {
-            return this._filterSynonyms != null && this._filterSynonyms.Count > 0; 
+            return this._filterSynonyms != null && (this._filterSynonyms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

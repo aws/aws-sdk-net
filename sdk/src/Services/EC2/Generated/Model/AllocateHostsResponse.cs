@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AllocateHostsResponse : AmazonWebServiceResponse
     {
-        private List<string> _hostIds = new List<string>();
+        private List<string> _hostIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property HostIds. 
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if HostIds property is set
         internal bool IsSetHostIds()
         {
-            return this._hostIds != null && this._hostIds.Count > 0; 
+            return this._hostIds != null && (this._hostIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

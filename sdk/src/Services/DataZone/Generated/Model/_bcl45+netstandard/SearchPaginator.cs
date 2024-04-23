@@ -45,7 +45,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<SearchInventoryResultItem> Items => 
-            new PaginatedResultKeyResponse<SearchResponse, SearchInventoryResultItem>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<SearchResponse, SearchInventoryResultItem>(this, (i) => i.Items ?? new List<SearchInventoryResultItem>());
 
         internal SearchPaginator(IAmazonDataZone client, SearchRequest request)
         {

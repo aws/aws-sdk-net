@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class ListAccountAliasesResponse : AmazonWebServiceResponse
     {
-        private List<string> _accountAliases = new List<string>();
+        private List<string> _accountAliases = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _isTruncated;
         private string _marker;
 
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AccountAliases property is set
         internal bool IsSetAccountAliases()
         {
-            return this._accountAliases != null && this._accountAliases.Count > 0; 
+            return this._accountAliases != null && (this._accountAliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

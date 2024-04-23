@@ -472,6 +472,27 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMSeriesBodyPart</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMSeriesInstanceUID</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>(?:[1-9][0-9]*|0)(\.(?:[1-9][0-9]*|0))*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMSeriesModality</property>
+    <min>0</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMSeriesNumber</property>
+    <min>-2147483648</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MedicalImaging.Model.DICOMTags.DICOMStudyDate</property>
     <min>0</min>
     <max>18</max>
@@ -538,6 +559,12 @@
     <property>Amazon.MedicalImaging.Model.SearchByAttributeValue.DICOMPatientId</property>
     <min>0</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MedicalImaging.Model.SearchByAttributeValue.DICOMSeriesInstanceUID</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>(?:[1-9][0-9]*|0)(\.(?:[1-9][0-9]*|0))*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MedicalImaging.Model.SearchByAttributeValue.DICOMStudyId</property>

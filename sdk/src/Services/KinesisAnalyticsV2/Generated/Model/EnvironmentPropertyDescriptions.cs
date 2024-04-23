@@ -33,7 +33,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// </summary>
     public partial class EnvironmentPropertyDescriptions
     {
-        private List<PropertyGroup> _propertyGroupDescriptions = new List<PropertyGroup>();
+        private List<PropertyGroup> _propertyGroupDescriptions = AWSConfigs.InitializeCollections ? new List<PropertyGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property PropertyGroupDescriptions. 
@@ -51,7 +51,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if PropertyGroupDescriptions property is set
         internal bool IsSetPropertyGroupDescriptions()
         {
-            return this._propertyGroupDescriptions != null && this._propertyGroupDescriptions.Count > 0; 
+            return this._propertyGroupDescriptions != null && (this._propertyGroupDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

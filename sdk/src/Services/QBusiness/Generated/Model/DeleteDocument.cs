@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// A document deleted from an Amazon Q data source connector.
+    /// A document deleted from an Amazon Q Business data source connector.
     /// </summary>
     public partial class DeleteDocument
     {

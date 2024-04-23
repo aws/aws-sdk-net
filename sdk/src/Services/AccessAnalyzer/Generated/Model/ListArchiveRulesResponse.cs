@@ -33,7 +33,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class ListArchiveRulesResponse : AmazonWebServiceResponse
     {
-        private List<ArchiveRuleSummary> _archiveRules = new List<ArchiveRuleSummary>();
+        private List<ArchiveRuleSummary> _archiveRules = AWSConfigs.InitializeCollections ? new List<ArchiveRuleSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if ArchiveRules property is set
         internal bool IsSetArchiveRules()
         {
-            return this._archiveRules != null && this._archiveRules.Count > 0; 
+            return this._archiveRules != null && (this._archiveRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

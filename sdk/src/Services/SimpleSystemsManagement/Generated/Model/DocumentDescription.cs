@@ -34,10 +34,10 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DocumentDescription
     {
         private string _approvedVersion;
-        private List<AttachmentInformation> _attachmentsInformation = new List<AttachmentInformation>();
+        private List<AttachmentInformation> _attachmentsInformation = AWSConfigs.InitializeCollections ? new List<AttachmentInformation>() : null;
         private string _author;
-        private List<string> _category = new List<string>();
-        private List<string> _categoryEnum = new List<string>();
+        private List<string> _category = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _categoryEnum = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createdDate;
         private string _defaultVersion;
         private string _description;
@@ -50,17 +50,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _latestVersion;
         private string _name;
         private string _owner;
-        private List<DocumentParameter> _parameters = new List<DocumentParameter>();
+        private List<DocumentParameter> _parameters = AWSConfigs.InitializeCollections ? new List<DocumentParameter>() : null;
         private string _pendingReviewVersion;
-        private List<string> _platformTypes = new List<string>();
-        private List<DocumentRequires> _requires = new List<DocumentRequires>();
-        private List<ReviewInformation> _reviewInformation = new List<ReviewInformation>();
+        private List<string> _platformTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DocumentRequires> _requires = AWSConfigs.InitializeCollections ? new List<DocumentRequires>() : null;
+        private List<ReviewInformation> _reviewInformation = AWSConfigs.InitializeCollections ? new List<ReviewInformation>() : null;
         private ReviewStatus _reviewStatus;
         private string _schemaVersion;
         private string _sha1;
         private DocumentStatus _status;
         private string _statusInformation;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _targetType;
         private string _versionName;
 
@@ -98,7 +98,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AttachmentsInformation property is set
         internal bool IsSetAttachmentsInformation()
         {
-            return this._attachmentsInformation != null && this._attachmentsInformation.Count > 0; 
+            return this._attachmentsInformation != null && (this._attachmentsInformation.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Category property is set
         internal bool IsSetCategory()
         {
-            return this._category != null && this._category.Count > 0; 
+            return this._category != null && (this._category.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if CategoryEnum property is set
         internal bool IsSetCategoryEnum()
         {
-            return this._categoryEnum != null && this._categoryEnum.Count > 0; 
+            return this._categoryEnum != null && (this._categoryEnum.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -401,7 +401,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -437,7 +437,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if PlatformTypes property is set
         internal bool IsSetPlatformTypes()
         {
-            return this._platformTypes != null && this._platformTypes.Count > 0; 
+            return this._platformTypes != null && (this._platformTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -457,7 +457,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Requires property is set
         internal bool IsSetRequires()
         {
-            return this._requires != null && this._requires.Count > 0; 
+            return this._requires != null && (this._requires.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -476,7 +476,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ReviewInformation property is set
         internal bool IsSetReviewInformation()
         {
-            return this._reviewInformation != null && this._reviewInformation.Count > 0; 
+            return this._reviewInformation != null && (this._reviewInformation.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -588,7 +588,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

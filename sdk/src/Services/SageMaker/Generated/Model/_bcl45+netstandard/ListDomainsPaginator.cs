@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the Domains
         /// </summary>
         public IPaginatedEnumerable<DomainDetails> Domains => 
-            new PaginatedResultKeyResponse<ListDomainsResponse, DomainDetails>(this, (i) => i.Domains);
+            new PaginatedResultKeyResponse<ListDomainsResponse, DomainDetails>(this, (i) => i.Domains ?? new List<DomainDetails>());
 
         internal ListDomainsPaginator(IAmazonSageMaker client, ListDomainsRequest request)
         {

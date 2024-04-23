@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public class ServerSideEncryptionConfiguration
     {
-        private List<ServerSideEncryptionRule> serverSideEncryptionRules = new List<ServerSideEncryptionRule>();
+        private List<ServerSideEncryptionRule> serverSideEncryptionRules = AWSConfigs.InitializeCollections ? new List<ServerSideEncryptionRule>() : null;
 
         /// <summary>
         /// Container for information about a particular server-side encryption configuration rule.
@@ -40,7 +40,7 @@ namespace Amazon.S3.Model
         // Check to see if ServerSideEncryptionRules property is set
         internal bool IsSetServerSideEncryptionRules()
         {
-            return this.serverSideEncryptionRules != null && this.serverSideEncryptionRules.Count > 0;
+            return this.serverSideEncryptionRules != null && (this.serverSideEncryptionRules.Count > 0 || !AWSConfigs.InitializeCollections);
         }
     }
 }

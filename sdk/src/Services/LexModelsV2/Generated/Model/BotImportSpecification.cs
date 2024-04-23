@@ -34,11 +34,11 @@ namespace Amazon.LexModelsV2.Model
     public partial class BotImportSpecification
     {
         private string _botName;
-        private Dictionary<string, string> _botTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _botTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DataPrivacy _dataPrivacy;
         private int? _idleSessionTTLInSeconds;
         private string _roleArn;
-        private Dictionary<string, string> _testBotAliasTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _testBotAliasTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property BotName. 
@@ -77,7 +77,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotTags property is set
         internal bool IsSetBotTags()
         {
-            return this._botTags != null && this._botTags.Count > 0; 
+            return this._botTags != null && (this._botTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if TestBotAliasTags property is set
         internal bool IsSetTestBotAliasTags()
         {
-            return this._testBotAliasTags != null && this._testBotAliasTags.Count > 0; 
+            return this._testBotAliasTags != null && (this._testBotAliasTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

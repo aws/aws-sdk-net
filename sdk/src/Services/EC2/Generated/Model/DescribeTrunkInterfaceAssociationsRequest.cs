@@ -34,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeTrunkInterfaceAssociationsRequest : AmazonEC2Request
     {
-        private List<string> _associationIds = new List<string>();
-        private List<Filter> _filters = new List<Filter>();
+        private List<string> _associationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         // Check to see if AssociationIds property is set
         internal bool IsSetAssociationIds()
         {
-            return this._associationIds != null && this._associationIds.Count > 0; 
+            return this._associationIds != null && (this._associationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

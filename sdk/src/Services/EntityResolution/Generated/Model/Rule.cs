@@ -33,7 +33,7 @@ namespace Amazon.EntityResolution.Model
     /// </summary>
     public partial class Rule
     {
-        private List<string> _matchingKeys = new List<string>();
+        private List<string> _matchingKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ruleName;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if MatchingKeys property is set
         internal bool IsSetMatchingKeys()
         {
-            return this._matchingKeys != null && this._matchingKeys.Count > 0; 
+            return this._matchingKeys != null && (this._matchingKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

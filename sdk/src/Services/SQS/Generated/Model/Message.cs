@@ -33,11 +33,11 @@ namespace Amazon.SQS.Model
     /// </summary>
     public partial class Message
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _body;
         private string _md5OfBody;
         private string _md5OfMessageAttributes;
-        private Dictionary<string, MessageAttributeValue> _messageAttributes = new Dictionary<string, MessageAttributeValue>();
+        private Dictionary<string, MessageAttributeValue> _messageAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, MessageAttributeValue>() : null;
         private string _messageId;
         private string _receiptHandle;
 
@@ -96,7 +96,7 @@ namespace Amazon.SQS.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.SQS.Model
         // Check to see if MessageAttributes property is set
         internal bool IsSetMessageAttributes()
         {
-            return this._messageAttributes != null && this._messageAttributes.Count > 0; 
+            return this._messageAttributes != null && (this._messageAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -76,17 +78,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransitGatewayRouteTableId())
                 {
                     request.Parameters.Add("TransitGatewayRouteTableId", StringUtils.FromString(publicRequest.TransitGatewayRouteTableId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

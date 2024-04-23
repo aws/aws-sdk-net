@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the Conversations
         /// </summary>
         public IPaginatedEnumerable<Conversation> Conversations => 
-            new PaginatedResultKeyResponse<ListConversationsResponse, Conversation>(this, (i) => i.Conversations);
+            new PaginatedResultKeyResponse<ListConversationsResponse, Conversation>(this, (i) => i.Conversations ?? new List<Conversation>());
 
         internal ListConversationsPaginator(IAmazonQBusiness client, ListConversationsRequest request)
         {

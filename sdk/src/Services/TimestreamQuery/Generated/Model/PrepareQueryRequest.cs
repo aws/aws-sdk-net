@@ -32,7 +32,7 @@ namespace Amazon.TimestreamQuery.Model
     /// Container for the parameters to the PrepareQuery operation.
     /// A synchronous operation that allows you to submit a query with parameters to be stored
     /// by Timestream for later running. Timestream only supports using this operation with
-    /// the <c>PrepareQueryRequest$ValidateOnly</c> set to <c>true</c>.
+    /// <c>ValidateOnly</c> set to <c>true</c>.
     /// </summary>
     public partial class PrepareQueryRequest : AmazonTimestreamQueryRequest
     {

@@ -30,8 +30,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// Creates a Kinesis Data Analytics application. For information about creating a Kinesis
-    /// Data Analytics application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
+    /// Creates a Managed Service for Apache Flink application. For information about creating
+    /// a Managed Service for Apache Flink application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
     /// an Application</a>.
     /// </summary>
     public partial class CreateApplicationRequest : AmazonKinesisAnalyticsV2Request
@@ -40,10 +40,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private string _applicationDescription;
         private ApplicationMode _applicationMode;
         private string _applicationName;
-        private List<CloudWatchLoggingOption> _cloudWatchLoggingOptions = new List<CloudWatchLoggingOption>();
+        private List<CloudWatchLoggingOption> _cloudWatchLoggingOptions = AWSConfigs.InitializeCollections ? new List<CloudWatchLoggingOption>() : null;
         private RuntimeEnvironment _runtimeEnvironment;
         private string _serviceExecutionRole;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationConfiguration. 
@@ -85,8 +85,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationMode. 
         /// <para>
-        /// Use the <c>STREAMING</c> mode to create a Kinesis Data Analytics For Flink application.
-        /// To create a Kinesis Data Analytics Studio notebook, use the <c>INTERACTIVE</c> mode.
+        /// Use the <c>STREAMING</c> mode to create a Managed Service for Apache Flink application.
+        /// To create a Managed Service for Apache Flink Studio notebook, use the <c>INTERACTIVE</c>
+        /// mode.
         /// </para>
         /// </summary>
         public ApplicationMode ApplicationMode
@@ -136,7 +137,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if CloudWatchLoggingOptions property is set
         internal bool IsSetCloudWatchLoggingOptions()
         {
-            return this._cloudWatchLoggingOptions != null && this._cloudWatchLoggingOptions.Count > 0; 
+            return this._cloudWatchLoggingOptions != null && (this._cloudWatchLoggingOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -198,7 +199,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

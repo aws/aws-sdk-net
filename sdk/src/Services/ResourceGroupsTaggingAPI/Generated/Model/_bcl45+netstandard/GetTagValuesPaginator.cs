@@ -45,7 +45,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Enumerable containing all of the TagValues
         /// </summary>
         public IPaginatedEnumerable<string> TagValues => 
-            new PaginatedResultKeyResponse<GetTagValuesResponse, string>(this, (i) => i.TagValues);
+            new PaginatedResultKeyResponse<GetTagValuesResponse, string>(this, (i) => i.TagValues ?? new List<string>());
 
         internal GetTagValuesPaginator(IAmazonResourceGroupsTaggingAPI client, GetTagValuesRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeVerifiedAccessTrustProvidersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VerifiedAccessTrustProvider> _verifiedAccessTrustProviders = new List<VerifiedAccessTrustProvider>();
+        private List<VerifiedAccessTrustProvider> _verifiedAccessTrustProviders = AWSConfigs.InitializeCollections ? new List<VerifiedAccessTrustProvider>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if VerifiedAccessTrustProviders property is set
         internal bool IsSetVerifiedAccessTrustProviders()
         {
-            return this._verifiedAccessTrustProviders != null && this._verifiedAccessTrustProviders.Count > 0; 
+            return this._verifiedAccessTrustProviders != null && (this._verifiedAccessTrustProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

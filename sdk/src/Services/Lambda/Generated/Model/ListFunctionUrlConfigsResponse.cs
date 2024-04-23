@@ -33,7 +33,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class ListFunctionUrlConfigsResponse : AmazonWebServiceResponse
     {
-        private List<FunctionUrlConfig> _functionUrlConfigs = new List<FunctionUrlConfig>();
+        private List<FunctionUrlConfig> _functionUrlConfigs = AWSConfigs.InitializeCollections ? new List<FunctionUrlConfig>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Lambda.Model
         // Check to see if FunctionUrlConfigs property is set
         internal bool IsSetFunctionUrlConfigs()
         {
-            return this._functionUrlConfigs != null && this._functionUrlConfigs.Count > 0; 
+            return this._functionUrlConfigs != null && (this._functionUrlConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

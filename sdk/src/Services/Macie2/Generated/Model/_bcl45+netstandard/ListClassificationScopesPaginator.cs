@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the ClassificationScopes
         /// </summary>
         public IPaginatedEnumerable<ClassificationScopeSummary> ClassificationScopes => 
-            new PaginatedResultKeyResponse<ListClassificationScopesResponse, ClassificationScopeSummary>(this, (i) => i.ClassificationScopes);
+            new PaginatedResultKeyResponse<ListClassificationScopesResponse, ClassificationScopeSummary>(this, (i) => i.ClassificationScopes ?? new List<ClassificationScopeSummary>());
 
         internal ListClassificationScopesPaginator(IAmazonMacie2 client, ListClassificationScopesRequest request)
         {

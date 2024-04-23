@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class FleetLaunchTemplateConfigRequest
     {
         private FleetLaunchTemplateSpecificationRequest _launchTemplateSpecification;
-        private List<FleetLaunchTemplateOverridesRequest> _overrides = new List<FleetLaunchTemplateOverridesRequest>();
+        private List<FleetLaunchTemplateOverridesRequest> _overrides = AWSConfigs.InitializeCollections ? new List<FleetLaunchTemplateOverridesRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property LaunchTemplateSpecification. 
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         // Check to see if Overrides property is set
         internal bool IsSetOverrides()
         {
-            return this._overrides != null && this._overrides.Count > 0; 
+            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

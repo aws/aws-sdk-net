@@ -33,7 +33,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class NodegroupHealth
     {
-        private List<Issue> _issues = new List<Issue>();
+        private List<Issue> _issues = AWSConfigs.InitializeCollections ? new List<Issue>() : null;
 
         /// <summary>
         /// Gets and sets the property Issues. 
@@ -50,7 +50,7 @@ namespace Amazon.EKS.Model
         // Check to see if Issues property is set
         internal bool IsSetIssues()
         {
-            return this._issues != null && this._issues.Count > 0; 
+            return this._issues != null && (this._issues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

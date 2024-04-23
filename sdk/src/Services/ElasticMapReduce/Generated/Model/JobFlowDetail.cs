@@ -35,7 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _amiVersion;
         private string _autoScalingRole;
-        private List<BootstrapActionDetail> _bootstrapActions = new List<BootstrapActionDetail>();
+        private List<BootstrapActionDetail> _bootstrapActions = AWSConfigs.InitializeCollections ? new List<BootstrapActionDetail>() : null;
         private JobFlowExecutionStatusDetail _executionStatusDetail;
         private JobFlowInstancesDetail _instances;
         private string _jobFlowId;
@@ -45,8 +45,8 @@ namespace Amazon.ElasticMapReduce.Model
         private string _name;
         private ScaleDownBehavior _scaleDownBehavior;
         private string _serviceRole;
-        private List<StepDetail> _steps = new List<StepDetail>();
-        private List<string> _supportedProducts = new List<string>();
+        private List<StepDetail> _steps = AWSConfigs.InitializeCollections ? new List<StepDetail>() : null;
+        private List<string> _supportedProducts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _visibleToAllUsers;
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if BootstrapActions property is set
         internal bool IsSetBootstrapActions()
         {
-            return this._bootstrapActions != null && this._bootstrapActions.Count > 0; 
+            return this._bootstrapActions != null && (this._bootstrapActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -326,7 +326,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -345,7 +345,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if SupportedProducts property is set
         internal bool IsSetSupportedProducts()
         {
-            return this._supportedProducts != null && this._supportedProducts.Count > 0; 
+            return this._supportedProducts != null && (this._supportedProducts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

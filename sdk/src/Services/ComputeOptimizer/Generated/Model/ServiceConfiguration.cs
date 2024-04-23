@@ -34,7 +34,7 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class ServiceConfiguration
     {
         private AutoScalingConfiguration _autoScalingConfiguration;
-        private List<ContainerConfiguration> _containerConfigurations = new List<ContainerConfiguration>();
+        private List<ContainerConfiguration> _containerConfigurations = AWSConfigs.InitializeCollections ? new List<ContainerConfiguration>() : null;
         private int? _cpu;
         private int? _memory;
         private string _taskDefinitionArn;
@@ -96,7 +96,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if ContainerConfigurations property is set
         internal bool IsSetContainerConfigurations()
         {
-            return this._containerConfigurations != null && this._containerConfigurations.Count > 0; 
+            return this._containerConfigurations != null && (this._containerConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

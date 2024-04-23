@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     {
         private string _changeSetId;
         private string _changeSetName;
-        private List<ChangeSetHook> _hooks = new List<ChangeSetHook>();
+        private List<ChangeSetHook> _hooks = AWSConfigs.InitializeCollections ? new List<ChangeSetHook>() : null;
         private string _nextToken;
         private string _stackId;
         private string _stackName;
@@ -94,7 +94,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Hooks property is set
         internal bool IsSetHooks()
         {
-            return this._hooks != null && this._hooks.Count > 0; 
+            return this._hooks != null && (this._hooks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

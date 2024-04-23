@@ -34,7 +34,7 @@ namespace Amazon.IoTThingsGraph.Model
     public partial class GetUploadStatusResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdDate;
-        private List<string> _failureReason = new List<string>();
+        private List<string> _failureReason = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _namespaceArn;
         private string _namespaceName;
         private long? _namespaceVersion;
@@ -75,7 +75,7 @@ namespace Amazon.IoTThingsGraph.Model
         // Check to see if FailureReason property is set
         internal bool IsSetFailureReason()
         {
-            return this._failureReason != null && this._failureReason.Count > 0; 
+            return this._failureReason != null && (this._failureReason.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

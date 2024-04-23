@@ -53,7 +53,7 @@ namespace Amazon.Omics.Model
         private string _runGroupId;
         private string _runId;
         private int? _storageCapacity;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workflowId;
         private WorkflowType _workflowType;
 
@@ -249,7 +249,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// A storage capacity for the run in gigabytes.
+        /// A storage capacity for the run in gibibytes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
@@ -280,7 +280,7 @@ namespace Amazon.Omics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

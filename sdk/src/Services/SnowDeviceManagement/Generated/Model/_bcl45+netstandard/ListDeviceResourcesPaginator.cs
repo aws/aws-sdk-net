@@ -45,7 +45,7 @@ namespace Amazon.SnowDeviceManagement.Model
         /// Enumerable containing all of the Resources
         /// </summary>
         public IPaginatedEnumerable<ResourceSummary> Resources => 
-            new PaginatedResultKeyResponse<ListDeviceResourcesResponse, ResourceSummary>(this, (i) => i.Resources);
+            new PaginatedResultKeyResponse<ListDeviceResourcesResponse, ResourceSummary>(this, (i) => i.Resources ?? new List<ResourceSummary>());
 
         internal ListDeviceResourcesPaginator(IAmazonSnowDeviceManagement client, ListDeviceResourcesRequest request)
         {

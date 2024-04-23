@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListSecurityKeysResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SecurityKey> _securityKeys = new List<SecurityKey>();
+        private List<SecurityKey> _securityKeys = AWSConfigs.InitializeCollections ? new List<SecurityKey>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         // Check to see if SecurityKeys property is set
         internal bool IsSetSecurityKeys()
         {
-            return this._securityKeys != null && this._securityKeys.Count > 0; 
+            return this._securityKeys != null && (this._securityKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the PhoneNumbers
         /// </summary>
         public IPaginatedEnumerable<PhoneNumberInformation> PhoneNumbers => 
-            new PaginatedResultKeyResponse<DescribePhoneNumbersResponse, PhoneNumberInformation>(this, (i) => i.PhoneNumbers);
+            new PaginatedResultKeyResponse<DescribePhoneNumbersResponse, PhoneNumberInformation>(this, (i) => i.PhoneNumbers ?? new List<PhoneNumberInformation>());
 
         internal DescribePhoneNumbersPaginator(IAmazonPinpointSMSVoiceV2 client, DescribePhoneNumbersRequest request)
         {

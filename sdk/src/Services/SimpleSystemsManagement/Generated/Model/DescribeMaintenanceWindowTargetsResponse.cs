@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribeMaintenanceWindowTargetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<MaintenanceWindowTarget> _targets = new List<MaintenanceWindowTarget>();
+        private List<MaintenanceWindowTarget> _targets = AWSConfigs.InitializeCollections ? new List<MaintenanceWindowTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

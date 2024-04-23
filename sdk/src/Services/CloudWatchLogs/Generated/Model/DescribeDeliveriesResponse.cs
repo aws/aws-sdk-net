@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class DescribeDeliveriesResponse : AmazonWebServiceResponse
     {
-        private List<Delivery> _deliveries = new List<Delivery>();
+        private List<Delivery> _deliveries = AWSConfigs.InitializeCollections ? new List<Delivery>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Deliveries property is set
         internal bool IsSetDeliveries()
         {
-            return this._deliveries != null && this._deliveries.Count > 0; 
+            return this._deliveries != null && (this._deliveries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

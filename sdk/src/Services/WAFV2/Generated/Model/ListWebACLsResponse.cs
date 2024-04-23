@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model
     public partial class ListWebACLsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<WebACLSummary> _webACLs = new List<WebACLSummary>();
+        private List<WebACLSummary> _webACLs = AWSConfigs.InitializeCollections ? new List<WebACLSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -74,7 +74,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if WebACLs property is set
         internal bool IsSetWebACLs()
         {
-            return this._webACLs != null && this._webACLs.Count > 0; 
+            return this._webACLs != null && (this._webACLs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

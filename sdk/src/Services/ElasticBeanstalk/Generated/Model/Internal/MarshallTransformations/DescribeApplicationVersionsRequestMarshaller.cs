@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,14 +63,17 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVersionLabels())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -79,6 +83,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -45,7 +45,7 @@ namespace Amazon.DataPipeline.Model
         /// Enumerable containing all of the Ids
         /// </summary>
         public IPaginatedEnumerable<string> Ids => 
-            new PaginatedResultKeyResponse<QueryObjectsResponse, string>(this, (i) => i.Ids);
+            new PaginatedResultKeyResponse<QueryObjectsResponse, string>(this, (i) => i.Ids ?? new List<string>());
 
         internal QueryObjectsPaginator(IAmazonDataPipeline client, QueryObjectsRequest request)
         {

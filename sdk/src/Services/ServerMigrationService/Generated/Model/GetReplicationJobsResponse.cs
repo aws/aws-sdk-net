@@ -34,7 +34,7 @@ namespace Amazon.ServerMigrationService.Model
     public partial class GetReplicationJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReplicationJob> _replicationJobList = new List<ReplicationJob>();
+        private List<ReplicationJob> _replicationJobList = AWSConfigs.InitializeCollections ? new List<ReplicationJob>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ReplicationJobList property is set
         internal bool IsSetReplicationJobList()
         {
-            return this._replicationJobList != null && this._replicationJobList.Count > 0; 
+            return this._replicationJobList != null && (this._replicationJobList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

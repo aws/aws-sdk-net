@@ -37,7 +37,7 @@ namespace Amazon.Omics.Model
         private string _id;
         private string _runOutputUri;
         private RunStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uuid;
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RunOutputUri. 
         /// <para>
-        ///  The destination for workflow outputs. 
+        /// The destination for workflow outputs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=750)]
@@ -131,13 +131,13 @@ namespace Amazon.Omics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Uuid. 
         /// <para>
-        ///  The universally unique identifier for a run. 
+        /// The universally unique identifier for a run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

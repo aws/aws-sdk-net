@@ -30,11 +30,11 @@ namespace Amazon.QConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateQuickResponse operation.
-    /// Updates an existing Amazon Q quick response.
+    /// Updates an existing Amazon Q in Connect quick response.
     /// </summary>
     public partial class UpdateQuickResponseRequest : AmazonQConnectRequest
     {
-        private List<string> _channels = new List<string>();
+        private List<string> _channels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private QuickResponseDataProvider _content;
         private string _contentType;
         private string _description;
@@ -65,7 +65,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Channels property is set
         internal bool IsSetChannels()
         {
-            return this._channels != null && this._channels.Count > 0; 
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,9 +173,8 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
-        /// base if you're storing Amazon Q Content resource to it. Can be either the ID or the
-        /// ARN. URLs cannot contain the ARN.
+        /// The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot
+        /// contain the ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

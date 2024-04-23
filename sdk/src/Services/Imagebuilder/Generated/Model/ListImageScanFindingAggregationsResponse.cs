@@ -33,7 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListImageScanFindingAggregationsResponse : AmazonWebServiceResponse
     {
-        private List<ImageScanFindingAggregation> _aggregations = new List<ImageScanFindingAggregation>();
+        private List<ImageScanFindingAggregation> _aggregations = AWSConfigs.InitializeCollections ? new List<ImageScanFindingAggregation>() : null;
         private string _aggregationType;
         private string _nextToken;
         private string _requestId;
@@ -53,7 +53,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Aggregations property is set
         internal bool IsSetAggregations()
         {
-            return this._aggregations != null && this._aggregations.Count > 0; 
+            return this._aggregations != null && (this._aggregations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -30,30 +30,24 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
-    /// Updates an existing Kinesis Data Analytics application. Using this operation, you
-    /// can update application code, input configuration, and output configuration. 
+    /// Updates an existing Managed Service for Apache Flink application. Using this operation,
+    /// you can update application code, input configuration, and output configuration. 
     /// 
     ///  
     /// <para>
-    /// Kinesis Data Analytics updates the <c>ApplicationVersionId</c> each time you update
-    /// your application. 
+    /// Managed Service for Apache Flink updates the <c>ApplicationVersionId</c> each time
+    /// you update your application. 
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// You cannot update the <c>RuntimeEnvironment</c> of an existing application. If you
-    /// need to update an application's <c>RuntimeEnvironment</c>, you must delete the application
-    /// and create it again.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonKinesisAnalyticsV2Request
     {
         private ApplicationConfigurationUpdate _applicationConfigurationUpdate;
         private string _applicationName;
-        private List<CloudWatchLoggingOptionUpdate> _cloudWatchLoggingOptionUpdates = new List<CloudWatchLoggingOptionUpdate>();
+        private List<CloudWatchLoggingOptionUpdate> _cloudWatchLoggingOptionUpdates = AWSConfigs.InitializeCollections ? new List<CloudWatchLoggingOptionUpdate>() : null;
         private string _conditionalToken;
         private long? _currentApplicationVersionId;
         private RunConfigurationUpdate _runConfigurationUpdate;
+        private RuntimeEnvironment _runtimeEnvironmentUpdate;
         private string _serviceExecutionRoleUpdate;
 
         /// <summary>
@@ -110,7 +104,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if CloudWatchLoggingOptionUpdates property is set
         internal bool IsSetCloudWatchLoggingOptionUpdates()
         {
-            return this._cloudWatchLoggingOptionUpdates != null && this._cloudWatchLoggingOptionUpdates.Count > 0; 
+            return this._cloudWatchLoggingOptionUpdates != null && (this._cloudWatchLoggingOptionUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,6 +168,35 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetRunConfigurationUpdate()
         {
             return this._runConfigurationUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeEnvironmentUpdate. 
+        /// <para>
+        /// Updates the Managed Service for Apache Flink runtime environment used to run your
+        /// code. To avoid issues you must:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Ensure your new jar and dependencies are compatible with the new runtime selected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ensure your new code's state is compatible with the snapshot from which your application
+        /// will start
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public RuntimeEnvironment RuntimeEnvironmentUpdate
+        {
+            get { return this._runtimeEnvironmentUpdate; }
+            set { this._runtimeEnvironmentUpdate = value; }
+        }
+
+        // Check to see if RuntimeEnvironmentUpdate property is set
+        internal bool IsSetRuntimeEnvironmentUpdate()
+        {
+            return this._runtimeEnvironmentUpdate != null;
         }
 
         /// <summary>

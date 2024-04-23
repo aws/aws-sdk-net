@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSAMLMetadataDocument())
                 {
                     request.Parameters.Add("SAMLMetadataDocument", StringUtils.FromString(publicRequest.SAMLMetadataDocument));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,13 +78,16 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

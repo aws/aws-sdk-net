@@ -45,7 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all of the StackResourceSummaries
         /// </summary>
         public IPaginatedEnumerable<StackResourceSummary> StackResourceSummaries => 
-            new PaginatedResultKeyResponse<ListStackResourcesResponse, StackResourceSummary>(this, (i) => i.StackResourceSummaries);
+            new PaginatedResultKeyResponse<ListStackResourcesResponse, StackResourceSummary>(this, (i) => i.StackResourceSummaries ?? new List<StackResourceSummary>());
 
         internal ListStackResourcesPaginator(IAmazonCloudFormation client, ListStackResourcesRequest request)
         {

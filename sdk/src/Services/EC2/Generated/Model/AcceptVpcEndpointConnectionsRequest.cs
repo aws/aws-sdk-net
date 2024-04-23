@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class AcceptVpcEndpointConnectionsRequest : AmazonEC2Request
     {
         private string _serviceId;
-        private List<string> _vpcEndpointIds = new List<string>();
+        private List<string> _vpcEndpointIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ServiceId. 
@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         // Check to see if VpcEndpointIds property is set
         internal bool IsSetVpcEndpointIds()
         {
-            return this._vpcEndpointIds != null && this._vpcEndpointIds.Count > 0; 
+            return this._vpcEndpointIds != null && (this._vpcEndpointIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

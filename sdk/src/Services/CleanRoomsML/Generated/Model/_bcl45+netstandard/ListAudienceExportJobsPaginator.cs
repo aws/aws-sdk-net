@@ -45,7 +45,7 @@ namespace Amazon.CleanRoomsML.Model
         /// Enumerable containing all of the AudienceExportJobs
         /// </summary>
         public IPaginatedEnumerable<AudienceExportJobSummary> AudienceExportJobs => 
-            new PaginatedResultKeyResponse<ListAudienceExportJobsResponse, AudienceExportJobSummary>(this, (i) => i.AudienceExportJobs);
+            new PaginatedResultKeyResponse<ListAudienceExportJobsResponse, AudienceExportJobSummary>(this, (i) => i.AudienceExportJobs ?? new List<AudienceExportJobSummary>());
 
         internal ListAudienceExportJobsPaginator(IAmazonCleanRoomsML client, ListAudienceExportJobsRequest request)
         {

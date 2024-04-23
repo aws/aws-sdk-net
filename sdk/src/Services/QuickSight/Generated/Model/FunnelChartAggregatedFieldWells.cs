@@ -33,8 +33,8 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class FunnelChartAggregatedFieldWells
     {
-        private List<DimensionField> _category = new List<DimensionField>();
-        private List<MeasureField> _values = new List<MeasureField>();
+        private List<DimensionField> _category = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<MeasureField> _values = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
 
         /// <summary>
         /// Gets and sets the property Category. 
@@ -52,7 +52,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Category property is set
         internal bool IsSetCategory()
         {
-            return this._category != null && this._category.Count > 0; 
+            return this._category != null && (this._category.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

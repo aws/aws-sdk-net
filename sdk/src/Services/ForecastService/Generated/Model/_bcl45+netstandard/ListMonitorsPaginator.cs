@@ -45,7 +45,7 @@ namespace Amazon.ForecastService.Model
         /// Enumerable containing all of the Monitors
         /// </summary>
         public IPaginatedEnumerable<MonitorSummary> Monitors => 
-            new PaginatedResultKeyResponse<ListMonitorsResponse, MonitorSummary>(this, (i) => i.Monitors);
+            new PaginatedResultKeyResponse<ListMonitorsResponse, MonitorSummary>(this, (i) => i.Monitors ?? new List<MonitorSummary>());
 
         internal ListMonitorsPaginator(IAmazonForecastService client, ListMonitorsRequest request)
         {

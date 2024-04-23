@@ -44,7 +44,7 @@ namespace Amazon.MediaStore.Model
     public partial class MetricPolicy
     {
         private ContainerLevelMetrics _containerLevelMetrics;
-        private List<MetricPolicyRule> _metricPolicyRules = new List<MetricPolicyRule>();
+        private List<MetricPolicyRule> _metricPolicyRules = AWSConfigs.InitializeCollections ? new List<MetricPolicyRule>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerLevelMetrics. 
@@ -84,7 +84,7 @@ namespace Amazon.MediaStore.Model
         // Check to see if MetricPolicyRules property is set
         internal bool IsSetMetricPolicyRules()
         {
-            return this._metricPolicyRules != null && this._metricPolicyRules.Count > 0; 
+            return this._metricPolicyRules != null && (this._metricPolicyRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

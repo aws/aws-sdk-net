@@ -36,7 +36,7 @@ namespace Amazon.Neptune.Model
     {
         private string _dbClusterArn;
         private bool? _isWriter;
-        private List<string> _readers = new List<string>();
+        private List<string> _readers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DBClusterArn. 
@@ -91,7 +91,7 @@ namespace Amazon.Neptune.Model
         // Check to see if Readers property is set
         internal bool IsSetReaders()
         {
-            return this._readers != null && this._readers.Count > 0; 
+            return this._readers != null && (this._readers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

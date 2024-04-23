@@ -34,7 +34,7 @@ namespace Amazon.MWAA.Model
     /// </summary>
     public partial class UpdateEnvironmentRequest : AmazonMWAARequest
     {
-        private Dictionary<string, string> _airflowConfigurationOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _airflowConfigurationOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _airflowVersion;
         private string _dagS3Path;
         private string _environmentClass;
@@ -73,7 +73,7 @@ namespace Amazon.MWAA.Model
         // Check to see if AirflowConfigurationOptions property is set
         internal bool IsSetAirflowConfigurationOptions()
         {
-            return this._airflowConfigurationOptions != null && this._airflowConfigurationOptions.Count > 0; 
+            return this._airflowConfigurationOptions != null && (this._airflowConfigurationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

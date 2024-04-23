@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the RelatedResources
         /// </summary>
         public IPaginatedEnumerable<RelatedResource> RelatedResources => 
-            new PaginatedResultKeyResponse<ListRelatedResourcesForAuditFindingResponse, RelatedResource>(this, (i) => i.RelatedResources);
+            new PaginatedResultKeyResponse<ListRelatedResourcesForAuditFindingResponse, RelatedResource>(this, (i) => i.RelatedResources ?? new List<RelatedResource>());
 
         internal ListRelatedResourcesForAuditFindingPaginator(IAmazonIoT client, ListRelatedResourcesForAuditFindingRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.RoboMaker.Model
     /// </summary>
     public partial class FailureSummary
     {
-        private List<WorldFailure> _failures = new List<WorldFailure>();
+        private List<WorldFailure> _failures = AWSConfigs.InitializeCollections ? new List<WorldFailure>() : null;
         private int? _totalFailureCount;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

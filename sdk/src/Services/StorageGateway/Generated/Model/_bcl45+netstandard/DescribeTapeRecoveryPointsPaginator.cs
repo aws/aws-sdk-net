@@ -45,7 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// Enumerable containing all of the TapeRecoveryPointInfos
         /// </summary>
         public IPaginatedEnumerable<TapeRecoveryPointInfo> TapeRecoveryPointInfos => 
-            new PaginatedResultKeyResponse<DescribeTapeRecoveryPointsResponse, TapeRecoveryPointInfo>(this, (i) => i.TapeRecoveryPointInfos);
+            new PaginatedResultKeyResponse<DescribeTapeRecoveryPointsResponse, TapeRecoveryPointInfo>(this, (i) => i.TapeRecoveryPointInfos ?? new List<TapeRecoveryPointInfo>());
 
         internal DescribeTapeRecoveryPointsPaginator(IAmazonStorageGateway client, DescribeTapeRecoveryPointsRequest request)
         {

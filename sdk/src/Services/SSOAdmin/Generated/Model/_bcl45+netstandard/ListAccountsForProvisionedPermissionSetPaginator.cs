@@ -45,7 +45,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the AccountIds
         /// </summary>
         public IPaginatedEnumerable<string> AccountIds => 
-            new PaginatedResultKeyResponse<ListAccountsForProvisionedPermissionSetResponse, string>(this, (i) => i.AccountIds);
+            new PaginatedResultKeyResponse<ListAccountsForProvisionedPermissionSetResponse, string>(this, (i) => i.AccountIds ?? new List<string>());
 
         internal ListAccountsForProvisionedPermissionSetPaginator(IAmazonSSOAdmin client, ListAccountsForProvisionedPermissionSetRequest request)
         {

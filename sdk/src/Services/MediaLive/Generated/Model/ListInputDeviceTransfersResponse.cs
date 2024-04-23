@@ -33,7 +33,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ListInputDeviceTransfersResponse : AmazonWebServiceResponse
     {
-        private List<TransferringInputDeviceSummary> _inputDeviceTransfers = new List<TransferringInputDeviceSummary>();
+        private List<TransferringInputDeviceSummary> _inputDeviceTransfers = AWSConfigs.InitializeCollections ? new List<TransferringInputDeviceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if InputDeviceTransfers property is set
         internal bool IsSetInputDeviceTransfers()
         {
-            return this._inputDeviceTransfers != null && this._inputDeviceTransfers.Count > 0; 
+            return this._inputDeviceTransfers != null && (this._inputDeviceTransfers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

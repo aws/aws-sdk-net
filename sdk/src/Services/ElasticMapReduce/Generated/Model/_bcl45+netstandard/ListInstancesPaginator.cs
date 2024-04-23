@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Enumerable containing all of the Instances
         /// </summary>
         public IPaginatedEnumerable<Instance> Instances => 
-            new PaginatedResultKeyResponse<ListInstancesResponse, Instance>(this, (i) => i.Instances);
+            new PaginatedResultKeyResponse<ListInstancesResponse, Instance>(this, (i) => i.Instances ?? new List<Instance>());
 
         internal ListInstancesPaginator(IAmazonElasticMapReduce client, ListInstancesRequest request)
         {

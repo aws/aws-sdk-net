@@ -33,7 +33,7 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class BatchDisassociateResourceResponse : AmazonWebServiceResponse
     {
-        private List<FailedItem> _failedItems = new List<FailedItem>();
+        private List<FailedItem> _failedItems = AWSConfigs.InitializeCollections ? new List<FailedItem>() : null;
         private string _resourceSetIdentifier;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.FMS.Model
         // Check to see if FailedItems property is set
         internal bool IsSetFailedItems()
         {
-            return this._failedItems != null && this._failedItems.Count > 0; 
+            return this._failedItems != null && (this._failedItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

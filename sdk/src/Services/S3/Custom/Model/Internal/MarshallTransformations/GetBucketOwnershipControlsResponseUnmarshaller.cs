@@ -51,6 +51,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Rule", targetDepth))
                     {
+                        if (response.OwnershipControls.Rules == null)
+                        {
+                            response.OwnershipControls.Rules = new List<OwnershipControlsRule>();
+                        }
                         response.OwnershipControls.Rules.Add(OwnershipControlsRuleUnmarshaller.Instance.Unmarshall(context));
 
                         continue;

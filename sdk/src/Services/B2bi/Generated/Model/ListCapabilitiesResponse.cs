@@ -33,7 +33,7 @@ namespace Amazon.B2bi.Model
     /// </summary>
     public partial class ListCapabilitiesResponse : AmazonWebServiceResponse
     {
-        private List<CapabilitySummary> _capabilities = new List<CapabilitySummary>();
+        private List<CapabilitySummary> _capabilities = AWSConfigs.InitializeCollections ? new List<CapabilitySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.B2bi.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

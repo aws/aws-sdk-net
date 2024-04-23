@@ -33,7 +33,7 @@ namespace Amazon.NeptuneGraph.Model
     /// </summary>
     public partial class ListGraphsResponse : AmazonWebServiceResponse
     {
-        private List<GraphSummary> _graphs = new List<GraphSummary>();
+        private List<GraphSummary> _graphs = AWSConfigs.InitializeCollections ? new List<GraphSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.NeptuneGraph.Model
         // Check to see if Graphs property is set
         internal bool IsSetGraphs()
         {
-            return this._graphs != null && this._graphs.Count > 0; 
+            return this._graphs != null && (this._graphs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ListGroupsResponse : AmazonWebServiceResponse
     {
-        private List<GroupSummary> _items = new List<GroupSummary>();
+        private List<GroupSummary> _items = AWSConfigs.InitializeCollections ? new List<GroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,14 +51,14 @@ namespace Amazon.QBusiness.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Amazon Q returns this token that you can use in the
-        /// subsequent request to retrieve the next set of groups that are mapped to users.
+        /// If the response is truncated, Amazon Q Business returns this token that you can use
+        /// in the subsequent request to retrieve the next set of groups that are mapped to users.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

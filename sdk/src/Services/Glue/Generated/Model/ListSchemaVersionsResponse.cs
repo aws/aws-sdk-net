@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     public partial class ListSchemaVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SchemaVersionListItem> _schemas = new List<SchemaVersionListItem>();
+        private List<SchemaVersionListItem> _schemas = AWSConfigs.InitializeCollections ? new List<SchemaVersionListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if Schemas property is set
         internal bool IsSetSchemas()
         {
-            return this._schemas != null && this._schemas.Count > 0; 
+            return this._schemas != null && (this._schemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

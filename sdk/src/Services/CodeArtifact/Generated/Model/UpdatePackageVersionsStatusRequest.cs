@@ -45,8 +45,8 @@ namespace Amazon.CodeArtifact.Model
         private string _package;
         private string _repository;
         private PackageVersionStatus _targetStatus;
-        private Dictionary<string, string> _versionRevisions = new Dictionary<string, string>();
-        private List<string> _versions = new List<string>();
+        private Dictionary<string, string> _versionRevisions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _versions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Domain. 
@@ -130,8 +130,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the package version to be updated. The package version component
-        /// that specifies its namespace depends on its type. For example:
+        /// The namespace of the package version to be updated. The package component that specifies
+        /// its namespace depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -139,16 +139,16 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <c>scope</c>. 
+        ///  The namespace of an npm or Swift package version is its <c>scope</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The namespace of a generic package is its <c>namespace</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  Python and NuGet package versions do not contain a corresponding component, package
         /// versions of those formats do not have a namespace. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  The namespace of a generic package is its <c>namespace</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -240,7 +240,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if VersionRevisions property is set
         internal bool IsSetVersionRevisions()
         {
-            return this._versionRevisions != null && this._versionRevisions.Count > 0; 
+            return this._versionRevisions != null && (this._versionRevisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

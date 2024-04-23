@@ -36,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _botVersion;
-        private List<SlotTypeFilter> _filters = new List<SlotTypeFilter>();
+        private List<SlotTypeFilter> _filters = AWSConfigs.InitializeCollections ? new List<SlotTypeFilter>() : null;
         private string _localeId;
         private int? _maxResults;
         private string _nextToken;
@@ -98,7 +98,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

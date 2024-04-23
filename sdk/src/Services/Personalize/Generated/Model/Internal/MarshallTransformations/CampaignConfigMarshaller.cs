@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CampaignConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEnableMetadataWithRecommendations())
             {
                 context.Writer.WritePropertyName("enableMetadataWithRecommendations");
@@ -65,6 +68,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSyncWithLatestSolutionVersion())
+            {
+                context.Writer.WritePropertyName("syncWithLatestSolutionVersion");
+                context.Writer.Write(requestObject.SyncWithLatestSolutionVersion);
+            }
+
         }
 
         /// <summary>
@@ -74,3 +83,4 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

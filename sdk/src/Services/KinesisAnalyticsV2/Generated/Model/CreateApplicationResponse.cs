@@ -38,8 +38,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationDetail. 
         /// <para>
-        /// In response to your <c>CreateApplication</c> request, Kinesis Data Analytics returns
-        /// a response with details of the application it created.
+        /// In response to your <c>CreateApplication</c> request, Managed Service for Apache Flink
+        /// returns a response with details of the application it created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruProfiler.Model
     /// </summary>
     public partial class Channel
     {
-        private List<string> _eventPublishers = new List<string>();
+        private List<string> _eventPublishers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private string _uri;
 
@@ -55,7 +55,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if EventPublishers property is set
         internal bool IsSetEventPublishers()
         {
-            return this._eventPublishers != null && this._eventPublishers.Count > 0; 
+            return this._eventPublishers != null && (this._eventPublishers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

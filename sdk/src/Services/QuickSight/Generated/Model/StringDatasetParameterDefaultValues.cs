@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class StringDatasetParameterDefaultValues
     {
-        private List<string> _staticValues = new List<string>();
+        private List<string> _staticValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property StaticValues. 
@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if StaticValues property is set
         internal bool IsSetStaticValues()
         {
-            return this._staticValues != null && this._staticValues.Count > 0; 
+            return this._staticValues != null && (this._staticValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

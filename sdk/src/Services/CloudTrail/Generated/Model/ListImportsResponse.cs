@@ -33,7 +33,7 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class ListImportsResponse : AmazonWebServiceResponse
     {
-        private List<ImportsListItem> _imports = new List<ImportsListItem>();
+        private List<ImportsListItem> _imports = AWSConfigs.InitializeCollections ? new List<ImportsListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if Imports property is set
         internal bool IsSetImports()
         {
-            return this._imports != null && this._imports.Count > 0; 
+            return this._imports != null && (this._imports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

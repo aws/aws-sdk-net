@@ -33,7 +33,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class DescribeGameSessionsResponse : AmazonWebServiceResponse
     {
-        private List<GameSession> _gameSessions = new List<GameSession>();
+        private List<GameSession> _gameSessions = AWSConfigs.InitializeCollections ? new List<GameSession>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GameLift.Model
         // Check to see if GameSessions property is set
         internal bool IsSetGameSessions()
         {
-            return this._gameSessions != null && this._gameSessions.Count > 0; 
+            return this._gameSessions != null && (this._gameSessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

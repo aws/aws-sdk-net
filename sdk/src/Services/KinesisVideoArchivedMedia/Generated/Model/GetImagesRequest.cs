@@ -37,7 +37,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     {
         private DateTime? _endTimestamp;
         private Format _format;
-        private Dictionary<string, string> _formatConfig = new Dictionary<string, string>();
+        private Dictionary<string, string> _formatConfig = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _heightPixels;
         private ImageSelectorType _imageSelectorType;
         private long? _maxResults;
@@ -110,7 +110,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         // Check to see if FormatConfig property is set
         internal bool IsSetFormatConfig()
         {
-            return this._formatConfig != null && this._formatConfig.Count > 0; 
+            return this._formatConfig != null && (this._formatConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

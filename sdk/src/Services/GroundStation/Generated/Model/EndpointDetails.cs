@@ -35,7 +35,7 @@ namespace Amazon.GroundStation.Model
     {
         private AwsGroundStationAgentEndpoint _awsGroundStationAgentEndpoint;
         private DataflowEndpoint _endpoint;
-        private List<string> _healthReasons = new List<string>();
+        private List<string> _healthReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CapabilityHealth _healthStatus;
         private SecurityDetails _securityDetails;
 
@@ -91,7 +91,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if HealthReasons property is set
         internal bool IsSetHealthReasons()
         {
-            return this._healthReasons != null && this._healthReasons.Count > 0; 
+            return this._healthReasons != null && (this._healthReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

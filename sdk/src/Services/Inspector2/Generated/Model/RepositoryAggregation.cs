@@ -33,7 +33,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class RepositoryAggregation
     {
-        private List<StringFilter> _repositories = new List<StringFilter>();
+        private List<StringFilter> _repositories = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private RepositorySortBy _sortBy;
         private SortOrder _sortOrder;
 
@@ -53,7 +53,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Repositories property is set
         internal bool IsSetRepositories()
         {
-            return this._repositories != null && this._repositories.Count > 0; 
+            return this._repositories != null && (this._repositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the FeatureGroupSummaries
         /// </summary>
         public IPaginatedEnumerable<FeatureGroupSummary> FeatureGroupSummaries => 
-            new PaginatedResultKeyResponse<ListFeatureGroupsResponse, FeatureGroupSummary>(this, (i) => i.FeatureGroupSummaries);
+            new PaginatedResultKeyResponse<ListFeatureGroupsResponse, FeatureGroupSummary>(this, (i) => i.FeatureGroupSummaries ?? new List<FeatureGroupSummary>());
 
         internal ListFeatureGroupsPaginator(IAmazonSageMaker client, ListFeatureGroupsRequest request)
         {

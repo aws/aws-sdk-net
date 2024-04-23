@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,26 +63,32 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CallAs", StringUtils.FromString(publicRequest.CallAs));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOperationId())
                 {
                     request.Parameters.Add("OperationId", StringUtils.FromString(publicRequest.OperationId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackInstanceAccount())
                 {
                     request.Parameters.Add("StackInstanceAccount", StringUtils.FromString(publicRequest.StackInstanceAccount));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackInstanceRegion())
                 {
                     request.Parameters.Add("StackInstanceRegion", StringUtils.FromString(publicRequest.StackInstanceRegion));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackInstanceResourceDriftStatuses())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -91,10 +98,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackSetName())
                 {
                     request.Parameters.Add("StackSetName", StringUtils.FromString(publicRequest.StackSetName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

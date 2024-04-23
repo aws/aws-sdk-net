@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CollapseConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDocumentAttributeKey())
             {
                 context.Writer.WritePropertyName("DocumentAttributeKey");
@@ -99,3 +102,4 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

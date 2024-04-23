@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeRedshiftIdcApplicationsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<RedshiftIdcApplication> _redshiftIdcApplications = new List<RedshiftIdcApplication>();
+        private List<RedshiftIdcApplication> _redshiftIdcApplications = AWSConfigs.InitializeCollections ? new List<RedshiftIdcApplication>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -74,7 +74,7 @@ namespace Amazon.Redshift.Model
         // Check to see if RedshiftIdcApplications property is set
         internal bool IsSetRedshiftIdcApplications()
         {
-            return this._redshiftIdcApplications != null && this._redshiftIdcApplications.Count > 0; 
+            return this._redshiftIdcApplications != null && (this._redshiftIdcApplications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

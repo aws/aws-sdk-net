@@ -33,7 +33,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class ListAggregatedUtterancesResponse : AmazonWebServiceResponse
     {
-        private List<AggregatedUtterancesSummary> _aggregatedUtterancesSummaries = new List<AggregatedUtterancesSummary>();
+        private List<AggregatedUtterancesSummary> _aggregatedUtterancesSummaries = AWSConfigs.InitializeCollections ? new List<AggregatedUtterancesSummary>() : null;
         private UtteranceAggregationDuration _aggregationDuration;
         private DateTime? _aggregationLastRefreshedDateTime;
         private DateTime? _aggregationWindowEndTime;
@@ -61,7 +61,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if AggregatedUtterancesSummaries property is set
         internal bool IsSetAggregatedUtterancesSummaries()
         {
-            return this._aggregatedUtterancesSummaries != null && this._aggregatedUtterancesSummaries.Count > 0; 
+            return this._aggregatedUtterancesSummaries != null && (this._aggregatedUtterancesSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

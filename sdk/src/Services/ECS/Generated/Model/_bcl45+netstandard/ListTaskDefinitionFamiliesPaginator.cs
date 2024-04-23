@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
         /// Enumerable containing all of the Families
         /// </summary>
         public IPaginatedEnumerable<string> Families => 
-            new PaginatedResultKeyResponse<ListTaskDefinitionFamiliesResponse, string>(this, (i) => i.Families);
+            new PaginatedResultKeyResponse<ListTaskDefinitionFamiliesResponse, string>(this, (i) => i.Families ?? new List<string>());
 
         internal ListTaskDefinitionFamiliesPaginator(IAmazonECS client, ListTaskDefinitionFamiliesRequest request)
         {

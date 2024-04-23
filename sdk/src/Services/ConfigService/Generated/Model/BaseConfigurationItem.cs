@@ -47,7 +47,7 @@ namespace Amazon.ConfigService.Model
         private string _resourceId;
         private string _resourceName;
         private ResourceType _resourceType;
-        private Dictionary<string, string> _supplementaryConfiguration = new Dictionary<string, string>();
+        private Dictionary<string, string> _supplementaryConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _version;
 
         /// <summary>
@@ -164,6 +164,16 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// The time when configuration changes for the resource were delivered.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is optional and is not guaranteed to be present in a configuration item
+        /// (CI). If you are using daily recording, this field will be populated. However, if
+        /// you are using continuous recording, this field will be omitted since the delivery
+        /// time is instantaneous as the CI is available right away. For more information on daily
+        /// recording and continuous recording, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording
+        /// Frequency</a> in the <i>Config Developer Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DateTime ConfigurationItemDeliveryTime
         {
@@ -343,7 +353,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if SupplementaryConfiguration property is set
         internal bool IsSetSupplementaryConfiguration()
         {
-            return this._supplementaryConfiguration != null && this._supplementaryConfiguration.Count > 0; 
+            return this._supplementaryConfiguration != null && (this._supplementaryConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

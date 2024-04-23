@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model
     public partial class StartImportResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdTimestamp;
-        private List<string> _destinations = new List<string>();
+        private List<string> _destinations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _endEventTime;
         private string _importId;
         private ImportSource _importSource;
@@ -76,7 +76,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

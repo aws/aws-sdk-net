@@ -34,7 +34,7 @@ namespace Amazon.DirectoryService.Model
     public partial class DescribeSharedDirectoriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SharedDirectory> _sharedDirectories = new List<SharedDirectory>();
+        private List<SharedDirectory> _sharedDirectories = AWSConfigs.InitializeCollections ? new List<SharedDirectory>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if SharedDirectories property is set
         internal bool IsSetSharedDirectories()
         {
-            return this._sharedDirectories != null && this._sharedDirectories.Count > 0; 
+            return this._sharedDirectories != null && (this._sharedDirectories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

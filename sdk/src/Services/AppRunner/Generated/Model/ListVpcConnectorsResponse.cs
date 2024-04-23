@@ -34,7 +34,7 @@ namespace Amazon.AppRunner.Model
     public partial class ListVpcConnectorsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VpcConnector> _vpcConnectors = new List<VpcConnector>();
+        private List<VpcConnector> _vpcConnectors = AWSConfigs.InitializeCollections ? new List<VpcConnector>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if VpcConnectors property is set
         internal bool IsSetVpcConnectors()
         {
-            return this._vpcConnectors != null && this._vpcConnectors.Count > 0; 
+            return this._vpcConnectors != null && (this._vpcConnectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

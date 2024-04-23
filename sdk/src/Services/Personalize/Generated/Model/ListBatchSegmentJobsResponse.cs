@@ -33,7 +33,7 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class ListBatchSegmentJobsResponse : AmazonWebServiceResponse
     {
-        private List<BatchSegmentJobSummary> _batchSegmentJobs = new List<BatchSegmentJobSummary>();
+        private List<BatchSegmentJobSummary> _batchSegmentJobs = AWSConfigs.InitializeCollections ? new List<BatchSegmentJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Personalize.Model
         // Check to see if BatchSegmentJobs property is set
         internal bool IsSetBatchSegmentJobs()
         {
-            return this._batchSegmentJobs != null && this._batchSegmentJobs.Count > 0; 
+            return this._batchSegmentJobs != null && (this._batchSegmentJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

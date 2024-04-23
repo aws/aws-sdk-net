@@ -42,8 +42,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ConsumerArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the consumer that association for the datashare
-        /// is removed from.
+        /// The Amazon Resource Name (ARN) of the consumer namespace that association for the
+        /// datashare is removed from.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -82,7 +82,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DataShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the datashare to remove association for. 
+        /// The Amazon Resource Name (ARN) of the datashare to remove association for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

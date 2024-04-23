@@ -45,7 +45,7 @@ namespace Amazon.CodeCommit.Model
         /// Enumerable containing all of the Repositories
         /// </summary>
         public IPaginatedEnumerable<RepositoryNameIdPair> Repositories => 
-            new PaginatedResultKeyResponse<ListRepositoriesResponse, RepositoryNameIdPair>(this, (i) => i.Repositories);
+            new PaginatedResultKeyResponse<ListRepositoriesResponse, RepositoryNameIdPair>(this, (i) => i.Repositories ?? new List<RepositoryNameIdPair>());
 
         internal ListRepositoriesPaginator(IAmazonCodeCommit client, ListRepositoriesRequest request)
         {

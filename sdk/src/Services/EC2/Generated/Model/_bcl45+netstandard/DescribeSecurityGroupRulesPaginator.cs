@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the SecurityGroupRules
         /// </summary>
         public IPaginatedEnumerable<SecurityGroupRule> SecurityGroupRules => 
-            new PaginatedResultKeyResponse<DescribeSecurityGroupRulesResponse, SecurityGroupRule>(this, (i) => i.SecurityGroupRules);
+            new PaginatedResultKeyResponse<DescribeSecurityGroupRulesResponse, SecurityGroupRule>(this, (i) => i.SecurityGroupRules ?? new List<SecurityGroupRule>());
 
         internal DescribeSecurityGroupRulesPaginator(IAmazonEC2 client, DescribeSecurityGroupRulesRequest request)
         {

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CaCertificatesBundleS3Bucket", StringUtils.FromString(publicRequest.CaCertificatesBundleS3Bucket));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCaCertificatesBundleS3Key())
                 {
                     request.Parameters.Add("CaCertificatesBundleS3Key", StringUtils.FromString(publicRequest.CaCertificatesBundleS3Key));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCaCertificatesBundleS3ObjectVersion())
                 {
                     request.Parameters.Add("CaCertificatesBundleS3ObjectVersion", StringUtils.FromString(publicRequest.CaCertificatesBundleS3ObjectVersion));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -83,13 +88,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

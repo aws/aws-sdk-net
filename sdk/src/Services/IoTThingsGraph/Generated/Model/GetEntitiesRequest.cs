@@ -76,7 +76,7 @@ namespace Amazon.IoTThingsGraph.Model
     /// </summary>
     public partial class GetEntitiesRequest : AmazonIoTThingsGraphRequest
     {
-        private List<string> _ids = new List<string>();
+        private List<string> _ids = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _namespaceVersion;
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.IoTThingsGraph.Model
         // Check to see if Ids property is set
         internal bool IsSetIds()
         {
-            return this._ids != null && this._ids.Count > 0; 
+            return this._ids != null && (this._ids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

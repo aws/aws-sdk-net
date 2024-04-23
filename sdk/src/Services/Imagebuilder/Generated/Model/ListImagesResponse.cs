@@ -33,7 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListImagesResponse : AmazonWebServiceResponse
     {
-        private List<ImageVersion> _imageVersionList = new List<ImageVersion>();
+        private List<ImageVersion> _imageVersionList = AWSConfigs.InitializeCollections ? new List<ImageVersion>() : null;
         private string _nextToken;
         private string _requestId;
 
@@ -65,7 +65,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if ImageVersionList property is set
         internal bool IsSetImageVersionList()
         {
-            return this._imageVersionList != null && this._imageVersionList.Count > 0; 
+            return this._imageVersionList != null && (this._imageVersionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

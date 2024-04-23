@@ -33,8 +33,8 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BatchGetBuildBatchesResponse : AmazonWebServiceResponse
     {
-        private List<BuildBatch> _buildBatches = new List<BuildBatch>();
-        private List<string> _buildBatchesNotFound = new List<string>();
+        private List<BuildBatch> _buildBatches = AWSConfigs.InitializeCollections ? new List<BuildBatch>() : null;
+        private List<string> _buildBatchesNotFound = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BuildBatches. 
@@ -52,7 +52,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if BuildBatches property is set
         internal bool IsSetBuildBatches()
         {
-            return this._buildBatches != null && this._buildBatches.Count > 0; 
+            return this._buildBatches != null && (this._buildBatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if BuildBatchesNotFound property is set
         internal bool IsSetBuildBatchesNotFound()
         {
-            return this._buildBatchesNotFound != null && this._buildBatchesNotFound.Count > 0; 
+            return this._buildBatchesNotFound != null && (this._buildBatchesNotFound.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class Container
     {
-        private List<string> _imageUris = new List<string>();
+        private List<string> _imageUris = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _region;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if ImageUris property is set
         internal bool IsSetImageUris()
         {
-            return this._imageUris != null && this._imageUris.Count > 0; 
+            return this._imageUris != null && (this._imageUris.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

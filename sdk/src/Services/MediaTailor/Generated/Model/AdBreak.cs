@@ -33,7 +33,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class AdBreak
     {
-        private List<KeyValuePair> _adBreakMetadata = new List<KeyValuePair>();
+        private List<KeyValuePair> _adBreakMetadata = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
         private MessageType _messageType;
         private long? _offsetMillis;
         private SlateSource _slate;
@@ -56,7 +56,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if AdBreakMetadata property is set
         internal bool IsSetAdBreakMetadata()
         {
-            return this._adBreakMetadata != null && this._adBreakMetadata.Count > 0; 
+            return this._adBreakMetadata != null && (this._adBreakMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.CloudTrail.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<Event> Events => 
-            new PaginatedResultKeyResponse<LookupEventsResponse, Event>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<LookupEventsResponse, Event>(this, (i) => i.Events ?? new List<Event>());
 
         internal LookupEventsPaginator(IAmazonCloudTrail client, LookupEventsRequest request)
         {

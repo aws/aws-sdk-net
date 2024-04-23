@@ -35,9 +35,9 @@ namespace Amazon.Snowball.Model
     /// </summary>
     public partial class JobResource
     {
-        private List<Ec2AmiResource> _ec2AmiResources = new List<Ec2AmiResource>();
-        private List<LambdaResource> _lambdaResources = new List<LambdaResource>();
-        private List<S3Resource> _s3Resources = new List<S3Resource>();
+        private List<Ec2AmiResource> _ec2AmiResources = AWSConfigs.InitializeCollections ? new List<Ec2AmiResource>() : null;
+        private List<LambdaResource> _lambdaResources = AWSConfigs.InitializeCollections ? new List<LambdaResource>() : null;
+        private List<S3Resource> _s3Resources = AWSConfigs.InitializeCollections ? new List<S3Resource>() : null;
 
         /// <summary>
         /// Gets and sets the property Ec2AmiResources. 
@@ -54,7 +54,7 @@ namespace Amazon.Snowball.Model
         // Check to see if Ec2AmiResources property is set
         internal bool IsSetEc2AmiResources()
         {
-            return this._ec2AmiResources != null && this._ec2AmiResources.Count > 0; 
+            return this._ec2AmiResources != null && (this._ec2AmiResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Snowball.Model
         // Check to see if LambdaResources property is set
         internal bool IsSetLambdaResources()
         {
-            return this._lambdaResources != null && this._lambdaResources.Count > 0; 
+            return this._lambdaResources != null && (this._lambdaResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.Snowball.Model
         // Check to see if S3Resources property is set
         internal bool IsSetS3Resources()
         {
-            return this._s3Resources != null && this._s3Resources.Count > 0; 
+            return this._s3Resources != null && (this._s3Resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

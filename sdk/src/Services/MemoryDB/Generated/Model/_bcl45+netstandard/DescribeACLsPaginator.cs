@@ -45,7 +45,7 @@ namespace Amazon.MemoryDB.Model
         /// Enumerable containing all of the ACLs
         /// </summary>
         public IPaginatedEnumerable<ACL> ACLs => 
-            new PaginatedResultKeyResponse<DescribeACLsResponse, ACL>(this, (i) => i.ACLs);
+            new PaginatedResultKeyResponse<DescribeACLsResponse, ACL>(this, (i) => i.ACLs ?? new List<ACL>());
 
         internal DescribeACLsPaginator(IAmazonMemoryDB client, DescribeACLsRequest request)
         {

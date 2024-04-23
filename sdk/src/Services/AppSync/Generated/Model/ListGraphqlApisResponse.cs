@@ -33,7 +33,7 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class ListGraphqlApisResponse : AmazonWebServiceResponse
     {
-        private List<GraphqlApi> _graphqlApis = new List<GraphqlApi>();
+        private List<GraphqlApi> _graphqlApis = AWSConfigs.InitializeCollections ? new List<GraphqlApi>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AppSync.Model
         // Check to see if GraphqlApis property is set
         internal bool IsSetGraphqlApis()
         {
-            return this._graphqlApis != null && this._graphqlApis.Count > 0; 
+            return this._graphqlApis != null && (this._graphqlApis.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

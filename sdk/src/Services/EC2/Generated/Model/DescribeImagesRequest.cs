@@ -46,17 +46,23 @@ namespace Amazon.EC2.Model
     /// terminated, specifying the ID of the image will eventually return an error indicating
     /// that the AMI ID cannot be found.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The order of the elements in the response, including those within nested structures,
+    /// might vary. Applications should not assume the elements appear in a particular order.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeImagesRequest : AmazonEC2Request
     {
-        private List<string> _executableUsers = new List<string>();
-        private List<Filter> _filters = new List<Filter>();
-        private List<string> _imageIds = new List<string>();
+        private List<string> _executableUsers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _imageIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _includeDeprecated;
         private bool? _includeDisabled;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _owners = new List<string>();
+        private List<string> _owners = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExecutableUsers. 
@@ -92,7 +98,7 @@ namespace Amazon.EC2.Model
         // Check to see if ExecutableUsers property is set
         internal bool IsSetExecutableUsers()
         {
-            return this._executableUsers != null && this._executableUsers.Count > 0; 
+            return this._executableUsers != null && (this._executableUsers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -266,7 +272,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -288,7 +294,7 @@ namespace Amazon.EC2.Model
         // Check to see if ImageIds property is set
         internal bool IsSetImageIds()
         {
-            return this._imageIds != null && this._imageIds.Count > 0; 
+            return this._imageIds != null && (this._imageIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -398,7 +404,7 @@ namespace Amazon.EC2.Model
         // Check to see if Owners property is set
         internal bool IsSetOwners()
         {
-            return this._owners != null && this._owners.Count > 0; 
+            return this._owners != null && (this._owners.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

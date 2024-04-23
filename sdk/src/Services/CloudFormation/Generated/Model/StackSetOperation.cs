@@ -250,7 +250,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-        /// Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.
+        /// Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public StackSetDriftDetectionDetails StackSetDriftDetectionDetails
@@ -302,7 +302,7 @@ namespace Amazon.CloudFormation.Model
         ///  <c>QUEUED</c>: [Service-managed permissions] For automatic deployments that require
         /// a sequence of operations, the operation is queued to be performed. For more information,
         /// see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-        /// set operation status codes</a> in the CloudFormation User Guide.
+        /// set operation status codes</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

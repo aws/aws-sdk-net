@@ -49,7 +49,7 @@ namespace Amazon.ResourceGroups.Model
     public partial class UntagRequest : AmazonResourceGroupsRequest
     {
         private string _arn;
-        private List<string> _keys = new List<string>();
+        private List<string> _keys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -87,7 +87,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

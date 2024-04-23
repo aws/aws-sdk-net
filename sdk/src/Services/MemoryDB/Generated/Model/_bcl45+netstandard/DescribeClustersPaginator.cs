@@ -45,7 +45,7 @@ namespace Amazon.MemoryDB.Model
         /// Enumerable containing all of the Clusters
         /// </summary>
         public IPaginatedEnumerable<Cluster> Clusters => 
-            new PaginatedResultKeyResponse<DescribeClustersResponse, Cluster>(this, (i) => i.Clusters);
+            new PaginatedResultKeyResponse<DescribeClustersResponse, Cluster>(this, (i) => i.Clusters ?? new List<Cluster>());
 
         internal DescribeClustersPaginator(IAmazonMemoryDB client, DescribeClustersRequest request)
         {

@@ -36,7 +36,7 @@ namespace Amazon.Connect.Model
         private string _contactFlowId;
         private string _description;
         private string _name;
-        private Dictionary<string, Reference> _references = new Dictionary<string, Reference>();
+        private Dictionary<string, Reference> _references = AWSConfigs.InitializeCollections ? new Dictionary<string, Reference>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactFlowId. 
@@ -113,7 +113,7 @@ namespace Amazon.Connect.Model
         // Check to see if References property is set
         internal bool IsSetReferences()
         {
-            return this._references != null && this._references.Count > 0; 
+            return this._references != null && (this._references.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

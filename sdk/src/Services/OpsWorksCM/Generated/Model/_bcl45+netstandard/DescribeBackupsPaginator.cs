@@ -45,7 +45,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Enumerable containing all of the Backups
         /// </summary>
         public IPaginatedEnumerable<Backup> Backups => 
-            new PaginatedResultKeyResponse<DescribeBackupsResponse, Backup>(this, (i) => i.Backups);
+            new PaginatedResultKeyResponse<DescribeBackupsResponse, Backup>(this, (i) => i.Backups ?? new List<Backup>());
 
         internal DescribeBackupsPaginator(IAmazonOpsWorksCM client, DescribeBackupsRequest request)
         {

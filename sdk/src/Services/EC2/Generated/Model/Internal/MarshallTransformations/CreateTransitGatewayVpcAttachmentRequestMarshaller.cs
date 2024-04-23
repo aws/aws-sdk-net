@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -64,19 +65,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Options" + "." + "ApplianceModeSupport", StringUtils.FromString(publicRequest.Options.ApplianceModeSupport));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetDnsSupport())
                     {
                         request.Parameters.Add("Options" + "." + "DnsSupport", StringUtils.FromString(publicRequest.Options.DnsSupport));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetIpv6Support())
                     {
                         request.Parameters.Add("Options" + "." + "Ipv6Support", StringUtils.FromString(publicRequest.Options.Ipv6Support));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Options.IsSetSecurityGroupReferencingSupport())
                     {
                         request.Parameters.Add("Options" + "." + "SecurityGroupReferencingSupport", StringUtils.FromString(publicRequest.Options.SecurityGroupReferencingSupport));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSubnetIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -86,6 +92,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -95,6 +102,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecifications" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -104,24 +112,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecifications" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecifications" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransitGatewayId())
                 {
                     request.Parameters.Add("TransitGatewayId", StringUtils.FromString(publicRequest.TransitGatewayId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcId())
                 {
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

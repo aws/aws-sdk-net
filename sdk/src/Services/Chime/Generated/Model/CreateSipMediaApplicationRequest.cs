@@ -49,7 +49,7 @@ namespace Amazon.Chime.Model
     public partial class CreateSipMediaApplicationRequest : AmazonChimeRequest
     {
         private string _awsRegion;
-        private List<SipMediaApplicationEndpoint> _endpoints = new List<SipMediaApplicationEndpoint>();
+        private List<SipMediaApplicationEndpoint> _endpoints = AWSConfigs.InitializeCollections ? new List<SipMediaApplicationEndpoint>() : null;
         private string _name;
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.Chime.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

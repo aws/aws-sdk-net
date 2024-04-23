@@ -34,8 +34,8 @@ namespace Amazon.AppMesh.Model
     public partial class VirtualNodeSpec
     {
         private BackendDefaults _backendDefaults;
-        private List<Backend> _backends = new List<Backend>();
-        private List<Listener> _listeners = new List<Listener>();
+        private List<Backend> _backends = AWSConfigs.InitializeCollections ? new List<Backend>() : null;
+        private List<Listener> _listeners = AWSConfigs.InitializeCollections ? new List<Listener>() : null;
         private Logging _logging;
         private ServiceDiscovery _serviceDiscovery;
 
@@ -72,7 +72,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if Backends property is set
         internal bool IsSetBackends()
         {
-            return this._backends != null && this._backends.Count > 0; 
+            return this._backends != null && (this._backends.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if Listeners property is set
         internal bool IsSetListeners()
         {
-            return this._listeners != null && this._listeners.Count > 0; 
+            return this._listeners != null && (this._listeners.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

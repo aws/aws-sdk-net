@@ -93,12 +93,12 @@ namespace Amazon.SecurityHub.Model
     {
         private int? _confidence;
         private int? _criticality;
-        private List<AwsSecurityFindingIdentifier> _findingIdentifiers = new List<AwsSecurityFindingIdentifier>();
+        private List<AwsSecurityFindingIdentifier> _findingIdentifiers = AWSConfigs.InitializeCollections ? new List<AwsSecurityFindingIdentifier>() : null;
         private NoteUpdate _note;
-        private List<RelatedFinding> _relatedFindings = new List<RelatedFinding>();
+        private List<RelatedFinding> _relatedFindings = AWSConfigs.InitializeCollections ? new List<RelatedFinding>() : null;
         private SeverityUpdate _severity;
-        private List<string> _types = new List<string>();
-        private Dictionary<string, string> _userDefinedFields = new Dictionary<string, string>();
+        private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _userDefinedFields = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VerificationState _verificationState;
         private WorkflowUpdate _workflow;
 
@@ -175,7 +175,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if FindingIdentifiers property is set
         internal bool IsSetFindingIdentifiers()
         {
-            return this._findingIdentifiers != null && this._findingIdentifiers.Count > 0; 
+            return this._findingIdentifiers != null && (this._findingIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RelatedFindings property is set
         internal bool IsSetRelatedFindings()
         {
-            return this._relatedFindings != null && this._relatedFindings.Count > 0; 
+            return this._relatedFindings != null && (this._relatedFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -270,7 +270,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Types property is set
         internal bool IsSetTypes()
         {
-            return this._types != null && this._types.Count > 0; 
+            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -289,7 +289,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UserDefinedFields property is set
         internal bool IsSetUserDefinedFields()
         {
-            return this._userDefinedFields != null && this._userDefinedFields.Count > 0; 
+            return this._userDefinedFields != null && (this._userDefinedFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

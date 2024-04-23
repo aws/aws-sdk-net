@@ -34,7 +34,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     public partial class ListServerNeighborsResponse : AmazonWebServiceResponse
     {
         private long? _knownDependencyCount;
-        private List<NeighborConnectionDetail> _neighbors = new List<NeighborConnectionDetail>();
+        private List<NeighborConnectionDetail> _neighbors = AWSConfigs.InitializeCollections ? new List<NeighborConnectionDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if Neighbors property is set
         internal bool IsSetNeighbors()
         {
-            return this._neighbors != null && this._neighbors.Count > 0; 
+            return this._neighbors != null && (this._neighbors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

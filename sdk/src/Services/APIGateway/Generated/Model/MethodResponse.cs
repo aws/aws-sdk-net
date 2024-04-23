@@ -35,8 +35,8 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class MethodResponse
     {
-        private Dictionary<string, string> _responseModels = new Dictionary<string, string>();
-        private Dictionary<string, bool> _responseParameters = new Dictionary<string, bool>();
+        private Dictionary<string, string> _responseModels = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, bool> _responseParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, bool>() : null;
         private string _statusCode;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if ResponseModels property is set
         internal bool IsSetResponseModels()
         {
-            return this._responseModels != null && this._responseModels.Count > 0; 
+            return this._responseModels != null && (this._responseModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if ResponseParameters property is set
         internal bool IsSetResponseParameters()
         {
-            return this._responseParameters != null && this._responseParameters.Count > 0; 
+            return this._responseParameters != null && (this._responseParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

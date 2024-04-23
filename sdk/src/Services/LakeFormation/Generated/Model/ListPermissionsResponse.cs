@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model
     public partial class ListPermissionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PrincipalResourcePermissions> _principalResourcePermissions = new List<PrincipalResourcePermissions>();
+        private List<PrincipalResourcePermissions> _principalResourcePermissions = AWSConfigs.InitializeCollections ? new List<PrincipalResourcePermissions>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if PrincipalResourcePermissions property is set
         internal bool IsSetPrincipalResourcePermissions()
         {
-            return this._principalResourcePermissions != null && this._principalResourcePermissions.Count > 0; 
+            return this._principalResourcePermissions != null && (this._principalResourcePermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<EndpointSummary> _endpoints = new List<EndpointSummary>();
+        private List<EndpointSummary> _endpoints = AWSConfigs.InitializeCollections ? new List<EndpointSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -29,7 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Configures common parameters of the session.
+    /// Contains configuration about the session with the knowledge base.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+    /// request</a> – in the <c>sessionConfiguration</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RetrieveAndGenerateSessionConfiguration
     {
@@ -38,7 +49,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The KMS key arn to encrypt the customer data of the session.
+        /// The ARN of the KMS key encrypting the session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

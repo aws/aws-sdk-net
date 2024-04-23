@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TrialComponentParameterValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNumberValue())
             {
                 context.Writer.WritePropertyName("NumberValue");
-                context.Writer.Write(requestObject.NumberValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.NumberValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NumberValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NumberValue);
+                }
             }
 
             if(requestObject.IsSetStringValue())
@@ -66,3 +76,4 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

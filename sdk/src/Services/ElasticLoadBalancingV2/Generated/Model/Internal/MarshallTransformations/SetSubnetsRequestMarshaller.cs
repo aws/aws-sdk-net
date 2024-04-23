@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoadBalancerArn())
                 {
                     request.Parameters.Add("LoadBalancerArn", StringUtils.FromString(publicRequest.LoadBalancerArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSubnetMappings())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,21 +78,26 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AllocationId", StringUtils.FromString(publicRequestlistValue.AllocationId));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetIPv6Address())
                         {
                             request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IPv6Address", StringUtils.FromString(publicRequestlistValue.IPv6Address));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPrivateIPv4Address())
                         {
                             request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PrivateIPv4Address", StringUtils.FromString(publicRequestlistValue.PrivateIPv4Address));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetSubnetId())
                         {
                             request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestlistValue.SubnetId));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSubnets())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -99,6 +107,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

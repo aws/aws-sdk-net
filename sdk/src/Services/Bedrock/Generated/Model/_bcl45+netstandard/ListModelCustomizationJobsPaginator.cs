@@ -45,7 +45,7 @@ namespace Amazon.Bedrock.Model
         /// Enumerable containing all of the ModelCustomizationJobSummaries
         /// </summary>
         public IPaginatedEnumerable<ModelCustomizationJobSummary> ModelCustomizationJobSummaries => 
-            new PaginatedResultKeyResponse<ListModelCustomizationJobsResponse, ModelCustomizationJobSummary>(this, (i) => i.ModelCustomizationJobSummaries);
+            new PaginatedResultKeyResponse<ListModelCustomizationJobsResponse, ModelCustomizationJobSummary>(this, (i) => i.ModelCustomizationJobSummaries ?? new List<ModelCustomizationJobSummary>());
 
         internal ListModelCustomizationJobsPaginator(IAmazonBedrock client, ListModelCustomizationJobsRequest request)
         {

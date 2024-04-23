@@ -37,9 +37,9 @@ namespace Amazon.WAFV2.Model
     {
         private string _description;
         private string _name;
-        private List<Regex> _regularExpressionList = new List<Regex>();
+        private List<Regex> _regularExpressionList = AWSConfigs.InitializeCollections ? new List<Regex>() : null;
         private Scope _scope;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -95,7 +95,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if RegularExpressionList property is set
         internal bool IsSetRegularExpressionList()
         {
-            return this._regularExpressionList != null && this._regularExpressionList.Count > 0; 
+            return this._regularExpressionList != null && (this._regularExpressionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

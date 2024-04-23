@@ -33,44 +33,44 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AutomationRulesFindingFilters
     {
-        private List<StringFilter> _awsAccountId = new List<StringFilter>();
-        private List<StringFilter> _awsAccountName = new List<StringFilter>();
-        private List<StringFilter> _companyName = new List<StringFilter>();
-        private List<StringFilter> _complianceAssociatedStandardsId = new List<StringFilter>();
-        private List<StringFilter> _complianceSecurityControlId = new List<StringFilter>();
-        private List<StringFilter> _complianceStatus = new List<StringFilter>();
-        private List<NumberFilter> _confidence = new List<NumberFilter>();
-        private List<DateFilter> _createdAt = new List<DateFilter>();
-        private List<NumberFilter> _criticality = new List<NumberFilter>();
-        private List<StringFilter> _description = new List<StringFilter>();
-        private List<DateFilter> _firstObservedAt = new List<DateFilter>();
-        private List<StringFilter> _generatorId = new List<StringFilter>();
-        private List<StringFilter> _id = new List<StringFilter>();
-        private List<DateFilter> _lastObservedAt = new List<DateFilter>();
-        private List<StringFilter> _noteText = new List<StringFilter>();
-        private List<DateFilter> _noteUpdatedAt = new List<DateFilter>();
-        private List<StringFilter> _noteUpdatedBy = new List<StringFilter>();
-        private List<StringFilter> _productArn = new List<StringFilter>();
-        private List<StringFilter> _productName = new List<StringFilter>();
-        private List<StringFilter> _recordState = new List<StringFilter>();
-        private List<StringFilter> _relatedFindingsId = new List<StringFilter>();
-        private List<StringFilter> _relatedFindingsProductArn = new List<StringFilter>();
-        private List<StringFilter> _resourceApplicationArn = new List<StringFilter>();
-        private List<StringFilter> _resourceApplicationName = new List<StringFilter>();
-        private List<MapFilter> _resourceDetailsOther = new List<MapFilter>();
-        private List<StringFilter> _resourceId = new List<StringFilter>();
-        private List<StringFilter> _resourcePartition = new List<StringFilter>();
-        private List<StringFilter> _resourceRegion = new List<StringFilter>();
-        private List<MapFilter> _resourceTags = new List<MapFilter>();
-        private List<StringFilter> _resourceType = new List<StringFilter>();
-        private List<StringFilter> _severityLabel = new List<StringFilter>();
-        private List<StringFilter> _sourceUrl = new List<StringFilter>();
-        private List<StringFilter> _title = new List<StringFilter>();
-        private List<StringFilter> _type = new List<StringFilter>();
-        private List<DateFilter> _updatedAt = new List<DateFilter>();
-        private List<MapFilter> _userDefinedFields = new List<MapFilter>();
-        private List<StringFilter> _verificationState = new List<StringFilter>();
-        private List<StringFilter> _workflowStatus = new List<StringFilter>();
+        private List<StringFilter> _awsAccountId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _awsAccountName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _companyName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _complianceAssociatedStandardsId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _complianceSecurityControlId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _complianceStatus = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<NumberFilter> _confidence = AWSConfigs.InitializeCollections ? new List<NumberFilter>() : null;
+        private List<DateFilter> _createdAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<NumberFilter> _criticality = AWSConfigs.InitializeCollections ? new List<NumberFilter>() : null;
+        private List<StringFilter> _description = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<DateFilter> _firstObservedAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<StringFilter> _generatorId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _id = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<DateFilter> _lastObservedAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<StringFilter> _noteText = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<DateFilter> _noteUpdatedAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<StringFilter> _noteUpdatedBy = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _productArn = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _productName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _recordState = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _relatedFindingsId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _relatedFindingsProductArn = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _resourceApplicationArn = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _resourceApplicationName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<MapFilter> _resourceDetailsOther = AWSConfigs.InitializeCollections ? new List<MapFilter>() : null;
+        private List<StringFilter> _resourceId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _resourcePartition = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _resourceRegion = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<MapFilter> _resourceTags = AWSConfigs.InitializeCollections ? new List<MapFilter>() : null;
+        private List<StringFilter> _resourceType = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _severityLabel = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _sourceUrl = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _title = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _type = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<DateFilter> _updatedAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<MapFilter> _userDefinedFields = AWSConfigs.InitializeCollections ? new List<MapFilter>() : null;
+        private List<StringFilter> _verificationState = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _workflowStatus = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -91,7 +91,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AwsAccountId property is set
         internal bool IsSetAwsAccountId()
         {
-            return this._awsAccountId != null && this._awsAccountId.Count > 0; 
+            return this._awsAccountId != null && (this._awsAccountId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AwsAccountName property is set
         internal bool IsSetAwsAccountName()
         {
-            return this._awsAccountName != null && this._awsAccountName.Count > 0; 
+            return this._awsAccountName != null && (this._awsAccountName.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if CompanyName property is set
         internal bool IsSetCompanyName()
         {
-            return this._companyName != null && this._companyName.Count > 0; 
+            return this._companyName != null && (this._companyName.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ComplianceAssociatedStandardsId property is set
         internal bool IsSetComplianceAssociatedStandardsId()
         {
-            return this._complianceAssociatedStandardsId != null && this._complianceAssociatedStandardsId.Count > 0; 
+            return this._complianceAssociatedStandardsId != null && (this._complianceAssociatedStandardsId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ComplianceSecurityControlId property is set
         internal bool IsSetComplianceSecurityControlId()
         {
-            return this._complianceSecurityControlId != null && this._complianceSecurityControlId.Count > 0; 
+            return this._complianceSecurityControlId != null && (this._complianceSecurityControlId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ComplianceStatus property is set
         internal bool IsSetComplianceStatus()
         {
-            return this._complianceStatus != null && this._complianceStatus.Count > 0; 
+            return this._complianceStatus != null && (this._complianceStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Confidence property is set
         internal bool IsSetConfidence()
         {
-            return this._confidence != null && this._confidence.Count > 0; 
+            return this._confidence != null && (this._confidence.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -245,11 +245,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
@@ -263,7 +284,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if CreatedAt property is set
         internal bool IsSetCreatedAt()
         {
-            return this._createdAt != null && this._createdAt.Count > 0; 
+            return this._createdAt != null && (this._createdAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -290,7 +311,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Criticality property is set
         internal bool IsSetCriticality()
         {
-            return this._criticality != null && this._criticality.Count > 0; 
+            return this._criticality != null && (this._criticality.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -312,7 +333,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this._description != null && this._description.Count > 0; 
+            return this._description != null && (this._description.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -323,11 +344,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
@@ -341,7 +383,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if FirstObservedAt property is set
         internal bool IsSetFirstObservedAt()
         {
-            return this._firstObservedAt != null && this._firstObservedAt.Count > 0; 
+            return this._firstObservedAt != null && (this._firstObservedAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -363,7 +405,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if GeneratorId property is set
         internal bool IsSetGeneratorId()
         {
-            return this._generatorId != null && this._generatorId.Count > 0; 
+            return this._generatorId != null && (this._generatorId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -385,7 +427,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this._id != null && this._id.Count > 0; 
+            return this._id != null && (this._id.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -396,11 +438,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
@@ -414,7 +477,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if LastObservedAt property is set
         internal bool IsSetLastObservedAt()
         {
-            return this._lastObservedAt != null && this._lastObservedAt.Count > 0; 
+            return this._lastObservedAt != null && (this._lastObservedAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -436,18 +499,42 @@ namespace Amazon.SecurityHub.Model
         // Check to see if NoteText property is set
         internal bool IsSetNoteText()
         {
-            return this._noteText != null && this._noteText.Count > 0; 
+            return this._noteText != null && (this._noteText.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NoteUpdatedAt. 
         /// <para>
-        ///  The timestamp of when the note was updated. Uses the date-time format specified in
-        /// <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-        /// Internet Date/Time Format</a>. The value cannot contain spaces. For example, <c>2020-03-22T13:22:13.933Z</c>.
-        /// 
+        ///  The timestamp of when the note was updated.
         /// </para>
         ///  
+        /// <para>
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
@@ -461,7 +548,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if NoteUpdatedAt property is set
         internal bool IsSetNoteUpdatedAt()
         {
-            return this._noteUpdatedAt != null && this._noteUpdatedAt.Count > 0; 
+            return this._noteUpdatedAt != null && (this._noteUpdatedAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -483,7 +570,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if NoteUpdatedBy property is set
         internal bool IsSetNoteUpdatedBy()
         {
-            return this._noteUpdatedBy != null && this._noteUpdatedBy.Count > 0; 
+            return this._noteUpdatedBy != null && (this._noteUpdatedBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -506,7 +593,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ProductArn property is set
         internal bool IsSetProductArn()
         {
-            return this._productArn != null && this._productArn.Count > 0; 
+            return this._productArn != null && (this._productArn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -529,7 +616,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ProductName property is set
         internal bool IsSetProductName()
         {
-            return this._productName != null && this._productName.Count > 0; 
+            return this._productName != null && (this._productName.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -551,7 +638,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RecordState property is set
         internal bool IsSetRecordState()
         {
-            return this._recordState != null && this._recordState.Count > 0; 
+            return this._recordState != null && (this._recordState.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -573,7 +660,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RelatedFindingsId property is set
         internal bool IsSetRelatedFindingsId()
         {
-            return this._relatedFindingsId != null && this._relatedFindingsId.Count > 0; 
+            return this._relatedFindingsId != null && (this._relatedFindingsId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -595,7 +682,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RelatedFindingsProductArn property is set
         internal bool IsSetRelatedFindingsProductArn()
         {
-            return this._relatedFindingsProductArn != null && this._relatedFindingsProductArn.Count > 0; 
+            return this._relatedFindingsProductArn != null && (this._relatedFindingsProductArn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -617,7 +704,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ResourceApplicationArn property is set
         internal bool IsSetResourceApplicationArn()
         {
-            return this._resourceApplicationArn != null && this._resourceApplicationArn.Count > 0; 
+            return this._resourceApplicationArn != null && (this._resourceApplicationArn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -639,7 +726,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ResourceApplicationName property is set
         internal bool IsSetResourceApplicationName()
         {
-            return this._resourceApplicationName != null && this._resourceApplicationName.Count > 0; 
+            return this._resourceApplicationName != null && (this._resourceApplicationName.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -661,7 +748,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ResourceDetailsOther property is set
         internal bool IsSetResourceDetailsOther()
         {
-            return this._resourceDetailsOther != null && this._resourceDetailsOther.Count > 0; 
+            return this._resourceDetailsOther != null && (this._resourceDetailsOther.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -687,7 +774,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ResourceId property is set
         internal bool IsSetResourceId()
         {
-            return this._resourceId != null && this._resourceId.Count > 0; 
+            return this._resourceId != null && (this._resourceId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -711,7 +798,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ResourcePartition property is set
         internal bool IsSetResourcePartition()
         {
-            return this._resourcePartition != null && this._resourcePartition.Count > 0; 
+            return this._resourcePartition != null && (this._resourcePartition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -734,7 +821,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ResourceRegion property is set
         internal bool IsSetResourceRegion()
         {
-            return this._resourceRegion != null && this._resourceRegion.Count > 0; 
+            return this._resourceRegion != null && (this._resourceRegion.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -757,7 +844,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ResourceTags property is set
         internal bool IsSetResourceTags()
         {
-            return this._resourceTags != null && this._resourceTags.Count > 0; 
+            return this._resourceTags != null && (this._resourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -779,7 +866,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ResourceType property is set
         internal bool IsSetResourceType()
         {
-            return this._resourceType != null && this._resourceType.Count > 0; 
+            return this._resourceType != null && (this._resourceType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -801,7 +888,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SeverityLabel property is set
         internal bool IsSetSeverityLabel()
         {
-            return this._severityLabel != null && this._severityLabel.Count > 0; 
+            return this._severityLabel != null && (this._severityLabel.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -824,7 +911,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SourceUrl property is set
         internal bool IsSetSourceUrl()
         {
-            return this._sourceUrl != null && this._sourceUrl.Count > 0; 
+            return this._sourceUrl != null && (this._sourceUrl.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -846,7 +933,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Title property is set
         internal bool IsSetTitle()
         {
-            return this._title != null && this._title.Count > 0; 
+            return this._title != null && (this._title.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -870,7 +957,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this._type != null && this._type.Count > 0; 
+            return this._type != null && (this._type.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -880,11 +967,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  Array Members: Minimum number of 1 item. Maximum number of 20 items. 
         /// </para>
@@ -898,7 +1006,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UpdatedAt property is set
         internal bool IsSetUpdatedAt()
         {
-            return this._updatedAt != null && this._updatedAt.Count > 0; 
+            return this._updatedAt != null && (this._updatedAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -920,7 +1028,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UserDefinedFields property is set
         internal bool IsSetUserDefinedFields()
         {
-            return this._userDefinedFields != null && this._userDefinedFields.Count > 0; 
+            return this._userDefinedFields != null && (this._userDefinedFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -942,7 +1050,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if VerificationState property is set
         internal bool IsSetVerificationState()
         {
-            return this._verificationState != null && this._verificationState.Count > 0; 
+            return this._verificationState != null && (this._verificationState.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -964,7 +1072,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if WorkflowStatus property is set
         internal bool IsSetWorkflowStatus()
         {
-            return this._workflowStatus != null && this._workflowStatus.Count > 0; 
+            return this._workflowStatus != null && (this._workflowStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

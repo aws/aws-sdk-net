@@ -39,7 +39,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeWorkspaceBundlesRequest : AmazonWorkSpacesRequest
     {
-        private List<string> _bundleIds = new List<string>();
+        private List<string> _bundleIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
         private string _owner;
 
@@ -59,7 +59,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if BundleIds property is set
         internal bool IsSetBundleIds()
         {
-            return this._bundleIds != null && this._bundleIds.Count > 0; 
+            return this._bundleIds != null && (this._bundleIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

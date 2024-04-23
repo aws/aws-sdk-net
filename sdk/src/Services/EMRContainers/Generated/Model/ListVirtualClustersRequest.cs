@@ -42,9 +42,10 @@ namespace Amazon.EMRContainers.Model
         private ContainerProviderType _containerProviderType;
         private DateTime? _createdAfter;
         private DateTime? _createdBefore;
+        private bool? _eksAccessEntryIntegrated;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _states = new List<string>();
+        private List<string> _states = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerProviderId. 
@@ -121,6 +122,26 @@ namespace Amazon.EMRContainers.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EksAccessEntryIntegrated. 
+        /// <para>
+        /// Optional Boolean that specifies whether the operation should return the virtual clusters
+        /// that have the access entry integration enabled or disabled. If not specified, the
+        /// operation returns all applicable virtual clusters.
+        /// </para>
+        /// </summary>
+        public bool EksAccessEntryIntegrated
+        {
+            get { return this._eksAccessEntryIntegrated.GetValueOrDefault(); }
+            set { this._eksAccessEntryIntegrated = value; }
+        }
+
+        // Check to see if EksAccessEntryIntegrated property is set
+        internal bool IsSetEksAccessEntryIntegrated()
+        {
+            return this._eksAccessEntryIntegrated.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of virtual clusters that can be listed.
@@ -173,7 +194,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if States property is set
         internal bool IsSetStates()
         {
-            return this._states != null && this._states.Count > 0; 
+            return this._states != null && (this._states.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

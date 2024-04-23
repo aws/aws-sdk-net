@@ -35,8 +35,8 @@ namespace Amazon.APIGateway.Model
     public partial class GetIntegrationResponseResponse : AmazonWebServiceResponse
     {
         private ContentHandlingStrategy _contentHandling;
-        private Dictionary<string, string> _responseParameters = new Dictionary<string, string>();
-        private Dictionary<string, string> _responseTemplates = new Dictionary<string, string>();
+        private Dictionary<string, string> _responseParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _responseTemplates = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _selectionPattern;
         private string _statusCode;
 
@@ -87,7 +87,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if ResponseParameters property is set
         internal bool IsSetResponseParameters()
         {
-            return this._responseParameters != null && this._responseParameters.Count > 0; 
+            return this._responseParameters != null && (this._responseParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if ResponseTemplates property is set
         internal bool IsSetResponseTemplates()
         {
-            return this._responseTemplates != null && this._responseTemplates.Count > 0; 
+            return this._responseTemplates != null && (this._responseTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

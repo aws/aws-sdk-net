@@ -65,7 +65,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class RegisterInstancesWithLoadBalancerRequest : AmazonElasticLoadBalancingRequest
     {
-        private List<Instance> _instances = new List<Instance>();
+        private List<Instance> _instances = AWSConfigs.InitializeCollections ? new List<Instance>() : null;
         private string _loadBalancerName;
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

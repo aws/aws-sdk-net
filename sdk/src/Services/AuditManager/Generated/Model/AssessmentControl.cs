@@ -35,10 +35,10 @@ namespace Amazon.AuditManager.Model
     public partial class AssessmentControl
     {
         private int? _assessmentReportEvidenceCount;
-        private List<ControlComment> _comments = new List<ControlComment>();
+        private List<ControlComment> _comments = AWSConfigs.InitializeCollections ? new List<ControlComment>() : null;
         private string _description;
         private int? _evidenceCount;
-        private List<string> _evidenceSources = new List<string>();
+        private List<string> _evidenceSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private string _name;
         private ControlResponse _response;
@@ -77,7 +77,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Comments property is set
         internal bool IsSetComments()
         {
-            return this._comments != null && this._comments.Count > 0; 
+            return this._comments != null && (this._comments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if EvidenceSources property is set
         internal bool IsSetEvidenceSources()
         {
-            return this._evidenceSources != null && this._evidenceSources.Count > 0; 
+            return this._evidenceSources != null && (this._evidenceSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

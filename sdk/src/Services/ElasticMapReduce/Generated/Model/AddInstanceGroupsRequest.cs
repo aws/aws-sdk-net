@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class AddInstanceGroupsRequest : AmazonElasticMapReduceRequest
     {
-        private List<InstanceGroupConfig> _instanceGroups = new List<InstanceGroupConfig>();
+        private List<InstanceGroupConfig> _instanceGroups = AWSConfigs.InitializeCollections ? new List<InstanceGroupConfig>() : null;
         private string _jobFlowId;
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
-            return this._instanceGroups != null && this._instanceGroups.Count > 0; 
+            return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

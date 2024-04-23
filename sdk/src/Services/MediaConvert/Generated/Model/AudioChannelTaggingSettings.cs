@@ -37,7 +37,7 @@ namespace Amazon.MediaConvert.Model
     public partial class AudioChannelTaggingSettings
     {
         private AudioChannelTag _channelTag;
-        private List<string> _channelTags = new List<string>();
+        private List<string> _channelTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ChannelTag. Specify the QuickTime audio channel layout
@@ -76,7 +76,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if ChannelTags property is set
         internal bool IsSetChannelTags()
         {
-            return this._channelTags != null && this._channelTags.Count > 0; 
+            return this._channelTags != null && (this._channelTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

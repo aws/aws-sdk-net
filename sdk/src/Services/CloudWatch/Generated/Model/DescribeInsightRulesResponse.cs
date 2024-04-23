@@ -33,7 +33,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DescribeInsightRulesResponse : AmazonWebServiceResponse
     {
-        private List<InsightRule> _insightRules = new List<InsightRule>();
+        private List<InsightRule> _insightRules = AWSConfigs.InitializeCollections ? new List<InsightRule>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if InsightRules property is set
         internal bool IsSetInsightRules()
         {
-            return this._insightRules != null && this._insightRules.Count > 0; 
+            return this._insightRules != null && (this._insightRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

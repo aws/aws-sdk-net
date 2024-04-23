@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,28 +67,27 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateAccessGrantsLocationRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
+                xmlWriter.WriteStartElement("CreateAccessGrantsLocationRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetIAMRoleArn())
-                    xmlWriter.WriteElementString("IAMRoleArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.IAMRoleArn));                    
+                    xmlWriter.WriteElementString("IAMRoleArn", StringUtils.FromString(publicRequest.IAMRoleArn));
 
                 if(publicRequest.IsSetLocationScope())
-                    xmlWriter.WriteElementString("LocationScope", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.LocationScope));                    
+                    xmlWriter.WriteElementString("LocationScope", StringUtils.FromString(publicRequest.LocationScope));
 
                 var publicRequestTags = publicRequest.Tags;
-                if (publicRequestTags != null && publicRequestTags.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("Tags", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                {
+                    xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 
                     {
-                
-                    if (publicRequestTagsValue != null) 
+                    if (publicRequestTagsValue != null)
                     {
-                        xmlWriter.WriteStartElement("Tag", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        xmlWriter.WriteStartElement("Tag");
                         if(publicRequestTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestTagsValue.Key));                 
+                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));                 
 
                         if(publicRequestTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestTagsValue.Value));                 
+                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -132,3 +132,4 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
     }    
 }
+#pragma warning restore CS0612,CS0618

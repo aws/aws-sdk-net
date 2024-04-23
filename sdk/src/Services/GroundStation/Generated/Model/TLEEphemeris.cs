@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model
     public partial class TLEEphemeris
     {
         private S3Object _s3Object;
-        private List<TLEData> _tleData = new List<TLEData>();
+        private List<TLEData> _tleData = AWSConfigs.InitializeCollections ? new List<TLEData>() : null;
 
         /// <summary>
         /// Gets and sets the property S3Object. 
@@ -71,7 +71,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if TleData property is set
         internal bool IsSetTleData()
         {
-            return this._tleData != null && this._tleData.Count > 0; 
+            return this._tleData != null && (this._tleData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

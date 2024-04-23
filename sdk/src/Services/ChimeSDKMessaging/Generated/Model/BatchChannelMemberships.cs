@@ -36,7 +36,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     {
         private string _channelArn;
         private Identity _invitedBy;
-        private List<Identity> _members = new List<Identity>();
+        private List<Identity> _members = AWSConfigs.InitializeCollections ? new List<Identity>() : null;
         private string _subChannelId;
         private ChannelMembershipType _type;
 
@@ -92,7 +92,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

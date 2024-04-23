@@ -45,7 +45,7 @@ namespace Amazon.MediaConvert.Model
         /// Enumerable containing all of the Queues
         /// </summary>
         public IPaginatedEnumerable<Queue> Queues => 
-            new PaginatedResultKeyResponse<ListQueuesResponse, Queue>(this, (i) => i.Queues);
+            new PaginatedResultKeyResponse<ListQueuesResponse, Queue>(this, (i) => i.Queues ?? new List<Queue>());
 
         internal ListQueuesPaginator(IAmazonMediaConvert client, ListQueuesRequest request)
         {

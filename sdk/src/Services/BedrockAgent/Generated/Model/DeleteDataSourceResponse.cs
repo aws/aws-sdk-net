@@ -38,7 +38,10 @@ namespace Amazon.BedrockAgent.Model
         private DataSourceStatus _status;
 
         /// <summary>
-        /// Gets and sets the property DataSourceId.
+        /// Gets and sets the property DataSourceId. 
+        /// <para>
+        /// The unique identifier of the data source that was deleted.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DataSourceId
@@ -54,7 +57,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base to which the data source that was deleted
+        /// belonged.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId
@@ -70,7 +77,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataSourceStatus Status

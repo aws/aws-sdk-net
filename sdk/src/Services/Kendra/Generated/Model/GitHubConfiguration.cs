@@ -30,26 +30,49 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Provides the configuration information to connect to GitHub as your data source.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Amazon Kendra now supports an upgraded GitHub connector.
+    /// </para>
+    ///  
+    /// <para>
+    /// You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+    /// object instead of the <c>GitHubConfiguration</c> object to configure your connector.
+    /// </para>
+    ///  
+    /// <para>
+    /// Connectors configured using the older console and API architecture will continue to
+    /// function as configured. However, you won’t be able to edit or update them. If you
+    /// want to edit or update your connector configuration, you must create a new connector.
+    /// </para>
+    ///  
+    /// <para>
+    /// We recommended migrating your connector workflow to the upgraded version. Support
+    /// for connectors configured using the older architecture is scheduled to end by June
+    /// 2024.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GitHubConfiguration
     {
-        private List<string> _exclusionFileNamePatterns = new List<string>();
-        private List<string> _exclusionFileTypePatterns = new List<string>();
-        private List<string> _exclusionFolderNamePatterns = new List<string>();
-        private List<DataSourceToIndexFieldMapping> _gitHubCommitConfigurationFieldMappings = new List<DataSourceToIndexFieldMapping>();
+        private List<string> _exclusionFileNamePatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _exclusionFileTypePatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _exclusionFolderNamePatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DataSourceToIndexFieldMapping> _gitHubCommitConfigurationFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
         private GitHubDocumentCrawlProperties _gitHubDocumentCrawlProperties;
-        private List<DataSourceToIndexFieldMapping> _gitHubIssueAttachmentConfigurationFieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<DataSourceToIndexFieldMapping> _gitHubIssueCommentConfigurationFieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<DataSourceToIndexFieldMapping> _gitHubIssueDocumentConfigurationFieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<DataSourceToIndexFieldMapping> _gitHubPullRequestCommentConfigurationFieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<DataSourceToIndexFieldMapping> _gitHubPullRequestDocumentAttachmentConfigurationFieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<DataSourceToIndexFieldMapping> _gitHubPullRequestDocumentConfigurationFieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<DataSourceToIndexFieldMapping> _gitHubRepositoryConfigurationFieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<string> _inclusionFileNamePatterns = new List<string>();
-        private List<string> _inclusionFileTypePatterns = new List<string>();
-        private List<string> _inclusionFolderNamePatterns = new List<string>();
+        private List<DataSourceToIndexFieldMapping> _gitHubIssueAttachmentConfigurationFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<DataSourceToIndexFieldMapping> _gitHubIssueCommentConfigurationFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<DataSourceToIndexFieldMapping> _gitHubIssueDocumentConfigurationFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<DataSourceToIndexFieldMapping> _gitHubPullRequestCommentConfigurationFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<DataSourceToIndexFieldMapping> _gitHubPullRequestDocumentAttachmentConfigurationFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<DataSourceToIndexFieldMapping> _gitHubPullRequestDocumentConfigurationFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<DataSourceToIndexFieldMapping> _gitHubRepositoryConfigurationFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<string> _inclusionFileNamePatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _inclusionFileTypePatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _inclusionFolderNamePatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OnPremiseConfiguration _onPremiseConfiguration;
-        private List<string> _repositoryFilter = new List<string>();
+        private List<string> _repositoryFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SaaSConfiguration _saaSConfiguration;
         private string _secretArn;
         private Type _type;
@@ -75,7 +98,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ExclusionFileNamePatterns property is set
         internal bool IsSetExclusionFileNamePatterns()
         {
-            return this._exclusionFileNamePatterns != null && this._exclusionFileNamePatterns.Count > 0; 
+            return this._exclusionFileNamePatterns != null && (this._exclusionFileNamePatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +120,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ExclusionFileTypePatterns property is set
         internal bool IsSetExclusionFileTypePatterns()
         {
-            return this._exclusionFileTypePatterns != null && this._exclusionFileTypePatterns.Count > 0; 
+            return this._exclusionFileTypePatterns != null && (this._exclusionFileTypePatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +142,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ExclusionFolderNamePatterns property is set
         internal bool IsSetExclusionFolderNamePatterns()
         {
-            return this._exclusionFolderNamePatterns != null && this._exclusionFolderNamePatterns.Count > 0; 
+            return this._exclusionFolderNamePatterns != null && (this._exclusionFolderNamePatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +166,7 @@ namespace Amazon.Kendra.Model
         // Check to see if GitHubCommitConfigurationFieldMappings property is set
         internal bool IsSetGitHubCommitConfigurationFieldMappings()
         {
-            return this._gitHubCommitConfigurationFieldMappings != null && this._gitHubCommitConfigurationFieldMappings.Count > 0; 
+            return this._gitHubCommitConfigurationFieldMappings != null && (this._gitHubCommitConfigurationFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -187,7 +210,7 @@ namespace Amazon.Kendra.Model
         // Check to see if GitHubIssueAttachmentConfigurationFieldMappings property is set
         internal bool IsSetGitHubIssueAttachmentConfigurationFieldMappings()
         {
-            return this._gitHubIssueAttachmentConfigurationFieldMappings != null && this._gitHubIssueAttachmentConfigurationFieldMappings.Count > 0; 
+            return this._gitHubIssueAttachmentConfigurationFieldMappings != null && (this._gitHubIssueAttachmentConfigurationFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,7 +234,7 @@ namespace Amazon.Kendra.Model
         // Check to see if GitHubIssueCommentConfigurationFieldMappings property is set
         internal bool IsSetGitHubIssueCommentConfigurationFieldMappings()
         {
-            return this._gitHubIssueCommentConfigurationFieldMappings != null && this._gitHubIssueCommentConfigurationFieldMappings.Count > 0; 
+            return this._gitHubIssueCommentConfigurationFieldMappings != null && (this._gitHubIssueCommentConfigurationFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -235,7 +258,7 @@ namespace Amazon.Kendra.Model
         // Check to see if GitHubIssueDocumentConfigurationFieldMappings property is set
         internal bool IsSetGitHubIssueDocumentConfigurationFieldMappings()
         {
-            return this._gitHubIssueDocumentConfigurationFieldMappings != null && this._gitHubIssueDocumentConfigurationFieldMappings.Count > 0; 
+            return this._gitHubIssueDocumentConfigurationFieldMappings != null && (this._gitHubIssueDocumentConfigurationFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -259,7 +282,7 @@ namespace Amazon.Kendra.Model
         // Check to see if GitHubPullRequestCommentConfigurationFieldMappings property is set
         internal bool IsSetGitHubPullRequestCommentConfigurationFieldMappings()
         {
-            return this._gitHubPullRequestCommentConfigurationFieldMappings != null && this._gitHubPullRequestCommentConfigurationFieldMappings.Count > 0; 
+            return this._gitHubPullRequestCommentConfigurationFieldMappings != null && (this._gitHubPullRequestCommentConfigurationFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -284,7 +307,7 @@ namespace Amazon.Kendra.Model
         // Check to see if GitHubPullRequestDocumentAttachmentConfigurationFieldMappings property is set
         internal bool IsSetGitHubPullRequestDocumentAttachmentConfigurationFieldMappings()
         {
-            return this._gitHubPullRequestDocumentAttachmentConfigurationFieldMappings != null && this._gitHubPullRequestDocumentAttachmentConfigurationFieldMappings.Count > 0; 
+            return this._gitHubPullRequestDocumentAttachmentConfigurationFieldMappings != null && (this._gitHubPullRequestDocumentAttachmentConfigurationFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -308,7 +331,7 @@ namespace Amazon.Kendra.Model
         // Check to see if GitHubPullRequestDocumentConfigurationFieldMappings property is set
         internal bool IsSetGitHubPullRequestDocumentConfigurationFieldMappings()
         {
-            return this._gitHubPullRequestDocumentConfigurationFieldMappings != null && this._gitHubPullRequestDocumentConfigurationFieldMappings.Count > 0; 
+            return this._gitHubPullRequestDocumentConfigurationFieldMappings != null && (this._gitHubPullRequestDocumentConfigurationFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -332,7 +355,7 @@ namespace Amazon.Kendra.Model
         // Check to see if GitHubRepositoryConfigurationFieldMappings property is set
         internal bool IsSetGitHubRepositoryConfigurationFieldMappings()
         {
-            return this._gitHubRepositoryConfigurationFieldMappings != null && this._gitHubRepositoryConfigurationFieldMappings.Count > 0; 
+            return this._gitHubRepositoryConfigurationFieldMappings != null && (this._gitHubRepositoryConfigurationFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -354,7 +377,7 @@ namespace Amazon.Kendra.Model
         // Check to see if InclusionFileNamePatterns property is set
         internal bool IsSetInclusionFileNamePatterns()
         {
-            return this._inclusionFileNamePatterns != null && this._inclusionFileNamePatterns.Count > 0; 
+            return this._inclusionFileNamePatterns != null && (this._inclusionFileNamePatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -376,7 +399,7 @@ namespace Amazon.Kendra.Model
         // Check to see if InclusionFileTypePatterns property is set
         internal bool IsSetInclusionFileTypePatterns()
         {
-            return this._inclusionFileTypePatterns != null && this._inclusionFileTypePatterns.Count > 0; 
+            return this._inclusionFileTypePatterns != null && (this._inclusionFileTypePatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -398,7 +421,7 @@ namespace Amazon.Kendra.Model
         // Check to see if InclusionFolderNamePatterns property is set
         internal bool IsSetInclusionFolderNamePatterns()
         {
-            return this._inclusionFolderNamePatterns != null && this._inclusionFolderNamePatterns.Count > 0; 
+            return this._inclusionFolderNamePatterns != null && (this._inclusionFolderNamePatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -434,7 +457,7 @@ namespace Amazon.Kendra.Model
         // Check to see if RepositoryFilter property is set
         internal bool IsSetRepositoryFilter()
         {
-            return this._repositoryFilter != null && this._repositoryFilter.Count > 0; 
+            return this._repositoryFilter != null && (this._repositoryFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

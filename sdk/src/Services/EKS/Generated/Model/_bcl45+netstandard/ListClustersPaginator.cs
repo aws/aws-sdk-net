@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the Clusters
         /// </summary>
         public IPaginatedEnumerable<string> Clusters => 
-            new PaginatedResultKeyResponse<ListClustersResponse, string>(this, (i) => i.Clusters);
+            new PaginatedResultKeyResponse<ListClustersResponse, string>(this, (i) => i.Clusters ?? new List<string>());
 
         internal ListClustersPaginator(IAmazonEKS client, ListClustersRequest request)
         {

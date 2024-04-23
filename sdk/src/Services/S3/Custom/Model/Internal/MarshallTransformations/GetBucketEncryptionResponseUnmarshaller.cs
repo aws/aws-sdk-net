@@ -56,8 +56,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Rule", targetDepth))
                     {
+                        if (response.ServerSideEncryptionConfiguration.ServerSideEncryptionRules == null)
+                        {
+                            response.ServerSideEncryptionConfiguration.ServerSideEncryptionRules = new List<ServerSideEncryptionRule>();
+                        }
                         response.ServerSideEncryptionConfiguration.ServerSideEncryptionRules.Add(ServerSideEncryptionRuleUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                 }

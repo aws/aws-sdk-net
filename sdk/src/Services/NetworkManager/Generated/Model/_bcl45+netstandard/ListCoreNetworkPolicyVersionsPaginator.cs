@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the CoreNetworkPolicyVersions
         /// </summary>
         public IPaginatedEnumerable<CoreNetworkPolicyVersion> CoreNetworkPolicyVersions => 
-            new PaginatedResultKeyResponse<ListCoreNetworkPolicyVersionsResponse, CoreNetworkPolicyVersion>(this, (i) => i.CoreNetworkPolicyVersions);
+            new PaginatedResultKeyResponse<ListCoreNetworkPolicyVersionsResponse, CoreNetworkPolicyVersion>(this, (i) => i.CoreNetworkPolicyVersions ?? new List<CoreNetworkPolicyVersion>());
 
         internal ListCoreNetworkPolicyVersionsPaginator(IAmazonNetworkManager client, ListCoreNetworkPolicyVersionsRequest request)
         {

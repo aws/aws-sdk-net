@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,6 +67,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAccountIds())
@@ -154,6 +156,17 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IsReviewOwnerUpdateAcknowledged);
                 }
 
+                if(publicRequest.IsSetJiraConfiguration())
+                {
+                    context.Writer.WritePropertyName("JiraConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WorkloadJiraConfigurationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.JiraConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetNonAwsRegions())
                 {
                     context.Writer.WritePropertyName("NonAwsRegions");
@@ -222,3 +235,4 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

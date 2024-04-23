@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKVoice.Model
     public partial class ListProxySessionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProxySession> _proxySessions = new List<ProxySession>();
+        private List<ProxySession> _proxySessions = AWSConfigs.InitializeCollections ? new List<ProxySession>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if ProxySessions property is set
         internal bool IsSetProxySessions()
         {
-            return this._proxySessions != null && this._proxySessions.Count > 0; 
+            return this._proxySessions != null && (this._proxySessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.MemoryDB.Model
         /// Enumerable containing all of the ServiceUpdates
         /// </summary>
         public IPaginatedEnumerable<ServiceUpdate> ServiceUpdates => 
-            new PaginatedResultKeyResponse<DescribeServiceUpdatesResponse, ServiceUpdate>(this, (i) => i.ServiceUpdates);
+            new PaginatedResultKeyResponse<DescribeServiceUpdatesResponse, ServiceUpdate>(this, (i) => i.ServiceUpdates ?? new List<ServiceUpdate>());
 
         internal DescribeServiceUpdatesPaginator(IAmazonMemoryDB client, DescribeServiceUpdatesRequest request)
         {

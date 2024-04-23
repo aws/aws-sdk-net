@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListHubContentsResponse : AmazonWebServiceResponse
     {
-        private List<HubContentInfo> _hubContentSummaries = new List<HubContentInfo>();
+        private List<HubContentInfo> _hubContentSummaries = AWSConfigs.InitializeCollections ? new List<HubContentInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HubContentSummaries property is set
         internal bool IsSetHubContentSummaries()
         {
-            return this._hubContentSummaries != null && this._hubContentSummaries.Count > 0; 
+            return this._hubContentSummaries != null && (this._hubContentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

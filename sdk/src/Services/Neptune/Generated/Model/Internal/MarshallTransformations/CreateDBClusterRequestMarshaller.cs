@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,38 +68,47 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetBackupRetentionPeriod())
                 {
                     request.Parameters.Add("BackupRetentionPeriod", StringUtils.FromInt(publicRequest.BackupRetentionPeriod));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCharacterSetName())
                 {
                     request.Parameters.Add("CharacterSetName", StringUtils.FromString(publicRequest.CharacterSetName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCopyTagsToSnapshot())
                 {
                     request.Parameters.Add("CopyTagsToSnapshot", StringUtils.FromBool(publicRequest.CopyTagsToSnapshot));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDatabaseName())
                 {
                     request.Parameters.Add("DatabaseName", StringUtils.FromString(publicRequest.DatabaseName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBClusterIdentifier())
                 {
                     request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBClusterParameterGroupName())
                 {
                     request.Parameters.Add("DBClusterParameterGroupName", StringUtils.FromString(publicRequest.DBClusterParameterGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBSubnetGroupName())
                 {
                     request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(publicRequest.DBSubnetGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeletionProtection())
                 {
                     request.Parameters.Add("DeletionProtection", StringUtils.FromBool(publicRequest.DeletionProtection));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableCloudwatchLogsExports())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -108,77 +118,96 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnableIAMDatabaseAuthentication())
                 {
                     request.Parameters.Add("EnableIAMDatabaseAuthentication", StringUtils.FromBool(publicRequest.EnableIAMDatabaseAuthentication));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngine())
                 {
                     request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngineVersion())
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGlobalClusterIdentifier())
                 {
                     request.Parameters.Add("GlobalClusterIdentifier", StringUtils.FromString(publicRequest.GlobalClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMasterUsername())
                 {
                     request.Parameters.Add("MasterUsername", StringUtils.FromString(publicRequest.MasterUsername));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMasterUserPassword())
                 {
                     request.Parameters.Add("MasterUserPassword", StringUtils.FromString(publicRequest.MasterUserPassword));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptionGroupName())
                 {
                     request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPort())
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPreferredBackupWindow())
                 {
                     request.Parameters.Add("PreferredBackupWindow", StringUtils.FromString(publicRequest.PreferredBackupWindow));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPreSignedUrl())
                 {
                     request.Parameters.Add("PreSignedUrl", StringUtils.FromString(publicRequest.PreSignedUrl));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReplicationSourceIdentifier())
                 {
                     request.Parameters.Add("ReplicationSourceIdentifier", StringUtils.FromString(publicRequest.ReplicationSourceIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServerlessV2ScalingConfiguration())
                 {
                     if(publicRequest.ServerlessV2ScalingConfiguration.IsSetMaxCapacity())
                     {
                         request.Parameters.Add("ServerlessV2ScalingConfiguration" + "." + "MaxCapacity", StringUtils.FromDouble(publicRequest.ServerlessV2ScalingConfiguration.MaxCapacity));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.ServerlessV2ScalingConfiguration.IsSetMinCapacity())
                     {
                         request.Parameters.Add("ServerlessV2ScalingConfiguration" + "." + "MinCapacity", StringUtils.FromDouble(publicRequest.ServerlessV2ScalingConfiguration.MinCapacity));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStorageEncrypted())
                 {
                     request.Parameters.Add("StorageEncrypted", StringUtils.FromBool(publicRequest.StorageEncrypted));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStorageType())
                 {
                     request.Parameters.Add("StorageType", StringUtils.FromString(publicRequest.StorageType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -188,13 +217,16 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -204,6 +236,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

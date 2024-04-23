@@ -33,13 +33,13 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class BatchPutDocumentResponse : AmazonWebServiceResponse
     {
-        private List<FailedDocument> _failedDocuments = new List<FailedDocument>();
+        private List<FailedDocument> _failedDocuments = AWSConfigs.InitializeCollections ? new List<FailedDocument>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedDocuments. 
         /// <para>
-        ///  A list of documents that were not added to the Amazon Q index because the document
-        /// failed a validation check. Each document contains an error message that indicates
+        ///  A list of documents that were not added to the Amazon Q Business index because the
+        /// document failed a validation check. Each document contains an error message that indicates
         /// why the document couldn't be added to the index. 
         /// </para>
         /// </summary>
@@ -52,7 +52,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if FailedDocuments property is set
         internal bool IsSetFailedDocuments()
         {
-            return this._failedDocuments != null && this._failedDocuments.Count > 0; 
+            return this._failedDocuments != null && (this._failedDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

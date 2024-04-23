@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates BundleInstanceRequest with the parameterized properties
         /// </summary>
-        /// <param name="instanceId">The ID of the instance to bundle. Type: String Default: None Required: Yes</param>
+        /// <param name="instanceId">The ID of the instance to bundle. Default: None</param>
         /// <param name="storage">The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</param>
         public BundleInstanceRequest(string instanceId, Storage storage)
         {
@@ -72,15 +72,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
         /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

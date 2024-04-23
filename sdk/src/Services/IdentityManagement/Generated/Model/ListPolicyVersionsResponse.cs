@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private bool? _isTruncated;
         private string _marker;
-        private List<PolicyVersion> _versions = new List<PolicyVersion>();
+        private List<PolicyVersion> _versions = AWSConfigs.InitializeCollections ? new List<PolicyVersion>() : null;
 
         /// <summary>
         /// Gets and sets the property IsTruncated. 
@@ -98,7 +98,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

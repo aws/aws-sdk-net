@@ -33,7 +33,7 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class GetSolutionMetricsResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, double> _metrics = new Dictionary<string, double>();
+        private Dictionary<string, double> _metrics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
         private string _solutionVersionArn;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Personalize.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,8 +34,8 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class Termination
     {
-        private List<string> _callingRegions = new List<string>();
-        private List<string> _cidrAllowedList = new List<string>();
+        private List<string> _callingRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _cidrAllowedList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _cpsLimit;
         private string _defaultPhoneNumber;
         private bool? _disabled;
@@ -55,7 +55,7 @@ namespace Amazon.Chime.Model
         // Check to see if CallingRegions property is set
         internal bool IsSetCallingRegions()
         {
-            return this._callingRegions != null && this._callingRegions.Count > 0; 
+            return this._callingRegions != null && (this._callingRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Chime.Model
         // Check to see if CidrAllowedList property is set
         internal bool IsSetCidrAllowedList()
         {
-            return this._cidrAllowedList != null && this._cidrAllowedList.Count > 0; 
+            return this._cidrAllowedList != null && (this._cidrAllowedList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

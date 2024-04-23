@@ -33,7 +33,7 @@ namespace Amazon.KeyManagementService.Model
     /// </summary>
     public partial class ListAliasesResponse : AmazonWebServiceResponse
     {
-        private List<AliasListEntry> _aliases = new List<AliasListEntry>();
+        private List<AliasListEntry> _aliases = AWSConfigs.InitializeCollections ? new List<AliasListEntry>() : null;
         private string _nextMarker;
         private bool? _truncated;
 
@@ -52,7 +52,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this._aliases != null && this._aliases.Count > 0; 
+            return this._aliases != null && (this._aliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// A flag that indicates whether there are more items in the list. When this value is
         /// true, the list in this response is truncated. To get more items, pass the value of
-        /// the <c>NextMarker</c> element in thisresponse to the <c>Marker</c> parameter in a
+        /// the <c>NextMarker</c> element in this response to the <c>Marker</c> parameter in a
         /// subsequent request.
         /// </para>
         /// </summary>

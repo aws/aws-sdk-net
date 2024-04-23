@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LFTagPolicyResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCatalogId())
             {
                 context.Writer.WritePropertyName("CatalogId");
@@ -82,3 +85,4 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

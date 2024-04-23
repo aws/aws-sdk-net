@@ -43,7 +43,7 @@ namespace Amazon.ConfigService.Model
     public partial class DescribeRetentionConfigurationsRequest : AmazonConfigServiceRequest
     {
         private string _nextToken;
-        private List<string> _retentionConfigurationNames = new List<string>();
+        private List<string> _retentionConfigurationNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -87,7 +87,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if RetentionConfigurationNames property is set
         internal bool IsSetRetentionConfigurationNames()
         {
-            return this._retentionConfigurationNames != null && this._retentionConfigurationNames.Count > 0; 
+            return this._retentionConfigurationNames != null && (this._retentionConfigurationNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

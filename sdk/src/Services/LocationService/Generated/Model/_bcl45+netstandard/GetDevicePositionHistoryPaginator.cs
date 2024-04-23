@@ -45,7 +45,7 @@ namespace Amazon.LocationService.Model
         /// Enumerable containing all of the DevicePositions
         /// </summary>
         public IPaginatedEnumerable<DevicePosition> DevicePositions => 
-            new PaginatedResultKeyResponse<GetDevicePositionHistoryResponse, DevicePosition>(this, (i) => i.DevicePositions);
+            new PaginatedResultKeyResponse<GetDevicePositionHistoryResponse, DevicePosition>(this, (i) => i.DevicePositions ?? new List<DevicePosition>());
 
         internal GetDevicePositionHistoryPaginator(IAmazonLocationService client, GetDevicePositionHistoryRequest request)
         {

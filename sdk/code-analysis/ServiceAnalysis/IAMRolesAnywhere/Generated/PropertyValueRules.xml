@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.CreateProfileRequest.DurationSeconds</property>
     <min>900</min>
-    <max>3600</max>
+    <max>43200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.CreateProfileRequest.Name</property>
@@ -16,6 +16,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[ a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IAMRolesAnywhere.Model.DeleteAttributeMappingRequest.ProfileId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.DeleteCrlRequest.CrlId</property>
@@ -138,6 +144,12 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IAMRolesAnywhere.Model.PutAttributeMappingRequest.ProfileId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.PutNotificationSettingsRequest.TrustAnchorId</property>
     <min>36</min>
     <max>36</max>
@@ -179,7 +191,7 @@
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.DurationSeconds</property>
     <min>900</min>
-    <max>3600</max>
+    <max>43200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.Name</property>
@@ -215,6 +227,11 @@
     <min>36</min>
     <max>36</max>
     <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IAMRolesAnywhere.Model.MappingRule.Specifier</property>
+    <min>0</min>
+    <max>60</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.NotificationSetting.Threshold</property>

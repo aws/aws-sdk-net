@@ -58,9 +58,9 @@ namespace Amazon.DataSync.Model
     {
         private string _activationKey;
         private string _agentName;
-        private List<string> _securityGroupArns = new List<string>();
-        private List<string> _subnetArns = new List<string>();
-        private List<TagListEntry> _tags = new List<TagListEntry>();
+        private List<string> _securityGroupArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subnetArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<TagListEntry> _tags = AWSConfigs.InitializeCollections ? new List<TagListEntry>() : null;
         private string _vpcEndpointId;
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.DataSync.Model
         // Check to see if SecurityGroupArns property is set
         internal bool IsSetSecurityGroupArns()
         {
-            return this._securityGroupArns != null && this._securityGroupArns.Count > 0; 
+            return this._securityGroupArns != null && (this._securityGroupArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.DataSync.Model
         // Check to see if SubnetArns property is set
         internal bool IsSetSubnetArns()
         {
-            return this._subnetArns != null && this._subnetArns.Count > 0; 
+            return this._subnetArns != null && (this._subnetArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model
     public partial class DimensionContribution
     {
         private string _dimensionName;
-        private List<DimensionValueContribution> _dimensionValueContributionList = new List<DimensionValueContribution>();
+        private List<DimensionValueContribution> _dimensionValueContributionList = AWSConfigs.InitializeCollections ? new List<DimensionValueContribution>() : null;
 
         /// <summary>
         /// Gets and sets the property DimensionName. 
@@ -70,7 +70,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if DimensionValueContributionList property is set
         internal bool IsSetDimensionValueContributionList()
         {
-            return this._dimensionValueContributionList != null && this._dimensionValueContributionList.Count > 0; 
+            return this._dimensionValueContributionList != null && (this._dimensionValueContributionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

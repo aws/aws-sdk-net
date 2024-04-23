@@ -45,7 +45,7 @@ namespace Amazon.Scheduler.Model
         /// Enumerable containing all of the Schedules
         /// </summary>
         public IPaginatedEnumerable<ScheduleSummary> Schedules => 
-            new PaginatedResultKeyResponse<ListSchedulesResponse, ScheduleSummary>(this, (i) => i.Schedules);
+            new PaginatedResultKeyResponse<ListSchedulesResponse, ScheduleSummary>(this, (i) => i.Schedules ?? new List<ScheduleSummary>());
 
         internal ListSchedulesPaginator(IAmazonScheduler client, ListSchedulesRequest request)
         {

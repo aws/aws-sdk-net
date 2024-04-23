@@ -33,7 +33,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </summary>
     public partial class GetMessagingStreamingConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<StreamingConfiguration> _streamingConfigurations = new List<StreamingConfiguration>();
+        private List<StreamingConfiguration> _streamingConfigurations = AWSConfigs.InitializeCollections ? new List<StreamingConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property StreamingConfigurations. 
@@ -51,7 +51,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if StreamingConfigurations property is set
         internal bool IsSetStreamingConfigurations()
         {
-            return this._streamingConfigurations != null && this._streamingConfigurations.Count > 0; 
+            return this._streamingConfigurations != null && (this._streamingConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

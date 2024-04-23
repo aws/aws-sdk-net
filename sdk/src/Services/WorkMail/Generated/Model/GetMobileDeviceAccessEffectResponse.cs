@@ -34,7 +34,7 @@ namespace Amazon.WorkMail.Model
     public partial class GetMobileDeviceAccessEffectResponse : AmazonWebServiceResponse
     {
         private MobileDeviceAccessRuleEffect _effect;
-        private List<MobileDeviceAccessMatchedRule> _matchedRules = new List<MobileDeviceAccessMatchedRule>();
+        private List<MobileDeviceAccessMatchedRule> _matchedRules = AWSConfigs.InitializeCollections ? new List<MobileDeviceAccessMatchedRule>() : null;
 
         /// <summary>
         /// Gets and sets the property Effect. 
@@ -71,7 +71,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if MatchedRules property is set
         internal bool IsSetMatchedRules()
         {
-            return this._matchedRules != null && this._matchedRules.Count > 0; 
+            return this._matchedRules != null && (this._matchedRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

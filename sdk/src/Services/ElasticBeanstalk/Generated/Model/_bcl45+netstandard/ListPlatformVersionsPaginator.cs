@@ -45,7 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Enumerable containing all of the PlatformSummaryList
         /// </summary>
         public IPaginatedEnumerable<PlatformSummary> PlatformSummaryList => 
-            new PaginatedResultKeyResponse<ListPlatformVersionsResponse, PlatformSummary>(this, (i) => i.PlatformSummaryList);
+            new PaginatedResultKeyResponse<ListPlatformVersionsResponse, PlatformSummary>(this, (i) => i.PlatformSummaryList ?? new List<PlatformSummary>());
 
         internal ListPlatformVersionsPaginator(IAmazonElasticBeanstalk client, ListPlatformVersionsRequest request)
         {

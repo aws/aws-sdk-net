@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListNotebookInstanceLifecycleConfigsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<NotebookInstanceLifecycleConfigSummary> _notebookInstanceLifecycleConfigs = new List<NotebookInstanceLifecycleConfigSummary>();
+        private List<NotebookInstanceLifecycleConfigSummary> _notebookInstanceLifecycleConfigs = AWSConfigs.InitializeCollections ? new List<NotebookInstanceLifecycleConfigSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if NotebookInstanceLifecycleConfigs property is set
         internal bool IsSetNotebookInstanceLifecycleConfigs()
         {
-            return this._notebookInstanceLifecycleConfigs != null && this._notebookInstanceLifecycleConfigs.Count > 0; 
+            return this._notebookInstanceLifecycleConfigs != null && (this._notebookInstanceLifecycleConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

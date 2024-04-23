@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the PublicIpv4Pools
         /// </summary>
         public IPaginatedEnumerable<PublicIpv4Pool> PublicIpv4Pools => 
-            new PaginatedResultKeyResponse<DescribePublicIpv4PoolsResponse, PublicIpv4Pool>(this, (i) => i.PublicIpv4Pools);
+            new PaginatedResultKeyResponse<DescribePublicIpv4PoolsResponse, PublicIpv4Pool>(this, (i) => i.PublicIpv4Pools ?? new List<PublicIpv4Pool>());
 
         internal DescribePublicIpv4PoolsPaginator(IAmazonEC2 client, DescribePublicIpv4PoolsRequest request)
         {

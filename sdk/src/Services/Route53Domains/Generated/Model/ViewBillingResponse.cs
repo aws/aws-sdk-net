@@ -33,7 +33,7 @@ namespace Amazon.Route53Domains.Model
     /// </summary>
     public partial class ViewBillingResponse : AmazonWebServiceResponse
     {
-        private List<BillingRecord> _billingRecords = new List<BillingRecord>();
+        private List<BillingRecord> _billingRecords = AWSConfigs.InitializeCollections ? new List<BillingRecord>() : null;
         private string _nextPageMarker;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if BillingRecords property is set
         internal bool IsSetBillingRecords()
         {
-            return this._billingRecords != null && this._billingRecords.Count > 0; 
+            return this._billingRecords != null && (this._billingRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

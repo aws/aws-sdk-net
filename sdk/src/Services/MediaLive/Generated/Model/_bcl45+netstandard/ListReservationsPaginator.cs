@@ -45,7 +45,7 @@ namespace Amazon.MediaLive.Model
         /// Enumerable containing all of the Reservations
         /// </summary>
         public IPaginatedEnumerable<Reservation> Reservations => 
-            new PaginatedResultKeyResponse<ListReservationsResponse, Reservation>(this, (i) => i.Reservations);
+            new PaginatedResultKeyResponse<ListReservationsResponse, Reservation>(this, (i) => i.Reservations ?? new List<Reservation>());
 
         internal ListReservationsPaginator(IAmazonMediaLive client, ListReservationsRequest request)
         {

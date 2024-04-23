@@ -86,8 +86,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </summary>
     public partial class TagResourcesRequest : AmazonResourceGroupsTaggingAPIRequest
     {
-        private List<string> _resourceARNList = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _resourceARNList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceARNList. 
@@ -112,7 +112,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if ResourceARNList property is set
         internal bool IsSetResourceARNList()
         {
-            return this._resourceARNList != null && this._resourceARNList.Count > 0; 
+            return this._resourceARNList != null && (this._resourceARNList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

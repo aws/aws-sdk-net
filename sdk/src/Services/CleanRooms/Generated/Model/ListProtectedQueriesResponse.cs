@@ -34,7 +34,7 @@ namespace Amazon.CleanRooms.Model
     public partial class ListProtectedQueriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProtectedQuerySummary> _protectedQueries = new List<ProtectedQuerySummary>();
+        private List<ProtectedQuerySummary> _protectedQueries = AWSConfigs.InitializeCollections ? new List<ProtectedQuerySummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if ProtectedQueries property is set
         internal bool IsSetProtectedQueries()
         {
-            return this._protectedQueries != null && this._protectedQueries.Count > 0; 
+            return this._protectedQueries != null && (this._protectedQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

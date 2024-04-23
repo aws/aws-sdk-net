@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,22 +63,27 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CertificateBody", StringUtils.FromString(publicRequest.CertificateBody));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCertificateChain())
                 {
                     request.Parameters.Add("CertificateChain", StringUtils.FromString(publicRequest.CertificateChain));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPath())
                 {
                     request.Parameters.Add("Path", StringUtils.FromString(publicRequest.Path));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrivateKey())
                 {
                     request.Parameters.Add("PrivateKey", StringUtils.FromString(publicRequest.PrivateKey));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServerCertificateName())
                 {
                     request.Parameters.Add("ServerCertificateName", StringUtils.FromString(publicRequest.ServerCertificateName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -87,13 +93,16 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

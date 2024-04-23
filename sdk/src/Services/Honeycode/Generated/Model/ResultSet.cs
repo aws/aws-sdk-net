@@ -34,8 +34,8 @@ namespace Amazon.Honeycode.Model
     /// </summary>
     public partial class ResultSet
     {
-        private List<ColumnMetadata> _headers = new List<ColumnMetadata>();
-        private List<ResultRow> _rows = new List<ResultRow>();
+        private List<ColumnMetadata> _headers = AWSConfigs.InitializeCollections ? new List<ColumnMetadata>() : null;
+        private List<ResultRow> _rows = AWSConfigs.InitializeCollections ? new List<ResultRow>() : null;
 
         /// <summary>
         /// Gets and sets the property Headers. 
@@ -66,7 +66,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if Headers property is set
         internal bool IsSetHeaders()
         {
-            return this._headers != null && this._headers.Count > 0; 
+            return this._headers != null && (this._headers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if Rows property is set
         internal bool IsSetRows()
         {
-            return this._rows != null && this._rows.Count > 0; 
+            return this._rows != null && (this._rows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

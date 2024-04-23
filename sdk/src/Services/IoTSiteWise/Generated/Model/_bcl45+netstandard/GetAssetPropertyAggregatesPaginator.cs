@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the AggregatedValues
         /// </summary>
         public IPaginatedEnumerable<AggregatedValue> AggregatedValues => 
-            new PaginatedResultKeyResponse<GetAssetPropertyAggregatesResponse, AggregatedValue>(this, (i) => i.AggregatedValues);
+            new PaginatedResultKeyResponse<GetAssetPropertyAggregatesResponse, AggregatedValue>(this, (i) => i.AggregatedValues ?? new List<AggregatedValue>());
 
         internal GetAssetPropertyAggregatesPaginator(IAmazonIoTSiteWise client, GetAssetPropertyAggregatesRequest request)
         {

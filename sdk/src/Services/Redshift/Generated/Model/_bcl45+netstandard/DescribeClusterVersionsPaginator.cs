@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the ClusterVersions
         /// </summary>
         public IPaginatedEnumerable<ClusterVersion> ClusterVersions => 
-            new PaginatedResultKeyResponse<DescribeClusterVersionsResponse, ClusterVersion>(this, (i) => i.ClusterVersions);
+            new PaginatedResultKeyResponse<DescribeClusterVersionsResponse, ClusterVersion>(this, (i) => i.ClusterVersions ?? new List<ClusterVersion>());
 
         internal DescribeClusterVersionsPaginator(IAmazonRedshift client, DescribeClusterVersionsRequest request)
         {

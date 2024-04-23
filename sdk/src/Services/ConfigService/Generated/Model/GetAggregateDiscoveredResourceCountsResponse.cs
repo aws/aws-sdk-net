@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model
     public partial class GetAggregateDiscoveredResourceCountsResponse : AmazonWebServiceResponse
     {
         private string _groupByKey;
-        private List<GroupedResourceCount> _groupedResourceCounts = new List<GroupedResourceCount>();
+        private List<GroupedResourceCount> _groupedResourceCounts = AWSConfigs.InitializeCollections ? new List<GroupedResourceCount>() : null;
         private string _nextToken;
         private long? _totalDiscoveredResources;
 
@@ -73,7 +73,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if GroupedResourceCounts property is set
         internal bool IsSetGroupedResourceCounts()
         {
-            return this._groupedResourceCounts != null && this._groupedResourceCounts.Count > 0; 
+            return this._groupedResourceCounts != null && (this._groupedResourceCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

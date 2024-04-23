@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model
     public partial class ListWorldGenerationJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorldGenerationJobSummary> _worldGenerationJobSummaries = new List<WorldGenerationJobSummary>();
+        private List<WorldGenerationJobSummary> _worldGenerationJobSummaries = AWSConfigs.InitializeCollections ? new List<WorldGenerationJobSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -75,7 +75,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if WorldGenerationJobSummaries property is set
         internal bool IsSetWorldGenerationJobSummaries()
         {
-            return this._worldGenerationJobSummaries != null && this._worldGenerationJobSummaries.Count > 0; 
+            return this._worldGenerationJobSummaries != null && (this._worldGenerationJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

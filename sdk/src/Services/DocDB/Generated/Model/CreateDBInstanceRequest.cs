@@ -46,7 +46,7 @@ namespace Amazon.DocDB.Model
         private string _performanceInsightsKMSKeyId;
         private string _preferredMaintenanceWindow;
         private int? _promotionTier;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
@@ -370,7 +370,7 @@ namespace Amazon.DocDB.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

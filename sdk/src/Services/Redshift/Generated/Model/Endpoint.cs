@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
     {
         private string _address;
         private int? _port;
-        private List<VpcEndpoint> _vpcEndpoints = new List<VpcEndpoint>();
+        private List<VpcEndpoint> _vpcEndpoints = AWSConfigs.InitializeCollections ? new List<VpcEndpoint>() : null;
 
         /// <summary>
         /// Gets and sets the property Address. 
@@ -89,7 +89,7 @@ namespace Amazon.Redshift.Model
         // Check to see if VpcEndpoints property is set
         internal bool IsSetVpcEndpoints()
         {
-            return this._vpcEndpoints != null && this._vpcEndpoints.Count > 0; 
+            return this._vpcEndpoints != null && (this._vpcEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

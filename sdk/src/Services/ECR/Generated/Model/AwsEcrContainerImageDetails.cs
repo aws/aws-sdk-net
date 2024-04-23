@@ -36,7 +36,7 @@ namespace Amazon.ECR.Model
         private string _architecture;
         private string _author;
         private string _imageHash;
-        private List<string> _imageTags = new List<string>();
+        private List<string> _imageTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _platform;
         private DateTime? _pushedAt;
         private string _registry;
@@ -111,7 +111,7 @@ namespace Amazon.ECR.Model
         // Check to see if ImageTags property is set
         internal bool IsSetImageTags()
         {
-            return this._imageTags != null && this._imageTags.Count > 0; 
+            return this._imageTags != null && (this._imageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

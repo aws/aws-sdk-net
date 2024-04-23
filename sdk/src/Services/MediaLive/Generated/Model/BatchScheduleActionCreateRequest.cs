@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class BatchScheduleActionCreateRequest
     {
-        private List<ScheduleAction> _scheduleActions = new List<ScheduleAction>();
+        private List<ScheduleAction> _scheduleActions = AWSConfigs.InitializeCollections ? new List<ScheduleAction>() : null;
 
         /// <summary>
         /// Gets and sets the property ScheduleActions. A list of schedule actions to create.
@@ -49,7 +49,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if ScheduleActions property is set
         internal bool IsSetScheduleActions()
         {
-            return this._scheduleActions != null && this._scheduleActions.Count > 0; 
+            return this._scheduleActions != null && (this._scheduleActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

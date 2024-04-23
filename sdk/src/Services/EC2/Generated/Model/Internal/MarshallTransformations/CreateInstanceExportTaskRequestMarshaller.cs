@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,29 +63,36 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExportToS3Task())
                 {
                     if(publicRequest.ExportToS3Task.IsSetContainerFormat())
                     {
                         request.Parameters.Add("ExportToS3" + "." + "ContainerFormat", StringUtils.FromString(publicRequest.ExportToS3Task.ContainerFormat));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.ExportToS3Task.IsSetDiskImageFormat())
                     {
                         request.Parameters.Add("ExportToS3" + "." + "DiskImageFormat", StringUtils.FromString(publicRequest.ExportToS3Task.DiskImageFormat));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.ExportToS3Task.IsSetS3Bucket())
                     {
                         request.Parameters.Add("ExportToS3" + "." + "S3Bucket", StringUtils.FromString(publicRequest.ExportToS3Task.S3Bucket));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.ExportToS3Task.IsSetS3Prefix())
                     {
                         request.Parameters.Add("ExportToS3" + "." + "S3Prefix", StringUtils.FromString(publicRequest.ExportToS3Task.S3Prefix));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -94,6 +102,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -103,20 +112,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
+#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
+#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetEnvironment())
                 {
                     request.Parameters.Add("TargetEnvironment", StringUtils.FromString(publicRequest.TargetEnvironment));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -57,8 +57,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// This applies only to private extensions you have registered in your account. For public
         /// extensions, both those provided by Amazon and published by third parties, CloudFormation
-        /// returns <c>null</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-        /// <c>RegisterType</c> </a>.
+        /// returns <c>null</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
         ///  
         /// <para>
@@ -128,14 +127,12 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         /// Private extensions you have registered in your account. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-        /// <c>RegisterType</c> </a>.
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Public extensions you have activated in your account with auto-update specified. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-        /// <c>ActivateType</c> </a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -348,9 +345,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specified a <c>TypeNameAlias</c> when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-        /// <c>ActivateType</c> </a> API operation in your account and Region, CloudFormation
-        /// considers that alias as the type name.
+        /// If you specified a <c>TypeNameAlias</c> when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+        /// API operation in your account and Region, CloudFormation considers that alias as the
+        /// type name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=204)]

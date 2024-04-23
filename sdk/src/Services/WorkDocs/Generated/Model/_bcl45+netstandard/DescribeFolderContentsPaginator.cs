@@ -45,13 +45,13 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the Folders
         /// </summary>
         public IPaginatedEnumerable<FolderMetadata> Folders => 
-            new PaginatedResultKeyResponse<DescribeFolderContentsResponse, FolderMetadata>(this, (i) => i.Folders);
+            new PaginatedResultKeyResponse<DescribeFolderContentsResponse, FolderMetadata>(this, (i) => i.Folders ?? new List<FolderMetadata>());
 
         /// <summary>
         /// Enumerable containing all of the Documents
         /// </summary>
         public IPaginatedEnumerable<DocumentMetadata> Documents => 
-            new PaginatedResultKeyResponse<DescribeFolderContentsResponse, DocumentMetadata>(this, (i) => i.Documents);
+            new PaginatedResultKeyResponse<DescribeFolderContentsResponse, DocumentMetadata>(this, (i) => i.Documents ?? new List<DocumentMetadata>());
 
         internal DescribeFolderContentsPaginator(IAmazonWorkDocs client, DescribeFolderContentsRequest request)
         {

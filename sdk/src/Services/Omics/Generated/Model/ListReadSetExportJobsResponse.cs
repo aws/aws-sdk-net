@@ -33,7 +33,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class ListReadSetExportJobsResponse : AmazonWebServiceResponse
     {
-        private List<ExportReadSetJobDetail> _exportJobs = new List<ExportReadSetJobDetail>();
+        private List<ExportReadSetJobDetail> _exportJobs = AWSConfigs.InitializeCollections ? new List<ExportReadSetJobDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Omics.Model
         // Check to see if ExportJobs property is set
         internal bool IsSetExportJobs()
         {
-            return this._exportJobs != null && this._exportJobs.Count > 0; 
+            return this._exportJobs != null && (this._exportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

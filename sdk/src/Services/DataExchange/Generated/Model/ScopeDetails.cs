@@ -33,9 +33,9 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class ScopeDetails
     {
-        private List<LakeFormationTagPolicyDetails> _lakeFormationTagPolicies = new List<LakeFormationTagPolicyDetails>();
-        private List<RedshiftDataShareDetails> _redshiftDataShares = new List<RedshiftDataShareDetails>();
-        private List<S3DataAccessDetails> _s3DataAccesses = new List<S3DataAccessDetails>();
+        private List<LakeFormationTagPolicyDetails> _lakeFormationTagPolicies = AWSConfigs.InitializeCollections ? new List<LakeFormationTagPolicyDetails>() : null;
+        private List<RedshiftDataShareDetails> _redshiftDataShares = AWSConfigs.InitializeCollections ? new List<RedshiftDataShareDetails>() : null;
+        private List<S3DataAccessDetails> _s3DataAccesses = AWSConfigs.InitializeCollections ? new List<S3DataAccessDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property LakeFormationTagPolicies. 
@@ -52,7 +52,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if LakeFormationTagPolicies property is set
         internal bool IsSetLakeFormationTagPolicies()
         {
-            return this._lakeFormationTagPolicies != null && this._lakeFormationTagPolicies.Count > 0; 
+            return this._lakeFormationTagPolicies != null && (this._lakeFormationTagPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if RedshiftDataShares property is set
         internal bool IsSetRedshiftDataShares()
         {
-            return this._redshiftDataShares != null && this._redshiftDataShares.Count > 0; 
+            return this._redshiftDataShares != null && (this._redshiftDataShares.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if S3DataAccesses property is set
         internal bool IsSetS3DataAccesses()
         {
-            return this._s3DataAccesses != null && this._s3DataAccesses.Count > 0; 
+            return this._s3DataAccesses != null && (this._s3DataAccesses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

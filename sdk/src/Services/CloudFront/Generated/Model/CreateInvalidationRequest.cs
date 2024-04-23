@@ -30,7 +30,8 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInvalidation operation.
-    /// Create a new invalidation.
+    /// Create a new invalidation. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
+    /// files</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </summary>
     public partial class CreateInvalidationRequest : AmazonCloudFrontRequest
     {

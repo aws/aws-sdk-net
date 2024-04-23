@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the UserProfiles
         /// </summary>
         public IPaginatedEnumerable<UserProfileDetails> UserProfiles => 
-            new PaginatedResultKeyResponse<ListUserProfilesResponse, UserProfileDetails>(this, (i) => i.UserProfiles);
+            new PaginatedResultKeyResponse<ListUserProfilesResponse, UserProfileDetails>(this, (i) => i.UserProfiles ?? new List<UserProfileDetails>());
 
         internal ListUserProfilesPaginator(IAmazonSageMaker client, ListUserProfilesRequest request)
         {

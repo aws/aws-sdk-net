@@ -34,7 +34,7 @@ namespace Amazon.ForecastQueryService.Model
     /// </summary>
     public partial class Forecast
     {
-        private Dictionary<string, List<DataPoint>> _predictions = new Dictionary<string, List<DataPoint>>();
+        private Dictionary<string, List<DataPoint>> _predictions = AWSConfigs.InitializeCollections ? new Dictionary<string, List<DataPoint>>() : null;
 
         /// <summary>
         /// Gets and sets the property Predictions. 
@@ -74,7 +74,7 @@ namespace Amazon.ForecastQueryService.Model
         // Check to see if Predictions property is set
         internal bool IsSetPredictions()
         {
-            return this._predictions != null && this._predictions.Count > 0; 
+            return this._predictions != null && (this._predictions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

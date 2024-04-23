@@ -33,7 +33,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class ListEntitledApplicationsResponse : AmazonWebServiceResponse
     {
-        private List<EntitledApplication> _entitledApplications = new List<EntitledApplication>();
+        private List<EntitledApplication> _entitledApplications = AWSConfigs.InitializeCollections ? new List<EntitledApplication>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AppStream.Model
         // Check to see if EntitledApplications property is set
         internal bool IsSetEntitledApplications()
         {
-            return this._entitledApplications != null && this._entitledApplications.Count > 0; 
+            return this._entitledApplications != null && (this._entitledApplications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -38,7 +38,7 @@ namespace Amazon.DAX.Model
         private string _dataType;
         private string _description;
         private IsModifiable _isModifiable;
-        private List<NodeTypeSpecificValue> _nodeTypeSpecificValues = new List<NodeTypeSpecificValue>();
+        private List<NodeTypeSpecificValue> _nodeTypeSpecificValues = AWSConfigs.InitializeCollections ? new List<NodeTypeSpecificValue>() : null;
         private string _parameterName;
         private ParameterType _parameterType;
         private string _parameterValue;
@@ -151,7 +151,7 @@ namespace Amazon.DAX.Model
         // Check to see if NodeTypeSpecificValues property is set
         internal bool IsSetNodeTypeSpecificValues()
         {
-            return this._nodeTypeSpecificValues != null && this._nodeTypeSpecificValues.Count > 0; 
+            return this._nodeTypeSpecificValues != null && (this._nodeTypeSpecificValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

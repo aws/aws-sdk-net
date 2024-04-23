@@ -34,7 +34,7 @@ namespace Amazon.Translate.Model
     public partial class ListLanguagesResponse : AmazonWebServiceResponse
     {
         private DisplayLanguageCode _displayLanguageCode;
-        private List<Language> _languages = new List<Language>();
+        private List<Language> _languages = AWSConfigs.InitializeCollections ? new List<Language>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.Translate.Model
         // Check to see if Languages property is set
         internal bool IsSetLanguages()
         {
-            return this._languages != null && this._languages.Count > 0; 
+            return this._languages != null && (this._languages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

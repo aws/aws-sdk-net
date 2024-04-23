@@ -36,7 +36,10 @@ namespace Amazon.BedrockAgent.Model
         private IngestionJob _ingestionJob;
 
         /// <summary>
-        /// Gets and sets the property IngestionJob.
+        /// Gets and sets the property IngestionJob. 
+        /// <para>
+        /// An object containing information about the ingestion job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public IngestionJob IngestionJob

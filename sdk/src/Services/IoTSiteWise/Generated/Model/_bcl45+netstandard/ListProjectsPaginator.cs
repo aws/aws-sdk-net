@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the ProjectSummaries
         /// </summary>
         public IPaginatedEnumerable<ProjectSummary> ProjectSummaries => 
-            new PaginatedResultKeyResponse<ListProjectsResponse, ProjectSummary>(this, (i) => i.ProjectSummaries);
+            new PaginatedResultKeyResponse<ListProjectsResponse, ProjectSummary>(this, (i) => i.ProjectSummaries ?? new List<ProjectSummary>());
 
         internal ListProjectsPaginator(IAmazonIoTSiteWise client, ListProjectsRequest request)
         {

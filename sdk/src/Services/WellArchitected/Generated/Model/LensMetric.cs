@@ -34,8 +34,8 @@ namespace Amazon.WellArchitected.Model
     public partial class LensMetric
     {
         private string _lensArn;
-        private List<PillarMetric> _pillars = new List<PillarMetric>();
-        private Dictionary<string, int> _riskCounts = new Dictionary<string, int>();
+        private List<PillarMetric> _pillars = AWSConfigs.InitializeCollections ? new List<PillarMetric>() : null;
+        private Dictionary<string, int> _riskCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
 
         /// <summary>
         /// Gets and sets the property LensArn. 
@@ -70,7 +70,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Pillars property is set
         internal bool IsSetPillars()
         {
-            return this._pillars != null && this._pillars.Count > 0; 
+            return this._pillars != null && (this._pillars.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if RiskCounts property is set
         internal bool IsSetRiskCounts()
         {
-            return this._riskCounts != null && this._riskCounts.Count > 0; 
+            return this._riskCounts != null && (this._riskCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

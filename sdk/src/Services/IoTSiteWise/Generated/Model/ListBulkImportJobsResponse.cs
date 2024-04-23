@@ -33,7 +33,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class ListBulkImportJobsResponse : AmazonWebServiceResponse
     {
-        private List<JobSummary> _jobSummaries = new List<JobSummary>();
+        private List<JobSummary> _jobSummaries = AWSConfigs.InitializeCollections ? new List<JobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if JobSummaries property is set
         internal bool IsSetJobSummaries()
         {
-            return this._jobSummaries != null && this._jobSummaries.Count > 0; 
+            return this._jobSummaries != null && (this._jobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

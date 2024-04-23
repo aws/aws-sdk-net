@@ -33,7 +33,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class ListAliasesResponse : AmazonWebServiceResponse
     {
-        private List<Alias> _aliases = new List<Alias>();
+        private List<Alias> _aliases = AWSConfigs.InitializeCollections ? new List<Alias>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this._aliases != null && this._aliases.Count > 0; 
+            return this._aliases != null && (this._aliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

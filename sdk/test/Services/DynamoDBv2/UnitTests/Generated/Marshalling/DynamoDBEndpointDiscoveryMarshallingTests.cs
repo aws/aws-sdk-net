@@ -148,6 +148,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DynamoDBv2")]
+        public void DeleteResourcePolicyEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteResourcePolicy");
+            var request = InstantiateClassGenerator.Execute<DeleteResourcePolicyRequest>(operation);
+            var marshaller = new DeleteResourcePolicyEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DynamoDBv2")]
         public void DeleteTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteTable");
@@ -328,6 +343,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DynamoDBv2")]
+        public void GetResourcePolicyEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetResourcePolicy");
+            var request = InstantiateClassGenerator.Execute<GetResourcePolicyRequest>(operation);
+            var marshaller = new GetResourcePolicyEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DynamoDBv2")]
         public void ListBackupsEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("ListBackups");
@@ -393,6 +423,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var operation = service_model.FindOperation("PutItem");
             var request = InstantiateClassGenerator.Execute<PutItemRequest>(operation);
             var marshaller = new PutItemEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DynamoDBv2")]
+        public void PutResourcePolicyEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutResourcePolicy");
+            var request = InstantiateClassGenerator.Execute<PutResourcePolicyRequest>(operation);
+            var marshaller = new PutResourcePolicyEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
             var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);

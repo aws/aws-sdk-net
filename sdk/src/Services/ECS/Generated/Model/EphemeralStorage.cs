@@ -56,7 +56,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property SizeInGiB. 
         /// <para>
         /// The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported
-        /// value is <c>21</c> GiB and the maximum supported value is <c>200</c> GiB.
+        /// value is <c>20</c> GiB and the maximum supported value is <c>200</c> GiB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

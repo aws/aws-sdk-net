@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     response.AnonymizedOutput = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("providerComponentSchema", targetDepth))
+                {
+                    var unmarshaller = ProviderComponentSchemaUnmarshaller.Instance;
+                    response.ProviderComponentSchema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("providerConfigurationDefinition", targetDepth))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
@@ -75,10 +82,22 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     response.ProviderEntityOutputDefinition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("providerIdNameSpaceConfiguration", targetDepth))
+                {
+                    var unmarshaller = ProviderIdNameSpaceConfigurationUnmarshaller.Instance;
+                    response.ProviderIdNameSpaceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("providerIntermediateDataAccessConfiguration", targetDepth))
                 {
                     var unmarshaller = ProviderIntermediateDataAccessConfigurationUnmarshaller.Instance;
                     response.ProviderIntermediateDataAccessConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("providerJobConfiguration", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
+                    response.ProviderJobConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("providerName", targetDepth))
@@ -178,3 +197,4 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

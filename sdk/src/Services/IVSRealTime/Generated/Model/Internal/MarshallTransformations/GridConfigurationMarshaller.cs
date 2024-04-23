@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,36 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GridConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFeaturedParticipantAttribute())
             {
                 context.Writer.WritePropertyName("featuredParticipantAttribute");
                 context.Writer.Write(requestObject.FeaturedParticipantAttribute);
+            }
+
+            if(requestObject.IsSetGridGap())
+            {
+                context.Writer.WritePropertyName("gridGap");
+                context.Writer.Write(requestObject.GridGap);
+            }
+
+            if(requestObject.IsSetOmitStoppedVideo())
+            {
+                context.Writer.WritePropertyName("omitStoppedVideo");
+                context.Writer.Write(requestObject.OmitStoppedVideo);
+            }
+
+            if(requestObject.IsSetVideoAspectRatio())
+            {
+                context.Writer.WritePropertyName("videoAspectRatio");
+                context.Writer.Write(requestObject.VideoAspectRatio);
+            }
+
+            if(requestObject.IsSetVideoFillMode())
+            {
+                context.Writer.WritePropertyName("videoFillMode");
+                context.Writer.Write(requestObject.VideoFillMode);
             }
 
         }
@@ -60,3 +87,4 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

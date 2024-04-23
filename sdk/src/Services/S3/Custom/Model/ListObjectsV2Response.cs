@@ -26,8 +26,8 @@ namespace Amazon.S3.Model
     /// </summary>
     public class ListObjectsV2Response : AmazonWebServiceResponse
     {
-        private List<string> commonPrefixes = new List<string>();
-        private List<S3Object> contents = new List<S3Object>();
+        private List<string> commonPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<S3Object> contents = AWSConfigs.InitializeCollections ? new List<S3Object>() : null;
         private string continuationToken;
         private string delimiter;
         private EncodingType encoding;
@@ -92,7 +92,7 @@ namespace Amazon.S3.Model
         // Check to see if CommonPrefixes property is set
         internal bool IsSetCommonPrefixes()
         {
-            return this.commonPrefixes.Count > 0;
+            return this.commonPrefixes != null && (this.commonPrefixes.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Amazon.S3.Model
         // Check to see if Contents property is set
         internal bool IsSetContents()
         {
-            return this.contents.Count > 0;
+            return this.contents != null && (this.contents.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the PhoneNumberSummaryList
         /// </summary>
         public IPaginatedEnumerable<PhoneNumberSummary> PhoneNumberSummaryList => 
-            new PaginatedResultKeyResponse<ListPhoneNumbersResponse, PhoneNumberSummary>(this, (i) => i.PhoneNumberSummaryList);
+            new PaginatedResultKeyResponse<ListPhoneNumbersResponse, PhoneNumberSummary>(this, (i) => i.PhoneNumberSummaryList ?? new List<PhoneNumberSummary>());
 
         internal ListPhoneNumbersPaginator(IAmazonConnect client, ListPhoneNumbersRequest request)
         {

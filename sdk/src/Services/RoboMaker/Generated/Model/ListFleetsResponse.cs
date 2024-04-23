@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model
     [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     public partial class ListFleetsResponse : AmazonWebServiceResponse
     {
-        private List<Fleet> _fleetDetails = new List<Fleet>();
+        private List<Fleet> _fleetDetails = AWSConfigs.InitializeCollections ? new List<Fleet>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if FleetDetails property is set
         internal bool IsSetFleetDetails()
         {
-            return this._fleetDetails != null && this._fleetDetails.Count > 0; 
+            return this._fleetDetails != null && (this._fleetDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

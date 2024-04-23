@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Enumerable containing all of the Steps
         /// </summary>
         public IPaginatedEnumerable<StepSummary> Steps => 
-            new PaginatedResultKeyResponse<ListStepsResponse, StepSummary>(this, (i) => i.Steps);
+            new PaginatedResultKeyResponse<ListStepsResponse, StepSummary>(this, (i) => i.Steps ?? new List<StepSummary>());
 
         internal ListStepsPaginator(IAmazonElasticMapReduce client, ListStepsRequest request)
         {

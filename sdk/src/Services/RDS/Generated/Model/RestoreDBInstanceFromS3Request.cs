@@ -48,16 +48,17 @@ namespace Amazon.RDS.Model
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
         private int? _backupRetentionPeriod;
+        private string _caCertificateIdentifier;
         private bool? _copyTagsToSnapshot;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbName;
         private string _dbParameterGroupName;
-        private List<string> _dbSecurityGroups = new List<string>();
+        private List<string> _dbSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _dbSubnetGroupName;
         private bool? _dedicatedLogVolume;
         private bool? _deletionProtection;
-        private List<string> _enableCloudwatchLogsExports = new List<string>();
+        private List<string> _enableCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableIAMDatabaseAuthentication;
         private bool? _enablePerformanceInsights;
         private string _engine;
@@ -80,7 +81,7 @@ namespace Amazon.RDS.Model
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
-        private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
+        private List<ProcessorFeature> _processorFeatures = AWSConfigs.InitializeCollections ? new List<ProcessorFeature>() : null;
         private bool? _publiclyAccessible;
         private string _s3BucketName;
         private string _s3IngestionRoleArn;
@@ -90,9 +91,9 @@ namespace Amazon.RDS.Model
         private bool? _storageEncrypted;
         private int? _storageThroughput;
         private string _storageType;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _useDefaultProcessorFeatures;
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
@@ -190,6 +191,36 @@ namespace Amazon.RDS.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CACertificateIdentifier. 
+        /// <para>
+        /// The CA certificate identifier to use for the DB instance's server certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom DB instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+        /// SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>
+        /// and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html">
+        /// Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string CACertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CACertificateIdentifier property is set
+        internal bool IsSetCACertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
         }
 
         /// <summary>
@@ -338,7 +369,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
+            return this._dbSecurityGroups != null && (this._dbSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -424,7 +455,7 @@ namespace Amazon.RDS.Model
         // Check to see if EnableCloudwatchLogsExports property is set
         internal bool IsSetEnableCloudwatchLogsExports()
         {
-            return this._enableCloudwatchLogsExports != null && this._enableCloudwatchLogsExports.Count > 0; 
+            return this._enableCloudwatchLogsExports != null && (this._enableCloudwatchLogsExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1141,7 +1172,7 @@ namespace Amazon.RDS.Model
         // Check to see if ProcessorFeatures property is set
         internal bool IsSetProcessorFeatures()
         {
-            return this._processorFeatures != null && this._processorFeatures.Count > 0; 
+            return this._processorFeatures != null && (this._processorFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1334,12 +1365,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>gp2 | gp3 | io1 | standard</c> 
+        /// Valid Values: <c>gp2 | gp3 | io1 | io2 | standard</c> 
         /// </para>
         ///  
         /// <para>
-        /// If you specify <c>io1</c> or <c>gp3</c>, you must also include a value for the <c>Iops</c>
-        /// parameter.
+        /// If you specify <c>io1</c>, <c>io2</c>, or <c>gp3</c>, you must also include a value
+        /// for the <c>Iops</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -1375,7 +1406,7 @@ namespace Amazon.RDS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1412,7 +1443,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

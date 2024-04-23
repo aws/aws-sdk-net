@@ -45,7 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all of the TypeSummaries
         /// </summary>
         public IPaginatedEnumerable<TypeSummary> TypeSummaries => 
-            new PaginatedResultKeyResponse<ListTypesResponse, TypeSummary>(this, (i) => i.TypeSummaries);
+            new PaginatedResultKeyResponse<ListTypesResponse, TypeSummary>(this, (i) => i.TypeSummaries ?? new List<TypeSummary>());
 
         internal ListTypesPaginator(IAmazonCloudFormation client, ListTypesRequest request)
         {

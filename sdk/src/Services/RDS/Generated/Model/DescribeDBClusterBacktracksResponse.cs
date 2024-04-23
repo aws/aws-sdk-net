@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBClusterBacktracksResponse : AmazonWebServiceResponse
     {
-        private List<DBClusterBacktrack> _dbClusterBacktracks = new List<DBClusterBacktrack>();
+        private List<DBClusterBacktrack> _dbClusterBacktracks = AWSConfigs.InitializeCollections ? new List<DBClusterBacktrack>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBClusterBacktracks property is set
         internal bool IsSetDBClusterBacktracks()
         {
-            return this._dbClusterBacktracks != null && this._dbClusterBacktracks.Count > 0; 
+            return this._dbClusterBacktracks != null && (this._dbClusterBacktracks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

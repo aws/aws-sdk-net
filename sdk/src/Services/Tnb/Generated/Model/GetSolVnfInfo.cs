@@ -38,7 +38,7 @@ namespace Amazon.Tnb.Model
     /// </summary>
     public partial class GetSolVnfInfo
     {
-        private List<GetSolVnfcResourceInfo> _vnfcResourceInfo = new List<GetSolVnfcResourceInfo>();
+        private List<GetSolVnfcResourceInfo> _vnfcResourceInfo = AWSConfigs.InitializeCollections ? new List<GetSolVnfcResourceInfo>() : null;
         private VnfOperationalState _vnfState;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.Tnb.Model
         // Check to see if VnfcResourceInfo property is set
         internal bool IsSetVnfcResourceInfo()
         {
-            return this._vnfcResourceInfo != null && this._vnfcResourceInfo.Count > 0; 
+            return this._vnfcResourceInfo != null && (this._vnfcResourceInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

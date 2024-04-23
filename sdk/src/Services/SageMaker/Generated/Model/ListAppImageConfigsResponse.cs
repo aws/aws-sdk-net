@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListAppImageConfigsResponse : AmazonWebServiceResponse
     {
-        private List<AppImageConfigDetails> _appImageConfigs = new List<AppImageConfigDetails>();
+        private List<AppImageConfigDetails> _appImageConfigs = AWSConfigs.InitializeCollections ? new List<AppImageConfigDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AppImageConfigs property is set
         internal bool IsSetAppImageConfigs()
         {
-            return this._appImageConfigs != null && this._appImageConfigs.Count > 0; 
+            return this._appImageConfigs != null && (this._appImageConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

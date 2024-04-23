@@ -45,7 +45,7 @@ namespace Amazon.MedicalImaging.Model
         /// Enumerable containing all of the ImageSetPropertiesList
         /// </summary>
         public IPaginatedEnumerable<ImageSetProperties> ImageSetPropertiesList => 
-            new PaginatedResultKeyResponse<ListImageSetVersionsResponse, ImageSetProperties>(this, (i) => i.ImageSetPropertiesList);
+            new PaginatedResultKeyResponse<ListImageSetVersionsResponse, ImageSetProperties>(this, (i) => i.ImageSetPropertiesList ?? new List<ImageSetProperties>());
 
         internal ListImageSetVersionsPaginator(IAmazonMedicalImaging client, ListImageSetVersionsRequest request)
         {

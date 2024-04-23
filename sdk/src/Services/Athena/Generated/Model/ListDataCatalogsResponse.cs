@@ -33,7 +33,7 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class ListDataCatalogsResponse : AmazonWebServiceResponse
     {
-        private List<DataCatalogSummary> _dataCatalogsSummary = new List<DataCatalogSummary>();
+        private List<DataCatalogSummary> _dataCatalogsSummary = AWSConfigs.InitializeCollections ? new List<DataCatalogSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Athena.Model
         // Check to see if DataCatalogsSummary property is set
         internal bool IsSetDataCatalogsSummary()
         {
-            return this._dataCatalogsSummary != null && this._dataCatalogsSummary.Count > 0; 
+            return this._dataCatalogsSummary != null && (this._dataCatalogsSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

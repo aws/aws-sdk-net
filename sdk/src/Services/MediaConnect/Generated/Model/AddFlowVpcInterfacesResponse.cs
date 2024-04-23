@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model
     public partial class AddFlowVpcInterfacesResponse : AmazonWebServiceResponse
     {
         private string _flowArn;
-        private List<VpcInterface> _vpcInterfaces = new List<VpcInterface>();
+        private List<VpcInterface> _vpcInterfaces = AWSConfigs.InitializeCollections ? new List<VpcInterface>() : null;
 
         /// <summary>
         /// Gets and sets the property FlowArn. The ARN of the flow that these VPC interfaces
@@ -64,7 +64,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if VpcInterfaces property is set
         internal bool IsSetVpcInterfaces()
         {
-            return this._vpcInterfaces != null && this._vpcInterfaces.Count > 0; 
+            return this._vpcInterfaces != null && (this._vpcInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

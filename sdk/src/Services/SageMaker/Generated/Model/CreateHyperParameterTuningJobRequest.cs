@@ -57,9 +57,9 @@ namespace Amazon.SageMaker.Model
         private Autotune _autotune;
         private HyperParameterTuningJobConfig _hyperParameterTuningJobConfig;
         private string _hyperParameterTuningJobName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private HyperParameterTrainingJobDefinition _trainingJobDefinition;
-        private List<HyperParameterTrainingJobDefinition> _trainingJobDefinitions = new List<HyperParameterTrainingJobDefinition>();
+        private List<HyperParameterTrainingJobDefinition> _trainingJobDefinitions = AWSConfigs.InitializeCollections ? new List<HyperParameterTrainingJobDefinition>() : null;
         private HyperParameterTuningJobWarmStartConfig _warmStartConfig;
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if TrainingJobDefinitions property is set
         internal bool IsSetTrainingJobDefinitions()
         {
-            return this._trainingJobDefinitions != null && this._trainingJobDefinitions.Count > 0; 
+            return this._trainingJobDefinitions != null && (this._trainingJobDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

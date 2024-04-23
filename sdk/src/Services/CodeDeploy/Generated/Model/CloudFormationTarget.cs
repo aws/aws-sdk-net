@@ -36,7 +36,7 @@ namespace Amazon.CodeDeploy.Model
     {
         private string _deploymentId;
         private DateTime? _lastUpdatedAt;
-        private List<LifecycleEvent> _lifecycleEvents = new List<LifecycleEvent>();
+        private List<LifecycleEvent> _lifecycleEvents = AWSConfigs.InitializeCollections ? new List<LifecycleEvent>() : null;
         private string _resourceType;
         private TargetStatus _status;
         private string _targetId;
@@ -95,7 +95,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if LifecycleEvents property is set
         internal bool IsSetLifecycleEvents()
         {
-            return this._lifecycleEvents != null && this._lifecycleEvents.Count > 0; 
+            return this._lifecycleEvents != null && (this._lifecycleEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

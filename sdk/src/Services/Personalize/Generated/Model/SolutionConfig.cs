@@ -33,10 +33,11 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class SolutionConfig
     {
-        private Dictionary<string, string> _algorithmHyperParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _algorithmHyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AutoMLConfig _automlConfig;
+        private AutoTrainingConfig _autoTrainingConfig;
         private string _eventValueThreshold;
-        private Dictionary<string, string> _featureTransformationParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _featureTransformationParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private HPOConfig _hpoConfig;
         private OptimizationObjective _optimizationObjective;
         private TrainingDataConfig _trainingDataConfig;
@@ -57,7 +58,7 @@ namespace Amazon.Personalize.Model
         // Check to see if AlgorithmHyperParameters property is set
         internal bool IsSetAlgorithmHyperParameters()
         {
-            return this._algorithmHyperParameters != null && this._algorithmHyperParameters.Count > 0; 
+            return this._algorithmHyperParameters != null && (this._algorithmHyperParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,6 +78,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetAutoMLConfig()
         {
             return this._automlConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoTrainingConfig. 
+        /// <para>
+        /// Specifies the automatic training configuration to use.
+        /// </para>
+        /// </summary>
+        public AutoTrainingConfig AutoTrainingConfig
+        {
+            get { return this._autoTrainingConfig; }
+            set { this._autoTrainingConfig = value; }
+        }
+
+        // Check to see if AutoTrainingConfig property is set
+        internal bool IsSetAutoTrainingConfig()
+        {
+            return this._autoTrainingConfig != null;
         }
 
         /// <summary>
@@ -115,7 +134,7 @@ namespace Amazon.Personalize.Model
         // Check to see if FeatureTransformationParameters property is set
         internal bool IsSetFeatureTransformationParameters()
         {
-            return this._featureTransformationParameters != null && this._featureTransformationParameters.Count > 0; 
+            return this._featureTransformationParameters != null && (this._featureTransformationParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

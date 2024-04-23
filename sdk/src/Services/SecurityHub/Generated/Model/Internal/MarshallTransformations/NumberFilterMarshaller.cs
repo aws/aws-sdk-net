@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,34 +46,71 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NumberFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEq())
             {
                 context.Writer.WritePropertyName("Eq");
-                context.Writer.Write(requestObject.Eq);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Eq))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Eq));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Eq);
+                }
             }
 
             if(requestObject.IsSetGt())
             {
                 context.Writer.WritePropertyName("Gt");
-                context.Writer.Write(requestObject.Gt);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Gt))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Gt));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Gt);
+                }
             }
 
             if(requestObject.IsSetGte())
             {
                 context.Writer.WritePropertyName("Gte");
-                context.Writer.Write(requestObject.Gte);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Gte))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Gte));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Gte);
+                }
             }
 
             if(requestObject.IsSetLt())
             {
                 context.Writer.WritePropertyName("Lt");
-                context.Writer.Write(requestObject.Lt);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Lt))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lt));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Lt);
+                }
             }
 
             if(requestObject.IsSetLte())
             {
                 context.Writer.WritePropertyName("Lte");
-                context.Writer.Write(requestObject.Lte);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Lte))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lte));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Lte);
+                }
             }
 
         }
@@ -84,3 +122,4 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

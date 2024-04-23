@@ -34,7 +34,7 @@ namespace Amazon.Shield.Model
     public partial class ListResourcesInProtectionGroupResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _resourceArns = new List<string>();
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -88,7 +88,7 @@ namespace Amazon.Shield.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

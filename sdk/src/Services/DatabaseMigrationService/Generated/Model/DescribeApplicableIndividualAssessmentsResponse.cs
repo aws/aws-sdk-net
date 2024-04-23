@@ -33,7 +33,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DescribeApplicableIndividualAssessmentsResponse : AmazonWebServiceResponse
     {
-        private List<string> _individualAssessmentNames = new List<string>();
+        private List<string> _individualAssessmentNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _marker;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if IndividualAssessmentNames property is set
         internal bool IsSetIndividualAssessmentNames()
         {
-            return this._individualAssessmentNames != null && this._individualAssessmentNames.Count > 0; 
+            return this._individualAssessmentNames != null && (this._individualAssessmentNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.NetworkManager.Model
     public partial class GetSitesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Site> _sites = new List<Site>();
+        private List<Site> _sites = AWSConfigs.InitializeCollections ? new List<Site>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if Sites property is set
         internal bool IsSetSites()
         {
-            return this._sites != null && this._sites.Count > 0; 
+            return this._sites != null && (this._sites.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

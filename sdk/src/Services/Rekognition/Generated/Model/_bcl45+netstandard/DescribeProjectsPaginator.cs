@@ -45,7 +45,7 @@ namespace Amazon.Rekognition.Model
         /// Enumerable containing all of the ProjectDescriptions
         /// </summary>
         public IPaginatedEnumerable<ProjectDescription> ProjectDescriptions => 
-            new PaginatedResultKeyResponse<DescribeProjectsResponse, ProjectDescription>(this, (i) => i.ProjectDescriptions);
+            new PaginatedResultKeyResponse<DescribeProjectsResponse, ProjectDescription>(this, (i) => i.ProjectDescriptions ?? new List<ProjectDescription>());
 
         internal DescribeProjectsPaginator(IAmazonRekognition client, DescribeProjectsRequest request)
         {

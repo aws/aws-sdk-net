@@ -45,7 +45,7 @@ namespace Amazon.CodePipeline.Model
         /// Enumerable containing all of the Pipelines
         /// </summary>
         public IPaginatedEnumerable<PipelineSummary> Pipelines => 
-            new PaginatedResultKeyResponse<ListPipelinesResponse, PipelineSummary>(this, (i) => i.Pipelines);
+            new PaginatedResultKeyResponse<ListPipelinesResponse, PipelineSummary>(this, (i) => i.Pipelines ?? new List<PipelineSummary>());
 
         internal ListPipelinesPaginator(IAmazonCodePipeline client, ListPipelinesRequest request)
         {

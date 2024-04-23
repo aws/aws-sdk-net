@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class LifecyclePolicyDetailExclusionRules
     {
         private LifecyclePolicyDetailExclusionRulesAmis _amis;
-        private Dictionary<string, string> _tagMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _tagMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Amis. 
@@ -58,8 +58,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TagMap. 
         /// <para>
-        /// Contains a list of tags that Image Builder uses to skip lifecycle actions for resources
-        /// that have them.
+        /// Contains a list of tags that Image Builder uses to skip lifecycle actions for Image
+        /// Builder image resources that have them.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -72,7 +72,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if TagMap property is set
         internal bool IsSetTagMap()
         {
-            return this._tagMap != null && this._tagMap.Count > 0; 
+            return this._tagMap != null && (this._tagMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

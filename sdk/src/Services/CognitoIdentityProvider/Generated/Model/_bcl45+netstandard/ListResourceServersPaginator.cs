@@ -45,7 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Enumerable containing all of the ResourceServers
         /// </summary>
         public IPaginatedEnumerable<ResourceServerType> ResourceServers => 
-            new PaginatedResultKeyResponse<ListResourceServersResponse, ResourceServerType>(this, (i) => i.ResourceServers);
+            new PaginatedResultKeyResponse<ListResourceServersResponse, ResourceServerType>(this, (i) => i.ResourceServers ?? new List<ResourceServerType>());
 
         internal ListResourceServersPaginator(IAmazonCognitoIdentityProvider client, ListResourceServersRequest request)
         {

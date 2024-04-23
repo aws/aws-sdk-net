@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model
     public partial class ListProjectsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Project> _projects = new List<Project>();
+        private List<Project> _projects = AWSConfigs.InitializeCollections ? new List<Project>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Projects property is set
         internal bool IsSetProjects()
         {
-            return this._projects != null && this._projects.Count > 0; 
+            return this._projects != null && (this._projects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

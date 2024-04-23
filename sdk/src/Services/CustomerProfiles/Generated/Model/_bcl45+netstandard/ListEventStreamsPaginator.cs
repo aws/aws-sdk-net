@@ -45,7 +45,7 @@ namespace Amazon.CustomerProfiles.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<EventStreamSummary> Items => 
-            new PaginatedResultKeyResponse<ListEventStreamsResponse, EventStreamSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListEventStreamsResponse, EventStreamSummary>(this, (i) => i.Items ?? new List<EventStreamSummary>());
 
         internal ListEventStreamsPaginator(IAmazonCustomerProfiles client, ListEventStreamsRequest request)
         {

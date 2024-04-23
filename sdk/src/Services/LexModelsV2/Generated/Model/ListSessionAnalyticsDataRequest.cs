@@ -52,7 +52,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private DateTime? _endDateTime;
-        private List<AnalyticsSessionFilter> _filters = new List<AnalyticsSessionFilter>();
+        private List<AnalyticsSessionFilter> _filters = AWSConfigs.InitializeCollections ? new List<AnalyticsSessionFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private SessionDataSortBy _sortBy;
@@ -114,7 +114,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the TemplateAliasList
         /// </summary>
         public IPaginatedEnumerable<TemplateAlias> TemplateAliasList => 
-            new PaginatedResultKeyResponse<ListTemplateAliasesResponse, TemplateAlias>(this, (i) => i.TemplateAliasList);
+            new PaginatedResultKeyResponse<ListTemplateAliasesResponse, TemplateAlias>(this, (i) => i.TemplateAliasList ?? new List<TemplateAlias>());
 
         internal ListTemplateAliasesPaginator(IAmazonQuickSight client, ListTemplateAliasesRequest request)
         {

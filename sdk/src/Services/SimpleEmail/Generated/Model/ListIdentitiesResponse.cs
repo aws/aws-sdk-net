@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class ListIdentitiesResponse : AmazonWebServiceResponse
     {
-        private List<string> _identities = new List<string>();
+        private List<string> _identities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Identities property is set
         internal bool IsSetIdentities()
         {
-            return this._identities != null && this._identities.Count > 0; 
+            return this._identities != null && (this._identities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

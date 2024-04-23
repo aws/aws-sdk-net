@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,25 +68,31 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAdministrationRoleARN())
                 {
                     request.Parameters.Add("AdministrationRoleARN", StringUtils.FromString(publicRequest.AdministrationRoleARN));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAutoDeployment())
                 {
                     if(publicRequest.AutoDeployment.IsSetEnabled())
                     {
                         request.Parameters.Add("AutoDeployment" + "." + "Enabled", StringUtils.FromBool(publicRequest.AutoDeployment.Enabled));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.AutoDeployment.IsSetRetainStacksOnAccountRemoval())
                     {
                         request.Parameters.Add("AutoDeployment" + "." + "RetainStacksOnAccountRemoval", StringUtils.FromBool(publicRequest.AutoDeployment.RetainStacksOnAccountRemoval));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCallAs())
                 {
                     request.Parameters.Add("CallAs", StringUtils.FromString(publicRequest.CallAs));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCapabilities())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -95,12 +102,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeploymentTargets())
                 {
                     if(publicRequest.DeploymentTargets.IsSetAccountFilterType())
                     {
                         request.Parameters.Add("DeploymentTargets" + "." + "AccountFilterType", StringUtils.FromString(publicRequest.DeploymentTargets.AccountFilterType));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.DeploymentTargets.IsSetAccounts())
                     {
                         int publicRequestDeploymentTargetslistValueIndex = 1;
@@ -110,10 +119,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                             publicRequestDeploymentTargetslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.DeploymentTargets.IsSetAccountsUrl())
                     {
                         request.Parameters.Add("DeploymentTargets" + "." + "AccountsUrl", StringUtils.FromString(publicRequest.DeploymentTargets.AccountsUrl));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.DeploymentTargets.IsSetOrganizationalUnitIds())
                     {
                         int publicRequestDeploymentTargetslistValueIndex = 1;
@@ -123,22 +134,28 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                             publicRequestDeploymentTargetslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExecutionRoleName())
                 {
                     request.Parameters.Add("ExecutionRoleName", StringUtils.FromString(publicRequest.ExecutionRoleName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetManagedExecution())
                 {
                     if(publicRequest.ManagedExecution.IsSetActive())
                     {
                         request.Parameters.Add("ManagedExecution" + "." + "Active", StringUtils.FromBool(publicRequest.ManagedExecution.Active));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOperationId())
                 {
                     request.Parameters.Add("OperationId", StringUtils.FromString(publicRequest.OperationId));
@@ -147,32 +164,39 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("OperationId", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOperationPreferences())
                 {
                     if(publicRequest.OperationPreferences.IsSetConcurrencyMode())
                     {
                         request.Parameters.Add("OperationPreferences" + "." + "ConcurrencyMode", StringUtils.FromString(publicRequest.OperationPreferences.ConcurrencyMode));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.OperationPreferences.IsSetFailureToleranceCount())
                     {
                         request.Parameters.Add("OperationPreferences" + "." + "FailureToleranceCount", StringUtils.FromInt(publicRequest.OperationPreferences.FailureToleranceCount));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.OperationPreferences.IsSetFailureTolerancePercentage())
                     {
                         request.Parameters.Add("OperationPreferences" + "." + "FailureTolerancePercentage", StringUtils.FromInt(publicRequest.OperationPreferences.FailureTolerancePercentage));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.OperationPreferences.IsSetMaxConcurrentCount())
                     {
                         request.Parameters.Add("OperationPreferences" + "." + "MaxConcurrentCount", StringUtils.FromInt(publicRequest.OperationPreferences.MaxConcurrentCount));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.OperationPreferences.IsSetMaxConcurrentPercentage())
                     {
                         request.Parameters.Add("OperationPreferences" + "." + "MaxConcurrentPercentage", StringUtils.FromInt(publicRequest.OperationPreferences.MaxConcurrentPercentage));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.OperationPreferences.IsSetRegionConcurrencyType())
                     {
                         request.Parameters.Add("OperationPreferences" + "." + "RegionConcurrencyType", StringUtils.FromString(publicRequest.OperationPreferences.RegionConcurrencyType));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.OperationPreferences.IsSetRegionOrder())
                     {
                         int publicRequestOperationPreferenceslistValueIndex = 1;
@@ -182,7 +206,9 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                             publicRequestOperationPreferenceslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetParameters())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -192,25 +218,31 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterKey", StringUtils.FromString(publicRequestlistValue.ParameterKey));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetParameterValue())
                         {
                             request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResolvedValue())
                         {
                             request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResolvedValue", StringUtils.FromString(publicRequestlistValue.ResolvedValue));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetUsePreviousValue())
                         {
                             request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UsePreviousValue", StringUtils.FromBool(publicRequestlistValue.UsePreviousValue));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPermissionModel())
                 {
                     request.Parameters.Add("PermissionModel", StringUtils.FromString(publicRequest.PermissionModel));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRegions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -220,10 +252,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackSetName())
                 {
                     request.Parameters.Add("StackSetName", StringUtils.FromString(publicRequest.StackSetName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -233,25 +267,31 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateBody())
                 {
                     request.Parameters.Add("TemplateBody", StringUtils.FromString(publicRequest.TemplateBody));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateURL())
                 {
                     request.Parameters.Add("TemplateURL", StringUtils.FromString(publicRequest.TemplateURL));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUsePreviousTemplate())
                 {
                     request.Parameters.Add("UsePreviousTemplate", StringUtils.FromBool(publicRequest.UsePreviousTemplate));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

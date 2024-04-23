@@ -37,13 +37,13 @@ namespace Amazon.QuickSight.Model
         private AxisDisplayOptions _categoryAxis;
         private ChartAxisLabelOptions _categoryLabelOptions;
         private ChartAxisLabelOptions _colorLabelOptions;
-        private List<ContributionAnalysisDefault> _contributionAnalysisDefaults = new List<ContributionAnalysisDefault>();
+        private List<ContributionAnalysisDefault> _contributionAnalysisDefaults = AWSConfigs.InitializeCollections ? new List<ContributionAnalysisDefault>() : null;
         private DataLabelOptions _dataLabels;
         private BarChartFieldWells _fieldWells;
         private VisualInteractionOptions _interactions;
         private LegendOptions _legend;
         private BarChartOrientation _orientation;
-        private List<ReferenceLine> _referenceLines = new List<ReferenceLine>();
+        private List<ReferenceLine> _referenceLines = AWSConfigs.InitializeCollections ? new List<ReferenceLine>() : null;
         private SmallMultiplesOptions _smallMultiplesOptions;
         private BarChartSortConfiguration _sortConfiguration;
         private TooltipOptions _tooltip;
@@ -142,7 +142,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ContributionAnalysisDefaults property is set
         internal bool IsSetContributionAnalysisDefaults()
         {
-            return this._contributionAnalysisDefaults != null && this._contributionAnalysisDefaults.Count > 0; 
+            return this._contributionAnalysisDefaults != null && (this._contributionAnalysisDefaults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -265,7 +265,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ReferenceLines property is set
         internal bool IsSetReferenceLines()
         {
-            return this._referenceLines != null && this._referenceLines.Count > 0; 
+            return this._referenceLines != null && (this._referenceLines.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

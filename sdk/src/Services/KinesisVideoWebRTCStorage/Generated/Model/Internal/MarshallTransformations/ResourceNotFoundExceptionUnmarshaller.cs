@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -83,3 +84,4 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
         }
     }
 }
+#pragma warning restore CS0612,CS0618

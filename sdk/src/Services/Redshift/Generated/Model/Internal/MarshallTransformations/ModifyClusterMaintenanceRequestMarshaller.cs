@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,26 +63,32 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeferMaintenance())
                 {
                     request.Parameters.Add("DeferMaintenance", StringUtils.FromBool(publicRequest.DeferMaintenance));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeferMaintenanceDuration())
                 {
                     request.Parameters.Add("DeferMaintenanceDuration", StringUtils.FromInt(publicRequest.DeferMaintenanceDuration));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeferMaintenanceEndTime())
                 {
-                    request.Parameters.Add("DeferMaintenanceEndTime", StringUtils.FromDateTimeToISO8601(publicRequest.DeferMaintenanceEndTime));
+                    request.Parameters.Add("DeferMaintenanceEndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DeferMaintenanceEndTime));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeferMaintenanceIdentifier())
                 {
                     request.Parameters.Add("DeferMaintenanceIdentifier", StringUtils.FromString(publicRequest.DeferMaintenanceIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeferMaintenanceStartTime())
                 {
-                    request.Parameters.Add("DeferMaintenanceStartTime", StringUtils.FromDateTimeToISO8601(publicRequest.DeferMaintenanceStartTime));
+                    request.Parameters.Add("DeferMaintenanceStartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DeferMaintenanceStartTime));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

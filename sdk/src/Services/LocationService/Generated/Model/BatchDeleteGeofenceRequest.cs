@@ -41,7 +41,7 @@ namespace Amazon.LocationService.Model
     public partial class BatchDeleteGeofenceRequest : AmazonLocationServiceRequest
     {
         private string _collectionName;
-        private List<string> _geofenceIds = new List<string>();
+        private List<string> _geofenceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CollectionName. 
@@ -78,7 +78,7 @@ namespace Amazon.LocationService.Model
         // Check to see if GeofenceIds property is set
         internal bool IsSetGeofenceIds()
         {
-            return this._geofenceIds != null && this._geofenceIds.Count > 0; 
+            return this._geofenceIds != null && (this._geofenceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

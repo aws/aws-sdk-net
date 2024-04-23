@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OAuth2Credentials requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccessToken())
             {
                 context.Writer.WritePropertyName("accessToken");
@@ -89,3 +92,4 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GeneralName requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDirectoryName())
             {
                 context.Writer.WritePropertyName("DirectoryName");
@@ -117,3 +120,4 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

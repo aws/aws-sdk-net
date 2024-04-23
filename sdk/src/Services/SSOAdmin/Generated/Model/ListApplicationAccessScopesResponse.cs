@@ -34,7 +34,7 @@ namespace Amazon.SSOAdmin.Model
     public partial class ListApplicationAccessScopesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScopeDetails> _scopes = new List<ScopeDetails>();
+        private List<ScopeDetails> _scopes = AWSConfigs.InitializeCollections ? new List<ScopeDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -76,7 +76,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if Scopes property is set
         internal bool IsSetScopes()
         {
-            return this._scopes != null && this._scopes.Count > 0; 
+            return this._scopes != null && (this._scopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

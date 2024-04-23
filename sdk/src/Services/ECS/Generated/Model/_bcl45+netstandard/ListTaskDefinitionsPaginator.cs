@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
         /// Enumerable containing all of the TaskDefinitionArns
         /// </summary>
         public IPaginatedEnumerable<string> TaskDefinitionArns => 
-            new PaginatedResultKeyResponse<ListTaskDefinitionsResponse, string>(this, (i) => i.TaskDefinitionArns);
+            new PaginatedResultKeyResponse<ListTaskDefinitionsResponse, string>(this, (i) => i.TaskDefinitionArns ?? new List<string>());
 
         internal ListTaskDefinitionsPaginator(IAmazonECS client, ListTaskDefinitionsRequest request)
         {

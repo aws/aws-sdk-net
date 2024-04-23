@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         private SSEType _sseType;
         private DateTime? _startTime;
         private SnapshotState _state;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _volumeId;
         private int? _volumeSize;
 
@@ -86,8 +86,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property OutpostArn. 
         /// <para>
         /// The ARN of the Outpost on which the snapshot is stored. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon
-        /// EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon
+        /// EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         public string OutpostArn
@@ -226,7 +226,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class DescribeProductViewResponse : AmazonWebServiceResponse
     {
         private ProductViewSummary _productViewSummary;
-        private List<ProvisioningArtifact> _provisioningArtifacts = new List<ProvisioningArtifact>();
+        private List<ProvisioningArtifact> _provisioningArtifacts = AWSConfigs.InitializeCollections ? new List<ProvisioningArtifact>() : null;
 
         /// <summary>
         /// Gets and sets the property ProductViewSummary. 
@@ -69,7 +69,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisioningArtifacts property is set
         internal bool IsSetProvisioningArtifacts()
         {
-            return this._provisioningArtifacts != null && this._provisioningArtifacts.Count > 0; 
+            return this._provisioningArtifacts != null && (this._provisioningArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

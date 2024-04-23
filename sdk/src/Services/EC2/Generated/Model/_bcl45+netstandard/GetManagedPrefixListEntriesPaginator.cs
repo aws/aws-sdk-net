@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Entries
         /// </summary>
         public IPaginatedEnumerable<PrefixListEntry> Entries => 
-            new PaginatedResultKeyResponse<GetManagedPrefixListEntriesResponse, PrefixListEntry>(this, (i) => i.Entries);
+            new PaginatedResultKeyResponse<GetManagedPrefixListEntriesResponse, PrefixListEntry>(this, (i) => i.Entries ?? new List<PrefixListEntry>());
 
         internal GetManagedPrefixListEntriesPaginator(IAmazonEC2 client, GetManagedPrefixListEntriesRequest request)
         {

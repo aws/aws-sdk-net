@@ -41,7 +41,7 @@ namespace Amazon.EventBridge.Model
     /// </summary>
     public partial class PutPartnerEventsRequest : AmazonEventBridgeRequest
     {
-        private List<PutPartnerEventsRequestEntry> _entries = new List<PutPartnerEventsRequestEntry>();
+        private List<PutPartnerEventsRequestEntry> _entries = AWSConfigs.InitializeCollections ? new List<PutPartnerEventsRequestEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Entries. 
@@ -59,7 +59,7 @@ namespace Amazon.EventBridge.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

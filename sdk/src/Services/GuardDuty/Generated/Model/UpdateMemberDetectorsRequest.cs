@@ -34,6 +34,14 @@ namespace Amazon.GuardDuty.Model
     /// 
     ///  
     /// <para>
+    /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+    /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+    /// these two features because Runtime Monitoring already includes the threat detection
+    /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+    /// Monitoring</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// There might be regional differences because some data sources might not be available
     /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
     /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
@@ -42,10 +50,10 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class UpdateMemberDetectorsRequest : AmazonGuardDutyRequest
     {
-        private List<string> _accountIds = new List<string>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DataSourceConfigurations _dataSources;
         private string _detectorId;
-        private List<MemberFeaturesConfiguration> _features = new List<MemberFeaturesConfiguration>();
+        private List<MemberFeaturesConfiguration> _features = AWSConfigs.InitializeCollections ? new List<MemberFeaturesConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountIds. 
@@ -63,7 +71,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +127,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

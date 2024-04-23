@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,14 +68,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcId())
                 {
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

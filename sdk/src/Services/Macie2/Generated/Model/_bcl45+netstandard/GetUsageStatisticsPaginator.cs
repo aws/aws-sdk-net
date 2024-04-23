@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the Records
         /// </summary>
         public IPaginatedEnumerable<UsageRecord> Records => 
-            new PaginatedResultKeyResponse<GetUsageStatisticsResponse, UsageRecord>(this, (i) => i.Records);
+            new PaginatedResultKeyResponse<GetUsageStatisticsResponse, UsageRecord>(this, (i) => i.Records ?? new List<UsageRecord>());
 
         internal GetUsageStatisticsPaginator(IAmazonMacie2 client, GetUsageStatisticsRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.FMS.Model
     public partial class ListProtocolsListsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProtocolsListDataSummary> _protocolsLists = new List<ProtocolsListDataSummary>();
+        private List<ProtocolsListDataSummary> _protocolsLists = AWSConfigs.InitializeCollections ? new List<ProtocolsListDataSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.FMS.Model
         // Check to see if ProtocolsLists property is set
         internal bool IsSetProtocolsLists()
         {
-            return this._protocolsLists != null && this._protocolsLists.Count > 0; 
+            return this._protocolsLists != null && (this._protocolsLists.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

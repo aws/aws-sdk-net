@@ -45,25 +45,25 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the CloudFormation
         /// </summary>
         public IPaginatedEnumerable<CloudFormationHealth> CloudFormation => 
-            new PaginatedResultKeyResponse<DescribeOrganizationResourceCollectionHealthResponse, CloudFormationHealth>(this, (i) => i.CloudFormation);
+            new PaginatedResultKeyResponse<DescribeOrganizationResourceCollectionHealthResponse, CloudFormationHealth>(this, (i) => i.CloudFormation ?? new List<CloudFormationHealth>());
 
         /// <summary>
         /// Enumerable containing all of the Account
         /// </summary>
         public IPaginatedEnumerable<AccountHealth> Account => 
-            new PaginatedResultKeyResponse<DescribeOrganizationResourceCollectionHealthResponse, AccountHealth>(this, (i) => i.Account);
+            new PaginatedResultKeyResponse<DescribeOrganizationResourceCollectionHealthResponse, AccountHealth>(this, (i) => i.Account ?? new List<AccountHealth>());
 
         /// <summary>
         /// Enumerable containing all of the Service
         /// </summary>
         public IPaginatedEnumerable<ServiceHealth> Service => 
-            new PaginatedResultKeyResponse<DescribeOrganizationResourceCollectionHealthResponse, ServiceHealth>(this, (i) => i.Service);
+            new PaginatedResultKeyResponse<DescribeOrganizationResourceCollectionHealthResponse, ServiceHealth>(this, (i) => i.Service ?? new List<ServiceHealth>());
 
         /// <summary>
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<TagHealth> Tags => 
-            new PaginatedResultKeyResponse<DescribeOrganizationResourceCollectionHealthResponse, TagHealth>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<DescribeOrganizationResourceCollectionHealthResponse, TagHealth>(this, (i) => i.Tags ?? new List<TagHealth>());
 
         internal DescribeOrganizationResourceCollectionHealthPaginator(IAmazonDevOpsGuru client, DescribeOrganizationResourceCollectionHealthRequest request)
         {

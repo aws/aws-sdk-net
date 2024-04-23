@@ -45,13 +45,13 @@ namespace Amazon.Kinesis.Model
         /// Enumerable containing all of the StreamNames
         /// </summary>
         public IPaginatedEnumerable<string> StreamNames => 
-            new PaginatedResultKeyResponse<ListStreamsResponse, string>(this, (i) => i.StreamNames);
+            new PaginatedResultKeyResponse<ListStreamsResponse, string>(this, (i) => i.StreamNames ?? new List<string>());
 
         /// <summary>
         /// Enumerable containing all of the StreamSummaries
         /// </summary>
         public IPaginatedEnumerable<StreamSummary> StreamSummaries => 
-            new PaginatedResultKeyResponse<ListStreamsResponse, StreamSummary>(this, (i) => i.StreamSummaries);
+            new PaginatedResultKeyResponse<ListStreamsResponse, StreamSummary>(this, (i) => i.StreamSummaries ?? new List<StreamSummary>());
 
         internal ListStreamsPaginator(IAmazonKinesis client, ListStreamsRequest request)
         {

@@ -36,7 +36,7 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class CreateDataLakeOrganizationConfigurationRequest : AmazonSecurityLakeRequest
     {
-        private List<DataLakeAutoEnableNewAccountConfiguration> _autoEnableNewAccount = new List<DataLakeAutoEnableNewAccountConfiguration>();
+        private List<DataLakeAutoEnableNewAccountConfiguration> _autoEnableNewAccount = AWSConfigs.InitializeCollections ? new List<DataLakeAutoEnableNewAccountConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoEnableNewAccount. 
@@ -55,7 +55,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if AutoEnableNewAccount property is set
         internal bool IsSetAutoEnableNewAccount()
         {
-            return this._autoEnableNewAccount != null && this._autoEnableNewAccount.Count > 0; 
+            return this._autoEnableNewAccount != null && (this._autoEnableNewAccount.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// Enumerable containing all of the AssociatedApplications
         /// </summary>
         public IPaginatedEnumerable<AssociatedApplication> AssociatedApplications => 
-            new PaginatedResultKeyResponse<GetServerDetailsResponse, AssociatedApplication>(this, (i) => i.AssociatedApplications);
+            new PaginatedResultKeyResponse<GetServerDetailsResponse, AssociatedApplication>(this, (i) => i.AssociatedApplications ?? new List<AssociatedApplication>());
 
         internal GetServerDetailsPaginator(IAmazonMigrationHubStrategyRecommendations client, GetServerDetailsRequest request)
         {

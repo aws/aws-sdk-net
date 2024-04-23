@@ -34,7 +34,7 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class UpdateLabelGroupRequest : AmazonLookoutEquipmentRequest
     {
-        private List<string> _faultCodes = new List<string>();
+        private List<string> _faultCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _labelGroupName;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if FaultCodes property is set
         internal bool IsSetFaultCodes()
         {
-            return this._faultCodes != null && this._faultCodes.Count > 0; 
+            return this._faultCodes != null && (this._faultCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

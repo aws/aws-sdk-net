@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBClusterSnapshotIdentifier())
                 {
                     request.Parameters.Add("DBClusterSnapshotIdentifier", StringUtils.FromString(publicRequest.DBClusterSnapshotIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFilters())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,6 +78,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -84,29 +88,36 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIncludePublic())
                 {
                     request.Parameters.Add("IncludePublic", StringUtils.FromBool(publicRequest.IncludePublic));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIncludeShared())
                 {
                     request.Parameters.Add("IncludeShared", StringUtils.FromBool(publicRequest.IncludeShared));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotType())
                 {
                     request.Parameters.Add("SnapshotType", StringUtils.FromString(publicRequest.SnapshotType));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

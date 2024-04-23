@@ -51,7 +51,7 @@ namespace Amazon.CloudFormation.Model
         private ProvisioningType _provisioningType;
         private string _publicVersionNumber;
         private string _publisherId;
-        private List<RequiredActivatedType> _requiredActivatedTypes = new List<RequiredActivatedType>();
+        private List<RequiredActivatedType> _requiredActivatedTypes = AWSConfigs.InitializeCollections ? new List<RequiredActivatedType>() : null;
         private string _schema;
         private string _sourceUrl;
         private DateTime? _timeCreated;
@@ -109,8 +109,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">
-        /// <c>SetTypeConfiguration</c> </a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -137,8 +137,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// This applies only to private extensions you have registered in your account. For public
         /// extensions, both those provided by Amazon Web Services and published by third parties,
-        /// CloudFormation returns <c>null</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-        /// <c>RegisterType</c> </a>.
+        /// CloudFormation returns <c>null</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
         ///  
         /// <para>
@@ -237,8 +236,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM execution role used to register the extension.
         /// This applies only to private extensions you have registered in your account. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-        /// <c>RegisterType</c> </a>.
+        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
         ///  
         /// <para>
@@ -317,14 +315,12 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         /// Private extensions you have registered in your account. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-        /// <c>RegisterType</c> </a>.
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Public extensions you have activated in your account with auto-update specified. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-        /// <c>ActivateType</c> </a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -370,8 +366,7 @@ namespace Amazon.CloudFormation.Model
         /// Contains logging configuration information for private extensions. This applies only
         /// to private extensions you have registered in your account. For public extensions,
         /// both those provided by Amazon Web Services and published by third parties, CloudFormation
-        /// returns <c>null</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-        /// <c>RegisterType</c> </a>.
+        /// returns <c>null</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
         /// </summary>
         public LoggingConfig LoggingConfig
@@ -551,7 +546,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if RequiredActivatedTypes property is set
         internal bool IsSetRequiredActivatedTypes()
         {
-            return this._requiredActivatedTypes != null && this._requiredActivatedTypes.Count > 0; 
+            return this._requiredActivatedTypes != null && (this._requiredActivatedTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -641,8 +636,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If the extension is a public third-party type you have activated with a type name
-        /// alias, CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-        /// <c>ActivateType</c> </a>.
+        /// alias, CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=204)]

@@ -33,7 +33,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class DeleteAttributesResponse : AmazonWebServiceResponse
     {
-        private List<Attribute> _attributes = new List<Attribute>();
+        private List<Attribute> _attributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -50,7 +50,7 @@ namespace Amazon.ECS.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.Signer.Model
     /// </summary>
     public partial class EncryptionAlgorithmOptions
     {
-        private List<string> _allowedValues = new List<string>();
+        private List<string> _allowedValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EncryptionAlgorithm _defaultValue;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Signer.Model
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this._allowedValues != null && this._allowedValues.Count > 0; 
+            return this._allowedValues != null && (this._allowedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

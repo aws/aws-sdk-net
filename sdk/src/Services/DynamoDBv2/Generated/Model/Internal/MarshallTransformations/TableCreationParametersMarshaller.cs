@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TableCreationParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributeDefinitions())
             {
                 context.Writer.WritePropertyName("AttributeDefinitions");
@@ -136,3 +139,4 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

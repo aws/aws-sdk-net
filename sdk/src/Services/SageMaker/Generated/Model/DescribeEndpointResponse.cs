@@ -45,8 +45,8 @@ namespace Amazon.SageMaker.Model
         private DeploymentConfig _lastDeploymentConfig;
         private DateTime? _lastModifiedTime;
         private PendingDeploymentSummary _pendingDeploymentSummary;
-        private List<ProductionVariantSummary> _productionVariants = new List<ProductionVariantSummary>();
-        private List<ProductionVariantSummary> _shadowProductionVariants = new List<ProductionVariantSummary>();
+        private List<ProductionVariantSummary> _productionVariants = AWSConfigs.InitializeCollections ? new List<ProductionVariantSummary>() : null;
+        private List<ProductionVariantSummary> _shadowProductionVariants = AWSConfigs.InitializeCollections ? new List<ProductionVariantSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property AsyncInferenceConfig. 
@@ -344,7 +344,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProductionVariants property is set
         internal bool IsSetProductionVariants()
         {
-            return this._productionVariants != null && this._productionVariants.Count > 0; 
+            return this._productionVariants != null && (this._productionVariants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -365,7 +365,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ShadowProductionVariants property is set
         internal bool IsSetShadowProductionVariants()
         {
-            return this._shadowProductionVariants != null && this._shadowProductionVariants.Count > 0; 
+            return this._shadowProductionVariants != null && (this._shadowProductionVariants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

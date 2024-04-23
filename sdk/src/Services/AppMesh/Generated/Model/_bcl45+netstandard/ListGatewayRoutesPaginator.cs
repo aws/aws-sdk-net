@@ -45,7 +45,7 @@ namespace Amazon.AppMesh.Model
         /// Enumerable containing all of the GatewayRoutes
         /// </summary>
         public IPaginatedEnumerable<GatewayRouteRef> GatewayRoutes => 
-            new PaginatedResultKeyResponse<ListGatewayRoutesResponse, GatewayRouteRef>(this, (i) => i.GatewayRoutes);
+            new PaginatedResultKeyResponse<ListGatewayRoutesResponse, GatewayRouteRef>(this, (i) => i.GatewayRoutes ?? new List<GatewayRouteRef>());
 
         internal ListGatewayRoutesPaginator(IAmazonAppMesh client, ListGatewayRoutesRequest request)
         {

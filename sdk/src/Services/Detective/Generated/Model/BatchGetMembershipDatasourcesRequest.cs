@@ -34,7 +34,7 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class BatchGetMembershipDatasourcesRequest : AmazonDetectiveRequest
     {
-        private List<string> _graphArns = new List<string>();
+        private List<string> _graphArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GraphArns. 
@@ -52,7 +52,7 @@ namespace Amazon.Detective.Model
         // Check to see if GraphArns property is set
         internal bool IsSetGraphArns()
         {
-            return this._graphArns != null && this._graphArns.Count > 0; 
+            return this._graphArns != null && (this._graphArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

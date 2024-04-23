@@ -45,7 +45,7 @@ namespace Amazon.OAM.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ListSinksItem> Items => 
-            new PaginatedResultKeyResponse<ListSinksResponse, ListSinksItem>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListSinksResponse, ListSinksItem>(this, (i) => i.Items ?? new List<ListSinksItem>());
 
         internal ListSinksPaginator(IAmazonOAM client, ListSinksRequest request)
         {

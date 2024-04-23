@@ -45,7 +45,7 @@ namespace Amazon.TrustedAdvisor.Model
         /// Enumerable containing all of the CheckSummaries
         /// </summary>
         public IPaginatedEnumerable<CheckSummary> CheckSummaries => 
-            new PaginatedResultKeyResponse<ListChecksResponse, CheckSummary>(this, (i) => i.CheckSummaries);
+            new PaginatedResultKeyResponse<ListChecksResponse, CheckSummary>(this, (i) => i.CheckSummaries ?? new List<CheckSummary>());
 
         internal ListChecksPaginator(IAmazonTrustedAdvisor client, ListChecksRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListModelMetadataResponse : AmazonWebServiceResponse
     {
-        private List<ModelMetadataSummary> _modelMetadataSummaries = new List<ModelMetadataSummary>();
+        private List<ModelMetadataSummary> _modelMetadataSummaries = AWSConfigs.InitializeCollections ? new List<ModelMetadataSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelMetadataSummaries property is set
         internal bool IsSetModelMetadataSummaries()
         {
-            return this._modelMetadataSummaries != null && this._modelMetadataSummaries.Count > 0; 
+            return this._modelMetadataSummaries != null && (this._modelMetadataSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

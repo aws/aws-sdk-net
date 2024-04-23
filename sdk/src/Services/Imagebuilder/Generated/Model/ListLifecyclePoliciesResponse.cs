@@ -33,7 +33,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListLifecyclePoliciesResponse : AmazonWebServiceResponse
     {
-        private List<LifecyclePolicySummary> _lifecyclePolicySummaryList = new List<LifecyclePolicySummary>();
+        private List<LifecyclePolicySummary> _lifecyclePolicySummaryList = AWSConfigs.InitializeCollections ? new List<LifecyclePolicySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if LifecyclePolicySummaryList property is set
         internal bool IsSetLifecyclePolicySummaryList()
         {
-            return this._lifecyclePolicySummaryList != null && this._lifecyclePolicySummaryList.Count > 0; 
+            return this._lifecyclePolicySummaryList != null && (this._lifecyclePolicySummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Amazon.Shield.Model
     public partial class ProtectionGroup
     {
         private ProtectionGroupAggregation _aggregation;
-        private List<string> _members = new List<string>();
+        private List<string> _members = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ProtectionGroupPattern _pattern;
         private string _protectionGroupArn;
         private string _protectionGroupId;
@@ -97,7 +97,7 @@ namespace Amazon.Shield.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

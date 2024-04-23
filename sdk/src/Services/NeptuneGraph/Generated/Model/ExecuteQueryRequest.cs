@@ -30,8 +30,7 @@ namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
     /// Container for the parameters to the ExecuteQuery operation.
-    /// Execute an openCypher query. Currently, the SDK does not support parameterized queries.
-    /// If you want to make a parameterized query call, you can use an HTTP request. 
+    /// Execute an openCypher query.
     /// 
     ///  
     /// <para>
@@ -51,21 +50,14 @@ namespace Amazon.NeptuneGraph.Model
     /// <para>
     /// neptune-graph:DeleteDataViaQuery
     /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    ///  Non-parametrized queries are not considered for plan caching. You can force plan
-    /// caching with <c>planCache=enabled</c>. The plan cache will be reused only for the
-    /// same exact query. Slight variations in the query will not be able to reuse the query
-    /// plan cache. 
-    /// </para>
-    ///  </note>
+    ///  </li> </ul>
     /// </summary>
     public partial class ExecuteQueryRequest : AmazonNeptuneGraphRequest
     {
         private ExplainMode _explainMode;
         private string _graphIdentifier;
         private QueryLanguage _language;
-        private Dictionary<string, Amazon.Runtime.Documents.Document> _parameters = new Dictionary<string, Amazon.Runtime.Documents.Document>();
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
         private PlanCacheType _planCache;
         private string _queryString;
         private int? _queryTimeoutMilliseconds;
@@ -144,7 +136,7 @@ namespace Amazon.NeptuneGraph.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

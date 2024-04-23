@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// Enumerable containing all of the Layers
         /// </summary>
         public IPaginatedEnumerable<LayersListItem> Layers => 
-            new PaginatedResultKeyResponse<ListLayersResponse, LayersListItem>(this, (i) => i.Layers);
+            new PaginatedResultKeyResponse<ListLayersResponse, LayersListItem>(this, (i) => i.Layers ?? new List<LayersListItem>());
 
         internal ListLayersPaginator(IAmazonLambda client, ListLayersRequest request)
         {

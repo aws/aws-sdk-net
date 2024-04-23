@@ -180,6 +180,64 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  BatchGetSchemaAnalysisRule
+
+
+        /// <summary>
+        /// Retrieves multiple analysis rule schemas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSchemaAnalysisRule service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetSchemaAnalysisRule service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetSchemaAnalysisRule">REST API Reference for BatchGetSchemaAnalysisRule Operation</seealso>
+        BatchGetSchemaAnalysisRuleResponse BatchGetSchemaAnalysisRule(BatchGetSchemaAnalysisRuleRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves multiple analysis rule schemas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSchemaAnalysisRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetSchemaAnalysisRule service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetSchemaAnalysisRule">REST API Reference for BatchGetSchemaAnalysisRule Operation</seealso>
+        Task<BatchGetSchemaAnalysisRuleResponse> BatchGetSchemaAnalysisRuleAsync(BatchGetSchemaAnalysisRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateAnalysisTemplate
 
 

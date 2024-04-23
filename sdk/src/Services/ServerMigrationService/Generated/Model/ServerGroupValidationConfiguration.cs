@@ -34,7 +34,7 @@ namespace Amazon.ServerMigrationService.Model
     public partial class ServerGroupValidationConfiguration
     {
         private string _serverGroupId;
-        private List<ServerValidationConfiguration> _serverValidationConfigurations = new List<ServerValidationConfiguration>();
+        private List<ServerValidationConfiguration> _serverValidationConfigurations = AWSConfigs.InitializeCollections ? new List<ServerValidationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ServerGroupId. 
@@ -69,7 +69,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ServerValidationConfigurations property is set
         internal bool IsSetServerValidationConfigurations()
         {
-            return this._serverValidationConfigurations != null && this._serverValidationConfigurations.Count > 0; 
+            return this._serverValidationConfigurations != null && (this._serverValidationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

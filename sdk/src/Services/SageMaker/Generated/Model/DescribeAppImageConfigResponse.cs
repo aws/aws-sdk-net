@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _appImageConfigArn;
         private string _appImageConfigName;
+        private CodeEditorAppImageConfig _codeEditorAppImageConfig;
         private DateTime? _creationTime;
         private JupyterLabAppImageConfig _jupyterLabAppImageConfig;
         private KernelGatewayImageConfig _kernelGatewayImageConfig;
@@ -76,6 +77,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAppImageConfigName()
         {
             return this._appImageConfigName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeEditorAppImageConfig. 
+        /// <para>
+        /// The configuration of the Code Editor app.
+        /// </para>
+        /// </summary>
+        public CodeEditorAppImageConfig CodeEditorAppImageConfig
+        {
+            get { return this._codeEditorAppImageConfig; }
+            set { this._codeEditorAppImageConfig = value; }
+        }
+
+        // Check to see if CodeEditorAppImageConfig property is set
+        internal bool IsSetCodeEditorAppImageConfig()
+        {
+            return this._codeEditorAppImageConfig != null;
         }
 
         /// <summary>

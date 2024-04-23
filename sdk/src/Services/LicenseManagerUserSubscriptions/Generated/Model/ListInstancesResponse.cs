@@ -33,7 +33,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     /// </summary>
     public partial class ListInstancesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceSummary> _instanceSummaries = new List<InstanceSummary>();
+        private List<InstanceSummary> _instanceSummaries = AWSConfigs.InitializeCollections ? new List<InstanceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         // Check to see if InstanceSummaries property is set
         internal bool IsSetInstanceSummaries()
         {
-            return this._instanceSummaries != null && this._instanceSummaries.Count > 0; 
+            return this._instanceSummaries != null && (this._instanceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

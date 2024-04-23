@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all of the Controls
         /// </summary>
         public IPaginatedEnumerable<StandardsControl> Controls => 
-            new PaginatedResultKeyResponse<DescribeStandardsControlsResponse, StandardsControl>(this, (i) => i.Controls);
+            new PaginatedResultKeyResponse<DescribeStandardsControlsResponse, StandardsControl>(this, (i) => i.Controls ?? new List<StandardsControl>());
 
         internal DescribeStandardsControlsPaginator(IAmazonSecurityHub client, DescribeStandardsControlsRequest request)
         {

@@ -38,11 +38,11 @@ namespace Amazon.QConnect.Model
         private string _contentType;
         private string _knowledgeBaseArn;
         private string _knowledgeBaseId;
-        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
         private string _revisionId;
         private ContentStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _title;
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.QConnect.Model
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
         /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
-        /// base if you're storing Amazon Q Content resource to it.
+        /// base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,8 +145,9 @@ namespace Amazon.QConnect.Model
         /// Gets and sets the property Metadata. 
         /// <para>
         /// A key/value map to store attributes without affecting tagging or recommendations.
-        /// For example, when synchronizing data between an external system and Amazon Q, you
-        /// can store an external version identifier as metadata to utilize for determining drift.
+        /// For example, when synchronizing data between an external system and Amazon Q in Connect,
+        /// you can store an external version identifier as metadata to utilize for determining
+        /// drift.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
@@ -159,7 +160,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -234,7 +235,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

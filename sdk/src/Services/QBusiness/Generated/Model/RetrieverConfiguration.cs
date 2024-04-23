@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Provides information on how the retriever used for your Amazon Q application is configured.
+    /// Provides information on how the retriever used for your Amazon Q Business application
+    /// is configured.
     /// </summary>
     public partial class RetrieverConfiguration
     {
@@ -40,7 +41,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property KendraIndexConfiguration. 
         /// <para>
         /// Provides information on how the Amazon Kendra index used as a retriever for your Amazon
-        /// Q application is configured.
+        /// Q Business application is configured.
         /// </para>
         /// </summary>
         public KendraIndexConfiguration KendraIndexConfiguration
@@ -58,8 +59,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property NativeIndexConfiguration. 
         /// <para>
-        /// Provides information on how a Amazon Q index used as a retriever for your Amazon Q
-        /// application is configured.
+        /// Provides information on how a Amazon Q Business index used as a retriever for your
+        /// Amazon Q Business application is configured.
         /// </para>
         /// </summary>
         public NativeIndexConfiguration NativeIndexConfiguration

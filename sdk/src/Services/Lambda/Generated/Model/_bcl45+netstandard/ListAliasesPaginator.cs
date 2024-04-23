@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// Enumerable containing all of the Aliases
         /// </summary>
         public IPaginatedEnumerable<AliasConfiguration> Aliases => 
-            new PaginatedResultKeyResponse<ListAliasesResponse, AliasConfiguration>(this, (i) => i.Aliases);
+            new PaginatedResultKeyResponse<ListAliasesResponse, AliasConfiguration>(this, (i) => i.Aliases ?? new List<AliasConfiguration>());
 
         internal ListAliasesPaginator(IAmazonLambda client, ListAliasesRequest request)
         {

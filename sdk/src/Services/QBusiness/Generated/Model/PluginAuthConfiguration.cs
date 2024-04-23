@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Authentication configuration information for an Amazon Q plugin.
+    /// Authentication configuration information for an Amazon Q Business plugin.
     /// </summary>
     public partial class PluginAuthConfiguration
     {

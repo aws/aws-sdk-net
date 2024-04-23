@@ -34,7 +34,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListOfferingPromotionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OfferingPromotion> _offeringPromotions = new List<OfferingPromotion>();
+        private List<OfferingPromotion> _offeringPromotions = AWSConfigs.InitializeCollections ? new List<OfferingPromotion>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if OfferingPromotions property is set
         internal bool IsSetOfferingPromotions()
         {
-            return this._offeringPromotions != null && this._offeringPromotions.Count > 0; 
+            return this._offeringPromotions != null && (this._offeringPromotions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class CloudFormationCollectionFilter
     {
-        private List<string> _stackNames = new List<string>();
+        private List<string> _stackNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property StackNames. 
@@ -53,7 +53,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if StackNames property is set
         internal bool IsSetStackNames()
         {
-            return this._stackNames != null && this._stackNames.Count > 0; 
+            return this._stackNames != null && (this._stackNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

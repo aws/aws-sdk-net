@@ -33,10 +33,10 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class BatchGetAssetPropertyValueHistoryResponse : AmazonWebServiceResponse
     {
-        private List<BatchGetAssetPropertyValueHistoryErrorEntry> _errorEntries = new List<BatchGetAssetPropertyValueHistoryErrorEntry>();
+        private List<BatchGetAssetPropertyValueHistoryErrorEntry> _errorEntries = AWSConfigs.InitializeCollections ? new List<BatchGetAssetPropertyValueHistoryErrorEntry>() : null;
         private string _nextToken;
-        private List<BatchGetAssetPropertyValueHistorySkippedEntry> _skippedEntries = new List<BatchGetAssetPropertyValueHistorySkippedEntry>();
-        private List<BatchGetAssetPropertyValueHistorySuccessEntry> _successEntries = new List<BatchGetAssetPropertyValueHistorySuccessEntry>();
+        private List<BatchGetAssetPropertyValueHistorySkippedEntry> _skippedEntries = AWSConfigs.InitializeCollections ? new List<BatchGetAssetPropertyValueHistorySkippedEntry>() : null;
+        private List<BatchGetAssetPropertyValueHistorySuccessEntry> _successEntries = AWSConfigs.InitializeCollections ? new List<BatchGetAssetPropertyValueHistorySuccessEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property ErrorEntries. 
@@ -55,7 +55,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if ErrorEntries property is set
         internal bool IsSetErrorEntries()
         {
-            return this._errorEntries != null && this._errorEntries.Count > 0; 
+            return this._errorEntries != null && (this._errorEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if SkippedEntries property is set
         internal bool IsSetSkippedEntries()
         {
-            return this._skippedEntries != null && this._skippedEntries.Count > 0; 
+            return this._skippedEntries != null && (this._skippedEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if SuccessEntries property is set
         internal bool IsSetSuccessEntries()
         {
-            return this._successEntries != null && this._successEntries.Count > 0; 
+            return this._successEntries != null && (this._successEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

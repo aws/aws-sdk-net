@@ -35,7 +35,7 @@ namespace Amazon.Shield.Model
     {
         private AutoRenew _autoRenew;
         private DateTime? _endTime;
-        private List<Limit> _limits = new List<Limit>();
+        private List<Limit> _limits = AWSConfigs.InitializeCollections ? new List<Limit>() : null;
         private ProactiveEngagementStatus _proactiveEngagementStatus;
         private DateTime? _startTime;
         private string _subscriptionArn;
@@ -101,7 +101,7 @@ namespace Amazon.Shield.Model
         // Check to see if Limits property is set
         internal bool IsSetLimits()
         {
-            return this._limits != null && this._limits.Count > 0; 
+            return this._limits != null && (this._limits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

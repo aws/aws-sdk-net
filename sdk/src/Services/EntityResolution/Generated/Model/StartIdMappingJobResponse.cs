@@ -34,6 +34,7 @@ namespace Amazon.EntityResolution.Model
     public partial class StartIdMappingJobResponse : AmazonWebServiceResponse
     {
         private string _jobId;
+        private List<IdMappingJobOutputSource> _outputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingJobOutputSource>() : null;
 
         /// <summary>
         /// Gets and sets the property JobId. 
@@ -52,6 +53,25 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputSourceConfig. 
+        /// <para>
+        /// A list of <c>OutputSource</c> objects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<IdMappingJobOutputSource> OutputSourceConfig
+        {
+            get { return this._outputSourceConfig; }
+            set { this._outputSourceConfig = value; }
+        }
+
+        // Check to see if OutputSourceConfig property is set
+        internal bool IsSetOutputSourceConfig()
+        {
+            return this._outputSourceConfig != null && (this._outputSourceConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

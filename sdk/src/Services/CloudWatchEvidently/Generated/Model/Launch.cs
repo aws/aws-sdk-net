@@ -37,16 +37,16 @@ namespace Amazon.CloudWatchEvidently.Model
         private DateTime? _createdTime;
         private string _description;
         private LaunchExecution _execution;
-        private List<LaunchGroup> _groups = new List<LaunchGroup>();
+        private List<LaunchGroup> _groups = AWSConfigs.InitializeCollections ? new List<LaunchGroup>() : null;
         private DateTime? _lastUpdatedTime;
-        private List<MetricMonitor> _metricMonitors = new List<MetricMonitor>();
+        private List<MetricMonitor> _metricMonitors = AWSConfigs.InitializeCollections ? new List<MetricMonitor>() : null;
         private string _name;
         private string _project;
         private string _randomizationSalt;
         private ScheduledSplitsLaunchDefinition _scheduledSplitsDefinition;
         private LaunchStatus _status;
         private string _statusReason;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private LaunchType _type;
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if MetricMonitors property is set
         internal bool IsSetMetricMonitors()
         {
-            return this._metricMonitors != null && this._metricMonitors.Count > 0; 
+            return this._metricMonitors != null && (this._metricMonitors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -314,7 +314,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

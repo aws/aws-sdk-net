@@ -34,7 +34,7 @@ namespace Amazon.CodeCommit.Model
     public partial class Conflict
     {
         private ConflictMetadata _conflictMetadata;
-        private List<MergeHunk> _mergeHunks = new List<MergeHunk>();
+        private List<MergeHunk> _mergeHunks = AWSConfigs.InitializeCollections ? new List<MergeHunk>() : null;
 
         /// <summary>
         /// Gets and sets the property ConflictMetadata. 
@@ -69,7 +69,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if MergeHunks property is set
         internal bool IsSetMergeHunks()
         {
-            return this._mergeHunks != null && this._mergeHunks.Count > 0; 
+            return this._mergeHunks != null && (this._mergeHunks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

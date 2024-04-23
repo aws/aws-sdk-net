@@ -33,7 +33,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class AccessScope
     {
-        private List<string> _namespaces = new List<string>();
+        private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AccessScopeType _type;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.EKS.Model
         // Check to see if Namespaces property is set
         internal bool IsSetNamespaces()
         {
-            return this._namespaces != null && this._namespaces.Count > 0; 
+            return this._namespaces != null && (this._namespaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,10 +64,22 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("experimentOptions", targetDepth))
+                {
+                    var unmarshaller = ExperimentOptionsUnmarshaller.Instance;
+                    unmarshalledObject.ExperimentOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("experimentTemplateId", targetDepth))
@@ -112,3 +125,4 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

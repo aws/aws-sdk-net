@@ -35,7 +35,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class Environment
     {
-        private Dictionary<string, string> _variables = new Dictionary<string, string>();
+        private Dictionary<string, string> _variables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Variables. 

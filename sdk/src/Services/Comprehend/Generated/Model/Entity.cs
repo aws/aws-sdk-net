@@ -39,7 +39,7 @@ namespace Amazon.Comprehend.Model
     public partial class Entity
     {
         private int? _beginOffset;
-        private List<BlockReference> _blockReferences = new List<BlockReference>();
+        private List<BlockReference> _blockReferences = AWSConfigs.InitializeCollections ? new List<BlockReference>() : null;
         private int? _endOffset;
         private float? _score;
         private string _text;
@@ -83,7 +83,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if BlockReferences property is set
         internal bool IsSetBlockReferences()
         {
-            return this._blockReferences != null && this._blockReferences.Count > 0; 
+            return this._blockReferences != null && (this._blockReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -60,7 +60,7 @@ namespace Amazon.AlexaForBusiness.Model
     public partial class StartDeviceSyncRequest : AmazonAlexaForBusinessRequest
     {
         private string _deviceArn;
-        private List<string> _features = new List<string>();
+        private List<string> _features = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roomArn;
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

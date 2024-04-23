@@ -33,7 +33,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class EnvironmentInfo
     {
-        private List<AvailabilityZoneInfo> _availabilityZoneInformation = new List<AvailabilityZoneInfo>();
+        private List<AvailabilityZoneInfo> _availabilityZoneInformation = AWSConfigs.InitializeCollections ? new List<AvailabilityZoneInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZoneInformation. 
@@ -50,7 +50,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if AvailabilityZoneInformation property is set
         internal bool IsSetAvailabilityZoneInformation()
         {
-            return this._availabilityZoneInformation != null && this._availabilityZoneInformation.Count > 0; 
+            return this._availabilityZoneInformation != null && (this._availabilityZoneInformation.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

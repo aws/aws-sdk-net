@@ -45,7 +45,7 @@ namespace Amazon.CodeCatalyst.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<EventLogEntry> Items => 
-            new PaginatedResultKeyResponse<ListEventLogsResponse, EventLogEntry>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListEventLogsResponse, EventLogEntry>(this, (i) => i.Items ?? new List<EventLogEntry>());
 
         internal ListEventLogsPaginator(IAmazonCodeCatalyst client, ListEventLogsRequest request)
         {

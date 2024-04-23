@@ -168,7 +168,9 @@ namespace Amazon.Runtime.Internal.Auth
 
                 if (r != null)
                 {
+#pragma warning disable CS0612,CS0618
                     var endpoint = r.GetEndpointForService(config.RegionEndpointServiceName, config.ToGetEndpointForServiceOptions());
+#pragma warning restore CS0612,CS0618
                     if (endpoint != null && (endpoint.SignatureVersionOverride == "4" || string.IsNullOrEmpty(endpoint.SignatureVersionOverride)))
                         return true;
                 }

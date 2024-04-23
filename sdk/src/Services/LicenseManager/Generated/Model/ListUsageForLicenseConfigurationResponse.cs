@@ -33,7 +33,7 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class ListUsageForLicenseConfigurationResponse : AmazonWebServiceResponse
     {
-        private List<LicenseConfigurationUsage> _licenseConfigurationUsageList = new List<LicenseConfigurationUsage>();
+        private List<LicenseConfigurationUsage> _licenseConfigurationUsageList = AWSConfigs.InitializeCollections ? new List<LicenseConfigurationUsage>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if LicenseConfigurationUsageList property is set
         internal bool IsSetLicenseConfigurationUsageList()
         {
-            return this._licenseConfigurationUsageList != null && this._licenseConfigurationUsageList.Count > 0; 
+            return this._licenseConfigurationUsageList != null && (this._licenseConfigurationUsageList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

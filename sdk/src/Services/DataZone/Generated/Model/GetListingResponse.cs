@@ -46,7 +46,10 @@ namespace Amazon.DataZone.Model
         private string _updatedBy;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The timestamp of when the listing was created.
+        /// </para>
         /// </summary>
         public DateTime CreatedAt
         {
@@ -79,7 +82,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the listing.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string Description
@@ -95,7 +101,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainId.
+        /// Gets and sets the property DomainId. 
+        /// <para>
+        /// The ID of the Amazon DataZone domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DomainId
@@ -111,7 +120,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID of the listing.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Id
@@ -127,7 +139,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Item.
+        /// Gets and sets the property Item. 
+        /// <para>
+        /// The details of a listing.
+        /// </para>
         /// </summary>
         public ListingItem Item
         {
@@ -142,7 +157,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ListingRevision.
+        /// Gets and sets the property ListingRevision. 
+        /// <para>
+        /// The revision of a listing.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string ListingRevision
@@ -158,7 +176,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the listing.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string Name
@@ -174,7 +195,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the listing.
+        /// </para>
         /// </summary>
         public ListingStatus Status
         {

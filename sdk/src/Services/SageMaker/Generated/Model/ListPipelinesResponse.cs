@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListPipelinesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PipelineSummary> _pipelineSummaries = new List<PipelineSummary>();
+        private List<PipelineSummary> _pipelineSummaries = AWSConfigs.InitializeCollections ? new List<PipelineSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if PipelineSummaries property is set
         internal bool IsSetPipelineSummaries()
         {
-            return this._pipelineSummaries != null && this._pipelineSummaries.Count > 0; 
+            return this._pipelineSummaries != null && (this._pipelineSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

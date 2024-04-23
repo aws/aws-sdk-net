@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class ServiceIntegrationsUnion
     {
-        private List<LakeFormationScopeUnion> _lakeFormation = new List<LakeFormationScopeUnion>();
+        private List<LakeFormationScopeUnion> _lakeFormation = AWSConfigs.InitializeCollections ? new List<LakeFormationScopeUnion>() : null;
 
         /// <summary>
         /// Gets and sets the property LakeFormation. 
@@ -50,7 +50,7 @@ namespace Amazon.Redshift.Model
         // Check to see if LakeFormation property is set
         internal bool IsSetLakeFormation()
         {
-            return this._lakeFormation != null && this._lakeFormation.Count > 0; 
+            return this._lakeFormation != null && (this._lakeFormation.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

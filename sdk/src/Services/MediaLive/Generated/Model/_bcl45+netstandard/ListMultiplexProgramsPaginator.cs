@@ -45,7 +45,7 @@ namespace Amazon.MediaLive.Model
         /// Enumerable containing all of the MultiplexPrograms
         /// </summary>
         public IPaginatedEnumerable<MultiplexProgramSummary> MultiplexPrograms => 
-            new PaginatedResultKeyResponse<ListMultiplexProgramsResponse, MultiplexProgramSummary>(this, (i) => i.MultiplexPrograms);
+            new PaginatedResultKeyResponse<ListMultiplexProgramsResponse, MultiplexProgramSummary>(this, (i) => i.MultiplexPrograms ?? new List<MultiplexProgramSummary>());
 
         internal ListMultiplexProgramsPaginator(IAmazonMediaLive client, ListMultiplexProgramsRequest request)
         {

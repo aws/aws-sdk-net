@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Capacity", StringUtils.FromInt(publicRequest.Capacity));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBClusterIdentifier())
                 {
                     request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSecondsBeforeTimeout())
                 {
                     request.Parameters.Add("SecondsBeforeTimeout", StringUtils.FromInt(publicRequest.SecondsBeforeTimeout));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTimeoutAction())
                 {
                     request.Parameters.Add("TimeoutAction", StringUtils.FromString(publicRequest.TimeoutAction));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

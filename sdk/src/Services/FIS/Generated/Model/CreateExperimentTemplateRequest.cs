@@ -56,20 +56,20 @@ namespace Amazon.FIS.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment
-    /// templates</a> in the <i>Fault Injection Simulator User Guide</i>.
+    /// templates</a> in the <i>Fault Injection Service User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateExperimentTemplateRequest : AmazonFISRequest
     {
-        private Dictionary<string, CreateExperimentTemplateActionInput> _actions = new Dictionary<string, CreateExperimentTemplateActionInput>();
+        private Dictionary<string, CreateExperimentTemplateActionInput> _actions = AWSConfigs.InitializeCollections ? new Dictionary<string, CreateExperimentTemplateActionInput>() : null;
         private string _clientToken;
         private string _description;
         private CreateExperimentTemplateExperimentOptionsInput _experimentOptions;
         private CreateExperimentTemplateLogConfigurationInput _logConfiguration;
         private string _roleArn;
-        private List<CreateExperimentTemplateStopConditionInput> _stopConditions = new List<CreateExperimentTemplateStopConditionInput>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private Dictionary<string, CreateExperimentTemplateTargetInput> _targets = new Dictionary<string, CreateExperimentTemplateTargetInput>();
+        private List<CreateExperimentTemplateStopConditionInput> _stopConditions = AWSConfigs.InitializeCollections ? new List<CreateExperimentTemplateStopConditionInput>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, CreateExperimentTemplateTargetInput> _targets = AWSConfigs.InitializeCollections ? new Dictionary<string, CreateExperimentTemplateTargetInput>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -87,7 +87,7 @@ namespace Amazon.FIS.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Amazon.FIS.Model
         // Check to see if StopConditions property is set
         internal bool IsSetStopConditions()
         {
-            return this._stopConditions != null && this._stopConditions.Count > 0; 
+            return this._stopConditions != null && (this._stopConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace Amazon.FIS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace Amazon.FIS.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

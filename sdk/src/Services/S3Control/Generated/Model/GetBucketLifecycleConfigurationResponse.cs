@@ -33,7 +33,7 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class GetBucketLifecycleConfigurationResponse : AmazonWebServiceResponse
     {
-        private List<LifecycleRule> _rules = new List<LifecycleRule>();
+        private List<LifecycleRule> _rules = AWSConfigs.InitializeCollections ? new List<LifecycleRule>() : null;
 
         /// <summary>
         /// Gets and sets the property Rules. 
@@ -50,7 +50,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

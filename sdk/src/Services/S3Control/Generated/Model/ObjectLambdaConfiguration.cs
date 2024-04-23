@@ -33,10 +33,10 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class ObjectLambdaConfiguration
     {
-        private List<string> _allowedFeatures = new List<string>();
+        private List<string> _allowedFeatures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _cloudWatchMetricsEnabled;
         private string _supportingAccessPoint;
-        private List<ObjectLambdaTransformationConfiguration> _transformationConfigurations = new List<ObjectLambdaTransformationConfiguration>();
+        private List<ObjectLambdaTransformationConfiguration> _transformationConfigurations = AWSConfigs.InitializeCollections ? new List<ObjectLambdaTransformationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowedFeatures. 
@@ -54,7 +54,7 @@ namespace Amazon.S3Control.Model
         // Check to see if AllowedFeatures property is set
         internal bool IsSetAllowedFeatures()
         {
-            return this._allowedFeatures != null && this._allowedFeatures.Count > 0; 
+            return this._allowedFeatures != null && (this._allowedFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.S3Control.Model
         // Check to see if TransformationConfigurations property is set
         internal bool IsSetTransformationConfigurations()
         {
-            return this._transformationConfigurations != null && this._transformationConfigurations.Count > 0; 
+            return this._transformationConfigurations != null && (this._transformationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

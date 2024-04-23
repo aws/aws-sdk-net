@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("UserGroupId", StringUtils.FromString(publicRequest.UserGroupId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserIdsToAdd())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -71,6 +73,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserIdsToRemove())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -80,6 +83,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

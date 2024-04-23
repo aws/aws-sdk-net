@@ -37,7 +37,7 @@ namespace Amazon.SageMaker.Model
         private string _description;
         private string _eventTimeFeatureName;
         private string _failureReason;
-        private List<FeatureDefinition> _featureDefinitions = new List<FeatureDefinition>();
+        private List<FeatureDefinition> _featureDefinitions = AWSConfigs.InitializeCollections ? new List<FeatureDefinition>() : null;
         private string _featureGroupArn;
         private string _featureGroupName;
         private FeatureGroupStatus _featureGroupStatus;
@@ -161,7 +161,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if FeatureDefinitions property is set
         internal bool IsSetFeatureDefinitions()
         {
-            return this._featureDefinitions != null && this._featureDefinitions.Count > 0; 
+            return this._featureDefinitions != null && (this._featureDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

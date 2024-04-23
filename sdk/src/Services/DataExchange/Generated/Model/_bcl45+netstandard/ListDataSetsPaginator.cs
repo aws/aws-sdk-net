@@ -45,7 +45,7 @@ namespace Amazon.DataExchange.Model
         /// Enumerable containing all of the DataSets
         /// </summary>
         public IPaginatedEnumerable<DataSetEntry> DataSets => 
-            new PaginatedResultKeyResponse<ListDataSetsResponse, DataSetEntry>(this, (i) => i.DataSets);
+            new PaginatedResultKeyResponse<ListDataSetsResponse, DataSetEntry>(this, (i) => i.DataSets ?? new List<DataSetEntry>());
 
         internal ListDataSetsPaginator(IAmazonDataExchange client, ListDataSetsRequest request)
         {

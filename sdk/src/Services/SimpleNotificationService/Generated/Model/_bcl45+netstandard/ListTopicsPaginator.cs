@@ -45,7 +45,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Enumerable containing all of the Topics
         /// </summary>
         public IPaginatedEnumerable<Topic> Topics => 
-            new PaginatedResultKeyResponse<ListTopicsResponse, Topic>(this, (i) => i.Topics);
+            new PaginatedResultKeyResponse<ListTopicsResponse, Topic>(this, (i) => i.Topics ?? new List<Topic>());
 
         internal ListTopicsPaginator(IAmazonSimpleNotificationService client, ListTopicsRequest request)
         {

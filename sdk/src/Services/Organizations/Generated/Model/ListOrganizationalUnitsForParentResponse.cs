@@ -34,7 +34,7 @@ namespace Amazon.Organizations.Model
     public partial class ListOrganizationalUnitsForParentResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OrganizationalUnit> _organizationalUnits = new List<OrganizationalUnit>();
+        private List<OrganizationalUnit> _organizationalUnits = AWSConfigs.InitializeCollections ? new List<OrganizationalUnit>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.Organizations.Model
         // Check to see if OrganizationalUnits property is set
         internal bool IsSetOrganizationalUnits()
         {
-            return this._organizationalUnits != null && this._organizationalUnits.Count > 0; 
+            return this._organizationalUnits != null && (this._organizationalUnits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

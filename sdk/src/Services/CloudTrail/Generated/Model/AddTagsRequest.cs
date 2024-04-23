@@ -41,7 +41,7 @@ namespace Amazon.CloudTrail.Model
     public partial class AddTagsRequest : AmazonCloudTrailRequest
     {
         private string _resourceId;
-        private List<Tag> _tagsList = new List<Tag>();
+        private List<Tag> _tagsList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceId. 
@@ -94,7 +94,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if TagsList property is set
         internal bool IsSetTagsList()
         {
-            return this._tagsList != null && this._tagsList.Count > 0; 
+            return this._tagsList != null && (this._tagsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

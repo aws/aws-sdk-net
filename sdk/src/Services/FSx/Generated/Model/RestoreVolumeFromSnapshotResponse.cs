@@ -33,7 +33,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class RestoreVolumeFromSnapshotResponse : AmazonWebServiceResponse
     {
-        private List<AdministrativeAction> _administrativeActions = new List<AdministrativeAction>();
+        private List<AdministrativeAction> _administrativeActions = AWSConfigs.InitializeCollections ? new List<AdministrativeAction>() : null;
         private VolumeLifecycle _lifecycle;
         private string _volumeId;
 
@@ -54,7 +54,7 @@ namespace Amazon.FSx.Model
         // Check to see if AdministrativeActions property is set
         internal bool IsSetAdministrativeActions()
         {
-            return this._administrativeActions != null && this._administrativeActions.Count > 0; 
+            return this._administrativeActions != null && (this._administrativeActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Pipes.Model
         /// Enumerable containing all of the Pipes
         /// </summary>
         public IPaginatedEnumerable<Pipe> Pipes => 
-            new PaginatedResultKeyResponse<ListPipesResponse, Pipe>(this, (i) => i.Pipes);
+            new PaginatedResultKeyResponse<ListPipesResponse, Pipe>(this, (i) => i.Pipes ?? new List<Pipe>());
 
         internal ListPipesPaginator(IAmazonPipes client, ListPipesRequest request)
         {

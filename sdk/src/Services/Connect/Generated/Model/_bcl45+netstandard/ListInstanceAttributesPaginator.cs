@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the Attributes
         /// </summary>
         public IPaginatedEnumerable<Attribute> Attributes => 
-            new PaginatedResultKeyResponse<ListInstanceAttributesResponse, Attribute>(this, (i) => i.Attributes);
+            new PaginatedResultKeyResponse<ListInstanceAttributesResponse, Attribute>(this, (i) => i.Attributes ?? new List<Attribute>());
 
         internal ListInstanceAttributesPaginator(IAmazonConnect client, ListInstanceAttributesRequest request)
         {

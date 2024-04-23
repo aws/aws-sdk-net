@@ -34,7 +34,7 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class ListPoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PolicyItem> _policies = new List<PolicyItem>();
+        private List<PolicyItem> _policies = AWSConfigs.InitializeCollections ? new List<PolicyItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -75,7 +75,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._policies != null && (this._policies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

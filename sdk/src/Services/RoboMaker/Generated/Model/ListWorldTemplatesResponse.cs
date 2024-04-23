@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model
     public partial class ListWorldTemplatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TemplateSummary> _templateSummaries = new List<TemplateSummary>();
+        private List<TemplateSummary> _templateSummaries = AWSConfigs.InitializeCollections ? new List<TemplateSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if TemplateSummaries property is set
         internal bool IsSetTemplateSummaries()
         {
-            return this._templateSummaries != null && this._templateSummaries.Count > 0; 
+            return this._templateSummaries != null && (this._templateSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

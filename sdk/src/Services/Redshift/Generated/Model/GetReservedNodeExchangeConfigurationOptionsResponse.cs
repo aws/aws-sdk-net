@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class GetReservedNodeExchangeConfigurationOptionsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ReservedNodeConfigurationOption> _reservedNodeConfigurationOptionList = new List<ReservedNodeConfigurationOption>();
+        private List<ReservedNodeConfigurationOption> _reservedNodeConfigurationOptionList = AWSConfigs.InitializeCollections ? new List<ReservedNodeConfigurationOption>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -73,7 +73,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ReservedNodeConfigurationOptionList property is set
         internal bool IsSetReservedNodeConfigurationOptionList()
         {
-            return this._reservedNodeConfigurationOptionList != null && this._reservedNodeConfigurationOptionList.Count > 0; 
+            return this._reservedNodeConfigurationOptionList != null && (this._reservedNodeConfigurationOptionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

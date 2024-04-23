@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model
     public partial class GetRelationalDatabaseEventsResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<RelationalDatabaseEvent> _relationalDatabaseEvents = new List<RelationalDatabaseEvent>();
+        private List<RelationalDatabaseEvent> _relationalDatabaseEvents = AWSConfigs.InitializeCollections ? new List<RelationalDatabaseEvent>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -78,7 +78,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if RelationalDatabaseEvents property is set
         internal bool IsSetRelationalDatabaseEvents()
         {
-            return this._relationalDatabaseEvents != null && this._relationalDatabaseEvents.Count > 0; 
+            return this._relationalDatabaseEvents != null && (this._relationalDatabaseEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

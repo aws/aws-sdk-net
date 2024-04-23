@@ -45,7 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the NetworkTelemetry
         /// </summary>
         public IPaginatedEnumerable<NetworkTelemetry> NetworkTelemetry => 
-            new PaginatedResultKeyResponse<GetNetworkTelemetryResponse, NetworkTelemetry>(this, (i) => i.NetworkTelemetry);
+            new PaginatedResultKeyResponse<GetNetworkTelemetryResponse, NetworkTelemetry>(this, (i) => i.NetworkTelemetry ?? new List<NetworkTelemetry>());
 
         internal GetNetworkTelemetryPaginator(IAmazonNetworkManager client, GetNetworkTelemetryRequest request)
         {

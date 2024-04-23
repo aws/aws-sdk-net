@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class RealTimeContactAnalysisPointOfInterest
     {
-        private List<RealTimeContactAnalysisTranscriptItemWithCharacterOffsets> _transcriptItems = new List<RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>();
+        private List<RealTimeContactAnalysisTranscriptItemWithCharacterOffsets> _transcriptItems = AWSConfigs.InitializeCollections ? new List<RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>() : null;
 
         /// <summary>
         /// Gets and sets the property TranscriptItems. 
@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if TranscriptItems property is set
         internal bool IsSetTranscriptItems()
         {
-            return this._transcriptItems != null && this._transcriptItems.Count > 0; 
+            return this._transcriptItems != null && (this._transcriptItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

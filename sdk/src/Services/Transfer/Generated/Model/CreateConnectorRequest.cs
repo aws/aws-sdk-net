@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model
     /// or SFTP protocol. For AS2, the connector is required for sending files to an externally
     /// hosted AS2 server. For SFTP, the connector is required when sending files to an SFTP
     /// server or receiving files from an SFTP server. For more details about connectors,
-    /// see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+    /// see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-as2-connector.html">Configure
     /// AS2 connectors</a> and <a href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-sftp-connector.html">Create
     /// SFTP connectors</a>.
     /// 
@@ -50,8 +50,9 @@ namespace Amazon.Transfer.Model
         private string _accessRole;
         private As2ConnectorConfig _as2Config;
         private string _loggingRole;
+        private string _securityPolicyName;
         private SftpConnectorConfig _sftpConfig;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _url;
 
         /// <summary>
@@ -150,6 +151,25 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecurityPolicyName. 
+        /// <para>
+        /// Specifies the name of the security policy for the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public string SecurityPolicyName
+        {
+            get { return this._securityPolicyName; }
+            set { this._securityPolicyName = value; }
+        }
+
+        // Check to see if SecurityPolicyName property is set
+        internal bool IsSetSecurityPolicyName()
+        {
+            return this._securityPolicyName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SftpConfig. 
         /// <para>
         /// A structure that contains the parameters for an SFTP connector object.
@@ -184,7 +204,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

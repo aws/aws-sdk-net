@@ -33,25 +33,25 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class TaskContainerDetails
     {
-        private List<string> _command = new List<string>();
-        private List<TaskContainerDependency> _dependsOn = new List<TaskContainerDependency>();
-        private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<TaskContainerDependency> _dependsOn = AWSConfigs.InitializeCollections ? new List<TaskContainerDependency>() : null;
+        private List<KeyValuePair> _environment = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
         private bool? _essential;
         private int? _exitCode;
         private string _image;
         private LinuxParameters _linuxParameters;
         private LogConfiguration _logConfiguration;
         private string _logStreamName;
-        private List<MountPoint> _mountPoints = new List<MountPoint>();
+        private List<MountPoint> _mountPoints = AWSConfigs.InitializeCollections ? new List<MountPoint>() : null;
         private string _name;
-        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
+        private List<NetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
         private bool? _privileged;
         private bool? _readonlyRootFilesystem;
         private string _reason;
         private RepositoryCredentials _repositoryCredentials;
-        private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
-        private List<Secret> _secrets = new List<Secret>();
-        private List<Ulimit> _ulimits = new List<Ulimit>();
+        private List<ResourceRequirement> _resourceRequirements = AWSConfigs.InitializeCollections ? new List<ResourceRequirement>() : null;
+        private List<Secret> _secrets = AWSConfigs.InitializeCollections ? new List<Secret>() : null;
+        private List<Ulimit> _ulimits = AWSConfigs.InitializeCollections ? new List<Ulimit>() : null;
         private string _user;
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Batch.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Batch.Model
         // Check to see if DependsOn property is set
         internal bool IsSetDependsOn()
         {
-            return this._dependsOn != null && this._dependsOn.Count > 0; 
+            return this._dependsOn != null && (this._dependsOn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.Batch.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// All tasks must have at least one essential container. If you have an application that's
+        /// All jobs must have at least one essential container. If you have an application that's
         /// composed of multiple containers, group containers that are used for a common purpose
         /// into components, and separate the different components into multiple task definitions.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
@@ -326,7 +326,7 @@ namespace Amazon.Batch.Model
         // Check to see if MountPoints property is set
         internal bool IsSetMountPoints()
         {
-            return this._mountPoints != null && this._mountPoints.Count > 0; 
+            return this._mountPoints != null && (this._mountPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -362,7 +362,7 @@ namespace Amazon.Batch.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -473,7 +473,7 @@ namespace Amazon.Batch.Model
         // Check to see if ResourceRequirements property is set
         internal bool IsSetResourceRequirements()
         {
-            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
+            return this._resourceRequirements != null && (this._resourceRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -492,7 +492,7 @@ namespace Amazon.Batch.Model
         // Check to see if Secrets property is set
         internal bool IsSetSecrets()
         {
-            return this._secrets != null && this._secrets.Count > 0; 
+            return this._secrets != null && (this._secrets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -535,7 +535,7 @@ namespace Amazon.Batch.Model
         // Check to see if Ulimits property is set
         internal bool IsSetUlimits()
         {
-            return this._ulimits != null && this._ulimits.Count > 0; 
+            return this._ulimits != null && (this._ulimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

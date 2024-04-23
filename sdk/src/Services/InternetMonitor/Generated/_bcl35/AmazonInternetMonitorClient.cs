@@ -457,7 +457,7 @@ namespace Amazon.InternetMonitor
         #region  GetHealthEvent
 
         /// <summary>
-        /// Gets information the Amazon CloudWatch Internet Monitor has created and stored about
+        /// Gets information that Amazon CloudWatch Internet Monitor has created and stored about
         /// a health event for a specified monitor. This information includes the impacted locations,
         /// and all the information related to the event, by location.
         /// 
@@ -529,6 +529,82 @@ namespace Amazon.InternetMonitor
         public virtual GetHealthEventResponse EndGetHealthEvent(IAsyncResult asyncResult)
         {
             return EndInvoke<GetHealthEventResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetInternetEvent
+
+        /// <summary>
+        /// Gets information that Amazon CloudWatch Internet Monitor has generated about an internet
+        /// event. Internet Monitor displays information about recent global health events, called
+        /// internet events, on a global outages map that is available to all Amazon Web Services
+        /// customers. 
+        /// 
+        ///  
+        /// <para>
+        /// The information returned here includes the impacted location, when the event started
+        /// and (if the event is over) ended, the type of event (<c>PERFORMANCE</c> or <c>AVAILABILITY</c>),
+        /// and the status (<c>ACTIVE</c> or <c>RESOLVED</c>).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInternetEvent service method.</param>
+        /// 
+        /// <returns>The response from the GetInternetEvent service method, as returned by InternetMonitor.</returns>
+        /// <exception cref="Amazon.InternetMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.InternetMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.InternetMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.InternetMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetInternetEvent">REST API Reference for GetInternetEvent Operation</seealso>
+        public virtual GetInternetEventResponse GetInternetEvent(GetInternetEventRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInternetEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInternetEventResponseUnmarshaller.Instance;
+
+            return Invoke<GetInternetEventResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInternetEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInternetEvent operation on AmazonInternetMonitorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInternetEvent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetInternetEvent">REST API Reference for GetInternetEvent Operation</seealso>
+        public virtual IAsyncResult BeginGetInternetEvent(GetInternetEventRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInternetEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInternetEventResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInternetEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInternetEvent.</param>
+        /// 
+        /// <returns>Returns a  GetInternetEventResult from InternetMonitor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetInternetEvent">REST API Reference for GetInternetEvent Operation</seealso>
+        public virtual GetInternetEventResponse EndGetInternetEvent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetInternetEventResponse>(asyncResult);
         }
 
         #endregion
@@ -776,7 +852,7 @@ namespace Amazon.InternetMonitor
 
         /// <summary>
         /// Lists all health events for a monitor in Amazon CloudWatch Internet Monitor. Returns
-        /// information for health events including the event start and end time and the status.
+        /// information for health events including the event start and end times, and the status.
         /// 
         ///  <note> 
         /// <para>
@@ -842,6 +918,88 @@ namespace Amazon.InternetMonitor
         public virtual ListHealthEventsResponse EndListHealthEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<ListHealthEventsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListInternetEvents
+
+        /// <summary>
+        /// Lists internet events that cause performance or availability issues for client locations.
+        /// Amazon CloudWatch Internet Monitor displays information about recent global health
+        /// events, called internet events, on a global outages map that is available to all Amazon
+        /// Web Services customers. 
+        /// 
+        ///  
+        /// <para>
+        /// You can constrain the list of internet events returned by providing a start time and
+        /// end time to define a total time frame for events you want to list. Both start time
+        /// and end time specify the time when an event started. End time is optional. If you
+        /// don't include it, the default end time is the current time.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also limit the events returned to a specific status (<c>ACTIVE</c> or <c>RESOLVED</c>)
+        /// or type (<c>PERFORMANCE</c> or <c>AVAILABILITY</c>).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInternetEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListInternetEvents service method, as returned by InternetMonitor.</returns>
+        /// <exception cref="Amazon.InternetMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.InternetMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.InternetMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.InternetMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListInternetEvents">REST API Reference for ListInternetEvents Operation</seealso>
+        public virtual ListInternetEventsResponse ListInternetEvents(ListInternetEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInternetEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInternetEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInternetEventsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInternetEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInternetEvents operation on AmazonInternetMonitorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInternetEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListInternetEvents">REST API Reference for ListInternetEvents Operation</seealso>
+        public virtual IAsyncResult BeginListInternetEvents(ListInternetEventsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInternetEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInternetEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInternetEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInternetEvents.</param>
+        /// 
+        /// <returns>Returns a  ListInternetEventsResult from InternetMonitor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListInternetEvents">REST API Reference for ListInternetEvents Operation</seealso>
+        public virtual ListInternetEventsResponse EndListInternetEvents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInternetEventsResponse>(asyncResult);
         }
 
         #endregion

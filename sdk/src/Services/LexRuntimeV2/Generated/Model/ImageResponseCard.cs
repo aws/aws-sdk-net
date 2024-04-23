@@ -40,7 +40,7 @@ namespace Amazon.LexRuntimeV2.Model
     /// </summary>
     public partial class ImageResponseCard
     {
-        private List<Button> _buttons = new List<Button>();
+        private List<Button> _buttons = AWSConfigs.InitializeCollections ? new List<Button>() : null;
         private string _imageUrl;
         private string _subtitle;
         private string _title;
@@ -62,7 +62,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if Buttons property is set
         internal bool IsSetButtons()
         {
-            return this._buttons != null && this._buttons.Count > 0; 
+            return this._buttons != null && (this._buttons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

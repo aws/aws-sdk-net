@@ -36,7 +36,7 @@ namespace Amazon.NimbleStudio.Model
     {
         private string _clientToken;
         private string _identityStoreId;
-        private List<NewStudioMember> _members = new List<NewStudioMember>();
+        private List<NewStudioMember> _members = AWSConfigs.InitializeCollections ? new List<NewStudioMember>() : null;
         private string _studioId;
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

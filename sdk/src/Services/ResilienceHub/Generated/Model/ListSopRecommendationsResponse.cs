@@ -34,7 +34,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class ListSopRecommendationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SopRecommendation> _sopRecommendations = new List<SopRecommendation>();
+        private List<SopRecommendation> _sopRecommendations = AWSConfigs.InitializeCollections ? new List<SopRecommendation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if SopRecommendations property is set
         internal bool IsSetSopRecommendations()
         {
-            return this._sopRecommendations != null && this._sopRecommendations.Count > 0; 
+            return this._sopRecommendations != null && (this._sopRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

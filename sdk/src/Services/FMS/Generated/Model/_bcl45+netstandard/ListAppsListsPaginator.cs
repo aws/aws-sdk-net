@@ -45,7 +45,7 @@ namespace Amazon.FMS.Model
         /// Enumerable containing all of the AppsLists
         /// </summary>
         public IPaginatedEnumerable<AppsListDataSummary> AppsLists => 
-            new PaginatedResultKeyResponse<ListAppsListsResponse, AppsListDataSummary>(this, (i) => i.AppsLists);
+            new PaginatedResultKeyResponse<ListAppsListsResponse, AppsListDataSummary>(this, (i) => i.AppsLists ?? new List<AppsListDataSummary>());
 
         internal ListAppsListsPaginator(IAmazonFMS client, ListAppsListsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.ConnectCampaignService.Model
         /// Enumerable containing all of the CampaignSummaryList
         /// </summary>
         public IPaginatedEnumerable<CampaignSummary> CampaignSummaryList => 
-            new PaginatedResultKeyResponse<ListCampaignsResponse, CampaignSummary>(this, (i) => i.CampaignSummaryList);
+            new PaginatedResultKeyResponse<ListCampaignsResponse, CampaignSummary>(this, (i) => i.CampaignSummaryList ?? new List<CampaignSummary>());
 
         internal ListCampaignsPaginator(IAmazonConnectCampaignService client, ListCampaignsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.VoiceID.Model
         /// Enumerable containing all of the FraudsterSummaries
         /// </summary>
         public IPaginatedEnumerable<FraudsterSummary> FraudsterSummaries => 
-            new PaginatedResultKeyResponse<ListFraudstersResponse, FraudsterSummary>(this, (i) => i.FraudsterSummaries);
+            new PaginatedResultKeyResponse<ListFraudstersResponse, FraudsterSummary>(this, (i) => i.FraudsterSummaries ?? new List<FraudsterSummary>());
 
         internal ListFraudstersPaginator(IAmazonVoiceID client, ListFraudstersRequest request)
         {

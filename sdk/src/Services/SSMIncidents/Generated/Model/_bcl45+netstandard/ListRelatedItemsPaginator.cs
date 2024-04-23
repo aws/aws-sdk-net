@@ -45,7 +45,7 @@ namespace Amazon.SSMIncidents.Model
         /// Enumerable containing all of the RelatedItems
         /// </summary>
         public IPaginatedEnumerable<RelatedItem> RelatedItems => 
-            new PaginatedResultKeyResponse<ListRelatedItemsResponse, RelatedItem>(this, (i) => i.RelatedItems);
+            new PaginatedResultKeyResponse<ListRelatedItemsResponse, RelatedItem>(this, (i) => i.RelatedItems ?? new List<RelatedItem>());
 
         internal ListRelatedItemsPaginator(IAmazonSSMIncidents client, ListRelatedItemsRequest request)
         {

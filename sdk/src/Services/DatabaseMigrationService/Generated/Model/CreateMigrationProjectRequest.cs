@@ -45,9 +45,9 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _instanceProfileIdentifier;
         private string _migrationProjectName;
         private SCApplicationAttributes _schemaConversionApplicationAttributes;
-        private List<DataProviderDescriptorDefinition> _sourceDataProviderDescriptors = new List<DataProviderDescriptorDefinition>();
-        private List<Tag> _tags = new List<Tag>();
-        private List<DataProviderDescriptorDefinition> _targetDataProviderDescriptors = new List<DataProviderDescriptorDefinition>();
+        private List<DataProviderDescriptorDefinition> _sourceDataProviderDescriptors = AWSConfigs.InitializeCollections ? new List<DataProviderDescriptorDefinition>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<DataProviderDescriptorDefinition> _targetDataProviderDescriptors = AWSConfigs.InitializeCollections ? new List<DataProviderDescriptorDefinition>() : null;
         private string _transformationRules;
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if SourceDataProviderDescriptors property is set
         internal bool IsSetSourceDataProviderDescriptors()
         {
-            return this._sourceDataProviderDescriptors != null && this._sourceDataProviderDescriptors.Count > 0; 
+            return this._sourceDataProviderDescriptors != null && (this._sourceDataProviderDescriptors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if TargetDataProviderDescriptors property is set
         internal bool IsSetTargetDataProviderDescriptors()
         {
-            return this._targetDataProviderDescriptors != null && this._targetDataProviderDescriptors.Count > 0; 
+            return this._targetDataProviderDescriptors != null && (this._targetDataProviderDescriptors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

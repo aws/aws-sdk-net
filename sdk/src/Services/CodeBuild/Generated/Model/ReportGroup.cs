@@ -41,7 +41,7 @@ namespace Amazon.CodeBuild.Model
         private DateTime? _lastModified;
         private string _name;
         private ReportGroupStatusType _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private ReportType _type;
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

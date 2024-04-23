@@ -38,7 +38,7 @@ namespace Amazon.LakeFormation.Model
         private string _databaseName;
         private string _tableName;
         private string _transactionId;
-        private List<WriteOperation> _writeOperations = new List<WriteOperation>();
+        private List<WriteOperation> _writeOperations = AWSConfigs.InitializeCollections ? new List<WriteOperation>() : null;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -134,7 +134,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if WriteOperations property is set
         internal bool IsSetWriteOperations()
         {
-            return this._writeOperations != null && this._writeOperations.Count > 0; 
+            return this._writeOperations != null && (this._writeOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DecimalDatasetParameterDefaultValues
     {
-        private List<double> _staticValues = new List<double>();
+        private List<double> _staticValues = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property StaticValues. 
@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if StaticValues property is set
         internal bool IsSetStaticValues()
         {
-            return this._staticValues != null && this._staticValues.Count > 0; 
+            return this._staticValues != null && (this._staticValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

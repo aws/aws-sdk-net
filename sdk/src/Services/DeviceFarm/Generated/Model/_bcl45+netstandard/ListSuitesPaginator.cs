@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// Enumerable containing all of the Suites
         /// </summary>
         public IPaginatedEnumerable<Suite> Suites => 
-            new PaginatedResultKeyResponse<ListSuitesResponse, Suite>(this, (i) => i.Suites);
+            new PaginatedResultKeyResponse<ListSuitesResponse, Suite>(this, (i) => i.Suites ?? new List<Suite>());
 
         internal ListSuitesPaginator(IAmazonDeviceFarm client, ListSuitesRequest request)
         {

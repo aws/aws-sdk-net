@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
     {
         private string _amznClientToken;
         private string _loggerDefinitionId;
-        private List<Logger> _loggers = new List<Logger>();
+        private List<Logger> _loggers = AWSConfigs.InitializeCollections ? new List<Logger>() : null;
 
         /// <summary>
         /// Gets and sets the property AmznClientToken. A client token used to correlate requests
@@ -82,7 +82,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Loggers property is set
         internal bool IsSetLoggers()
         {
-            return this._loggers != null && this._loggers.Count > 0; 
+            return this._loggers != null && (this._loggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

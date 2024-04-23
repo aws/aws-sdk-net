@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -87,6 +88,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("responseTimeout", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ResponseTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
@@ -106,3 +113,4 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

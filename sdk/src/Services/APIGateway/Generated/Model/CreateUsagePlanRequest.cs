@@ -35,11 +35,11 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class CreateUsagePlanRequest : AmazonAPIGatewayRequest
     {
-        private List<ApiStage> _apiStages = new List<ApiStage>();
+        private List<ApiStage> _apiStages = AWSConfigs.InitializeCollections ? new List<ApiStage>() : null;
         private string _description;
         private string _name;
         private QuotaSettings _quota;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ThrottleSettings _throttle;
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if ApiStages property is set
         internal bool IsSetApiStages()
         {
-            return this._apiStages != null && this._apiStages.Count > 0; 
+            return this._apiStages != null && (this._apiStages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

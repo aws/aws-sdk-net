@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _hubContentDescription;
         private string _hubContentDisplayName;
         private string _hubContentName;
-        private List<string> _hubContentSearchKeywords = new List<string>();
+        private List<string> _hubContentSearchKeywords = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private HubContentStatus _hubContentStatus;
         private HubContentType _hubContentType;
         private string _hubContentVersion;
@@ -174,7 +174,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HubContentSearchKeywords property is set
         internal bool IsSetHubContentSearchKeywords()
         {
-            return this._hubContentSearchKeywords != null && this._hubContentSearchKeywords.Count > 0; 
+            return this._hubContentSearchKeywords != null && (this._hubContentSearchKeywords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

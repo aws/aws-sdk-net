@@ -6918,6 +6918,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeMacHostsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeMacHosts");
+
+            var request = InstantiateClassGenerator.Execute<DescribeMacHostsRequest>(operation);
+            var marshaller = new DescribeMacHostsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeMacHostsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeMacHostsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeManagedPrefixListsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeManagedPrefixLists");
@@ -10406,6 +10430,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void GetInstanceMetadataDefaultsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetInstanceMetadataDefaults");
+
+            var request = InstantiateClassGenerator.Execute<GetInstanceMetadataDefaultsRequest>(operation);
+            var marshaller = new GetInstanceMetadataDefaultsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetInstanceMetadataDefaultsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetInstanceMetadataDefaultsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void GetInstanceTypesFromInstanceRequirementsMarshallTest()
         {
             var operation = service_model.FindOperation("GetInstanceTypesFromInstanceRequirements");
@@ -11841,6 +11889,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ModifyInstanceMaintenanceOptionsResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyInstanceMaintenanceOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyInstanceMetadataDefaultsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyInstanceMetadataDefaults");
+
+            var request = InstantiateClassGenerator.Execute<ModifyInstanceMetadataDefaultsRequest>(operation);
+            var marshaller = new ModifyInstanceMetadataDefaultsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyInstanceMetadataDefaultsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyInstanceMetadataDefaultsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

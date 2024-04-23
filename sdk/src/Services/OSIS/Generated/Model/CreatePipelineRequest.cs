@@ -42,7 +42,7 @@ namespace Amazon.OSIS.Model
         private int? _minUnits;
         private string _pipelineConfigurationBody;
         private string _pipelineName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private VpcOptions _vpcOptions;
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.OSIS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

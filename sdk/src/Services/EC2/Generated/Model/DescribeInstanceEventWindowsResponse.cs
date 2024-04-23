@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeInstanceEventWindowsResponse : AmazonWebServiceResponse
     {
-        private List<InstanceEventWindow> _instanceEventWindows = new List<InstanceEventWindow>();
+        private List<InstanceEventWindow> _instanceEventWindows = AWSConfigs.InitializeCollections ? new List<InstanceEventWindow>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceEventWindows property is set
         internal bool IsSetInstanceEventWindows()
         {
-            return this._instanceEventWindows != null && this._instanceEventWindows.Count > 0; 
+            return this._instanceEventWindows != null && (this._instanceEventWindows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -4477,6 +4477,10 @@
         "JupyterLabAppImageConfig":{
           "shape":"JupyterLabAppImageConfig",
           "documentation":"<p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>"
+        },
+        "CodeEditorAppImageConfig":{
+          "shape":"CodeEditorAppImageConfig",
+          "documentation":"<p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>"
         }
       },
       "documentation":"<p>The configuration for running a SageMaker image as a KernelGateway app.</p>"
@@ -4563,7 +4567,89 @@
         "ml.p4de.24xlarge",
         "ml.trn1.2xlarge",
         "ml.trn1.32xlarge",
-        "ml.trn1n.32xlarge"
+        "ml.trn1n.32xlarge",
+        "ml.p5.48xlarge",
+        "ml.m6i.large",
+        "ml.m6i.xlarge",
+        "ml.m6i.2xlarge",
+        "ml.m6i.4xlarge",
+        "ml.m6i.8xlarge",
+        "ml.m6i.12xlarge",
+        "ml.m6i.16xlarge",
+        "ml.m6i.24xlarge",
+        "ml.m6i.32xlarge",
+        "ml.m7i.large",
+        "ml.m7i.xlarge",
+        "ml.m7i.2xlarge",
+        "ml.m7i.4xlarge",
+        "ml.m7i.8xlarge",
+        "ml.m7i.12xlarge",
+        "ml.m7i.16xlarge",
+        "ml.m7i.24xlarge",
+        "ml.m7i.48xlarge",
+        "ml.c6i.large",
+        "ml.c6i.xlarge",
+        "ml.c6i.2xlarge",
+        "ml.c6i.4xlarge",
+        "ml.c6i.8xlarge",
+        "ml.c6i.12xlarge",
+        "ml.c6i.16xlarge",
+        "ml.c6i.24xlarge",
+        "ml.c6i.32xlarge",
+        "ml.c7i.large",
+        "ml.c7i.xlarge",
+        "ml.c7i.2xlarge",
+        "ml.c7i.4xlarge",
+        "ml.c7i.8xlarge",
+        "ml.c7i.12xlarge",
+        "ml.c7i.16xlarge",
+        "ml.c7i.24xlarge",
+        "ml.c7i.48xlarge",
+        "ml.r6i.large",
+        "ml.r6i.xlarge",
+        "ml.r6i.2xlarge",
+        "ml.r6i.4xlarge",
+        "ml.r6i.8xlarge",
+        "ml.r6i.12xlarge",
+        "ml.r6i.16xlarge",
+        "ml.r6i.24xlarge",
+        "ml.r6i.32xlarge",
+        "ml.r7i.large",
+        "ml.r7i.xlarge",
+        "ml.r7i.2xlarge",
+        "ml.r7i.4xlarge",
+        "ml.r7i.8xlarge",
+        "ml.r7i.12xlarge",
+        "ml.r7i.16xlarge",
+        "ml.r7i.24xlarge",
+        "ml.r7i.48xlarge",
+        "ml.m6id.large",
+        "ml.m6id.xlarge",
+        "ml.m6id.2xlarge",
+        "ml.m6id.4xlarge",
+        "ml.m6id.8xlarge",
+        "ml.m6id.12xlarge",
+        "ml.m6id.16xlarge",
+        "ml.m6id.24xlarge",
+        "ml.m6id.32xlarge",
+        "ml.c6id.large",
+        "ml.c6id.xlarge",
+        "ml.c6id.2xlarge",
+        "ml.c6id.4xlarge",
+        "ml.c6id.8xlarge",
+        "ml.c6id.12xlarge",
+        "ml.c6id.16xlarge",
+        "ml.c6id.24xlarge",
+        "ml.c6id.32xlarge",
+        "ml.r6id.large",
+        "ml.r6id.xlarge",
+        "ml.r6id.2xlarge",
+        "ml.r6id.4xlarge",
+        "ml.r6id.8xlarge",
+        "ml.r6id.12xlarge",
+        "ml.r6id.16xlarge",
+        "ml.r6id.24xlarge",
+        "ml.r6id.32xlarge"
       ]
     },
     "AppList":{
@@ -5763,10 +5849,7 @@
       "type":"string",
       "enum":[
         "AWS/Rekognition/DetectModerationLabels/Image/V3",
-        "AWS/Textract/AnalyzeDocument/Forms/V1",
-        "AWS/Textract/AnalyzeExpense",
-        "AWS/Handshake/VerifyIdentity",
-        "AWS/Bedrock/ModelEvaluation"
+        "AWS/Textract/AnalyzeDocument/Forms/V1"
       ]
     },
     "BacktestResultsLocation":{
@@ -6986,14 +7069,14 @@
       "members":{
         "SourceS3Uri":{
           "shape":"S3Uri",
-          "documentation":"<p>An Amazon S3 bucket path where your LifeCycle scripts are stored.</p>"
+          "documentation":"<p>An Amazon S3 bucket path where your lifecycle scripts are stored.</p> <important> <p>Make sure that the S3 bucket path starts with <code>s3://sagemaker-</code>. The <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-iam-role-for-hyperpod\">IAM role for SageMaker HyperPod</a> has the managed <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-cluster.html\"> <code>AmazonSageMakerClusterInstanceRolePolicy</code> </a> attached, which allows access to S3 buckets with the specific prefix <code>sagemaker-</code>.</p> </important>"
         },
         "OnCreate":{
           "shape":"ClusterLifeCycleConfigFileName",
-          "documentation":"<p>The directory of the LifeCycle script under <code>SourceS3Uri</code>. This LifeCycle script runs during cluster creation.</p>"
+          "documentation":"<p>The file name of the entrypoint script of lifecycle scripts under <code>SourceS3Uri</code>. This entrypoint script runs during cluster creation.</p>"
         }
       },
-      "documentation":"<p>The LifeCycle configuration for a SageMaker HyperPod cluster.</p>"
+      "documentation":"<p>The lifecycle configuration for a SageMaker HyperPod cluster.</p>"
     },
     "ClusterLifeCycleConfigFileName":{
       "type":"string",
@@ -7149,10 +7232,22 @@
       "max":2,
       "min":1
     },
+    "CodeEditorAppImageConfig":{
+      "type":"structure",
+      "members":{
+        "FileSystemConfig":{"shape":"FileSystemConfig"},
+        "ContainerConfig":{"shape":"ContainerConfig"}
+      },
+      "documentation":"<p>The configuration for the file system and kernels in a SageMaker image running as a Code Editor app. The <code>FileSystemConfig</code> object is not supported.</p>"
+    },
     "CodeEditorAppSettings":{
       "type":"structure",
       "members":{
         "DefaultResourceSpec":{"shape":"ResourceSpec"},
+        "CustomImages":{
+          "shape":"CustomImages",
+          "documentation":"<p>A list of custom SageMaker images that are configured to run as a Code Editor app.</p>"
+        },
         "LifecycleConfigArns":{
           "shape":"LifecycleConfigArns",
           "documentation":"<p>The Amazon Resource Name (ARN) of the Code Editor application lifecycle configuration.</p>"
@@ -7548,7 +7643,7 @@
         },
         "Environment":{
           "shape":"EnvironmentMap",
-          "documentation":"<p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map. </p>"
+          "documentation":"<p>The environment variables to set in the Docker container.</p> <p>The maximum length of each key and value in the <code>Environment</code> map is 1024 bytes. The maximum length of all keys and values in the map, combined, is 32 KB. If you pass multiple containers to a <code>CreateModel</code> request, then the maximum length of all of their maps, combined, is also 32 KB.</p>"
         },
         "ModelPackageName":{
           "shape":"VersionedArnOrName",
@@ -7880,6 +7975,10 @@
         "JupyterLabAppImageConfig":{
           "shape":"JupyterLabAppImageConfig",
           "documentation":"<p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image kernel in the <code>AppImageConfig</code> API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in JupyterLab.</p>"
+        },
+        "CodeEditorAppImageConfig":{
+          "shape":"CodeEditorAppImageConfig",
+          "documentation":"<p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image kernel in the AppImageConfig API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in Code Editor.</p>"
         }
       }
     },
@@ -8397,7 +8496,7 @@
         },
         "KmsKeyId":{
           "shape":"KmsKeyId",
-          "documentation":"<p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>"
+          "documentation":"<p>SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>"
         },
         "AppSecurityGroupManagement":{
           "shape":"AppSecurityGroupManagement",
@@ -8655,11 +8754,11 @@
       "members":{
         "FeatureGroupName":{
           "shape":"FeatureGroupName",
-          "documentation":"<p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed. </p> </li> </ul>"
+          "documentation":"<p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p> <p>The name:</p> <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li> <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p> </li> </ul>"
         },
         "RecordIdentifierFeatureName":{
           "shape":"FeatureName",
-          "documentation":"<p>The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per identifier value will be stored in the <code>OnlineStore</code>. <code>RecordIdentifierFeatureName</code> must be one of feature definitions' names.</p> <p>You use the <code>RecordIdentifierFeatureName</code> to access data in a <code>FeatureStore</code>.</p> <p>This name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p> </li> </ul>"
+          "documentation":"<p>The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per identifier value will be stored in the <code>OnlineStore</code>. <code>RecordIdentifierFeatureName</code> must be one of feature definitions' names.</p> <p>You use the <code>RecordIdentifierFeatureName</code> to access data in a <code>FeatureStore</code>.</p> <p>This name:</p> <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li> <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p> </li> </ul>"
         },
         "EventTimeFeatureName":{
           "shape":"FeatureName",
@@ -10934,14 +11033,14 @@
       "members":{
         "DefaultEbsVolumeSizeInGb":{
           "shape":"SpaceEbsVolumeSizeInGb",
-          "documentation":"<p>The default size of the EBS storage volume for a private space.</p>"
+          "documentation":"<p>The default size of the EBS storage volume for a space.</p>"
         },
         "MaximumEbsVolumeSizeInGb":{
           "shape":"SpaceEbsVolumeSizeInGb",
-          "documentation":"<p>The maximum size of the EBS storage volume for a private space.</p>"
+          "documentation":"<p>The maximum size of the EBS storage volume for a space.</p>"
         }
       },
-      "documentation":"<p>A collection of default EBS storage settings that applies to private spaces created within a domain or user profile.</p>"
+      "documentation":"<p>A collection of default EBS storage settings that apply to spaces created within a domain or user profile.</p>"
     },
     "DefaultGid":{
       "type":"integer",
@@ -10960,7 +11059,14 @@
           "documentation":"<p>The security group IDs for the Amazon VPC that the space uses for communication.</p>"
         },
         "JupyterServerAppSettings":{"shape":"JupyterServerAppSettings"},
-        "KernelGatewayAppSettings":{"shape":"KernelGatewayAppSettings"}
+        "KernelGatewayAppSettings":{"shape":"KernelGatewayAppSettings"},
+        "JupyterLabAppSettings":{"shape":"JupyterLabAppSettings"},
+        "SpaceStorageSettings":{"shape":"DefaultSpaceStorageSettings"},
+        "CustomPosixUserConfig":{"shape":"CustomPosixUserConfig"},
+        "CustomFileSystemConfigs":{
+          "shape":"CustomFileSystemConfigs",
+          "documentation":"<p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>"
+        }
       },
       "documentation":"<p>A collection of settings that apply to spaces created in the domain.</p>"
     },
@@ -10969,10 +11075,10 @@
       "members":{
         "DefaultEbsStorageSettings":{
           "shape":"DefaultEbsStorageSettings",
-          "documentation":"<p>The default EBS storage settings for a private space.</p>"
+          "documentation":"<p>The default EBS storage settings for a space.</p>"
         }
       },
-      "documentation":"<p>The default storage settings for a private space.</p>"
+      "documentation":"<p>The default storage settings for a space.</p>"
     },
     "DefaultUid":{
       "type":"integer",
@@ -12015,6 +12121,10 @@
         "JupyterLabAppImageConfig":{
           "shape":"JupyterLabAppImageConfig",
           "documentation":"<p>The configuration of the JupyterLab app.</p>"
+        },
+        "CodeEditorAppImageConfig":{
+          "shape":"CodeEditorAppImageConfig",
+          "documentation":"<p>The configuration of the Code Editor app.</p>"
         }
       }
     },
@@ -16715,10 +16825,10 @@
       "members":{
         "EbsVolumeSizeInGb":{
           "shape":"SpaceEbsVolumeSizeInGb",
-          "documentation":"<p>The size of an EBS storage volume for a private space.</p>"
+          "documentation":"<p>The size of an EBS storage volume for a space.</p>"
         }
       },
-      "documentation":"<p>A collection of EBS storage settings that applies to private spaces.</p>"
+      "documentation":"<p>A collection of EBS storage settings that apply to both private and shared spaces.</p>"
     },
     "Edge":{
       "type":"structure",
@@ -17754,7 +17864,7 @@
       "members":{
         "FeatureName":{
           "shape":"FeatureName",
-          "documentation":"<p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>"
+          "documentation":"<p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p> <p>The name:</p> <ul> <li> <p>Must start with an alphanumeric character.</p> </li> <li> <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p> </li> </ul>"
         },
         "FeatureType":{
           "shape":"FeatureType",
@@ -20908,7 +21018,89 @@
         "ml.inf1.6xlarge",
         "ml.inf1.24xlarge",
         "ml.p4d.24xlarge",
-        "ml.p4de.24xlarge"
+        "ml.p4de.24xlarge",
+        "ml.p5.48xlarge",
+        "ml.m6i.large",
+        "ml.m6i.xlarge",
+        "ml.m6i.2xlarge",
+        "ml.m6i.4xlarge",
+        "ml.m6i.8xlarge",
+        "ml.m6i.12xlarge",
+        "ml.m6i.16xlarge",
+        "ml.m6i.24xlarge",
+        "ml.m6i.32xlarge",
+        "ml.m7i.large",
+        "ml.m7i.xlarge",
+        "ml.m7i.2xlarge",
+        "ml.m7i.4xlarge",
+        "ml.m7i.8xlarge",
+        "ml.m7i.12xlarge",
+        "ml.m7i.16xlarge",
+        "ml.m7i.24xlarge",
+        "ml.m7i.48xlarge",
+        "ml.c6i.large",
+        "ml.c6i.xlarge",
+        "ml.c6i.2xlarge",
+        "ml.c6i.4xlarge",
+        "ml.c6i.8xlarge",
+        "ml.c6i.12xlarge",
+        "ml.c6i.16xlarge",
+        "ml.c6i.24xlarge",
+        "ml.c6i.32xlarge",
+        "ml.c7i.large",
+        "ml.c7i.xlarge",
+        "ml.c7i.2xlarge",
+        "ml.c7i.4xlarge",
+        "ml.c7i.8xlarge",
+        "ml.c7i.12xlarge",
+        "ml.c7i.16xlarge",
+        "ml.c7i.24xlarge",
+        "ml.c7i.48xlarge",
+        "ml.r6i.large",
+        "ml.r6i.xlarge",
+        "ml.r6i.2xlarge",
+        "ml.r6i.4xlarge",
+        "ml.r6i.8xlarge",
+        "ml.r6i.12xlarge",
+        "ml.r6i.16xlarge",
+        "ml.r6i.24xlarge",
+        "ml.r6i.32xlarge",
+        "ml.r7i.large",
+        "ml.r7i.xlarge",
+        "ml.r7i.2xlarge",
+        "ml.r7i.4xlarge",
+        "ml.r7i.8xlarge",
+        "ml.r7i.12xlarge",
+        "ml.r7i.16xlarge",
+        "ml.r7i.24xlarge",
+        "ml.r7i.48xlarge",
+        "ml.m6id.large",
+        "ml.m6id.xlarge",
+        "ml.m6id.2xlarge",
+        "ml.m6id.4xlarge",
+        "ml.m6id.8xlarge",
+        "ml.m6id.12xlarge",
+        "ml.m6id.16xlarge",
+        "ml.m6id.24xlarge",
+        "ml.m6id.32xlarge",
+        "ml.c6id.large",
+        "ml.c6id.xlarge",
+        "ml.c6id.2xlarge",
+        "ml.c6id.4xlarge",
+        "ml.c6id.8xlarge",
+        "ml.c6id.12xlarge",
+        "ml.c6id.16xlarge",
+        "ml.c6id.24xlarge",
+        "ml.c6id.32xlarge",
+        "ml.r6id.large",
+        "ml.r6id.xlarge",
+        "ml.r6id.2xlarge",
+        "ml.r6id.4xlarge",
+        "ml.r6id.8xlarge",
+        "ml.r6id.12xlarge",
+        "ml.r6id.16xlarge",
+        "ml.r6id.24xlarge",
+        "ml.r6id.32xlarge"
       ]
     },
     "Integer":{"type":"integer"},
@@ -21163,7 +21355,7 @@
     "KmsKeyId":{
       "type":"string",
       "max":2048,
-      "pattern":".*"
+      "pattern":"^[a-zA-Z0-9:/_-]*$"
     },
     "LabelAttributeName":{
       "type":"string",
@@ -28795,7 +28987,7 @@
       "members":{
         "OwnerUserProfileName":{
           "shape":"UserProfileName",
-          "documentation":"<p>The user profile who is the owner of the private space.</p>"
+          "documentation":"<p>The user profile who is the owner of the space.</p>"
         }
       },
       "documentation":"<p>The collection of ownership settings for a space.</p>"
@@ -28805,7 +28997,7 @@
       "members":{
         "OwnerUserProfileName":{
           "shape":"UserProfileName",
-          "documentation":"<p>The user profile who is the owner of the private space.</p>"
+          "documentation":"<p>The user profile who is the owner of the space.</p>"
         }
       },
       "documentation":"<p>Specifies summary information about the ownership settings.</p>"
@@ -32180,7 +32372,7 @@
           "documentation":"<p>The S3 path where offline records are written.</p>"
         }
       },
-      "documentation":"<p>The Amazon Simple Storage (Amazon S3) location and and security configuration for <code>OfflineStore</code>.</p>"
+      "documentation":"<p>The Amazon Simple Storage (Amazon S3) location and security configuration for <code>OfflineStore</code>.</p>"
     },
     "S3Uri":{
       "type":"string",
@@ -33017,7 +33209,7 @@
         },
         "SpaceStorageSettings":{
           "shape":"SpaceStorageSettings",
-          "documentation":"<p>The storage settings for a private space.</p>"
+          "documentation":"<p>The storage settings for a space.</p>"
         },
         "CustomFileSystems":{
           "shape":"CustomFileSystems",
@@ -33035,7 +33227,7 @@
         },
         "SpaceStorageSettings":{
           "shape":"SpaceStorageSettings",
-          "documentation":"<p>The storage settings for a private space.</p>"
+          "documentation":"<p>The storage settings for a space.</p>"
         }
       },
       "documentation":"<p>Specifies summary information about the space settings.</p>"
@@ -33085,10 +33277,10 @@
       "members":{
         "EbsStorageSettings":{
           "shape":"EbsStorageSettings",
-          "documentation":"<p>A collection of EBS storage settings for a private space.</p>"
+          "documentation":"<p>A collection of EBS storage settings for a space.</p>"
         }
       },
-      "documentation":"<p>The storage settings for a private space.</p>"
+      "documentation":"<p>The storage settings for a space.</p>"
     },
     "SpawnRate":{
       "type":"integer",
@@ -35752,6 +35944,10 @@
         "JupyterLabAppImageConfig":{
           "shape":"JupyterLabAppImageConfig",
           "documentation":"<p>The JupyterLab app running on the image.</p>"
+        },
+        "CodeEditorAppImageConfig":{
+          "shape":"CodeEditorAppImageConfig",
+          "documentation":"<p>The Code Editor app running on the image.</p>"
         }
       }
     },
@@ -37087,7 +37283,7 @@
         },
         "SpaceStorageSettings":{
           "shape":"DefaultSpaceStorageSettings",
-          "documentation":"<p>The storage settings for a private space.</p>"
+          "documentation":"<p>The storage settings for a space.</p>"
         },
         "DefaultLandingUri":{
           "shape":"LandingUri",

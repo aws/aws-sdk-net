@@ -33,7 +33,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DescribeEndpointSettingsResponse : AmazonWebServiceResponse
     {
-        private List<EndpointSetting> _endpointSettings = new List<EndpointSetting>();
+        private List<EndpointSetting> _endpointSettings = AWSConfigs.InitializeCollections ? new List<EndpointSetting>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if EndpointSettings property is set
         internal bool IsSetEndpointSettings()
         {
-            return this._endpointSettings != null && this._endpointSettings.Count > 0; 
+            return this._endpointSettings != null && (this._endpointSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

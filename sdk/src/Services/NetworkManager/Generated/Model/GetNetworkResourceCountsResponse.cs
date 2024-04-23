@@ -33,7 +33,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class GetNetworkResourceCountsResponse : AmazonWebServiceResponse
     {
-        private List<NetworkResourceCount> _networkResourceCounts = new List<NetworkResourceCount>();
+        private List<NetworkResourceCount> _networkResourceCounts = AWSConfigs.InitializeCollections ? new List<NetworkResourceCount>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if NetworkResourceCounts property is set
         internal bool IsSetNetworkResourceCounts()
         {
-            return this._networkResourceCounts != null && this._networkResourceCounts.Count > 0; 
+            return this._networkResourceCounts != null && (this._networkResourceCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

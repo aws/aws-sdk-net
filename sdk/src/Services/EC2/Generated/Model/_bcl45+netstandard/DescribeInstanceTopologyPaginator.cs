@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Instances
         /// </summary>
         public IPaginatedEnumerable<InstanceTopology> Instances => 
-            new PaginatedResultKeyResponse<DescribeInstanceTopologyResponse, InstanceTopology>(this, (i) => i.Instances);
+            new PaginatedResultKeyResponse<DescribeInstanceTopologyResponse, InstanceTopology>(this, (i) => i.Instances ?? new List<InstanceTopology>());
 
         internal DescribeInstanceTopologyPaginator(IAmazonEC2 client, DescribeInstanceTopologyRequest request)
         {

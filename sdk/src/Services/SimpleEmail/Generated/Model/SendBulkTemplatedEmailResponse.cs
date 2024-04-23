@@ -33,7 +33,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class SendBulkTemplatedEmailResponse : AmazonWebServiceResponse
     {
-        private List<BulkEmailDestinationStatus> _status = new List<BulkEmailDestinationStatus>();
+        private List<BulkEmailDestinationStatus> _status = AWSConfigs.InitializeCollections ? new List<BulkEmailDestinationStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -53,7 +53,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this._status != null && this._status.Count > 0; 
+            return this._status != null && (this._status.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

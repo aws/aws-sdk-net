@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Variant requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");
@@ -54,7 +57,14 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDoubleValue())
             {
                 context.Writer.WritePropertyName("doubleValue");
-                context.Writer.Write(requestObject.DoubleValue);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DoubleValue);
+                }
             }
 
             if(requestObject.IsSetIntegerValue())
@@ -78,3 +88,4 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

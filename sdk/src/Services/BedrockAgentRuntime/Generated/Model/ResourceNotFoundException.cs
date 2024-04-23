@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// This exception is thrown when a resource referenced by the operation does not exist
+    /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+    /// Resource Name (ARN) and try your request again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

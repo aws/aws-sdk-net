@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the Findings
         /// </summary>
         public IPaginatedEnumerable<AuditFinding> Findings => 
-            new PaginatedResultKeyResponse<ListAuditFindingsResponse, AuditFinding>(this, (i) => i.Findings);
+            new PaginatedResultKeyResponse<ListAuditFindingsResponse, AuditFinding>(this, (i) => i.Findings ?? new List<AuditFinding>());
 
         internal ListAuditFindingsPaginator(IAmazonIoT client, ListAuditFindingsRequest request)
         {

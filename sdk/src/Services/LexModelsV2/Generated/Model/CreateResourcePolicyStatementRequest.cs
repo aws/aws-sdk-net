@@ -41,11 +41,11 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class CreateResourcePolicyStatementRequest : AmazonLexModelsV2Request
     {
-        private List<string> _action = new List<string>();
-        private Dictionary<string, Dictionary<string, string>> _condition = new Dictionary<string, Dictionary<string, string>>();
+        private List<string> _action = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, Dictionary<string, string>> _condition = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
         private Effect _effect;
         private string _expectedRevisionId;
-        private List<Principal> _principal = new List<Principal>();
+        private List<Principal> _principal = AWSConfigs.InitializeCollections ? new List<Principal>() : null;
         private string _resourceArn;
         private string _statementId;
 
@@ -67,7 +67,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Action property is set
         internal bool IsSetAction()
         {
-            return this._action != null && this._action.Count > 0; 
+            return this._action != null && (this._action.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Condition property is set
         internal bool IsSetCondition()
         {
-            return this._condition != null && this._condition.Count > 0; 
+            return this._condition != null && (this._condition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Principal property is set
         internal bool IsSetPrincipal()
         {
-            return this._principal != null && this._principal.Count > 0; 
+            return this._principal != null && (this._principal.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

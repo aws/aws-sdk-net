@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Enumerable containing all of the NotebookExecutions
         /// </summary>
         public IPaginatedEnumerable<NotebookExecutionSummary> NotebookExecutions => 
-            new PaginatedResultKeyResponse<ListNotebookExecutionsResponse, NotebookExecutionSummary>(this, (i) => i.NotebookExecutions);
+            new PaginatedResultKeyResponse<ListNotebookExecutionsResponse, NotebookExecutionSummary>(this, (i) => i.NotebookExecutions ?? new List<NotebookExecutionSummary>());
 
         internal ListNotebookExecutionsPaginator(IAmazonElasticMapReduce client, ListNotebookExecutionsRequest request)
         {

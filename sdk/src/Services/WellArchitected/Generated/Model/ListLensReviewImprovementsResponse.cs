@@ -33,7 +33,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ListLensReviewImprovementsResponse : AmazonWebServiceResponse
     {
-        private List<ImprovementSummary> _improvementSummaries = new List<ImprovementSummary>();
+        private List<ImprovementSummary> _improvementSummaries = AWSConfigs.InitializeCollections ? new List<ImprovementSummary>() : null;
         private string _lensAlias;
         private string _lensArn;
         private int? _milestoneNumber;
@@ -52,7 +52,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ImprovementSummaries property is set
         internal bool IsSetImprovementSummaries()
         {
-            return this._improvementSummaries != null && this._improvementSummaries.Count > 0; 
+            return this._improvementSummaries != null && (this._improvementSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

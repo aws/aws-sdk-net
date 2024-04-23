@@ -36,7 +36,7 @@ namespace Amazon.MemoryDB.Model
     /// </summary>
     public partial class BatchUpdateClusterRequest : AmazonMemoryDBRequest
     {
-        private List<string> _clusterNames = new List<string>();
+        private List<string> _clusterNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ServiceUpdateRequest _serviceUpdate;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ClusterNames property is set
         internal bool IsSetClusterNames()
         {
-            return this._clusterNames != null && this._clusterNames.Count > 0; 
+            return this._clusterNames != null && (this._clusterNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

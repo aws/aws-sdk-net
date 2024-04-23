@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class NotebookInstanceSummary
     {
-        private List<string> _additionalCodeRepositories = new List<string>();
+        private List<string> _additionalCodeRepositories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _creationTime;
         private string _defaultCodeRepository;
         private InstanceType _instanceType;
@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AdditionalCodeRepositories property is set
         internal bool IsSetAdditionalCodeRepositories()
         {
-            return this._additionalCodeRepositories != null && this._additionalCodeRepositories.Count > 0; 
+            return this._additionalCodeRepositories != null && (this._additionalCodeRepositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

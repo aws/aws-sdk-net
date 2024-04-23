@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the Recommenders
         /// </summary>
         public IPaginatedEnumerable<RecommenderSummary> Recommenders => 
-            new PaginatedResultKeyResponse<ListRecommendersResponse, RecommenderSummary>(this, (i) => i.Recommenders);
+            new PaginatedResultKeyResponse<ListRecommendersResponse, RecommenderSummary>(this, (i) => i.Recommenders ?? new List<RecommenderSummary>());
 
         internal ListRecommendersPaginator(IAmazonPersonalize client, ListRecommendersRequest request)
         {

@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
-    /// Updates an existing Amazon Q application.
+    /// Updates an existing Amazon Q Business application.
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonQBusinessRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application.
+        /// The identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -80,7 +80,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the Amazon Q application.
+        /// A description for the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -99,7 +99,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// A name for the Amazon Q application.
+        /// A name for the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -119,7 +119,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon
-        /// Q permission to access Amazon CloudWatch logs and metrics.
+        /// Q Business permission to access Amazon CloudWatch logs and metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

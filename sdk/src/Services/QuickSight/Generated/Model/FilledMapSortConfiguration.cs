@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class FilledMapSortConfiguration
     {
-        private List<FieldSortOptions> _categorySort = new List<FieldSortOptions>();
+        private List<FieldSortOptions> _categorySort = AWSConfigs.InitializeCollections ? new List<FieldSortOptions>() : null;
 
         /// <summary>
         /// Gets and sets the property CategorySort. 
@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if CategorySort property is set
         internal bool IsSetCategorySort()
         {
-            return this._categorySort != null && this._categorySort.Count > 0; 
+            return this._categorySort != null && (this._categorySort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,7 +36,7 @@ namespace Amazon.DataZone.Model
     {
         private string _description;
         private string _domainIdentifier;
-        private Dictionary<string, FormEntryInput> _formsInput = new Dictionary<string, FormEntryInput>();
+        private Dictionary<string, FormEntryInput> _formsInput = AWSConfigs.InitializeCollections ? new Dictionary<string, FormEntryInput>() : null;
         private string _name;
         private string _owningProjectIdentifier;
 
@@ -95,7 +95,7 @@ namespace Amazon.DataZone.Model
         // Check to see if FormsInput property is set
         internal bool IsSetFormsInput()
         {
-            return this._formsInput != null && this._formsInput.Count > 0; 
+            return this._formsInput != null && (this._formsInput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.KinesisVideo.Model
     public partial class ListStreamsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StreamInfo> _streamInfoList = new List<StreamInfo>();
+        private List<StreamInfo> _streamInfoList = AWSConfigs.InitializeCollections ? new List<StreamInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.KinesisVideo.Model
         // Check to see if StreamInfoList property is set
         internal bool IsSetStreamInfoList()
         {
-            return this._streamInfoList != null && this._streamInfoList.Count > 0; 
+            return this._streamInfoList != null && (this._streamInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

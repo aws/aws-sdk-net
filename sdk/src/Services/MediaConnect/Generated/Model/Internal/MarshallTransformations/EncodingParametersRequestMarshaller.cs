@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncodingParametersRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCompressionFactor())
             {
                 context.Writer.WritePropertyName("compressionFactor");
-                context.Writer.Write(requestObject.CompressionFactor);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CompressionFactor))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CompressionFactor));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CompressionFactor);
+                }
             }
 
             if(requestObject.IsSetEncoderProfile())
@@ -66,3 +76,4 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

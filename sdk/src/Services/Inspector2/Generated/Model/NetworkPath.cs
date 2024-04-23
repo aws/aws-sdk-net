@@ -33,7 +33,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class NetworkPath
     {
-        private List<Step> _steps = new List<Step>();
+        private List<Step> _steps = AWSConfigs.InitializeCollections ? new List<Step>() : null;
 
         /// <summary>
         /// Gets and sets the property Steps. 
@@ -51,7 +51,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

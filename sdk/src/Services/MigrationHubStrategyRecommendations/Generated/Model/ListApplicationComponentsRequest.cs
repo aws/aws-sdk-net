@@ -36,7 +36,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     {
         private ApplicationComponentCriteria _applicationComponentCriteria;
         private string _filterValue;
-        private List<Group> _groupIdFilter = new List<Group>();
+        private List<Group> _groupIdFilter = AWSConfigs.InitializeCollections ? new List<Group>() : null;
         private int? _maxResults;
         private string _nextToken;
         private SortOrder _sort;
@@ -96,7 +96,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if GroupIdFilter property is set
         internal bool IsSetGroupIdFilter()
         {
-            return this._groupIdFilter != null && this._groupIdFilter.Count > 0; 
+            return this._groupIdFilter != null && (this._groupIdFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

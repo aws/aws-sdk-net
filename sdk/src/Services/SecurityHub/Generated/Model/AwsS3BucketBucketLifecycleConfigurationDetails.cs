@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsS3BucketBucketLifecycleConfigurationDetails
     {
-        private List<AwsS3BucketBucketLifecycleConfigurationRulesDetails> _rules = new List<AwsS3BucketBucketLifecycleConfigurationRulesDetails>();
+        private List<AwsS3BucketBucketLifecycleConfigurationRulesDetails> _rules = AWSConfigs.InitializeCollections ? new List<AwsS3BucketBucketLifecycleConfigurationRulesDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property Rules. 
@@ -50,7 +50,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

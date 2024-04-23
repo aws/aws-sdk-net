@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Addresses
         /// </summary>
         public IPaginatedEnumerable<AddressAttribute> Addresses => 
-            new PaginatedResultKeyResponse<DescribeAddressesAttributeResponse, AddressAttribute>(this, (i) => i.Addresses);
+            new PaginatedResultKeyResponse<DescribeAddressesAttributeResponse, AddressAttribute>(this, (i) => i.Addresses ?? new List<AddressAttribute>());
 
         internal DescribeAddressesAttributePaginator(IAmazonEC2 client, DescribeAddressesAttributeRequest request)
         {

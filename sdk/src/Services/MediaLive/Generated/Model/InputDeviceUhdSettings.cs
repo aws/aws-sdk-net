@@ -35,7 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class InputDeviceUhdSettings
     {
         private InputDeviceActiveInput _activeInput;
-        private List<InputDeviceUhdAudioChannelPairConfig> _audioChannelPairs = new List<InputDeviceUhdAudioChannelPairConfig>();
+        private List<InputDeviceUhdAudioChannelPairConfig> _audioChannelPairs = AWSConfigs.InitializeCollections ? new List<InputDeviceUhdAudioChannelPairConfig>() : null;
         private InputDeviceCodec _codec;
         private InputDeviceConfiguredInput _configuredInput;
         private InputDeviceState _deviceState;
@@ -78,7 +78,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if AudioChannelPairs property is set
         internal bool IsSetAudioChannelPairs()
         {
-            return this._audioChannelPairs != null && this._audioChannelPairs.Count > 0; 
+            return this._audioChannelPairs != null && (this._audioChannelPairs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

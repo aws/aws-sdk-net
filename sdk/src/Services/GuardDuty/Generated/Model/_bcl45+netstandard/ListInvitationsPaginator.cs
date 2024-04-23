@@ -45,7 +45,7 @@ namespace Amazon.GuardDuty.Model
         /// Enumerable containing all of the Invitations
         /// </summary>
         public IPaginatedEnumerable<Invitation> Invitations => 
-            new PaginatedResultKeyResponse<ListInvitationsResponse, Invitation>(this, (i) => i.Invitations);
+            new PaginatedResultKeyResponse<ListInvitationsResponse, Invitation>(this, (i) => i.Invitations ?? new List<Invitation>());
 
         internal ListInvitationsPaginator(IAmazonGuardDuty client, ListInvitationsRequest request)
         {

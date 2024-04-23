@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetRelationalDatabaseBundlesResponse : AmazonWebServiceResponse
     {
-        private List<RelationalDatabaseBundle> _bundles = new List<RelationalDatabaseBundle>();
+        private List<RelationalDatabaseBundle> _bundles = AWSConfigs.InitializeCollections ? new List<RelationalDatabaseBundle>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Bundles property is set
         internal bool IsSetBundles()
         {
-            return this._bundles != null && this._bundles.Count > 0; 
+            return this._bundles != null && (this._bundles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

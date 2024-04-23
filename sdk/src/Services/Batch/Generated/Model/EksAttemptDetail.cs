@@ -34,8 +34,8 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EksAttemptDetail
     {
-        private List<EksAttemptContainerDetail> _containers = new List<EksAttemptContainerDetail>();
-        private List<EksAttemptContainerDetail> _initContainers = new List<EksAttemptContainerDetail>();
+        private List<EksAttemptContainerDetail> _containers = AWSConfigs.InitializeCollections ? new List<EksAttemptContainerDetail>() : null;
+        private List<EksAttemptContainerDetail> _initContainers = AWSConfigs.InitializeCollections ? new List<EksAttemptContainerDetail>() : null;
         private string _nodeName;
         private string _podName;
         private long? _startedAt;
@@ -57,7 +57,7 @@ namespace Amazon.Batch.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.Batch.Model
         // Check to see if InitContainers property is set
         internal bool IsSetInitContainers()
         {
-            return this._initContainers != null && this._initContainers.Count > 0; 
+            return this._initContainers != null && (this._initContainers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

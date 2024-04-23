@@ -35,7 +35,7 @@ namespace Amazon.Textract.Model
     public partial class Warning
     {
         private string _errorCode;
-        private List<int> _pages = new List<int>();
+        private List<int> _pages = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
         /// Gets and sets the property ErrorCode. 
@@ -70,7 +70,7 @@ namespace Amazon.Textract.Model
         // Check to see if Pages property is set
         internal bool IsSetPages()
         {
-            return this._pages != null && this._pages.Count > 0; 
+            return this._pages != null && (this._pages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

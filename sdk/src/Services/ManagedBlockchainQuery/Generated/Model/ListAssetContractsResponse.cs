@@ -33,7 +33,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// </summary>
     public partial class ListAssetContractsResponse : AmazonWebServiceResponse
     {
-        private List<AssetContract> _contracts = new List<AssetContract>();
+        private List<AssetContract> _contracts = AWSConfigs.InitializeCollections ? new List<AssetContract>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         // Check to see if Contracts property is set
         internal bool IsSetContracts()
         {
-            return this._contracts != null && this._contracts.Count > 0; 
+            return this._contracts != null && (this._contracts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

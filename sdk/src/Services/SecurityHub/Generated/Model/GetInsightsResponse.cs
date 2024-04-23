@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class GetInsightsResponse : AmazonWebServiceResponse
     {
-        private List<Insight> _insights = new List<Insight>();
+        private List<Insight> _insights = AWSConfigs.InitializeCollections ? new List<Insight>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Insights property is set
         internal bool IsSetInsights()
         {
-            return this._insights != null && this._insights.Count > 0; 
+            return this._insights != null && (this._insights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

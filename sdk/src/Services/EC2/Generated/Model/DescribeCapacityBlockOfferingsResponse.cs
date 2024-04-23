@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeCapacityBlockOfferingsResponse : AmazonWebServiceResponse
     {
-        private List<CapacityBlockOffering> _capacityBlockOfferings = new List<CapacityBlockOffering>();
+        private List<CapacityBlockOffering> _capacityBlockOfferings = AWSConfigs.InitializeCollections ? new List<CapacityBlockOffering>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if CapacityBlockOfferings property is set
         internal bool IsSetCapacityBlockOfferings()
         {
-            return this._capacityBlockOfferings != null && this._capacityBlockOfferings.Count > 0; 
+            return this._capacityBlockOfferings != null && (this._capacityBlockOfferings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.ECR.Model
         /// Enumerable containing all of the PreviewResults
         /// </summary>
         public IPaginatedEnumerable<LifecyclePolicyPreviewResult> PreviewResults => 
-            new PaginatedResultKeyResponse<GetLifecyclePolicyPreviewResponse, LifecyclePolicyPreviewResult>(this, (i) => i.PreviewResults);
+            new PaginatedResultKeyResponse<GetLifecyclePolicyPreviewResponse, LifecyclePolicyPreviewResult>(this, (i) => i.PreviewResults ?? new List<LifecyclePolicyPreviewResult>());
 
         internal GetLifecyclePolicyPreviewPaginator(IAmazonECR client, GetLifecyclePolicyPreviewRequest request)
         {

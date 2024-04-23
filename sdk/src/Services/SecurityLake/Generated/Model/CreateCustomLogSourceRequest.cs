@@ -41,7 +41,7 @@ namespace Amazon.SecurityLake.Model
     public partial class CreateCustomLogSourceRequest : AmazonSecurityLakeRequest
     {
         private CustomLogSourceConfiguration _configuration;
-        private List<string> _eventClasses = new List<string>();
+        private List<string> _eventClasses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sourceName;
         private string _sourceVersion;
 
@@ -198,7 +198,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if EventClasses property is set
         internal bool IsSetEventClasses()
         {
-            return this._eventClasses != null && this._eventClasses.Count > 0; 
+            return this._eventClasses != null && (this._eventClasses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

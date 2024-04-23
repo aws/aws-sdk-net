@@ -36,17 +36,17 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class JobFlowInstancesConfig
     {
-        private List<string> _additionalMasterSecurityGroups = new List<string>();
-        private List<string> _additionalSlaveSecurityGroups = new List<string>();
+        private List<string> _additionalMasterSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _additionalSlaveSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ec2KeyName;
         private string _ec2SubnetId;
-        private List<string> _ec2SubnetIds = new List<string>();
+        private List<string> _ec2SubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _emrManagedMasterSecurityGroup;
         private string _emrManagedSlaveSecurityGroup;
         private string _hadoopVersion;
         private int? _instanceCount;
-        private List<InstanceFleetConfig> _instanceFleets = new List<InstanceFleetConfig>();
-        private List<InstanceGroupConfig> _instanceGroups = new List<InstanceGroupConfig>();
+        private List<InstanceFleetConfig> _instanceFleets = AWSConfigs.InitializeCollections ? new List<InstanceFleetConfig>() : null;
+        private List<InstanceGroupConfig> _instanceGroups = AWSConfigs.InitializeCollections ? new List<InstanceGroupConfig>() : null;
         private bool? _keepJobFlowAliveWhenNoSteps;
         private string _masterInstanceType;
         private PlacementType _placement;
@@ -75,7 +75,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if AdditionalMasterSecurityGroups property is set
         internal bool IsSetAdditionalMasterSecurityGroups()
         {
-            return this._additionalMasterSecurityGroups != null && this._additionalMasterSecurityGroups.Count > 0; 
+            return this._additionalMasterSecurityGroups != null && (this._additionalMasterSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if AdditionalSlaveSecurityGroups property is set
         internal bool IsSetAdditionalSlaveSecurityGroups()
         {
-            return this._additionalSlaveSecurityGroups != null && this._additionalSlaveSecurityGroups.Count > 0; 
+            return this._additionalSlaveSecurityGroups != null && (this._additionalSlaveSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Ec2SubnetIds property is set
         internal bool IsSetEc2SubnetIds()
         {
-            return this._ec2SubnetIds != null && this._ec2SubnetIds.Count > 0; 
+            return this._ec2SubnetIds != null && (this._ec2SubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -267,7 +267,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceFleets property is set
         internal bool IsSetInstanceFleets()
         {
-            return this._instanceFleets != null && this._instanceFleets.Count > 0; 
+            return this._instanceFleets != null && (this._instanceFleets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -285,14 +285,14 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
-            return this._instanceGroups != null && this._instanceGroups.Count > 0; 
+            return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property KeepJobFlowAliveWhenNoSteps. 
         /// <para>
         /// Specifies whether the cluster should remain available after completing all steps.
-        /// Defaults to <c>true</c>. For more information about configuring cluster termination,
+        /// Defaults to <c>false</c>. For more information about configuring cluster termination,
         /// see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
         /// Cluster Termination</a> in the <i>EMR Management Guide</i>.
         /// </para>

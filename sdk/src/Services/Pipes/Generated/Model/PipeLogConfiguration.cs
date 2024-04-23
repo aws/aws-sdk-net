@@ -35,7 +35,7 @@ namespace Amazon.Pipes.Model
     {
         private CloudwatchLogsLogDestination _cloudwatchLogsLogDestination;
         private FirehoseLogDestination _firehoseLogDestination;
-        private List<string> _includeExecutionData = new List<string>();
+        private List<string> _includeExecutionData = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LogLevel _level;
         private S3LogDestination _s3LogDestination;
 
@@ -100,7 +100,7 @@ namespace Amazon.Pipes.Model
         // Check to see if IncludeExecutionData property is set
         internal bool IsSetIncludeExecutionData()
         {
-            return this._includeExecutionData != null && this._includeExecutionData.Count > 0; 
+            return this._includeExecutionData != null && (this._includeExecutionData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

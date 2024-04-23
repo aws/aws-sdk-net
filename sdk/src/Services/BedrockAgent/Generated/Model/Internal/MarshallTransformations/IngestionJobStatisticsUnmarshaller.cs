@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -81,6 +82,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.NumberOfDocumentsScanned = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("numberOfMetadataDocumentsModified", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfMetadataDocumentsModified = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("numberOfMetadataDocumentsScanned", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfMetadataDocumentsScanned = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("numberOfModifiedDocumentsIndexed", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
@@ -112,3 +125,4 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

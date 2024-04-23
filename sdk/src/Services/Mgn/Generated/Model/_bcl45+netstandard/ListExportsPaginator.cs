@@ -45,7 +45,7 @@ namespace Amazon.Mgn.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ExportTask> Items => 
-            new PaginatedResultKeyResponse<ListExportsResponse, ExportTask>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListExportsResponse, ExportTask>(this, (i) => i.Items ?? new List<ExportTask>());
 
         internal ListExportsPaginator(IAmazonMgn client, ListExportsRequest request)
         {

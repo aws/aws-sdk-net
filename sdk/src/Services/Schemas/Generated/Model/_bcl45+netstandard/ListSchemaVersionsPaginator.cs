@@ -45,7 +45,7 @@ namespace Amazon.Schemas.Model
         /// Enumerable containing all of the SchemaVersions
         /// </summary>
         public IPaginatedEnumerable<SchemaVersionSummary> SchemaVersions => 
-            new PaginatedResultKeyResponse<ListSchemaVersionsResponse, SchemaVersionSummary>(this, (i) => i.SchemaVersions);
+            new PaginatedResultKeyResponse<ListSchemaVersionsResponse, SchemaVersionSummary>(this, (i) => i.SchemaVersions ?? new List<SchemaVersionSummary>());
 
         internal ListSchemaVersionsPaginator(IAmazonSchemas client, ListSchemaVersionsRequest request)
         {

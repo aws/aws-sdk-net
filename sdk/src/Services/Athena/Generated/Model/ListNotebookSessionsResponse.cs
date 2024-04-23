@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model
     public partial class ListNotebookSessionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<NotebookSessionSummary> _notebookSessionsList = new List<NotebookSessionSummary>();
+        private List<NotebookSessionSummary> _notebookSessionsList = AWSConfigs.InitializeCollections ? new List<NotebookSessionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.Athena.Model
         // Check to see if NotebookSessionsList property is set
         internal bool IsSetNotebookSessionsList()
         {
-            return this._notebookSessionsList != null && this._notebookSessionsList.Count > 0; 
+            return this._notebookSessionsList != null && (this._notebookSessionsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

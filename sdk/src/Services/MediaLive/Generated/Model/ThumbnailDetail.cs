@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model
     public partial class ThumbnailDetail
     {
         private string _pipelineId;
-        private List<Thumbnail> _thumbnails = new List<Thumbnail>();
+        private List<Thumbnail> _thumbnails = AWSConfigs.InitializeCollections ? new List<Thumbnail>() : null;
 
         /// <summary>
         /// Gets and sets the property PipelineId. Pipeline ID
@@ -63,7 +63,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Thumbnails property is set
         internal bool IsSetThumbnails()
         {
-            return this._thumbnails != null && this._thumbnails.Count > 0; 
+            return this._thumbnails != null && (this._thumbnails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

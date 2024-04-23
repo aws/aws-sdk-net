@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetInstanceSnapshotsResponse : AmazonWebServiceResponse
     {
-        private List<InstanceSnapshot> _instanceSnapshots = new List<InstanceSnapshot>();
+        private List<InstanceSnapshot> _instanceSnapshots = AWSConfigs.InitializeCollections ? new List<InstanceSnapshot>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if InstanceSnapshots property is set
         internal bool IsSetInstanceSnapshots()
         {
-            return this._instanceSnapshots != null && this._instanceSnapshots.Count > 0; 
+            return this._instanceSnapshots != null && (this._instanceSnapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

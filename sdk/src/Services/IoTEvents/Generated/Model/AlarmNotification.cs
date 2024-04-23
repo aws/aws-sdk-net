@@ -33,7 +33,7 @@ namespace Amazon.IoTEvents.Model
     /// </summary>
     public partial class AlarmNotification
     {
-        private List<NotificationAction> _notificationActions = new List<NotificationAction>();
+        private List<NotificationAction> _notificationActions = AWSConfigs.InitializeCollections ? new List<NotificationAction>() : null;
 
         /// <summary>
         /// Gets and sets the property NotificationActions. 
@@ -52,7 +52,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if NotificationActions property is set
         internal bool IsSetNotificationActions()
         {
-            return this._notificationActions != null && this._notificationActions.Count > 0; 
+            return this._notificationActions != null && (this._notificationActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

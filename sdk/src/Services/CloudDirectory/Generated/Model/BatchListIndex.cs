@@ -37,7 +37,7 @@ namespace Amazon.CloudDirectory.Model
         private ObjectReference _indexReference;
         private int? _maxResults;
         private string _nextToken;
-        private List<ObjectAttributeRange> _rangesOnIndexedValues = new List<ObjectAttributeRange>();
+        private List<ObjectAttributeRange> _rangesOnIndexedValues = AWSConfigs.InitializeCollections ? new List<ObjectAttributeRange>() : null;
 
         /// <summary>
         /// Gets and sets the property IndexReference. 
@@ -110,7 +110,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if RangesOnIndexedValues property is set
         internal bool IsSetRangesOnIndexedValues()
         {
-            return this._rangesOnIndexedValues != null && this._rangesOnIndexedValues.Count > 0; 
+            return this._rangesOnIndexedValues != null && (this._rangesOnIndexedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

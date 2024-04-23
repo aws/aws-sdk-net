@@ -36,7 +36,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class UnusedPermissionDetails
     {
-        private List<UnusedAction> _actions = new List<UnusedAction>();
+        private List<UnusedAction> _actions = AWSConfigs.InitializeCollections ? new List<UnusedAction>() : null;
         private DateTime? _lastAccessed;
         private string _serviceNamespace;
 
@@ -55,7 +55,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

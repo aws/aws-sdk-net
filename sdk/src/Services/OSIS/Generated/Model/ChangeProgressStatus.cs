@@ -33,7 +33,7 @@ namespace Amazon.OSIS.Model
     /// </summary>
     public partial class ChangeProgressStatus
     {
-        private List<ChangeProgressStage> _changeProgressStages = new List<ChangeProgressStage>();
+        private List<ChangeProgressStage> _changeProgressStages = AWSConfigs.InitializeCollections ? new List<ChangeProgressStage>() : null;
         private DateTime? _startTime;
         private ChangeProgressStatuses _status;
         private int? _totalNumberOfStages;
@@ -54,7 +54,7 @@ namespace Amazon.OSIS.Model
         // Check to see if ChangeProgressStages property is set
         internal bool IsSetChangeProgressStages()
         {
-            return this._changeProgressStages != null && this._changeProgressStages.Count > 0; 
+            return this._changeProgressStages != null && (this._changeProgressStages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.Organizations.Model
     public partial class ListTargetsForPolicyResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PolicyTargetSummary> _targets = new List<PolicyTargetSummary>();
+        private List<PolicyTargetSummary> _targets = AWSConfigs.InitializeCollections ? new List<PolicyTargetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.Organizations.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -36,8 +36,8 @@ namespace Amazon.ComputeOptimizer.Model
         private EnhancedInfrastructureMetrics _enhancedInfrastructureMetrics;
         private ExternalMetricsPreference _externalMetricsPreference;
         private LookBackPeriodPreference _lookBackPeriod;
-        private List<EffectivePreferredResource> _preferredResources = new List<EffectivePreferredResource>();
-        private List<UtilizationPreference> _utilizationPreferences = new List<UtilizationPreference>();
+        private List<EffectivePreferredResource> _preferredResources = AWSConfigs.InitializeCollections ? new List<EffectivePreferredResource>() : null;
+        private List<UtilizationPreference> _utilizationPreferences = AWSConfigs.InitializeCollections ? new List<UtilizationPreference>() : null;
 
         /// <summary>
         /// Gets and sets the property EnhancedInfrastructureMetrics. 
@@ -161,13 +161,13 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if PreferredResources property is set
         internal bool IsSetPreferredResources()
         {
-            return this._preferredResources != null && this._preferredResources.Count > 0; 
+            return this._preferredResources != null && (this._preferredResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property UtilizationPreferences. 
         /// <para>
-        ///  The resource’s CPU utilization threshold preferences, such as threshold and headroom,
+        ///  The resource’s CPU and memory utilization preferences, such as threshold and headroom,
         /// that were used to generate rightsizing recommendations. It considers all applicable
         /// preferences that you set at the resource, account, and organization level. 
         /// </para>
@@ -187,7 +187,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if UtilizationPreferences property is set
         internal bool IsSetUtilizationPreferences()
         {
-            return this._utilizationPreferences != null && this._utilizationPreferences.Count > 0; 
+            return this._utilizationPreferences != null && (this._utilizationPreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

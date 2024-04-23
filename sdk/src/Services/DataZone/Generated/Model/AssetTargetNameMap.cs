@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// 
+    /// The name map for assets.
     /// </summary>
     public partial class AssetTargetNameMap
     {

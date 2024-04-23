@@ -45,7 +45,7 @@ namespace Amazon.SageMakerGeospatial.Model
         /// Enumerable containing all of the VectorEnrichmentJobSummaries
         /// </summary>
         public IPaginatedEnumerable<ListVectorEnrichmentJobOutputConfig> VectorEnrichmentJobSummaries => 
-            new PaginatedResultKeyResponse<ListVectorEnrichmentJobsResponse, ListVectorEnrichmentJobOutputConfig>(this, (i) => i.VectorEnrichmentJobSummaries);
+            new PaginatedResultKeyResponse<ListVectorEnrichmentJobsResponse, ListVectorEnrichmentJobOutputConfig>(this, (i) => i.VectorEnrichmentJobSummaries ?? new List<ListVectorEnrichmentJobOutputConfig>());
 
         internal ListVectorEnrichmentJobsPaginator(IAmazonSageMakerGeospatial client, ListVectorEnrichmentJobsRequest request)
         {

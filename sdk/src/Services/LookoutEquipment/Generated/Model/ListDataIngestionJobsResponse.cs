@@ -33,7 +33,7 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class ListDataIngestionJobsResponse : AmazonWebServiceResponse
     {
-        private List<DataIngestionJobSummary> _dataIngestionJobSummaries = new List<DataIngestionJobSummary>();
+        private List<DataIngestionJobSummary> _dataIngestionJobSummaries = AWSConfigs.InitializeCollections ? new List<DataIngestionJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if DataIngestionJobSummaries property is set
         internal bool IsSetDataIngestionJobSummaries()
         {
-            return this._dataIngestionJobSummaries != null && this._dataIngestionJobSummaries.Count > 0; 
+            return this._dataIngestionJobSummaries != null && (this._dataIngestionJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.PcaConnectorAd.Model
         /// Enumerable containing all of the Templates
         /// </summary>
         public IPaginatedEnumerable<TemplateSummary> Templates => 
-            new PaginatedResultKeyResponse<ListTemplatesResponse, TemplateSummary>(this, (i) => i.Templates);
+            new PaginatedResultKeyResponse<ListTemplatesResponse, TemplateSummary>(this, (i) => i.Templates ?? new List<TemplateSummary>());
 
         internal ListTemplatesPaginator(IAmazonPcaConnectorAd client, ListTemplatesRequest request)
         {

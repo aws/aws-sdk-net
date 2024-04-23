@@ -34,7 +34,7 @@ namespace Amazon.Repostspace.Model
     public partial class ListSpacesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SpaceData> _spaces = new List<SpaceData>();
+        private List<SpaceData> _spaces = AWSConfigs.InitializeCollections ? new List<SpaceData>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Repostspace.Model
         // Check to see if Spaces property is set
         internal bool IsSetSpaces()
         {
-            return this._spaces != null && this._spaces.Count > 0; 
+            return this._spaces != null && (this._spaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

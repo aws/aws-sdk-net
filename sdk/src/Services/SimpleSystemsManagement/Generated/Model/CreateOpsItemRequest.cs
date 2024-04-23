@@ -50,16 +50,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _actualStartTime;
         private string _category;
         private string _description;
-        private List<OpsItemNotification> _notifications = new List<OpsItemNotification>();
-        private Dictionary<string, OpsItemDataValue> _operationalData = new Dictionary<string, OpsItemDataValue>();
+        private List<OpsItemNotification> _notifications = AWSConfigs.InitializeCollections ? new List<OpsItemNotification>() : null;
+        private Dictionary<string, OpsItemDataValue> _operationalData = AWSConfigs.InitializeCollections ? new Dictionary<string, OpsItemDataValue>() : null;
         private string _opsItemType;
         private DateTime? _plannedEndTime;
         private DateTime? _plannedStartTime;
         private int? _priority;
-        private List<RelatedOpsItem> _relatedOpsItems = new List<RelatedOpsItem>();
+        private List<RelatedOpsItem> _relatedOpsItems = AWSConfigs.InitializeCollections ? new List<RelatedOpsItem>() : null;
         private string _severity;
         private string _source;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _title;
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Notifications property is set
         internal bool IsSetNotifications()
         {
-            return this._notifications != null && this._notifications.Count > 0; 
+            return this._notifications != null && (this._notifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Use the <c>/aws/resources</c> key in OperationalData to specify a related resource
         /// in the request. Use the <c>/aws/automations</c> key in OperationalData to associate
         /// an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands
-        /// that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
+        /// that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Create
         /// OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
@@ -224,7 +224,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if OperationalData property is set
         internal bool IsSetOperationalData()
         {
-            return this._operationalData != null && this._operationalData.Count > 0; 
+            return this._operationalData != null && (this._operationalData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -346,7 +346,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if RelatedOpsItems property is set
         internal bool IsSetRelatedOpsItems()
         {
-            return this._relatedOpsItems != null && this._relatedOpsItems.Count > 0; 
+            return this._relatedOpsItems != null && (this._relatedOpsItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -424,7 +424,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

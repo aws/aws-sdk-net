@@ -36,7 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _catalogId;
         private string _databaseName;
-        private List<BatchUpdatePartitionRequestEntry> _entries = new List<BatchUpdatePartitionRequestEntry>();
+        private List<BatchUpdatePartitionRequestEntry> _entries = AWSConfigs.InitializeCollections ? new List<BatchUpdatePartitionRequestEntry>() : null;
         private string _tableName;
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.Glue.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

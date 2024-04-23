@@ -33,7 +33,7 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class SearchContentResponse : AmazonWebServiceResponse
     {
-        private List<ContentSummary> _contentSummaries = new List<ContentSummary>();
+        private List<ContentSummary> _contentSummaries = AWSConfigs.InitializeCollections ? new List<ContentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.QConnect.Model
         // Check to see if ContentSummaries property is set
         internal bool IsSetContentSummaries()
         {
-            return this._contentSummaries != null && this._contentSummaries.Count > 0; 
+            return this._contentSummaries != null && (this._contentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

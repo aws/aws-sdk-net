@@ -33,7 +33,7 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class LoggingFormat
     {
-        private List<JsonFormatRef> _json = new List<JsonFormatRef>();
+        private List<JsonFormatRef> _json = AWSConfigs.InitializeCollections ? new List<JsonFormatRef>() : null;
         private string _text;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if Json property is set
         internal bool IsSetJson()
         {
-            return this._json != null && this._json.Count > 0; 
+            return this._json != null && (this._json.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

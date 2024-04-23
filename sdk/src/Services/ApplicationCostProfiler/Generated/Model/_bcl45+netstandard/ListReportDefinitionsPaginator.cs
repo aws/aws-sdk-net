@@ -45,7 +45,7 @@ namespace Amazon.ApplicationCostProfiler.Model
         /// Enumerable containing all of the ReportDefinitions
         /// </summary>
         public IPaginatedEnumerable<ReportDefinition> ReportDefinitions => 
-            new PaginatedResultKeyResponse<ListReportDefinitionsResponse, ReportDefinition>(this, (i) => i.ReportDefinitions);
+            new PaginatedResultKeyResponse<ListReportDefinitionsResponse, ReportDefinition>(this, (i) => i.ReportDefinitions ?? new List<ReportDefinition>());
 
         internal ListReportDefinitionsPaginator(IAmazonApplicationCostProfiler client, ListReportDefinitionsRequest request)
         {

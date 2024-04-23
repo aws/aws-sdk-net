@@ -36,14 +36,14 @@ namespace Amazon.Imagebuilder.Model
     public partial class CreateImageRecipeRequest : AmazonImagebuilderRequest
     {
         private AdditionalInstanceConfiguration _additionalInstanceConfiguration;
-        private List<InstanceBlockDeviceMapping> _blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
+        private List<InstanceBlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<InstanceBlockDeviceMapping>() : null;
         private string _clientToken;
-        private List<ComponentConfiguration> _components = new List<ComponentConfiguration>();
+        private List<ComponentConfiguration> _components = AWSConfigs.InitializeCollections ? new List<ComponentConfiguration>() : null;
         private string _description;
         private string _name;
         private string _parentImage;
         private string _semanticVersion;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workingDirectory;
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Components property is set
         internal bool IsSetComponents()
         {
-            return this._components != null && this._components.Count > 0; 
+            return this._components != null && (this._components.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

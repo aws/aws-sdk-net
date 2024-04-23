@@ -70,6 +70,68 @@ namespace Amazon.WorkSpaces
 
 
         
+        #region  AcceptAccountLinkInvitation
+
+
+        /// <summary>
+        /// Accepts the account link invitation.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// There's currently no unlinking capability after you accept the account linking invitation.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAccountLinkInvitation service method.</param>
+        /// 
+        /// <returns>The response from the AcceptAccountLinkInvitation service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ConflictException">
+        /// The <c>TargetAccountId</c> is already linked or invited.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AcceptAccountLinkInvitation">REST API Reference for AcceptAccountLinkInvitation Operation</seealso>
+        AcceptAccountLinkInvitationResponse AcceptAccountLinkInvitation(AcceptAccountLinkInvitationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptAccountLinkInvitation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAccountLinkInvitation operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptAccountLinkInvitation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AcceptAccountLinkInvitation">REST API Reference for AcceptAccountLinkInvitation Operation</seealso>
+        IAsyncResult BeginAcceptAccountLinkInvitation(AcceptAccountLinkInvitationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptAccountLinkInvitation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptAccountLinkInvitation.</param>
+        /// 
+        /// <returns>Returns a  AcceptAccountLinkInvitationResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AcceptAccountLinkInvitation">REST API Reference for AcceptAccountLinkInvitation Operation</seealso>
+        AcceptAccountLinkInvitationResponse EndAcceptAccountLinkInvitation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateConnectionAlias
 
 
@@ -406,6 +468,59 @@ namespace Amazon.WorkSpaces
         /// <returns>Returns a  CopyWorkspaceImageResult from WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage">REST API Reference for CopyWorkspaceImage Operation</seealso>
         CopyWorkspaceImageResponse EndCopyWorkspaceImage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateAccountLinkInvitation
+
+
+        /// <summary>
+        /// Creates the account link invitation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountLinkInvitation service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccountLinkInvitation service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ConflictException">
+        /// The <c>TargetAccountId</c> is already linked or invited.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateAccountLinkInvitation">REST API Reference for CreateAccountLinkInvitation Operation</seealso>
+        CreateAccountLinkInvitationResponse CreateAccountLinkInvitation(CreateAccountLinkInvitationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAccountLinkInvitation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountLinkInvitation operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccountLinkInvitation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateAccountLinkInvitation">REST API Reference for CreateAccountLinkInvitation Operation</seealso>
+        IAsyncResult BeginCreateAccountLinkInvitation(CreateAccountLinkInvitationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAccountLinkInvitation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccountLinkInvitation.</param>
+        /// 
+        /// <returns>Returns a  CreateAccountLinkInvitationResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateAccountLinkInvitation">REST API Reference for CreateAccountLinkInvitation Operation</seealso>
+        CreateAccountLinkInvitationResponse EndCreateAccountLinkInvitation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -933,6 +1048,10 @@ namespace Amazon.WorkSpaces
         /// You don't need to specify the <c>PCOIP</c> protocol for Linux bundles because <c>WSP</c>
         /// is the default protocol for those bundles.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User-decoupled WorkSpaces are only supported by Amazon WorkSpaces Core.
+        /// </para>
         ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaces service method.</param>
@@ -972,6 +1091,62 @@ namespace Amazon.WorkSpaces
         /// <returns>Returns a  CreateWorkspacesResult from WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         CreateWorkspacesResponse EndCreateWorkspaces(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAccountLinkInvitation
+
+
+        /// <summary>
+        /// Deletes the account link invitation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountLinkInvitation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccountLinkInvitation service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ConflictException">
+        /// The <c>TargetAccountId</c> is already linked or invited.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteAccountLinkInvitation">REST API Reference for DeleteAccountLinkInvitation Operation</seealso>
+        DeleteAccountLinkInvitationResponse DeleteAccountLinkInvitation(DeleteAccountLinkInvitationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccountLinkInvitation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountLinkInvitation operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccountLinkInvitation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteAccountLinkInvitation">REST API Reference for DeleteAccountLinkInvitation Operation</seealso>
+        IAsyncResult BeginDeleteAccountLinkInvitation(DeleteAccountLinkInvitationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccountLinkInvitation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccountLinkInvitation.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccountLinkInvitationResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteAccountLinkInvitation">REST API Reference for DeleteAccountLinkInvitation Operation</seealso>
+        DeleteAccountLinkInvitationResponse EndDeleteAccountLinkInvitation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2747,6 +2922,59 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  GetAccountLink
+
+
+        /// <summary>
+        /// Retrieves account link information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountLink service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountLink service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/GetAccountLink">REST API Reference for GetAccountLink Operation</seealso>
+        GetAccountLinkResponse GetAccountLink(GetAccountLinkRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountLink operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountLink operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountLink
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/GetAccountLink">REST API Reference for GetAccountLink Operation</seealso>
+        IAsyncResult BeginGetAccountLink(GetAccountLinkRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountLink operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountLink.</param>
+        /// 
+        /// <returns>Returns a  GetAccountLinkResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/GetAccountLink">REST API Reference for GetAccountLink Operation</seealso>
+        GetAccountLinkResponse EndGetAccountLink(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ImportClientBranding
 
 
@@ -2888,6 +3116,56 @@ namespace Amazon.WorkSpaces
         /// <returns>Returns a  ImportWorkspaceImageResult from WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">REST API Reference for ImportWorkspaceImage Operation</seealso>
         ImportWorkspaceImageResponse EndImportWorkspaceImage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAccountLinks
+
+
+        /// <summary>
+        /// Lists all account links.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountLinks service method.</param>
+        /// 
+        /// <returns>The response from the ListAccountLinks service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAccountLinks">REST API Reference for ListAccountLinks Operation</seealso>
+        ListAccountLinksResponse ListAccountLinks(ListAccountLinksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccountLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountLinks operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccountLinks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAccountLinks">REST API Reference for ListAccountLinks Operation</seealso>
+        IAsyncResult BeginListAccountLinks(ListAccountLinksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccountLinks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccountLinks.</param>
+        /// 
+        /// <returns>Returns a  ListAccountLinksResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAccountLinks">REST API Reference for ListAccountLinks Operation</seealso>
+        ListAccountLinksResponse EndListAccountLinks(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3530,7 +3808,9 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot reboot a WorkSpace unless its state is <c>AVAILABLE</c> or <c>UNHEALTHY</c>.
+        /// You cannot reboot a WorkSpace unless its state is <c>AVAILABLE</c>, <c>UNHEALTHY</c>,
+        /// or <c>REBOOTING</c>. Reboot a WorkSpace in the <c>REBOOTING</c> state only if your
+        /// WorkSpace has been stuck in the <c>REBOOTING</c> state for over 20 minutes.
         /// </para>
         ///  
         /// <para>
@@ -3705,6 +3985,62 @@ namespace Amazon.WorkSpaces
         /// <returns>Returns a  RegisterWorkspaceDirectoryResult from WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RegisterWorkspaceDirectory">REST API Reference for RegisterWorkspaceDirectory Operation</seealso>
         RegisterWorkspaceDirectoryResponse EndRegisterWorkspaceDirectory(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RejectAccountLinkInvitation
+
+
+        /// <summary>
+        /// Rejects the account link invitation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectAccountLinkInvitation service method.</param>
+        /// 
+        /// <returns>The response from the RejectAccountLinkInvitation service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ConflictException">
+        /// The <c>TargetAccountId</c> is already linked or invited.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InternalServerException">
+        /// Unexpected server error occured.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ValidationException">
+        /// You either haven't provided a <c>TargetAccountId</c> or are using the same value for
+        /// <c>TargetAccountId</c> and <c>SourceAccountId</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RejectAccountLinkInvitation">REST API Reference for RejectAccountLinkInvitation Operation</seealso>
+        RejectAccountLinkInvitationResponse RejectAccountLinkInvitation(RejectAccountLinkInvitationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectAccountLinkInvitation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectAccountLinkInvitation operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectAccountLinkInvitation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RejectAccountLinkInvitation">REST API Reference for RejectAccountLinkInvitation Operation</seealso>
+        IAsyncResult BeginRejectAccountLinkInvitation(RejectAccountLinkInvitationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RejectAccountLinkInvitation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectAccountLinkInvitation.</param>
+        /// 
+        /// <returns>Returns a  RejectAccountLinkInvitationResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RejectAccountLinkInvitation">REST API Reference for RejectAccountLinkInvitation Operation</seealso>
+        RejectAccountLinkInvitationResponse EndRejectAccountLinkInvitation(IAsyncResult asyncResult);
 
         #endregion
         

@@ -21,7 +21,7 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>$(NoWarn);CS1591;CA1822</NoWarn>
-
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <SignAssembly>True</SignAssembly>
   </PropertyGroup>
     <!-- Async Enumerable Compatibility -->

@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListRulesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RuleSummary> _ruleSummaryList = new List<RuleSummary>();
+        private List<RuleSummary> _ruleSummaryList = AWSConfigs.InitializeCollections ? new List<RuleSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Connect.Model
         // Check to see if RuleSummaryList property is set
         internal bool IsSetRuleSummaryList()
         {
-            return this._ruleSummaryList != null && this._ruleSummaryList.Count > 0; 
+            return this._ruleSummaryList != null && (this._ruleSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

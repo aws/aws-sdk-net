@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class RealTimeContactAnalysisSegmentCategories
     {
-        private Dictionary<string, RealTimeContactAnalysisCategoryDetails> _matchedDetails = new Dictionary<string, RealTimeContactAnalysisCategoryDetails>();
+        private Dictionary<string, RealTimeContactAnalysisCategoryDetails> _matchedDetails = AWSConfigs.InitializeCollections ? new Dictionary<string, RealTimeContactAnalysisCategoryDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property MatchedDetails. 
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if MatchedDetails property is set
         internal bool IsSetMatchedDetails()
         {
-            return this._matchedDetails != null && this._matchedDetails.Count > 0; 
+            return this._matchedDetails != null && (this._matchedDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

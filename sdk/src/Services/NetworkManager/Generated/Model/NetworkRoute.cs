@@ -34,7 +34,7 @@ namespace Amazon.NetworkManager.Model
     public partial class NetworkRoute
     {
         private string _destinationCidrBlock;
-        private List<NetworkRouteDestination> _destinations = new List<NetworkRouteDestination>();
+        private List<NetworkRouteDestination> _destinations = AWSConfigs.InitializeCollections ? new List<NetworkRouteDestination>() : null;
         private string _prefixListId;
         private RouteState _state;
         private RouteType _type;
@@ -73,7 +73,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

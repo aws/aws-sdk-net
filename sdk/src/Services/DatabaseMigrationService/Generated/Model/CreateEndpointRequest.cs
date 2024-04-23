@@ -76,7 +76,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _serviceAccessRoleArn;
         private DmsSslModeValue _sslMode;
         private SybaseSettings _sybaseSettings;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TimestreamSettings _timestreamSettings;
         private string _username;
 
@@ -768,7 +768,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

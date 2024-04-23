@@ -35,7 +35,7 @@ namespace Amazon.QBusiness.Model
     public partial class ListDocumentsRequest : AmazonQBusinessRequest
     {
         private string _applicationId;
-        private List<string> _dataSourceIds = new List<string>();
+        private List<string> _dataSourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _indexId;
         private int? _maxResults;
         private string _nextToken;
@@ -75,7 +75,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if DataSourceIds property is set
         internal bool IsSetDataSourceIds()
         {
-            return this._dataSourceIds != null && this._dataSourceIds.Count > 0; 
+            return this._dataSourceIds != null && (this._dataSourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,8 +120,8 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the <c>maxResults</c> response was incomplete because there is more data to retrieve,
-        /// Amazon Q returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of documents.
+        /// Amazon Q Business returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of documents.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

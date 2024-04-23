@@ -33,7 +33,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribeAccountLimitsResponse : AmazonWebServiceResponse
     {
-        private List<AccountLimit> _accountLimits = new List<AccountLimit>();
+        private List<AccountLimit> _accountLimits = AWSConfigs.InitializeCollections ? new List<AccountLimit>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if AccountLimits property is set
         internal bool IsSetAccountLimits()
         {
-            return this._accountLimits != null && this._accountLimits.Count > 0; 
+            return this._accountLimits != null && (this._accountLimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the HumanTaskUiSummaries
         /// </summary>
         public IPaginatedEnumerable<HumanTaskUiSummary> HumanTaskUiSummaries => 
-            new PaginatedResultKeyResponse<ListHumanTaskUisResponse, HumanTaskUiSummary>(this, (i) => i.HumanTaskUiSummaries);
+            new PaginatedResultKeyResponse<ListHumanTaskUisResponse, HumanTaskUiSummary>(this, (i) => i.HumanTaskUiSummaries ?? new List<HumanTaskUiSummary>());
 
         internal ListHumanTaskUisPaginator(IAmazonSageMaker client, ListHumanTaskUisRequest request)
         {

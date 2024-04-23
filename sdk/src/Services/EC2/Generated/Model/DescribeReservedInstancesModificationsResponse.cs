@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeReservedInstancesModificationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReservedInstancesModification> _reservedInstancesModifications = new List<ReservedInstancesModification>();
+        private List<ReservedInstancesModification> _reservedInstancesModifications = AWSConfigs.InitializeCollections ? new List<ReservedInstancesModification>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if ReservedInstancesModifications property is set
         internal bool IsSetReservedInstancesModifications()
         {
-            return this._reservedInstancesModifications != null && this._reservedInstancesModifications.Count > 0; 
+            return this._reservedInstancesModifications != null && (this._reservedInstancesModifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

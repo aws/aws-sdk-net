@@ -87,7 +87,7 @@ namespace Amazon.StepFunctions.Model
     {
         private string _description;
         private string _name;
-        private List<RoutingConfigurationListItem> _routingConfiguration = new List<RoutingConfigurationListItem>();
+        private List<RoutingConfigurationListItem> _routingConfiguration = AWSConfigs.InitializeCollections ? new List<RoutingConfigurationListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -151,7 +151,7 @@ namespace Amazon.StepFunctions.Model
         // Check to see if RoutingConfiguration property is set
         internal bool IsSetRoutingConfiguration()
         {
-            return this._routingConfiguration != null && this._routingConfiguration.Count > 0; 
+            return this._routingConfiguration != null && (this._routingConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

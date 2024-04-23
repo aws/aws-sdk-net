@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model
     public partial class ListServicesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _serviceArns = new List<string>();
+        private List<string> _serviceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.ECS.Model
         // Check to see if ServiceArns property is set
         internal bool IsSetServiceArns()
         {
-            return this._serviceArns != null && this._serviceArns.Count > 0; 
+            return this._serviceArns != null && (this._serviceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

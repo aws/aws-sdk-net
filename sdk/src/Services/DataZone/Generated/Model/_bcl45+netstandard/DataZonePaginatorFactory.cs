@@ -108,6 +108,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListMetadataGenerationRuns operation
+        ///</summary>
+        public IListMetadataGenerationRunsPaginator ListMetadataGenerationRuns(ListMetadataGenerationRunsRequest request) 
+        {
+            return new ListMetadataGenerationRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNotifications operation
         ///</summary>
         public IListNotificationsPaginator ListNotifications(ListNotificationsRequest request) 
@@ -161,6 +169,14 @@ namespace Amazon.DataZone.Model
         public IListSubscriptionTargetsPaginator ListSubscriptionTargets(ListSubscriptionTargetsRequest request) 
         {
             return new ListSubscriptionTargetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTimeSeriesDataPoints operation
+        ///</summary>
+        public IListTimeSeriesDataPointsPaginator ListTimeSeriesDataPoints(ListTimeSeriesDataPointsRequest request) 
+        {
+            return new ListTimeSeriesDataPointsPaginator(this.client, request);
         }
 
         /// <summary>

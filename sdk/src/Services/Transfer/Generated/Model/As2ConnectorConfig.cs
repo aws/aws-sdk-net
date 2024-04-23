@@ -133,12 +133,21 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// The algorithm that is used to encrypt the file.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// You can only specify <c>NONE</c> if the URL for your connector uses HTTPS. This ensures
-        /// that no traffic is sent in clear text.
+        /// Note the following:
         /// </para>
-        ///  </note>
+        ///  <ul> <li> 
+        /// <para>
+        /// Do not use the <c>DES_EDE3_CBC</c> algorithm unless you must support a legacy client
+        /// that requires it, as it is a weak encryption algorithm.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can only specify <c>NONE</c> if the URL for your connector uses HTTPS. Using HTTPS
+        /// ensures that no traffic is sent in clear text.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public EncryptionAlg EncryptionAlgorithm
         {

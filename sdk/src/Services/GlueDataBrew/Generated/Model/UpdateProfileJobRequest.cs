@@ -45,7 +45,7 @@ namespace Amazon.GlueDataBrew.Model
         private S3Location _outputLocation;
         private string _roleArn;
         private int? _timeout;
-        private List<ValidationConfiguration> _validationConfigurations = new List<ValidationConfiguration>();
+        private List<ValidationConfiguration> _validationConfigurations = AWSConfigs.InitializeCollections ? new List<ValidationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -281,7 +281,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if ValidationConfigurations property is set
         internal bool IsSetValidationConfigurations()
         {
-            return this._validationConfigurations != null && this._validationConfigurations.Count > 0; 
+            return this._validationConfigurations != null && (this._validationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

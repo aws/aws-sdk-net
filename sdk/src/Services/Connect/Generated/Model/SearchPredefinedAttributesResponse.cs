@@ -35,7 +35,7 @@ namespace Amazon.Connect.Model
     {
         private long? _approximateTotalCount;
         private string _nextToken;
-        private List<PredefinedAttribute> _predefinedAttributes = new List<PredefinedAttribute>();
+        private List<PredefinedAttribute> _predefinedAttributes = AWSConfigs.InitializeCollections ? new List<PredefinedAttribute>() : null;
 
         /// <summary>
         /// Gets and sets the property ApproximateTotalCount. 
@@ -90,7 +90,7 @@ namespace Amazon.Connect.Model
         // Check to see if PredefinedAttributes property is set
         internal bool IsSetPredefinedAttributes()
         {
-            return this._predefinedAttributes != null && this._predefinedAttributes.Count > 0; 
+            return this._predefinedAttributes != null && (this._predefinedAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

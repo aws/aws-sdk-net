@@ -33,7 +33,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class DescribeGameServerInstancesResponse : AmazonWebServiceResponse
     {
-        private List<GameServerInstance> _gameServerInstances = new List<GameServerInstance>();
+        private List<GameServerInstance> _gameServerInstances = AWSConfigs.InitializeCollections ? new List<GameServerInstance>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.GameLift.Model
         // Check to see if GameServerInstances property is set
         internal bool IsSetGameServerInstances()
         {
-            return this._gameServerInstances != null && this._gameServerInstances.Count > 0; 
+            return this._gameServerInstances != null && (this._gameServerInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

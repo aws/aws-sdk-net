@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the CacheClusters
         /// </summary>
         public IPaginatedEnumerable<CacheCluster> CacheClusters => 
-            new PaginatedResultKeyResponse<DescribeCacheClustersResponse, CacheCluster>(this, (i) => i.CacheClusters);
+            new PaginatedResultKeyResponse<DescribeCacheClustersResponse, CacheCluster>(this, (i) => i.CacheClusters ?? new List<CacheCluster>());
 
         internal DescribeCacheClustersPaginator(IAmazonElastiCache client, DescribeCacheClustersRequest request)
         {

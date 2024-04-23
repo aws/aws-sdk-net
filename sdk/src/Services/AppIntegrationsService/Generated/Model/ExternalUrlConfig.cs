@@ -34,7 +34,7 @@ namespace Amazon.AppIntegrationsService.Model
     public partial class ExternalUrlConfig
     {
         private string _accessUrl;
-        private List<string> _approvedOrigins = new List<string>();
+        private List<string> _approvedOrigins = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessUrl. 
@@ -71,7 +71,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if ApprovedOrigins property is set
         internal bool IsSetApprovedOrigins()
         {
-            return this._approvedOrigins != null && this._approvedOrigins.Count > 0; 
+            return this._approvedOrigins != null && (this._approvedOrigins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

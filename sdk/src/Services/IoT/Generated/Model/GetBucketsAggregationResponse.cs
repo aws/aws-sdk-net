@@ -33,7 +33,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class GetBucketsAggregationResponse : AmazonWebServiceResponse
     {
-        private List<Bucket> _buckets = new List<Bucket>();
+        private List<Bucket> _buckets = AWSConfigs.InitializeCollections ? new List<Bucket>() : null;
         private int? _totalCount;
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model
         // Check to see if Buckets property is set
         internal bool IsSetBuckets()
         {
-            return this._buckets != null && this._buckets.Count > 0; 
+            return this._buckets != null && (this._buckets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

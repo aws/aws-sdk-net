@@ -45,7 +45,7 @@ namespace Amazon.Glue.Model
         /// Enumerable containing all of the GetResourcePoliciesResponseList
         /// </summary>
         public IPaginatedEnumerable<GluePolicy> GetResourcePoliciesResponseList => 
-            new PaginatedResultKeyResponse<GetResourcePoliciesResponse, GluePolicy>(this, (i) => i.GetResourcePoliciesResponseList);
+            new PaginatedResultKeyResponse<GetResourcePoliciesResponse, GluePolicy>(this, (i) => i.GetResourcePoliciesResponseList ?? new List<GluePolicy>());
 
         internal GetResourcePoliciesPaginator(IAmazonGlue client, GetResourcePoliciesRequest request)
         {

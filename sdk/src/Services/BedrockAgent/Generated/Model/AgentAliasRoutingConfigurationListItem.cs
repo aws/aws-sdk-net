@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Details about the routing configuration for an Agent alias.
+    /// Contains details about the routing configuration of the alias.
     /// </summary>
     public partial class AgentAliasRoutingConfigurationListItem
     {
         private string _agentVersion;
 
         /// <summary>
-        /// Gets and sets the property AgentVersion.
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The version of the agent with which the alias is associated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
         public string AgentVersion

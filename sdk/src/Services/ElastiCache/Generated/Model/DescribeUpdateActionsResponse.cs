@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model
     public partial class DescribeUpdateActionsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<UpdateAction> _updateActions = new List<UpdateAction>();
+        private List<UpdateAction> _updateActions = AWSConfigs.InitializeCollections ? new List<UpdateAction>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +71,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UpdateActions property is set
         internal bool IsSetUpdateActions()
         {
-            return this._updateActions != null && this._updateActions.Count > 0; 
+            return this._updateActions != null && (this._updateActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

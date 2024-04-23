@@ -33,7 +33,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ListDataSourcesResponse : AmazonWebServiceResponse
     {
-        private List<DataSource> _dataSources = new List<DataSource>();
+        private List<DataSource> _dataSources = AWSConfigs.InitializeCollections ? new List<DataSource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,14 +51,14 @@ namespace Amazon.QBusiness.Model
         // Check to see if DataSources property is set
         internal bool IsSetDataSources()
         {
-            return this._dataSources != null && this._dataSources.Count > 0; 
+            return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Amazon Q returns this token. You can use this token
-        /// in a subsequent request to retrieve the next set of data source connectors.
+        /// If the response is truncated, Amazon Q Business returns this token. You can use this
+        /// token in a subsequent request to retrieve the next set of data source connectors.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

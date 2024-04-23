@@ -32,10 +32,10 @@ namespace Amazon.S3.Model
         private LifecycleRuleExpiration expiration;
         private string id;
         private LifecycleRuleNoncurrentVersionExpiration noncurrentVersionExpiration;
-        private List<LifecycleRuleNoncurrentVersionTransition> noncurrentVersionTransitions;
+        private List<LifecycleRuleNoncurrentVersionTransition> noncurrentVersionTransitions = AWSConfigs.InitializeCollections ? new List<LifecycleRuleNoncurrentVersionTransition>() : null;
         private string prefix;
         private LifecycleRuleStatus status = LifecycleRuleStatus.Disabled;
-        private List<LifecycleTransition> transitions;
+        private List<LifecycleTransition> transitions = AWSConfigs.InitializeCollections ? new List<LifecycleTransition>() : null;
 
         private LifecycleFilter filter;
 
@@ -150,6 +150,11 @@ namespace Amazon.S3.Model
             }
             set
             {
+                if (this.Transitions == null)
+                {
+                    this.Transitions = new List<LifecycleTransition>();
+                }
+
                 if (this.Transitions.Count == 0)
                     this.Transitions.Add(value);
                 else
@@ -184,17 +189,20 @@ namespace Amazon.S3.Model
             }
             set
             {
-                if (this.NoncurrentVersionTransitions.Count == 0)
-                    this.NoncurrentVersionTransitions.Add(value);
-                else
-                    this.NoncurrentVersionTransitions[0] = value;
-            }
-        }
+                if (this.NoncurrentVersionTransitions == null)
+                {
+                    this.NoncurrentVersionTransitions = new List<LifecycleRuleNoncurrentVersionTransition>();
+                }
 
-        // Check to see if Transition property is set
-        internal bool IsSetNoncurrentVersionTransition()
-        {
-            return this.NoncurrentVersionTransitions != null && this.NoncurrentVersionTransitions.Count > 0 && this.NoncurrentVersionTransitions[0] != null;
+                if (this.NoncurrentVersionTransitions.Count == 0)
+                {
+                    this.NoncurrentVersionTransitions.Add(value);
+                }
+                else
+                {
+                    this.NoncurrentVersionTransitions[0] = value;
+                }
+            }
         }
 
         /// <summary>
@@ -203,20 +211,14 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<LifecycleRuleNoncurrentVersionTransition> NoncurrentVersionTransitions
         {
-            get
-            {
-                if (this.noncurrentVersionTransitions == null)
-                    this.noncurrentVersionTransitions = new List<LifecycleRuleNoncurrentVersionTransition>();
-
-                return this.noncurrentVersionTransitions;
-            }
+            get { return this.noncurrentVersionTransitions; }
             set { this.noncurrentVersionTransitions = value; }
         }
 
         // Check to see if Transitions property is set
         internal bool IsSetNoncurrentVersionTransitions()
         {
-            return this.noncurrentVersionTransitions != null && this.noncurrentVersionTransitions.Count > 0;
+            return this.noncurrentVersionTransitions != null && (this.noncurrentVersionTransitions.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>
@@ -241,21 +243,14 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<LifecycleTransition> Transitions
         {
-            get
-            {
-                if (this.transitions == null)
-                    this.transitions = new List<LifecycleTransition>();
-
-                return this.transitions;
-            }
+            get { return this.transitions; }
             set { this.transitions = value; }
         }
 
         // Check to see if Transitions property is set
         internal bool IsSetTransitions()
         {
-            return this.transitions != null && this.transitions.Count > 0;
+            return this.transitions != null && (this.transitions.Count > 0 || !AWSConfigs.InitializeCollections);
         }
-
     }
 }

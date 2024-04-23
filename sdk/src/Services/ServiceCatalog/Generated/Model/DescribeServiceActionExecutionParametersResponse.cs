@@ -33,7 +33,7 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class DescribeServiceActionExecutionParametersResponse : AmazonWebServiceResponse
     {
-        private List<ExecutionParameter> _serviceActionParameters = new List<ExecutionParameter>();
+        private List<ExecutionParameter> _serviceActionParameters = AWSConfigs.InitializeCollections ? new List<ExecutionParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property ServiceActionParameters. 
@@ -50,7 +50,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ServiceActionParameters property is set
         internal bool IsSetServiceActionParameters()
         {
-            return this._serviceActionParameters != null && this._serviceActionParameters.Count > 0; 
+            return this._serviceActionParameters != null && (this._serviceActionParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

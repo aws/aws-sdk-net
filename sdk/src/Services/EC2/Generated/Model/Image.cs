@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class Image
     {
         private ArchitectureValues _architecture;
-        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private List<BlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<BlockDeviceMapping>() : null;
         private BootModeValues _bootMode;
         private string _creationDate;
         private string _deprecationTime;
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         private string _ownerId;
         private PlatformValues _platform;
         private string _platformDetails;
-        private List<ProductCode> _productCodes = new List<ProductCode>();
+        private List<ProductCode> _productCodes = AWSConfigs.InitializeCollections ? new List<ProductCode>() : null;
         private bool? _public;
         private string _ramdiskId;
         private string _rootDeviceName;
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         private string _sriovNetSupport;
         private ImageState _state;
         private StateReason _stateReason;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TpmSupportValues _tpmSupport;
         private string _usageOperation;
         private VirtualizationType _virtualizationType;
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -252,8 +252,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageOwnerAlias. 
         /// <para>
-        /// The Amazon Web Services account alias (for example, <c>amazon</c>, <c>self</c>) or
-        /// the Amazon Web Services account ID of the AMI owner.
+        /// The owner alias (<c>amazon</c> | <c>aws-marketplace</c>).
         /// </para>
         /// </summary>
         public string ImageOwnerAlias
@@ -416,7 +415,7 @@ namespace Amazon.EC2.Model
         // Check to see if ProductCodes property is set
         internal bool IsSetProductCodes()
         {
-            return this._productCodes != null && this._productCodes.Count > 0; 
+            return this._productCodes != null && (this._productCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -585,7 +584,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

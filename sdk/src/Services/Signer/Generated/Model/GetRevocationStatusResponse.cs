@@ -33,7 +33,7 @@ namespace Amazon.Signer.Model
     /// </summary>
     public partial class GetRevocationStatusResponse : AmazonWebServiceResponse
     {
-        private List<string> _revokedEntities = new List<string>();
+        private List<string> _revokedEntities = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property RevokedEntities. 
@@ -51,7 +51,7 @@ namespace Amazon.Signer.Model
         // Check to see if RevokedEntities property is set
         internal bool IsSetRevokedEntities()
         {
-            return this._revokedEntities != null && this._revokedEntities.Count > 0; 
+            return this._revokedEntities != null && (this._revokedEntities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

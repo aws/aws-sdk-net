@@ -45,7 +45,7 @@ namespace Amazon.MediaLive.Model
         /// Enumerable containing all of the ScheduleActions
         /// </summary>
         public IPaginatedEnumerable<ScheduleAction> ScheduleActions => 
-            new PaginatedResultKeyResponse<DescribeScheduleResponse, ScheduleAction>(this, (i) => i.ScheduleActions);
+            new PaginatedResultKeyResponse<DescribeScheduleResponse, ScheduleAction>(this, (i) => i.ScheduleActions ?? new List<ScheduleAction>());
 
         internal DescribeSchedulePaginator(IAmazonMediaLive client, DescribeScheduleRequest request)
         {

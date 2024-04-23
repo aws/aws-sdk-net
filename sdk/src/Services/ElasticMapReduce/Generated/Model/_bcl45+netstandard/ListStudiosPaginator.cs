@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Enumerable containing all of the Studios
         /// </summary>
         public IPaginatedEnumerable<StudioSummary> Studios => 
-            new PaginatedResultKeyResponse<ListStudiosResponse, StudioSummary>(this, (i) => i.Studios);
+            new PaginatedResultKeyResponse<ListStudiosResponse, StudioSummary>(this, (i) => i.Studios ?? new List<StudioSummary>());
 
         internal ListStudiosPaginator(IAmazonElasticMapReduce client, ListStudiosRequest request)
         {

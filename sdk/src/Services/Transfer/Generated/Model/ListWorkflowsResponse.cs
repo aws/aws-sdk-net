@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model
     public partial class ListWorkflowsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ListedWorkflow> _workflows = new List<ListedWorkflow>();
+        private List<ListedWorkflow> _workflows = AWSConfigs.InitializeCollections ? new List<ListedWorkflow>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Workflows property is set
         internal bool IsSetWorkflows()
         {
-            return this._workflows != null && this._workflows.Count > 0; 
+            return this._workflows != null && (this._workflows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

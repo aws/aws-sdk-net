@@ -35,7 +35,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class BatchUpdateRecommendationStatusRequest : AmazonResilienceHubRequest
     {
         private string _appArn;
-        private List<UpdateRecommendationStatusRequestEntry> _requestEntries = new List<UpdateRecommendationStatusRequestEntry>();
+        private List<UpdateRecommendationStatusRequestEntry> _requestEntries = AWSConfigs.InitializeCollections ? new List<UpdateRecommendationStatusRequestEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
@@ -76,7 +76,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if RequestEntries property is set
         internal bool IsSetRequestEntries()
         {
-            return this._requestEntries != null && this._requestEntries.Count > 0; 
+            return this._requestEntries != null && (this._requestEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

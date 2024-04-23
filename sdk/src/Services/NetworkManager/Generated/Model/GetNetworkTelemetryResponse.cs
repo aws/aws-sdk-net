@@ -33,7 +33,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class GetNetworkTelemetryResponse : AmazonWebServiceResponse
     {
-        private List<NetworkTelemetry> _networkTelemetry = new List<NetworkTelemetry>();
+        private List<NetworkTelemetry> _networkTelemetry = AWSConfigs.InitializeCollections ? new List<NetworkTelemetry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if NetworkTelemetry property is set
         internal bool IsSetNetworkTelemetry()
         {
-            return this._networkTelemetry != null && this._networkTelemetry.Count > 0; 
+            return this._networkTelemetry != null && (this._networkTelemetry.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.KeyManagementService.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<Tag> Tags => 
-            new PaginatedResultKeyResponse<ListResourceTagsResponse, Tag>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<ListResourceTagsResponse, Tag>(this, (i) => i.Tags ?? new List<Tag>());
 
         internal ListResourceTagsPaginator(IAmazonKeyManagementService client, ListResourceTagsRequest request)
         {
@@ -69,7 +69,7 @@ namespace Amazon.KeyManagementService.Model
                 marker = response.NextMarker;
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(marker));
+            while (response.Truncated);
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -90,7 +90,7 @@ namespace Amazon.KeyManagementService.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(marker));
+            while (response.Truncated);
         }
 #endif
     }

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Active", StringUtils.FromBool(publicRequest.Active));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndTime())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTime));
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFilters())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -75,6 +78,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -84,29 +88,36 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScheduledActionName())
                 {
                     request.Parameters.Add("ScheduledActionName", StringUtils.FromString(publicRequest.ScheduledActionName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartTime())
                 {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetActionType())
                 {
                     request.Parameters.Add("TargetActionType", StringUtils.FromString(publicRequest.TargetActionType));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

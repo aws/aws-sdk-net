@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// Enumerable containing all of the DevicePools
         /// </summary>
         public IPaginatedEnumerable<DevicePool> DevicePools => 
-            new PaginatedResultKeyResponse<ListDevicePoolsResponse, DevicePool>(this, (i) => i.DevicePools);
+            new PaginatedResultKeyResponse<ListDevicePoolsResponse, DevicePool>(this, (i) => i.DevicePools ?? new List<DevicePool>());
 
         internal ListDevicePoolsPaginator(IAmazonDeviceFarm client, ListDevicePoolsRequest request)
         {

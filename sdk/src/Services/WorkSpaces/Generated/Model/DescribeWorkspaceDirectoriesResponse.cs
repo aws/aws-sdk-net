@@ -33,7 +33,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeWorkspaceDirectoriesResponse : AmazonWebServiceResponse
     {
-        private List<WorkspaceDirectory> _directories = new List<WorkspaceDirectory>();
+        private List<WorkspaceDirectory> _directories = AWSConfigs.InitializeCollections ? new List<WorkspaceDirectory>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Directories property is set
         internal bool IsSetDirectories()
         {
-            return this._directories != null && this._directories.Count > 0; 
+            return this._directories != null && (this._directories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

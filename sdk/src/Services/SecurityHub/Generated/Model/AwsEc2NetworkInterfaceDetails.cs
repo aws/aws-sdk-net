@@ -34,12 +34,12 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEc2NetworkInterfaceDetails
     {
         private AwsEc2NetworkInterfaceAttachment _attachment;
-        private List<AwsEc2NetworkInterfaceIpV6AddressDetail> _ipV6Addresses = new List<AwsEc2NetworkInterfaceIpV6AddressDetail>();
+        private List<AwsEc2NetworkInterfaceIpV6AddressDetail> _ipV6Addresses = AWSConfigs.InitializeCollections ? new List<AwsEc2NetworkInterfaceIpV6AddressDetail>() : null;
         private string _networkInterfaceId;
-        private List<AwsEc2NetworkInterfacePrivateIpAddressDetail> _privateIpAddresses = new List<AwsEc2NetworkInterfacePrivateIpAddressDetail>();
+        private List<AwsEc2NetworkInterfacePrivateIpAddressDetail> _privateIpAddresses = AWSConfigs.InitializeCollections ? new List<AwsEc2NetworkInterfacePrivateIpAddressDetail>() : null;
         private string _publicDnsName;
         private string _publicIp;
-        private List<AwsEc2NetworkInterfaceSecurityGroup> _securityGroups = new List<AwsEc2NetworkInterfaceSecurityGroup>();
+        private List<AwsEc2NetworkInterfaceSecurityGroup> _securityGroups = AWSConfigs.InitializeCollections ? new List<AwsEc2NetworkInterfaceSecurityGroup>() : null;
         private bool? _sourceDestCheck;
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if IpV6Addresses property is set
         internal bool IsSetIpV6Addresses()
         {
-            return this._ipV6Addresses != null && this._ipV6Addresses.Count > 0; 
+            return this._ipV6Addresses != null && (this._ipV6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PrivateIpAddresses property is set
         internal bool IsSetPrivateIpAddresses()
         {
-            return this._privateIpAddresses != null && this._privateIpAddresses.Count > 0; 
+            return this._privateIpAddresses != null && (this._privateIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

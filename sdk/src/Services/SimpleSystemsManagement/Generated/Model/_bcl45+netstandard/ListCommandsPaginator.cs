@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the Commands
         /// </summary>
         public IPaginatedEnumerable<Command> Commands => 
-            new PaginatedResultKeyResponse<ListCommandsResponse, Command>(this, (i) => i.Commands);
+            new PaginatedResultKeyResponse<ListCommandsResponse, Command>(this, (i) => i.Commands ?? new List<Command>());
 
         internal ListCommandsPaginator(IAmazonSimpleSystemsManagement client, ListCommandsRequest request)
         {

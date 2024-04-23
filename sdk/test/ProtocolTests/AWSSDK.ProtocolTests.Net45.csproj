@@ -55,9 +55,4 @@
           <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0" />
           <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
-  
-    <ItemGroup>
-      <Reference Include="System.Configuration" />
-    </ItemGroup>
-  
   </Project>

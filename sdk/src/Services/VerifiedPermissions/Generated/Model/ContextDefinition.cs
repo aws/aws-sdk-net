@@ -48,7 +48,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// </summary>
     public partial class ContextDefinition
     {
-        private Dictionary<string, AttributeValue> _contextMap = new Dictionary<string, AttributeValue>();
+        private Dictionary<string, AttributeValue> _contextMap = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
 
         /// <summary>
         /// Gets and sets the property ContextMap. 
@@ -71,7 +71,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if ContextMap property is set
         internal bool IsSetContextMap()
         {
-            return this._contextMap != null && this._contextMap.Count > 0; 
+            return this._contextMap != null && (this._contextMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the ReservedNodeExchangeStatusDetails
         /// </summary>
         public IPaginatedEnumerable<ReservedNodeExchangeStatus> ReservedNodeExchangeStatusDetails => 
-            new PaginatedResultKeyResponse<DescribeReservedNodeExchangeStatusResponse, ReservedNodeExchangeStatus>(this, (i) => i.ReservedNodeExchangeStatusDetails);
+            new PaginatedResultKeyResponse<DescribeReservedNodeExchangeStatusResponse, ReservedNodeExchangeStatus>(this, (i) => i.ReservedNodeExchangeStatusDetails ?? new List<ReservedNodeExchangeStatus>());
 
         internal DescribeReservedNodeExchangeStatusPaginator(IAmazonRedshift client, DescribeReservedNodeExchangeStatusRequest request)
         {

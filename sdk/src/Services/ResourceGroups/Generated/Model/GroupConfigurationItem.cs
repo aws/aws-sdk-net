@@ -35,7 +35,7 @@ namespace Amazon.ResourceGroups.Model
     /// </summary>
     public partial class GroupConfigurationItem
     {
-        private List<GroupConfigurationParameter> _parameters = new List<GroupConfigurationParameter>();
+        private List<GroupConfigurationParameter> _parameters = AWSConfigs.InitializeCollections ? new List<GroupConfigurationParameter>() : null;
         private string _type;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class GetCustomerGatewayAssociationsRequest : AmazonNetworkManagerRequest
     {
-        private List<string> _customerGatewayArns = new List<string>();
+        private List<string> _customerGatewayArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _globalNetworkId;
         private int? _maxResults;
         private string _nextToken;
@@ -55,7 +55,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if CustomerGatewayArns property is set
         internal bool IsSetCustomerGatewayArns()
         {
-            return this._customerGatewayArns != null && this._customerGatewayArns.Count > 0; 
+            return this._customerGatewayArns != null && (this._customerGatewayArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

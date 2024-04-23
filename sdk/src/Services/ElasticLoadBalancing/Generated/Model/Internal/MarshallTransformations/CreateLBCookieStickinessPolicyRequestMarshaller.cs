@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,14 +63,17 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CookieExpirationPeriod", StringUtils.FromLong(publicRequest.CookieExpirationPeriod));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoadBalancerName())
                 {
                     request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyName())
                 {
                     request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

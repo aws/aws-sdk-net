@@ -54,7 +54,7 @@ namespace Amazon.NeptuneGraph.Model
         private int? _replicaCount;
         private string _roleArn;
         private string _source;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VectorSearchConfiguration _vectorSearchConfiguration;
 
         /// <summary>
@@ -252,6 +252,12 @@ namespace Amazon.NeptuneGraph.Model
         /// The number of replicas in other AZs to provision on the new graph after import. Default
         /// = 0, Min = 0, Max = 2.
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  Additional charges equivalent to the m-NCUs selected for the graph apply for each
+        /// replica. 
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
         public int ReplicaCount
@@ -322,7 +328,7 @@ namespace Amazon.NeptuneGraph.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

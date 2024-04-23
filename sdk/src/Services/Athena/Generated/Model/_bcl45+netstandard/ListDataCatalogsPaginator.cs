@@ -45,7 +45,7 @@ namespace Amazon.Athena.Model
         /// Enumerable containing all of the DataCatalogsSummary
         /// </summary>
         public IPaginatedEnumerable<DataCatalogSummary> DataCatalogsSummary => 
-            new PaginatedResultKeyResponse<ListDataCatalogsResponse, DataCatalogSummary>(this, (i) => i.DataCatalogsSummary);
+            new PaginatedResultKeyResponse<ListDataCatalogsResponse, DataCatalogSummary>(this, (i) => i.DataCatalogsSummary ?? new List<DataCatalogSummary>());
 
         internal ListDataCatalogsPaginator(IAmazonAthena client, ListDataCatalogsRequest request)
         {

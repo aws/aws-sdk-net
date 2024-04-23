@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
         /// Enumerable containing all of the Attributes
         /// </summary>
         public IPaginatedEnumerable<Attribute> Attributes => 
-            new PaginatedResultKeyResponse<ListAttributesResponse, Attribute>(this, (i) => i.Attributes);
+            new PaginatedResultKeyResponse<ListAttributesResponse, Attribute>(this, (i) => i.Attributes ?? new List<Attribute>());
 
         internal ListAttributesPaginator(IAmazonECS client, ListAttributesRequest request)
         {

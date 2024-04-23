@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class ListWaitingWorkflowStepsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkflowStepExecution> _steps = new List<WorkflowStepExecution>();
+        private List<WorkflowStepExecution> _steps = AWSConfigs.InitializeCollections ? new List<WorkflowStepExecution>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

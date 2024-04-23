@@ -45,7 +45,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Enumerable containing all of the PlatformApplications
         /// </summary>
         public IPaginatedEnumerable<PlatformApplication> PlatformApplications => 
-            new PaginatedResultKeyResponse<ListPlatformApplicationsResponse, PlatformApplication>(this, (i) => i.PlatformApplications);
+            new PaginatedResultKeyResponse<ListPlatformApplicationsResponse, PlatformApplication>(this, (i) => i.PlatformApplications ?? new List<PlatformApplication>());
 
         internal ListPlatformApplicationsPaginator(IAmazonSimpleNotificationService client, ListPlatformApplicationsRequest request)
         {

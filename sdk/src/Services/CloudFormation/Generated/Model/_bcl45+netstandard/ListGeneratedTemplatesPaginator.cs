@@ -45,7 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<TemplateSummary> Summaries => 
-            new PaginatedResultKeyResponse<ListGeneratedTemplatesResponse, TemplateSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<ListGeneratedTemplatesResponse, TemplateSummary>(this, (i) => i.Summaries ?? new List<TemplateSummary>());
 
         internal ListGeneratedTemplatesPaginator(IAmazonCloudFormation client, ListGeneratedTemplatesRequest request)
         {

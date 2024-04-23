@@ -45,7 +45,7 @@ namespace Amazon.DataSync.Model
         /// Enumerable containing all of the DiscoveryJobs
         /// </summary>
         public IPaginatedEnumerable<DiscoveryJobListEntry> DiscoveryJobs => 
-            new PaginatedResultKeyResponse<ListDiscoveryJobsResponse, DiscoveryJobListEntry>(this, (i) => i.DiscoveryJobs);
+            new PaginatedResultKeyResponse<ListDiscoveryJobsResponse, DiscoveryJobListEntry>(this, (i) => i.DiscoveryJobs ?? new List<DiscoveryJobListEntry>());
 
         internal ListDiscoveryJobsPaginator(IAmazonDataSync client, ListDiscoveryJobsRequest request)
         {

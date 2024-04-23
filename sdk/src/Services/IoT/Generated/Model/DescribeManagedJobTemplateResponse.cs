@@ -35,8 +35,8 @@ namespace Amazon.IoT.Model
     {
         private string _description;
         private string _document;
-        private List<DocumentParameter> _documentParameters = new List<DocumentParameter>();
-        private List<string> _environments = new List<string>();
+        private List<DocumentParameter> _documentParameters = AWSConfigs.InitializeCollections ? new List<DocumentParameter>() : null;
+        private List<string> _environments = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _templateArn;
         private string _templateName;
         private string _templateVersion;
@@ -102,7 +102,7 @@ namespace Amazon.IoT.Model
         // Check to see if DocumentParameters property is set
         internal bool IsSetDocumentParameters()
         {
-            return this._documentParameters != null && this._documentParameters.Count > 0; 
+            return this._documentParameters != null && (this._documentParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.IoT.Model
         // Check to see if Environments property is set
         internal bool IsSetEnvironments()
         {
-            return this._environments != null && this._environments.Count > 0; 
+            return this._environments != null && (this._environments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

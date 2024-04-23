@@ -33,7 +33,7 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class ListJobsResponse : AmazonWebServiceResponse
     {
-        private List<JobListDescriptor> _jobs = new List<JobListDescriptor>();
+        private List<JobListDescriptor> _jobs = AWSConfigs.InitializeCollections ? new List<JobListDescriptor>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

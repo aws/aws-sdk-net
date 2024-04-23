@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CategoryFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetColumn())
             {
                 context.Writer.WritePropertyName("Column");
@@ -67,6 +70,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDefaultFilterControlConfiguration())
+            {
+                context.Writer.WritePropertyName("DefaultFilterControlConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DefaultFilterControlConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultFilterControlConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFilterId())
             {
                 context.Writer.WritePropertyName("FilterId");
@@ -82,3 +96,4 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

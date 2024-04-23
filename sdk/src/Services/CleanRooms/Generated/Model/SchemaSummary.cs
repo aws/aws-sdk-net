@@ -34,7 +34,7 @@ namespace Amazon.CleanRooms.Model
     public partial class SchemaSummary
     {
         private AnalysisMethod _analysisMethod;
-        private List<string> _analysisRuleTypes = new List<string>();
+        private List<string> _analysisRuleTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _collaborationArn;
         private string _collaborationId;
         private DateTime? _createTime;
@@ -77,7 +77,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if AnalysisRuleTypes property is set
         internal bool IsSetAnalysisRuleTypes()
         {
-            return this._analysisRuleTypes != null && this._analysisRuleTypes.Count > 0; 
+            return this._analysisRuleTypes != null && (this._analysisRuleTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

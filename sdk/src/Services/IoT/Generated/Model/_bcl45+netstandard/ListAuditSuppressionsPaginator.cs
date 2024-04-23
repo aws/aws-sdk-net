@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the Suppressions
         /// </summary>
         public IPaginatedEnumerable<AuditSuppression> Suppressions => 
-            new PaginatedResultKeyResponse<ListAuditSuppressionsResponse, AuditSuppression>(this, (i) => i.Suppressions);
+            new PaginatedResultKeyResponse<ListAuditSuppressionsResponse, AuditSuppression>(this, (i) => i.Suppressions ?? new List<AuditSuppression>());
 
         internal ListAuditSuppressionsPaginator(IAmazonIoT client, ListAuditSuppressionsRequest request)
         {

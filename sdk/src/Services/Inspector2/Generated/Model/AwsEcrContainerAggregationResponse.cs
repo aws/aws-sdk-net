@@ -36,7 +36,7 @@ namespace Amazon.Inspector2.Model
         private string _accountId;
         private string _architecture;
         private string _imageSha;
-        private List<string> _imageTags = new List<string>();
+        private List<string> _imageTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _repository;
         private string _resourceId;
         private SeverityCounts _severityCounts;
@@ -111,7 +111,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ImageTags property is set
         internal bool IsSetImageTags()
         {
-            return this._imageTags != null && this._imageTags.Count > 0; 
+            return this._imageTags != null && (this._imageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

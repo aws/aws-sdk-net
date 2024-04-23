@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Information about an Amazon Q plugin and its configuration.
+    /// Information about an Amazon Q Business plugin and its configuration.
     /// </summary>
     public partial class Plugin
     {

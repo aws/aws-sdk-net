@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the information of an agent alias
+    /// Contains details about an alias of an agent.
     /// </summary>
     public partial class AgentAlias
     {
         private string _agentAliasArn;
-        private List<AgentAliasHistoryEvent> _agentAliasHistoryEvents = new List<AgentAliasHistoryEvent>();
+        private List<AgentAliasHistoryEvent> _agentAliasHistoryEvents = AWSConfigs.InitializeCollections ? new List<AgentAliasHistoryEvent>() : null;
         private string _agentAliasId;
         private string _agentAliasName;
         private AgentAliasStatus _agentAliasStatus;
@@ -42,11 +42,14 @@ namespace Amazon.BedrockAgent.Model
         private string _clientToken;
         private DateTime? _createdAt;
         private string _description;
-        private List<AgentAliasRoutingConfigurationListItem> _routingConfiguration = new List<AgentAliasRoutingConfigurationListItem>();
+        private List<AgentAliasRoutingConfigurationListItem> _routingConfiguration = AWSConfigs.InitializeCollections ? new List<AgentAliasRoutingConfigurationListItem>() : null;
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property AgentAliasArn.
+        /// Gets and sets the property AgentAliasArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the alias of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string AgentAliasArn
@@ -62,7 +65,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentAliasHistoryEvents.
+        /// Gets and sets the property AgentAliasHistoryEvents. 
+        /// <para>
+        /// Contains details about the history of the alias.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
         public List<AgentAliasHistoryEvent> AgentAliasHistoryEvents
@@ -74,11 +80,14 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if AgentAliasHistoryEvents property is set
         internal bool IsSetAgentAliasHistoryEvents()
         {
-            return this._agentAliasHistoryEvents != null && this._agentAliasHistoryEvents.Count > 0; 
+            return this._agentAliasHistoryEvents != null && (this._agentAliasHistoryEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property AgentAliasId.
+        /// Gets and sets the property AgentAliasId. 
+        /// <para>
+        /// The unique identifier of the alias of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=10)]
         public string AgentAliasId
@@ -94,7 +103,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentAliasName.
+        /// Gets and sets the property AgentAliasName. 
+        /// <para>
+        /// The name of the alias of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentAliasName
@@ -110,7 +122,33 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentAliasStatus.
+        /// Gets and sets the property AgentAliasStatus. 
+        /// <para>
+        /// The status of the alias of the agent and whether it is ready for use. The following
+        /// statuses are possible:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATING – The agent alias is being created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PREPARED – The agent alias is finished being created or updated and is ready to be
+        /// invoked.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FAILED – The agent alias API operation failed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UPDATING – The agent alias is being updated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELETING – The agent alias is being deleted.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentAliasStatus AgentAliasStatus
@@ -126,7 +164,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentId.
+        /// Gets and sets the property AgentId. 
+        /// <para>
+        /// The unique identifier of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentId
@@ -142,7 +183,13 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
+        /// request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
         public string ClientToken
@@ -158,7 +205,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The time at which the alias of the agent was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime CreatedAt
@@ -174,7 +224,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the alias of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -190,7 +243,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoutingConfiguration.
+        /// Gets and sets the property RoutingConfiguration. 
+        /// <para>
+        /// Contains details about the routing configuration of the alias.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
         public List<AgentAliasRoutingConfigurationListItem> RoutingConfiguration
@@ -202,11 +258,14 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if RoutingConfiguration property is set
         internal bool IsSetRoutingConfiguration()
         {
-            return this._routingConfiguration != null && this._routingConfiguration.Count > 0; 
+            return this._routingConfiguration != null && (this._routingConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The time at which the alias was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime UpdatedAt

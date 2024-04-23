@@ -42,8 +42,8 @@ namespace Amazon.RDS.Model
         private string _dbSecurityGroupArn;
         private string _dbSecurityGroupDescription;
         private string _dbSecurityGroupName;
-        private List<EC2SecurityGroup> _ec2SecurityGroups = new List<EC2SecurityGroup>();
-        private List<IPRange> _ipRanges = new List<IPRange>();
+        private List<EC2SecurityGroup> _ec2SecurityGroups = AWSConfigs.InitializeCollections ? new List<EC2SecurityGroup>() : null;
+        private List<IPRange> _ipRanges = AWSConfigs.InitializeCollections ? new List<IPRange>() : null;
         private string _ownerId;
         private string _vpcId;
 
@@ -116,7 +116,7 @@ namespace Amazon.RDS.Model
         // Check to see if EC2SecurityGroups property is set
         internal bool IsSetEC2SecurityGroups()
         {
-            return this._ec2SecurityGroups != null && this._ec2SecurityGroups.Count > 0; 
+            return this._ec2SecurityGroups != null && (this._ec2SecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.RDS.Model
         // Check to see if IPRanges property is set
         internal bool IsSetIPRanges()
         {
-            return this._ipRanges != null && this._ipRanges.Count > 0; 
+            return this._ipRanges != null && (this._ipRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -40,7 +40,7 @@ namespace Amazon.Honeycode.Model
         private int? _maxResults;
         private string _nextToken;
         private string _screenId;
-        private Dictionary<string, VariableValue> _variables = new Dictionary<string, VariableValue>();
+        private Dictionary<string, VariableValue> _variables = AWSConfigs.InitializeCollections ? new Dictionary<string, VariableValue>() : null;
         private string _workbookId;
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

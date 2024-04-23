@@ -43,7 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class BatchStartRecommendationsRequest : AmazonDatabaseMigrationServiceRequest
     {
-        private List<StartRecommendationsRequestEntry> _data = new List<StartRecommendationsRequestEntry>();
+        private List<StartRecommendationsRequestEntry> _data = AWSConfigs.InitializeCollections ? new List<StartRecommendationsRequestEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Data. 
@@ -61,7 +61,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Data property is set
         internal bool IsSetData()
         {
-            return this._data != null && this._data.Count > 0; 
+            return this._data != null && (this._data.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

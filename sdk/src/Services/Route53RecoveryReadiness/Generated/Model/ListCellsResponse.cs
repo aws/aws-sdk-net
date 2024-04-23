@@ -33,7 +33,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     /// </summary>
     public partial class ListCellsResponse : AmazonWebServiceResponse
     {
-        private List<CellOutput> _cells = new List<CellOutput>();
+        private List<CellOutput> _cells = AWSConfigs.InitializeCollections ? new List<CellOutput>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         // Check to see if Cells property is set
         internal bool IsSetCells()
         {
-            return this._cells != null && this._cells.Count > 0; 
+            return this._cells != null && (this._cells.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

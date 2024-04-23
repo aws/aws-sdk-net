@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetConnectionEvents())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -71,18 +73,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetConnectionNotificationArn())
                 {
                     request.Parameters.Add("ConnectionNotificationArn", StringUtils.FromString(publicRequest.ConnectionNotificationArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServiceId())
                 {
                     request.Parameters.Add("ServiceId", StringUtils.FromString(publicRequest.ServiceId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcEndpointId())
                 {
                     request.Parameters.Add("VpcEndpointId", StringUtils.FromString(publicRequest.VpcEndpointId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

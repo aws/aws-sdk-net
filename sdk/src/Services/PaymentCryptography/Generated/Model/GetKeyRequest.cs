@@ -44,15 +44,18 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateKey</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteKey</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListKeys</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListKeys.html">ListKeys</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

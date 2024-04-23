@@ -67,8 +67,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
     public partial class StartExportTaskRequest : AmazonApplicationDiscoveryServiceRequest
     {
         private DateTime? _endTime;
-        private List<string> _exportDataFormat = new List<string>();
-        private List<ExportFilter> _filters = new List<ExportFilter>();
+        private List<string> _exportDataFormat = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ExportFilter> _filters = AWSConfigs.InitializeCollections ? new List<ExportFilter>() : null;
         private ExportPreferences _preferences;
         private DateTime? _startTime;
 
@@ -108,7 +108,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if ExportDataFormat property is set
         internal bool IsSetExportDataFormat()
         {
-            return this._exportDataFormat != null && this._exportDataFormat.Count > 0; 
+            return this._exportDataFormat != null && (this._exportDataFormat.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

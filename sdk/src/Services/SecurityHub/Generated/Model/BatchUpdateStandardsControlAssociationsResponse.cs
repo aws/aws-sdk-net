@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchUpdateStandardsControlAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<UnprocessedStandardsControlAssociationUpdate> _unprocessedAssociationUpdates = new List<UnprocessedStandardsControlAssociationUpdate>();
+        private List<UnprocessedStandardsControlAssociationUpdate> _unprocessedAssociationUpdates = AWSConfigs.InitializeCollections ? new List<UnprocessedStandardsControlAssociationUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property UnprocessedAssociationUpdates. 
@@ -52,7 +52,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UnprocessedAssociationUpdates property is set
         internal bool IsSetUnprocessedAssociationUpdates()
         {
-            return this._unprocessedAssociationUpdates != null && this._unprocessedAssociationUpdates.Count > 0; 
+            return this._unprocessedAssociationUpdates != null && (this._unprocessedAssociationUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

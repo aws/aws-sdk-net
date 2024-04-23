@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
     {
         private string _amznClientToken;
         private string _connectorDefinitionId;
-        private List<Connector> _connectors = new List<Connector>();
+        private List<Connector> _connectors = AWSConfigs.InitializeCollections ? new List<Connector>() : null;
 
         /// <summary>
         /// Gets and sets the property AmznClientToken. A client token used to correlate requests
@@ -83,7 +83,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Connectors property is set
         internal bool IsSetConnectors()
         {
-            return this._connectors != null && this._connectors.Count > 0; 
+            return this._connectors != null && (this._connectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

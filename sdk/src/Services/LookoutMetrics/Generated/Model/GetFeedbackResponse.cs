@@ -33,7 +33,7 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class GetFeedbackResponse : AmazonWebServiceResponse
     {
-        private List<TimeSeriesFeedback> _anomalyGroupTimeSeriesFeedback = new List<TimeSeriesFeedback>();
+        private List<TimeSeriesFeedback> _anomalyGroupTimeSeriesFeedback = AWSConfigs.InitializeCollections ? new List<TimeSeriesFeedback>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if AnomalyGroupTimeSeriesFeedback property is set
         internal bool IsSetAnomalyGroupTimeSeriesFeedback()
         {
-            return this._anomalyGroupTimeSeriesFeedback != null && this._anomalyGroupTimeSeriesFeedback.Count > 0; 
+            return this._anomalyGroupTimeSeriesFeedback != null && (this._anomalyGroupTimeSeriesFeedback.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

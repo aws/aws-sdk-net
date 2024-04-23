@@ -45,7 +45,7 @@ namespace Amazon.Outposts.Model
         /// Enumerable containing all of the InstanceTypes
         /// </summary>
         public IPaginatedEnumerable<InstanceTypeItem> InstanceTypes => 
-            new PaginatedResultKeyResponse<GetOutpostInstanceTypesResponse, InstanceTypeItem>(this, (i) => i.InstanceTypes);
+            new PaginatedResultKeyResponse<GetOutpostInstanceTypesResponse, InstanceTypeItem>(this, (i) => i.InstanceTypes ?? new List<InstanceTypeItem>());
 
         internal GetOutpostInstanceTypesPaginator(IAmazonOutposts client, GetOutpostInstanceTypesRequest request)
         {

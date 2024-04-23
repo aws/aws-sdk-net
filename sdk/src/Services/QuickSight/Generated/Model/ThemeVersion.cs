@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         private ThemeConfiguration _configuration;
         private DateTime? _createdTime;
         private string _description;
-        private List<ThemeError> _errors = new List<ThemeError>();
+        private List<ThemeError> _errors = AWSConfigs.InitializeCollections ? new List<ThemeError>() : null;
         private ResourceStatus _status;
         private long? _versionNumber;
 
@@ -151,7 +151,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -109,6 +110,12 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.FreeTrialExpiration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("grafanaToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GrafanaToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("grafanaVersion", targetDepth))
@@ -226,3 +233,4 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

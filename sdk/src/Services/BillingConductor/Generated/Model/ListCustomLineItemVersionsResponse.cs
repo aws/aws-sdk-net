@@ -33,7 +33,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class ListCustomLineItemVersionsResponse : AmazonWebServiceResponse
     {
-        private List<CustomLineItemVersionListElement> _customLineItemVersions = new List<CustomLineItemVersionListElement>();
+        private List<CustomLineItemVersionListElement> _customLineItemVersions = AWSConfigs.InitializeCollections ? new List<CustomLineItemVersionListElement>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if CustomLineItemVersions property is set
         internal bool IsSetCustomLineItemVersions()
         {
-            return this._customLineItemVersions != null && this._customLineItemVersions.Count > 0; 
+            return this._customLineItemVersions != null && (this._customLineItemVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

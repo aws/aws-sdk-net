@@ -34,7 +34,7 @@ namespace Amazon.IoTFleetWise.Model
     public partial class ListVehiclesInFleetResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _vehicles = new List<string>();
+        private List<string> _vehicles = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Vehicles property is set
         internal bool IsSetVehicles()
         {
-            return this._vehicles != null && this._vehicles.Count > 0; 
+            return this._vehicles != null && (this._vehicles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

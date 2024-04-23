@@ -79,10 +79,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the DynamoDB table.
+        /// The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN)
+        /// of the table in this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

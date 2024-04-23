@@ -34,7 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class AccountAttribute
     {
         private string _attributeName;
-        private List<AttributeValueTarget> _attributeValues = new List<AttributeValueTarget>();
+        private List<AttributeValueTarget> _attributeValues = AWSConfigs.InitializeCollections ? new List<AttributeValueTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeName. 
@@ -70,7 +70,7 @@ namespace Amazon.Redshift.Model
         // Check to see if AttributeValues property is set
         internal bool IsSetAttributeValues()
         {
-            return this._attributeValues != null && this._attributeValues.Count > 0; 
+            return this._attributeValues != null && (this._attributeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

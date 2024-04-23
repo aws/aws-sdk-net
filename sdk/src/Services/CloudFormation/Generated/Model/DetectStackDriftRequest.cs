@@ -67,7 +67,7 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class DetectStackDriftRequest : AmazonCloudFormationRequest
     {
-        private List<string> _logicalResourceIds = new List<string>();
+        private List<string> _logicalResourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stackName;
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if LogicalResourceIds property is set
         internal bool IsSetLogicalResourceIds()
         {
-            return this._logicalResourceIds != null && this._logicalResourceIds.Count > 0; 
+            return this._logicalResourceIds != null && (this._logicalResourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

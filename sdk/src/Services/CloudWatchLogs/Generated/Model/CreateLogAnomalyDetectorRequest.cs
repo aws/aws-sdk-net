@@ -82,8 +82,8 @@ namespace Amazon.CloudWatchLogs.Model
         private EvaluationFrequency _evaluationFrequency;
         private string _filterPattern;
         private string _kmsKeyId;
-        private List<string> _logGroupArnList = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _logGroupArnList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AnomalyVisibilityTime. 
@@ -215,7 +215,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogGroupArnList property is set
         internal bool IsSetLogGroupArnList()
         {
-            return this._logGroupArnList != null && this._logGroupArnList.Count > 0; 
+            return this._logGroupArnList != null && (this._logGroupArnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ListEventsDetectionJobsResponse : AmazonWebServiceResponse
     {
-        private List<EventsDetectionJobProperties> _eventsDetectionJobPropertiesList = new List<EventsDetectionJobProperties>();
+        private List<EventsDetectionJobProperties> _eventsDetectionJobPropertiesList = AWSConfigs.InitializeCollections ? new List<EventsDetectionJobProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if EventsDetectionJobPropertiesList property is set
         internal bool IsSetEventsDetectionJobPropertiesList()
         {
-            return this._eventsDetectionJobPropertiesList != null && this._eventsDetectionJobPropertiesList.Count > 0; 
+            return this._eventsDetectionJobPropertiesList != null && (this._eventsDetectionJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

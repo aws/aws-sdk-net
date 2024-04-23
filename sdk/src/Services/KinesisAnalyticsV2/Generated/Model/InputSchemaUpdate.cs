@@ -33,7 +33,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// </summary>
     public partial class InputSchemaUpdate
     {
-        private List<RecordColumn> _recordColumnUpdates = new List<RecordColumn>();
+        private List<RecordColumn> _recordColumnUpdates = AWSConfigs.InitializeCollections ? new List<RecordColumn>() : null;
         private string _recordEncodingUpdate;
         private RecordFormat _recordFormatUpdate;
 
@@ -54,7 +54,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if RecordColumnUpdates property is set
         internal bool IsSetRecordColumnUpdates()
         {
-            return this._recordColumnUpdates != null && this._recordColumnUpdates.Count > 0; 
+            return this._recordColumnUpdates != null && (this._recordColumnUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

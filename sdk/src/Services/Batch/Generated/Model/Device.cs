@@ -42,7 +42,7 @@ namespace Amazon.Batch.Model
     {
         private string _containerPath;
         private string _hostPath;
-        private List<string> _permissions = new List<string>();
+        private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerPath. 
@@ -99,7 +99,7 @@ namespace Amazon.Batch.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

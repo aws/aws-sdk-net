@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class PatchFilterGroup
     {
-        private List<PatchFilter> _patchFilters = new List<PatchFilter>();
+        private List<PatchFilter> _patchFilters = AWSConfigs.InitializeCollections ? new List<PatchFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property PatchFilters. 
@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if PatchFilters property is set
         internal bool IsSetPatchFilters()
         {
-            return this._patchFilters != null && this._patchFilters.Count > 0; 
+            return this._patchFilters != null && (this._patchFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class GetLogRecordResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _logRecord = new Dictionary<string, string>();
+        private Dictionary<string, string> _logRecord = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property LogRecord. 
@@ -50,7 +50,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogRecord property is set
         internal bool IsSetLogRecord()
         {
-            return this._logRecord != null && this._logRecord.Count > 0; 
+            return this._logRecord != null && (this._logRecord.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

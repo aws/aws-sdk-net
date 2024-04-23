@@ -42,9 +42,9 @@ namespace Amazon.ComprehendMedical.Model
         private float? _relationshipScore;
         private SNOMEDCTRelationshipType _relationshipType;
         private float? _score;
-        private List<SNOMEDCTConcept> _snomedctConcepts = new List<SNOMEDCTConcept>();
+        private List<SNOMEDCTConcept> _snomedctConcepts = AWSConfigs.InitializeCollections ? new List<SNOMEDCTConcept>() : null;
         private string _text;
-        private List<SNOMEDCTTrait> _traits = new List<SNOMEDCTTrait>();
+        private List<SNOMEDCTTrait> _traits = AWSConfigs.InitializeCollections ? new List<SNOMEDCTTrait>() : null;
         private SNOMEDCTAttributeType _type;
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if SNOMEDCTConcepts property is set
         internal bool IsSetSNOMEDCTConcepts()
         {
-            return this._snomedctConcepts != null && this._snomedctConcepts.Count > 0; 
+            return this._snomedctConcepts != null && (this._snomedctConcepts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Traits property is set
         internal bool IsSetTraits()
         {
-            return this._traits != null && this._traits.Count > 0; 
+            return this._traits != null && (this._traits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

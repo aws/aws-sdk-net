@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,6 +76,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.PartSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3Access", targetDepth))
+                {
+                    var unmarshaller = ReadSetS3AccessUnmarshaller.Instance;
+                    unmarshalledObject.S3Access = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("totalParts", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -100,3 +107,4 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

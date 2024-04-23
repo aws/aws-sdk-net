@@ -1620,6 +1620,9 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstanceReadReplica service method.</param>
         /// 
         /// <returns>The response from the CreateDBInstanceReadReplica service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -7950,6 +7953,65 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ModifyIntegration
+
+
+        /// <summary>
+        /// Modifies a zero-ETL integration with Amazon Redshift.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Currently, you can only modify integrations that have Aurora MySQL source DB clusters.
+        /// Integrations with Aurora PostgreSQL and RDS sources currently don't support modifying
+        /// the integration.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIntegration service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// Typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
+        /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidIntegrationStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
+        ModifyIntegrationResponse ModifyIntegration(ModifyIntegrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyIntegration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
+        IAsyncResult BeginModifyIntegration(ModifyIntegrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyIntegration.</param>
+        /// 
+        /// <returns>Returns a  ModifyIntegrationResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
+        ModifyIntegrationResponse EndModifyIntegration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyOptionGroup
 
 
@@ -9308,6 +9370,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <c>DBClusterSnapshotIdentifier</c> doesn't refer to an existing DB cluster snapshot.
         /// </exception>
@@ -9439,6 +9504,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -9564,6 +9632,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
+        /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.

@@ -37,7 +37,7 @@ namespace Amazon.Chime.Model
     public partial class BatchUpdateUserRequest : AmazonChimeRequest
     {
         private string _accountId;
-        private List<UpdateUserRequestItem> _updateUserRequestItems = new List<UpdateUserRequestItem>();
+        private List<UpdateUserRequestItem> _updateUserRequestItems = AWSConfigs.InitializeCollections ? new List<UpdateUserRequestItem>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -74,7 +74,7 @@ namespace Amazon.Chime.Model
         // Check to see if UpdateUserRequestItems property is set
         internal bool IsSetUpdateUserRequestItems()
         {
-            return this._updateUserRequestItems != null && this._updateUserRequestItems.Count > 0; 
+            return this._updateUserRequestItems != null && (this._updateUserRequestItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeSpotPriceHistoryResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SpotPrice> _spotPriceHistory = new List<SpotPrice>();
+        private List<SpotPrice> _spotPriceHistory = AWSConfigs.InitializeCollections ? new List<SpotPrice>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if SpotPriceHistory property is set
         internal bool IsSetSpotPriceHistory()
         {
-            return this._spotPriceHistory != null && this._spotPriceHistory.Count > 0; 
+            return this._spotPriceHistory != null && (this._spotPriceHistory.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

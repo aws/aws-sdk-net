@@ -45,7 +45,7 @@ namespace Amazon.StorageGateway.Model
         /// Enumerable containing all of the FileShareInfoList
         /// </summary>
         public IPaginatedEnumerable<FileShareInfo> FileShareInfoList => 
-            new PaginatedResultKeyResponse<ListFileSharesResponse, FileShareInfo>(this, (i) => i.FileShareInfoList);
+            new PaginatedResultKeyResponse<ListFileSharesResponse, FileShareInfo>(this, (i) => i.FileShareInfoList ?? new List<FileShareInfo>());
 
         internal ListFileSharesPaginator(IAmazonStorageGateway client, ListFileSharesRequest request)
         {

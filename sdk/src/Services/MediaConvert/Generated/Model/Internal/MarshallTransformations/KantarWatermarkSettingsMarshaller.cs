@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KantarWatermarkSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetChannelName())
             {
                 context.Writer.WritePropertyName("channelName");
@@ -66,7 +69,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileOffset())
             {
                 context.Writer.WritePropertyName("fileOffset");
-                context.Writer.Write(requestObject.FileOffset);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.FileOffset))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FileOffset));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.FileOffset);
+                }
             }
 
             if(requestObject.IsSetKantarLicenseId())
@@ -132,3 +142,4 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

@@ -34,7 +34,7 @@ namespace Amazon.XRay.Model
     public partial class GetSamplingStatisticSummariesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SamplingStatisticSummary> _samplingStatisticSummaries = new List<SamplingStatisticSummary>();
+        private List<SamplingStatisticSummary> _samplingStatisticSummaries = AWSConfigs.InitializeCollections ? new List<SamplingStatisticSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.XRay.Model
         // Check to see if SamplingStatisticSummaries property is set
         internal bool IsSetSamplingStatisticSummaries()
         {
-            return this._samplingStatisticSummaries != null && this._samplingStatisticSummaries.Count > 0; 
+            return this._samplingStatisticSummaries != null && (this._samplingStatisticSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

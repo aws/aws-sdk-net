@@ -35,8 +35,8 @@ namespace Amazon.QBusiness.Model
     public partial class UpdateUserRequest : AmazonQBusinessRequest
     {
         private string _applicationId;
-        private List<UserAlias> _userAliasesToDelete = new List<UserAlias>();
-        private List<UserAlias> _userAliasesToUpdate = new List<UserAlias>();
+        private List<UserAlias> _userAliasesToDelete = AWSConfigs.InitializeCollections ? new List<UserAlias>() : null;
+        private List<UserAlias> _userAliasesToUpdate = AWSConfigs.InitializeCollections ? new List<UserAlias>() : null;
         private string _userId;
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if UserAliasesToDelete property is set
         internal bool IsSetUserAliasesToDelete()
         {
-            return this._userAliasesToDelete != null && this._userAliasesToDelete.Count > 0; 
+            return this._userAliasesToDelete != null && (this._userAliasesToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if UserAliasesToUpdate property is set
         internal bool IsSetUserAliasesToUpdate()
         {
-            return this._userAliasesToUpdate != null && this._userAliasesToUpdate.Count > 0; 
+            return this._userAliasesToUpdate != null && (this._userAliasesToUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

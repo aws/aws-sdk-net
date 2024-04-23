@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CustomizedMetricSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("Dimensions");
@@ -110,3 +113,4 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

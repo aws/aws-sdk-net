@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EdgeConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeletionConfig())
             {
                 context.Writer.WritePropertyName("DeletionConfig");
@@ -93,3 +96,4 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

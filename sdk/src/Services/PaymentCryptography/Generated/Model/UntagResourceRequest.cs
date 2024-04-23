@@ -48,18 +48,20 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListTagsForResource</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>TagResource</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class UntagResourceRequest : AmazonPaymentCryptographyRequest
     {
         private string _resourceArn;
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -89,7 +91,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <para>
         /// If the Amazon Web Services Payment Cryptography key doesn't have the specified tag
         /// key, Amazon Web Services Payment Cryptography doesn't throw an exception or return
-        /// a response. To confirm that the operation succeeded, use the <a>ListTagsForResource</a>
+        /// a response. To confirm that the operation succeeded, use the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
         /// operation.
         /// </para>
         /// </summary>
@@ -103,7 +105,7 @@ namespace Amazon.PaymentCryptography.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

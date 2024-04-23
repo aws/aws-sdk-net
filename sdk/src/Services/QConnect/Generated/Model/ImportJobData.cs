@@ -41,7 +41,7 @@ namespace Amazon.QConnect.Model
         private string _knowledgeBaseArn;
         private string _knowledgeBaseId;
         private DateTime? _lastModifiedTime;
-        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ImportJobStatus _status;
         private string _uploadId;
         private string _url;
@@ -160,8 +160,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
-        /// base if you're storing Amazon Q Content resource to it.
+        /// The identifier of the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -199,7 +198,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata fields of the imported Amazon Q resources.
+        /// The metadata fields of the imported Amazon Q in Connect resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -212,7 +211,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

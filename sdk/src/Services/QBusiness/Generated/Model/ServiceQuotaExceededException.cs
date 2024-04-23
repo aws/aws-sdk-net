@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// You have exceeded the set limits for your Amazon Q service.
+    /// You have exceeded the set limits for your Amazon Q Business service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

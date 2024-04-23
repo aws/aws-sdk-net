@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -68,26 +69,25 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.InvalidationBatch.IsSetCallerReference())
-                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));                    
+                        xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));
 
-                
-                    if (publicRequest.InvalidationBatch.Paths != null) 
+                    if (publicRequest.InvalidationBatch.Paths != null)
                     {
-                        xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                        xmlWriter.WriteStartElement("Paths");
                         var publicRequestInvalidationBatchPathsItems = publicRequest.InvalidationBatch.Paths.Items;
-                        if (publicRequestInvalidationBatchPathsItems != null && publicRequestInvalidationBatchPathsItems.Count > 0) 
-                        {                        
-                            xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                        if (publicRequestInvalidationBatchPathsItems != null && (publicRequestInvalidationBatchPathsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                        {
+                            xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestInvalidationBatchPathsItemsValue in publicRequestInvalidationBatchPathsItems) 
                             {
-                                xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                                xmlWriter.WriteStartElement("Path");
                                 xmlWriter.WriteValue(publicRequestInvalidationBatchPathsItemsValue);
                                 xmlWriter.WriteEndElement();
                             }            
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.InvalidationBatch.Paths.IsSetQuantity())
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity));                 
+                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -129,3 +129,4 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
     }    
 }
+#pragma warning restore CS0612,CS0618

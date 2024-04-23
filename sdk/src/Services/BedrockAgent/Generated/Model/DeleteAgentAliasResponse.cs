@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Delete Agent Alias Response
+    /// This is the response object from the DeleteAgentAlias operation.
     /// </summary>
     public partial class DeleteAgentAliasResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,10 @@ namespace Amazon.BedrockAgent.Model
         private string _agentId;
 
         /// <summary>
-        /// Gets and sets the property AgentAliasId.
+        /// Gets and sets the property AgentAliasId. 
+        /// <para>
+        /// The unique identifier of the alias that was deleted.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=10)]
         public string AgentAliasId
@@ -54,7 +57,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentAliasStatus.
+        /// Gets and sets the property AgentAliasStatus. 
+        /// <para>
+        /// The status of the alias.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentAliasStatus AgentAliasStatus
@@ -70,7 +76,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentId.
+        /// Gets and sets the property AgentId. 
+        /// <para>
+        /// The unique identifier of the agent that the alias belongs to.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentId

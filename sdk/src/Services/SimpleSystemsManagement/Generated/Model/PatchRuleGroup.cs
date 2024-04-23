@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class PatchRuleGroup
     {
-        private List<PatchRule> _patchRules = new List<PatchRule>();
+        private List<PatchRule> _patchRules = AWSConfigs.InitializeCollections ? new List<PatchRule>() : null;
 
         /// <summary>
         /// Gets and sets the property PatchRules. 
@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if PatchRules property is set
         internal bool IsSetPatchRules()
         {
-            return this._patchRules != null && this._patchRules.Count > 0; 
+            return this._patchRules != null && (this._patchRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

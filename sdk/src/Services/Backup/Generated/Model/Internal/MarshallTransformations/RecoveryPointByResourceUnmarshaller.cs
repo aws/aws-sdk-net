@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -123,6 +124,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VaultType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VaultType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
@@ -142,3 +149,4 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

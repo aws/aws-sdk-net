@@ -33,7 +33,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// </summary>
     public partial class GetBotVersionsResponse : AmazonWebServiceResponse
     {
-        private List<BotMetadata> _bots = new List<BotMetadata>();
+        private List<BotMetadata> _bots = AWSConfigs.InitializeCollections ? new List<BotMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if Bots property is set
         internal bool IsSetBots()
         {
-            return this._bots != null && this._bots.Count > 0; 
+            return this._bots != null && (this._bots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

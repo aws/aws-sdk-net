@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class FieldBasedTooltip
     {
         private Visibility _aggregationVisibility;
-        private List<TooltipItem> _tooltipFields = new List<TooltipItem>();
+        private List<TooltipItem> _tooltipFields = AWSConfigs.InitializeCollections ? new List<TooltipItem>() : null;
         private TooltipTitleType _tooltipTitleType;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TooltipFields property is set
         internal bool IsSetTooltipFields()
         {
-            return this._tooltipFields != null && this._tooltipFields.Count > 0; 
+            return this._tooltipFields != null && (this._tooltipFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class ListDomainsResponse : AmazonWebServiceResponse
     {
-        private List<DomainSummary> _items = new List<DomainSummary>();
+        private List<DomainSummary> _items = AWSConfigs.InitializeCollections ? new List<DomainSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

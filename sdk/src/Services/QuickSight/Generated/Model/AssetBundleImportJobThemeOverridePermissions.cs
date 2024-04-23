@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class AssetBundleImportJobThemeOverridePermissions
     {
         private AssetBundleResourcePermissions _permissions;
-        private List<string> _themeIds = new List<string>();
+        private List<string> _themeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Permissions. 
@@ -72,7 +72,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ThemeIds property is set
         internal bool IsSetThemeIds()
         {
-            return this._themeIds != null && this._themeIds.Count > 0; 
+            return this._themeIds != null && (this._themeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

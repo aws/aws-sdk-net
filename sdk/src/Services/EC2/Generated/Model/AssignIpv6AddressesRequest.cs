@@ -55,9 +55,9 @@ namespace Amazon.EC2.Model
     public partial class AssignIpv6AddressesRequest : AmazonEC2Request
     {
         private int? _ipv6AddressCount;
-        private List<string> _ipv6Addresses = new List<string>();
+        private List<string> _ipv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _ipv6PrefixCount;
-        private List<string> _ipv6Prefixes = new List<string>();
+        private List<string> _ipv6Prefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _networkInterfaceId;
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv6Addresses property is set
         internal bool IsSetIpv6Addresses()
         {
-            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+            return this._ipv6Addresses != null && (this._ipv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv6Prefixes property is set
         internal bool IsSetIpv6Prefixes()
         {
-            return this._ipv6Prefixes != null && this._ipv6Prefixes.Count > 0; 
+            return this._ipv6Prefixes != null && (this._ipv6Prefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

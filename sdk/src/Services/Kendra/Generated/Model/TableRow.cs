@@ -33,7 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class TableRow
     {
-        private List<TableCell> _cells = new List<TableCell>();
+        private List<TableCell> _cells = AWSConfigs.InitializeCollections ? new List<TableCell>() : null;
 
         /// <summary>
         /// Gets and sets the property Cells. 
@@ -50,7 +50,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Cells property is set
         internal bool IsSetCells()
         {
-            return this._cells != null && this._cells.Count > 0; 
+            return this._cells != null && (this._cells.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

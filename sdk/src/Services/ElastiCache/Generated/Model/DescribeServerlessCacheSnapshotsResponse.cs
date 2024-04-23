@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model
     public partial class DescribeServerlessCacheSnapshotsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServerlessCacheSnapshot> _serverlessCacheSnapshots = new List<ServerlessCacheSnapshot>();
+        private List<ServerlessCacheSnapshot> _serverlessCacheSnapshots = AWSConfigs.InitializeCollections ? new List<ServerlessCacheSnapshot>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ServerlessCacheSnapshots property is set
         internal bool IsSetServerlessCacheSnapshots()
         {
-            return this._serverlessCacheSnapshots != null && this._serverlessCacheSnapshots.Count > 0; 
+            return this._serverlessCacheSnapshots != null && (this._serverlessCacheSnapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

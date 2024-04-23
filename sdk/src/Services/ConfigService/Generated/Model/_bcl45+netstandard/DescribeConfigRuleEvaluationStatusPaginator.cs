@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the ConfigRulesEvaluationStatus
         /// </summary>
         public IPaginatedEnumerable<ConfigRuleEvaluationStatus> ConfigRulesEvaluationStatus => 
-            new PaginatedResultKeyResponse<DescribeConfigRuleEvaluationStatusResponse, ConfigRuleEvaluationStatus>(this, (i) => i.ConfigRulesEvaluationStatus);
+            new PaginatedResultKeyResponse<DescribeConfigRuleEvaluationStatusResponse, ConfigRuleEvaluationStatus>(this, (i) => i.ConfigRulesEvaluationStatus ?? new List<ConfigRuleEvaluationStatus>());
 
         internal DescribeConfigRuleEvaluationStatusPaginator(IAmazonConfigService client, DescribeConfigRuleEvaluationStatusRequest request)
         {

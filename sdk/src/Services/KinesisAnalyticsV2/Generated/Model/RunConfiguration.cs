@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the starting parameters for an Kinesis Data Analytics application.
+    /// Describes the starting parameters for an Managed Service for Apache Flink application.
     /// </summary>
     public partial class RunConfiguration
     {
         private ApplicationRestoreConfiguration _applicationRestoreConfiguration;
         private FlinkRunConfiguration _flinkRunConfiguration;
-        private List<SqlRunConfiguration> _sqlRunConfigurations = new List<SqlRunConfiguration>();
+        private List<SqlRunConfiguration> _sqlRunConfigurations = AWSConfigs.InitializeCollections ? new List<SqlRunConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationRestoreConfiguration. 
@@ -58,7 +58,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property FlinkRunConfiguration. 
         /// <para>
-        /// Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
+        /// Describes the starting parameters for a Managed Service for Apache Flink application.
         /// </para>
         /// </summary>
         public FlinkRunConfiguration FlinkRunConfiguration
@@ -89,7 +89,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if SqlRunConfigurations property is set
         internal bool IsSetSqlRunConfigurations()
         {
-            return this._sqlRunConfigurations != null && this._sqlRunConfigurations.Count > 0; 
+            return this._sqlRunConfigurations != null && (this._sqlRunConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

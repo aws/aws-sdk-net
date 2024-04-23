@@ -45,7 +45,7 @@ namespace Amazon.Route53Domains.Model
         /// Enumerable containing all of the Prices
         /// </summary>
         public IPaginatedEnumerable<DomainPrice> Prices => 
-            new PaginatedResultKeyResponse<ListPricesResponse, DomainPrice>(this, (i) => i.Prices);
+            new PaginatedResultKeyResponse<ListPricesResponse, DomainPrice>(this, (i) => i.Prices ?? new List<DomainPrice>());
 
         internal ListPricesPaginator(IAmazonRoute53Domains client, ListPricesRequest request)
         {

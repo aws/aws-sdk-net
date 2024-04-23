@@ -45,7 +45,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Enumerable containing all of the Subjects
         /// </summary>
         public IPaginatedEnumerable<SubjectSummary> Subjects => 
-            new PaginatedResultKeyResponse<ListSubjectsResponse, SubjectSummary>(this, (i) => i.Subjects);
+            new PaginatedResultKeyResponse<ListSubjectsResponse, SubjectSummary>(this, (i) => i.Subjects ?? new List<SubjectSummary>());
 
         internal ListSubjectsPaginator(IAmazonIAMRolesAnywhere client, ListSubjectsRequest request)
         {

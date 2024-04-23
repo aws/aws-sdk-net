@@ -15,7 +15,7 @@
 
 using System;
 using System.Net;
-
+using Amazon.Runtime.CredentialManagement;
 using Amazon.Util;
 
 namespace Amazon.SecurityToken.SAML
@@ -191,8 +191,9 @@ namespace Amazon.SecurityToken.SAML
             var response = AuthenticationController.Authenticate(identityProviderUrl, 
                                                                  credentials,
                                                                  string.IsNullOrEmpty(authenticationType) 
-                                                                    ? SAMLEndpointSettings.DefaultAuthenticationType : authenticationType,
+                                                                    ? SAMLAuthenticationType.Kerberos.ToString() : authenticationType,
                                                                  ProxySettings);
+
             return ResponseParser.Parse(response);
         }
     }

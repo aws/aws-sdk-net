@@ -46,7 +46,7 @@ namespace Amazon.Lightsail.Model
         private int? _period;
         private string _relationalDatabaseName;
         private DateTime? _startTime;
-        private List<string> _statistics = new List<string>();
+        private List<string> _statistics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MetricUnit _unit;
 
         /// <summary>
@@ -317,7 +317,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Statistics property is set
         internal bool IsSetStatistics()
         {
-            return this._statistics != null && this._statistics.Count > 0; 
+            return this._statistics != null && (this._statistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

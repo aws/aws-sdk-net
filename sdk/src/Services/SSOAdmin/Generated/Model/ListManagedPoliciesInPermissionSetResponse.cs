@@ -33,7 +33,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class ListManagedPoliciesInPermissionSetResponse : AmazonWebServiceResponse
     {
-        private List<AttachedManagedPolicy> _attachedManagedPolicies = new List<AttachedManagedPolicy>();
+        private List<AttachedManagedPolicy> _attachedManagedPolicies = AWSConfigs.InitializeCollections ? new List<AttachedManagedPolicy>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if AttachedManagedPolicies property is set
         internal bool IsSetAttachedManagedPolicies()
         {
-            return this._attachedManagedPolicies != null && this._attachedManagedPolicies.Count > 0; 
+            return this._attachedManagedPolicies != null && (this._attachedManagedPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

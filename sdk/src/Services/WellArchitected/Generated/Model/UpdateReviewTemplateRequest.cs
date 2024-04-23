@@ -35,8 +35,8 @@ namespace Amazon.WellArchitected.Model
     public partial class UpdateReviewTemplateRequest : AmazonWellArchitectedRequest
     {
         private string _description;
-        private List<string> _lensesToAssociate = new List<string>();
-        private List<string> _lensesToDisassociate = new List<string>();
+        private List<string> _lensesToAssociate = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _lensesToDisassociate = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _notes;
         private string _templateArn;
         private string _templateName;
@@ -76,7 +76,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if LensesToAssociate property is set
         internal bool IsSetLensesToAssociate()
         {
-            return this._lensesToAssociate != null && this._lensesToAssociate.Count > 0; 
+            return this._lensesToAssociate != null && (this._lensesToAssociate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if LensesToDisassociate property is set
         internal bool IsSetLensesToDisassociate()
         {
-            return this._lensesToDisassociate != null && this._lensesToDisassociate.Count > 0; 
+            return this._lensesToDisassociate != null && (this._lensesToDisassociate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

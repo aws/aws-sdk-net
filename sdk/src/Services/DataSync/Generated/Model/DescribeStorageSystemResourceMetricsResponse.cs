@@ -33,7 +33,7 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class DescribeStorageSystemResourceMetricsResponse : AmazonWebServiceResponse
     {
-        private List<ResourceMetrics> _metrics = new List<ResourceMetrics>();
+        private List<ResourceMetrics> _metrics = AWSConfigs.InitializeCollections ? new List<ResourceMetrics>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the Schemas
         /// </summary>
         public IPaginatedEnumerable<InventoryItemSchema> Schemas => 
-            new PaginatedResultKeyResponse<GetInventorySchemaResponse, InventoryItemSchema>(this, (i) => i.Schemas);
+            new PaginatedResultKeyResponse<GetInventorySchemaResponse, InventoryItemSchema>(this, (i) => i.Schemas ?? new List<InventoryItemSchema>());
 
         internal GetInventorySchemaPaginator(IAmazonSimpleSystemsManagement client, GetInventorySchemaRequest request)
         {

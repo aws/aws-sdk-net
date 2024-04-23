@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("byoasnSet/item", targetDepth))
                     {
                         var unmarshaller = ByoasnUnmarshaller.Instance;
+                        if (response.Byoasns == null)
+                        {
+                            response.Byoasns = new List<Byoasn>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Byoasns.Add(item);
                         continue;
@@ -106,3 +111,4 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

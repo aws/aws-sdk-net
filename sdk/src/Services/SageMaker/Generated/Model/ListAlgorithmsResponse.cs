@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListAlgorithmsResponse : AmazonWebServiceResponse
     {
-        private List<AlgorithmSummary> _algorithmSummaryList = new List<AlgorithmSummary>();
+        private List<AlgorithmSummary> _algorithmSummaryList = AWSConfigs.InitializeCollections ? new List<AlgorithmSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AlgorithmSummaryList property is set
         internal bool IsSetAlgorithmSummaryList()
         {
-            return this._algorithmSummaryList != null && this._algorithmSummaryList.Count > 0; 
+            return this._algorithmSummaryList != null && (this._algorithmSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

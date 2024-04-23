@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class DescribeSSLPoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<SslPolicy> _sslPolicies = new List<SslPolicy>();
+        private List<SslPolicy> _sslPolicies = AWSConfigs.InitializeCollections ? new List<SslPolicy>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -70,7 +70,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if SslPolicies property is set
         internal bool IsSetSslPolicies()
         {
-            return this._sslPolicies != null && this._sslPolicies.Count > 0; 
+            return this._sslPolicies != null && (this._sslPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

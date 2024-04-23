@@ -33,7 +33,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ListMultiplexProgramsResponse : AmazonWebServiceResponse
     {
-        private List<MultiplexProgramSummary> _multiplexPrograms = new List<MultiplexProgramSummary>();
+        private List<MultiplexProgramSummary> _multiplexPrograms = AWSConfigs.InitializeCollections ? new List<MultiplexProgramSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if MultiplexPrograms property is set
         internal bool IsSetMultiplexPrograms()
         {
-            return this._multiplexPrograms != null && this._multiplexPrograms.Count > 0; 
+            return this._multiplexPrograms != null && (this._multiplexPrograms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

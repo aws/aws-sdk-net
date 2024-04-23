@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,22 +63,27 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CoolOffPeriod", StringUtils.FromInt(publicRequest.CoolOffPeriod));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExpirationDate())
                 {
-                    request.Parameters.Add("ExpirationDate", StringUtils.FromDateTimeToISO8601(publicRequest.ExpirationDate));
+                    request.Parameters.Add("ExpirationDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpirationDate));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLockDuration())
                 {
                     request.Parameters.Add("LockDuration", StringUtils.FromInt(publicRequest.LockDuration));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLockMode())
                 {
                     request.Parameters.Add("LockMode", StringUtils.FromString(publicRequest.LockMode));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotId())
                 {
                     request.Parameters.Add("SnapshotId", StringUtils.FromString(publicRequest.SnapshotId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

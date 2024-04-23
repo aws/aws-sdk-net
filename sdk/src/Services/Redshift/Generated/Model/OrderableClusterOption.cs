@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class OrderableClusterOption
     {
-        private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
+        private List<AvailabilityZone> _availabilityZones = AWSConfigs.InitializeCollections ? new List<AvailabilityZone>() : null;
         private string _clusterType;
         private string _clusterVersion;
         private string _nodeType;
@@ -53,7 +53,7 @@ namespace Amazon.Redshift.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

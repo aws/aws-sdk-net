@@ -33,7 +33,7 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class ListAccessGrantsInstancesResponse : AmazonWebServiceResponse
     {
-        private List<ListAccessGrantsInstanceEntry> _accessGrantsInstancesList = new List<ListAccessGrantsInstanceEntry>();
+        private List<ListAccessGrantsInstanceEntry> _accessGrantsInstancesList = AWSConfigs.InitializeCollections ? new List<ListAccessGrantsInstanceEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.S3Control.Model
         // Check to see if AccessGrantsInstancesList property is set
         internal bool IsSetAccessGrantsInstancesList()
         {
-            return this._accessGrantsInstancesList != null && this._accessGrantsInstancesList.Count > 0; 
+            return this._accessGrantsInstancesList != null && (this._accessGrantsInstancesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

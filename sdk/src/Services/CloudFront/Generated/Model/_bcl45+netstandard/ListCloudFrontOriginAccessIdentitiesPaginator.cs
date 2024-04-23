@@ -45,7 +45,7 @@ namespace Amazon.CloudFront.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<CloudFrontOriginAccessIdentitySummary> Items => 
-            new PaginatedResultKeyResponse<ListCloudFrontOriginAccessIdentitiesResponse, CloudFrontOriginAccessIdentitySummary>(this, (i) => i.CloudFrontOriginAccessIdentityList.Items);
+            new PaginatedResultKeyResponse<ListCloudFrontOriginAccessIdentitiesResponse, CloudFrontOriginAccessIdentitySummary>(this, (i) => i.CloudFrontOriginAccessIdentityList.Items ?? new List<CloudFrontOriginAccessIdentitySummary>());
 
         internal ListCloudFrontOriginAccessIdentitiesPaginator(IAmazonCloudFront client, ListCloudFrontOriginAccessIdentitiesRequest request)
         {

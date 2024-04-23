@@ -43,7 +43,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class DescribeTaskDefinitionRequest : AmazonECSRequest
     {
-        private List<string> _include = new List<string>();
+        private List<string> _include = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _taskDefinition;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.ECS.Model
         // Check to see if Include property is set
         internal bool IsSetInclude()
         {
-            return this._include != null && this._include.Count > 0; 
+            return this._include != null && (this._include.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

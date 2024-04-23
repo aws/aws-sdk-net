@@ -33,7 +33,7 @@ namespace Amazon.DocDBElastic.Model
     /// </summary>
     public partial class ListClustersResponse : AmazonWebServiceResponse
     {
-        private List<ClusterInList> _clusters = new List<ClusterInList>();
+        private List<ClusterInList> _clusters = AWSConfigs.InitializeCollections ? new List<ClusterInList>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DocDBElastic.Model
         // Check to see if Clusters property is set
         internal bool IsSetClusters()
         {
-            return this._clusters != null && this._clusters.Count > 0; 
+            return this._clusters != null && (this._clusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

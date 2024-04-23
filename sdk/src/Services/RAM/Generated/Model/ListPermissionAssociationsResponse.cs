@@ -34,7 +34,7 @@ namespace Amazon.RAM.Model
     public partial class ListPermissionAssociationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<AssociatedPermission> _permissions = new List<AssociatedPermission>();
+        private List<AssociatedPermission> _permissions = AWSConfigs.InitializeCollections ? new List<AssociatedPermission>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.RAM.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

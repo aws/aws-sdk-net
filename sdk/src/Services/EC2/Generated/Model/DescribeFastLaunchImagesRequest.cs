@@ -34,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeFastLaunchImagesRequest : AmazonEC2Request
     {
-        private List<Filter> _filters = new List<Filter>();
-        private List<string> _imageIds = new List<string>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _imageIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.EC2.Model
         // Check to see if ImageIds property is set
         internal bool IsSetImageIds()
         {
-            return this._imageIds != null && this._imageIds.Count > 0; 
+            return this._imageIds != null && (this._imageIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

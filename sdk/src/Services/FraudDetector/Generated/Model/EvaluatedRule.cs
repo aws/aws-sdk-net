@@ -37,7 +37,7 @@ namespace Amazon.FraudDetector.Model
         private string _expression;
         private string _expressionWithValues;
         private bool? _matched;
-        private List<string> _outcomes = new List<string>();
+        private List<string> _outcomes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ruleId;
         private string _ruleVersion;
 
@@ -130,7 +130,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Outcomes property is set
         internal bool IsSetOutcomes()
         {
-            return this._outcomes != null && this._outcomes.Count > 0; 
+            return this._outcomes != null && (this._outcomes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

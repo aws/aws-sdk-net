@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the ExportImageTasks
         /// </summary>
         public IPaginatedEnumerable<ExportImageTask> ExportImageTasks => 
-            new PaginatedResultKeyResponse<DescribeExportImageTasksResponse, ExportImageTask>(this, (i) => i.ExportImageTasks);
+            new PaginatedResultKeyResponse<DescribeExportImageTasksResponse, ExportImageTask>(this, (i) => i.ExportImageTasks ?? new List<ExportImageTask>());
 
         internal DescribeExportImageTasksPaginator(IAmazonEC2 client, DescribeExportImageTasksRequest request)
         {

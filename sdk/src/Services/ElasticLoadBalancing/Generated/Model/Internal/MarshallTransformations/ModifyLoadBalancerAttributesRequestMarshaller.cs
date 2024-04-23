@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,19 +67,24 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("LoadBalancerAttributes" + "." + "AccessLog" + "." + "EmitInterval", StringUtils.FromInt(publicRequest.LoadBalancerAttributes.AccessLog.EmitInterval));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LoadBalancerAttributes.AccessLog.IsSetEnabled())
                         {
                             request.Parameters.Add("LoadBalancerAttributes" + "." + "AccessLog" + "." + "Enabled", StringUtils.FromBool(publicRequest.LoadBalancerAttributes.AccessLog.Enabled));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LoadBalancerAttributes.AccessLog.IsSetS3BucketName())
                         {
                             request.Parameters.Add("LoadBalancerAttributes" + "." + "AccessLog" + "." + "S3BucketName", StringUtils.FromString(publicRequest.LoadBalancerAttributes.AccessLog.S3BucketName));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LoadBalancerAttributes.AccessLog.IsSetS3BucketPrefix())
                         {
                             request.Parameters.Add("LoadBalancerAttributes" + "." + "AccessLog" + "." + "S3BucketPrefix", StringUtils.FromString(publicRequest.LoadBalancerAttributes.AccessLog.S3BucketPrefix));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LoadBalancerAttributes.IsSetAdditionalAttributes())
                     {
                         int publicRequestLoadBalancerAttributeslistValueIndex = 1;
@@ -88,43 +94,55 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LoadBalancerAttributes" + "." + "AdditionalAttributes" + "." + "member" + "." + publicRequestLoadBalancerAttributeslistValueIndex + "." + "Key", StringUtils.FromString(publicRequestLoadBalancerAttributeslistValue.Key));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestLoadBalancerAttributeslistValue.IsSetValue())
                             {
                                 request.Parameters.Add("LoadBalancerAttributes" + "." + "AdditionalAttributes" + "." + "member" + "." + publicRequestLoadBalancerAttributeslistValueIndex + "." + "Value", StringUtils.FromString(publicRequestLoadBalancerAttributeslistValue.Value));
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestLoadBalancerAttributeslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LoadBalancerAttributes.IsSetConnectionDraining())
                     {
                         if(publicRequest.LoadBalancerAttributes.ConnectionDraining.IsSetEnabled())
                         {
                             request.Parameters.Add("LoadBalancerAttributes" + "." + "ConnectionDraining" + "." + "Enabled", StringUtils.FromBool(publicRequest.LoadBalancerAttributes.ConnectionDraining.Enabled));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequest.LoadBalancerAttributes.ConnectionDraining.IsSetTimeout())
                         {
                             request.Parameters.Add("LoadBalancerAttributes" + "." + "ConnectionDraining" + "." + "Timeout", StringUtils.FromInt(publicRequest.LoadBalancerAttributes.ConnectionDraining.Timeout));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LoadBalancerAttributes.IsSetConnectionSettings())
                     {
                         if(publicRequest.LoadBalancerAttributes.ConnectionSettings.IsSetIdleTimeout())
                         {
                             request.Parameters.Add("LoadBalancerAttributes" + "." + "ConnectionSettings" + "." + "IdleTimeout", StringUtils.FromInt(publicRequest.LoadBalancerAttributes.ConnectionSettings.IdleTimeout));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.LoadBalancerAttributes.IsSetCrossZoneLoadBalancing())
                     {
                         if(publicRequest.LoadBalancerAttributes.CrossZoneLoadBalancing.IsSetEnabled())
                         {
                             request.Parameters.Add("LoadBalancerAttributes" + "." + "CrossZoneLoadBalancing" + "." + "Enabled", StringUtils.FromBool(publicRequest.LoadBalancerAttributes.CrossZoneLoadBalancing.Enabled));
                         }
+#pragma warning restore CS0612,CS0618
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoadBalancerName())
                 {
                     request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

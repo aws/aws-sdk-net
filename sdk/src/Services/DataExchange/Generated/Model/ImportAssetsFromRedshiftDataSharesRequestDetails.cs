@@ -33,7 +33,7 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class ImportAssetsFromRedshiftDataSharesRequestDetails
     {
-        private List<RedshiftDataShareAssetSourceEntry> _assetSources = new List<RedshiftDataShareAssetSourceEntry>();
+        private List<RedshiftDataShareAssetSourceEntry> _assetSources = AWSConfigs.InitializeCollections ? new List<RedshiftDataShareAssetSourceEntry>() : null;
         private string _dataSetId;
         private string _revisionId;
 
@@ -53,7 +53,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if AssetSources property is set
         internal bool IsSetAssetSources()
         {
-            return this._assetSources != null && this._assetSources.Count > 0; 
+            return this._assetSources != null && (this._assetSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetUpdatedEarlierThan())
-                request.Parameters.Add("updatedEarlierThan", StringUtils.FromDateTimeToISO8601(publicRequest.UpdatedEarlierThan));
+                request.Parameters.Add("updatedEarlierThan", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.UpdatedEarlierThan));
             request.ResourcePath = "/applications/{applicationId}/indices/{indexId}/groups";
             request.UseQueryString = true;
 
@@ -101,3 +102,4 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

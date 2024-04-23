@@ -34,7 +34,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     public partial class ListRoutingControlsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RoutingControl> _routingControls = new List<RoutingControl>();
+        private List<RoutingControl> _routingControls = AWSConfigs.InitializeCollections ? new List<RoutingControl>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         // Check to see if RoutingControls property is set
         internal bool IsSetRoutingControls()
         {
-            return this._routingControls != null && this._routingControls.Count > 0; 
+            return this._routingControls != null && (this._routingControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

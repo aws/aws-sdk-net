@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model
     public partial class OAuthProperties
     {
         private string _authCodeUrl;
-        private List<string> _oAuthScopes = new List<string>();
+        private List<string> _oAuthScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tokenUrl;
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Appflow.Model
         // Check to see if OAuthScopes property is set
         internal bool IsSetOAuthScopes()
         {
-            return this._oAuthScopes != null && this._oAuthScopes.Count > 0; 
+            return this._oAuthScopes != null && (this._oAuthScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

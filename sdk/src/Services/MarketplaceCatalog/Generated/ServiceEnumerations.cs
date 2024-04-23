@@ -573,6 +573,10 @@ namespace Amazon.MarketplaceCatalog
         /// </summary>
         public static readonly OfferSortBy ReleaseDate = new OfferSortBy("ReleaseDate");
         /// <summary>
+        /// Constant ResaleAuthorizationId for OfferSortBy
+        /// </summary>
+        public static readonly OfferSortBy ResaleAuthorizationId = new OfferSortBy("ResaleAuthorizationId");
+        /// <summary>
         /// Constant State for OfferSortBy
         /// </summary>
         public static readonly OfferSortBy State = new OfferSortBy("State");

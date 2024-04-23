@@ -38,7 +38,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ReadSetId. 
         /// <para>
-        ///  The read set ID created for an uploaded read set. 
+        /// The read set ID created for an uploaded read set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]

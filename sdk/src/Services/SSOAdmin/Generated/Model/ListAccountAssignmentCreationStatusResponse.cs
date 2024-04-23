@@ -33,7 +33,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class ListAccountAssignmentCreationStatusResponse : AmazonWebServiceResponse
     {
-        private List<AccountAssignmentOperationStatusMetadata> _accountAssignmentsCreationStatus = new List<AccountAssignmentOperationStatusMetadata>();
+        private List<AccountAssignmentOperationStatusMetadata> _accountAssignmentsCreationStatus = AWSConfigs.InitializeCollections ? new List<AccountAssignmentOperationStatusMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if AccountAssignmentsCreationStatus property is set
         internal bool IsSetAccountAssignmentsCreationStatus()
         {
-            return this._accountAssignmentsCreationStatus != null && this._accountAssignmentsCreationStatus.Count > 0; 
+            return this._accountAssignmentsCreationStatus != null && (this._accountAssignmentsCreationStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

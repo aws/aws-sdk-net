@@ -33,7 +33,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class ServiceCollection
     {
-        private List<string> _serviceNames = new List<string>();
+        private List<string> _serviceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ServiceNames. 
@@ -50,7 +50,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if ServiceNames property is set
         internal bool IsSetServiceNames()
         {
-            return this._serviceNames != null && this._serviceNames.Count > 0; 
+            return this._serviceNames != null && (this._serviceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

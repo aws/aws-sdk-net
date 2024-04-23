@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetIpamAddressHistoryResponse : AmazonWebServiceResponse
     {
-        private List<IpamAddressHistoryRecord> _historyRecords = new List<IpamAddressHistoryRecord>();
+        private List<IpamAddressHistoryRecord> _historyRecords = AWSConfigs.InitializeCollections ? new List<IpamAddressHistoryRecord>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if HistoryRecords property is set
         internal bool IsSetHistoryRecords()
         {
-            return this._historyRecords != null && this._historyRecords.Count > 0; 
+            return this._historyRecords != null && (this._historyRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

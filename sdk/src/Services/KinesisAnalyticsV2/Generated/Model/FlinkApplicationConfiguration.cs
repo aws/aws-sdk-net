@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes configuration parameters for a Flink-based Kinesis Data Analytics application
+    /// Describes configuration parameters for a Managed Service for Apache Flink application
     /// or a Studio notebook.
     /// </summary>
     public partial class FlinkApplicationConfiguration
@@ -43,8 +43,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <para>
         /// Describes an application's checkpointing configuration. Checkpointing is the process
         /// of persisting application state for fault tolerance. For more information, see <a
-        /// href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance">
-        /// Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
+        /// href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing">
+        /// Checkpoints for Fault Tolerance</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache
         /// Flink Documentation</a>. 
         /// </para>
         /// </summary>

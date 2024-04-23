@@ -214,6 +214,7 @@ namespace Amazon
             return regionEndpoint;
         }
 
+#pragma warning disable CS0612,CS0618 // Type or member is obsolete
         private static IRegionEndpointProvider _regionEndpointProvider;
         private static IRegionEndpointProvider RegionEndpointProvider
         {
@@ -245,12 +246,15 @@ namespace Amazon
                 return _regionEndpointProvider;
             }
         }
+#pragma warning restore CS0612,CS0618 // Type or member is obsolete
         #endregion
 
         private RegionEndpoint(string systemName, string displayName)
         {
             this.SystemName = systemName;
+#pragma warning disable CS0612,CS0618
             this.OriginalSystemName = systemName;
+#pragma warning restore CS0612,CS0618
             this.DisplayName = displayName;
         }
 
@@ -288,7 +292,9 @@ namespace Amazon
         {
             get
             {
+#pragma warning disable CS0612,CS0618
                 var regionEndpointV3 = this.InternedRegionEndpoint as RegionEndpointV3;
+#pragma warning restore CS0612,CS0618
                 return regionEndpointV3?.PartitionName;
             }
         }
@@ -300,7 +306,9 @@ namespace Amazon
         {
             get
             {
+#pragma warning disable CS0612,CS0618
                 var regionEndpointV3 = this.InternedRegionEndpoint as RegionEndpointV3;
+#pragma warning restore CS0612,CS0618
                 return regionEndpointV3?.PartitionDnsSuffix;
             }
         }

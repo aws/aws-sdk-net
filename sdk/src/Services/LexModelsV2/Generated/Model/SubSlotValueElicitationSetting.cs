@@ -49,7 +49,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private SlotDefaultValueSpecification _defaultValueSpecification;
         private PromptSpecification _promptSpecification;
-        private List<SampleUtterance> _sampleUtterances = new List<SampleUtterance>();
+        private List<SampleUtterance> _sampleUtterances = AWSConfigs.InitializeCollections ? new List<SampleUtterance>() : null;
         private WaitAndContinueSpecification _waitAndContinueSpecification;
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SampleUtterances property is set
         internal bool IsSetSampleUtterances()
         {
-            return this._sampleUtterances != null && this._sampleUtterances.Count > 0; 
+            return this._sampleUtterances != null && (this._sampleUtterances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

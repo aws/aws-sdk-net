@@ -41,8 +41,8 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _networkType;
         private bool? _publiclyAccessible;
         private string _subnetGroupIdentifier;
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _vpcSecurityGroups = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -205,7 +205,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if VpcSecurityGroups property is set
         internal bool IsSetVpcSecurityGroups()
         {
-            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+            return this._vpcSecurityGroups != null && (this._vpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

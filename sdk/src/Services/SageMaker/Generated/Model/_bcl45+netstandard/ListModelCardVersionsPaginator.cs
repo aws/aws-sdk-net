@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the ModelCardVersionSummaryList
         /// </summary>
         public IPaginatedEnumerable<ModelCardVersionSummary> ModelCardVersionSummaryList => 
-            new PaginatedResultKeyResponse<ListModelCardVersionsResponse, ModelCardVersionSummary>(this, (i) => i.ModelCardVersionSummaryList);
+            new PaginatedResultKeyResponse<ListModelCardVersionsResponse, ModelCardVersionSummary>(this, (i) => i.ModelCardVersionSummaryList ?? new List<ModelCardVersionSummary>());
 
         internal ListModelCardVersionsPaginator(IAmazonSageMaker client, ListModelCardVersionsRequest request)
         {

@@ -42,14 +42,14 @@ namespace Amazon.CloudWatchEvidently.Model
     {
         private string _description;
         private string _experiment;
-        private List<MetricGoalConfig> _metricGoals = new List<MetricGoalConfig>();
+        private List<MetricGoalConfig> _metricGoals = AWSConfigs.InitializeCollections ? new List<MetricGoalConfig>() : null;
         private OnlineAbConfig _onlineAbConfig;
         private string _project;
         private string _randomizationSalt;
         private bool? _removeSegment;
         private long? _samplingRate;
         private string _segment;
-        private List<TreatmentConfig> _treatments = new List<TreatmentConfig>();
+        private List<TreatmentConfig> _treatments = AWSConfigs.InitializeCollections ? new List<TreatmentConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -106,7 +106,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if MetricGoals property is set
         internal bool IsSetMetricGoals()
         {
-            return this._metricGoals != null && this._metricGoals.Count > 0; 
+            return this._metricGoals != null && (this._metricGoals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -252,7 +252,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Treatments property is set
         internal bool IsSetTreatments()
         {
-            return this._treatments != null && this._treatments.Count > 0; 
+            return this._treatments != null && (this._treatments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

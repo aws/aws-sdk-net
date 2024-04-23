@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the MulticastGroups
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayMulticastGroup> MulticastGroups => 
-            new PaginatedResultKeyResponse<SearchTransitGatewayMulticastGroupsResponse, TransitGatewayMulticastGroup>(this, (i) => i.MulticastGroups);
+            new PaginatedResultKeyResponse<SearchTransitGatewayMulticastGroupsResponse, TransitGatewayMulticastGroup>(this, (i) => i.MulticastGroups ?? new List<TransitGatewayMulticastGroup>());
 
         internal SearchTransitGatewayMulticastGroupsPaginator(IAmazonEC2 client, SearchTransitGatewayMulticastGroupsRequest request)
         {

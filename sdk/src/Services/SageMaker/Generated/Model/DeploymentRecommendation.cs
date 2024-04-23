@@ -35,7 +35,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DeploymentRecommendation
     {
-        private List<RealTimeInferenceRecommendation> _realTimeInferenceRecommendations = new List<RealTimeInferenceRecommendation>();
+        private List<RealTimeInferenceRecommendation> _realTimeInferenceRecommendations = AWSConfigs.InitializeCollections ? new List<RealTimeInferenceRecommendation>() : null;
         private RecommendationStatus _recommendationStatus;
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if RealTimeInferenceRecommendations property is set
         internal bool IsSetRealTimeInferenceRecommendations()
         {
-            return this._realTimeInferenceRecommendations != null && this._realTimeInferenceRecommendations.Count > 0; 
+            return this._realTimeInferenceRecommendations != null && (this._realTimeInferenceRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

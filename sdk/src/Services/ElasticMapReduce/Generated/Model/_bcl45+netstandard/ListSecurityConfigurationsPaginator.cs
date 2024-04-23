@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Enumerable containing all of the SecurityConfigurations
         /// </summary>
         public IPaginatedEnumerable<SecurityConfigurationSummary> SecurityConfigurations => 
-            new PaginatedResultKeyResponse<ListSecurityConfigurationsResponse, SecurityConfigurationSummary>(this, (i) => i.SecurityConfigurations);
+            new PaginatedResultKeyResponse<ListSecurityConfigurationsResponse, SecurityConfigurationSummary>(this, (i) => i.SecurityConfigurations ?? new List<SecurityConfigurationSummary>());
 
         internal ListSecurityConfigurationsPaginator(IAmazonElasticMapReduce client, ListSecurityConfigurationsRequest request)
         {

@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<GroupSummary> Items => 
-            new PaginatedResultKeyResponse<ListGroupsResponse, GroupSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListGroupsResponse, GroupSummary>(this, (i) => i.Items ?? new List<GroupSummary>());
 
         internal ListGroupsPaginator(IAmazonQBusiness client, ListGroupsRequest request)
         {

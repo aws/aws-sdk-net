@@ -41,10 +41,10 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class RepositoryTrigger
     {
-        private List<string> _branches = new List<string>();
+        private List<string> _branches = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _customData;
         private string _destinationArn;
-        private List<string> _events = new List<string>();
+        private List<string> _events = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Branches property is set
         internal bool IsSetBranches()
         {
-            return this._branches != null && this._branches.Count > 0; 
+            return this._branches != null && (this._branches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

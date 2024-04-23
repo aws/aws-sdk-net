@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the RegistrationVersions
         /// </summary>
         public IPaginatedEnumerable<RegistrationVersionInformation> RegistrationVersions => 
-            new PaginatedResultKeyResponse<DescribeRegistrationVersionsResponse, RegistrationVersionInformation>(this, (i) => i.RegistrationVersions);
+            new PaginatedResultKeyResponse<DescribeRegistrationVersionsResponse, RegistrationVersionInformation>(this, (i) => i.RegistrationVersions ?? new List<RegistrationVersionInformation>());
 
         internal DescribeRegistrationVersionsPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeRegistrationVersionsRequest request)
         {

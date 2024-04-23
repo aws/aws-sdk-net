@@ -91,7 +91,7 @@ namespace Amazon.AutoScaling.Model
     public partial class UpdateAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _capacityRebalance;
         private string _context;
         private int? _defaultCooldown;
@@ -110,7 +110,7 @@ namespace Amazon.AutoScaling.Model
         private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
         private string _serviceLinkedRoleARN;
-        private List<string> _terminationPolicies = new List<string>();
+        private List<string> _terminationPolicies = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcZoneIdentifier;
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -601,7 +601,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TerminationPolicies property is set
         internal bool IsSetTerminationPolicies()
         {
-            return this._terminationPolicies != null && this._terminationPolicies.Count > 0; 
+            return this._terminationPolicies != null && (this._terminationPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -345,6 +345,218 @@ namespace Amazon.CodeArtifact
 
 
     /// <summary>
+    /// Constants used for properties of type PackageGroupAllowedRepositoryUpdateType.
+    /// </summary>
+    public class PackageGroupAllowedRepositoryUpdateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDED for PackageGroupAllowedRepositoryUpdateType
+        /// </summary>
+        public static readonly PackageGroupAllowedRepositoryUpdateType ADDED = new PackageGroupAllowedRepositoryUpdateType("ADDED");
+        /// <summary>
+        /// Constant REMOVED for PackageGroupAllowedRepositoryUpdateType
+        /// </summary>
+        public static readonly PackageGroupAllowedRepositoryUpdateType REMOVED = new PackageGroupAllowedRepositoryUpdateType("REMOVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageGroupAllowedRepositoryUpdateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageGroupAllowedRepositoryUpdateType FindValue(string value)
+        {
+            return FindValue<PackageGroupAllowedRepositoryUpdateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageGroupAllowedRepositoryUpdateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageGroupAssociationType.
+    /// </summary>
+    public class PackageGroupAssociationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STRONG for PackageGroupAssociationType
+        /// </summary>
+        public static readonly PackageGroupAssociationType STRONG = new PackageGroupAssociationType("STRONG");
+        /// <summary>
+        /// Constant WEAK for PackageGroupAssociationType
+        /// </summary>
+        public static readonly PackageGroupAssociationType WEAK = new PackageGroupAssociationType("WEAK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageGroupAssociationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageGroupAssociationType FindValue(string value)
+        {
+            return FindValue<PackageGroupAssociationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageGroupAssociationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageGroupOriginRestrictionMode.
+    /// </summary>
+    public class PackageGroupOriginRestrictionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for PackageGroupOriginRestrictionMode
+        /// </summary>
+        public static readonly PackageGroupOriginRestrictionMode ALLOW = new PackageGroupOriginRestrictionMode("ALLOW");
+        /// <summary>
+        /// Constant ALLOW_SPECIFIC_REPOSITORIES for PackageGroupOriginRestrictionMode
+        /// </summary>
+        public static readonly PackageGroupOriginRestrictionMode ALLOW_SPECIFIC_REPOSITORIES = new PackageGroupOriginRestrictionMode("ALLOW_SPECIFIC_REPOSITORIES");
+        /// <summary>
+        /// Constant BLOCK for PackageGroupOriginRestrictionMode
+        /// </summary>
+        public static readonly PackageGroupOriginRestrictionMode BLOCK = new PackageGroupOriginRestrictionMode("BLOCK");
+        /// <summary>
+        /// Constant INHERIT for PackageGroupOriginRestrictionMode
+        /// </summary>
+        public static readonly PackageGroupOriginRestrictionMode INHERIT = new PackageGroupOriginRestrictionMode("INHERIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageGroupOriginRestrictionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageGroupOriginRestrictionMode FindValue(string value)
+        {
+            return FindValue<PackageGroupOriginRestrictionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageGroupOriginRestrictionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageGroupOriginRestrictionType.
+    /// </summary>
+    public class PackageGroupOriginRestrictionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTERNAL_UPSTREAM for PackageGroupOriginRestrictionType
+        /// </summary>
+        public static readonly PackageGroupOriginRestrictionType EXTERNAL_UPSTREAM = new PackageGroupOriginRestrictionType("EXTERNAL_UPSTREAM");
+        /// <summary>
+        /// Constant INTERNAL_UPSTREAM for PackageGroupOriginRestrictionType
+        /// </summary>
+        public static readonly PackageGroupOriginRestrictionType INTERNAL_UPSTREAM = new PackageGroupOriginRestrictionType("INTERNAL_UPSTREAM");
+        /// <summary>
+        /// Constant PUBLISH for PackageGroupOriginRestrictionType
+        /// </summary>
+        public static readonly PackageGroupOriginRestrictionType PUBLISH = new PackageGroupOriginRestrictionType("PUBLISH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageGroupOriginRestrictionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageGroupOriginRestrictionType FindValue(string value)
+        {
+            return FindValue<PackageGroupOriginRestrictionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageGroupOriginRestrictionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PackageVersionErrorCode.
     /// </summary>
     public class PackageVersionErrorCode : ConstantClass

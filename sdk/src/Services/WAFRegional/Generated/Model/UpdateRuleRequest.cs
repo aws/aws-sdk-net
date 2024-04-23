@@ -107,7 +107,7 @@ namespace Amazon.WAFRegional.Model
     {
         private string _changeToken;
         private string _ruleId;
-        private List<RuleUpdate> _updates = new List<RuleUpdate>();
+        private List<RuleUpdate> _updates = AWSConfigs.InitializeCollections ? new List<RuleUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property ChangeToken. 
@@ -178,7 +178,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if Updates property is set
         internal bool IsSetUpdates()
         {
-            return this._updates != null && this._updates.Count > 0; 
+            return this._updates != null && (this._updates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -38,10 +38,10 @@ namespace Amazon.GreengrassV2.Model
         private string _componentVersion;
         private DateTime? _creationTimestamp;
         private string _description;
-        private List<ComponentPlatform> _platforms = new List<ComponentPlatform>();
+        private List<ComponentPlatform> _platforms = AWSConfigs.InitializeCollections ? new List<ComponentPlatform>() : null;
         private string _publisher;
         private CloudComponentStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -151,7 +151,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if Platforms property is set
         internal bool IsSetPlatforms()
         {
-            return this._platforms != null && this._platforms.Count > 0; 
+            return this._platforms != null && (this._platforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

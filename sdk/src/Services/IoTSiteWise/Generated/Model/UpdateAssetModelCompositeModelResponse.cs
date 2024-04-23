@@ -33,7 +33,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class UpdateAssetModelCompositeModelResponse : AmazonWebServiceResponse
     {
-        private List<AssetModelCompositeModelPathSegment> _assetModelCompositeModelPath = new List<AssetModelCompositeModelPathSegment>();
+        private List<AssetModelCompositeModelPathSegment> _assetModelCompositeModelPath = AWSConfigs.InitializeCollections ? new List<AssetModelCompositeModelPathSegment>() : null;
         private AssetModelStatus _assetModelStatus;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AssetModelCompositeModelPath property is set
         internal bool IsSetAssetModelCompositeModelPath()
         {
-            return this._assetModelCompositeModelPath != null && this._assetModelCompositeModelPath.Count > 0; 
+            return this._assetModelCompositeModelPath != null && (this._assetModelCompositeModelPath.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

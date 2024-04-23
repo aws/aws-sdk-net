@@ -36,7 +36,7 @@ namespace Amazon.SimpleEmailV2.Model
     {
         private string _contactListName;
         private string _description;
-        private List<Topic> _topics = new List<Topic>();
+        private List<Topic> _topics = AWSConfigs.InitializeCollections ? new List<Topic>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactListName. 
@@ -91,7 +91,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Topics property is set
         internal bool IsSetTopics()
         {
-            return this._topics != null && this._topics.Count > 0; 
+            return this._topics != null && (this._topics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

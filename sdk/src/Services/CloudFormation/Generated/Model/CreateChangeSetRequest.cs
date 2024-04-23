@@ -64,22 +64,22 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class CreateChangeSetRequest : AmazonCloudFormationRequest
     {
-        private List<string> _capabilities = new List<string>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _changeSetName;
         private ChangeSetType _changeSetType;
         private string _clientToken;
         private string _description;
         private bool? _importExistingResources;
         private bool? _includeNestedStacks;
-        private List<string> _notificationARNs = new List<string>();
+        private List<string> _notificationARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OnStackFailure _onStackFailure;
-        private List<Parameter> _parameters = new List<Parameter>();
-        private List<ResourceToImport> _resourcesToImport = new List<ResourceToImport>();
-        private List<string> _resourceTypes = new List<string>();
+        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
+        private List<ResourceToImport> _resourcesToImport = AWSConfigs.InitializeCollections ? new List<ResourceToImport>() : null;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleARN;
         private RollbackConfiguration _rollbackConfiguration;
         private string _stackName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _templateBody;
         private string _templateURL;
         private bool? _usePreviousTemplate;
@@ -127,37 +127,37 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-        /// <c>AWS::IAM::AccessKey</c> </a> 
+        /// AWS::IAM::AccessKey</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-        /// <c>AWS::IAM::Group</c> </a> 
+        /// AWS::IAM::Group</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-        /// <c>AWS::IAM::InstanceProfile</c> </a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-        /// <c>AWS::IAM::Policy</c> </a> 
+        /// AWS::IAM::Policy</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-        /// <c>AWS::IAM::Role</c> </a> 
+        /// AWS::IAM::Role</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-        /// <c>AWS::IAM::User</c> </a> 
+        /// AWS::IAM::User</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-        /// <c>AWS::IAM::UserToGroupAddition</c> </a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -177,9 +177,9 @@ namespace Amazon.CloudFormation.Model
         /// the macros before actually creating the stack. If your stack template contains one
         /// or more macros, and you choose to create a stack directly from the processed template,
         /// without first reviewing the resulting changes in a change set, you must acknowledge
-        /// this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
-        /// <c>AWS::Include</c> </a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-        /// <c>AWS::Serverless</c> </a> transforms, which are macros hosted by CloudFormation.
+        /// this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+        /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+        /// transforms, which are macros hosted by CloudFormation.
         /// </para>
         ///  <note> 
         /// <para>
@@ -212,7 +212,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -380,16 +380,15 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NotificationARNs property is set
         internal bool IsSetNotificationARNs()
         {
-            return this._notificationARNs != null && this._notificationARNs.Count > 0; 
+            return this._notificationARNs != null && (this._notificationARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property OnStackFailure. 
         /// <para>
         /// Determines what action will be taken if stack creation fails. If this parameter is
-        /// specified, the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-        /// <c>ExecuteChangeSet</c> </a> API operation must not be specified. This must be one
-        /// of these values:
+        /// specified, the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation must not be specified. This must be one of these values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -400,14 +399,14 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>DO_NOTHING</c> - if the stack creation fails, do nothing. This is equivalent to
-        /// specifying <c>true</c> for the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-        /// <c>ExecuteChangeSet</c> </a> API operation.
+        /// specifying <c>true</c> for the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>ROLLBACK</c> - if the stack creation fails, roll back the stack. This is equivalent
-        /// to specifying <c>false</c> for the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-        /// <c>ExecuteChangeSet</c> </a> API operation.
+        /// to specifying <c>false</c> for the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -444,7 +443,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -463,7 +462,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourcesToImport property is set
         internal bool IsSetResourcesToImport()
         {
-            return this._resourcesToImport != null && this._resourcesToImport.Count > 0; 
+            return this._resourcesToImport != null && (this._resourcesToImport.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -495,7 +494,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -585,7 +584,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

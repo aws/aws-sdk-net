@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class ListTablesResponse : AmazonWebServiceResponse
     {
         private string _lastEvaluatedTableName;
-        private List<string> _tableNames = new List<string>();
+        private List<string> _tableNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LastEvaluatedTableName. 
@@ -84,7 +84,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if TableNames property is set
         internal bool IsSetTableNames()
         {
-            return this._tableNames != null && this._tableNames.Count > 0; 
+            return this._tableNames != null && (this._tableNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

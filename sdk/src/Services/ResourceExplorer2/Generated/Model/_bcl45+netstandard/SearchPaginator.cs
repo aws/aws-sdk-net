@@ -45,7 +45,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// Enumerable containing all of the Resources
         /// </summary>
         public IPaginatedEnumerable<Resource> Resources => 
-            new PaginatedResultKeyResponse<SearchResponse, Resource>(this, (i) => i.Resources);
+            new PaginatedResultKeyResponse<SearchResponse, Resource>(this, (i) => i.Resources ?? new List<Resource>());
 
         internal SearchPaginator(IAmazonResourceExplorer2 client, SearchRequest request)
         {

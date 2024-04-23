@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,18 +63,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AwsAccountId", StringUtils.FromString(publicRequest.AwsAccountId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAwsService())
                 {
                     request.Parameters.Add("AwsService", StringUtils.FromString(publicRequest.AwsService));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkInterfaceId())
                 {
                     request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPermission())
                 {
                     request.Parameters.Add("Permission", StringUtils.FromString(publicRequest.Permission));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -33,7 +33,7 @@ namespace Amazon.MTurk.Model
     /// </summary>
     public partial class ListBonusPaymentsResponse : AmazonWebServiceResponse
     {
-        private List<BonusPayment> _bonusPayments = new List<BonusPayment>();
+        private List<BonusPayment> _bonusPayments = AWSConfigs.InitializeCollections ? new List<BonusPayment>() : null;
         private string _nextToken;
         private int? _numResults;
 
@@ -53,7 +53,7 @@ namespace Amazon.MTurk.Model
         // Check to see if BonusPayments property is set
         internal bool IsSetBonusPayments()
         {
-            return this._bonusPayments != null && this._bonusPayments.Count > 0; 
+            return this._bonusPayments != null && (this._bonusPayments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class VisualCustomAction
     {
-        private List<VisualCustomActionOperation> _actionOperations = new List<VisualCustomActionOperation>();
+        private List<VisualCustomActionOperation> _actionOperations = AWSConfigs.InitializeCollections ? new List<VisualCustomActionOperation>() : null;
         private string _customActionId;
         private string _name;
         private WidgetStatus _status;
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ActionOperations property is set
         internal bool IsSetActionOperations()
         {
-            return this._actionOperations != null && this._actionOperations.Count > 0; 
+            return this._actionOperations != null && (this._actionOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

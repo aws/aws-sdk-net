@@ -34,7 +34,7 @@ namespace Amazon.MarketplaceAgreement.Model
     /// </summary>
     public partial class LegalTerm
     {
-        private List<DocumentItem> _documents = new List<DocumentItem>();
+        private List<DocumentItem> _documents = AWSConfigs.InitializeCollections ? new List<DocumentItem>() : null;
         private string _type;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.MarketplaceAgreement.Model
         // Check to see if Documents property is set
         internal bool IsSetDocuments()
         {
-            return this._documents != null && this._documents.Count > 0; 
+            return this._documents != null && (this._documents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

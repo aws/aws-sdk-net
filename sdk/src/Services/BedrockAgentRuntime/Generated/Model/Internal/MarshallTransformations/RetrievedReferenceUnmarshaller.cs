@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,6 +76,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("metadata", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(StringUnmarshaller.Instance, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
@@ -94,3 +101,4 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

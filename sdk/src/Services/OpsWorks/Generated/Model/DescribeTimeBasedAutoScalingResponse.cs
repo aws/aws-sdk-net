@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeTimeBasedAutoScalingResponse : AmazonWebServiceResponse
     {
-        private List<TimeBasedAutoScalingConfiguration> _timeBasedAutoScalingConfigurations = new List<TimeBasedAutoScalingConfiguration>();
+        private List<TimeBasedAutoScalingConfiguration> _timeBasedAutoScalingConfigurations = AWSConfigs.InitializeCollections ? new List<TimeBasedAutoScalingConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property TimeBasedAutoScalingConfigurations. 
@@ -51,7 +51,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if TimeBasedAutoScalingConfigurations property is set
         internal bool IsSetTimeBasedAutoScalingConfigurations()
         {
-            return this._timeBasedAutoScalingConfigurations != null && this._timeBasedAutoScalingConfigurations.Count > 0; 
+            return this._timeBasedAutoScalingConfigurations != null && (this._timeBasedAutoScalingConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

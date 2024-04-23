@@ -264,6 +264,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="requestContent">The destination where the content stream is written.</param>
         /// <param name="content">The content stream to be written.</param>
         /// <param name="contentHeaders">HTTP content headers.</param>
+        /// <param name="cancellationToken"></param>
         public async Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, CancellationToken cancellationToken = default(CancellationToken))
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -479,11 +480,18 @@ namespace Amazon.Runtime.Internal
             {
                 if (_request.RequestUri.Scheme == Uri.UriSchemeHttp)
                 {
-                    _request.Proxy = requestContext.ClientConfig.GetHttpProxy();
+                    proxy = requestContext.ClientConfig.GetHttpProxy();
                 }
                 else if (_request.RequestUri.Scheme == Uri.UriSchemeHttps)
                 {
-                    _request.Proxy = requestContext.ClientConfig.GetHttpsProxy();
+                    proxy = requestContext.ClientConfig.GetHttpsProxy();
+                }
+
+                // Only set the HttpWebRequest Proxy property if we have a value so
+                // that we don't override any OS level proxy settings.
+                if (proxy != null)
+                {
+                    _request.Proxy = proxy;
                 }
             }
 

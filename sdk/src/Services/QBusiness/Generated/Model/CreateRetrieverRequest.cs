@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRetriever operation.
-    /// Adds a retriever to your Amazon Q application.
+    /// Adds a retriever to your Amazon Q Business application.
     /// </summary>
     public partial class CreateRetrieverRequest : AmazonQBusinessRequest
     {
@@ -39,13 +39,13 @@ namespace Amazon.QBusiness.Model
         private RetrieverConfiguration _configuration;
         private string _displayName;
         private string _roleArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private RetrieverType _type;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of your Amazon Q application.
+        /// The identifier of your Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -64,8 +64,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token that you provide to identify the request to create your Amazon Q application
-        /// retriever.
+        /// A token that you provide to identify the request to create your Amazon Q Business
+        /// application retriever.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -119,8 +119,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of an IAM role used by Amazon Q to access the basic authentication credentials
-        /// stored in a Secrets Manager secret.
+        /// The ARN of an IAM role used by Amazon Q Business to access the basic authentication
+        /// credentials stored in a Secrets Manager secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -155,7 +155,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

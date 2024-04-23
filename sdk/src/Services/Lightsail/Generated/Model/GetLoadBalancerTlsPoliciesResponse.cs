@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model
     public partial class GetLoadBalancerTlsPoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<LoadBalancerTlsPolicy> _tlsPolicies = new List<LoadBalancerTlsPolicy>();
+        private List<LoadBalancerTlsPolicy> _tlsPolicies = AWSConfigs.InitializeCollections ? new List<LoadBalancerTlsPolicy>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -78,7 +78,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if TlsPolicies property is set
         internal bool IsSetTlsPolicies()
         {
-            return this._tlsPolicies != null && this._tlsPolicies.Count > 0; 
+            return this._tlsPolicies != null && (this._tlsPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

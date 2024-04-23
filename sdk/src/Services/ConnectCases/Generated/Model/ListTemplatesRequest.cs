@@ -38,7 +38,7 @@ namespace Amazon.ConnectCases.Model
         private string _domainId;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _status = new List<string>();
+        private List<string> _status = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DomainId. 
@@ -114,7 +114,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this._status != null && this._status.Count > 0; 
+            return this._status != null && (this._status.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

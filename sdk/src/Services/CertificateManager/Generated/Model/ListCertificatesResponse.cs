@@ -33,7 +33,7 @@ namespace Amazon.CertificateManager.Model
     /// </summary>
     public partial class ListCertificatesResponse : AmazonWebServiceResponse
     {
-        private List<CertificateSummary> _certificateSummaryList = new List<CertificateSummary>();
+        private List<CertificateSummary> _certificateSummaryList = AWSConfigs.InitializeCollections ? new List<CertificateSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if CertificateSummaryList property is set
         internal bool IsSetCertificateSummaryList()
         {
-            return this._certificateSummaryList != null && this._certificateSummaryList.Count > 0; 
+            return this._certificateSummaryList != null && (this._certificateSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

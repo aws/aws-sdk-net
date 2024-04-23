@@ -34,7 +34,7 @@ namespace Amazon.QConnect.Model
     public partial class SearchQuickResponsesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<QuickResponseSearchResultData> _results = new List<QuickResponseSearchResultData>();
+        private List<QuickResponseSearchResultData> _results = AWSConfigs.InitializeCollections ? new List<QuickResponseSearchResultData>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

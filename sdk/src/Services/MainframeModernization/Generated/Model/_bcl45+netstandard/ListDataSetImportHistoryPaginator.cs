@@ -45,7 +45,7 @@ namespace Amazon.MainframeModernization.Model
         /// Enumerable containing all of the DataSetImportTasks
         /// </summary>
         public IPaginatedEnumerable<DataSetImportTask> DataSetImportTasks => 
-            new PaginatedResultKeyResponse<ListDataSetImportHistoryResponse, DataSetImportTask>(this, (i) => i.DataSetImportTasks);
+            new PaginatedResultKeyResponse<ListDataSetImportHistoryResponse, DataSetImportTask>(this, (i) => i.DataSetImportTasks ?? new List<DataSetImportTask>());
 
         internal ListDataSetImportHistoryPaginator(IAmazonMainframeModernization client, ListDataSetImportHistoryRequest request)
         {

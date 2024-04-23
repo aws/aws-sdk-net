@@ -49,7 +49,7 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class CompleteLayerUploadRequest : AmazonECRRequest
     {
-        private List<string> _layerDigests = new List<string>();
+        private List<string> _layerDigests = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _registryId;
         private string _repositoryName;
         private string _uploadId;
@@ -70,7 +70,7 @@ namespace Amazon.ECR.Model
         // Check to see if LayerDigests property is set
         internal bool IsSetLayerDigests()
         {
-            return this._layerDigests != null && this._layerDigests.Count > 0; 
+            return this._layerDigests != null && (this._layerDigests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

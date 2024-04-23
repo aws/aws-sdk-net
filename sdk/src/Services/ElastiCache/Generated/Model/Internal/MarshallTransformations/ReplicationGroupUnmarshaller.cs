@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -147,6 +148,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LogDeliveryConfigurations/LogDeliveryConfiguration", targetDepth))
                     {
                         var unmarshaller = LogDeliveryConfigurationUnmarshaller.Instance;
+                        if (unmarshalledObject.LogDeliveryConfigurations == null)
+                        {
+                            unmarshalledObject.LogDeliveryConfigurations = new List<LogDeliveryConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LogDeliveryConfigurations.Add(item);
                         continue;
@@ -154,6 +159,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MemberClusters/ClusterId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.MemberClusters == null)
+                        {
+                            unmarshalledObject.MemberClusters = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MemberClusters.Add(item);
                         continue;
@@ -161,6 +170,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MemberClustersOutpostArns/ReplicationGroupOutpostArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.MemberClustersOutpostArns == null)
+                        {
+                            unmarshalledObject.MemberClustersOutpostArns = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MemberClustersOutpostArns.Add(item);
                         continue;
@@ -180,6 +193,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("NodeGroups/NodeGroup", targetDepth))
                     {
                         var unmarshaller = NodeGroupUnmarshaller.Instance;
+                        if (unmarshalledObject.NodeGroups == null)
+                        {
+                            unmarshalledObject.NodeGroups = new List<NodeGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NodeGroups.Add(item);
                         continue;
@@ -241,6 +258,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UserGroupIds/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.UserGroupIds == null)
+                        {
+                            unmarshalledObject.UserGroupIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.UserGroupIds.Add(item);
                         continue;
@@ -280,3 +301,4 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

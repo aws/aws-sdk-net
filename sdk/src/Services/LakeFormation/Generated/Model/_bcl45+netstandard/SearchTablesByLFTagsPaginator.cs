@@ -45,7 +45,7 @@ namespace Amazon.LakeFormation.Model
         /// Enumerable containing all of the TableList
         /// </summary>
         public IPaginatedEnumerable<TaggedTable> TableList => 
-            new PaginatedResultKeyResponse<SearchTablesByLFTagsResponse, TaggedTable>(this, (i) => i.TableList);
+            new PaginatedResultKeyResponse<SearchTablesByLFTagsResponse, TaggedTable>(this, (i) => i.TableList ?? new List<TaggedTable>());
 
         internal SearchTablesByLFTagsPaginator(IAmazonLakeFormation client, SearchTablesByLFTagsRequest request)
         {

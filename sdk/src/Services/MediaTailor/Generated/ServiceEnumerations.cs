@@ -283,6 +283,56 @@ namespace Amazon.MediaTailor
 
 
     /// <summary>
+    /// Constants used for properties of type InsertionMode.
+    /// </summary>
+    public class InsertionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PLAYER_SELECT for InsertionMode
+        /// </summary>
+        public static readonly InsertionMode PLAYER_SELECT = new InsertionMode("PLAYER_SELECT");
+        /// <summary>
+        /// Constant STITCHED_ONLY for InsertionMode
+        /// </summary>
+        public static readonly InsertionMode STITCHED_ONLY = new InsertionMode("STITCHED_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsertionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsertionMode FindValue(string value)
+        {
+            return FindValue<InsertionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsertionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogType.
     /// </summary>
     public class LogType : ConstantClass
@@ -634,6 +684,10 @@ namespace Amazon.MediaTailor
     public class ScheduleEntryType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ALTERNATE_MEDIA for ScheduleEntryType
+        /// </summary>
+        public static readonly ScheduleEntryType ALTERNATE_MEDIA = new ScheduleEntryType("ALTERNATE_MEDIA");
         /// <summary>
         /// Constant FILLER_SLATE for ScheduleEntryType
         /// </summary>

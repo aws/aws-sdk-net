@@ -45,7 +45,7 @@ namespace Amazon.BackupGateway.Model
         /// Enumerable containing all of the Gateways
         /// </summary>
         public IPaginatedEnumerable<Gateway> Gateways => 
-            new PaginatedResultKeyResponse<ListGatewaysResponse, Gateway>(this, (i) => i.Gateways);
+            new PaginatedResultKeyResponse<ListGatewaysResponse, Gateway>(this, (i) => i.Gateways ?? new List<Gateway>());
 
         internal ListGatewaysPaginator(IAmazonBackupGateway client, ListGatewaysRequest request)
         {

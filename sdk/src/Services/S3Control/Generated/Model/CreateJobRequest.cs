@@ -41,7 +41,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// For information about permissions required to use the Batch Operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Granting
+    /// For information about permissions required to use the Batch Operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-iam-role-policies.html">Granting
     /// permissions for S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </dd> </dl>  
@@ -87,7 +87,7 @@ namespace Amazon.S3Control.Model
         private int? _priority;
         private JobReport _report;
         private string _roleArn;
-        private List<S3Tag> _tags = new List<S3Tag>();
+        private List<S3Tag> _tags = AWSConfigs.InitializeCollections ? new List<S3Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -299,7 +299,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,9 +34,9 @@ namespace Amazon.ResilienceHub.Model
     public partial class AlarmRecommendation
     {
         private string _appComponentName;
-        private List<string> _appComponentNames = new List<string>();
+        private List<string> _appComponentNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
-        private List<RecommendationItem> _items = new List<RecommendationItem>();
+        private List<RecommendationItem> _items = AWSConfigs.InitializeCollections ? new List<RecommendationItem>() : null;
         private string _name;
         private string _prerequisite;
         private string _recommendationId;
@@ -79,7 +79,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if AppComponentNames property is set
         internal bool IsSetAppComponentNames()
         {
-            return this._appComponentNames != null && this._appComponentNames.Count > 0; 
+            return this._appComponentNames != null && (this._appComponentNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

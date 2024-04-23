@@ -45,7 +45,7 @@ namespace Amazon.MediaTailor.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<LiveSource> Items => 
-            new PaginatedResultKeyResponse<ListLiveSourcesResponse, LiveSource>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListLiveSourcesResponse, LiveSource>(this, (i) => i.Items ?? new List<LiveSource>());
 
         internal ListLiveSourcesPaginator(IAmazonMediaTailor client, ListLiveSourcesRequest request)
         {

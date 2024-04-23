@@ -37,7 +37,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _ec2SubnetId;
         private string _hadoopVersion;
         private int? _instanceCount;
-        private List<InstanceGroupDetail> _instanceGroups = new List<InstanceGroupDetail>();
+        private List<InstanceGroupDetail> _instanceGroups = AWSConfigs.InitializeCollections ? new List<InstanceGroupDetail>() : null;
         private bool? _keepJobFlowAliveWhenNoSteps;
         private string _masterInstanceId;
         private string _masterInstanceType;
@@ -161,7 +161,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
-            return this._instanceGroups != null && this._instanceGroups.Count > 0; 
+            return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

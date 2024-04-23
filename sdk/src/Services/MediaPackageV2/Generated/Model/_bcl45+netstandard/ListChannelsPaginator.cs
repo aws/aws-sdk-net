@@ -45,7 +45,7 @@ namespace Amazon.MediaPackageV2.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ChannelListConfiguration> Items => 
-            new PaginatedResultKeyResponse<ListChannelsResponse, ChannelListConfiguration>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListChannelsResponse, ChannelListConfiguration>(this, (i) => i.Items ?? new List<ChannelListConfiguration>());
 
         internal ListChannelsPaginator(IAmazonMediaPackageV2 client, ListChannelsRequest request)
         {

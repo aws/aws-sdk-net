@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the InstanceSummaryList
         /// </summary>
         public IPaginatedEnumerable<InstanceSummary> InstanceSummaryList => 
-            new PaginatedResultKeyResponse<ListInstancesResponse, InstanceSummary>(this, (i) => i.InstanceSummaryList);
+            new PaginatedResultKeyResponse<ListInstancesResponse, InstanceSummary>(this, (i) => i.InstanceSummaryList ?? new List<InstanceSummary>());
 
         internal ListInstancesPaginator(IAmazonConnect client, ListInstancesRequest request)
         {

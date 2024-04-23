@@ -45,11 +45,11 @@ namespace Amazon.ComputeOptimizer.Model
         private ExternalMetricsPreference _externalMetricsPreference;
         private InferredWorkloadTypesPreference _inferredWorkloadTypes;
         private LookBackPeriodPreference _lookBackPeriod;
-        private List<PreferredResource> _preferredResources = new List<PreferredResource>();
+        private List<PreferredResource> _preferredResources = AWSConfigs.InitializeCollections ? new List<PreferredResource>() : null;
         private ResourceType _resourceType;
         private SavingsEstimationMode _savingsEstimationMode;
         private Scope _scope;
-        private List<UtilizationPreference> _utilizationPreferences = new List<UtilizationPreference>();
+        private List<UtilizationPreference> _utilizationPreferences = AWSConfigs.InitializeCollections ? new List<UtilizationPreference>() : null;
 
         /// <summary>
         /// Gets and sets the property EnhancedInfrastructureMetrics. 
@@ -195,7 +195,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if PreferredResources property is set
         internal bool IsSetPreferredResources()
         {
-            return this._preferredResources != null && this._preferredResources.Count > 0; 
+            return this._preferredResources != null && (this._preferredResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -301,9 +301,13 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property UtilizationPreferences. 
         /// <para>
-        ///  The preference to control the resource’s CPU utilization thresholds - threshold and
-        /// headroom. When this preference isn't specified, we use the following default values:
-        /// 
+        ///  The preference to control the resource’s CPU utilization threshold, CPU utilization
+        /// headroom, and memory utilization headroom. When this preference isn't specified, we
+        /// use the following default values. 
+        /// </para>
+        ///  
+        /// <para>
+        /// CPU utilization:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -311,13 +315,26 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PERCENT_17</c> for headroom
+        ///  <c>PERCENT_20</c> for headroom
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
         /// <para>
-        /// You can only set this preference for the Amazon EC2 instance resource type.
+        /// Memory utilization:
         /// </para>
-        ///  </note>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PERCENT_20</c> for headroom
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        /// You can only set CPU and memory utilization preferences for the Amazon EC2 instance
+        /// resource type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The threshold setting isn’t available for memory utilization.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public List<UtilizationPreference> UtilizationPreferences
         {
@@ -328,7 +345,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if UtilizationPreferences property is set
         internal bool IsSetUtilizationPreferences()
         {
-            return this._utilizationPreferences != null && this._utilizationPreferences.Count > 0; 
+            return this._utilizationPreferences != null && (this._utilizationPreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

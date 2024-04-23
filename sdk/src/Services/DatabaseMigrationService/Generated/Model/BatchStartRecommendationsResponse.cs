@@ -33,7 +33,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class BatchStartRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<BatchStartRecommendationsErrorEntry> _errorEntries = new List<BatchStartRecommendationsErrorEntry>();
+        private List<BatchStartRecommendationsErrorEntry> _errorEntries = AWSConfigs.InitializeCollections ? new List<BatchStartRecommendationsErrorEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property ErrorEntries. 
@@ -50,7 +50,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if ErrorEntries property is set
         internal bool IsSetErrorEntries()
         {
-            return this._errorEntries != null && this._errorEntries.Count > 0; 
+            return this._errorEntries != null && (this._errorEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

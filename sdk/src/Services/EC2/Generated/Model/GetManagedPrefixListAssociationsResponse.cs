@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     public partial class GetManagedPrefixListAssociationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PrefixListAssociation> _prefixListAssociations = new List<PrefixListAssociation>();
+        private List<PrefixListAssociation> _prefixListAssociations = AWSConfigs.InitializeCollections ? new List<PrefixListAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if PrefixListAssociations property is set
         internal bool IsSetPrefixListAssociations()
         {
-            return this._prefixListAssociations != null && this._prefixListAssociations.Count > 0; 
+            return this._prefixListAssociations != null && (this._prefixListAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Organizations.Model
     public partial class ListRootsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Root> _roots = new List<Root>();
+        private List<Root> _roots = AWSConfigs.InitializeCollections ? new List<Root>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.Organizations.Model
         // Check to see if Roots property is set
         internal bool IsSetRoots()
         {
-            return this._roots != null && this._roots.Count > 0; 
+            return this._roots != null && (this._roots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

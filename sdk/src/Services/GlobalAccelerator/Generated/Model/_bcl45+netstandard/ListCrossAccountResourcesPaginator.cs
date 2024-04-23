@@ -45,7 +45,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Enumerable containing all of the CrossAccountResources
         /// </summary>
         public IPaginatedEnumerable<CrossAccountResource> CrossAccountResources => 
-            new PaginatedResultKeyResponse<ListCrossAccountResourcesResponse, CrossAccountResource>(this, (i) => i.CrossAccountResources);
+            new PaginatedResultKeyResponse<ListCrossAccountResourcesResponse, CrossAccountResource>(this, (i) => i.CrossAccountResources ?? new List<CrossAccountResource>());
 
         internal ListCrossAccountResourcesPaginator(IAmazonGlobalAccelerator client, ListCrossAccountResourcesRequest request)
         {

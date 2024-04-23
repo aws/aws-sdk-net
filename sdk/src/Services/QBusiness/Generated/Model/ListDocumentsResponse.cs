@@ -33,7 +33,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ListDocumentsResponse : AmazonWebServiceResponse
     {
-        private List<DocumentDetails> _documentDetailList = new List<DocumentDetails>();
+        private List<DocumentDetails> _documentDetailList = AWSConfigs.InitializeCollections ? new List<DocumentDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,15 +51,15 @@ namespace Amazon.QBusiness.Model
         // Check to see if DocumentDetailList property is set
         internal bool IsSetDocumentDetailList()
         {
-            return this._documentDetailList != null && this._documentDetailList.Count > 0; 
+            return this._documentDetailList != null && (this._documentDetailList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the <c>maxResults</c> response was incomplete because there is more data to retrieve,
-        /// Amazon Q returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of documents.
+        /// Amazon Q Business returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of documents.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

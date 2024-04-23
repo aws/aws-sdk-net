@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListInferenceRecommendationsJobStepsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<InferenceRecommendationsJobStep> _steps = new List<InferenceRecommendationsJobStep>();
+        private List<InferenceRecommendationsJobStep> _steps = AWSConfigs.InitializeCollections ? new List<InferenceRecommendationsJobStep>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

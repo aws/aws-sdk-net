@@ -34,7 +34,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class UpdateRestApiRequest : AmazonAPIGatewayRequest
     {
-        private List<PatchOperation> _patchOperations = new List<PatchOperation>();
+        private List<PatchOperation> _patchOperations = AWSConfigs.InitializeCollections ? new List<PatchOperation>() : null;
         private string _restApiId;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if PatchOperations property is set
         internal bool IsSetPatchOperations()
         {
-            return this._patchOperations != null && this._patchOperations.Count > 0; 
+            return this._patchOperations != null && (this._patchOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

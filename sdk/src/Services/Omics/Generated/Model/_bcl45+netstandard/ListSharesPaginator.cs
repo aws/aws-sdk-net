@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the Shares
         /// </summary>
         public IPaginatedEnumerable<ShareDetails> Shares => 
-            new PaginatedResultKeyResponse<ListSharesResponse, ShareDetails>(this, (i) => i.Shares);
+            new PaginatedResultKeyResponse<ListSharesResponse, ShareDetails>(this, (i) => i.Shares ?? new List<ShareDetails>());
 
         internal ListSharesPaginator(IAmazonOmics client, ListSharesRequest request)
         {

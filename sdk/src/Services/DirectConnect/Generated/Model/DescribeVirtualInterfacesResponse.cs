@@ -33,7 +33,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class DescribeVirtualInterfacesResponse : AmazonWebServiceResponse
     {
-        private List<VirtualInterface> _virtualInterfaces = new List<VirtualInterface>();
+        private List<VirtualInterface> _virtualInterfaces = AWSConfigs.InitializeCollections ? new List<VirtualInterface>() : null;
 
         /// <summary>
         /// Gets and sets the property VirtualInterfaces. 
@@ -50,7 +50,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualInterfaces property is set
         internal bool IsSetVirtualInterfaces()
         {
-            return this._virtualInterfaces != null && this._virtualInterfaces.Count > 0; 
+            return this._virtualInterfaces != null && (this._virtualInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

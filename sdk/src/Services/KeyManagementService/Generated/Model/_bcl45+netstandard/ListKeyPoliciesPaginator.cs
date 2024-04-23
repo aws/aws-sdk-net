@@ -45,7 +45,7 @@ namespace Amazon.KeyManagementService.Model
         /// Enumerable containing all of the PolicyNames
         /// </summary>
         public IPaginatedEnumerable<string> PolicyNames => 
-            new PaginatedResultKeyResponse<ListKeyPoliciesResponse, string>(this, (i) => i.PolicyNames);
+            new PaginatedResultKeyResponse<ListKeyPoliciesResponse, string>(this, (i) => i.PolicyNames ?? new List<string>());
 
         internal ListKeyPoliciesPaginator(IAmazonKeyManagementService client, ListKeyPoliciesRequest request)
         {
@@ -69,7 +69,7 @@ namespace Amazon.KeyManagementService.Model
                 marker = response.NextMarker;
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(marker));
+            while (response.Truncated);
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -90,7 +90,7 @@ namespace Amazon.KeyManagementService.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(marker));
+            while (response.Truncated);
         }
 #endif
     }

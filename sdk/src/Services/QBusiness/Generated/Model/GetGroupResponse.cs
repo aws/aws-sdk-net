@@ -34,7 +34,7 @@ namespace Amazon.QBusiness.Model
     public partial class GetGroupResponse : AmazonWebServiceResponse
     {
         private GroupStatusDetail _status;
-        private List<GroupStatusDetail> _statusHistory = new List<GroupStatusDetail>();
+        private List<GroupStatusDetail> _statusHistory = AWSConfigs.InitializeCollections ? new List<GroupStatusDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -69,7 +69,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if StatusHistory property is set
         internal bool IsSetStatusHistory()
         {
-            return this._statusHistory != null && this._statusHistory.Count > 0; 
+            return this._statusHistory != null && (this._statusHistory.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

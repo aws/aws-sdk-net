@@ -33,7 +33,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class ListFindingsResponse : AmazonWebServiceResponse
     {
-        private List<string> _findingIds = new List<string>();
+        private List<string> _findingIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if FindingIds property is set
         internal bool IsSetFindingIds()
         {
-            return this._findingIds != null && this._findingIds.Count > 0; 
+            return this._findingIds != null && (this._findingIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

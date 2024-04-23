@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model
     public partial class ListRegexMatchSetsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<RegexMatchSetSummary> _regexMatchSets = new List<RegexMatchSetSummary>();
+        private List<RegexMatchSetSummary> _regexMatchSets = AWSConfigs.InitializeCollections ? new List<RegexMatchSetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -74,7 +74,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if RegexMatchSets property is set
         internal bool IsSetRegexMatchSets()
         {
-            return this._regexMatchSets != null && this._regexMatchSets.Count > 0; 
+            return this._regexMatchSets != null && (this._regexMatchSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

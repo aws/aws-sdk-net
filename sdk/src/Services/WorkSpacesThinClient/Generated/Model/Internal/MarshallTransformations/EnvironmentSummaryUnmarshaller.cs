@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -141,12 +142,6 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                     unmarshalledObject.SoftwareSetUpdateSchedule = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = EmbeddedTagUnmarshaller.Instance;
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -172,3 +167,4 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

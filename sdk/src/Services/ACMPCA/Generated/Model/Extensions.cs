@@ -33,11 +33,11 @@ namespace Amazon.ACMPCA.Model
     /// </summary>
     public partial class Extensions
     {
-        private List<PolicyInformation> _certificatePolicies = new List<PolicyInformation>();
-        private List<CustomExtension> _customExtensions = new List<CustomExtension>();
-        private List<ExtendedKeyUsage> _extendedKeyUsage = new List<ExtendedKeyUsage>();
+        private List<PolicyInformation> _certificatePolicies = AWSConfigs.InitializeCollections ? new List<PolicyInformation>() : null;
+        private List<CustomExtension> _customExtensions = AWSConfigs.InitializeCollections ? new List<CustomExtension>() : null;
+        private List<ExtendedKeyUsage> _extendedKeyUsage = AWSConfigs.InitializeCollections ? new List<ExtendedKeyUsage>() : null;
         private KeyUsage _keyUsage;
-        private List<GeneralName> _subjectAlternativeNames = new List<GeneralName>();
+        private List<GeneralName> _subjectAlternativeNames = AWSConfigs.InitializeCollections ? new List<GeneralName>() : null;
 
         /// <summary>
         /// Gets and sets the property CertificatePolicies. 
@@ -64,7 +64,7 @@ namespace Amazon.ACMPCA.Model
         // Check to see if CertificatePolicies property is set
         internal bool IsSetCertificatePolicies()
         {
-            return this._certificatePolicies != null && this._certificatePolicies.Count > 0; 
+            return this._certificatePolicies != null && (this._certificatePolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.ACMPCA.Model
         // Check to see if CustomExtensions property is set
         internal bool IsSetCustomExtensions()
         {
-            return this._customExtensions != null && this._customExtensions.Count > 0; 
+            return this._customExtensions != null && (this._customExtensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.ACMPCA.Model
         // Check to see if ExtendedKeyUsage property is set
         internal bool IsSetExtendedKeyUsage()
         {
-            return this._extendedKeyUsage != null && this._extendedKeyUsage.Count > 0; 
+            return this._extendedKeyUsage != null && (this._extendedKeyUsage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.ACMPCA.Model
         // Check to see if SubjectAlternativeNames property is set
         internal bool IsSetSubjectAlternativeNames()
         {
-            return this._subjectAlternativeNames != null && this._subjectAlternativeNames.Count > 0; 
+            return this._subjectAlternativeNames != null && (this._subjectAlternativeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

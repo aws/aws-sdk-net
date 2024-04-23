@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class GetPropertyValueHistoryResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PropertyValueHistory> _propertyValues = new List<PropertyValueHistory>();
+        private List<PropertyValueHistory> _propertyValues = AWSConfigs.InitializeCollections ? new List<PropertyValueHistory>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyValues property is set
         internal bool IsSetPropertyValues()
         {
-            return this._propertyValues != null && this._propertyValues.Count > 0; 
+            return this._propertyValues != null && (this._propertyValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

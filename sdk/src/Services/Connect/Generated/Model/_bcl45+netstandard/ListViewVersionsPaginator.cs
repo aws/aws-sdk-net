@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the ViewVersionSummaryList
         /// </summary>
         public IPaginatedEnumerable<ViewVersionSummary> ViewVersionSummaryList => 
-            new PaginatedResultKeyResponse<ListViewVersionsResponse, ViewVersionSummary>(this, (i) => i.ViewVersionSummaryList);
+            new PaginatedResultKeyResponse<ListViewVersionsResponse, ViewVersionSummary>(this, (i) => i.ViewVersionSummaryList ?? new List<ViewVersionSummary>());
 
         internal ListViewVersionsPaginator(IAmazonConnect client, ListViewVersionsRequest request)
         {

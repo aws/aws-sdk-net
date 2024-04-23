@@ -63,8 +63,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationMode. 
         /// <para>
-        /// For a Kinesis Data Analytics for Apache Flink application, the mode is <c>STREAMING</c>.
-        /// For a Kinesis Data Analytics Studio notebook, it is <c>INTERACTIVE</c>.
+        /// For a Managed Service for Apache Flink application, the mode is <c>STREAMING</c>.
+        /// For a Managed Service for Apache Flink Studio notebook, it is <c>INTERACTIVE</c>.
         /// </para>
         /// </summary>
         public ApplicationMode ApplicationMode

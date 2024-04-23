@@ -33,7 +33,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class DescribeCachediSCSIVolumesResponse : AmazonWebServiceResponse
     {
-        private List<CachediSCSIVolume> _cachediSCSIVolumes = new List<CachediSCSIVolume>();
+        private List<CachediSCSIVolume> _cachediSCSIVolumes = AWSConfigs.InitializeCollections ? new List<CachediSCSIVolume>() : null;
 
         /// <summary>
         /// Gets and sets the property CachediSCSIVolumes. 
@@ -50,7 +50,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if CachediSCSIVolumes property is set
         internal bool IsSetCachediSCSIVolumes()
         {
-            return this._cachediSCSIVolumes != null && this._cachediSCSIVolumes.Count > 0; 
+            return this._cachediSCSIVolumes != null && (this._cachediSCSIVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

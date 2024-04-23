@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the AssetPropertyValueHistory
         /// </summary>
         public IPaginatedEnumerable<AssetPropertyValue> AssetPropertyValueHistory => 
-            new PaginatedResultKeyResponse<GetAssetPropertyValueHistoryResponse, AssetPropertyValue>(this, (i) => i.AssetPropertyValueHistory);
+            new PaginatedResultKeyResponse<GetAssetPropertyValueHistoryResponse, AssetPropertyValue>(this, (i) => i.AssetPropertyValueHistory ?? new List<AssetPropertyValue>());
 
         internal GetAssetPropertyValueHistoryPaginator(IAmazonIoTSiteWise client, GetAssetPropertyValueHistoryRequest request)
         {

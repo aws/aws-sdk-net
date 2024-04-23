@@ -45,7 +45,7 @@ namespace Amazon.MemoryDB.Model
         /// Enumerable containing all of the ReservedNodesOfferings
         /// </summary>
         public IPaginatedEnumerable<ReservedNodesOffering> ReservedNodesOfferings => 
-            new PaginatedResultKeyResponse<DescribeReservedNodesOfferingsResponse, ReservedNodesOffering>(this, (i) => i.ReservedNodesOfferings);
+            new PaginatedResultKeyResponse<DescribeReservedNodesOfferingsResponse, ReservedNodesOffering>(this, (i) => i.ReservedNodesOfferings ?? new List<ReservedNodesOffering>());
 
         internal DescribeReservedNodesOfferingsPaginator(IAmazonMemoryDB client, DescribeReservedNodesOfferingsRequest request)
         {

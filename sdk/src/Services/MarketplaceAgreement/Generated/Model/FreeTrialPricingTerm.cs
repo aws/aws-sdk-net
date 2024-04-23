@@ -35,7 +35,7 @@ namespace Amazon.MarketplaceAgreement.Model
     public partial class FreeTrialPricingTerm
     {
         private string _duration;
-        private List<GrantItem> _grants = new List<GrantItem>();
+        private List<GrantItem> _grants = AWSConfigs.InitializeCollections ? new List<GrantItem>() : null;
         private string _type;
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.MarketplaceAgreement.Model
         // Check to see if Grants property is set
         internal bool IsSetGrants()
         {
-            return this._grants != null && this._grants.Count > 0; 
+            return this._grants != null && (this._grants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

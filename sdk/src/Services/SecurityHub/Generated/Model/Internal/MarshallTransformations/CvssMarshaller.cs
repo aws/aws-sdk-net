@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Cvss requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdjustments())
             {
                 context.Writer.WritePropertyName("Adjustments");
@@ -64,7 +67,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseScore())
             {
                 context.Writer.WritePropertyName("BaseScore");
-                context.Writer.Write(requestObject.BaseScore);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BaseScore))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BaseScore));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BaseScore);
+                }
             }
 
             if(requestObject.IsSetBaseVector())
@@ -94,3 +104,4 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

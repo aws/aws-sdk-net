@@ -45,7 +45,7 @@ namespace Amazon.ACMPCA.Model
         /// Enumerable containing all of the CertificateAuthorities
         /// </summary>
         public IPaginatedEnumerable<CertificateAuthority> CertificateAuthorities => 
-            new PaginatedResultKeyResponse<ListCertificateAuthoritiesResponse, CertificateAuthority>(this, (i) => i.CertificateAuthorities);
+            new PaginatedResultKeyResponse<ListCertificateAuthoritiesResponse, CertificateAuthority>(this, (i) => i.CertificateAuthorities ?? new List<CertificateAuthority>());
 
         internal ListCertificateAuthoritiesPaginator(IAmazonACMPCA client, ListCertificateAuthoritiesRequest request)
         {

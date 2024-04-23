@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ResolvedTargets
     {
-        private List<string> _parameterValues = new List<string>();
+        private List<string> _parameterValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _truncated;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ParameterValues property is set
         internal bool IsSetParameterValues()
         {
-            return this._parameterValues != null && this._parameterValues.Count > 0; 
+            return this._parameterValues != null && (this._parameterValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,18 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Parameter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
                 context.Writer.Write(requestObject.Description);
+            }
+
+            if(requestObject.IsSetDynamic())
+            {
+                context.Writer.WritePropertyName("Dynamic");
+                context.Writer.Write(requestObject.Dynamic);
             }
 
             if(requestObject.IsSetRequired())
@@ -66,3 +75,4 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

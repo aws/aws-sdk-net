@@ -36,8 +36,8 @@ namespace Amazon.Lambda.Model
     public partial class VpcConfig
     {
         private bool? _ipv6AllowedForDualStack;
-        private List<string> _securityGroupIds = new List<string>();
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Ipv6AllowedForDualStack. 

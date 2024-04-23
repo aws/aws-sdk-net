@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class RealTimeContactAnalysisSegmentIssues
     {
-        private List<RealTimeContactAnalysisIssueDetected> _issuesDetected = new List<RealTimeContactAnalysisIssueDetected>();
+        private List<RealTimeContactAnalysisIssueDetected> _issuesDetected = AWSConfigs.InitializeCollections ? new List<RealTimeContactAnalysisIssueDetected>() : null;
 
         /// <summary>
         /// Gets and sets the property IssuesDetected. 
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if IssuesDetected property is set
         internal bool IsSetIssuesDetected()
         {
-            return this._issuesDetected != null && this._issuesDetected.Count > 0; 
+            return this._issuesDetected != null && (this._issuesDetected.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

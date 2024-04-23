@@ -33,7 +33,7 @@ namespace Amazon.NimbleStudio.Model
     /// </summary>
     public partial class ListStudioMembersResponse : AmazonWebServiceResponse
     {
-        private List<StudioMembership> _members = new List<StudioMembership>();
+        private List<StudioMembership> _members = AWSConfigs.InitializeCollections ? new List<StudioMembership>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     public partial class ActionParameters
     {
         private ComponentProperty _anchor;
-        private Dictionary<string, ComponentProperty> _fields = new Dictionary<string, ComponentProperty>();
+        private Dictionary<string, ComponentProperty> _fields = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentProperty>() : null;
         private ComponentProperty _global;
         private ComponentProperty _id;
         private string _model;
@@ -81,7 +81,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

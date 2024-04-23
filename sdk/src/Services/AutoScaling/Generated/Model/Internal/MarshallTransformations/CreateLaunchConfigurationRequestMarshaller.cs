@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,6 +63,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AssociatePublicIpAddress", StringUtils.FromBool(publicRequest.AssociatePublicIpAddress));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetBlockDeviceMappings())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -71,52 +73,65 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestlistValue.DeviceName));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetEbs())
                         {
                             if(publicRequestlistValue.Ebs.IsSetDeleteOnTermination())
                             {
                                 request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.Ebs.DeleteOnTermination));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.Ebs.IsSetEncrypted())
                             {
                                 request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestlistValue.Ebs.Encrypted));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.Ebs.IsSetIops())
                             {
                                 request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestlistValue.Ebs.Iops));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.Ebs.IsSetSnapshotId())
                             {
                                 request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValue.Ebs.SnapshotId));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.Ebs.IsSetThroughput())
                             {
                                 request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestlistValue.Ebs.Throughput));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.Ebs.IsSetVolumeSize())
                             {
                                 request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestlistValue.Ebs.VolumeSize));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestlistValue.Ebs.IsSetVolumeType())
                             {
                                 request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeType", StringUtils.FromString(publicRequestlistValue.Ebs.VolumeType));
                             }
+#pragma warning restore CS0612,CS0618
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetNoDevice())
                         {
                             request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NoDevice", StringUtils.FromBool(publicRequestlistValue.NoDevice));
                         }
+#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetVirtualName())
                         {
                             request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestlistValue.VirtualName));
                         }
+#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClassicLinkVPCId())
                 {
                     request.Parameters.Add("ClassicLinkVPCId", StringUtils.FromString(publicRequest.ClassicLinkVPCId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClassicLinkVPCSecurityGroups())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -126,68 +141,85 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEbsOptimized())
                 {
                     request.Parameters.Add("EbsOptimized", StringUtils.FromBool(publicRequest.EbsOptimized));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIamInstanceProfile())
                 {
                     request.Parameters.Add("IamInstanceProfile", StringUtils.FromString(publicRequest.IamInstanceProfile));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetImageId())
                 {
                     request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceMonitoring())
                 {
                     if(publicRequest.InstanceMonitoring.IsSetEnabled())
                     {
                         request.Parameters.Add("InstanceMonitoring" + "." + "Enabled", StringUtils.FromBool(publicRequest.InstanceMonitoring.Enabled));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceType())
                 {
                     request.Parameters.Add("InstanceType", StringUtils.FromString(publicRequest.InstanceType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetKernelId())
                 {
                     request.Parameters.Add("KernelId", StringUtils.FromString(publicRequest.KernelId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetKeyName())
                 {
                     request.Parameters.Add("KeyName", StringUtils.FromString(publicRequest.KeyName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLaunchConfigurationName())
                 {
                     request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(publicRequest.LaunchConfigurationName));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMetadataOptions())
                 {
                     if(publicRequest.MetadataOptions.IsSetHttpEndpoint())
                     {
                         request.Parameters.Add("MetadataOptions" + "." + "HttpEndpoint", StringUtils.FromString(publicRequest.MetadataOptions.HttpEndpoint));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.MetadataOptions.IsSetHttpPutResponseHopLimit())
                     {
                         request.Parameters.Add("MetadataOptions" + "." + "HttpPutResponseHopLimit", StringUtils.FromInt(publicRequest.MetadataOptions.HttpPutResponseHopLimit));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.MetadataOptions.IsSetHttpTokens())
                     {
                         request.Parameters.Add("MetadataOptions" + "." + "HttpTokens", StringUtils.FromString(publicRequest.MetadataOptions.HttpTokens));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPlacementTenancy())
                 {
                     request.Parameters.Add("PlacementTenancy", StringUtils.FromString(publicRequest.PlacementTenancy));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRamdiskId())
                 {
                     request.Parameters.Add("RamdiskId", StringUtils.FromString(publicRequest.RamdiskId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSecurityGroups())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -197,14 +229,17 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSpotPrice())
                 {
                     request.Parameters.Add("SpotPrice", StringUtils.FromString(publicRequest.SpotPrice));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserData())
                 {
                     request.Parameters.Add("UserData", StringUtils.FromString(publicRequest.UserData));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

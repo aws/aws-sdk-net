@@ -45,7 +45,7 @@ namespace Amazon.PcaConnectorAd.Model
         /// Enumerable containing all of the DirectoryRegistrations
         /// </summary>
         public IPaginatedEnumerable<DirectoryRegistrationSummary> DirectoryRegistrations => 
-            new PaginatedResultKeyResponse<ListDirectoryRegistrationsResponse, DirectoryRegistrationSummary>(this, (i) => i.DirectoryRegistrations);
+            new PaginatedResultKeyResponse<ListDirectoryRegistrationsResponse, DirectoryRegistrationSummary>(this, (i) => i.DirectoryRegistrations ?? new List<DirectoryRegistrationSummary>());
 
         internal ListDirectoryRegistrationsPaginator(IAmazonPcaConnectorAd client, ListDirectoryRegistrationsRequest request)
         {

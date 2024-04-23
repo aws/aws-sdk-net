@@ -34,11 +34,11 @@ namespace Amazon.Connect.Model
     public partial class SearchCriteria
     {
         private AgentHierarchyGroups _agentHierarchyGroups;
-        private List<string> _agentIds = new List<string>();
-        private List<string> _channels = new List<string>();
+        private List<string> _agentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _channels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ContactAnalysis _contactAnalysis;
-        private List<string> _initiationMethods = new List<string>();
-        private List<string> _queueIds = new List<string>();
+        private List<string> _initiationMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _queueIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SearchableContactAttributes _searchableContactAttributes;
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.Connect.Model
         // Check to see if AgentIds property is set
         internal bool IsSetAgentIds()
         {
-            return this._agentIds != null && this._agentIds.Count > 0; 
+            return this._agentIds != null && (this._agentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.Connect.Model
         // Check to see if Channels property is set
         internal bool IsSetChannels()
         {
-            return this._channels != null && this._channels.Count > 0; 
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.Connect.Model
         // Check to see if InitiationMethods property is set
         internal bool IsSetInitiationMethods()
         {
-            return this._initiationMethods != null && this._initiationMethods.Count > 0; 
+            return this._initiationMethods != null && (this._initiationMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.Connect.Model
         // Check to see if QueueIds property is set
         internal bool IsSetQueueIds()
         {
-            return this._queueIds != null && this._queueIds.Count > 0; 
+            return this._queueIds != null && (this._queueIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

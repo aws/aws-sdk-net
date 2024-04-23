@@ -34,12 +34,12 @@ namespace Amazon.Kafka.Model
     public partial class BrokerNodeGroupInfo
     {
         private BrokerAZDistribution _brokerAZDistribution;
-        private List<string> _clientSubnets = new List<string>();
+        private List<string> _clientSubnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ConnectivityInfo _connectivityInfo;
         private string _instanceType;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private StorageInfo _storageInfo;
-        private List<string> _zoneIds = new List<string>();
+        private List<string> _zoneIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BrokerAZDistribution.             
@@ -85,7 +85,7 @@ namespace Amazon.Kafka.Model
         // Check to see if ClientSubnets property is set
         internal bool IsSetClientSubnets()
         {
-            return this._clientSubnets != null && this._clientSubnets.Count > 0; 
+            return this._clientSubnets != null && (this._clientSubnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.Kafka.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.Kafka.Model
         // Check to see if ZoneIds property is set
         internal bool IsSetZoneIds()
         {
-            return this._zoneIds != null && this._zoneIds.Count > 0; 
+            return this._zoneIds != null && (this._zoneIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

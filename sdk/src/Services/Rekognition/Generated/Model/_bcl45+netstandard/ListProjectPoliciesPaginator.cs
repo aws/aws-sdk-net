@@ -45,7 +45,7 @@ namespace Amazon.Rekognition.Model
         /// Enumerable containing all of the ProjectPolicies
         /// </summary>
         public IPaginatedEnumerable<ProjectPolicy> ProjectPolicies => 
-            new PaginatedResultKeyResponse<ListProjectPoliciesResponse, ProjectPolicy>(this, (i) => i.ProjectPolicies);
+            new PaginatedResultKeyResponse<ListProjectPoliciesResponse, ProjectPolicy>(this, (i) => i.ProjectPolicies ?? new List<ProjectPolicy>());
 
         internal ListProjectPoliciesPaginator(IAmazonRekognition client, ListProjectPoliciesRequest request)
         {

@@ -79,9 +79,9 @@ namespace Amazon.EKS.Model
         private string _clusterName;
         private string _fargateProfileName;
         private string _podExecutionRoleArn;
-        private List<FargateProfileSelector> _selectors = new List<FargateProfileSelector>();
-        private List<string> _subnets = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<FargateProfileSelector> _selectors = AWSConfigs.InitializeCollections ? new List<FargateProfileSelector>() : null;
+        private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -181,7 +181,7 @@ namespace Amazon.EKS.Model
         // Check to see if Selectors property is set
         internal bool IsSetSelectors()
         {
-            return this._selectors != null && this._selectors.Count > 0; 
+            return this._selectors != null && (this._selectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Amazon.EKS.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace Amazon.EKS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

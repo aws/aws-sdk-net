@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Citations associated with final agent response
+    /// Contains citations for a part of an agent response.
     /// </summary>
     public partial class Attribution
     {
-        private List<Citation> _citations = new List<Citation>();
+        private List<Citation> _citations = AWSConfigs.InitializeCollections ? new List<Citation>() : null;
 
         /// <summary>
-        /// Gets and sets the property Citations.
+        /// Gets and sets the property Citations. 
+        /// <para>
+        /// A list of citations and related information for a part of an agent response.
+        /// </para>
         /// </summary>
         public List<Citation> Citations
         {
@@ -47,7 +50,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if Citations property is set
         internal bool IsSetCitations()
         {
-            return this._citations != null && this._citations.Count > 0; 
+            return this._citations != null && (this._citations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,8 +33,8 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BatchDeleteBuildsResponse : AmazonWebServiceResponse
     {
-        private List<string> _buildsDeleted = new List<string>();
-        private List<BuildNotDeleted> _buildsNotDeleted = new List<BuildNotDeleted>();
+        private List<string> _buildsDeleted = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<BuildNotDeleted> _buildsNotDeleted = AWSConfigs.InitializeCollections ? new List<BuildNotDeleted>() : null;
 
         /// <summary>
         /// Gets and sets the property BuildsDeleted. 
@@ -52,7 +52,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if BuildsDeleted property is set
         internal bool IsSetBuildsDeleted()
         {
-            return this._buildsDeleted != null && this._buildsDeleted.Count > 0; 
+            return this._buildsDeleted != null && (this._buildsDeleted.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if BuildsNotDeleted property is set
         internal bool IsSetBuildsNotDeleted()
         {
-            return this._buildsNotDeleted != null && this._buildsNotDeleted.Count > 0; 
+            return this._buildsNotDeleted != null && (this._buildsNotDeleted.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -47,7 +47,7 @@ namespace Amazon.FSx.Model
         private ResourceType _resourceType;
         private string _sourceBackupId;
         private string _sourceBackupRegion;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private BackupType _type;
         private Volume _volume;
 
@@ -336,7 +336,7 @@ namespace Amazon.FSx.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

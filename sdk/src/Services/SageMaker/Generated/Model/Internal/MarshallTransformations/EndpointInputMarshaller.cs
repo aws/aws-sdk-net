@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EndpointInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEndpointName())
             {
                 context.Writer.WritePropertyName("EndpointName");
@@ -90,7 +93,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProbabilityThresholdAttribute())
             {
                 context.Writer.WritePropertyName("ProbabilityThresholdAttribute");
-                context.Writer.Write(requestObject.ProbabilityThresholdAttribute);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ProbabilityThresholdAttribute))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ProbabilityThresholdAttribute));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ProbabilityThresholdAttribute);
+                }
             }
 
             if(requestObject.IsSetS3DataDistributionType())
@@ -120,3 +130,4 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

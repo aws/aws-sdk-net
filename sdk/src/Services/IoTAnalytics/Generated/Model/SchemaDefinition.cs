@@ -33,7 +33,7 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class SchemaDefinition
     {
-        private List<Column> _columns = new List<Column>();
+        private List<Column> _columns = AWSConfigs.InitializeCollections ? new List<Column>() : null;
 
         /// <summary>
         /// Gets and sets the property Columns. 
@@ -54,7 +54,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

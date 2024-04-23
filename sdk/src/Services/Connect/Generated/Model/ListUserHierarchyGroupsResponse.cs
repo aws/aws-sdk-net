@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     public partial class ListUserHierarchyGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<HierarchyGroupSummary> _userHierarchyGroupSummaryList = new List<HierarchyGroupSummary>();
+        private List<HierarchyGroupSummary> _userHierarchyGroupSummaryList = AWSConfigs.InitializeCollections ? new List<HierarchyGroupSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         // Check to see if UserHierarchyGroupSummaryList property is set
         internal bool IsSetUserHierarchyGroupSummaryList()
         {
-            return this._userHierarchyGroupSummaryList != null && this._userHierarchyGroupSummaryList.Count > 0; 
+            return this._userHierarchyGroupSummaryList != null && (this._userHierarchyGroupSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -35,7 +35,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class CreateInstanceProfileRequest : AmazonDeviceFarmRequest
     {
         private string _description;
-        private List<string> _excludeAppPackagesFromCleanup = new List<string>();
+        private List<string> _excludeAppPackagesFromCleanup = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private bool? _packageCleanup;
         private bool? _rebootAfterUse;
@@ -79,7 +79,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if ExcludeAppPackagesFromCleanup property is set
         internal bool IsSetExcludeAppPackagesFromCleanup()
         {
-            return this._excludeAppPackagesFromCleanup != null && this._excludeAppPackagesFromCleanup.Count > 0; 
+            return this._excludeAppPackagesFromCleanup != null && (this._excludeAppPackagesFromCleanup.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

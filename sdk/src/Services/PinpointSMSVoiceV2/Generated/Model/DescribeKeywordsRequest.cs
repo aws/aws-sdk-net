@@ -48,8 +48,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribeKeywordsRequest : AmazonPinpointSMSVoiceV2Request
     {
-        private List<KeywordFilter> _filters = new List<KeywordFilter>();
-        private List<string> _keywords = new List<string>();
+        private List<KeywordFilter> _filters = AWSConfigs.InitializeCollections ? new List<KeywordFilter>() : null;
+        private List<string> _keywords = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _originationIdentity;
@@ -70,7 +70,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Keywords property is set
         internal bool IsSetKeywords()
         {
-            return this._keywords != null && this._keywords.Count > 0; 
+            return this._keywords != null && (this._keywords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeDeliveryChannelStatusResponse : AmazonWebServiceResponse
     {
-        private List<DeliveryChannelStatus> _deliveryChannelsStatus = new List<DeliveryChannelStatus>();
+        private List<DeliveryChannelStatus> _deliveryChannelsStatus = AWSConfigs.InitializeCollections ? new List<DeliveryChannelStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property DeliveryChannelsStatus. 
@@ -50,7 +50,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if DeliveryChannelsStatus property is set
         internal bool IsSetDeliveryChannelsStatus()
         {
-            return this._deliveryChannelsStatus != null && this._deliveryChannelsStatus.Count > 0; 
+            return this._deliveryChannelsStatus != null && (this._deliveryChannelsStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

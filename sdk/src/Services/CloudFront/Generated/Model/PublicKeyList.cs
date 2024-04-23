@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class PublicKeyList
     {
-        private List<PublicKeySummary> _items = new List<PublicKeySummary>();
+        private List<PublicKeySummary> _items = AWSConfigs.InitializeCollections ? new List<PublicKeySummary>() : null;
         private int? _maxItems;
         private string _nextMarker;
         private int? _quantity;
@@ -55,7 +55,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

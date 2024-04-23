@@ -45,7 +45,7 @@ namespace Amazon.Neptune.Model
         /// Enumerable containing all of the GlobalClusters
         /// </summary>
         public IPaginatedEnumerable<GlobalCluster> GlobalClusters => 
-            new PaginatedResultKeyResponse<DescribeGlobalClustersResponse, GlobalCluster>(this, (i) => i.GlobalClusters);
+            new PaginatedResultKeyResponse<DescribeGlobalClustersResponse, GlobalCluster>(this, (i) => i.GlobalClusters ?? new List<GlobalCluster>());
 
         internal DescribeGlobalClustersPaginator(IAmazonNeptune client, DescribeGlobalClustersRequest request)
         {

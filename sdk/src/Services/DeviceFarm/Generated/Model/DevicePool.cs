@@ -37,7 +37,7 @@ namespace Amazon.DeviceFarm.Model
         private string _description;
         private int? _maxDevices;
         private string _name;
-        private List<Rule> _rules = new List<Rule>();
+        private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
         private DevicePoolType _type;
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

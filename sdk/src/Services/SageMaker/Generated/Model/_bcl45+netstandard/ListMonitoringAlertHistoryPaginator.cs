@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the MonitoringAlertHistory
         /// </summary>
         public IPaginatedEnumerable<MonitoringAlertHistorySummary> MonitoringAlertHistory => 
-            new PaginatedResultKeyResponse<ListMonitoringAlertHistoryResponse, MonitoringAlertHistorySummary>(this, (i) => i.MonitoringAlertHistory);
+            new PaginatedResultKeyResponse<ListMonitoringAlertHistoryResponse, MonitoringAlertHistorySummary>(this, (i) => i.MonitoringAlertHistory ?? new List<MonitoringAlertHistorySummary>());
 
         internal ListMonitoringAlertHistoryPaginator(IAmazonSageMaker client, ListMonitoringAlertHistoryRequest request)
         {

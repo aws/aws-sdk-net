@@ -40,10 +40,10 @@ namespace Amazon.WorkSpaces.Model
         private string _errorCode;
         private string _errorMessage;
         private string _ipAddress;
-        private List<ModificationState> _modificationStates = new List<ModificationState>();
-        private List<RelatedWorkspaceProperties> _relatedWorkspaces = new List<RelatedWorkspaceProperties>();
+        private List<ModificationState> _modificationStates = AWSConfigs.InitializeCollections ? new List<ModificationState>() : null;
+        private List<RelatedWorkspaceProperties> _relatedWorkspaces = AWSConfigs.InitializeCollections ? new List<RelatedWorkspaceProperties>() : null;
         private bool? _rootVolumeEncryptionEnabled;
-        private List<StandbyWorkspacesProperties> _standbyWorkspacesProperties = new List<StandbyWorkspacesProperties>();
+        private List<StandbyWorkspacesProperties> _standbyWorkspacesProperties = AWSConfigs.InitializeCollections ? new List<StandbyWorkspacesProperties>() : null;
         private WorkspaceState _state;
         private string _subnetId;
         private string _userName;
@@ -197,7 +197,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if ModificationStates property is set
         internal bool IsSetModificationStates()
         {
-            return this._modificationStates != null && this._modificationStates.Count > 0; 
+            return this._modificationStates != null && (this._modificationStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if RelatedWorkspaces property is set
         internal bool IsSetRelatedWorkspaces()
         {
-            return this._relatedWorkspaces != null && this._relatedWorkspaces.Count > 0; 
+            return this._relatedWorkspaces != null && (this._relatedWorkspaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -251,7 +251,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if StandbyWorkspacesProperties property is set
         internal bool IsSetStandbyWorkspacesProperties()
         {
-            return this._standbyWorkspacesProperties != null && this._standbyWorkspacesProperties.Count > 0; 
+            return this._standbyWorkspacesProperties != null && (this._standbyWorkspacesProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -259,7 +259,79 @@ namespace Amazon.WorkSpaces.Model
         /// <para>
         /// The operational state of the WorkSpace.
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PENDING</c> – The WorkSpace is in a waiting state (for example, the WorkSpace
+        /// is being created).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AVAILABLE</c> – The WorkSpace is running and has passed the health checks.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IMPAIRED</c> – Refer to <c>UNHEALTHY</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UNHEALTHY</c> – The WorkSpace is not responding to health checks.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REBOOTING</c> – The WorkSpace is being rebooted (restarted).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STARTING</c> – The WorkSpace is starting up and health checks are being run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REBUILDING</c> – The WorkSpace is being rebuilt.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RESTORING</c> – The WorkSpace is being restored.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MAINTENANCE</c> – The WorkSpace is undergoing scheduled maintenance by Amazon
+        /// Web Services.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ADMIN_MAINTENANCE</c> – The WorkSpace is undergoing maintenance by the WorkSpaces
+        /// administrator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TERMINATING</c> – The WorkSpace is being deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TERMINATED</c> – The WorkSpace has been deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SUSPENDED</c> – The WorkSpace has been suspended for image creation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UPDATING</c> – The WorkSpace is undergoing an update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STOPPING</c> – The WorkSpace is being stopped.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STOPPED</c> – The WorkSpace has been stopped.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ERROR </c> – The WorkSpace is an error state (for example, an error occurred during
+        /// startup).
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// After a WorkSpace is terminated, the <c>TERMINATED</c> state is returned only briefly
         /// before the WorkSpace directory metadata is cleaned up, so this state is rarely returned.

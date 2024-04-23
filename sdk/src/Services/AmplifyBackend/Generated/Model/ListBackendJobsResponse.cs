@@ -33,7 +33,7 @@ namespace Amazon.AmplifyBackend.Model
     /// </summary>
     public partial class ListBackendJobsResponse : AmazonWebServiceResponse
     {
-        private List<BackendJobRespObj> _jobs = new List<BackendJobRespObj>();
+        private List<BackendJobRespObj> _jobs = AWSConfigs.InitializeCollections ? new List<BackendJobRespObj>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AmplifyBackend.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

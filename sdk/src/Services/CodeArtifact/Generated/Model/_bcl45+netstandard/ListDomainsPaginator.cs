@@ -45,7 +45,7 @@ namespace Amazon.CodeArtifact.Model
         /// Enumerable containing all of the Domains
         /// </summary>
         public IPaginatedEnumerable<DomainSummary> Domains => 
-            new PaginatedResultKeyResponse<ListDomainsResponse, DomainSummary>(this, (i) => i.Domains);
+            new PaginatedResultKeyResponse<ListDomainsResponse, DomainSummary>(this, (i) => i.Domains ?? new List<DomainSummary>());
 
         internal ListDomainsPaginator(IAmazonCodeArtifact client, ListDomainsRequest request)
         {

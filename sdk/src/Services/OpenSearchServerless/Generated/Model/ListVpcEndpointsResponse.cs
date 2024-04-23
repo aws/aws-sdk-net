@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchServerless.Model
     public partial class ListVpcEndpointsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VpcEndpointSummary> _vpcEndpointSummaries = new List<VpcEndpointSummary>();
+        private List<VpcEndpointSummary> _vpcEndpointSummaries = AWSConfigs.InitializeCollections ? new List<VpcEndpointSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if VpcEndpointSummaries property is set
         internal bool IsSetVpcEndpointSummaries()
         {
-            return this._vpcEndpointSummaries != null && this._vpcEndpointSummaries.Count > 0; 
+            return this._vpcEndpointSummaries != null && (this._vpcEndpointSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

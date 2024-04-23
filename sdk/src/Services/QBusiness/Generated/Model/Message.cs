@@ -29,16 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// A message in an Amazon Q web experience.
+    /// A message in an Amazon Q Business web experience.
     /// </summary>
     public partial class Message
     {
         private ActionExecution _actionExecution;
         private ActionReview _actionReview;
-        private List<AttachmentOutput> _attachments = new List<AttachmentOutput>();
+        private List<AttachmentOutput> _attachments = AWSConfigs.InitializeCollections ? new List<AttachmentOutput>() : null;
         private string _body;
         private string _messageId;
-        private List<SourceAttribution> _sourceAttribution = new List<SourceAttribution>();
+        private List<SourceAttribution> _sourceAttribution = AWSConfigs.InitializeCollections ? new List<SourceAttribution>() : null;
         private DateTime? _time;
         private MessageType _type;
 
@@ -75,7 +75,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Attachments. 
         /// <para>
-        /// A file directly uploaded into an Amazon Q web experience chat.
+        /// A file directly uploaded into an Amazon Q Business web experience chat.
         /// </para>
         /// </summary>
         public List<AttachmentOutput> Attachments
@@ -87,13 +87,13 @@ namespace Amazon.QBusiness.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// The content of the Amazon Q web experience message.
+        /// The content of the Amazon Q Business web experience message.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -112,7 +112,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The identifier of the Amazon Q web experience message.
+        /// The identifier of the Amazon Q Business web experience message.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -131,7 +131,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property SourceAttribution. 
         /// <para>
-        /// The source documents used to generate Amazon Q web experience message.
+        /// The source documents used to generate Amazon Q Business web experience message.
         /// </para>
         /// </summary>
         public List<SourceAttribution> SourceAttribution
@@ -143,13 +143,13 @@ namespace Amazon.QBusiness.Model
         // Check to see if SourceAttribution property is set
         internal bool IsSetSourceAttribution()
         {
-            return this._sourceAttribution != null && this._sourceAttribution.Count > 0; 
+            return this._sourceAttribution != null && (this._sourceAttribution.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        /// The timestamp of the first Amazon Q web experience message.
+        /// The timestamp of the first Amazon Q Business web experience message.
         /// </para>
         /// </summary>
         public DateTime Time
@@ -167,7 +167,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of Amazon Q message, whether <c>HUMAN</c> or <c>AI</c> generated.
+        /// The type of Amazon Q Business message, whether <c>HUMAN</c> or <c>AI</c> generated.
         /// </para>
         /// </summary>
         public MessageType Type

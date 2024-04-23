@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public void Marshall(DeleteAgent requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAgentId())
             {
                 context.Writer.WritePropertyName("agentId");
@@ -66,3 +69,4 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
     }
 }
+#pragma warning restore CS0612,CS0618

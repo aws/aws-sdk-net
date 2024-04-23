@@ -33,11 +33,14 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class ListIngestionJobsResponse : AmazonWebServiceResponse
     {
-        private List<IngestionJobSummary> _ingestionJobSummaries = new List<IngestionJobSummary>();
+        private List<IngestionJobSummary> _ingestionJobSummaries = AWSConfigs.InitializeCollections ? new List<IngestionJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property IngestionJobSummaries.
+        /// Gets and sets the property IngestionJobSummaries. 
+        /// <para>
+        /// A list of objects, each of which contains information about an ingestion job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<IngestionJobSummary> IngestionJobSummaries
@@ -49,11 +52,16 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if IngestionJobSummaries property is set
         internal bool IsSetIngestionJobSummaries()
         {
-            return this._ingestionJobSummaries != null && this._ingestionJobSummaries.Count > 0; 
+            return this._ingestionJobSummaries != null && (this._ingestionJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the total number of results is greater than the <c>maxResults</c> value provided
+        /// in the request, use this token when making another request in the <c>nextToken</c>
+        /// field to return the next batch of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string NextToken

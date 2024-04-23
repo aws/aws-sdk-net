@@ -45,7 +45,7 @@ namespace Amazon.RoboMaker.Model
         /// Enumerable containing all of the FleetDetails
         /// </summary>
         public IPaginatedEnumerable<Fleet> FleetDetails => 
-            new PaginatedResultKeyResponse<ListFleetsResponse, Fleet>(this, (i) => i.FleetDetails);
+            new PaginatedResultKeyResponse<ListFleetsResponse, Fleet>(this, (i) => i.FleetDetails ?? new List<Fleet>());
 
         internal ListFleetsPaginator(IAmazonRoboMaker client, ListFleetsRequest request)
         {

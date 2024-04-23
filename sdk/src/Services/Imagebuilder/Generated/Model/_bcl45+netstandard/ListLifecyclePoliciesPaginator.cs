@@ -45,7 +45,7 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all of the LifecyclePolicySummaryList
         /// </summary>
         public IPaginatedEnumerable<LifecyclePolicySummary> LifecyclePolicySummaryList => 
-            new PaginatedResultKeyResponse<ListLifecyclePoliciesResponse, LifecyclePolicySummary>(this, (i) => i.LifecyclePolicySummaryList);
+            new PaginatedResultKeyResponse<ListLifecyclePoliciesResponse, LifecyclePolicySummary>(this, (i) => i.LifecyclePolicySummaryList ?? new List<LifecyclePolicySummary>());
 
         internal ListLifecyclePoliciesPaginator(IAmazonImagebuilder client, ListLifecyclePoliciesRequest request)
         {

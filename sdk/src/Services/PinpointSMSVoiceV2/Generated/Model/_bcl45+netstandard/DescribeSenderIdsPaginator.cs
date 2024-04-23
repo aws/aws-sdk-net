@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the SenderIds
         /// </summary>
         public IPaginatedEnumerable<SenderIdInformation> SenderIds => 
-            new PaginatedResultKeyResponse<DescribeSenderIdsResponse, SenderIdInformation>(this, (i) => i.SenderIds);
+            new PaginatedResultKeyResponse<DescribeSenderIdsResponse, SenderIdInformation>(this, (i) => i.SenderIds ?? new List<SenderIdInformation>());
 
         internal DescribeSenderIdsPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeSenderIdsRequest request)
         {

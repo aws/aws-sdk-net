@@ -33,7 +33,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ListMembershipsResponse : AmazonWebServiceResponse
     {
-        private List<MembershipSummary> _membershipSummaries = new List<MembershipSummary>();
+        private List<MembershipSummary> _membershipSummaries = AWSConfigs.InitializeCollections ? new List<MembershipSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if MembershipSummaries property is set
         internal bool IsSetMembershipSummaries()
         {
-            return this._membershipSummaries != null && this._membershipSummaries.Count > 0; 
+            return this._membershipSummaries != null && (this._membershipSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

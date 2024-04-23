@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ListOrganizationAdminAccountsResponse : AmazonWebServiceResponse
     {
-        private List<AdminAccount> _adminAccounts = new List<AdminAccount>();
+        private List<AdminAccount> _adminAccounts = AWSConfigs.InitializeCollections ? new List<AdminAccount>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AdminAccounts property is set
         internal bool IsSetAdminAccounts()
         {
-            return this._adminAccounts != null && this._adminAccounts.Count > 0; 
+            return this._adminAccounts != null && (this._adminAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

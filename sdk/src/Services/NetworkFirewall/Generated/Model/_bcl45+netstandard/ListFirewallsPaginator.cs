@@ -45,7 +45,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Enumerable containing all of the Firewalls
         /// </summary>
         public IPaginatedEnumerable<FirewallMetadata> Firewalls => 
-            new PaginatedResultKeyResponse<ListFirewallsResponse, FirewallMetadata>(this, (i) => i.Firewalls);
+            new PaginatedResultKeyResponse<ListFirewallsResponse, FirewallMetadata>(this, (i) => i.Firewalls ?? new List<FirewallMetadata>());
 
         internal ListFirewallsPaginator(IAmazonNetworkFirewall client, ListFirewallsRequest request)
         {

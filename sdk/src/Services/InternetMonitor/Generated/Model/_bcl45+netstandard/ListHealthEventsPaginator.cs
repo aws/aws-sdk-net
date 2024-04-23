@@ -45,7 +45,7 @@ namespace Amazon.InternetMonitor.Model
         /// Enumerable containing all of the HealthEvents
         /// </summary>
         public IPaginatedEnumerable<HealthEvent> HealthEvents => 
-            new PaginatedResultKeyResponse<ListHealthEventsResponse, HealthEvent>(this, (i) => i.HealthEvents);
+            new PaginatedResultKeyResponse<ListHealthEventsResponse, HealthEvent>(this, (i) => i.HealthEvents ?? new List<HealthEvent>());
 
         internal ListHealthEventsPaginator(IAmazonInternetMonitor client, ListHealthEventsRequest request)
         {

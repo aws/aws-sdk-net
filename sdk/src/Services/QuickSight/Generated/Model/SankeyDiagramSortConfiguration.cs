@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private ItemsLimitConfiguration _destinationItemsLimit;
         private ItemsLimitConfiguration _sourceItemsLimit;
-        private List<FieldSortOptions> _weightSort = new List<FieldSortOptions>();
+        private List<FieldSortOptions> _weightSort = AWSConfigs.InitializeCollections ? new List<FieldSortOptions>() : null;
 
         /// <summary>
         /// Gets and sets the property DestinationItemsLimit. 
@@ -89,7 +89,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if WeightSort property is set
         internal bool IsSetWeightSort()
         {
-            return this._weightSort != null && this._weightSort.Count > 0; 
+            return this._weightSort != null && (this._weightSort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

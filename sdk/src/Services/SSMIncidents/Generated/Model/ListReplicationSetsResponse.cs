@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model
     public partial class ListReplicationSetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _replicationSetArns = new List<string>();
+        private List<string> _replicationSetArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if ReplicationSetArns property is set
         internal bool IsSetReplicationSetArns()
         {
-            return this._replicationSetArns != null && this._replicationSetArns.Count > 0; 
+            return this._replicationSetArns != null && (this._replicationSetArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

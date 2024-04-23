@@ -45,7 +45,7 @@ namespace Amazon.SQS.Model
         /// Enumerable containing all of the QueueUrls
         /// </summary>
         public IPaginatedEnumerable<string> QueueUrls => 
-            new PaginatedResultKeyResponse<ListQueuesResponse, string>(this, (i) => i.QueueUrls);
+            new PaginatedResultKeyResponse<ListQueuesResponse, string>(this, (i) => i.QueueUrls ?? new List<string>());
 
         internal ListQueuesPaginator(IAmazonSQS client, ListQueuesRequest request)
         {

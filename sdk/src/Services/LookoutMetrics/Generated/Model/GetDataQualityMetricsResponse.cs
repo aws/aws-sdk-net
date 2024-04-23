@@ -33,7 +33,7 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class GetDataQualityMetricsResponse : AmazonWebServiceResponse
     {
-        private List<AnomalyDetectorDataQualityMetric> _anomalyDetectorDataQualityMetricList = new List<AnomalyDetectorDataQualityMetric>();
+        private List<AnomalyDetectorDataQualityMetric> _anomalyDetectorDataQualityMetricList = AWSConfigs.InitializeCollections ? new List<AnomalyDetectorDataQualityMetric>() : null;
 
         /// <summary>
         /// Gets and sets the property AnomalyDetectorDataQualityMetricList. 
@@ -50,7 +50,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if AnomalyDetectorDataQualityMetricList property is set
         internal bool IsSetAnomalyDetectorDataQualityMetricList()
         {
-            return this._anomalyDetectorDataQualityMetricList != null && this._anomalyDetectorDataQualityMetricList.Count > 0; 
+            return this._anomalyDetectorDataQualityMetricList != null && (this._anomalyDetectorDataQualityMetricList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

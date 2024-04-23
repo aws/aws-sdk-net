@@ -100,7 +100,7 @@ namespace Amazon.GameLift.Model
         private string _aliasId;
         private string _creatorId;
         private string _fleetId;
-        private List<GameProperty> _gameProperties = new List<GameProperty>();
+        private List<GameProperty> _gameProperties = AWSConfigs.InitializeCollections ? new List<GameProperty>() : null;
         private string _gameSessionData;
         private string _gameSessionId;
         private string _idempotencyToken;
@@ -202,7 +202,7 @@ namespace Amazon.GameLift.Model
         // Check to see if GameProperties property is set
         internal bool IsSetGameProperties()
         {
-            return this._gameProperties != null && this._gameProperties.Count > 0; 
+            return this._gameProperties != null && (this._gameProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

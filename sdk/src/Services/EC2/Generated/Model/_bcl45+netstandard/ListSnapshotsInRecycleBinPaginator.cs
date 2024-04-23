@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Snapshots
         /// </summary>
         public IPaginatedEnumerable<SnapshotRecycleBinInfo> Snapshots => 
-            new PaginatedResultKeyResponse<ListSnapshotsInRecycleBinResponse, SnapshotRecycleBinInfo>(this, (i) => i.Snapshots);
+            new PaginatedResultKeyResponse<ListSnapshotsInRecycleBinResponse, SnapshotRecycleBinInfo>(this, (i) => i.Snapshots ?? new List<SnapshotRecycleBinInfo>());
 
         internal ListSnapshotsInRecycleBinPaginator(IAmazonEC2 client, ListSnapshotsInRecycleBinRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.StepFunctions.Model
     public partial class ListStateMachineAliasesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StateMachineAliasListItem> _stateMachineAliases = new List<StateMachineAliasListItem>();
+        private List<StateMachineAliasListItem> _stateMachineAliases = AWSConfigs.InitializeCollections ? new List<StateMachineAliasListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -75,7 +75,7 @@ namespace Amazon.StepFunctions.Model
         // Check to see if StateMachineAliases property is set
         internal bool IsSetStateMachineAliases()
         {
-            return this._stateMachineAliases != null && this._stateMachineAliases.Count > 0; 
+            return this._stateMachineAliases != null && (this._stateMachineAliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

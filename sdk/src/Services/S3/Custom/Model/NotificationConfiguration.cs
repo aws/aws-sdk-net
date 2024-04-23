@@ -25,26 +25,20 @@ namespace Amazon.S3.Model
     /// </summary>
     public abstract class NotificationConfiguration
     {
-        List<EventType> _events;
+        List<EventType> _events = AWSConfigs.InitializeCollections ? new List<EventType>() : null;
         /// <summary>
         /// Gets and sets the Events property. These are the events the configuration will listen to.
         /// </summary>
         public List<EventType> Events
         {
-            get
-            {
-                if (this._events == null)
-                    this._events = new List<EventType>();
-
-                return this._events;
-            }
+            get { return this._events; }
             set { this._events = value; }
         }
 
         // Check to see if Event property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0;
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
 

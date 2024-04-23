@@ -34,7 +34,7 @@ namespace Amazon.Neptunedata.Model
     public partial class ListGremlinQueriesResponse : AmazonWebServiceResponse
     {
         private int? _acceptedQueryCount;
-        private List<GremlinQueryStatus> _queries = new List<GremlinQueryStatus>();
+        private List<GremlinQueryStatus> _queries = AWSConfigs.InitializeCollections ? new List<GremlinQueryStatus>() : null;
         private int? _runningQueryCount;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if Queries property is set
         internal bool IsSetQueries()
         {
-            return this._queries != null && this._queries.Count > 0; 
+            return this._queries != null && (this._queries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

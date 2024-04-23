@@ -34,15 +34,15 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class CreateInputRequest : AmazonMediaLiveRequest
     {
-        private List<InputDestinationRequest> _destinations = new List<InputDestinationRequest>();
-        private List<InputDeviceSettings> _inputDevices = new List<InputDeviceSettings>();
-        private List<string> _inputSecurityGroups = new List<string>();
-        private List<MediaConnectFlowRequest> _mediaConnectFlows = new List<MediaConnectFlowRequest>();
+        private List<InputDestinationRequest> _destinations = AWSConfigs.InitializeCollections ? new List<InputDestinationRequest>() : null;
+        private List<InputDeviceSettings> _inputDevices = AWSConfigs.InitializeCollections ? new List<InputDeviceSettings>() : null;
+        private List<string> _inputSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<MediaConnectFlowRequest> _mediaConnectFlows = AWSConfigs.InitializeCollections ? new List<MediaConnectFlowRequest>() : null;
         private string _name;
         private string _requestId;
         private string _roleArn;
-        private List<InputSourceRequest> _sources = new List<InputSourceRequest>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<InputSourceRequest> _sources = AWSConfigs.InitializeCollections ? new List<InputSourceRequest>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private InputType _type;
         private InputVpcRequest _vpc;
 
@@ -58,7 +58,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if InputDevices property is set
         internal bool IsSetInputDevices()
         {
-            return this._inputDevices != null && this._inputDevices.Count > 0; 
+            return this._inputDevices != null && (this._inputDevices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if InputSecurityGroups property is set
         internal bool IsSetInputSecurityGroups()
         {
-            return this._inputSecurityGroups != null && this._inputSecurityGroups.Count > 0; 
+            return this._inputSecurityGroups != null && (this._inputSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if MediaConnectFlows property is set
         internal bool IsSetMediaConnectFlows()
         {
-            return this._mediaConnectFlows != null && this._mediaConnectFlows.Count > 0; 
+            return this._mediaConnectFlows != null && (this._mediaConnectFlows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

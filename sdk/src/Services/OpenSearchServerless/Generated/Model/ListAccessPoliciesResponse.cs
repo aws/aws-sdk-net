@@ -33,7 +33,7 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class ListAccessPoliciesResponse : AmazonWebServiceResponse
     {
-        private List<AccessPolicySummary> _accessPolicySummaries = new List<AccessPolicySummary>();
+        private List<AccessPolicySummary> _accessPolicySummaries = AWSConfigs.InitializeCollections ? new List<AccessPolicySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if AccessPolicySummaries property is set
         internal bool IsSetAccessPolicySummaries()
         {
-            return this._accessPolicySummaries != null && this._accessPolicySummaries.Count > 0; 
+            return this._accessPolicySummaries != null && (this._accessPolicySummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.Mgn.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<VcenterClient> Items => 
-            new PaginatedResultKeyResponse<DescribeVcenterClientsResponse, VcenterClient>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<DescribeVcenterClientsResponse, VcenterClient>(this, (i) => i.Items ?? new List<VcenterClient>());
 
         internal DescribeVcenterClientsPaginator(IAmazonMgn client, DescribeVcenterClientsRequest request)
         {

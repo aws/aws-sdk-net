@@ -33,7 +33,7 @@ namespace Amazon.ECRPublic.Model
     /// </summary>
     public partial class DescribeImagesResponse : AmazonWebServiceResponse
     {
-        private List<ImageDetail> _imageDetails = new List<ImageDetail>();
+        private List<ImageDetail> _imageDetails = AWSConfigs.InitializeCollections ? new List<ImageDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if ImageDetails property is set
         internal bool IsSetImageDetails()
         {
-            return this._imageDetails != null && this._imageDetails.Count > 0; 
+            return this._imageDetails != null && (this._imageDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

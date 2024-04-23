@@ -30,7 +30,7 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAgentAlias operation.
-    /// Describes an Alias for a Amazon Bedrock Agent
+    /// Gets information about an alias of an agent.
     /// </summary>
     public partial class GetAgentAliasRequest : AmazonBedrockAgentRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentAliasId. 
         /// <para>
-        /// Id generated at the server side when an Agent Alias is created
+        /// The unique identifier of the alias for which to get information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=10)]
@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent to which the alias to get information belongs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

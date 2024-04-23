@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StorageLensGroupAndOperator Object
     /// </summary>  
-    public class StorageLensGroupAndOperatorUnmarshaller : IUnmarshaller<StorageLensGroupAndOperator, XmlUnmarshallerContext>
+    public class StorageLensGroupAndOperatorUnmarshaller : IUnmarshaller<StorageLensGroupAndOperator, XmlUnmarshallerContext>, IUnmarshaller<StorageLensGroupAndOperator, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,18 +58,30 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("MatchAnyPrefix/Prefix", targetDepth))
                     {
+                        if (unmarshalledObject.MatchAnyPrefix == null)
+                        {
+                            unmarshalledObject.MatchAnyPrefix = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MatchAnyPrefix.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("MatchAnySuffix/Suffix", targetDepth))
                     {
+                        if (unmarshalledObject.MatchAnySuffix == null)
+                        {
+                            unmarshalledObject.MatchAnySuffix = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MatchAnySuffix.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("MatchAnyTag/Tag", targetDepth))
                     {
+                        if (unmarshalledObject.MatchAnyTag == null)
+                        {
+                            unmarshalledObject.MatchAnyTag = new List<S3Tag>();
+                        }
                         var unmarshaller = S3TagUnmarshaller.Instance;
                         unmarshalledObject.MatchAnyTag.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -93,6 +106,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public StorageLensGroupAndOperator Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static StorageLensGroupAndOperatorUnmarshaller _instance = new StorageLensGroupAndOperatorUnmarshaller();        
 
@@ -108,3 +131,4 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

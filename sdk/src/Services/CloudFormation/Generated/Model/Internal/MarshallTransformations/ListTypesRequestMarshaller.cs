@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,41 +63,51 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeprecatedStatus", StringUtils.FromString(publicRequest.DeprecatedStatus));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFilters())
                 {
                     if(publicRequest.Filters.IsSetCategory())
                     {
                         request.Parameters.Add("Filters" + "." + "Category", StringUtils.FromString(publicRequest.Filters.Category));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Filters.IsSetPublisherId())
                     {
                         request.Parameters.Add("Filters" + "." + "PublisherId", StringUtils.FromString(publicRequest.Filters.PublisherId));
                     }
+#pragma warning restore CS0612,CS0618
                     if(publicRequest.Filters.IsSetTypeNamePrefix())
                     {
                         request.Parameters.Add("Filters" + "." + "TypeNamePrefix", StringUtils.FromString(publicRequest.Filters.TypeNamePrefix));
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetProvisioningType())
                 {
                     request.Parameters.Add("ProvisioningType", StringUtils.FromString(publicRequest.ProvisioningType));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetType())
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVisibility())
                 {
                     request.Parameters.Add("Visibility", StringUtils.FromString(publicRequest.Visibility));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

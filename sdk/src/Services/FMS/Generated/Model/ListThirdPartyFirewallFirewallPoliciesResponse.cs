@@ -34,7 +34,7 @@ namespace Amazon.FMS.Model
     public partial class ListThirdPartyFirewallFirewallPoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ThirdPartyFirewallFirewallPolicy> _thirdPartyFirewallFirewallPolicies = new List<ThirdPartyFirewallFirewallPolicy>();
+        private List<ThirdPartyFirewallFirewallPolicy> _thirdPartyFirewallFirewallPolicies = AWSConfigs.InitializeCollections ? new List<ThirdPartyFirewallFirewallPolicy>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +74,7 @@ namespace Amazon.FMS.Model
         // Check to see if ThirdPartyFirewallFirewallPolicies property is set
         internal bool IsSetThirdPartyFirewallFirewallPolicies()
         {
-            return this._thirdPartyFirewallFirewallPolicies != null && this._thirdPartyFirewallFirewallPolicies.Count > 0; 
+            return this._thirdPartyFirewallFirewallPolicies != null && (this._thirdPartyFirewallFirewallPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

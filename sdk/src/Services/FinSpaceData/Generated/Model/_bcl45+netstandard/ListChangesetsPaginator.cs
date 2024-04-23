@@ -45,7 +45,7 @@ namespace Amazon.FinSpaceData.Model
         /// Enumerable containing all of the Changesets
         /// </summary>
         public IPaginatedEnumerable<ChangesetSummary> Changesets => 
-            new PaginatedResultKeyResponse<ListChangesetsResponse, ChangesetSummary>(this, (i) => i.Changesets);
+            new PaginatedResultKeyResponse<ListChangesetsResponse, ChangesetSummary>(this, (i) => i.Changesets ?? new List<ChangesetSummary>());
 
         internal ListChangesetsPaginator(IAmazonFinSpaceData client, ListChangesetsRequest request)
         {

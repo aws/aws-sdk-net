@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model
     public partial class ListVirtualRoutersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VirtualRouterRef> _virtualRouters = new List<VirtualRouterRef>();
+        private List<VirtualRouterRef> _virtualRouters = AWSConfigs.InitializeCollections ? new List<VirtualRouterRef>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if VirtualRouters property is set
         internal bool IsSetVirtualRouters()
         {
-            return this._virtualRouters != null && this._virtualRouters.Count > 0; 
+            return this._virtualRouters != null && (this._virtualRouters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

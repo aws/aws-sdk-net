@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecordingMode requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetRecordingFrequency())
             {
                 context.Writer.WritePropertyName("recordingFrequency");
@@ -76,3 +79,4 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

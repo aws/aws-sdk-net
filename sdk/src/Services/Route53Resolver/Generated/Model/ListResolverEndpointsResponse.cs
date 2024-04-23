@@ -35,7 +35,7 @@ namespace Amazon.Route53Resolver.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<ResolverEndpoint> _resolverEndpoints = new List<ResolverEndpoint>();
+        private List<ResolverEndpoint> _resolverEndpoints = AWSConfigs.InitializeCollections ? new List<ResolverEndpoint>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -93,7 +93,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if ResolverEndpoints property is set
         internal bool IsSetResolverEndpoints()
         {
-            return this._resolverEndpoints != null && this._resolverEndpoints.Count > 0; 
+            return this._resolverEndpoints != null && (this._resolverEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<string> Events => 
-            new PaginatedResultKeyResponse<GetAppMonitorDataResponse, string>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<GetAppMonitorDataResponse, string>(this, (i) => i.Events ?? new List<string>());
 
         internal GetAppMonitorDataPaginator(IAmazonCloudWatchRUM client, GetAppMonitorDataRequest request)
         {

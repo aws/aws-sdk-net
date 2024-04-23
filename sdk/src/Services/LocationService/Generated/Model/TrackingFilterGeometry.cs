@@ -33,7 +33,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class TrackingFilterGeometry
     {
-        private List<List<List<double>>> _polygon = new List<List<List<double>>>();
+        private List<List<List<double>>> _polygon = AWSConfigs.InitializeCollections ? new List<List<List<double>>>() : null;
 
         /// <summary>
         /// Gets and sets the property Polygon. 
@@ -52,7 +52,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Polygon property is set
         internal bool IsSetPolygon()
         {
-            return this._polygon != null && this._polygon.Count > 0; 
+            return this._polygon != null && (this._polygon.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

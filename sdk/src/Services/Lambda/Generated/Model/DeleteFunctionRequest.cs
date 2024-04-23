@@ -49,7 +49,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the Lambda function or version.
+        /// The name or ARN of the Lambda function or version.
         /// </para>
         ///  
         /// <para>

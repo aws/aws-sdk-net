@@ -33,7 +33,7 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class ListCertificatesResponse : AmazonWebServiceResponse
     {
-        private List<ListedCertificate> _certificates = new List<ListedCertificate>();
+        private List<ListedCertificate> _certificates = AWSConfigs.InitializeCollections ? new List<ListedCertificate>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Certificates property is set
         internal bool IsSetCertificates()
         {
-            return this._certificates != null && this._certificates.Count > 0; 
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

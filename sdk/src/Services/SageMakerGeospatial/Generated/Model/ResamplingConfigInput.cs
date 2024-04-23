@@ -35,7 +35,7 @@ namespace Amazon.SageMakerGeospatial.Model
     {
         private AlgorithmNameResampling _algorithmName;
         private OutputResolutionResamplingInput _outputResolution;
-        private List<string> _targetBands = new List<string>();
+        private List<string> _targetBands = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AlgorithmName. 
@@ -92,7 +92,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if TargetBands property is set
         internal bool IsSetTargetBands()
         {
-            return this._targetBands != null && this._targetBands.Count > 0; 
+            return this._targetBands != null && (this._targetBands.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

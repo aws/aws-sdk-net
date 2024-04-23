@@ -33,7 +33,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ListMultiplexesResponse : AmazonWebServiceResponse
     {
-        private List<MultiplexSummary> _multiplexes = new List<MultiplexSummary>();
+        private List<MultiplexSummary> _multiplexes = AWSConfigs.InitializeCollections ? new List<MultiplexSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Multiplexes property is set
         internal bool IsSetMultiplexes()
         {
-            return this._multiplexes != null && this._multiplexes.Count > 0; 
+            return this._multiplexes != null && (this._multiplexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

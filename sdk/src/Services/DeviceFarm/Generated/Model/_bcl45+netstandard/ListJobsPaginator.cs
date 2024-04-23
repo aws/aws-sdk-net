@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// Enumerable containing all of the Jobs
         /// </summary>
         public IPaginatedEnumerable<Job> Jobs => 
-            new PaginatedResultKeyResponse<ListJobsResponse, Job>(this, (i) => i.Jobs);
+            new PaginatedResultKeyResponse<ListJobsResponse, Job>(this, (i) => i.Jobs ?? new List<Job>());
 
         internal ListJobsPaginator(IAmazonDeviceFarm client, ListJobsRequest request)
         {

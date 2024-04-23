@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Expression requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnd())
             {
                 context.Writer.WritePropertyName("And");
@@ -108,3 +111,4 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

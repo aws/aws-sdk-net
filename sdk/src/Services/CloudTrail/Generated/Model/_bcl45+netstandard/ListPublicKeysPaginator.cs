@@ -45,7 +45,7 @@ namespace Amazon.CloudTrail.Model
         /// Enumerable containing all of the PublicKeyList
         /// </summary>
         public IPaginatedEnumerable<PublicKey> PublicKeyList => 
-            new PaginatedResultKeyResponse<ListPublicKeysResponse, PublicKey>(this, (i) => i.PublicKeyList);
+            new PaginatedResultKeyResponse<ListPublicKeysResponse, PublicKey>(this, (i) => i.PublicKeyList ?? new List<PublicKey>());
 
         internal ListPublicKeysPaginator(IAmazonCloudTrail client, ListPublicKeysRequest request)
         {

@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     public partial class RealTimeAlertConfiguration
     {
         private bool? _disabled;
-        private List<RealTimeAlertRule> _rules = new List<RealTimeAlertRule>();
+        private List<RealTimeAlertRule> _rules = AWSConfigs.InitializeCollections ? new List<RealTimeAlertRule>() : null;
 
         /// <summary>
         /// Gets and sets the property Disabled. 
@@ -71,7 +71,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -44,7 +44,7 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class DeleteAwsLogSourceRequest : AmazonSecurityLakeRequest
     {
-        private List<AwsLogSourceConfiguration> _sources = new List<AwsLogSourceConfiguration>();
+        private List<AwsLogSourceConfiguration> _sources = AWSConfigs.InitializeCollections ? new List<AwsLogSourceConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Sources. 
@@ -63,7 +63,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

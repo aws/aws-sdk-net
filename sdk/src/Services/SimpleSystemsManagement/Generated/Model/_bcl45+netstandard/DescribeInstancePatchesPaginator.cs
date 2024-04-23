@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the Patches
         /// </summary>
         public IPaginatedEnumerable<PatchComplianceData> Patches => 
-            new PaginatedResultKeyResponse<DescribeInstancePatchesResponse, PatchComplianceData>(this, (i) => i.Patches);
+            new PaginatedResultKeyResponse<DescribeInstancePatchesResponse, PatchComplianceData>(this, (i) => i.Patches ?? new List<PatchComplianceData>());
 
         internal DescribeInstancePatchesPaginator(IAmazonSimpleSystemsManagement client, DescribeInstancePatchesRequest request)
         {

@@ -35,7 +35,7 @@ namespace Amazon.AlexaForBusiness.Model
     {
         private ConnectionStatus _connectionStatus;
         private DateTime? _connectionStatusUpdatedTime;
-        private List<DeviceStatusDetail> _deviceStatusDetails = new List<DeviceStatusDetail>();
+        private List<DeviceStatusDetail> _deviceStatusDetails = AWSConfigs.InitializeCollections ? new List<DeviceStatusDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectionStatus. 
@@ -88,7 +88,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if DeviceStatusDetails property is set
         internal bool IsSetDeviceStatusDetails()
         {
-            return this._deviceStatusDetails != null && this._deviceStatusDetails.Count > 0; 
+            return this._deviceStatusDetails != null && (this._deviceStatusDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

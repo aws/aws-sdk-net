@@ -45,7 +45,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Enumerable containing all of the ScalingActivities
         /// </summary>
         public IPaginatedEnumerable<ScalingActivity> ScalingActivities => 
-            new PaginatedResultKeyResponse<DescribeScalingActivitiesResponse, ScalingActivity>(this, (i) => i.ScalingActivities);
+            new PaginatedResultKeyResponse<DescribeScalingActivitiesResponse, ScalingActivity>(this, (i) => i.ScalingActivities ?? new List<ScalingActivity>());
 
         internal DescribeScalingActivitiesPaginator(IAmazonApplicationAutoScaling client, DescribeScalingActivitiesRequest request)
         {

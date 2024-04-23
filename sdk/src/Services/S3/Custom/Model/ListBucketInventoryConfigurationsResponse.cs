@@ -27,7 +27,7 @@ namespace Amazon.S3.Model
     public partial class ListBucketInventoryConfigurationsResponse : AmazonWebServiceResponse
     {
         private string token;
-        private List<InventoryConfiguration> inventoryConfigurationList = new List<InventoryConfiguration>();
+        private List<InventoryConfiguration> inventoryConfigurationList = AWSConfigs.InitializeCollections ? new List<InventoryConfiguration>() : null;
         private bool? isTruncated;
         private string nextToken;
 
@@ -58,7 +58,7 @@ namespace Amazon.S3.Model
         // Check to see if InventoryConfigurationList property is set
         public bool IsSetInventoryConfigurationList()
         {
-            return this.inventoryConfigurationList.Count > 0;
+            return this.inventoryConfigurationList != null && (this.inventoryConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

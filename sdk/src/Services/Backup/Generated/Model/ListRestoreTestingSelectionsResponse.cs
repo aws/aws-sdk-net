@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model
     public partial class ListRestoreTestingSelectionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RestoreTestingSelectionForList> _restoreTestingSelections = new List<RestoreTestingSelectionForList>();
+        private List<RestoreTestingSelectionForList> _restoreTestingSelections = AWSConfigs.InitializeCollections ? new List<RestoreTestingSelectionForList>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +72,7 @@ namespace Amazon.Backup.Model
         // Check to see if RestoreTestingSelections property is set
         internal bool IsSetRestoreTestingSelections()
         {
-            return this._restoreTestingSelections != null && this._restoreTestingSelections.Count > 0; 
+            return this._restoreTestingSelections != null && (this._restoreTestingSelections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

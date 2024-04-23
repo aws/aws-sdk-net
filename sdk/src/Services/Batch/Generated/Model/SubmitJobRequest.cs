@@ -54,19 +54,19 @@ namespace Amazon.Batch.Model
     {
         private ArrayProperties _arrayProperties;
         private ContainerOverrides _containerOverrides;
-        private List<JobDependency> _dependsOn = new List<JobDependency>();
+        private List<JobDependency> _dependsOn = AWSConfigs.InitializeCollections ? new List<JobDependency>() : null;
         private EcsPropertiesOverride _ecsPropertiesOverride;
         private EksPropertiesOverride _eksPropertiesOverride;
         private string _jobDefinition;
         private string _jobName;
         private string _jobQueue;
         private NodeOverrides _nodeOverrides;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
         private int? _schedulingPriorityOverride;
         private string _shareIdentifier;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private JobTimeout _timeout;
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.Batch.Model
         // Check to see if DependsOn property is set
         internal bool IsSetDependsOn()
         {
-            return this._dependsOn != null && this._dependsOn.Count > 0; 
+            return this._dependsOn != null && (this._dependsOn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -285,7 +285,7 @@ namespace Amazon.Batch.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -400,7 +400,7 @@ namespace Amazon.Batch.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

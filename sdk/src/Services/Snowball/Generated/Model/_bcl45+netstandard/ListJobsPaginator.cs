@@ -45,7 +45,7 @@ namespace Amazon.Snowball.Model
         /// Enumerable containing all of the JobListEntries
         /// </summary>
         public IPaginatedEnumerable<JobListEntry> JobListEntries => 
-            new PaginatedResultKeyResponse<ListJobsResponse, JobListEntry>(this, (i) => i.JobListEntries);
+            new PaginatedResultKeyResponse<ListJobsResponse, JobListEntry>(this, (i) => i.JobListEntries ?? new List<JobListEntry>());
 
         internal ListJobsPaginator(IAmazonSnowball client, ListJobsRequest request)
         {

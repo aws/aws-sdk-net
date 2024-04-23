@@ -29,16 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Result item returned from a knowledge base retrieval.
+    /// Details about a result from querying the knowledge base.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+    /// response</a> – in the <c>retrievalResults</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class KnowledgeBaseRetrievalResult
     {
         private RetrievalResultContent _content;
         private RetrievalResultLocation _location;
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
         private double? _score;
 
         /// <summary>
-        /// Gets and sets the property Content.
+        /// Gets and sets the property Content. 
+        /// <para>
+        /// Contains a chunk of text from a data source in the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public RetrievalResultContent Content
@@ -54,7 +69,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location.
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// Contains information about the location of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public RetrievalResultLocation Location
@@ -70,9 +88,30 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Contains metadata attributes and their values for the file in the data source. For
+        /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+        /// and filtering</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1)]
+        public Dictionary<string, Amazon.Runtime.Documents.Document> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        /// The relevance score of a result.
+        /// The level of relevance of the result to the query.
         /// </para>
         /// </summary>
         public double Score

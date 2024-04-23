@@ -81,7 +81,7 @@ namespace Amazon.ChimeSDKMeetings.Model
     public partial class BatchUpdateAttendeeCapabilitiesExceptRequest : AmazonChimeSDKMeetingsRequest
     {
         private AttendeeCapabilities _capabilities;
-        private List<AttendeeIdItem> _excludedAttendeeIds = new List<AttendeeIdItem>();
+        private List<AttendeeIdItem> _excludedAttendeeIds = AWSConfigs.InitializeCollections ? new List<AttendeeIdItem>() : null;
         private string _meetingId;
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         // Check to see if ExcludedAttendeeIds property is set
         internal bool IsSetExcludedAttendeeIds()
         {
-            return this._excludedAttendeeIds != null && this._excludedAttendeeIds.Count > 0; 
+            return this._excludedAttendeeIds != null && (this._excludedAttendeeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

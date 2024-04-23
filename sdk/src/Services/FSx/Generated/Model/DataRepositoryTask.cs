@@ -61,13 +61,13 @@ namespace Amazon.FSx.Model
         private string _fileCacheId;
         private string _fileSystemId;
         private DataRepositoryTaskLifecycle _lifecycle;
-        private List<string> _paths = new List<string>();
+        private List<string> _paths = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ReleaseConfiguration _releaseConfiguration;
         private CompletionReport _report;
         private string _resourceARN;
         private DateTime? _startTime;
         private DataRepositoryTaskStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _taskId;
         private DataRepositoryTaskType _type;
 
@@ -258,7 +258,7 @@ namespace Amazon.FSx.Model
         // Check to see if Paths property is set
         internal bool IsSetPaths()
         {
-            return this._paths != null && this._paths.Count > 0; 
+            return this._paths != null && (this._paths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -361,7 +361,7 @@ namespace Amazon.FSx.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

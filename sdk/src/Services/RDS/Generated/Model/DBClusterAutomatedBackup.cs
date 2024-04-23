@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
     public partial class DBClusterAutomatedBackup
     {
         private int? _allocatedStorage;
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _awsBackupRecoveryPointArn;
         private int? _backupRetentionPeriod;
         private DateTime? _clusterCreateTime;
@@ -99,7 +99,7 @@ namespace Amazon.RDS.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

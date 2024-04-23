@@ -34,7 +34,7 @@ namespace Amazon.NeptuneGraph.Model
     public partial class EdgeStructure
     {
         private long? _count;
-        private List<string> _edgeProperties = new List<string>();
+        private List<string> _edgeProperties = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Count. 
@@ -69,7 +69,7 @@ namespace Amazon.NeptuneGraph.Model
         // Check to see if EdgeProperties property is set
         internal bool IsSetEdgeProperties()
         {
-            return this._edgeProperties != null && this._edgeProperties.Count > 0; 
+            return this._edgeProperties != null && (this._edgeProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

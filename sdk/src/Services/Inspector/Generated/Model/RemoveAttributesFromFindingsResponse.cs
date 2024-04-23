@@ -33,7 +33,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class RemoveAttributesFromFindingsResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, FailedItemDetails> _failedItems = new Dictionary<string, FailedItemDetails>();
+        private Dictionary<string, FailedItemDetails> _failedItems = AWSConfigs.InitializeCollections ? new Dictionary<string, FailedItemDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedItems. 
@@ -52,7 +52,7 @@ namespace Amazon.Inspector.Model
         // Check to see if FailedItems property is set
         internal bool IsSetFailedItems()
         {
-            return this._failedItems != null && this._failedItems.Count > 0; 
+            return this._failedItems != null && (this._failedItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,10 +63,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConfigDeliveryS3DestinationArn", StringUtils.FromString(publicRequest.ConfigDeliveryS3DestinationArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFlowLogId())
                 {
                     request.Parameters.Add("FlowLogId", StringUtils.FromString(publicRequest.FlowLogId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIntegrateServices())
                 {
                     if(publicRequest.IntegrateServices.IsSetAthenaIntegrations())
@@ -77,22 +80,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "IntegrationResultS3DestinationArn", StringUtils.FromString(publicRequestIntegrateServiceslistValue.IntegrationResultS3DestinationArn));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestIntegrateServiceslistValue.IsSetPartitionEndDate())
                             {
-                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionEndDate", StringUtils.FromDateTimeToISO8601(publicRequestIntegrateServiceslistValue.PartitionEndDate));
+                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionEndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestIntegrateServiceslistValue.PartitionEndDate));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestIntegrateServiceslistValue.IsSetPartitionLoadFrequency())
                             {
                                 request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionLoadFrequency", StringUtils.FromString(publicRequestIntegrateServiceslistValue.PartitionLoadFrequency));
                             }
+#pragma warning restore CS0612,CS0618
                             if(publicRequestIntegrateServiceslistValue.IsSetPartitionStartDate())
                             {
-                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionStartDate", StringUtils.FromDateTimeToISO8601(publicRequestIntegrateServiceslistValue.PartitionStartDate));
+                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionStartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestIntegrateServiceslistValue.PartitionStartDate));
                             }
+#pragma warning restore CS0612,CS0618
                             publicRequestIntegrateServiceslistValueIndex++;
                         }
                     }
+#pragma warning restore CS0612,CS0618
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

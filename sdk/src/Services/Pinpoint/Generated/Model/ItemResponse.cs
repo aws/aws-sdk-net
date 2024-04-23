@@ -35,7 +35,7 @@ namespace Amazon.Pinpoint.Model
     public partial class ItemResponse
     {
         private EndpointItemResponse _endpointItemResponse;
-        private Dictionary<string, EventItemResponse> _eventsItemResponse = new Dictionary<string, EventItemResponse>();
+        private Dictionary<string, EventItemResponse> _eventsItemResponse = AWSConfigs.InitializeCollections ? new Dictionary<string, EventItemResponse>() : null;
 
         /// <summary>
         /// Gets and sets the property EndpointItemResponse. 
@@ -72,7 +72,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if EventsItemResponse property is set
         internal bool IsSetEventsItemResponse()
         {
-            return this._eventsItemResponse != null && this._eventsItemResponse.Count > 0; 
+            return this._eventsItemResponse != null && (this._eventsItemResponse.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

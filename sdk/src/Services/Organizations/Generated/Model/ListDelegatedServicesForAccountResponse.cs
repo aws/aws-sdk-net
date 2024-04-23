@@ -33,7 +33,7 @@ namespace Amazon.Organizations.Model
     /// </summary>
     public partial class ListDelegatedServicesForAccountResponse : AmazonWebServiceResponse
     {
-        private List<DelegatedService> _delegatedServices = new List<DelegatedService>();
+        private List<DelegatedService> _delegatedServices = AWSConfigs.InitializeCollections ? new List<DelegatedService>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.Organizations.Model
         // Check to see if DelegatedServices property is set
         internal bool IsSetDelegatedServices()
         {
-            return this._delegatedServices != null && this._delegatedServices.Count > 0; 
+            return this._delegatedServices != null && (this._delegatedServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

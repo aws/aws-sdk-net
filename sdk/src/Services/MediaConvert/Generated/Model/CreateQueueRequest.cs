@@ -40,7 +40,7 @@ namespace Amazon.MediaConvert.Model
         private PricingPlan _pricingPlan;
         private ReservationPlanSettings _reservationPlanSettings;
         private QueueStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. Optional. A description of the queue that
@@ -139,7 +139,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

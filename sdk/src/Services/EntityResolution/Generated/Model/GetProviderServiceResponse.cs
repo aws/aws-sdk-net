@@ -34,10 +34,13 @@ namespace Amazon.EntityResolution.Model
     public partial class GetProviderServiceResponse : AmazonWebServiceResponse
     {
         private bool? _anonymizedOutput;
+        private ProviderComponentSchema _providerComponentSchema;
         private Amazon.Runtime.Documents.Document _providerConfigurationDefinition;
         private ProviderEndpointConfiguration _providerEndpointConfiguration;
         private Amazon.Runtime.Documents.Document _providerEntityOutputDefinition;
+        private ProviderIdNameSpaceConfiguration _providerIdNameSpaceConfiguration;
         private ProviderIntermediateDataAccessConfiguration _providerIntermediateDataAccessConfiguration;
+        private Amazon.Runtime.Documents.Document _providerJobConfiguration;
         private string _providerName;
         private string _providerServiceArn;
         private string _providerServiceDisplayName;
@@ -65,6 +68,24 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetAnonymizedOutput()
         {
             return this._anonymizedOutput.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProviderComponentSchema. 
+        /// <para>
+        /// Input schema for the provider service.
+        /// </para>
+        /// </summary>
+        public ProviderComponentSchema ProviderComponentSchema
+        {
+            get { return this._providerComponentSchema; }
+            set { this._providerComponentSchema = value; }
+        }
+
+        // Check to see if ProviderComponentSchema property is set
+        internal bool IsSetProviderComponentSchema()
+        {
+            return this._providerComponentSchema != null;
         }
 
         /// <summary>
@@ -124,6 +145,24 @@ namespace Amazon.EntityResolution.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProviderIdNameSpaceConfiguration. 
+        /// <para>
+        /// The provider configuration required for different ID namespace types.
+        /// </para>
+        /// </summary>
+        public ProviderIdNameSpaceConfiguration ProviderIdNameSpaceConfiguration
+        {
+            get { return this._providerIdNameSpaceConfiguration; }
+            set { this._providerIdNameSpaceConfiguration = value; }
+        }
+
+        // Check to see if ProviderIdNameSpaceConfiguration property is set
+        internal bool IsSetProviderIdNameSpaceConfiguration()
+        {
+            return this._providerIdNameSpaceConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProviderIntermediateDataAccessConfiguration. 
         /// <para>
         /// The Amazon Web Services accounts and the S3 permissions that are required by some
@@ -140,6 +179,24 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetProviderIntermediateDataAccessConfiguration()
         {
             return this._providerIntermediateDataAccessConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProviderJobConfiguration. 
+        /// <para>
+        /// Provider service job configurations.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document ProviderJobConfiguration
+        {
+            get { return this._providerJobConfiguration; }
+            set { this._providerJobConfiguration = value; }
+        }
+
+        // Check to see if ProviderJobConfiguration property is set
+        internal bool IsSetProviderJobConfiguration()
+        {
+            return !this._providerJobConfiguration.IsNull();
         }
 
         /// <summary>

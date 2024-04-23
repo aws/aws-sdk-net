@@ -72,7 +72,7 @@ namespace Amazon.QConnect.Model
         private RenderingConfiguration _renderingConfiguration;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
         private SourceConfiguration _sourceConfiguration;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -182,12 +182,12 @@ namespace Amazon.QConnect.Model
         /// <para>
         /// This KMS key must have a policy that allows <c>kms:CreateGrant</c>, <c>kms:DescribeKey</c>,
         /// <c>kms:Decrypt</c>, and <c>kms:GenerateDataKey*</c> permissions to the IAM identity
-        /// using the key to invoke Amazon Q.
+        /// using the key to invoke Amazon Q in Connect.
         /// </para>
         ///  
         /// <para>
-        /// For more information about setting up a customer managed key for Amazon Q, see <a
-        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
+        /// For more information about setting up a customer managed key for Amazon Q in Connect,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
         /// Amazon Q in Connect for your instance</a>.
         /// </para>
         /// </summary>
@@ -237,7 +237,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

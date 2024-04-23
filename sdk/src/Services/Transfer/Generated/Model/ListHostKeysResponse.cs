@@ -33,7 +33,7 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class ListHostKeysResponse : AmazonWebServiceResponse
     {
-        private List<ListedHostKey> _hostKeys = new List<ListedHostKey>();
+        private List<ListedHostKey> _hostKeys = AWSConfigs.InitializeCollections ? new List<ListedHostKey>() : null;
         private string _nextToken;
         private string _serverId;
 
@@ -53,7 +53,7 @@ namespace Amazon.Transfer.Model
         // Check to see if HostKeys property is set
         internal bool IsSetHostKeys()
         {
-            return this._hostKeys != null && this._hostKeys.Count > 0; 
+            return this._hostKeys != null && (this._hostKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

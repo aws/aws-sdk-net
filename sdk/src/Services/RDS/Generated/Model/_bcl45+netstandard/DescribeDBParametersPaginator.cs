@@ -45,7 +45,7 @@ namespace Amazon.RDS.Model
         /// Enumerable containing all of the Parameters
         /// </summary>
         public IPaginatedEnumerable<Parameter> Parameters => 
-            new PaginatedResultKeyResponse<DescribeDBParametersResponse, Parameter>(this, (i) => i.Parameters);
+            new PaginatedResultKeyResponse<DescribeDBParametersResponse, Parameter>(this, (i) => i.Parameters ?? new List<Parameter>());
 
         internal DescribeDBParametersPaginator(IAmazonRDS client, DescribeDBParametersRequest request)
         {

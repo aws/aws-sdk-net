@@ -33,8 +33,8 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class CheckoutBorrowLicenseResponse : AmazonWebServiceResponse
     {
-        private List<Metadata> _checkoutMetadata = new List<Metadata>();
-        private List<EntitlementData> _entitlementsAllowed = new List<EntitlementData>();
+        private List<Metadata> _checkoutMetadata = AWSConfigs.InitializeCollections ? new List<Metadata>() : null;
+        private List<EntitlementData> _entitlementsAllowed = AWSConfigs.InitializeCollections ? new List<EntitlementData>() : null;
         private string _expiration;
         private string _issuedAt;
         private string _licenseArn;
@@ -57,7 +57,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if CheckoutMetadata property is set
         internal bool IsSetCheckoutMetadata()
         {
-            return this._checkoutMetadata != null && this._checkoutMetadata.Count > 0; 
+            return this._checkoutMetadata != null && (this._checkoutMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if EntitlementsAllowed property is set
         internal bool IsSetEntitlementsAllowed()
         {
-            return this._entitlementsAllowed != null && this._entitlementsAllowed.Count > 0; 
+            return this._entitlementsAllowed != null && (this._entitlementsAllowed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

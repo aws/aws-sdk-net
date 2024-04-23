@@ -45,7 +45,7 @@ namespace Amazon.LaunchWizard.Model
         /// Enumerable containing all of the WorkloadDeploymentPatterns
         /// </summary>
         public IPaginatedEnumerable<WorkloadDeploymentPatternDataSummary> WorkloadDeploymentPatterns => 
-            new PaginatedResultKeyResponse<ListWorkloadDeploymentPatternsResponse, WorkloadDeploymentPatternDataSummary>(this, (i) => i.WorkloadDeploymentPatterns);
+            new PaginatedResultKeyResponse<ListWorkloadDeploymentPatternsResponse, WorkloadDeploymentPatternDataSummary>(this, (i) => i.WorkloadDeploymentPatterns ?? new List<WorkloadDeploymentPatternDataSummary>());
 
         internal ListWorkloadDeploymentPatternsPaginator(IAmazonLaunchWizard client, ListWorkloadDeploymentPatternsRequest request)
         {

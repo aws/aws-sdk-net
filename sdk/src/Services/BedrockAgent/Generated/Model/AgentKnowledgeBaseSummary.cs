@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Agent Knowledge Base Summary
+    /// Contains details about a knowledge base associated with an agent.
     /// </summary>
     public partial class AgentKnowledgeBaseSummary
     {
@@ -39,7 +39,10 @@ namespace Amazon.BedrockAgent.Model
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the knowledge base associated with an agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -55,7 +58,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base associated with an agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId
@@ -71,7 +77,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseState.
+        /// Gets and sets the property KnowledgeBaseState. 
+        /// <para>
+        /// Specifies whether the agent uses the knowledge base or not when sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
+        /// request.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public KnowledgeBaseState KnowledgeBaseState
@@ -87,7 +97,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The time at which the knowledge base associated with an agent was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime UpdatedAt

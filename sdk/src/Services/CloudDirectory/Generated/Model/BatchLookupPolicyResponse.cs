@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model
     public partial class BatchLookupPolicyResponse
     {
         private string _nextToken;
-        private List<PolicyToPath> _policyToPathList = new List<PolicyToPath>();
+        private List<PolicyToPath> _policyToPathList = AWSConfigs.InitializeCollections ? new List<PolicyToPath>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if PolicyToPathList property is set
         internal bool IsSetPolicyToPathList()
         {
-            return this._policyToPathList != null && this._policyToPathList.Count > 0; 
+            return this._policyToPathList != null && (this._policyToPathList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeScalingActivitiesResponse : AmazonWebServiceResponse
     {
-        private List<Activity> _activities = new List<Activity>();
+        private List<Activity> _activities = AWSConfigs.InitializeCollections ? new List<Activity>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Activities property is set
         internal bool IsSetActivities()
         {
-            return this._activities != null && this._activities.Count > 0; 
+            return this._activities != null && (this._activities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

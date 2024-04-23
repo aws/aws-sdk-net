@@ -36,13 +36,13 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class StartDataQualityRulesetEvaluationRunRequest : AmazonGlueRequest
     {
-        private Dictionary<string, DataSource> _additionalDataSources = new Dictionary<string, DataSource>();
+        private Dictionary<string, DataSource> _additionalDataSources = AWSConfigs.InitializeCollections ? new Dictionary<string, DataSource>() : null;
         private DataQualityEvaluationRunAdditionalRunOptions _additionalRunOptions;
         private string _clientToken;
         private DataSource _dataSource;
         private int? _numberOfWorkers;
         private string _role;
-        private List<string> _rulesetNames = new List<string>();
+        private List<string> _rulesetNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _timeout;
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model
         // Check to see if AdditionalDataSources property is set
         internal bool IsSetAdditionalDataSources()
         {
-            return this._additionalDataSources != null && this._additionalDataSources.Count > 0; 
+            return this._additionalDataSources != null && (this._additionalDataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.Glue.Model
         // Check to see if RulesetNames property is set
         internal bool IsSetRulesetNames()
         {
-            return this._rulesetNames != null && this._rulesetNames.Count > 0; 
+            return this._rulesetNames != null && (this._rulesetNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

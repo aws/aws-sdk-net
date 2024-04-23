@@ -34,7 +34,7 @@ namespace Amazon.RAM.Model
     public partial class GetResourceShareAssociationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceShareAssociation> _resourceShareAssociations = new List<ResourceShareAssociation>();
+        private List<ResourceShareAssociation> _resourceShareAssociations = AWSConfigs.InitializeCollections ? new List<ResourceShareAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +73,7 @@ namespace Amazon.RAM.Model
         // Check to see if ResourceShareAssociations property is set
         internal bool IsSetResourceShareAssociations()
         {
-            return this._resourceShareAssociations != null && this._resourceShareAssociations.Count > 0; 
+            return this._resourceShareAssociations != null && (this._resourceShareAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

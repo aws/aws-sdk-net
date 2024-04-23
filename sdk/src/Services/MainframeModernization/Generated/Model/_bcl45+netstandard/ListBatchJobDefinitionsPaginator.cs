@@ -45,7 +45,7 @@ namespace Amazon.MainframeModernization.Model
         /// Enumerable containing all of the BatchJobDefinitions
         /// </summary>
         public IPaginatedEnumerable<BatchJobDefinition> BatchJobDefinitions => 
-            new PaginatedResultKeyResponse<ListBatchJobDefinitionsResponse, BatchJobDefinition>(this, (i) => i.BatchJobDefinitions);
+            new PaginatedResultKeyResponse<ListBatchJobDefinitionsResponse, BatchJobDefinition>(this, (i) => i.BatchJobDefinitions ?? new List<BatchJobDefinition>());
 
         internal ListBatchJobDefinitionsPaginator(IAmazonMainframeModernization client, ListBatchJobDefinitionsRequest request)
         {

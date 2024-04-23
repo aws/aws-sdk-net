@@ -35,13 +35,13 @@ namespace Amazon.Backup.Model
     {
         private string _accountId;
         private string _backupJobId;
-        private Dictionary<string, string> _backupOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _backupOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private long? _backupSizeInBytes;
         private string _backupType;
         private string _backupVaultArn;
         private string _backupVaultName;
         private long? _bytesTransferred;
-        private Dictionary<string, long> _childJobsInState = new Dictionary<string, long>();
+        private Dictionary<string, long> _childJobsInState = AWSConfigs.InitializeCollections ? new Dictionary<string, long>() : null;
         private DateTime? _completionDate;
         private RecoveryPointCreator _createdBy;
         private DateTime? _creationDate;
@@ -112,7 +112,7 @@ namespace Amazon.Backup.Model
         // Check to see if BackupOptions property is set
         internal bool IsSetBackupOptions()
         {
-            return this._backupOptions != null && this._backupOptions.Count > 0; 
+            return this._backupOptions != null && (this._backupOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Amazon.Backup.Model
         // Check to see if ChildJobsInState property is set
         internal bool IsSetChildJobsInState()
         {
-            return this._childJobsInState != null && this._childJobsInState.Count > 0; 
+            return this._childJobsInState != null && (this._childJobsInState.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

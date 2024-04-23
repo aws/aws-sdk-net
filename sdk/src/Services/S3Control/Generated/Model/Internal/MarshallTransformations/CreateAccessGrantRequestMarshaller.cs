@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,55 +67,52 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateAccessGrantRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
-                
-                if (publicRequest.AccessGrantsLocationConfiguration != null) 
+                xmlWriter.WriteStartElement("CreateAccessGrantRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                if (publicRequest.AccessGrantsLocationConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("AccessGrantsLocationConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                    xmlWriter.WriteStartElement("AccessGrantsLocationConfiguration");
                     if(publicRequest.AccessGrantsLocationConfiguration.IsSetS3SubPrefix())
-                        xmlWriter.WriteElementString("S3SubPrefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.AccessGrantsLocationConfiguration.S3SubPrefix));                 
+                        xmlWriter.WriteElementString("S3SubPrefix", StringUtils.FromString(publicRequest.AccessGrantsLocationConfiguration.S3SubPrefix));                 
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetAccessGrantsLocationId())
-                    xmlWriter.WriteElementString("AccessGrantsLocationId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.AccessGrantsLocationId));                    
+                    xmlWriter.WriteElementString("AccessGrantsLocationId", StringUtils.FromString(publicRequest.AccessGrantsLocationId));
 
                 if(publicRequest.IsSetApplicationArn())
-                    xmlWriter.WriteElementString("ApplicationArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ApplicationArn));                    
+                    xmlWriter.WriteElementString("ApplicationArn", StringUtils.FromString(publicRequest.ApplicationArn));
 
-                
-                if (publicRequest.Grantee != null) 
+                if (publicRequest.Grantee != null)
                 {
-                    xmlWriter.WriteStartElement("Grantee", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                    xmlWriter.WriteStartElement("Grantee");
                     if(publicRequest.Grantee.IsSetGranteeIdentifier())
-                        xmlWriter.WriteElementString("GranteeIdentifier", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Grantee.GranteeIdentifier));                 
+                        xmlWriter.WriteElementString("GranteeIdentifier", StringUtils.FromString(publicRequest.Grantee.GranteeIdentifier));                 
 
                     if(publicRequest.Grantee.IsSetGranteeType())
-                        xmlWriter.WriteElementString("GranteeType", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Grantee.GranteeType));                 
+                        xmlWriter.WriteElementString("GranteeType", StringUtils.FromString(publicRequest.Grantee.GranteeType));                 
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetPermission())
-                    xmlWriter.WriteElementString("Permission", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Permission));                    
+                    xmlWriter.WriteElementString("Permission", StringUtils.FromString(publicRequest.Permission));
 
                 if(publicRequest.IsSetS3PrefixType())
-                    xmlWriter.WriteElementString("S3PrefixType", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.S3PrefixType));                    
+                    xmlWriter.WriteElementString("S3PrefixType", StringUtils.FromString(publicRequest.S3PrefixType));
 
                 var publicRequestTags = publicRequest.Tags;
-                if (publicRequestTags != null && publicRequestTags.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("Tags", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                {
+                    xmlWriter.WriteStartElement("Tags");
                     foreach (var publicRequestTagsValue in publicRequestTags) 
                     {
-                
-                    if (publicRequestTagsValue != null) 
+                    if (publicRequestTagsValue != null)
                     {
-                        xmlWriter.WriteStartElement("Tag", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        xmlWriter.WriteStartElement("Tag");
                         if(publicRequestTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestTagsValue.Key));                 
+                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));                 
 
                         if(publicRequestTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestTagsValue.Value));                 
+                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -159,3 +157,4 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
     }    
 }
+#pragma warning restore CS0612,CS0618

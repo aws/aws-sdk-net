@@ -33,8 +33,8 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class DetectedProfileObjectType
     {
-        private Dictionary<string, ObjectTypeField> _fields = new Dictionary<string, ObjectTypeField>();
-        private Dictionary<string, List<ObjectTypeKey>> _keys = new Dictionary<string, List<ObjectTypeKey>>();
+        private Dictionary<string, ObjectTypeField> _fields = AWSConfigs.InitializeCollections ? new Dictionary<string, ObjectTypeField>() : null;
+        private Dictionary<string, List<ObjectTypeKey>> _keys = AWSConfigs.InitializeCollections ? new Dictionary<string, List<ObjectTypeKey>>() : null;
         private string _sourceLastUpdatedTimestampFormat;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

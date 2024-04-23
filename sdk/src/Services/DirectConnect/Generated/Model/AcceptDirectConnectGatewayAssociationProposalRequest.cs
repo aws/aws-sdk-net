@@ -37,7 +37,7 @@ namespace Amazon.DirectConnect.Model
     {
         private string _associatedGatewayOwnerAccount;
         private string _directConnectGatewayId;
-        private List<RouteFilterPrefix> _overrideAllowedPrefixesToDirectConnectGateway = new List<RouteFilterPrefix>();
+        private List<RouteFilterPrefix> _overrideAllowedPrefixesToDirectConnectGateway = AWSConfigs.InitializeCollections ? new List<RouteFilterPrefix>() : null;
         private string _proposalId;
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if OverrideAllowedPrefixesToDirectConnectGateway property is set
         internal bool IsSetOverrideAllowedPrefixesToDirectConnectGateway()
         {
-            return this._overrideAllowedPrefixesToDirectConnectGateway != null && this._overrideAllowedPrefixesToDirectConnectGateway.Count > 0; 
+            return this._overrideAllowedPrefixesToDirectConnectGateway != null && (this._overrideAllowedPrefixesToDirectConnectGateway.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

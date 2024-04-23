@@ -33,7 +33,7 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class ListMailboxExportJobsResponse : AmazonWebServiceResponse
     {
-        private List<MailboxExportJob> _jobs = new List<MailboxExportJob>();
+        private List<MailboxExportJob> _jobs = AWSConfigs.InitializeCollections ? new List<MailboxExportJob>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

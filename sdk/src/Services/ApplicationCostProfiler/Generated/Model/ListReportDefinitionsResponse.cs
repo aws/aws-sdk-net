@@ -34,7 +34,7 @@ namespace Amazon.ApplicationCostProfiler.Model
     public partial class ListReportDefinitionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReportDefinition> _reportDefinitions = new List<ReportDefinition>();
+        private List<ReportDefinition> _reportDefinitions = AWSConfigs.InitializeCollections ? new List<ReportDefinition>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +70,7 @@ namespace Amazon.ApplicationCostProfiler.Model
         // Check to see if ReportDefinitions property is set
         internal bool IsSetReportDefinitions()
         {
-            return this._reportDefinitions != null && this._reportDefinitions.Count > 0; 
+            return this._reportDefinitions != null && (this._reportDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

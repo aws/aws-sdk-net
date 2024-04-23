@@ -33,9 +33,9 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class WaterfallChartAggregatedFieldWells
     {
-        private List<DimensionField> _breakdowns = new List<DimensionField>();
-        private List<DimensionField> _categories = new List<DimensionField>();
-        private List<MeasureField> _values = new List<MeasureField>();
+        private List<DimensionField> _breakdowns = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<DimensionField> _categories = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<MeasureField> _values = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
 
         /// <summary>
         /// Gets and sets the property Breakdowns. 
@@ -53,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Breakdowns property is set
         internal bool IsSetBreakdowns()
         {
-            return this._breakdowns != null && this._breakdowns.Count > 0; 
+            return this._breakdowns != null && (this._breakdowns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Categories property is set
         internal bool IsSetCategories()
         {
-            return this._categories != null && this._categories.Count > 0; 
+            return this._categories != null && (this._categories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

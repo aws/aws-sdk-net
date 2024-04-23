@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,20 +59,28 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";
             request.HttpMethod = "GET";
 
-            
             if (publicRequest.IsSetFilters())
             {
                 foreach(var kvp in publicRequest.Filters)
                 {
-                    request.ParameterCollection.Add(kvp.Key, kvp.Value);
+                    if(request.ParameterCollection.ContainsKey(kvp.Key))
+                       continue;
+                    else
+                       request.ParameterCollection.Add(kvp.Key, kvp.Value);
                 }
             }
-            
             if (publicRequest.IsSetMaxResults())
+            {
+                if(request.Parameters.ContainsKey("maxResults"))
+                   request.Parameters.Remove("maxResults");
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
+            }
             if (publicRequest.IsSetNextToken())
+            {
+                if(request.Parameters.ContainsKey("nextToken"))
+                   request.Parameters.Remove("nextToken");
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            }
             request.ResourcePath = "/scrapers";
             request.UseQueryString = true;
 
@@ -97,3 +106,4 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

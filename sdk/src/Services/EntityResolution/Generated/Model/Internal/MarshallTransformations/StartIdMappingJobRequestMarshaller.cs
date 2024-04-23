@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -55,6 +56,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartIdMappingJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EntityResolution");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
@@ -62,6 +64,33 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 throw new AmazonEntityResolutionException("Request object does not have required field WorkflowName set");
             request.AddPathResource("{workflowName}", StringUtils.FromString(publicRequest.WorkflowName));
             request.ResourcePath = "/idmappingworkflows/{workflowName}/jobs";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetOutputSourceConfig())
+                {
+                    context.Writer.WritePropertyName("outputSourceConfig");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestOutputSourceConfigListValue in publicRequest.OutputSourceConfig)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IdMappingJobOutputSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestOutputSourceConfigListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
 
             return request;
         }
@@ -85,3 +114,4 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

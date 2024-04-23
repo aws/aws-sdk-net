@@ -33,7 +33,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class ListFargateProfilesResponse : AmazonWebServiceResponse
     {
-        private List<string> _fargateProfileNames = new List<string>();
+        private List<string> _fargateProfileNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.EKS.Model
         // Check to see if FargateProfileNames property is set
         internal bool IsSetFargateProfileNames()
         {
-            return this._fargateProfileNames != null && this._fargateProfileNames.Count > 0; 
+            return this._fargateProfileNames != null && (this._fargateProfileNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeWorkspaceImagesResponse : AmazonWebServiceResponse
     {
-        private List<WorkspaceImage> _images = new List<WorkspaceImage>();
+        private List<WorkspaceImage> _images = AWSConfigs.InitializeCollections ? new List<WorkspaceImage>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Images property is set
         internal bool IsSetImages()
         {
-            return this._images != null && this._images.Count > 0; 
+            return this._images != null && (this._images.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -32,7 +32,7 @@ namespace Amazon.VoiceID
     public partial class AmazonVoiceIDConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Voice ID", "3.7.300.54");
+            InternalSDKUtils.BuildUserAgentString("Voice ID", "3.7.300.79");
 
         private string _userAgent = UserAgentString;
         ///<summary>

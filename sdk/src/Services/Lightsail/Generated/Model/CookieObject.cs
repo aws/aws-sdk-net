@@ -40,7 +40,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class CookieObject
     {
-        private List<string> _cookiesAllowList = new List<string>();
+        private List<string> _cookiesAllowList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ForwardValues _option;
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if CookiesAllowList property is set
         internal bool IsSetCookiesAllowList()
         {
-            return this._cookiesAllowList != null && this._cookiesAllowList.Count > 0; 
+            return this._cookiesAllowList != null && (this._cookiesAllowList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListEdgeDeploymentPlansResponse : AmazonWebServiceResponse
     {
-        private List<EdgeDeploymentPlanSummary> _edgeDeploymentPlanSummaries = new List<EdgeDeploymentPlanSummary>();
+        private List<EdgeDeploymentPlanSummary> _edgeDeploymentPlanSummaries = AWSConfigs.InitializeCollections ? new List<EdgeDeploymentPlanSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if EdgeDeploymentPlanSummaries property is set
         internal bool IsSetEdgeDeploymentPlanSummaries()
         {
-            return this._edgeDeploymentPlanSummaries != null && this._edgeDeploymentPlanSummaries.Count > 0; 
+            return this._edgeDeploymentPlanSummaries != null && (this._edgeDeploymentPlanSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

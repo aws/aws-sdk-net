@@ -29,15 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// List Agent Aliases Response
+    /// This is the response object from the ListAgentAliases operation.
     /// </summary>
     public partial class ListAgentAliasesResponse : AmazonWebServiceResponse
     {
-        private List<AgentAliasSummary> _agentAliasSummaries = new List<AgentAliasSummary>();
+        private List<AgentAliasSummary> _agentAliasSummaries = AWSConfigs.InitializeCollections ? new List<AgentAliasSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property AgentAliasSummaries.
+        /// Gets and sets the property AgentAliasSummaries. 
+        /// <para>
+        /// A list of objects, each of which contains information about an alias of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
         public List<AgentAliasSummary> AgentAliasSummaries
@@ -49,11 +52,16 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if AgentAliasSummaries property is set
         internal bool IsSetAgentAliasSummaries()
         {
-            return this._agentAliasSummaries != null && this._agentAliasSummaries.Count > 0; 
+            return this._agentAliasSummaries != null && (this._agentAliasSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the total number of results is greater than the <c>maxResults</c> value provided
+        /// in the request, use this token when making another request in the <c>nextToken</c>
+        /// field to return the next batch of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string NextToken

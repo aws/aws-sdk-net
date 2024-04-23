@@ -38,14 +38,14 @@ namespace Amazon.QConnect.Model
     public partial class NotifyRecommendationsReceivedRequest : AmazonQConnectRequest
     {
         private string _assistantId;
-        private List<string> _recommendationIds = new List<string>();
+        private List<string> _recommendationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sessionId;
 
         /// <summary>
         /// Gets and sets the property AssistantId. 
         /// <para>
-        /// The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot
-        /// contain the ARN.
+        /// The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN.
+        /// URLs cannot contain the ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,7 +77,7 @@ namespace Amazon.QConnect.Model
         // Check to see if RecommendationIds property is set
         internal bool IsSetRecommendationIds()
         {
-            return this._recommendationIds != null && this._recommendationIds.Count > 0; 
+            return this._recommendationIds != null && (this._recommendationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

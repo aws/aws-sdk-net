@@ -33,11 +33,11 @@ namespace Amazon.CodeGuruSecurity.Model
     /// </summary>
     public partial class MetricsSummary
     {
-        private List<CategoryWithFindingNum> _categoriesWithMostFindings = new List<CategoryWithFindingNum>();
+        private List<CategoryWithFindingNum> _categoriesWithMostFindings = AWSConfigs.InitializeCollections ? new List<CategoryWithFindingNum>() : null;
         private DateTime? _date;
         private FindingMetricsValuePerSeverity _openFindings;
-        private List<ScanNameWithFindingNum> _scansWithMostOpenCriticalFindings = new List<ScanNameWithFindingNum>();
-        private List<ScanNameWithFindingNum> _scansWithMostOpenFindings = new List<ScanNameWithFindingNum>();
+        private List<ScanNameWithFindingNum> _scansWithMostOpenCriticalFindings = AWSConfigs.InitializeCollections ? new List<ScanNameWithFindingNum>() : null;
+        private List<ScanNameWithFindingNum> _scansWithMostOpenFindings = AWSConfigs.InitializeCollections ? new List<ScanNameWithFindingNum>() : null;
 
         /// <summary>
         /// Gets and sets the property CategoriesWithMostFindings. 
@@ -56,7 +56,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if CategoriesWithMostFindings property is set
         internal bool IsSetCategoriesWithMostFindings()
         {
-            return this._categoriesWithMostFindings != null && this._categoriesWithMostFindings.Count > 0; 
+            return this._categoriesWithMostFindings != null && (this._categoriesWithMostFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if ScansWithMostOpenCriticalFindings property is set
         internal bool IsSetScansWithMostOpenCriticalFindings()
         {
-            return this._scansWithMostOpenCriticalFindings != null && this._scansWithMostOpenCriticalFindings.Count > 0; 
+            return this._scansWithMostOpenCriticalFindings != null && (this._scansWithMostOpenCriticalFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if ScansWithMostOpenFindings property is set
         internal bool IsSetScansWithMostOpenFindings()
         {
-            return this._scansWithMostOpenFindings != null && this._scansWithMostOpenFindings.Count > 0; 
+            return this._scansWithMostOpenFindings != null && (this._scansWithMostOpenFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

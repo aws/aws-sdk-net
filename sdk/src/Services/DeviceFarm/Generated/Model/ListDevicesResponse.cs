@@ -33,7 +33,7 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class ListDevicesResponse : AmazonWebServiceResponse
     {
-        private List<Device> _devices = new List<Device>();
+        private List<Device> _devices = AWSConfigs.InitializeCollections ? new List<Device>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Devices property is set
         internal bool IsSetDevices()
         {
-            return this._devices != null && this._devices.Count > 0; 
+            return this._devices != null && (this._devices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

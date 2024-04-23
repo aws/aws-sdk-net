@@ -34,7 +34,7 @@ namespace Amazon.WellArchitected.Model
     public partial class GetConsolidatedReportResponse : AmazonWebServiceResponse
     {
         private string _base64String;
-        private List<ConsolidatedReportMetric> _metrics = new List<ConsolidatedReportMetric>();
+        private List<ConsolidatedReportMetric> _metrics = AWSConfigs.InitializeCollections ? new List<ConsolidatedReportMetric>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

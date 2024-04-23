@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model
     public partial class ListEntityPersonasResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PersonasSummary> _summaryItems = new List<PersonasSummary>();
+        private List<PersonasSummary> _summaryItems = AWSConfigs.InitializeCollections ? new List<PersonasSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SummaryItems property is set
         internal bool IsSetSummaryItems()
         {
-            return this._summaryItems != null && this._summaryItems.Count > 0; 
+            return this._summaryItems != null && (this._summaryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

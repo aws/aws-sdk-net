@@ -33,8 +33,8 @@ namespace Amazon.ElasticTranscoder.Model
     /// </summary>
     public partial class Captions
     {
-        private List<CaptionFormat> _captionFormats = new List<CaptionFormat>();
-        private List<CaptionSource> _captionSources = new List<CaptionSource>();
+        private List<CaptionFormat> _captionFormats = AWSConfigs.InitializeCollections ? new List<CaptionFormat>() : null;
+        private List<CaptionSource> _captionSources = AWSConfigs.InitializeCollections ? new List<CaptionSource>() : null;
         private string _mergePolicy;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if CaptionFormats property is set
         internal bool IsSetCaptionFormats()
         {
-            return this._captionFormats != null && this._captionFormats.Count > 0; 
+            return this._captionFormats != null && (this._captionFormats.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if CaptionSources property is set
         internal bool IsSetCaptionSources()
         {
-            return this._captionSources != null && this._captionSources.Count > 0; 
+            return this._captionSources != null && (this._captionSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

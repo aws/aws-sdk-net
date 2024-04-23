@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the PromptSummaryList
         /// </summary>
         public IPaginatedEnumerable<PromptSummary> PromptSummaryList => 
-            new PaginatedResultKeyResponse<ListPromptsResponse, PromptSummary>(this, (i) => i.PromptSummaryList);
+            new PaginatedResultKeyResponse<ListPromptsResponse, PromptSummary>(this, (i) => i.PromptSummaryList ?? new List<PromptSummary>());
 
         internal ListPromptsPaginator(IAmazonConnect client, ListPromptsRequest request)
         {

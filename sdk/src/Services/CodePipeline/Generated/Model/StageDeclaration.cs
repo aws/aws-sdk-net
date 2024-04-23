@@ -33,8 +33,8 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class StageDeclaration
     {
-        private List<ActionDeclaration> _actions = new List<ActionDeclaration>();
-        private List<BlockerDeclaration> _blockers = new List<BlockerDeclaration>();
+        private List<ActionDeclaration> _actions = AWSConfigs.InitializeCollections ? new List<ActionDeclaration>() : null;
+        private List<BlockerDeclaration> _blockers = AWSConfigs.InitializeCollections ? new List<BlockerDeclaration>() : null;
         private string _name;
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Blockers property is set
         internal bool IsSetBlockers()
         {
-            return this._blockers != null && this._blockers.Count > 0; 
+            return this._blockers != null && (this._blockers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the DataSetSummaries
         /// </summary>
         public IPaginatedEnumerable<DataSetSummary> DataSetSummaries => 
-            new PaginatedResultKeyResponse<SearchDataSetsResponse, DataSetSummary>(this, (i) => i.DataSetSummaries);
+            new PaginatedResultKeyResponse<SearchDataSetsResponse, DataSetSummary>(this, (i) => i.DataSetSummaries ?? new List<DataSetSummary>());
 
         internal SearchDataSetsPaginator(IAmazonQuickSight client, SearchDataSetsRequest request)
         {

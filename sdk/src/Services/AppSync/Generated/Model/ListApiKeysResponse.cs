@@ -33,7 +33,7 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class ListApiKeysResponse : AmazonWebServiceResponse
     {
-        private List<ApiKey> _apiKeys = new List<ApiKey>();
+        private List<ApiKey> _apiKeys = AWSConfigs.InitializeCollections ? new List<ApiKey>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AppSync.Model
         // Check to see if ApiKeys property is set
         internal bool IsSetApiKeys()
         {
-            return this._apiKeys != null && this._apiKeys.Count > 0; 
+            return this._apiKeys != null && (this._apiKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

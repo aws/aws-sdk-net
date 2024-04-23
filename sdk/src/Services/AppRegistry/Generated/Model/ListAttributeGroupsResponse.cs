@@ -33,7 +33,7 @@ namespace Amazon.AppRegistry.Model
     /// </summary>
     public partial class ListAttributeGroupsResponse : AmazonWebServiceResponse
     {
-        private List<AttributeGroupSummary> _attributeGroups = new List<AttributeGroupSummary>();
+        private List<AttributeGroupSummary> _attributeGroups = AWSConfigs.InitializeCollections ? new List<AttributeGroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.AppRegistry.Model
         // Check to see if AttributeGroups property is set
         internal bool IsSetAttributeGroups()
         {
-            return this._attributeGroups != null && this._attributeGroups.Count > 0; 
+            return this._attributeGroups != null && (this._attributeGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

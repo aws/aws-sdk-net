@@ -45,7 +45,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the DatasetGroups
         /// </summary>
         public IPaginatedEnumerable<DatasetGroupSummary> DatasetGroups => 
-            new PaginatedResultKeyResponse<ListDatasetGroupsResponse, DatasetGroupSummary>(this, (i) => i.DatasetGroups);
+            new PaginatedResultKeyResponse<ListDatasetGroupsResponse, DatasetGroupSummary>(this, (i) => i.DatasetGroups ?? new List<DatasetGroupSummary>());
 
         internal ListDatasetGroupsPaginator(IAmazonPersonalize client, ListDatasetGroupsRequest request)
         {

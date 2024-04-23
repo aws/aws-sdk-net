@@ -70,7 +70,7 @@ namespace Amazon.Route53.Model
     {
         private string _id;
         private long? _collectionVersion;
-        private List<CidrCollectionChange> _changes = new List<CidrCollectionChange>();
+        private List<CidrCollectionChange> _changes = AWSConfigs.InitializeCollections ? new List<CidrCollectionChange>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -146,7 +146,7 @@ namespace Amazon.Route53.Model
         // Check to see if Changes property is set
         internal bool IsSetChanges()
         {
-            return this._changes != null && this._changes.Count > 0; 
+            return this._changes != null && (this._changes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

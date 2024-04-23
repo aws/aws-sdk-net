@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for JobManifestGeneratorFilter Object
     /// </summary>  
-    public class JobManifestGeneratorFilterUnmarshaller : IUnmarshaller<JobManifestGeneratorFilter, XmlUnmarshallerContext>
+    public class JobManifestGeneratorFilterUnmarshaller : IUnmarshaller<JobManifestGeneratorFilter, XmlUnmarshallerContext>, IUnmarshaller<JobManifestGeneratorFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,12 +82,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MatchAnyStorageClass/member", targetDepth))
                     {
+                        if (unmarshalledObject.MatchAnyStorageClass == null)
+                        {
+                            unmarshalledObject.MatchAnyStorageClass = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MatchAnyStorageClass.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("ObjectReplicationStatuses/member", targetDepth))
                     {
+                        if (unmarshalledObject.ObjectReplicationStatuses == null)
+                        {
+                            unmarshalledObject.ObjectReplicationStatuses = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ObjectReplicationStatuses.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -111,6 +120,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public JobManifestGeneratorFilter Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static JobManifestGeneratorFilterUnmarshaller _instance = new JobManifestGeneratorFilterUnmarshaller();        
 
@@ -126,3 +145,4 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

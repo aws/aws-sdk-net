@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,12 +59,14 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-13";
             request.HttpMethod = "GET";
 
-            
             if (publicRequest.IsSetQueryParamsMapOfStringList())
             {
                 foreach(var kvp in publicRequest.QueryParamsMapOfStringList)
                 {
-                    request.ParameterCollection.Add(kvp.Key, kvp.Value);
+                    if(request.ParameterCollection.ContainsKey(kvp.Key))
+                       continue;
+                    else
+                       request.ParameterCollection.Add(kvp.Key, kvp.Value);
                 }
             }
             request.ResourcePath = "/path";
@@ -91,3 +94,4 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
 
     }
 }
+#pragma warning restore CS0612,CS0618

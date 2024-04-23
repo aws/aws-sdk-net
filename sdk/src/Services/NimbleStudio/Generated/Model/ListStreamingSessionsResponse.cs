@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model
     public partial class ListStreamingSessionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StreamingSession> _sessions = new List<StreamingSession>();
+        private List<StreamingSession> _sessions = AWSConfigs.InitializeCollections ? new List<StreamingSession>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Sessions property is set
         internal bool IsSetSessions()
         {
-            return this._sessions != null && this._sessions.Count > 0; 
+            return this._sessions != null && (this._sessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

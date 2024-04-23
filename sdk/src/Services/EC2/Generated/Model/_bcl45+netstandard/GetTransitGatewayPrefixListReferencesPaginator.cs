@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the TransitGatewayPrefixListReferences
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayPrefixListReference> TransitGatewayPrefixListReferences => 
-            new PaginatedResultKeyResponse<GetTransitGatewayPrefixListReferencesResponse, TransitGatewayPrefixListReference>(this, (i) => i.TransitGatewayPrefixListReferences);
+            new PaginatedResultKeyResponse<GetTransitGatewayPrefixListReferencesResponse, TransitGatewayPrefixListReference>(this, (i) => i.TransitGatewayPrefixListReferences ?? new List<TransitGatewayPrefixListReference>());
 
         internal GetTransitGatewayPrefixListReferencesPaginator(IAmazonEC2 client, GetTransitGatewayPrefixListReferencesRequest request)
         {

@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeInstanceRefreshesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceRefresh> _instanceRefreshes = new List<InstanceRefresh>();
+        private List<InstanceRefresh> _instanceRefreshes = AWSConfigs.InitializeCollections ? new List<InstanceRefresh>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceRefreshes property is set
         internal bool IsSetInstanceRefreshes()
         {
-            return this._instanceRefreshes != null && this._instanceRefreshes.Count > 0; 
+            return this._instanceRefreshes != null && (this._instanceRefreshes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

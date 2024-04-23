@@ -43,7 +43,8 @@ namespace Amazon.IVS.Model
         private string _playbackUrl;
         private TranscodePreset _preset;
         private string _recordingConfigurationArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Srt _srt;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ChannelType _type;
 
         /// <summary>
@@ -239,6 +240,24 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Srt. 
+        /// <para>
+        /// Specifies the endpoint and optional passphrase for streaming with the SRT protocol.
+        /// </para>
+        /// </summary>
+        public Srt Srt
+        {
+            get { return this._srt; }
+            set { this._srt = value; }
+        }
+
+        // Check to see if Srt property is set
+        internal bool IsSetSrt()
+        {
+            return this._srt != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags attached to the resource. Array of 1-50 maps, each of the form <c>string:string
@@ -258,7 +277,7 @@ namespace Amazon.IVS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

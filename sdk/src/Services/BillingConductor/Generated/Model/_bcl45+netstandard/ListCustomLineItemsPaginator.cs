@@ -45,7 +45,7 @@ namespace Amazon.BillingConductor.Model
         /// Enumerable containing all of the CustomLineItems
         /// </summary>
         public IPaginatedEnumerable<CustomLineItemListElement> CustomLineItems => 
-            new PaginatedResultKeyResponse<ListCustomLineItemsResponse, CustomLineItemListElement>(this, (i) => i.CustomLineItems);
+            new PaginatedResultKeyResponse<ListCustomLineItemsResponse, CustomLineItemListElement>(this, (i) => i.CustomLineItems ?? new List<CustomLineItemListElement>());
 
         internal ListCustomLineItemsPaginator(IAmazonBillingConductor client, ListCustomLineItemsRequest request)
         {

@@ -42,8 +42,8 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class EffectiveDeploymentStatusDetails
     {
-        private List<string> _errorStack = new List<string>();
-        private List<string> _errorTypes = new List<string>();
+        private List<string> _errorStack = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _errorTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ErrorStack. 
@@ -63,7 +63,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if ErrorStack property is set
         internal bool IsSetErrorStack()
         {
-            return this._errorStack != null && this._errorStack.Count > 0; 
+            return this._errorStack != null && (this._errorStack.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if ErrorTypes property is set
         internal bool IsSetErrorTypes()
         {
-            return this._errorTypes != null && this._errorTypes.Count > 0; 
+            return this._errorTypes != null && (this._errorTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

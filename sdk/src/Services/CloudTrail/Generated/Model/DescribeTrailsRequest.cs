@@ -36,7 +36,7 @@ namespace Amazon.CloudTrail.Model
     public partial class DescribeTrailsRequest : AmazonCloudTrailRequest
     {
         private bool? _includeShadowTrails;
-        private List<string> _trailNameList = new List<string>();
+        private List<string> _trailNameList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IncludeShadowTrails. 
@@ -104,7 +104,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if TrailNameList property is set
         internal bool IsSetTrailNameList()
         {
-            return this._trailNameList != null && this._trailNameList.Count > 0; 
+            return this._trailNameList != null && (this._trailNameList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

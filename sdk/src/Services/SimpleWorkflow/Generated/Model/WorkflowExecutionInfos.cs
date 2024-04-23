@@ -33,7 +33,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// </summary>
     public partial class WorkflowExecutionInfos
     {
-        private List<WorkflowExecutionInfo> _executionInfos = new List<WorkflowExecutionInfo>();
+        private List<WorkflowExecutionInfo> _executionInfos = AWSConfigs.InitializeCollections ? new List<WorkflowExecutionInfo>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if ExecutionInfos property is set
         internal bool IsSetExecutionInfos()
         {
-            return this._executionInfos != null && this._executionInfos.Count > 0; 
+            return this._executionInfos != null && (this._executionInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

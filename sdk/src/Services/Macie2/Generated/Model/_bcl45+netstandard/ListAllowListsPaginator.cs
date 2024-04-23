@@ -45,7 +45,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the AllowLists
         /// </summary>
         public IPaginatedEnumerable<AllowListSummary> AllowLists => 
-            new PaginatedResultKeyResponse<ListAllowListsResponse, AllowListSummary>(this, (i) => i.AllowLists);
+            new PaginatedResultKeyResponse<ListAllowListsResponse, AllowListSummary>(this, (i) => i.AllowLists ?? new List<AllowListSummary>());
 
         internal ListAllowListsPaginator(IAmazonMacie2 client, ListAllowListsRequest request)
         {

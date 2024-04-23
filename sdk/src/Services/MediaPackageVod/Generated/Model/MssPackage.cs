@@ -34,7 +34,7 @@ namespace Amazon.MediaPackageVod.Model
     public partial class MssPackage
     {
         private MssEncryption _encryption;
-        private List<MssManifest> _mssManifests = new List<MssManifest>();
+        private List<MssManifest> _mssManifests = AWSConfigs.InitializeCollections ? new List<MssManifest>() : null;
         private int? _segmentDurationSeconds;
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.MediaPackageVod.Model
         // Check to see if MssManifests property is set
         internal bool IsSetMssManifests()
         {
-            return this._mssManifests != null && this._mssManifests.Count > 0; 
+            return this._mssManifests != null && (this._mssManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

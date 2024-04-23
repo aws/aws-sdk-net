@@ -36,7 +36,7 @@ namespace Amazon.AppStream.Model
         private DateTime? _lastGeneratedReportDate;
         private string _s3BucketName;
         private UsageReportSchedule _schedule;
-        private List<LastReportGenerationExecutionError> _subscriptionErrors = new List<LastReportGenerationExecutionError>();
+        private List<LastReportGenerationExecutionError> _subscriptionErrors = AWSConfigs.InitializeCollections ? new List<LastReportGenerationExecutionError>() : null;
 
         /// <summary>
         /// Gets and sets the property LastGeneratedReportDate. 
@@ -117,7 +117,7 @@ namespace Amazon.AppStream.Model
         // Check to see if SubscriptionErrors property is set
         internal bool IsSetSubscriptionErrors()
         {
-            return this._subscriptionErrors != null && this._subscriptionErrors.Count > 0; 
+            return this._subscriptionErrors != null && (this._subscriptionErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

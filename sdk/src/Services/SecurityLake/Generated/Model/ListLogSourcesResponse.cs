@@ -34,7 +34,7 @@ namespace Amazon.SecurityLake.Model
     public partial class ListLogSourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<LogSource> _sources = new List<LogSource>();
+        private List<LogSource> _sources = AWSConfigs.InitializeCollections ? new List<LogSource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +71,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

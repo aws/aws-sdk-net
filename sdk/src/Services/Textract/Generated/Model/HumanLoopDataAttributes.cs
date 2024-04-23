@@ -34,7 +34,7 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class HumanLoopDataAttributes
     {
-        private List<string> _contentClassifiers = new List<string>();
+        private List<string> _contentClassifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContentClassifiers. 
@@ -53,7 +53,7 @@ namespace Amazon.Textract.Model
         // Check to see if ContentClassifiers property is set
         internal bool IsSetContentClassifiers()
         {
-            return this._contentClassifiers != null && this._contentClassifiers.Count > 0; 
+            return this._contentClassifiers != null && (this._contentClassifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

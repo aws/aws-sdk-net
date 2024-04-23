@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// A list of CloudFront functions that are associated with a cache behavior in a CloudFront
-    /// distribution. CloudFront functions must be published to the <c>LIVE</c> stage to associate
+    /// distribution. Your functions must be published to the <c>LIVE</c> stage to associate
     /// them with a cache behavior.
     /// </summary>
     public partial class FunctionAssociations
     {
-        private List<FunctionAssociation> _items = new List<FunctionAssociation>();
+        private List<FunctionAssociation> _items = AWSConfigs.InitializeCollections ? new List<FunctionAssociation>() : null;
         private int? _quantity;
 
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
         /// The CloudFront functions that are associated with a cache behavior in a CloudFront
-        /// distribution. CloudFront functions must be published to the <c>LIVE</c> stage to associate
+        /// distribution. Your functions must be published to the <c>LIVE</c> stage to associate
         /// them with a cache behavior.
         /// </para>
         /// </summary>
@@ -55,7 +55,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

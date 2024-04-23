@@ -33,7 +33,7 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class ListAppComponentCompliancesResponse : AmazonWebServiceResponse
     {
-        private List<AppComponentCompliance> _componentCompliances = new List<AppComponentCompliance>();
+        private List<AppComponentCompliance> _componentCompliances = AWSConfigs.InitializeCollections ? new List<AppComponentCompliance>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if ComponentCompliances property is set
         internal bool IsSetComponentCompliances()
         {
-            return this._componentCompliances != null && this._componentCompliances.Count > 0; 
+            return this._componentCompliances != null && (this._componentCompliances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

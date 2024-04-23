@@ -41,8 +41,8 @@ namespace Amazon.CleanRoomsML.Model
         private int? _minMatchingSeedSize;
         private string _name;
         private ConfiguredAudienceModelOutputConfig _outputConfig;
-        private List<string> _sharedAudienceMetrics = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _sharedAudienceMetrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AudienceModelArn. 
@@ -137,7 +137,7 @@ namespace Amazon.CleanRoomsML.Model
         /// Gets and sets the property MinMatchingSeedSize. 
         /// <para>
         /// The minimum number of users from the seed audience that must match with users in the
-        /// training data of the audience model.
+        /// training data of the audience model. The default value is 500.
         /// </para>
         /// </summary>
         [AWSProperty(Min=25, Max=500000)]
@@ -211,7 +211,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if SharedAudienceMetrics property is set
         internal bool IsSetSharedAudienceMetrics()
         {
-            return this._sharedAudienceMetrics != null && this._sharedAudienceMetrics.Count > 0; 
+            return this._sharedAudienceMetrics != null && (this._sharedAudienceMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -257,9 +257,9 @@ namespace Amazon.CleanRoomsML.Model
         /// Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for
         /// keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix.
         /// Values can have this prefix. If a tag value has aws as its prefix but the key does
-        /// not, then Forecast considers it to be a user tag and will count against the limit
-        /// of 50 tags. Tags with only the key prefix of aws do not count against your tags per
-        /// resource limit.
+        /// not, then Clean Rooms ML considers it to be a user tag and will count against the
+        /// limit of 50 tags. Tags with only the key prefix of aws do not count against your tags
+        /// per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -273,7 +273,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

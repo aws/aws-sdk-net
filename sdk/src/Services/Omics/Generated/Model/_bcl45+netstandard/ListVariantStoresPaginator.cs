@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the VariantStores
         /// </summary>
         public IPaginatedEnumerable<VariantStoreItem> VariantStores => 
-            new PaginatedResultKeyResponse<ListVariantStoresResponse, VariantStoreItem>(this, (i) => i.VariantStores);
+            new PaginatedResultKeyResponse<ListVariantStoresResponse, VariantStoreItem>(this, (i) => i.VariantStores ?? new List<VariantStoreItem>());
 
         internal ListVariantStoresPaginator(IAmazonOmics client, ListVariantStoresRequest request)
         {

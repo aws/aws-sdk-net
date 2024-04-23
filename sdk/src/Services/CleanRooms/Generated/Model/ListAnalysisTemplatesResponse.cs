@@ -33,7 +33,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ListAnalysisTemplatesResponse : AmazonWebServiceResponse
     {
-        private List<AnalysisTemplateSummary> _analysisTemplateSummaries = new List<AnalysisTemplateSummary>();
+        private List<AnalysisTemplateSummary> _analysisTemplateSummaries = AWSConfigs.InitializeCollections ? new List<AnalysisTemplateSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if AnalysisTemplateSummaries property is set
         internal bool IsSetAnalysisTemplateSummaries()
         {
-            return this._analysisTemplateSummaries != null && this._analysisTemplateSummaries.Count > 0; 
+            return this._analysisTemplateSummaries != null && (this._analysisTemplateSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

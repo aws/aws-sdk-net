@@ -35,9 +35,9 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EksContainerOverride
     {
-        private List<string> _args = new List<string>();
-        private List<string> _command = new List<string>();
-        private List<EksContainerEnvironmentVariable> _env = new List<EksContainerEnvironmentVariable>();
+        private List<string> _args = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<EksContainerEnvironmentVariable> _env = AWSConfigs.InitializeCollections ? new List<EksContainerEnvironmentVariable>() : null;
         private string _image;
         private string _name;
         private EksContainerResourceRequirements _resources;
@@ -61,7 +61,7 @@ namespace Amazon.Batch.Model
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this._args != null && this._args.Count > 0; 
+            return this._args != null && (this._args.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.Batch.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.Batch.Model
         // Check to see if Env property is set
         internal bool IsSetEnv()
         {
-            return this._env != null && this._env.Count > 0; 
+            return this._env != null && (this._env.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

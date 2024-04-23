@@ -33,17 +33,13 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListSecurityProfileApplicationsResponse : AmazonWebServiceResponse
     {
-        private List<Application> _applications = new List<Application>();
+        private List<Application> _applications = AWSConfigs.InitializeCollections ? new List<Application>() : null;
         private string _lastModifiedRegion;
         private DateTime? _lastModifiedTime;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Applications. 
-        /// <para>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// </para>
-        ///  
         /// <para>
         /// A list of the third-party application's metadata.
         /// </para>
@@ -58,7 +54,7 @@ namespace Amazon.Connect.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

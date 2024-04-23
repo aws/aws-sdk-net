@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NoncurrentVersionExpiration Object
     /// </summary>  
-    public class NoncurrentVersionExpirationUnmarshaller : IUnmarshaller<NoncurrentVersionExpiration, XmlUnmarshallerContext>
+    public class NoncurrentVersionExpirationUnmarshaller : IUnmarshaller<NoncurrentVersionExpiration, XmlUnmarshallerContext>, IUnmarshaller<NoncurrentVersionExpiration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,6 +76,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public NoncurrentVersionExpiration Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
+        }
 
         private static NoncurrentVersionExpirationUnmarshaller _instance = new NoncurrentVersionExpirationUnmarshaller();        
 
@@ -90,3 +101,4 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
+#pragma warning restore CS0612,CS0618

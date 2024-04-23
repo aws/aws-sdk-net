@@ -125,7 +125,7 @@ namespace Amazon.KinesisFirehose.Model
     public partial class PutRecordBatchRequest : AmazonKinesisFirehoseRequest
     {
         private string _deliveryStreamName;
-        private List<Record> _records = new List<Record>();
+        private List<Record> _records = AWSConfigs.InitializeCollections ? new List<Record>() : null;
 
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
@@ -162,7 +162,7 @@ namespace Amazon.KinesisFirehose.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

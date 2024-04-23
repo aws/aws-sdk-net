@@ -34,10 +34,29 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class GetChannelScheduleRequest : AmazonMediaTailorRequest
     {
+        private string _audience;
         private string _channelName;
         private string _durationMinutes;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Audience. 
+        /// <para>
+        /// The single audience for GetChannelScheduleRequest.
+        /// </para>
+        /// </summary>
+        public string Audience
+        {
+            get { return this._audience; }
+            set { this._audience = value; }
+        }
+
+        // Check to see if Audience property is set
+        internal bool IsSetAudience()
+        {
+            return this._audience != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChannelName. 

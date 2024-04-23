@@ -34,7 +34,7 @@ namespace Amazon.FIS.Model
     public partial class TargetResourceType
     {
         private string _description;
-        private Dictionary<string, TargetResourceTypeParameter> _parameters = new Dictionary<string, TargetResourceTypeParameter>();
+        private Dictionary<string, TargetResourceTypeParameter> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, TargetResourceTypeParameter>() : null;
         private string _resourceType;
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.FIS.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

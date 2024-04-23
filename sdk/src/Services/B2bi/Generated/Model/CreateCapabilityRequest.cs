@@ -38,9 +38,9 @@ namespace Amazon.B2bi.Model
     {
         private string _clientToken;
         private CapabilityConfiguration _configuration;
-        private List<S3Location> _instructionsDocuments = new List<S3Location>();
+        private List<S3Location> _instructionsDocuments = AWSConfigs.InitializeCollections ? new List<S3Location>() : null;
         private string _name;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private CapabilityType _type;
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.B2bi.Model
         // Check to see if InstructionsDocuments property is set
         internal bool IsSetInstructionsDocuments()
         {
-            return this._instructionsDocuments != null && this._instructionsDocuments.Count > 0; 
+            return this._instructionsDocuments != null && (this._instructionsDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.B2bi.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class UserAttributeUpdateSettingsType
     {
-        private List<string> _attributesRequireVerificationBeforeUpdate = new List<string>();
+        private List<string> _attributesRequireVerificationBeforeUpdate = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributesRequireVerificationBeforeUpdate. 
@@ -73,7 +73,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if AttributesRequireVerificationBeforeUpdate property is set
         internal bool IsSetAttributesRequireVerificationBeforeUpdate()
         {
-            return this._attributesRequireVerificationBeforeUpdate != null && this._attributesRequireVerificationBeforeUpdate.Count > 0; 
+            return this._attributesRequireVerificationBeforeUpdate != null && (this._attributesRequireVerificationBeforeUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

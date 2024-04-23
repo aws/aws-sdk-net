@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the Indices
         /// </summary>
         public IPaginatedEnumerable<Index> Indices => 
-            new PaginatedResultKeyResponse<ListIndicesResponse, Index>(this, (i) => i.Indices);
+            new PaginatedResultKeyResponse<ListIndicesResponse, Index>(this, (i) => i.Indices ?? new List<Index>());
 
         internal ListIndicesPaginator(IAmazonQBusiness client, ListIndicesRequest request)
         {

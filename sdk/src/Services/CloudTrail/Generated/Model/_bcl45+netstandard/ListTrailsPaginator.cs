@@ -45,7 +45,7 @@ namespace Amazon.CloudTrail.Model
         /// Enumerable containing all of the Trails
         /// </summary>
         public IPaginatedEnumerable<TrailInfo> Trails => 
-            new PaginatedResultKeyResponse<ListTrailsResponse, TrailInfo>(this, (i) => i.Trails);
+            new PaginatedResultKeyResponse<ListTrailsResponse, TrailInfo>(this, (i) => i.Trails ?? new List<TrailInfo>());
 
         internal ListTrailsPaginator(IAmazonCloudTrail client, ListTrailsRequest request)
         {

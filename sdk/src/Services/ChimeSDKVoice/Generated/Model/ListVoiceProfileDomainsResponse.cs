@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKVoice.Model
     public partial class ListVoiceProfileDomainsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VoiceProfileDomainSummary> _voiceProfileDomains = new List<VoiceProfileDomainSummary>();
+        private List<VoiceProfileDomainSummary> _voiceProfileDomains = AWSConfigs.InitializeCollections ? new List<VoiceProfileDomainSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +69,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if VoiceProfileDomains property is set
         internal bool IsSetVoiceProfileDomains()
         {
-            return this._voiceProfileDomains != null && this._voiceProfileDomains.Count > 0; 
+            return this._voiceProfileDomains != null && (this._voiceProfileDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

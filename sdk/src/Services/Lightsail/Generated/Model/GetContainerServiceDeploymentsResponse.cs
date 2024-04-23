@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetContainerServiceDeploymentsResponse : AmazonWebServiceResponse
     {
-        private List<ContainerServiceDeployment> _deployments = new List<ContainerServiceDeployment>();
+        private List<ContainerServiceDeployment> _deployments = AWSConfigs.InitializeCollections ? new List<ContainerServiceDeployment>() : null;
 
         /// <summary>
         /// Gets and sets the property Deployments. 
@@ -50,7 +50,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Deployments property is set
         internal bool IsSetDeployments()
         {
-            return this._deployments != null && this._deployments.Count > 0; 
+            return this._deployments != null && (this._deployments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

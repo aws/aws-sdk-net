@@ -45,7 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Enumerable containing all of the Users
         /// </summary>
         public IPaginatedEnumerable<UserType> Users => 
-            new PaginatedResultKeyResponse<ListUsersInGroupResponse, UserType>(this, (i) => i.Users);
+            new PaginatedResultKeyResponse<ListUsersInGroupResponse, UserType>(this, (i) => i.Users ?? new List<UserType>());
 
         internal ListUsersInGroupPaginator(IAmazonCognitoIdentityProvider client, ListUsersInGroupRequest request)
         {

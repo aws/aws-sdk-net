@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class RealTimeContactAnalysisCategoryDetails
     {
-        private List<RealTimeContactAnalysisPointOfInterest> _pointsOfInterest = new List<RealTimeContactAnalysisPointOfInterest>();
+        private List<RealTimeContactAnalysisPointOfInterest> _pointsOfInterest = AWSConfigs.InitializeCollections ? new List<RealTimeContactAnalysisPointOfInterest>() : null;
 
         /// <summary>
         /// Gets and sets the property PointsOfInterest. 
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if PointsOfInterest property is set
         internal bool IsSetPointsOfInterest()
         {
-            return this._pointsOfInterest != null && this._pointsOfInterest.Count > 0; 
+            return this._pointsOfInterest != null && (this._pointsOfInterest.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

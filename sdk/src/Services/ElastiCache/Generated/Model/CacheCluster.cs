@@ -41,17 +41,17 @@ namespace Amazon.ElastiCache.Model
         private DateTime? _cacheClusterCreateTime;
         private string _cacheClusterId;
         private string _cacheClusterStatus;
-        private List<CacheNode> _cacheNodes = new List<CacheNode>();
+        private List<CacheNode> _cacheNodes = AWSConfigs.InitializeCollections ? new List<CacheNode>() : null;
         private string _cacheNodeType;
         private CacheParameterGroupStatus _cacheParameterGroup;
-        private List<CacheSecurityGroupMembership> _cacheSecurityGroups = new List<CacheSecurityGroupMembership>();
+        private List<CacheSecurityGroupMembership> _cacheSecurityGroups = AWSConfigs.InitializeCollections ? new List<CacheSecurityGroupMembership>() : null;
         private string _cacheSubnetGroupName;
         private string _clientDownloadLandingPage;
         private Endpoint _configurationEndpoint;
         private string _engine;
         private string _engineVersion;
         private IpDiscovery _ipDiscovery;
-        private List<LogDeliveryConfiguration> _logDeliveryConfigurations = new List<LogDeliveryConfiguration>();
+        private List<LogDeliveryConfiguration> _logDeliveryConfigurations = AWSConfigs.InitializeCollections ? new List<LogDeliveryConfiguration>() : null;
         private NetworkType _networkType;
         private NotificationConfiguration _notificationConfiguration;
         private int? _numCacheNodes;
@@ -61,7 +61,7 @@ namespace Amazon.ElastiCache.Model
         private string _preferredOutpostArn;
         private string _replicationGroupId;
         private bool? _replicationGroupLogDeliveryEnabled;
-        private List<SecurityGroupMembership> _securityGroups = new List<SecurityGroupMembership>();
+        private List<SecurityGroupMembership> _securityGroups = AWSConfigs.InitializeCollections ? new List<SecurityGroupMembership>() : null;
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
         private bool? _transitEncryptionEnabled;
@@ -250,7 +250,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodes property is set
         internal bool IsSetCacheNodes()
         {
-            return this._cacheNodes != null && this._cacheNodes.Count > 0; 
+            return this._cacheNodes != null && (this._cacheNodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -467,7 +467,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheSecurityGroups property is set
         internal bool IsSetCacheSecurityGroups()
         {
-            return this._cacheSecurityGroups != null && this._cacheSecurityGroups.Count > 0; 
+            return this._cacheSecurityGroups != null && (this._cacheSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -603,7 +603,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if LogDeliveryConfigurations property is set
         internal bool IsSetLogDeliveryConfigurations()
         {
-            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+            return this._logDeliveryConfigurations != null && (this._logDeliveryConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -829,7 +829,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

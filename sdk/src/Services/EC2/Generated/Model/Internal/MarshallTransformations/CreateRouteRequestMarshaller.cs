@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -62,62 +63,77 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CarrierGatewayId", StringUtils.FromString(publicRequest.CarrierGatewayId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCoreNetworkArn())
                 {
                     request.Parameters.Add("CoreNetworkArn", StringUtils.FromString(publicRequest.CoreNetworkArn));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinationCidrBlock())
                 {
                     request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinationIpv6CidrBlock())
                 {
                     request.Parameters.Add("DestinationIpv6CidrBlock", StringUtils.FromString(publicRequest.DestinationIpv6CidrBlock));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinationPrefixListId())
                 {
                     request.Parameters.Add("DestinationPrefixListId", StringUtils.FromString(publicRequest.DestinationPrefixListId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEgressOnlyInternetGatewayId())
                 {
                     request.Parameters.Add("EgressOnlyInternetGatewayId", StringUtils.FromString(publicRequest.EgressOnlyInternetGatewayId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGatewayId())
                 {
                     request.Parameters.Add("GatewayId", StringUtils.FromString(publicRequest.GatewayId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLocalGatewayId())
                 {
                     request.Parameters.Add("LocalGatewayId", StringUtils.FromString(publicRequest.LocalGatewayId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNatGatewayId())
                 {
                     request.Parameters.Add("NatGatewayId", StringUtils.FromString(publicRequest.NatGatewayId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkInterfaceId())
                 {
                     request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRouteTableId())
                 {
                     request.Parameters.Add("RouteTableId", StringUtils.FromString(publicRequest.RouteTableId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransitGatewayId())
                 {
                     request.Parameters.Add("TransitGatewayId", StringUtils.FromString(publicRequest.TransitGatewayId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcEndpointId())
                 {
                     request.Parameters.Add("VpcEndpointId", StringUtils.FromString(publicRequest.VpcEndpointId));
                 }
+#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcPeeringConnectionId())
                 {
                     request.Parameters.Add("VpcPeeringConnectionId", StringUtils.FromString(publicRequest.VpcPeeringConnectionId));
                 }
+#pragma warning restore CS0612,CS0618
             }
             return request;
         }

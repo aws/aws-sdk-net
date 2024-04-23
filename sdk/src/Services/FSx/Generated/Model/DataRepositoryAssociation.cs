@@ -58,7 +58,7 @@ namespace Amazon.FSx.Model
         private bool? _batchImportMetaDataOnCreate;
         private DateTime? _creationTime;
         private string _dataRepositoryPath;
-        private List<string> _dataRepositorySubdirectories = new List<string>();
+        private List<string> _dataRepositorySubdirectories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DataRepositoryFailureDetails _failureDetails;
         private string _fileCacheId;
         private string _fileCachePath;
@@ -69,7 +69,7 @@ namespace Amazon.FSx.Model
         private NFSDataRepositoryConfiguration _nfs;
         private string _resourceARN;
         private S3DataRepositoryConfiguration _s3;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AssociationId. 
@@ -198,7 +198,7 @@ namespace Amazon.FSx.Model
         // Check to see if DataRepositorySubdirectories property is set
         internal bool IsSetDataRepositorySubdirectories()
         {
-            return this._dataRepositorySubdirectories != null && this._dataRepositorySubdirectories.Count > 0; 
+            return this._dataRepositorySubdirectories != null && (this._dataRepositorySubdirectories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -473,7 +473,7 @@ namespace Amazon.FSx.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

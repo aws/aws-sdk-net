@@ -41,7 +41,7 @@ namespace Amazon.PI.Model
         private string _group;
         private string _groupIdentifier;
         private string _identifier;
-        private List<string> _requestedDimensions = new List<string>();
+        private List<string> _requestedDimensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ServiceType _serviceType;
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.PI.Model
         // Check to see if RequestedDimensions property is set
         internal bool IsSetRequestedDimensions()
         {
-            return this._requestedDimensions != null && this._requestedDimensions.Count > 0; 
+            return this._requestedDimensions != null && (this._requestedDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

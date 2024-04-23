@@ -45,7 +45,7 @@ namespace Amazon.MediaConnect.Model
         /// Enumerable containing all of the Gateways
         /// </summary>
         public IPaginatedEnumerable<ListedGateway> Gateways => 
-            new PaginatedResultKeyResponse<ListGatewaysResponse, ListedGateway>(this, (i) => i.Gateways);
+            new PaginatedResultKeyResponse<ListGatewaysResponse, ListedGateway>(this, (i) => i.Gateways ?? new List<ListedGateway>());
 
         internal ListGatewaysPaginator(IAmazonMediaConnect client, ListGatewaysRequest request)
         {

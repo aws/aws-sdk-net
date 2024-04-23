@@ -33,7 +33,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class Typography
     {
-        private List<Font> _fontFamilies = new List<Font>();
+        private List<Font> _fontFamilies = AWSConfigs.InitializeCollections ? new List<Font>() : null;
 
         /// <summary>
         /// Gets and sets the property FontFamilies. 
@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FontFamilies property is set
         internal bool IsSetFontFamilies()
         {
-            return this._fontFamilies != null && this._fontFamilies.Count > 0; 
+            return this._fontFamilies != null && (this._fontFamilies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
