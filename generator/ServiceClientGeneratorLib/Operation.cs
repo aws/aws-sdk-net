@@ -262,6 +262,21 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Determines if the operation pagination should end when the response equal to the request token
+        /// </summary>
+        public bool StopPaginationOnSameToken
+        {
+            get
+            {
+                var modifiers = this.model.Customizations.GetOperationModifiers(this.name);
+                if (modifiers != null)
+                    return modifiers.StopPaginationOnSameToken;
+
+                return false;
+            }
+        }
+
         public bool WrapsResultShape(string shapeName)
         {
             var modifiers = this.model.Customizations.GetOperationModifiers(this.name);
