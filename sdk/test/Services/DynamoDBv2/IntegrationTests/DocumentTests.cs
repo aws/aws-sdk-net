@@ -1444,13 +1444,124 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
                 var transactWrite = hashTable.CreateTransactWrite();
+                transactWrite.AddKeyToUpdate(hashKey: 7001,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #price = #price + :inc",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":inc"] = 1 }
+                    },
+                    new TransactWriteItemOperationConfig
+                    {
+                        ConditionalExpression = new Expression
+                        {
+                            ExpressionStatement = "#price = :price",
+                            ExpressionAttributeNames = { ["#price"] = "Price" },
+                            ExpressionAttributeValues = { [":price"] = 51 }
+                        },
+                        ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                    });
+                transactWrite.AddKeyToUpdate(hashKey: 7002,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #price = #price + :inc",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":inc"] = 1 }
+                    },
+                    new TransactWriteItemOperationConfig
+                    {
+                        ConditionalExpression = new Expression
+                        {
+                            ExpressionStatement = "#price = :price",
+                            ExpressionAttributeNames = { ["#price"] = "Price" },
+                            ExpressionAttributeValues = { [":price"] = 100 }
+                        },
+                        ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                    });
+
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+                Assert.IsNotNull(ex);
+                Assert.AreEqual(2, ex.CancellationReasons.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[0].Code);
+                Assert.AreEqual(BatchStatementErrorCodeEnum.ConditionalCheckFailed.Value, ex.CancellationReasons[1].Code);
+                Assert.AreNotEqual(0, ex.CancellationReasons[1].Item.Count);
+                Assert.AreEqual(1, transactWrite.ConditionCheckFailedItems.Count);
+                Assert.IsTrue(AreValuesEqual(doc2, transactWrite.ConditionCheckFailedItems[0], conversion));
+            }
+
+            {
+                var transactGet = hashTable.CreateTransactGet();
+                transactGet.AddKey(7001);
+                transactGet.AddKey(7002);
+                transactGet.Execute();
+                Assert.AreEqual(2, transactGet.Results.Count);
+                Assert.IsTrue(AreValuesEqual(doc1, transactGet.Results[0], conversion));
+                Assert.IsTrue(AreValuesEqual(doc2, transactGet.Results[1], conversion));
+            }
+
+            {
+                var transactWrite = hashTable.CreateTransactWrite();
+                transactWrite.AddKeyToUpdate(hashKey: 7001,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #price = #price + :inc",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":inc"] = 1 }
+                    },
+                    new TransactWriteItemOperationConfig
+                    {
+                        ConditionalExpression = new Expression
+                        {
+                            ExpressionStatement = "#price = :price",
+                            ExpressionAttributeNames = { ["#price"] = "Price" },
+                            ExpressionAttributeValues = { [":price"] = 51 }
+                        },
+                        ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                    });
+                transactWrite.AddKeyToUpdate(hashKey: 7002,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #price = #price + :inc",
+                        ExpressionAttributeNames = { ["#price"] = "Price" },
+                        ExpressionAttributeValues = { [":inc"] = 1 }
+                    },
+                    new TransactWriteItemOperationConfig
+                    {
+                        ConditionalExpression = new Expression
+                        {
+                            ExpressionStatement = "#price = :price",
+                            ExpressionAttributeNames = { ["#price"] = "Price" },
+                            ExpressionAttributeValues = { [":price"] = 101 }
+                        },
+                        ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
+                    });
+
+                transactWrite.Execute();
+            }
+
+            {
+                var transactGet = hashTable.CreateTransactGet();
+                transactGet.AddKey(7001);
+                transactGet.AddKey(7002);
+                transactGet.Execute();
+                Assert.AreEqual(2, transactGet.Results.Count);
+                Assert.IsFalse(AreValuesEqual(doc1, transactGet.Results[0], conversion));
+                doc1["Price"] = 52;
+                Assert.IsTrue(AreValuesEqual(doc1, transactGet.Results[0], conversion));
+                Assert.IsFalse(AreValuesEqual(doc2, transactGet.Results[1], conversion));
+                doc2["Price"] = 102;
+                Assert.IsTrue(AreValuesEqual(doc2, transactGet.Results[1], conversion));
+            }
+
+            {
+                var transactWrite = hashTable.CreateTransactWrite();
                 transactWrite.AddItemToDelete(doc1, new TransactWriteItemOperationConfig
                 {
                     ConditionalExpression = new Expression
                     {
                         ExpressionStatement = "#price = :price",
                         ExpressionAttributeNames = { ["#price"] = "Price" },
-                        ExpressionAttributeValues = { [":price"] = 51 }
+                        ExpressionAttributeValues = { [":price"] = 52 }
                     },
                     ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
                 });
@@ -1460,7 +1571,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     {
                         ExpressionStatement = "#price = :price",
                         ExpressionAttributeNames = { ["#price"] = "Price" },
-                        ExpressionAttributeValues = { [":price"] = 101 }
+                        ExpressionAttributeValues = { [":price"] = 102 }
                     },
                     ReturnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailure.AllOldAttributes
                 });

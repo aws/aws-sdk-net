@@ -28,6 +28,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// Class for condition checking, putting, updating and/or deleting
     /// multiple items in a single DynamoDB table in a transaction.
     /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
     public partial class DocumentTransactWrite
     {
         #region Internal properties
@@ -156,6 +159,40 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public void AddDocumentToUpdate(Document document, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddDocumentToUpdateHelper(document, TargetTable.MakeKey(document), operationConfig);
+        }
+
+        /// <summary>
+        /// Add a single item to update, identified by its hash primary key, using the specified update expression and config.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the document.</param>
+        /// <param name="updateExpression">Update expression to use.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        public void AddKeyToUpdate(Primitive hashKey, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null)
+        {
+            AddKeyToUpdate(hashKey, rangeKey: null, updateExpression, operationConfig);
+        }
+
+        /// <summary>
+        /// Add a single item to update, identified by its hash-and-range primary key, using the specified update expression and config.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the document.</param>
+        /// <param name="rangeKey">Range key of the document.</param>
+        /// <param name="updateExpression">Update expression to use.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        public void AddKeyToUpdate(Primitive hashKey, Primitive rangeKey, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null)
+        {
+            AddKeyToUpdateHelper(TargetTable.MakeKey(hashKey, rangeKey), updateExpression, operationConfig);
+        }
+
+        /// <summary>
+        /// Add a single item to update, identified by its key, using the specified update expression and config.
+        /// </summary>
+        /// <param name="key">Key of the document.</param>
+        /// <param name="updateExpression">Update expression to use.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        public void AddKeyToUpdate(IDictionary<string, DynamoDBEntry> key, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null)
+        {
+            AddKeyToUpdateHelper(TargetTable.MakeKey(key), updateExpression, operationConfig);
         }
 
         #endregion
@@ -316,11 +353,43 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal void AddDocumentToUpdateHelper(Document document, Key key, TransactWriteItemOperationConfig operationConfig = null)
         {
-            Items.Add(new ToUpdateTransactWriteRequestItem
+            Items.Add(new ToUpdateWithDocumentTransactWriteRequestItem
             {
                 TransactionPart = this,
                 Document = document,
                 Key = key,
+                OperationConfig = operationConfig
+            });
+        }
+
+        internal void AddKeyToUpdateHelper(Key key, Expression updateExpression, TransactWriteItemOperationConfig operationConfig)
+        {
+            if (operationConfig?.ConditionalExpression != null)
+            {
+                // Filter attribute names and values from the update expression that are also found in the condition expression
+                // If the value is different for the same key between the two expressions, an exception is thrown
+                // This ensures no exception is thrown when the attribute names and values of the update expression are merged into the request object
+                if (!TryFilterDuplicates(updateExpression.ExpressionAttributeValues,
+                        operationConfig.ConditionalExpression.ExpressionAttributeValues, out var attributeValues) ||
+                    !TryFilterDuplicates(updateExpression.ExpressionAttributeNames,
+                        operationConfig.ConditionalExpression.ExpressionAttributeNames, out var attributeNames))
+                {
+                    throw new ArgumentException("Conflicting values for key", "updateExpression");
+                }
+
+                updateExpression = new Expression
+                {
+                    ExpressionStatement = updateExpression.ExpressionStatement,
+                    ExpressionAttributeValues = attributeValues,
+                    ExpressionAttributeNames = attributeNames
+                };
+            }
+
+            Items.Add(new ToUpdateWithExpressionTransactWriteRequestItem
+            {
+                TransactionPart = this,
+                Key = key,
+                UpdateExpression = updateExpression,
                 OperationConfig = operationConfig
             });
         }
@@ -337,6 +406,30 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Key = key,
                 OperationConfig = operationConfig
             });
+        }
+
+        private static bool TryFilterDuplicates<T>(Dictionary<string, T> src, Dictionary<string, T> other,
+            out Dictionary<string, T> dest)
+        {
+            dest = new Dictionary<string, T>();
+
+            foreach (var kvp in src)
+            {
+                if (other.TryGetValue(kvp.Key, out var otherValue))
+                {
+                    if (!otherValue.Equals(kvp.Value))
+                    {
+                        dest = null;
+                        return false;
+                    }
+                }
+                else
+                {
+                    dest.Add(kvp.Key, kvp.Value);
+                }
+            }
+
+            return true;
         }
 
         #endregion
@@ -502,7 +595,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             foreach (var item in Items)
             {
-                item.Document?.CommitChanges();
+                item.CommitChanges();
             }
         }
 
@@ -526,7 +619,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             foreach (var item in Items)
             {
-                item.Document?.CommitChanges();
+                item.CommitChanges();
             }
         }
 #endif
@@ -579,8 +672,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     {
         #region Properties
 
-        Document Document { get; }
-
         DocumentTransactWrite TransactionPart { get; }
 
         TransactWriteItemOperationConfig OperationConfig { get; }
@@ -592,25 +683,36 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         TransactWriteItem GetRequest();
 
+        void CommitChanges();
+
         #endregion
     }
 
-    internal class ToPutTransactWriteRequestItem : ITransactWriteRequestItem
+    internal abstract class TransactWriteRequestItemBase : ITransactWriteRequestItem
+    {
+        public DocumentTransactWrite TransactionPart { get; set; }
+
+        public TransactWriteItemOperationConfig OperationConfig { get; set; }
+
+        public abstract TransactWriteItem GetRequest();
+
+        public virtual void CommitChanges()
+        {
+        }
+    }
+
+    internal class ToPutTransactWriteRequestItem : TransactWriteRequestItemBase
     {
         #region Properties
 
         public Document Document { get; set; }
-
-        public DocumentTransactWrite TransactionPart { get; set; }
-
-        public TransactWriteItemOperationConfig OperationConfig { get; set; }
 
         #endregion
 
 
         #region Methods
 
-        public TransactWriteItem GetRequest()
+        public override TransactWriteItem GetRequest()
         {
             var currentConfig = OperationConfig ?? new TransactWriteItemOperationConfig();
 
@@ -626,27 +728,26 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return new TransactWriteItem { Put = put };
         }
 
+        public override void CommitChanges()
+        {
+            Document.CommitChanges();
+        }
+
         #endregion
     }
 
-    internal class ToUpdateTransactWriteRequestItem : ITransactWriteRequestItem
+    internal abstract class ToUpdateTransactWriteRequestItemBase : TransactWriteRequestItemBase
     {
         #region Properties
 
         public Key Key { get; set; }
-
-        public Document Document { get; set; }
-
-        public DocumentTransactWrite TransactionPart { get; set; }
-
-        public TransactWriteItemOperationConfig OperationConfig { get; set; }
 
         #endregion
 
 
         #region Methods
 
-        public TransactWriteItem GetRequest()
+        public sealed override TransactWriteItem GetRequest()
         {
             var currentConfig = OperationConfig ?? new TransactWriteItemOperationConfig();
 
@@ -657,23 +758,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ReturnValuesOnConditionCheckFailure = EnumMapper.Convert(currentConfig.ReturnValuesOnConditionCheckFailure)
             };
 
-            // If the keys have been changed, treat entire document as having changed
-            bool haveKeysChanged = TransactionPart.TargetTable.HaveKeysChanged(Document);
-            bool updateChangedAttributesOnly = !haveKeysChanged;
-
-            var attributeUpdates = TransactionPart.TargetTable.ToAttributeUpdateMap(Document, updateChangedAttributesOnly);
-            foreach (var keyName in TransactionPart.TargetTable.KeyNames)
-            {
-                attributeUpdates.Remove(keyName);
-            }
-
             currentConfig.ConditionalExpression?.ApplyExpression(update, TransactionPart.TargetTable);
 
-            if (attributeUpdates.Any())
+            if (TryGetUpdateExpression(out var statement,
+                    out var expressionAttributeValues,
+                    out var expressionAttributeNames))
             {
-                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates,
-                    out var statement, out var expressionAttributeValues, out var expressionAttributeNames);
-
                 update.UpdateExpression = statement;
 
                 if (update.ExpressionAttributeValues == null)
@@ -700,27 +790,99 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return new TransactWriteItem { Update = update };
         }
 
+        protected abstract bool TryGetUpdateExpression(out string statement,
+            out Dictionary<string, AttributeValue> expressionAttributeValues,
+            out Dictionary<string, string> expressionAttributes);
+
         #endregion
     }
 
-    internal class ToDeleteTransactWriteRequestItem : ITransactWriteRequestItem
+    internal class ToUpdateWithDocumentTransactWriteRequestItem : ToUpdateTransactWriteRequestItemBase
     {
         #region Properties
 
-        public Key Key { get; set; }
-
-        public Document Document => null;
-
-        public DocumentTransactWrite TransactionPart { get; set; }
-
-        public TransactWriteItemOperationConfig OperationConfig { get; set; }
+        public Document Document { get; set; }
 
         #endregion
 
 
         #region Methods
 
-        public TransactWriteItem GetRequest()
+        protected override bool TryGetUpdateExpression(out string statement,
+            out Dictionary<string, AttributeValue> expressionAttributeValues,
+            out Dictionary<string, string> expressionAttributes)
+        {
+            // If the keys have been changed, treat entire document as having changed
+            bool haveKeysChanged = TransactionPart.TargetTable.HaveKeysChanged(Document);
+            bool updateChangedAttributesOnly = !haveKeysChanged;
+
+            var attributeUpdates = TransactionPart.TargetTable.ToAttributeUpdateMap(Document, updateChangedAttributesOnly);
+            foreach (var keyName in TransactionPart.TargetTable.KeyNames)
+            {
+                attributeUpdates.Remove(keyName);
+            }
+
+            if (!attributeUpdates.Any())
+            {
+                statement = null;
+                expressionAttributeValues = null;
+                expressionAttributes = null;
+                return false;
+            }
+
+            Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates,
+                out statement, out expressionAttributeValues, out expressionAttributes);
+
+            return true;
+        }
+
+        public override void CommitChanges()
+        {
+            Document.CommitChanges();
+        }
+
+        #endregion
+    }
+
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
+    internal class ToUpdateWithExpressionTransactWriteRequestItem : ToUpdateTransactWriteRequestItemBase
+    {
+        #region Properties
+
+        public Expression UpdateExpression { get; set; }
+
+        #endregion
+
+
+        #region Methods
+
+        protected override bool TryGetUpdateExpression(out string statement,
+            out Dictionary<string, AttributeValue> expressionAttributeValues,
+            out Dictionary<string, string> expressionAttributes)
+        {
+            statement = UpdateExpression.ExpressionStatement;
+            expressionAttributeValues = Expression.ConvertToAttributeValues(UpdateExpression.ExpressionAttributeValues, TransactionPart.TargetTable);
+            expressionAttributes = UpdateExpression.ExpressionAttributeNames;
+            return true;
+        }
+
+        #endregion
+    }
+
+    internal class ToDeleteTransactWriteRequestItem : TransactWriteRequestItemBase
+    {
+        #region Properties
+
+        public Key Key { get; set; }
+
+        #endregion
+
+
+        #region Methods
+
+        public override TransactWriteItem GetRequest()
         {
             var currentConfig = OperationConfig ?? new TransactWriteItemOperationConfig();
 
@@ -739,24 +901,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #endregion
     }
 
-    internal class ToConditionCheckTransactWriteRequestItem : ITransactWriteRequestItem
+    internal class ToConditionCheckTransactWriteRequestItem : TransactWriteRequestItemBase
     {
         #region Properties
 
         public Key Key { get; set; }
-
-        public Document Document => null;
-
-        public DocumentTransactWrite TransactionPart { get; set; }
-
-        public TransactWriteItemOperationConfig OperationConfig { get; set; }
 
         #endregion
 
 
         #region Methods
 
-        public TransactWriteItem GetRequest()
+        public override TransactWriteItem GetRequest()
         {
             var currentConfig = OperationConfig ?? new TransactWriteItemOperationConfig();
 

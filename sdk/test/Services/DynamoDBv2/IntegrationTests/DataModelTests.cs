@@ -1394,6 +1394,101 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
                 var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
+                transactWrite.AddSaveKey(employee1.Name, employee1.Age,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #score = #score + :score",
+                        ExpressionAttributeNames = { ["#score"] = "Score" },
+                        ExpressionAttributeValues = { [":score"] = 1 }
+                    },
+                    new Expression
+                    {
+                        ExpressionStatement = "#version = :version",
+                        ExpressionAttributeNames = { ["#version"] = "Version" },
+                        ExpressionAttributeValues = { [":version"] = employee1.Version }
+                    });
+                transactWrite.AddDeleteKey(employee2.Name, employee2.Age,
+                    new Expression
+                    {
+                        ExpressionStatement = "#version = :version",
+                        ExpressionAttributeNames = { ["#version"] = "Version" },
+                        ExpressionAttributeValues = { [":version"] = employee2.Version - 1 }
+                    });
+
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+
+                Assert.IsNotNull(ex.CancellationReasons);
+                Assert.AreEqual(2, ex.CancellationReasons.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[0].Code);
+                Assert.AreEqual("ConditionalCheckFailed", ex.CancellationReasons[1].Code);
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedEmployee>();
+                transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(2, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Name, transactGet.Results[0].Name);
+                Assert.AreEqual(employee1.Score, transactGet.Results[0].Score);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Name, transactGet.Results[1].Name);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+            }
+
+            {
+                var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
+                transactWrite.AddSaveKey(employee1.Name, employee1.Age,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #score = #score + :score",
+                        ExpressionAttributeNames = { ["#score"] = "Score" },
+                        ExpressionAttributeValues = { [":score"] = 1 }
+                    },
+                    new Expression
+                    {
+                        ExpressionStatement = "#version = :version",
+                        ExpressionAttributeNames = { ["#version"] = "Version" },
+                        ExpressionAttributeValues = { [":version"] = employee1.Version }
+                    });
+                transactWrite.AddSaveKey(employee2.Name, employee2.Age,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #score = #score + :score",
+                        ExpressionAttributeNames = { ["#score"] = "Score" },
+                        ExpressionAttributeValues = { [":score"] = 2 }
+                    },
+                    new Expression
+                    {
+                        ExpressionStatement = "#version = :version",
+                        ExpressionAttributeNames = { ["#version"] = "Version" },
+                        ExpressionAttributeValues = { [":version"] = employee2.Version }
+                    });
+
+                transactWrite.Execute();
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedEmployee>();
+                transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(2, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Name, transactGet.Results[0].Name);
+                Assert.AreEqual(employee1.Score + 1, transactGet.Results[0].Score);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Name, transactGet.Results[1].Name);
+                Assert.AreEqual(employee2.Score + 2, transactGet.Results[1].Score);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+
+                employee1.Score++;
+                employee2.Score += 2;
+            }
+
+            {
+                var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
                 transactWrite.AddDeleteItem(employee1);
                 transactWrite.AddDeleteKey(employee2.Name, employee2.Age);
                 transactWrite.Execute();
