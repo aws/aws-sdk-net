@@ -42,6 +42,11 @@ namespace Amazon.EMRContainers.Model
         IListManagedEndpointsPaginator ListManagedEndpoints(ListManagedEndpointsRequest request);
 
         /// <summary>
+        /// Paginator for ListSecurityConfigurations operation
+        ///</summary>
+        IListSecurityConfigurationsPaginator ListSecurityConfigurations(ListSecurityConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListVirtualClusters operation
         ///</summary>
         IListVirtualClustersPaginator ListVirtualClusters(ListVirtualClustersRequest request);

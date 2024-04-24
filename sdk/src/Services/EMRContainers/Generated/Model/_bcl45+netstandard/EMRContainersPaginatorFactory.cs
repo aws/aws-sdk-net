@@ -61,6 +61,14 @@ namespace Amazon.EMRContainers.Model
         }
 
         /// <summary>
+        /// Paginator for ListSecurityConfigurations operation
+        ///</summary>
+        public IListSecurityConfigurationsPaginator ListSecurityConfigurations(ListSecurityConfigurationsRequest request) 
+        {
+            return new ListSecurityConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListVirtualClusters operation
         ///</summary>
         public IListVirtualClustersPaginator ListVirtualClusters(ListVirtualClustersRequest request) 

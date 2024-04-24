@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VirtualCluster Object
+    /// Response Unmarshaller for SecurityConfiguration Object
     /// </summary>  
-    public class VirtualClusterUnmarshaller : IUnmarshaller<VirtualCluster, XmlUnmarshallerContext>, IUnmarshaller<VirtualCluster, JsonUnmarshallerContext>
+    public class SecurityConfigurationUnmarshaller : IUnmarshaller<SecurityConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SecurityConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VirtualCluster IUnmarshaller<VirtualCluster, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SecurityConfiguration IUnmarshaller<SecurityConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public VirtualCluster Unmarshall(JsonUnmarshallerContext context)
+        public SecurityConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            VirtualCluster unmarshalledObject = new VirtualCluster();
+            SecurityConfiguration unmarshalledObject = new SecurityConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -70,16 +70,16 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("containerProvider", targetDepth))
-                {
-                    var unmarshaller = ContainerProviderUnmarshaller.Instance;
-                    unmarshalledObject.ContainerProvider = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("createdBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
@@ -94,16 +94,10 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("securityConfigurationId", targetDepth))
+                if (context.TestExpression("securityConfigurationData", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecurityConfigurationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("state", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SecurityConfigurationDataUnmarshaller.Instance;
+                    unmarshalledObject.SecurityConfigurationData = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
@@ -117,12 +111,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         }
 
 
-        private static VirtualClusterUnmarshaller _instance = new VirtualClusterUnmarshaller();        
+        private static SecurityConfigurationUnmarshaller _instance = new SecurityConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VirtualClusterUnmarshaller Instance
+        public static SecurityConfigurationUnmarshaller Instance
         {
             get
             {

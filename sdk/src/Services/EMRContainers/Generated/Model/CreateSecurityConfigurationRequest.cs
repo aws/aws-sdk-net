@@ -30,25 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateVirtualCluster operation.
-    /// Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS.
-    /// You can create, describe, list and delete virtual clusters. They do not consume any
-    /// additional resource in your system. A single virtual cluster maps to a single Kubernetes
-    /// namespace. Given this relationship, you can model virtual clusters the same way you
-    /// model Kubernetes namespaces to meet your requirements.
+    /// Container for the parameters to the CreateSecurityConfiguration operation.
+    /// Creates a security configuration. Security configurations in Amazon EMR on EKS are
+    /// templates for different security setups. You can use security configurations to configure
+    /// the Lake Formation integration setup. You can also create a security configuration
+    /// to re-use a security setup each time you create a virtual cluster.
     /// </summary>
-    public partial class CreateVirtualClusterRequest : AmazonEMRContainersRequest
+    public partial class CreateSecurityConfigurationRequest : AmazonEMRContainersRequest
     {
         private string _clientToken;
-        private ContainerProvider _containerProvider;
         private string _name;
-        private string _securityConfigurationId;
+        private SecurityConfigurationData _securityConfigurationData;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The client token of the virtual cluster.
+        /// The client idempotency token to use when creating the security configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -65,28 +63,9 @@ namespace Amazon.EMRContainers.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContainerProvider. 
-        /// <para>
-        /// The container provider of the virtual cluster.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ContainerProvider ContainerProvider
-        {
-            get { return this._containerProvider; }
-            set { this._containerProvider = value; }
-        }
-
-        // Check to see if ContainerProvider property is set
-        internal bool IsSetContainerProvider()
-        {
-            return this._containerProvider != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The specified name of the virtual cluster.
+        /// The name of the security configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -103,28 +82,28 @@ namespace Amazon.EMRContainers.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityConfigurationId. 
+        /// Gets and sets the property SecurityConfigurationData. 
         /// <para>
-        /// The ID of the security configuration.
+        /// Security configuration input for the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string SecurityConfigurationId
+        [AWSProperty(Required=true)]
+        public SecurityConfigurationData SecurityConfigurationData
         {
-            get { return this._securityConfigurationId; }
-            set { this._securityConfigurationId = value; }
+            get { return this._securityConfigurationData; }
+            set { this._securityConfigurationData = value; }
         }
 
-        // Check to see if SecurityConfigurationId property is set
-        internal bool IsSetSecurityConfigurationId()
+        // Check to see if SecurityConfigurationData property is set
+        internal bool IsSetSecurityConfigurationData()
         {
-            return this._securityConfigurationId != null;
+            return this._securityConfigurationData != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the virtual cluster.
+        /// The tags to add to the security configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

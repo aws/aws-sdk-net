@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateVirtualCluster Request Marshaller
+    /// CreateSecurityConfiguration Request Marshaller
     /// </summary>       
-    public class CreateVirtualClusterRequestMarshaller : IMarshaller<IRequest, CreateVirtualClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateSecurityConfigurationRequestMarshaller : IMarshaller<IRequest, CreateSecurityConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateVirtualClusterRequest)input);
+            return this.Marshall((CreateSecurityConfigurationRequest)input);
         }
 
         /// <summary>
@@ -53,14 +53,14 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateVirtualClusterRequest publicRequest)
+        public IRequest Marshall(CreateSecurityConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EMRContainers");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/virtualclusters";
+            request.ResourcePath = "/securityconfigurations";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -78,27 +78,21 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
-                if(publicRequest.IsSetContainerProvider())
-                {
-                    context.Writer.WritePropertyName("containerProvider");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ContainerProviderMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ContainerProvider, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
                 }
 
-                if(publicRequest.IsSetSecurityConfigurationId())
+                if(publicRequest.IsSetSecurityConfigurationData())
                 {
-                    context.Writer.WritePropertyName("securityConfigurationId");
-                    context.Writer.Write(publicRequest.SecurityConfigurationId);
+                    context.Writer.WritePropertyName("securityConfigurationData");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SecurityConfigurationDataMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SecurityConfigurationData, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTags())
@@ -123,9 +117,9 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateVirtualClusterRequestMarshaller _instance = new CreateVirtualClusterRequestMarshaller();        
+        private static CreateSecurityConfigurationRequestMarshaller _instance = new CreateSecurityConfigurationRequestMarshaller();        
 
-        internal static CreateVirtualClusterRequestMarshaller GetInstance()
+        internal static CreateSecurityConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +127,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateVirtualClusterRequestMarshaller Instance
+        public static CreateSecurityConfigurationRequestMarshaller Instance
         {
             get
             {
