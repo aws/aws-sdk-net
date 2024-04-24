@@ -94,6 +94,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReplicaContainerGroupCounts", targetDepth))
+                {
+                    var unmarshaller = ReplicaContainerGroupCountsUnmarshaller.Instance;
+                    unmarshalledObject.ReplicaContainerGroupCounts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

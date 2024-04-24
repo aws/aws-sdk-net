@@ -31,15 +31,20 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFleetLocations operation.
-    /// Adds remote locations to a fleet and begins populating the new locations with EC2
-    /// instances. The new instances conform to the fleet's instance type, auto-scaling, and
-    /// other configuration settings. 
+    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
+    /// which is currently in public preview.</b> 
     /// 
+    ///  
+    /// <para>
+    /// Adds remote locations to an EC2 or container fleet and begins populating the new locations
+    /// with instances. The new instances conform to the fleet's instance type, auto-scaling,
+    /// and other configuration settings.
+    /// </para>
     ///  <note> 
     /// <para>
-    /// This operation cannot be used with fleets that don't support remote locations. Fleets
-    /// can have multiple locations only if they reside in Amazon Web Services Regions that
-    /// support this feature and were created after the feature was released in March 2021.
+    /// You can't add remote locations to a fleet that resides in an Amazon Web Services Region
+    /// that doesn't support multiple locations. Fleets created prior to March 2021 can't
+    /// support multiple locations.
     /// </para>
     ///  </note> 
     /// <para>

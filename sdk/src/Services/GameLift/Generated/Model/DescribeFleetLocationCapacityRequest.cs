@@ -33,10 +33,14 @@ namespace Amazon.GameLift.Model
     /// Container for the parameters to the DescribeFleetLocationCapacity operation.
     /// Retrieves the resource capacity settings for a fleet location. The data returned includes
     /// the current capacity (number of EC2 instances) and some scaling settings for the requested
-    /// fleet location. Use this operation to retrieve capacity information for a fleet's
-    /// remote location or home Region (you can also retrieve home Region capacity by calling
-    /// <c>DescribeFleetCapacity</c>).
+    /// fleet location. For a container fleet, this operation also returns counts for replica
+    /// container groups.
     /// 
+    ///  
+    /// <para>
+    /// Use this operation to retrieve capacity information for a fleet's remote location
+    /// or home Region (you can also retrieve home Region capacity by calling <c>DescribeFleetCapacity</c>).
+    /// </para>
     ///  
     /// <para>
     /// To retrieve capacity data, identify a fleet and location. 

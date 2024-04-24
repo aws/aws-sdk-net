@@ -31,17 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFleetAttributes operation.
-    /// Updates a fleet's mutable attributes, including game session protection and resource
+    /// Updates a fleet's mutable attributes, such as game session protection and resource
     /// creation limits.
     /// 
     ///  
     /// <para>
     /// To update fleet attributes, specify the fleet ID and the property values that you
-    /// want to change. 
-    /// </para>
-    ///  
-    /// <para>
-    /// If successful, an updated <c>FleetAttributes</c> object is returned.
+    /// want to change. If successful, Amazon GameLift returns the identifiers for the updated
+    /// fleet.
     /// </para>
     ///  
     /// <para>

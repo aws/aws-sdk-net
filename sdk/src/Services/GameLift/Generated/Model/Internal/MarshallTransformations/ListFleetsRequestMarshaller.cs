@@ -75,6 +75,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BuildId);
                 }
 
+                if(publicRequest.IsSetContainerGroupDefinitionName())
+                {
+                    context.Writer.WritePropertyName("ContainerGroupDefinitionName");
+                    context.Writer.Write(publicRequest.ContainerGroupDefinitionName);
+                }
+
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("Limit");

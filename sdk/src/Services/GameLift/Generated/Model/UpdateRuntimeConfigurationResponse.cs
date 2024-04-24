@@ -39,8 +39,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RuntimeConfiguration. 
         /// <para>
-        /// The runtime configuration currently in use by all instances in the fleet. If the update
-        /// was successful, all property changes are shown. 
+        /// The runtime configuration currently in use by computes in the fleet. If the update
+        /// is successful, all property changes are shown. 
         /// </para>
         /// </summary>
         public RuntimeConfiguration RuntimeConfiguration

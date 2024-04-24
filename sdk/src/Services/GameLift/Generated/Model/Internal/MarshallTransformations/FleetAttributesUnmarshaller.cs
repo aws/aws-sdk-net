@@ -94,6 +94,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContainerGroupsAttributes", targetDepth))
+                {
+                    var unmarshaller = ContainerGroupsAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ContainerGroupsAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

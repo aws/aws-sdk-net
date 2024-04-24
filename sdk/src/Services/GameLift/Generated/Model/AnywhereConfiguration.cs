@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Amazon GameLift Anywhere configuration options for your Anywhere fleets.
+    /// Amazon GameLift configuration options for your Anywhere fleets.
     /// </summary>
     public partial class AnywhereConfiguration
     {

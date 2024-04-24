@@ -31,12 +31,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Current resource utilization statistics in a specified fleet or location. The location
-    /// value might refer to a fleet's remote location or its home Region.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related actions</b> 
-    /// </para>
+    /// value might refer to a fleet's remote location or its home region.
     /// </summary>
     public partial class FleetUtilization
     {

@@ -107,6 +107,10 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NotReadyException"))
+                {
+                    return NotReadyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TaggingFailedException"))
                 {
                     return TaggingFailedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

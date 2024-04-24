@@ -30,19 +30,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// An Amazon GameLift compute resource for hosting your game servers. A compute can be
-    /// an EC2instance in a managed EC2 fleet or a registered compute in an Anywhere fleet.
+    /// <b>This data type has been expanded to use with the Amazon GameLift containers feature,
+    /// which is currently in public preview.</b> 
+    /// 
+    ///  
+    /// <para>
+    /// An Amazon GameLift compute resource for hosting your game servers. Computes in an
+    /// Amazon GameLift fleet differs depending on the fleet's compute type property as follows:
+    /// 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For <c>EC2</c> fleets, a compute is an EC2 instance.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <c>ANYWHERE</c> fleets, a compute is a computing resource that you provide and
+    /// is registered to the fleet.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <c>CONTAINER</c> fleets, a compute is a container that's registered to the fleet.
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Compute
     {
         private string _computeArn;
         private string _computeName;
         private ComputeStatus _computeStatus;
+        private ContainerAttributes _containerAttributes;
         private DateTime? _creationTime;
         private string _dnsName;
         private string _fleetArn;
         private string _fleetId;
+        private string _gameLiftAgentEndpoint;
         private string _gameLiftServiceSdkEndpoint;
+        private string _instanceId;
         private string _ipAddress;
         private string _location;
         private OperatingSystem _operatingSystem;
@@ -52,7 +77,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ComputeArn. 
         /// <para>
         /// The ARN that is assigned to a compute resource and uniquely identifies it. ARNs are
-        /// unique across locations. Instances in managed EC2 fleets are not assigned a ComputeARN.
+        /// unique across locations. Instances in managed EC2 fleets are not assigned a Compute
+        /// ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -72,7 +98,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ComputeName. 
         /// <para>
         /// A descriptive label for the compute resource. For instances in a managed EC2 fleet,
-        /// the compute name is an instance ID.
+        /// the compute name is the same value as the <c>InstanceId</c> ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -105,6 +131,24 @@ namespace Amazon.GameLift.Model
         internal bool IsSetComputeStatus()
         {
             return this._computeStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerAttributes. 
+        /// <para>
+        ///  Some attributes of a container. 
+        /// </para>
+        /// </summary>
+        public ContainerAttributes ContainerAttributes
+        {
+            get { return this._containerAttributes; }
+            set { this._containerAttributes = value; }
+        }
+
+        // Check to see if ContainerAttributes property is set
+        internal bool IsSetContainerAttributes()
+        {
+            return this._containerAttributes != null;
         }
 
         /// <summary>
@@ -182,6 +226,25 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GameLiftAgentEndpoint. 
+        /// <para>
+        ///  The endpoint of the Amazon GameLift Agent. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string GameLiftAgentEndpoint
+        {
+            get { return this._gameLiftAgentEndpoint; }
+            set { this._gameLiftAgentEndpoint = value; }
+        }
+
+        // Check to see if GameLiftAgentEndpoint property is set
+        internal bool IsSetGameLiftAgentEndpoint()
+        {
+            return this._gameLiftAgentEndpoint != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GameLiftServiceSdkEndpoint. 
         /// <para>
         /// The Amazon GameLift SDK endpoint connection for a registered compute resource in an
@@ -200,6 +263,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetGameLiftServiceSdkEndpoint()
         {
             return this._gameLiftServiceSdkEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        ///  The <c>InstanceID</c> of the <c>Instance</c> hosting the compute for Container and
+        /// Managed EC2 fleets. 
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
         }
 
         /// <summary>

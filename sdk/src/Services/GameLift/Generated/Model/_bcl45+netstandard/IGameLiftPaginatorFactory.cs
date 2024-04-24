@@ -112,6 +112,11 @@ namespace Amazon.GameLift.Model
         IListComputePaginator ListCompute(ListComputeRequest request);
 
         /// <summary>
+        /// Paginator for ListContainerGroupDefinitions operation
+        ///</summary>
+        IListContainerGroupDefinitionsPaginator ListContainerGroupDefinitions(ListContainerGroupDefinitionsRequest request);
+
+        /// <summary>
         /// Paginator for ListFleets operation
         ///</summary>
         IListFleetsPaginator ListFleets(ListFleetsRequest request);

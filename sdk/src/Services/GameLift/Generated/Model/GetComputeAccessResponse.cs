@@ -39,6 +39,7 @@ namespace Amazon.GameLift.Model
         private Credentials _credentials;
         private string _fleetArn;
         private string _fleetId;
+        private string _target;
 
         /// <summary>
         /// Gets and sets the property ComputeArn. 
@@ -124,7 +125,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// The ID of the fleet that contains the compute resource to be accessed.
+        /// The ID of the fleet that holds the compute resource to be accessed.
         /// </para>
         /// </summary>
         public string FleetId
@@ -137,6 +138,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetFleetId()
         {
             return this._fleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Target. 
+        /// <para>
+        /// (For container fleets only) The instance ID where the compute resource is running.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=400)]
+        public string Target
+        {
+            get { return this._target; }
+            set { this._target = value; }
+        }
+
+        // Check to see if Target property is set
+        internal bool IsSetTarget()
+        {
+            return this._target != null;
         }
 
     }

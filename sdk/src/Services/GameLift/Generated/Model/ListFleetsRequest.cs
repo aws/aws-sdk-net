@@ -31,31 +31,38 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFleets operation.
-    /// Retrieves a collection of fleet resources in an Amazon Web Services Region. You can
-    /// call this operation to get fleets in a previously selected default Region (see <a
-    /// href="https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html">https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-region.html</a>or
-    /// specify a Region in your request. You can filter the result set to find only those
-    /// fleets that are deployed with a specific build or script. For fleets that have multiple
-    /// locations, this operation retrieves fleets based on their home Region only.
+    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
+    /// which is currently in public preview.</b> 
     /// 
     ///  
     /// <para>
-    /// This operation can be used in the following ways: 
+    /// Retrieves a collection of fleet resources in an Amazon Web Services Region. You can
+    /// filter the result set to find only those fleets that are deployed with a specific
+    /// build or script. For fleets that have multiple locations, this operation retrieves
+    /// fleets based on their home Region only.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use operation in the following ways: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// To get a list of all fleets in a Region, don't provide a build or script identifier.
-    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To get a list of all fleets where a specific custom game build is deployed, provide
-    /// the build ID.
+    /// To get a list of all fleets where a specific game build is deployed, provide the build
+    /// ID.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// To get a list of all Realtime Servers fleets with a specific configuration script,
     /// provide the script ID. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  To get a list of all fleets with a specific container group definition, provide the
+    /// <c>ContainerGroupDefinition</c> ID. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -63,26 +70,19 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a list of fleet IDs that match the request parameters is returned.
+    /// If successful, this operation returns a list of fleet IDs that match the request parameters.
     /// A NextToken value is also returned if there are more result pages to retrieve.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Fleet resources are not listed in a particular order.
+    /// Fleet IDs are returned in no particular order.
     /// </para>
-    ///  </note> 
-    /// <para>
-    ///  <b>Learn more</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up Amazon GameLift fleets</a> 
-    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListFleetsRequest : AmazonGameLiftRequest
     {
         private string _buildId;
+        private string _containerGroupDefinitionName;
         private int? _limit;
         private string _nextToken;
         private string _scriptId;
@@ -104,6 +104,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetBuildId()
         {
             return this._buildId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerGroupDefinitionName. 
+        /// <para>
+        /// The container group definition name to request fleets for. Use this parameter to return
+        /// only fleets that are deployed with the specified container group definition.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string ContainerGroupDefinitionName
+        {
+            get { return this._containerGroupDefinitionName; }
+            set { this._containerGroupDefinitionName = value; }
+        }
+
+        // Check to see if ContainerGroupDefinitionName property is set
+        internal bool IsSetContainerGroupDefinitionName()
+        {
+            return this._containerGroupDefinitionName != null;
         }
 
         /// <summary>

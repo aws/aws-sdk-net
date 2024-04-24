@@ -173,6 +173,14 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Paginator for ListContainerGroupDefinitions operation
+        ///</summary>
+        public IListContainerGroupDefinitionsPaginator ListContainerGroupDefinitions(ListContainerGroupDefinitionsRequest request) 
+        {
+            return new ListContainerGroupDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFleets operation
         ///</summary>
         public IListFleetsPaginator ListFleets(ListFleetsRequest request) 
