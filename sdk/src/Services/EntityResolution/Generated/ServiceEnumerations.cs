@@ -75,6 +75,106 @@ namespace Amazon.EntityResolution
 
 
     /// <summary>
+    /// Constants used for properties of type DeleteUniqueIdErrorType.
+    /// </summary>
+    public class DeleteUniqueIdErrorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SERVICE_ERROR for DeleteUniqueIdErrorType
+        /// </summary>
+        public static readonly DeleteUniqueIdErrorType SERVICE_ERROR = new DeleteUniqueIdErrorType("SERVICE_ERROR");
+        /// <summary>
+        /// Constant VALIDATION_ERROR for DeleteUniqueIdErrorType
+        /// </summary>
+        public static readonly DeleteUniqueIdErrorType VALIDATION_ERROR = new DeleteUniqueIdErrorType("VALIDATION_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeleteUniqueIdErrorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeleteUniqueIdErrorType FindValue(string value)
+        {
+            return FindValue<DeleteUniqueIdErrorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeleteUniqueIdErrorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeleteUniqueIdStatus.
+    /// </summary>
+    public class DeleteUniqueIdStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCEPTED for DeleteUniqueIdStatus
+        /// </summary>
+        public static readonly DeleteUniqueIdStatus ACCEPTED = new DeleteUniqueIdStatus("ACCEPTED");
+        /// <summary>
+        /// Constant COMPLETED for DeleteUniqueIdStatus
+        /// </summary>
+        public static readonly DeleteUniqueIdStatus COMPLETED = new DeleteUniqueIdStatus("COMPLETED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeleteUniqueIdStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeleteUniqueIdStatus FindValue(string value)
+        {
+            return FindValue<DeleteUniqueIdStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeleteUniqueIdStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IdMappingType.
     /// </summary>
     public class IdMappingType : ConstantClass

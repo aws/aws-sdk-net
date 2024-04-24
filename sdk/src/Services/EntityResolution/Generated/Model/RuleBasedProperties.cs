@@ -71,7 +71,7 @@ namespace Amazon.EntityResolution.Model
         /// A list of <c>Rule</c> objects, each of which have fields <c>RuleName</c> and <c>MatchingKeys</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=15)]
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<Rule> Rules
         {
             get { return this._rules; }

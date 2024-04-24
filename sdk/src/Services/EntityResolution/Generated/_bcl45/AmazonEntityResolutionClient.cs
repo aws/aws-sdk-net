@@ -372,6 +372,69 @@ namespace Amazon.EntityResolution
 
         #endregion
         
+        #region  BatchDeleteUniqueId
+
+
+        /// <summary>
+        /// Deletes multiple unique IDs in a matching workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteUniqueId service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteUniqueId service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/BatchDeleteUniqueId">REST API Reference for BatchDeleteUniqueId Operation</seealso>
+        public virtual BatchDeleteUniqueIdResponse BatchDeleteUniqueId(BatchDeleteUniqueIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteUniqueIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteUniqueIdResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteUniqueIdResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes multiple unique IDs in a matching workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteUniqueId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteUniqueId service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/BatchDeleteUniqueId">REST API Reference for BatchDeleteUniqueId Operation</seealso>
+        public virtual Task<BatchDeleteUniqueIdResponse> BatchDeleteUniqueIdAsync(BatchDeleteUniqueIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteUniqueIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteUniqueIdResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDeleteUniqueIdResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateIdMappingWorkflow
 
 

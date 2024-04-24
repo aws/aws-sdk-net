@@ -129,6 +129,57 @@ namespace Amazon.EntityResolution
 
         #endregion
         
+        #region  BatchDeleteUniqueId
+
+
+        /// <summary>
+        /// Deletes multiple unique IDs in a matching workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteUniqueId service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteUniqueId service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/BatchDeleteUniqueId">REST API Reference for BatchDeleteUniqueId Operation</seealso>
+        BatchDeleteUniqueIdResponse BatchDeleteUniqueId(BatchDeleteUniqueIdRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteUniqueId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteUniqueId operation on AmazonEntityResolutionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteUniqueId
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/BatchDeleteUniqueId">REST API Reference for BatchDeleteUniqueId Operation</seealso>
+        IAsyncResult BeginBatchDeleteUniqueId(BatchDeleteUniqueIdRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteUniqueId operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteUniqueId.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteUniqueIdResult from EntityResolution.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/BatchDeleteUniqueId">REST API Reference for BatchDeleteUniqueId Operation</seealso>
+        BatchDeleteUniqueIdResponse EndBatchDeleteUniqueId(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateIdMappingWorkflow
 
 
