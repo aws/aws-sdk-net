@@ -1028,35 +1028,67 @@ namespace Amazon.Util
         /// Currently recognised RFC versions are 1738 (Dec '94) and 3986 (Jan '05). 
         /// If the specified RFC is not recognised, 3986 is used by default.
         /// </remarks>
+        // TODO Add SkipsLocalsInit?
         public static string UrlEncode(int rfcNumber, string data, bool path)
         {
-            StringBuilder encoded = new StringBuilder(data.Length * 2);
-            string validUrlCharacters;
-            if (!RFCEncodingSchemes.TryGetValue(rfcNumber, out validUrlCharacters))
-                validUrlCharacters = ValidUrlCharacters;
-
-            string unreservedChars = String.Concat(validUrlCharacters, (path ? ValidPathCharacters : ""));
-            foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(data))
+            byte[] sharedDataBuffer = null, sharedEncodedBuffer = null;
+            // Put this elsewhere?
+            const int MaxStackLimit = 256;
+            try
             {
-                if (unreservedChars.IndexOf(symbol) != -1)
-                {
-                    encoded.Append(symbol);
-                }
-                else
-                {
-                    encoded.Append('%');
+                string validUrlCharacters;
+                if (!RFCEncodingSchemes.TryGetValue(rfcNumber, out validUrlCharacters))
+                    validUrlCharacters = ValidUrlCharacters;
 
-                    // Break apart the byte into two four-bit components and
-                    // then convert each into their hexadecimal equivalent.
-                    byte b = (byte)symbol;
-                    int hiNibble = b >> 4;
-                    int loNibble = b & 0xF;
-                    encoded.Append(ToUpperHex(hiNibble));
-                    encoded.Append(ToUpperHex(loNibble));
+                string unreservedChars = String.Concat(validUrlCharacters, (path ? ValidPathCharacters : ""));
+            
+                var dataAsSpan = data.AsSpan();
+                var encoding = Encoding.UTF8;
+
+                var dataByteLength = encoding.GetMaxByteCount(dataAsSpan.Length);
+                var dataBuffer = dataByteLength <= MaxStackLimit
+                    ? stackalloc byte[MaxStackLimit]
+                    : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(dataByteLength);
+                var bytesWritten = encoding.GetBytes(dataAsSpan, dataBuffer);
+
+                var encodedByteLength = dataByteLength * dataByteLength;
+                var encodedBuffer = encodedByteLength <= MaxStackLimit
+                    ? stackalloc byte[MaxStackLimit]
+                    : sharedEncodedBuffer = ArrayPool<byte>.Shared.Rent(encodedByteLength);
+                int index = 0;
+                foreach (byte symbol in dataBuffer.Slice(0, bytesWritten))
+                {
+                    if (unreservedChars.IndexOf((char)symbol) != -1)
+                    {
+                        encodedBuffer[index++] = symbol;
+                    }
+                    else
+                    {
+                        encodedBuffer[index++] = (byte)'%';
+
+                        // Break apart the byte into two four-bit components and
+                        // then convert each into their hexadecimal equivalent.
+                        int hiNibble = symbol >> 4;
+                        int loNibble = symbol & 0xF;
+                        encodedBuffer[index++] = (byte)ToUpperHex(hiNibble);
+                        encodedBuffer[index++] = (byte)ToUpperHex(loNibble);
+                    }
+                }
+
+                return encoding.GetString(encodedBuffer.Slice(index));
+            }
+            finally
+            {
+                if (sharedDataBuffer != null)
+                {
+                    ArrayPool<byte>.Shared.Return(sharedDataBuffer);
+                }
+                
+                if (sharedEncodedBuffer != null)
+                {
+                    ArrayPool<byte>.Shared.Return(sharedEncodedBuffer);
                 }
             }
-
-            return encoded.ToString();
         }
 
         private static void ToHexString(Span<byte> source, Span<char> destination, bool lowercase)
