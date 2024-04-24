@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TaskSchedule Object
+    /// Response Unmarshaller for TaskScheduleDetails Object
     /// </summary>  
-    public class TaskScheduleUnmarshaller : IUnmarshaller<TaskSchedule, XmlUnmarshallerContext>, IUnmarshaller<TaskSchedule, JsonUnmarshallerContext>
+    public class TaskScheduleDetailsUnmarshaller : IUnmarshaller<TaskScheduleDetails, XmlUnmarshallerContext>, IUnmarshaller<TaskScheduleDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TaskSchedule IUnmarshaller<TaskSchedule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TaskScheduleDetails IUnmarshaller<TaskScheduleDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TaskSchedule Unmarshall(JsonUnmarshallerContext context)
+        public TaskScheduleDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            TaskSchedule unmarshalledObject = new TaskSchedule();
+            TaskScheduleDetails unmarshalledObject = new TaskScheduleDetails();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,16 +64,22 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ScheduleExpression", targetDepth))
+                if (context.TestExpression("DisabledBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScheduleExpression = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisabledBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("DisabledReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisabledReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusUpdateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StatusUpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -81,12 +87,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         }
 
 
-        private static TaskScheduleUnmarshaller _instance = new TaskScheduleUnmarshaller();        
+        private static TaskScheduleDetailsUnmarshaller _instance = new TaskScheduleDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TaskScheduleUnmarshaller Instance
+        public static TaskScheduleDetailsUnmarshaller Instance
         {
             get
             {

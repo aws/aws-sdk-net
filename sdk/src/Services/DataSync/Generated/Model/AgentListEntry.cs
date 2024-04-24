@@ -66,7 +66,7 @@ namespace Amazon.DataSync.Model
         /// The name of an agent.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

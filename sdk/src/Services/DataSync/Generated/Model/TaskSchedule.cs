@@ -30,19 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Specifies the schedule you want your task to use for repeated executions. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
-    /// Expressions for Rules</a>.
+    /// Configures your DataSync task to run on a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">schedule</a>
+    /// (at a minimum interval of 1 hour).
     /// </summary>
     public partial class TaskSchedule
     {
         private string _scheduleExpression;
+        private ScheduleStatus _status;
 
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A cron expression that specifies when DataSync initiates a scheduled transfer from
-        /// a source to a destination location. 
+        /// Specifies your task schedule by using a cron expression in UTC time. For information
+        /// about cron expression syntax, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">
+        /// <i>Amazon EventBridge User Guide</i> </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -56,6 +57,32 @@ namespace Amazon.DataSync.Model
         internal bool IsSetScheduleExpression()
         {
             return this._scheduleExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Specifies whether to enable or disable your task schedule. Your schedule is enabled
+        /// by default, but there can be situations where you need to disable it. For example,
+        /// you might need to pause a recurring transfer or fix an issue with your task or perform
+        /// maintenance on your storage system.
+        /// </para>
+        ///  
+        /// <para>
+        /// DataSync might disable your schedule automatically if your task fails repeatedly with
+        /// the same error. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails</a>.
+        /// </para>
+        /// </summary>
+        public ScheduleStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

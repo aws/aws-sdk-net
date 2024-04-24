@@ -54,6 +54,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ScheduleExpression);
             }
 
+            if(requestObject.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.Write(requestObject.Status);
+            }
+
         }
 
         /// <summary>
