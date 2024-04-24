@@ -14,41 +14,35 @@
  */
 
 using System;
-using System.Globalization;
+using System.Collections.Generic;
 using System.IO;
-
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
     /// Enumerator describing type of DynamoDB data in a Primitive or PrimitiveList
     /// </summary>
-    public enum DynamoDBEntryType { 
+    public enum DynamoDBEntryType
+    {
         /// <summary>
         /// DynamoDB String type.
         /// </summary>
-        String, 
+        String,
         /// <summary>
         /// DynamoDB Numeric type.
         /// </summary>
-        Numeric, 
+        Numeric,
         /// <summary>
         /// DynamoDB Binary type.
         /// </summary>
-        Binary 
+        Binary
     }
 
     /// <summary>
     /// A DynamoDBEntry that represents a scalar DynamoDB type
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class Primitive : DynamoDBEntry, IEquatable<Primitive>
     {
         #region Private members

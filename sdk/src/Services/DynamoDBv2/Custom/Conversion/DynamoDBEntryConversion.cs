@@ -71,9 +71,6 @@ namespace Amazon.DynamoDBv2
     /// A collection of converters capable of converting between
     /// .NET and DynamoDB objects.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class DynamoDBEntryConversion
     {
         #region Static members
@@ -332,11 +329,6 @@ namespace Amazon.DynamoDBv2
             return new DynamoDBEntryConversion(this.OriginalConversion, isImmutable: false);
         }
 
-        internal bool IsConverterRegistered(Type converterType)
-        {
-            return ConverterCache.IsConverterRegistered(converterType);
-        }
-
         internal bool HasConverter(Type type)
         {
             return ConverterCache.HasConverter(type);
@@ -365,12 +357,21 @@ namespace Amazon.DynamoDBv2
             //foreach (var value in values)
             //    yield return ConvertToEntry(value);
         }
+
         internal IEnumerable<object> ConvertFromEntries(Type elementType, IEnumerable<DynamoDBEntry> entries)
         {
             if (entries == null) throw new ArgumentNullException("entries");
 
             foreach (var entry in entries)
                 yield return ConvertFromEntry(elementType, entry);
+        }
+
+        internal IEnumerable<T> ConvertFromEntries<T>(IEnumerable<DynamoDBEntry> entries)
+        {
+            if (entries == null) throw new ArgumentNullException("entries");
+
+            foreach (var entry in entries)
+                yield return ConvertFromEntry<T>(entry);
         }
 
         internal PrimitiveList ItemsToPrimitiveList(IEnumerable items)
@@ -389,59 +390,24 @@ namespace Amazon.DynamoDBv2
         private ConverterCache ConverterCache = new ConverterCache();
         private ConversionSchema OriginalConversion;
 
-        internal void AddConverter(Converter converter)
+        internal void AddConverterFactory(ConverterFactory factory)
         {
-            ConverterCache.AddConverter(converter, this);
+            if (IsImmutable)
+                throw new InvalidOperationException("Adding converters to immutable conversion is not supported. The conversion must be cloned first.");
+
+            ConverterCache.AddConverterFactory(factory);
         }
 
         private void SetV1Converters()
         {
-            AddConverter(new ByteConverterV1());
-            AddConverter(new SByteConverterV1());
-            AddConverter(new UInt16ConverterV1());
-            AddConverter(new Int16ConverterV1());
-            AddConverter(new UInt32ConverterV1());
-            AddConverter(new Int32ConverterV1());
-            AddConverter(new UInt64ConverterV1());
-            AddConverter(new Int64ConverterV1());
-            AddConverter(new SingleConverterV1());
-            AddConverter(new DoubleConverterV1());
-            AddConverter(new DecimalConverterV1());
-            AddConverter(new CharConverterV1());
-            AddConverter(new StringConverterV1());
-            AddConverter(new DateTimeConverterV1());
-            AddConverter(new GuidConverterV1());
-            AddConverter(new BytesConverterV1());
-            AddConverter(new MemoryStreamConverterV1());
-            AddConverter(new EnumConverterV1());
-            AddConverter(new BoolConverterV1());
-            AddConverter(new PrimitiveCollectionConverterV1());
-            AddConverter(new DictionaryConverterV1());
+            AddConverterFactory(new WellKnownTypesConverterFactoryV1(this));
+            AddConverterFactory(new CollectionConverterFactoryV1(this));
         }
 
         private void SetV2Converters()
         {
-            AddConverter(new ByteConverterV2());
-            AddConverter(new SByteConverterV2());
-            AddConverter(new UInt16ConverterV2());
-            AddConverter(new Int16ConverterV2());
-            AddConverter(new UInt32ConverterV2());
-            AddConverter(new Int32ConverterV2());
-            AddConverter(new UInt64ConverterV2());
-            AddConverter(new Int64ConverterV2());
-            AddConverter(new SingleConverterV2());
-            AddConverter(new DoubleConverterV2());
-            AddConverter(new DecimalConverterV2());
-            AddConverter(new CharConverterV2());
-            AddConverter(new StringConverterV2());
-            AddConverter(new DateTimeConverterV2());
-            AddConverter(new GuidConverterV2());
-            AddConverter(new BytesConverterV2());
-            AddConverter(new MemoryStreamConverterV2());
-            AddConverter(new DictionaryConverterV2());
-            AddConverter(new EnumConverterV2());
-            AddConverter(new BoolConverterV2());
-            AddConverter(new CollectionConverterV2());
+            AddConverterFactory(new WellKnownTypesConverterFactoryV2(this));
+            AddConverterFactory(new CollectionConverterFactoryV2(this));
         }
 
         // Converts items to Primitives.
@@ -473,14 +439,30 @@ namespace Amazon.DynamoDBv2
         #endregion
     }
 
+    internal abstract class ConverterFactory
+    {
+        private readonly DynamoDBEntryConversion _conversion;
+
+        protected ConverterFactory(DynamoDBEntryConversion conversion)
+        {
+            _conversion = conversion;
+        }
+
+        public Converter GetConverter(Type type)
+        {
+            var converter = CreateConverter(type);
+            
+            if(converter != null)
+                converter.Conversion = _conversion;
+
+            return converter;
+        }
+
+        protected abstract Converter CreateConverter(Type type);
+    }
+
     internal abstract class Converter
     {
-        /// <summary>
-        /// Returns all types for which it can be used.
-        /// </summary>
-        /// <returns></returns>
-        public abstract bool IsTypeSupported(Type type);
-
         /// <summary>
         /// Conversion that this converter is part of.
         /// This field is set by DynamoDBEntryConversion when the Converter
@@ -656,17 +638,6 @@ namespace Amazon.DynamoDBv2
 
     internal abstract class Converter<T> : Converter
     {
-        public override bool IsTypeSupported(Type type)
-        {
-            if (type == typeof(T))
-                return true;
-
-            if (Nullable.GetUnderlyingType(type) == typeof(T))
-                return true;
-
-            return false;
-        }
-
         public override bool TryTo(object value, out DynamoDBBool b)
         {
             return TryTo((T)value, out b);
@@ -717,60 +688,60 @@ namespace Amazon.DynamoDBv2
         public override bool TryFrom(DynamoDBBool b, Type targetType, out object result)
         {
             T t;
-            var output = TryFrom(b, targetType, out t);
+            var output = TryFrom(b, out t);
             result = t;
             return output;
         }
         public override bool TryFrom(Primitive p, Type targetType, out object result)
         {
             T t;
-            var output = TryFrom(p, targetType, out t);
+            var output = TryFrom(p, out t);
             result = t;
             return output;
         }
         public override bool TryFrom(PrimitiveList pl, Type targetType, out object result)
         {
             T t;
-            var output = TryFrom(pl, targetType, out t);
+            var output = TryFrom(pl, out t);
             result = t;
             return output;
         }
         public override bool TryFrom(DynamoDBList l, Type targetType, out object result)
         {
             T t;
-            var output = TryFrom(l, targetType, out t);
+            var output = TryFrom(l, out t);
             result = t;
             return output;
         }
         public override bool TryFrom(Document d, Type targetType, out object result)
         {
             T t;
-            var output = TryFrom(d, targetType, out t);
+            var output = TryFrom(d, out t);
             result = t;
             return output;
         }
 
-        protected virtual bool TryFrom(DynamoDBBool b, Type targetType, out T result)
+        protected virtual bool TryFrom(DynamoDBBool b, out T result)
         {
             result = default(T);
             return false;
         }
-        protected virtual bool TryFrom(Primitive p, Type targetType, out T result)
+        protected virtual bool TryFrom(Primitive p, out T result)
         {
             result = default(T);
             return false;
         }
-        protected virtual bool TryFrom(PrimitiveList pl, Type targetType, out T result)
+        protected virtual bool TryFrom(PrimitiveList pl, out T result)
         {
             result = default(T);
             return false;
         }
-        protected virtual bool TryFrom(DynamoDBList l, Type targetType, out T result)
+        protected virtual bool TryFrom(DynamoDBList l, out T result)
         {
             result = default(T);
             return false;
         }
-        protected virtual bool TryFrom(Document d, Type targetType, out T result)
+        protected virtual bool TryFrom(Document d, out T result)
         {
             result = default(T);
             return false;
@@ -780,26 +751,20 @@ namespace Amazon.DynamoDBv2
     internal class ConverterCache
     {
         private static Type EnumType = typeof(Enum);
-        private readonly List<Converter> Converters = new List<Converter>();
         private readonly ConcurrentDictionary<Type, Converter> Cache = new ConcurrentDictionary<Type, Converter>();
+        private readonly List<ConverterFactory> Factories = new List<ConverterFactory>();
 
         public bool HasConverter(Type type)
         {
-            Converter converter;
-            return TryGetConverter(type, out converter);
+            return TryGetConverter(type, out _);
         }
-        public void AddConverter(Converter converter, DynamoDBEntryConversion conversion)
+
+        public void AddConverterFactory(ConverterFactory factory)
         {
-            if (converter == null)
-                throw new ArgumentNullException("converter");
-            if (conversion == null)
-                throw new ArgumentNullException("conversion");
+            if (factory == null)
+                throw new ArgumentNullException(nameof(factory));
 
-            if (conversion.IsImmutable)
-                throw new InvalidOperationException("Adding converters to immutable conversion is not supported. The conversion must be cloned first.");
-
-            converter.Conversion = conversion;
-            Converters.Add(converter);
+            Factories.Add(factory);
         }
 
         public Converter GetConverter(Type type)
@@ -820,24 +785,20 @@ namespace Amazon.DynamoDBv2
                 type = EnumType;
 
             if (Cache.TryGetValue(type, out converter))
-                return true;
+                return converter != null;
 
-            foreach (var c in Converters)
+            foreach (var factory in Factories)
             {
-                if (c.IsTypeSupported(type))
+                converter = factory.GetConverter(type);
+                if (converter != null)
                 {
-                    converter = c;
-                    Cache[type] = c;
+                    Cache[type] = converter;
                     return true;
                 }
             }
 
+            Cache[type] = null;
             return false;
-        }
-
-        internal bool IsConverterRegistered(Type converterType)
-        {
-            return Converters.Exists(c => c.GetType() == converterType);
         }
     }
 }

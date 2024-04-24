@@ -18,7 +18,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.DynamoDBv2.DocumentModel
@@ -26,23 +25,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// A DynamoDBEntry that represents a DynamoDB list (L) type.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class DynamoDBList : DynamoDBEntry
     {
         private static DynamoDBEntryConversion conversion = CreateConversion();
         private static DynamoDBEntryConversion CreateConversion()
         {
             var conversion = DynamoDBEntryConversion.V2.Clone();
-            var supportedMemberTypes = new Type[]
-            {
-                typeof(String),
-                typeof(MemoryStream),
-                typeof(byte[])
-            };
-            conversion.AddConverter(new DynamoDBListConverter(supportedMemberTypes));
-
+            conversion.AddConverterFactory(new DynamoDBListConverterFactory(conversion));
             return conversion;
         }
 
@@ -67,7 +56,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         /// <summary>
-        /// Create a DynamODBList from an IEnumerable
+        /// Create a DynamoDBList from an IEnumerable
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="items"></param>
@@ -176,7 +165,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     entryAttributeValue = entry.ConvertToAttributeValue(conversionConfig);
                 }
-                if(entryAttributeValue != null)
+                if (entryAttributeValue != null)
                 {
                     items.Add(entryAttributeValue);
                 }
@@ -219,7 +208,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (entries.Count != otherEntries.Count)
                 return false;
 
-            for(int i=0;i<entries.Count;i++)
+            for (int i = 0; i < entries.Count; i++)
             {
                 var a = entries[i];
                 var b = otherEntries[i];

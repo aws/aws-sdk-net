@@ -15,21 +15,16 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-
-using Amazon.DynamoDBv2.Model;
 using System.IO;
+using System.Linq;
+using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
     /// A DynamoDBEntry that represents a primitive list DynamoDB type
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class PrimitiveList : DynamoDBEntry, IEquatable<PrimitiveList>
     {
         private static DynamoDBEntryConversion V1Conversion = DynamoDBEntryConversion.V1;
@@ -172,7 +167,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         private class PrimitiveComparer : IComparer<Primitive>
-            {
+        {
             public int Compare(Primitive x, Primitive y)
             {
                 if (x.Type != y.Type)
@@ -197,12 +192,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         int byteCompare = xb.CompareTo(yb);
                         if (byteCompare != 0)
                             return byteCompare;
-            }
+                    }
 
                     return 0;
-        }
+                }
                 else
-        {
+                {
                     throw new InvalidOperationException("Unknown type of Primitive: " + x.Type);
                 }
             }
@@ -494,7 +489,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             var typeHashCode = this.Type.GetHashCode();
             var entriesHashCode = 0;
-            foreach(var entry in this.Entries)
+            foreach (var entry in this.Entries)
             {
                 // Hash entries in such a way that order doesn't matter
                 entriesHashCode = entriesHashCode ^ entry.GetHashCode();
@@ -534,7 +529,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return true;
         }
-        
+
         #endregion
 
         #region IEquatable<PrimitiveList> Members

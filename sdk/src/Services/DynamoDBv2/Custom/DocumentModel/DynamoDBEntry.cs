@@ -15,11 +15,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-
-using Amazon.DynamoDBv2.Model;
-using System.IO;
 using System.Globalization;
+using System.IO;
+using System.Linq;
+using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
@@ -29,9 +28,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Abstract class representing an arbitrary DynamoDB attribute value
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public abstract class DynamoDBEntry : ICloneable
     {
         internal class AttributeConversionConfig
@@ -85,7 +81,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return attributeUpdate;
         }
-        
+
         #endregion
 
         #region Subclass conversions
@@ -577,7 +573,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(String data)
         {
-            if(data == null)
+            if (data == null)
                 return new Primitive();
             return new UnconvertedDynamoDBEntry(data);
         }
@@ -1348,7 +1344,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public override List<MemoryStream> AsListOfMemoryStream()
         {
             return (List<MemoryStream>)Value;
-        } 
+        }
 
         #endregion
 

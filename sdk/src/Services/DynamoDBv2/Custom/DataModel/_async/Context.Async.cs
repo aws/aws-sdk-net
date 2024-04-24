@@ -16,12 +16,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -41,7 +40,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="value">Object to save.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task SaveAsync<T>(T value, CancellationToken cancellationToken = default(CancellationToken))
+        public Task SaveAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(T value, CancellationToken cancellationToken = default(CancellationToken))
         {
             return SaveHelperAsync(value, null, cancellationToken);
         }
@@ -98,7 +97,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKey">Hash key element of the target item.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<T> LoadAsync<T>(object hashKey, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<T> LoadAsync<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)] T>(object hashKey, CancellationToken cancellationToken = default(CancellationToken))
         {
             return LoadHelperAsync<T>(hashKey, null, null, cancellationToken);
         }

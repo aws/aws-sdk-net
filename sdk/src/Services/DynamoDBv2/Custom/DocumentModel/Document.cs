@@ -19,7 +19,6 @@ using System.IO;
 using System.Linq;
 
 using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
@@ -29,9 +28,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// A collection of attribute key-value pairs that defines
     /// an item in DynamoDB.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class Document : DynamoDBEntry, IDictionary<string, DynamoDBEntry>
     {
         #region Private/internal members
@@ -182,7 +178,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public Document ForceConversion(DynamoDBEntryConversion conversion)
         {
             Document newDocument = new Document();
-            foreach(var kvp in this)
+            foreach (var kvp in this)
             {
                 string name = kvp.Key;
                 DynamoDBEntry entry = kvp.Value;
@@ -688,13 +684,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private static bool TryToDocument(AttributeValue attributeValue, out Document document)
         {
             document = null;
-            
+
             if (attributeValue.IsSetM())
             {
                 document = new Document();
 
                 var items = attributeValue.M;
-                foreach(var kvp in items)
+                foreach (var kvp in items)
                 {
                     var name = kvp.Key;
                     var value = kvp.Value;
@@ -710,7 +706,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #endregion
 
         #region Static methods
-        
+
         /// <summary>
         /// Creates a Document from an attribute map.
         /// </summary>
@@ -737,7 +733,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return JsonUtils.FromJson(json);
         }
-        
+
         /// <summary>
         /// Parses JSON text to produce an array of <see cref="Document"/>.
         /// </summary>
@@ -905,7 +901,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal override AttributeValue ConvertToAttributeValue(AttributeConversionConfig conversionConfig)
         {
             var map = new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
-            foreach(var item in currentValues)
+            foreach (var item in currentValues)
             {
                 var key = item.Key;
                 var entry = item.Value;
@@ -956,7 +952,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (Keys.Count != otherDocument.Keys.Count)
                 return false;
 
-            foreach(var key in Keys)
+            foreach (var key in Keys)
             {
                 if (!otherDocument.ContainsKey(key))
                     return false;
@@ -978,7 +974,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public override int GetHashCode()
         {
             var hashCode = 0;
-            foreach(var kvp in this)
+            foreach (var kvp in this)
             {
                 string key = kvp.Key;
                 DynamoDBEntry entry = kvp.Value;
