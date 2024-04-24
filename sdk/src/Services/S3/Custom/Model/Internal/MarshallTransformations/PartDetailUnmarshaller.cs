@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// </summary>
     public class PartDetailUnmarshaller : IUnmarshaller<PartDetail, XmlUnmarshallerContext>, IUnmarshaller<PartDetail, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public PartDetail Unmarshall(XmlUnmarshallerContext context) 
         {
             PartDetail partsItem = new PartDetail();
@@ -93,6 +98,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return partsItem;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public PartDetail Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -100,6 +110,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static PartDetailUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static PartDetailUnmarshaller Instance
         {
             get

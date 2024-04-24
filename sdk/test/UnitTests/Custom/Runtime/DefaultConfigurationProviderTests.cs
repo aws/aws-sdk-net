@@ -122,8 +122,8 @@ namespace AWSSDK.UnitTests
         }
 
         /// <summary>
-        /// Make sure wan error is thrown if <see cref="SharedCredentialsFile.DefaultConfigurationModeField"/>
-        /// has an invalid <inheritdoc cref="DefaultConfigurationMode"/>
+        /// Make sure wan error is thrown if SharedCredentialsFile.DefaultConfigurationModeField
+        /// has an invalid DefaultConfigurationMode
         /// </summary>
         [TestMethod]
         public void UnknownDefaultConfigurationModeThrowsAnError()

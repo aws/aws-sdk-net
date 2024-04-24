@@ -98,56 +98,56 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         [Trait(CategoryAttribute,"S3")]
         public async void PutGetFileUsingMetadataMode()
         {
-            await TestPutGetAsync(s3EncryptionClientMetadataMode, filePath, null, null, null, sampleContent).ConfigureAwait(false);
+            await TestPutGetAsync(s3EncryptionClientMetadataMode, filePath, null, null, null, sampleContent);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async void PutGetFileUsingInstructionFileMode()
         {
-            await TestPutGetAsync(s3EncryptionClientFileMode, filePath, null, null, null, sampleContent).ConfigureAwait(false);
+            await TestPutGetAsync(s3EncryptionClientFileMode, filePath, null, null, null, sampleContent);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async void PutGetStreamUsingMetadataMode()
         {
-            await TestPutGetAsync(s3EncryptionClientMetadataMode, null, sampleContentBytes, null, null, sampleContent).ConfigureAwait(false);
+            await TestPutGetAsync(s3EncryptionClientMetadataMode, null, sampleContentBytes, null, null, sampleContent);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async void PutGetStreamUsingInstructionFileMode()
         {
-            await TestPutGetAsync(s3EncryptionClientFileMode, null, sampleContentBytes, null, null, sampleContent).ConfigureAwait(false);
+            await TestPutGetAsync(s3EncryptionClientFileMode, null, sampleContentBytes, null, null, sampleContent);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async void PutGetContentUsingMetadataMode()
         {
-            await TestPutGetAsync(s3EncryptionClientMetadataMode, null, null, sampleContent, S3CannedACL.AuthenticatedRead, sampleContent).ConfigureAwait(false);
+            await TestPutGetAsync(s3EncryptionClientMetadataMode, null, null, sampleContent, S3CannedACL.AuthenticatedRead, sampleContent);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async void PutGetZeroLengthContentUsingMetadataMode()
         {
-            await TestPutGetAsync(s3EncryptionClientMetadataMode, null, null, "", S3CannedACL.AuthenticatedRead, "").ConfigureAwait(false);
+            await TestPutGetAsync(s3EncryptionClientMetadataMode, null, null, "", S3CannedACL.AuthenticatedRead, "");
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async void PutGetNullContentContentUsingMetadataMode()
         {
-            await TestPutGetAsync(s3EncryptionClientMetadataMode, null, null, null, S3CannedACL.AuthenticatedRead, "").ConfigureAwait(false);
+            await TestPutGetAsync(s3EncryptionClientMetadataMode, null, null, null, S3CannedACL.AuthenticatedRead, "");
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async void PutGetContentUsingInstructionFileMode()
         {
-            await TestPutGetAsync(s3EncryptionClientFileMode, null, null, sampleContent, S3CannedACL.AuthenticatedRead, sampleContent).ConfigureAwait(false);
+            await TestPutGetAsync(s3EncryptionClientFileMode, null, null, sampleContent, S3CannedACL.AuthenticatedRead, sampleContent);
         }
 
         [Fact]
@@ -164,7 +164,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         [Trait(CategoryAttribute,"S3")]
         public async void PutGetStreamUsingMetadataModeKMS()
         {
-            await TestPutGetAsync(s3EncryptionClientMetadataModeKMS, null, sampleContentBytes, null, null, sampleContent).ConfigureAwait(false);
+            await TestPutGetAsync(s3EncryptionClientMetadataModeKMS, null, sampleContentBytes, null, null, sampleContent);
         }
 
         [Fact]
@@ -181,21 +181,21 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         [Trait(CategoryAttribute,"S3")]
         public async void PutGetContentUsingMetadataModeKMS()
         {
-            await TestPutGetAsync(s3EncryptionClientMetadataModeKMS, null, null, sampleContent, S3CannedACL.AuthenticatedRead, sampleContent).ConfigureAwait(false);
+            await TestPutGetAsync(s3EncryptionClientMetadataModeKMS, null, null, sampleContent, S3CannedACL.AuthenticatedRead, sampleContent);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async void PutGetZeroLengthContentUsingMetadataModeKMS()
         {
-            await TestPutGetAsync(s3EncryptionClientMetadataModeKMS, null, null, "", S3CannedACL.AuthenticatedRead, "").ConfigureAwait(false);
+            await TestPutGetAsync(s3EncryptionClientMetadataModeKMS, null, null, "", S3CannedACL.AuthenticatedRead, "");
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async void PutGetNullContentContentUsingMetadataModeKMS()
         {
-            await TestPutGetAsync(s3EncryptionClientMetadataModeKMS, null, null, null, S3CannedACL.AuthenticatedRead, "").ConfigureAwait(false);
+            await TestPutGetAsync(s3EncryptionClientMetadataModeKMS, null, null, null, S3CannedACL.AuthenticatedRead, "");
         }
 
         [Fact]
@@ -212,21 +212,21 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         [Trait(CategoryAttribute,"S3")]
         public async void MultipartEncryptionTestMetadataMode()
         {
-            await MultipartEncryptionTestAsync(s3EncryptionClientMetadataMode).ConfigureAwait(false);
+            await MultipartEncryptionTestAsync(s3EncryptionClientMetadataMode);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async void MultipartEncryptionTestInstructionFile()
         {
-            await MultipartEncryptionTestAsync(s3EncryptionClientFileMode).ConfigureAwait(false);
+            await MultipartEncryptionTestAsync(s3EncryptionClientFileMode);
         }
 
         [Fact]
         [Trait(CategoryAttribute,"S3")]
         public async void MultipartEncryptionTestMetadataModeKMS()
         {
-            await MultipartEncryptionTestAsync(s3EncryptionClientMetadataModeKMS).ConfigureAwait(false);
+            await MultipartEncryptionTestAsync(s3EncryptionClientMetadataModeKMS);
         }
 
         [Fact]
@@ -262,7 +262,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 };
 
                 InitiateMultipartUploadResponse initResponse =
-                    await s3EncryptionClient.InitiateMultipartUploadAsync(initRequest).ConfigureAwait(false);
+                    await s3EncryptionClient.InitiateMultipartUploadAsync(initRequest);
 
                 // Upload part 1
                 UploadPartRequest uploadRequest = new UploadPartRequest()
@@ -275,7 +275,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     InputStream = inputStream,
                 };
 
-                UploadPartResponse up1Response = await s3EncryptionClient.UploadPartAsync(uploadRequest).ConfigureAwait(false);
+                UploadPartResponse up1Response = await s3EncryptionClient.UploadPartAsync(uploadRequest);
 
                 // Upload part 2
                 uploadRequest = new UploadPartRequest()
@@ -288,7 +288,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     InputStream = inputStream,
                 };
 
-                UploadPartResponse up2Response = await s3EncryptionClient.UploadPartAsync(uploadRequest).ConfigureAwait(false);
+                UploadPartResponse up2Response = await s3EncryptionClient.UploadPartAsync(uploadRequest);
 
                 // Upload part 3
                 uploadRequest = new UploadPartRequest()
@@ -301,7 +301,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     IsLastPart = true
                 };
 
-                UploadPartResponse up3Response = await s3EncryptionClient.UploadPartAsync(uploadRequest).ConfigureAwait(false);
+                UploadPartResponse up3Response = await s3EncryptionClient.UploadPartAsync(uploadRequest);
 
                 ListPartsRequest listPartRequest = new ListPartsRequest()
                 {
@@ -310,7 +310,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     UploadId = initResponse.UploadId
                 };
 
-                ListPartsResponse listPartResponse = await s3EncryptionClient.ListPartsAsync(listPartRequest).ConfigureAwait(false);
+                ListPartsResponse listPartResponse = await s3EncryptionClient.ListPartsAsync(listPartRequest);
                 Assert.Equal(3, listPartResponse.Parts.Count);
                 Assert.Equal(up1Response.PartNumber, listPartResponse.Parts[0].PartNumber);
                 Assert.Equal(up1Response.ETag, listPartResponse.Parts[0].ETag);
@@ -320,8 +320,8 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 Assert.Equal(up3Response.ETag, listPartResponse.Parts[2].ETag);
 
                 listPartRequest.MaxParts = 1;
-                listPartResponse = await s3EncryptionClient.ListPartsAsync(listPartRequest).ConfigureAwait(false);
-                Assert.Equal(1, listPartResponse.Parts.Count);
+                listPartResponse = await s3EncryptionClient.ListPartsAsync(listPartRequest);
+                Assert.Single(listPartResponse.Parts);
 
                 // Complete the response
                 CompleteMultipartUploadRequest compRequest = new CompleteMultipartUploadRequest()
@@ -333,7 +333,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 compRequest.AddPartETags(up1Response, up2Response, up3Response);
 
                 CompleteMultipartUploadResponse compResponse =
-                    await s3EncryptionClient.CompleteMultipartUploadAsync(compRequest).ConfigureAwait(false);
+                    await s3EncryptionClient.CompleteMultipartUploadAsync(compRequest);
                 Assert.Equal(bucketName, compResponse.BucketName);
                 Assert.NotNull(compResponse.ETag);
                 Assert.Equal(key, compResponse.Key);
@@ -346,7 +346,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     Key = key
                 };
 
-                GetObjectResponse getResponse = await s3EncryptionClient.GetObjectAsync(getRequest).ConfigureAwait(false);
+                GetObjectResponse getResponse = await s3EncryptionClient.GetObjectAsync(getRequest);
                 await getResponse.WriteResponseStreamToFileAsync(retrievedFilepath, false, System.Threading.CancellationToken.None);
 
                 UtilityMethods.CompareFiles(filePath, retrievedFilepath);
@@ -357,7 +357,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                     Key = key
                 };
                 GetObjectMetadataResponse metaDataResponse =
-                    await s3EncryptionClient.GetObjectMetadataAsync(metaDataRequest).ConfigureAwait(false);
+                    await s3EncryptionClient.GetObjectMetadataAsync(metaDataRequest);
                 Assert.Equal("text/html", metaDataResponse.Headers.ContentType);
             }
             finally
@@ -383,8 +383,8 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 ContentBody = contentBody,
                 CannedACL = cannedACL
             };
-            PutObjectResponse response = await s3EncryptionClient.PutObjectAsync(request).ConfigureAwait(false);
-            await TestGetAsync(request.Key, expectedContent, s3EncryptionClient).ConfigureAwait(false);
+            PutObjectResponse response = await s3EncryptionClient.PutObjectAsync(request);
+            await TestGetAsync(request.Key, expectedContent, s3EncryptionClient);
         }
 
         private async Task TestGetAsync(string key, string uploadedData, AmazonS3EncryptionClient s3EncryptionClient)
@@ -395,7 +395,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 Key = key
             };
 
-            using (GetObjectResponse getObjectResponse = await s3EncryptionClient.GetObjectAsync(getObjectRequest).ConfigureAwait(false))
+            using (GetObjectResponse getObjectResponse = await s3EncryptionClient.GetObjectAsync(getObjectRequest))
             {
                 using (var stream = getObjectResponse.ResponseStream)
                 using (var reader = new StreamReader(stream))

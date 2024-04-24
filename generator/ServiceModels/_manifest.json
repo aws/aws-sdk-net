@@ -121,7 +121,7 @@
                     "name": "System.Configuration"
                 }
             ],
-          "noWarn": "CS1591",
+          "noWarn": "CS1591,CS0612,CS0618",
           "outputPathOverride" :  "bin\\$(Configuration)\\net35"
         },
         {
@@ -168,7 +168,7 @@
                     "name": "System.Configuration"
                 }
             ],
-            "noWarn" : "CS1591"
+            "noWarn" : "CS1591,CS0612,CS0618"
         }
     ]
 }

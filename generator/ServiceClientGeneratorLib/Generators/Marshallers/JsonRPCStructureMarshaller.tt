@@ -40,7 +40,6 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 
 	}
 }
-#pragma warning restore CS0612,CS0618
 
 <#+
 	protected void ProcessMembers(int level, string variableName, IEnumerable<Member> members)

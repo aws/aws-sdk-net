@@ -19,8 +19,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// SseKmsEncryptedObjects unmarshaller
+    /// </summary>
     public class SseKmsEncryptedObjectsUnmarshaller : IUnmarshaller<SseKmsEncryptedObjects, XmlUnmarshallerContext>, IUnmarshaller<SseKmsEncryptedObjects, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SseKmsEncryptedObjects Unmarshall(XmlUnmarshallerContext context)
         {
             SseKmsEncryptedObjects SseKmsEncryptedObjects = new SseKmsEncryptedObjects();
@@ -50,6 +58,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return SseKmsEncryptedObjects;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SseKmsEncryptedObjects Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -57,6 +70,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static SseKmsEncryptedObjectsUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static SseKmsEncryptedObjectsUnmarshaller Instance
         {
             get

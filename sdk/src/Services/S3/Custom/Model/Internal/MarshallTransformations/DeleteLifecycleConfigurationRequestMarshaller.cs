@@ -52,7 +52,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static DeleteLifecycleConfigurationRequestMarshaller _instance;
 
-	    public static DeleteLifecycleConfigurationRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static DeleteLifecycleConfigurationRequestMarshaller Instance
 	    {
 	        get
 	        {

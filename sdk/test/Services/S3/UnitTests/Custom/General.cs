@@ -74,8 +74,10 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(new EventType("ObjectCreated:Put") == EventType.ObjectCreatedPut);
             Assert.IsTrue(new EventType("s3:ObjectCreated:Get") != EventType.ObjectCreatedPut);
 
+#pragma warning disable CS1718
             // Sanity test to make sure we haven't messed up the == operator
             Assert.IsTrue(EventType.ObjectCreatedPut == EventType.ObjectCreatedPut);
+#pragma warning restore CS1718			
         }
 
         [TestMethod]

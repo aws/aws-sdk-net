@@ -18,7 +18,8 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     
     <NoWarn>CS1591</NoWarn>
-  </PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+ </PropertyGroup>
   
   <ItemGroup>
     <Compile Remove="**/obj/**" />

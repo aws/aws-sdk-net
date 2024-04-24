@@ -14,6 +14,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 {
     public partial class DynamoDBTests : IClassFixture<DynamoDBTestsFixture>
     {
+#pragma warning disable CS0162
         [Fact]
         [Trait(CategoryAttribute, "DynamoDB")]
         public async Task TestTableCalls()
@@ -182,6 +183,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             SharedTestFixture.CreatedTables.Remove(table3Name);
             SharedTestFixture.CreatedTables.Remove(table4Name);
         }
+#pragma warning restore CS0162
 
         [Fact]
         [Trait(CategoryAttribute, "DynamoDB")]
@@ -219,11 +221,11 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             emptyListAV.L = null;
             // call to IsLSet = true sets L to empty list
             emptyListAV.IsLSet = true;
-            Assert.Equal(0, emptyListAV.L.Count);
+            Assert.Empty(emptyListAV.L);
             emptyListAV.L = new List<AttributeValue>();
             // call to IsLSet = true sets L to empty list
             emptyListAV.IsLSet = true;
-            Assert.Equal(0, emptyListAV.L.Count);
+            Assert.Empty(emptyListAV.L);
 
             var boolAV = new AttributeValue();
             Assert.False(boolAV.IsBOOLSet);
@@ -278,7 +280,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 ProjectionExpression = "Coffee"
             });
             Assert.True(getItemResult.IsItemSet);
-            Assert.Equal(0, getItemResult.Item.Count);
+            Assert.Empty(getItemResult.Item);
 
             // Update item
             await Client.UpdateItemAsync(hashTableName, key1, new Dictionary<string, AttributeValueUpdate>
@@ -310,7 +312,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 }
             };
             var items = Scan(hashTableName, scanConditions);
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
             // Update non-existent item
             key2 = new Dictionary<string, AttributeValue>
@@ -329,7 +331,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             // Get updated item
             item = (await Client.GetItemAsync(hashTableName, key2)).Item;
             Assert.True(item["Product"].S.IndexOf("Debugger") >= 0);
-            Assert.Equal(1, item["Tags"].SS.Count);
+            Assert.Single(item["Tags"].SS);
             Assert.False(item.ContainsKey("Seller"));
 
             // Scan all items
@@ -363,7 +365,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
             // Scan global index
             items = (await Client.ScanAsync(new ScanRequest
@@ -392,7 +394,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
         }
         private async Task TestHashRangeTable(string hashRangeTableName)
@@ -491,8 +493,8 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 ProjectionExpression = "Coffee"
             })).Items;
             Assert.Equal(2, items.Count);
-            Assert.Equal(0, items[0].Count);
-            Assert.Equal(0, items[1].Count);
+            Assert.Empty(items[0]);
+            Assert.Empty(items[1]);
 
             // Query table with hash-key condition expression
             items = (await Client.QueryAsync(new QueryRequest
@@ -526,7 +528,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                     { ":age", new AttributeValue { N = "30" } }
                 }
             })).Items;
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
             // Query global index
             items = (await Client.QueryAsync(new QueryRequest
@@ -555,7 +557,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
             // Query local index with no range-key condition
             items = (await Client.QueryAsync(new QueryRequest
@@ -635,7 +637,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
             // Scan global index
             items = (await Client.ScanAsync(new ScanRequest
@@ -664,7 +666,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
             // Scan local index with no range-key condition
             items = (await Client.ScanAsync(new ScanRequest
@@ -741,7 +743,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.Equal(1, items.Count);
+            Assert.Single(items);
 
         }
         private async Task TestBatchWriteGet(string hashTableName, string hashRangeTableName)

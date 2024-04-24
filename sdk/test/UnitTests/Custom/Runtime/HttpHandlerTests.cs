@@ -348,20 +348,24 @@ namespace AWSSDK.UnitTests
             }
 
 #if BCL45
-            public async Task WriteToRequestBodyAsync(Stream requestContent, Stream contentStream,
+            public Task WriteToRequestBodyAsync(Stream requestContent, Stream contentStream,
                        IDictionary<string, string> contentHeaders, IRequestContext requestContext)
             {
                 Assert.IsNotNull(requestContent);
                 Assert.IsNotNull(contentStream);
                 Assert.IsNotNull(contentHeaders);
                 Assert.IsNotNull(requestContext);
+
+                return Task.FromResult(0);
             }
 
-            public async Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+            public Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
             {
                 Assert.IsNotNull(requestContent);
                 Assert.IsNotNull(content);
                 Assert.IsNotNull(contentHeaders);
+
+                return Task.FromResult(0);
             }
 
             public Task<Stream> GetRequestContentAsync()

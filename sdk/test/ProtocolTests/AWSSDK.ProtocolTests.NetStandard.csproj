@@ -18,13 +18,10 @@
       <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
       <SignAssembly>true</SignAssembly>
   
-      <NoWarn>CS1591</NoWarn>
+      <NoWarn>CS1591,CS1570,NU1701</NoWarn>
+      <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
 
-    <ItemGroup>
-        <Compile Include="./Generated/**" />
-        <Compile Include="./Custom/**" />
-    </ItemGroup>
     <ItemGroup>
       <Compile Remove="**/obj/**" />
       <None Remove="**/obj/**" />

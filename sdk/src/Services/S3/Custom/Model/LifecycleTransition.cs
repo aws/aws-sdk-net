@@ -31,6 +31,9 @@ namespace Amazon.S3.Model
         private int? days;
         private S3StorageClass storageClass;
 
+        /// <summary>
+        /// Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
+        /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. Use DateUtc instead.", false)]
         public DateTime Date
         {
@@ -44,7 +47,6 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
-        ///  
         /// </summary>
         public DateTime DateUtc
         {

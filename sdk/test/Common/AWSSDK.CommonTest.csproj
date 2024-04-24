@@ -17,7 +17,7 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>$(NoWarn);CS1591</NoWarn>
-
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
     <SignAssembly>True</SignAssembly>
   </PropertyGroup>
      <Choose>

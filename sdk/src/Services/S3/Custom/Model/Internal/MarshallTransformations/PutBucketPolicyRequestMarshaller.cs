@@ -68,7 +68,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static PutBucketPolicyRequestMarshaller _instance;
 
-	    public static PutBucketPolicyRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static PutBucketPolicyRequestMarshaller Instance
 	    {
 	        get
 	        {

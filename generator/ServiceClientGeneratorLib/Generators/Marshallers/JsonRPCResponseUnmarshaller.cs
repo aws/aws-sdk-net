@@ -489,7 +489,13 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write(@"        protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
+            this.Write(@"        /// <summary>
+        /// Return false for reading the entire response
+        /// </summary>
+        /// <param name=""response""></param>
+        /// <param name=""readEntireResponse""></param>
+        /// <returns></returns>
+        protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
         {
             return false;
         }
@@ -499,14 +505,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
         public override bool HasStreamingProperty => true;
 ");
             
-            #line 228 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 234 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
     }
 
             
             #line default
             #line hidden
-            this.Write("    }\r\n}\r\n#pragma warning restore CS0612,CS0618");
+            this.Write("    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

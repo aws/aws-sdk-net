@@ -87,7 +87,7 @@ namespace Amazon.DNXCore.IntegrationTests
             });
             Assert.NotNull(response);
             Assert.NotNull(response.QueueUrls);
-            Assert.Equal(1, response.QueueUrls.Count);
+            Assert.Single(response.QueueUrls);
             var metadata = response.ResponseMetadata;
             Assert.NotNull(metadata);
             Assert.NotNull(metadata.RequestId);
@@ -335,7 +335,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 AttributeNames = new List<string>() { SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT }
             });
 
-            Assert.Equal(1, attrResults.Attributes.Count);
+            Assert.Single(attrResults.Attributes);
             Assert.Equal(int.Parse(defaultTimeout), int.Parse(attrResults.Attributes[SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT]));
 
             for (int i = 0; i < 30; i++)

@@ -7,8 +7,8 @@
     <AssemblyName>AWSSDK.SmokeTests.NetStandard</AssemblyName>
     <PackageId>AWSSDK.SmokeTests.NetStandard</PackageId>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-
-    <NoWarn>CS1591</NoWarn>
+    <NoWarn>CS1591,NU1701</NoWarn>
+	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
   </PropertyGroup>
   

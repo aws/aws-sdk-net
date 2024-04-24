@@ -27,7 +27,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class PutBucketRequestPaymentResponseUnmarshaller : S3ReponseUnmarshaller
     {
-
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             PutBucketRequestPaymentResponse response = new PutBucketRequestPaymentResponse();
@@ -38,6 +42,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static PutBucketRequestPaymentResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static PutBucketRequestPaymentResponseUnmarshaller Instance
         {
             get

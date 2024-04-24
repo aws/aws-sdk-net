@@ -185,7 +185,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static CopyObjectRequestMarshaller _instance;
 
-	    public static CopyObjectRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static CopyObjectRequestMarshaller Instance
 	    {
 	        get
 	        {

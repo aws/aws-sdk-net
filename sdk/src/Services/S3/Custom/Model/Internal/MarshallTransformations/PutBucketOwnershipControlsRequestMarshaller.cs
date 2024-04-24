@@ -98,6 +98,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static PutBucketOwnershipControlsRequestMarshaller _instance;
 
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static PutBucketOwnershipControlsRequestMarshaller Instance
         {
             get

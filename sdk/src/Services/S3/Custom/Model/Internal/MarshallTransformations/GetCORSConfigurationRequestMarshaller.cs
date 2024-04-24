@@ -54,7 +54,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static GetCORSConfigurationRequestMarshaller _instance;
 
-	    public static GetCORSConfigurationRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static GetCORSConfigurationRequestMarshaller Instance
 	    {
 	        get
 	        {

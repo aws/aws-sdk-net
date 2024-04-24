@@ -277,7 +277,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
     }
 }
-#pragma warning restore CS0612,CS0618
 <#+
     /* The rules for determining the marshallName for xml services is different than json services
         1. Use the member locationName if the value doesn't match the member's name

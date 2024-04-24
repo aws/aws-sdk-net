@@ -173,6 +173,9 @@ namespace Amazon.WorkDocs.Utils
             }
         }
 
+        /// <summary>
+        /// Finalizer to dispose of the ContentManager
+        /// </summary>
         ~ContentManager()
         {
             Dispose(false);

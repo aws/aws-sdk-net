@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// </summary>
     public class GranteeUnmarshaller : IUnmarshaller<S3Grantee, XmlUnmarshallerContext>, IUnmarshaller<S3Grantee, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public S3Grantee Unmarshall(XmlUnmarshallerContext context) 
         {
             S3Grantee grantee = new S3Grantee();
@@ -77,6 +82,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return grantee;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public S3Grantee Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -84,6 +94,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GranteeUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GranteeUnmarshaller Instance
         {
             get

@@ -17,6 +17,9 @@ using System.Text;
 
 namespace Amazon.S3.Model
 {
+    /// <summary>
+    /// Response for WriteGetObjectResponse operation
+    /// </summary>
     public partial class WriteGetObjectResponseResponse : AmazonWebServiceResponse
     {
     }

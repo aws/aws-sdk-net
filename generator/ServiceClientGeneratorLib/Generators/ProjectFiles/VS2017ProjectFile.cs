@@ -148,10 +148,11 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     <SignAssembly>true</SignAssembly>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
 ");
             
-            #line 59 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 60 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (!string.IsNullOrEmpty(this.Project.FrameworkPathOverride))
     {
@@ -162,14 +163,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->\r\n   " +
                     " <FrameworkPathOverride>");
             
-            #line 64 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 65 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.FrameworkPathOverride));
             
             #line default
             #line hidden
             this.Write("</FrameworkPathOverride>\r\n");
             
-            #line 65 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 66 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -183,7 +184,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "utomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssembl" +
                     "yPackages>\r\n");
             
-            #line 73 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 74 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -195,14 +196,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <NoWarn>");
             
-            #line 79 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 80 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.SupressWarnings));
             
             #line default
             #line hidden
             this.Write("</NoWarn>\r\n");
             
-            #line 80 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 81 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -215,14 +216,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>\r" +
                     "\n    <OutputPath>");
             
-            #line 87 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 88 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Project.OutputPathOverride));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n");
             
-            #line 88 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 89 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -231,7 +232,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </PropertyGroup>\r\n");
             
-            #line 92 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 93 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
     {
@@ -243,7 +244,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "ramework)\' == \'netstandard2.0\'\">\r\n    <LangVersion>8.0</LangVersion>\r\n  </Proper" +
                     "tyGroup>\r\n");
             
-            #line 100 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 101 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -253,9 +254,8 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             
             #line default
             #line hidden
-            this.Write("  <PropertyGroup Condition=\"\'$(TargetFramework)\' == \'net8.0\'\">\r\n    <WarningsAsEr" +
-                    "rors>IL2026,IL2075</WarningsAsErrors>\r\n    <IsTrimmable>true</IsTrimmable>\r\n  </" +
-                    "PropertyGroup>\r\n");
+            this.Write("  <PropertyGroup Condition=\"\'$(TargetFramework)\' == \'net8.0\'\">\r\n    <IsTrimmable>" +
+                    "true</IsTrimmable>\r\n  </PropertyGroup>\r\n");
             
             #line 110 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 

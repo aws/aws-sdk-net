@@ -90,8 +90,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var exception = AssertExtensions.ExpectException<AmazonS3Exception>(
                 () => Client.EndGetObject(result));
             throw exception;
-
-            Console.WriteLine("{0} EndGetObject returned", DateTime.UtcNow);
         }
 
 

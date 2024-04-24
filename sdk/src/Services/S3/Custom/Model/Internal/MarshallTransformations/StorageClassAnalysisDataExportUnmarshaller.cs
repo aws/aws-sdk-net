@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class StorageClassAnalysisDataExportUnmarshaller : IUnmarshaller<StorageClassAnalysisDataExport, XmlUnmarshallerContext>, IUnmarshaller<StorageClassAnalysisDataExport, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public StorageClassAnalysisDataExport Unmarshall(XmlUnmarshallerContext context)
         {
             StorageClassAnalysisDataExport StorageClassAnalysisDataExport = new StorageClassAnalysisDataExport();
@@ -61,6 +66,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return StorageClassAnalysisDataExport;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public StorageClassAnalysisDataExport Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -68,6 +78,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static StorageClassAnalysisDataExportUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static StorageClassAnalysisDataExportUnmarshaller Instance
         {
             get

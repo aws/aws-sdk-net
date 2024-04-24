@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class AWSQueryRequestMarshaller : BaseRequestMarshaller
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         public override string TransformText()
         {
             
-            #line 6 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 6 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
     AddLicenseHeader();
 
@@ -40,28 +40,28 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("#pragma warning disable CS0612,CS0618\r\nnamespace ");
             
-            #line 12 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 12 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model.Internal.MarshallTransformations\r\n{\r\n    /// <summary>\r\n    /// ");
             
-            #line 15 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 15 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write(" Request Marshaller\r\n    /// </summary>       \r\n    public class ");
             
-            #line 17 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 17 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("RequestMarshaller : IMarshaller<IRequest, ");
             
-            #line 17 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 17 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -77,7 +77,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         {
             return this.Marshall((");
             
-            #line 26 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 26 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -92,7 +92,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         /// <returns></returns>
         public IRequest Marshall(");
             
-            #line 34 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -100,14 +100,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("Request publicRequest)\r\n        {\r\n            IRequest request = new DefaultRequ" +
                     "est(publicRequest, \"");
             
-            #line 36 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 36 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\");\r\n");
             
-            #line 37 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 37 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
     SetCompressionAlgorithmEncoding(this.Operation);
 
@@ -116,21 +116,21 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            request.Parameters.Add(\"Action\", \"");
             
-            #line 40 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 40 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n            request.Parameters.Add(\"Version\", \"");
             
-            #line 41 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.APIVersion));
             
             #line default
             #line hidden
             this.Write("\");\r\n\r\n            if(publicRequest != null)\r\n            {\r\n");
             
-            #line 45 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 45 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
     var requestStructure = this.Operation.RequestStructure;
     if(requestStructure != null)
@@ -145,7 +145,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            }\r\n            return request;\r\n        }\r\n\t\t\t");
             
-            #line 57 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+            #line 57 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 				
 		this.AddRequestSingletonMethod();
 
@@ -156,7 +156,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 63 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 63 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
     void ProcessMembers(int level, string parameterContext, string variableName, IEnumerable<Member> members)
     {
@@ -172,63 +172,63 @@ namespace ServiceClientGenerator.Generators.Marshallers
         #line default
         #line hidden
         
-        #line 74 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 74 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 74 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                if(");
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 74 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 74 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 74 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 74 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 75 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 75 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 76 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 76 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
             if(member.IsList )
             {
@@ -242,105 +242,105 @@ this.Write("                {\r\n");
         #line default
         #line hidden
         
-        #line 85 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 85 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 85 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 85 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                    int ");
 
         
         #line default
         #line hidden
         
-        #line 85 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 85 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableNameFragment));
 
         
         #line default
         #line hidden
         
-        #line 85 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 85 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("listValueIndex = 1;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 86 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 86 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                    foreach(var ");
 
         
         #line default
         #line hidden
         
-        #line 86 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableNameFragment));
 
         
         #line default
         #line hidden
         
-        #line 86 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("listValue in ");
 
         
         #line default
         #line hidden
         
-        #line 86 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 86 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 86 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 86 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(")\r\n");
 
         
         #line default
         #line hidden
         
-        #line 87 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 87 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 87 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 87 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                    {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 88 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 88 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
                 if(member.Shape.ListShape.IsStructure)
                 {
@@ -355,63 +355,63 @@ this.Write("                    {\r\n");
         #line default
         #line hidden
         
-        #line 98 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 98 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 98 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                        request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 98 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listItemContext));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 98 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(", ");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 98 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 98 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 98 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableNameFragment));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 98 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("listValue));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 99 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 99 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
 					}
 					else 
@@ -421,49 +421,49 @@ this.Write("listValue));\r\n");
         #line default
         #line hidden
         
-        #line 104 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 104 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 104 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                        request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 104 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(listItemContext));
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 104 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(", ");
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 104 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation + "(" + variableNameFragment + "listValue)"));
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 104 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 105 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 105 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 					
 					}
                 }
@@ -472,49 +472,49 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 109 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 109 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 109 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                        ");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 109 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableNameFragment));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 109 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("listValueIndex++;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 110 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 110 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                    }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 111 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 111 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
             }
             else if(member.IsMap)
@@ -529,77 +529,77 @@ this.Write("                    }\r\n");
         #line default
         #line hidden
         
-        #line 121 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 121 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 121 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 121 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                    int mapIndex = 1;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 122 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 122 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                    foreach(var key in ");
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 122 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 122 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 122 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 122 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(".Keys)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 123 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 123 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 123 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 123 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                    {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 124 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
                 if(member.Shape.ValueShape.IsList)
                 {
@@ -608,35 +608,35 @@ this.Write("                    {\r\n");
         #line default
         #line hidden
         
-        #line 128 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 128 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 128 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 128 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                        List<");
 
         
         #line default
         #line hidden
         
-        #line 128 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 128 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.ListShape.GetPrimitiveType()));
 
         
         #line default
         #line hidden
         
-        #line 128 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 128 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("> value;\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 130 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
                 }
                 else
@@ -646,35 +646,35 @@ this.Write("> value;\r\n\r\n");
         #line default
         #line hidden
         
-        #line 135 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 135 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 135 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 135 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                        ");
 
         
         #line default
         #line hidden
         
-        #line 135 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 135 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.IsStructure ? member.Shape.ValueShape.Name : member.Shape.ValueShape.GetPrimitiveType()));
 
         
         #line default
         #line hidden
         
-        #line 135 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 135 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(" value;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 136 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 136 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
                 }
 
@@ -682,119 +682,119 @@ this.Write(" value;\r\n");
         #line default
         #line hidden
         
-        #line 139 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 139 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 139 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                        bool hasValue = ");
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 139 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 139 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 139 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 139 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(".TryGetValue(key, out value);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 140 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 140 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                        request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 140 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(mapKeyContext));
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 140 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(", ");
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 140 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.KeyShape.PrimitiveMarshaller(MarshallLocation.Body)));
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 140 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("(key));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 141 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 141 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 141 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 141 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                        if (hasValue)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 142 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 142 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 142 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 142 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                        {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 143 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 143 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
                 if(member.Shape.ValueShape.IsStructure)
                 {
@@ -807,119 +807,119 @@ this.Write("                        {\r\n");
         #line default
         #line hidden
         
-        #line 151 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 151 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 151 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 151 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                            int valueIndex = 1;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 152 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 152 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 152 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 152 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                            foreach(var listValue in value)\r\n");
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 153 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 153 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                            {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 154 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 154 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                                request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 154 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(mapListValueContext));
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 154 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(", ");
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 154 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)));
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 154 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("(listValue));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 155 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 155 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                                valueIndex++;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 156 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 156 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 156 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 156 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                            }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 157 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 157 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
                 }
                 else
@@ -931,49 +931,49 @@ this.Write("                            }\r\n");
         #line default
         #line hidden
         
-        #line 164 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 164 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 164 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 164 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                            request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 164 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 164 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(mapValueContext));
 
         
         #line default
         #line hidden
         
-        #line 164 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 164 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(", ");
 
         
         #line default
         #line hidden
         
-        #line 164 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 164 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.Shape.ValueShape.PrimitiveMarshaller(MarshallLocation.Body)));
 
         
         #line default
         #line hidden
         
-        #line 164 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 164 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("(value));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 165 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 165 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
 					}
 					else 
@@ -982,49 +982,49 @@ this.Write("(value));\r\n");
         #line default
         #line hidden
         
-        #line 169 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 169 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 169 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                            request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 169 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(mapValueContext));
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 169 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(", ");
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 169 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation + "(value)"));
 
         
         #line default
         #line hidden
         
-        #line 169 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 169 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 170 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 170 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 					
 					}
                 }
@@ -1033,49 +1033,49 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 174 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 174 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 174 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 174 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                        }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 175 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 175 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 175 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 175 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                        mapIndex++;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 176 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 176 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 176 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 176 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                    }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 177 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 177 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
             }
             else if(member.IsStructure)
@@ -1094,63 +1094,63 @@ this.Write("                    }\r\n");
         #line default
         #line hidden
         
-        #line 191 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 191 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 191 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                    request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 191 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(context));
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 191 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(", ");
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 191 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 191 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 191 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 191 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 191 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 192 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 192 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
 				}
 				else 
@@ -1159,63 +1159,63 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 196 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 196 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 196 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                    request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 196 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(context));
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 196 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(", ");
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 196 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 196 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 196 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 196 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 196 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 197 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 197 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 					
 				}
 				if(member.IsIdempotent)
@@ -1225,105 +1225,105 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 202 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 202 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 202 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 202 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(" \t\t\t   }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 203 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 203 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 203 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 203 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(" \t\t\t   else if(!(");
 
         
         #line default
         #line hidden
         
-        #line 203 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 203 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 203 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 203 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 203 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 203 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 203 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 203 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("()))\r\n");
 
         
         #line default
         #line hidden
         
-        #line 204 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 204 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 204 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 204 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(" \t\t\t   {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 205 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 205 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 205 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 205 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write("                    request.Parameters.Add(");
 
         
         #line default
         #line hidden
         
-        #line 205 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 205 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(context));
 
         
         #line default
         #line hidden
         
-        #line 205 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 205 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(", StringUtils.FromString(Guid.NewGuid().ToString()));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 206 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 206 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
 				}
             }
@@ -1332,21 +1332,21 @@ this.Write(", StringUtils.FromString(Guid.NewGuid().ToString()));\r\n");
         #line default
         #line hidden
         
-        #line 210 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 210 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 210 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
-this.Write("                }\r\n#pragma warning restore CS0612,CS0618\r\n");
+        #line 210 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+this.Write("                }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 212 "C:\Dev\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
+        #line 211 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\AWSQueryRequestMarshaller.tt"
 
         }
     }

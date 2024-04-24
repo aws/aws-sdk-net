@@ -51,7 +51,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
                 Assert.NotNull(domains);
                 Assert.NotNull(domains.Infos);
-                Assert.NotEqual(0, domains.Infos.Count);
+                Assert.NotEmpty(domains.Infos);
 
                 await client.DeprecateDomainAsync(new DeprecateDomainRequest
                 {
@@ -65,7 +65,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 Assert.NotNull(ure);
                 Assert.NotNull(ure.Message);
                 Assert.NotNull(ure.ErrorCode);
-                Assert.Equal(ure.ErrorType, ErrorType.Unknown);
+                Assert.Equal(ErrorType.Unknown, ure.ErrorType);
             }
         }
 
@@ -76,7 +76,7 @@ namespace Amazon.DNXCore.IntegrationTests
             {
                 var presets = (await client.ListPresetsAsync(new ListPresetsRequest())).Presets;
                 Assert.NotNull(presets);
-                Assert.NotEqual(0, presets.Count);
+                Assert.NotEmpty(presets);
 
                 var fakeId = "1111111111111-abcde1";
                 var aete = await AssertExtensions.ExpectExceptionAsync<Amazon.ElasticTranscoder.Model.ResourceNotFoundException>(client.DeletePipelineAsync(new DeletePipelineRequest
@@ -87,7 +87,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 Assert.NotNull(aete.Message);
                 Assert.True(aete.Message.IndexOf(fakeId, StringComparison.OrdinalIgnoreCase) >= 0);
                 //Assert.NotNull(aete.ErrorCode);
-                Assert.Equal(aete.ErrorType, ErrorType.Unknown);
+                Assert.Equal(ErrorType.Unknown, aete.ErrorType);
             }
         }
 
@@ -101,7 +101,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     var buckets = (await client.ListBucketsAsync(new ListBucketsRequest())).Buckets;
                     Assert.NotNull(buckets);
-                    Assert.NotEqual(0, buckets.Count);
+                    Assert.NotEmpty(buckets);
                     Assert.Equal(1, buckets
                         .Count(b =>
                             string.Equals(bucketName, b.BucketName, StringComparison.OrdinalIgnoreCase)));
@@ -114,7 +114,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     Assert.NotNull(as3e);
                     Assert.NotNull(as3e.Message);
                     //Assert.NotNull(aete.ErrorCode);
-                    Assert.Equal(as3e.ErrorType, ErrorType.Sender);
+                    Assert.Equal(ErrorType.Sender, as3e.ErrorType);
                 }
                 finally
                 {
@@ -140,7 +140,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     var domains = (await client.ListDomainNamesAsync(new ListDomainNamesRequest())).DomainNames;
                     Assert.NotNull(domains);
-                    Assert.NotEqual(0, domains.Count);
+                    Assert.NotEmpty(domains);
                 }
                 finally
                 {

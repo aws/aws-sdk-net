@@ -115,7 +115,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
         
         private static PutObjectRetentionRequestMarshaller _instance;
-        
+
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static PutObjectRetentionRequestMarshaller Instance
         {
             get

@@ -6,6 +6,9 @@
     <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
     <DefineConstants Condition="'$(TargetFramework)' == 'net8.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
     <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
+	
+    <NoWarn>CS1591,CS1570,NU1701</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,10 +42,6 @@
     <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.2" />
     <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Configuration" />
   </ItemGroup>
 
   <ItemGroup>

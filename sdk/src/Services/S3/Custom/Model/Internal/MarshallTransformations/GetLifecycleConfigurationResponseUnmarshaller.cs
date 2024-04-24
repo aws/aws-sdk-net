@@ -27,6 +27,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class GetLifecycleConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             GetLifecycleConfigurationResponse response = new GetLifecycleConfigurationResponse();
@@ -80,6 +85,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetLifecycleConfigurationResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GetLifecycleConfigurationResponseUnmarshaller Instance
         {
             get

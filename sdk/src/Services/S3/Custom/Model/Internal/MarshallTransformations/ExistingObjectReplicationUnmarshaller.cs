@@ -18,8 +18,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// ExistingObjectReplication unmarshaller
+    /// </summary>
     public class ExistingObjectReplicationUnmarshaller : IUnmarshaller<ExistingObjectReplication, XmlUnmarshallerContext>, IUnmarshaller<ExistingObjectReplication, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ExistingObjectReplication Unmarshall(XmlUnmarshallerContext context)
         {
             ExistingObjectReplication ExistingObjectReplication = new ExistingObjectReplication();
@@ -49,6 +57,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return ExistingObjectReplication;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ExistingObjectReplication Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -56,6 +69,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ExistingObjectReplicationUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ExistingObjectReplicationUnmarshaller Instance
         {
             get

@@ -39,6 +39,7 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class UseArnRegionTests
     {
+/* Used by commented out tests	
         private static readonly string ProfileText = @"[default]
                                                          region=us-west-2
                                                          aws_access_key_id=default_aws_access_key_id
@@ -49,6 +50,7 @@ namespace AWSSDK.UnitTests
                                                          aws_access_key_id=other_aws_access_key_id
                                                          aws_secret_access_key=other_aws_secret_access_key
                                                          ";
+*/
 
         [TestMethod]
         [TestCategory("S3")]

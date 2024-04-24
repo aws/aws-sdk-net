@@ -60,6 +60,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static AbortMultipartUploadRequestMarshaller _instance;
 
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
 	    public static AbortMultipartUploadRequestMarshaller Instance
 	    {
 	        get

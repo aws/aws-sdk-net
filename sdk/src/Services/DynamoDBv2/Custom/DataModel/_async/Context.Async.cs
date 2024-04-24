@@ -93,7 +93,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Load"/>
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
@@ -106,7 +105,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Load"/>
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
@@ -120,7 +118,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Load"/>
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
@@ -134,7 +131,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Load"/>
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
@@ -149,7 +145,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Load"/>
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
         /// <param name="keyObject">Key of the target item.</param>
@@ -162,7 +157,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Load"/>
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
         /// <param name="keyObject">Key of the target item.</param>
@@ -180,7 +174,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="value">Object to delete.</param>
@@ -193,7 +186,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="value">Object to delete.</param>
@@ -207,7 +199,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
@@ -220,7 +211,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
@@ -234,7 +224,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
@@ -248,7 +237,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Delete"/>
         /// </summary>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>

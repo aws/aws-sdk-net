@@ -202,7 +202,7 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// Convert value to DynamoDBEntry
         /// </summary>
-        /// <typeparam name="TInput"></typeparam>
+        /// <param name="inputType"></param>
         /// <param name="value"></param>
         /// <returns></returns>
         public DynamoDBEntry ConvertToEntry(Type inputType, object value)

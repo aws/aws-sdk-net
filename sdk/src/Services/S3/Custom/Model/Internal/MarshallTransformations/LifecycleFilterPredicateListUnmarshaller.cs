@@ -25,6 +25,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     public class LifecycleFilterPredicateListUnmarshaller : IUnmarshaller<List<LifecycleFilterPredicate>, XmlUnmarshallerContext>,
         IUnmarshaller<List<LifecycleFilterPredicate>, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public List<LifecycleFilterPredicate> Unmarshall(XmlUnmarshallerContext context)
         {
             var predicateList = new List<LifecycleFilterPredicate>();
@@ -87,6 +92,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return predicateList;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public List<LifecycleFilterPredicate> Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -94,6 +104,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static LifecycleFilterPredicateListUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static LifecycleFilterPredicateListUnmarshaller Instance
         {
             get

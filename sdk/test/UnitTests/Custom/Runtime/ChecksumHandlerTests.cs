@@ -34,24 +34,24 @@ namespace AWSSDK.UnitTests
 #if BCL45
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        /// Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is true
+        // Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is true
         [DataRow(true, false, null, true, true, HeaderKeys.ContentMD5Header)]
-        /// Set CRC32Header when <see cref="ChecksumData.MD5Checksum"/> is false and we have a valid
-        /// CRC32 <see cref="ChecksumData.SelectedChecksum"/>
+        // Set CRC32Header when <see cref="ChecksumData.MD5Checksum"/> is false and we have a valid
+        // CRC32 <see cref="ChecksumData.SelectedChecksum"/>
         [DataRow(true, false, "CRC32", false, true, "x-amz-checksum-crc32")]
-        /// Don't set CRC32Header twice when the header is already set
+        // Don't set CRC32Header twice when the header is already set
         [DataRow(true, true, "CRC32", false, true, "x-amz-checksum-crc32")]
-        /// Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is set to true regardless whether
-        /// selectedChecksum is set or not
+        // Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is set to true regardless whether
+        // selectedChecksum is set or not
         [DataRow(true, false, "CRC32", true, true, HeaderKeys.ContentMD5Header)]
-        /// Don't set <see cref="HeaderKeys.ContentMD5Header"/> twice when the header is already set
+        // Don't set <see cref="HeaderKeys.ContentMD5Header"/> twice when the header is already set
         [DataRow(true, true, "CRC32", true, true, HeaderKeys.ContentMD5Header)]
-        /// Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is set to true regardless
-        /// whether <see cref="ChecksumData.SelectedChecksum"/> is valid or not
+        // Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is set to true regardless
+        // whether <see cref="ChecksumData.SelectedChecksum"/> is valid or not
         [DataRow(true, false, "NONE", false, true, HeaderKeys.ContentMD5Header)]
-        /// Don't set any checksum header when <see cref="ChecksumData.SelectedChecksum"/> doesn't exist and we don't want to fallback to MD5
+        // Don't set any checksum header when <see cref="ChecksumData.SelectedChecksum"/> doesn't exist and we don't want to fallback to MD5
         [DataRow(true, false, "NONE", false, false, null)]
-        /// Don't set any checksum header when <see cref="IRequest.ChecksumData"/> equals null
+        // Don't set any checksum header when <see cref="IRequest.ChecksumData"/> equals null
         [DataRow(false, false, "CRC32", true, true, null)]
         [DataTestMethod]
         public async Task TestChecksumInvokeAsync(bool checksumDataExists, bool checksumHeaderAlreadyExists, string selectedChecksum,
@@ -99,24 +99,24 @@ namespace AWSSDK.UnitTests
 #elif !BCL45 && BCL
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-         /// Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is true
+         // Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is true
         [DataRow(true, false, null, true, true, HeaderKeys.ContentMD5Header)]
-        /// Set CRC32Header when <see cref="ChecksumData.MD5Checksum"/> is false and we have a valid
-        /// CRC32 <see cref="ChecksumData.SelectedChecksum"/>
+        // Set CRC32Header when <see cref="ChecksumData.MD5Checksum"/> is false and we have a valid
+        // CRC32 <see cref="ChecksumData.SelectedChecksum"/>
         [DataRow(true, false, "CRC32", false, true, "x-amz-checksum-crc32")]
-        /// Don't set CRC32Header twice when the header is already set
+        // Don't set CRC32Header twice when the header is already set
         [DataRow(true, true, "CRC32", false, true, "x-amz-checksum-crc32")]
-        /// Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is set to true regardless whether
-        /// selectedChecksum is set or not
+        // Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is set to true regardless whether
+        // selectedChecksum is set or not
         [DataRow(true, false, "CRC32", true, true, HeaderKeys.ContentMD5Header)]
-        /// Don't set <see cref="HeaderKeys.ContentMD5Header"/> twice when the header is already set
+        // Don't set <see cref="HeaderKeys.ContentMD5Header"/> twice when the header is already set
         [DataRow(true, true, "CRC32", true, true, HeaderKeys.ContentMD5Header)]
-        /// Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is set to true regardless
-        /// whether <see cref="ChecksumData.SelectedChecksum"/> is valid or not
+        // Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is set to true regardless
+        // whether <see cref="ChecksumData.SelectedChecksum"/> is valid or not
         [DataRow(true, false, "NONE", false, true, HeaderKeys.ContentMD5Header)]
-        /// Don't set any checksum header when <see cref="ChecksumData.SelectedChecksum"/> doesn't exist and we don't want to fallback to MD5
+        // Don't set any checksum header when <see cref="ChecksumData.SelectedChecksum"/> doesn't exist and we don't want to fallback to MD5
         [DataRow(true, false, "NONE", false, false, null)]
-        /// Don't set any checksum header when <see cref="IRequest.ChecksumData"/> equals null
+        // Don't set any checksum header when <see cref="IRequest.ChecksumData"/> equals null
         [DataRow(false, false, "CRC32", true, true, null)]
         [DataTestMethod]
         public void TestChecksumInvoke(bool checksumDataExists, bool checksumHeaderAlreadyExists, string selectedChecksum,

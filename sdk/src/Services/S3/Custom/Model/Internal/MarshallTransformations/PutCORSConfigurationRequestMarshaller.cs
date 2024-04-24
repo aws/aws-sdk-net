@@ -166,7 +166,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static PutCORSConfigurationRequestMarshaller _instance;
 
-	    public static PutCORSConfigurationRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static PutCORSConfigurationRequestMarshaller Instance
 	    {
 	        get
 	        {
