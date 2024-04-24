@@ -56,6 +56,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("associatePublicIpAddress", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.AssociatePublicIpAddress = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("attachment", targetDepth))
                     {
                         var unmarshaller = NetworkInterfaceAttachmentUnmarshaller.Instance;

@@ -14395,6 +14395,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant AssociatePublicIpAddress for NetworkInterfaceAttribute
+        /// </summary>
+        public static readonly NetworkInterfaceAttribute AssociatePublicIpAddress = new NetworkInterfaceAttribute("associatePublicIpAddress");
+        /// <summary>
         /// Constant Attachment for NetworkInterfaceAttribute
         /// </summary>
         public static readonly NetworkInterfaceAttribute Attachment = new NetworkInterfaceAttribute("attachment");

@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyNetworkInterfaceAttributeRequest : AmazonEC2Request
     {
+        private bool? _associatePublicIpAddress;
         private NetworkInterfaceAttachmentChanges _attachment;
         private ConnectionTrackingSpecificationRequest _connectionTrackingSpecification;
         private string _description;
@@ -45,6 +46,26 @@ namespace Amazon.EC2.Model
         private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _networkInterfaceId;
         private bool? _sourceDestCheck;
+
+        /// <summary>
+        /// Gets and sets the property AssociatePublicIpAddress. 
+        /// <para>
+        /// Indicates whether to assign a public IPv4 address to a network interface. This option
+        /// can be enabled for any network interface but will only apply to the primary network
+        /// interface (eth0).
+        /// </para>
+        /// </summary>
+        public bool AssociatePublicIpAddress
+        {
+            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            set { this._associatePublicIpAddress = value; }
+        }
+
+        // Check to see if AssociatePublicIpAddress property is set
+        internal bool IsSetAssociatePublicIpAddress()
+        {
+            return this._associatePublicIpAddress.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Attachment. 

@@ -59,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAssociatePublicIpAddress())
+                {
+                    request.Parameters.Add("AssociatePublicIpAddress", StringUtils.FromBool(publicRequest.AssociatePublicIpAddress));
+                }
                 if(publicRequest.IsSetAttachment())
                 {
                     if(publicRequest.Attachment.IsSetAttachmentId())
