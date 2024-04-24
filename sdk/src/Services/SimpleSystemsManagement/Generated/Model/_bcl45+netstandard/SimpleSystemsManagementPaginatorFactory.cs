@@ -141,6 +141,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeInstanceProperties operation
+        ///</summary>
+        public IDescribeInstancePropertiesPaginator DescribeInstanceProperties(DescribeInstancePropertiesRequest request) 
+        {
+            return new DescribeInstancePropertiesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeInventoryDeletions operation
         ///</summary>
         public IDescribeInventoryDeletionsPaginator DescribeInventoryDeletions(DescribeInventoryDeletionsRequest request) 

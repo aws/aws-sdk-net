@@ -92,6 +92,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         IDescribeInstancePatchStatesForPatchGroupPaginator DescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request);
 
         /// <summary>
+        /// Paginator for DescribeInstanceProperties operation
+        ///</summary>
+        IDescribeInstancePropertiesPaginator DescribeInstanceProperties(DescribeInstancePropertiesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeInventoryDeletions operation
         ///</summary>
         IDescribeInventoryDeletionsPaginator DescribeInventoryDeletions(DescribeInventoryDeletionsRequest request);

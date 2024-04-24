@@ -46,86 +46,88 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     /// Supported formats include the following.
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <c>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;,&lt;instance-id-3&gt;</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>Key=tag:&lt;my-tag-key&gt;,Values=&lt;my-tag-value-1&gt;,&lt;my-tag-value-2&gt;</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>Key=tag-key,Values=&lt;my-tag-key-1&gt;,&lt;my-tag-key-2&gt;</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>Run Command and Maintenance window targets only</b>: <c>Key=resource-groups:Name,Values=&lt;resource-group-name&gt;</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>Maintenance window targets only</b>: <c>Key=resource-groups:ResourceTypeFilters,Values=&lt;resource-type-1&gt;,&lt;resource-type-2&gt;</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>Automation targets only</b>: <c>Key=ResourceGroup;Values=&lt;resource-group-name&gt;</c>
-    /// 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For example:
+    ///  <b>For all Systems Manager capabilities:</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>Key=tag-key,Values=Name,Instance-Type,CostCenter</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>Run Command and Maintenance window targets only</b>: <c>Key=resource-groups:Name,Values=ProductionResourceGroup</c>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// This example demonstrates how to target all resources in the resource group <b>ProductionResourceGroup</b>
-    /// in your maintenance window.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>Maintenance window targets only</b>: <c>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</c>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// This example demonstrates how to target only Amazon Elastic Compute Cloud (Amazon
-    /// EC2) instances and VPCs in your maintenance window.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>Automation targets only</b>: <c>Key=ResourceGroup,Values=MyResourceGroup</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>State Manager association targets only</b>: <c>Key=InstanceIds,Values=*</c> 
-    /// </para>
-    ///  
-    /// <para>
-    /// This example demonstrates how to target all managed instances in the Amazon Web Services
-    /// Region where the association was created.
+    ///  <c>Key=tag-key,Values=tag-value-1,tag-value-2</c> 
     /// </para>
     ///  </li> </ul> 
+    /// <para>
+    ///  <b>For Automation and Change Manager:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Key=tag:tag-key,Values=tag-value</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Key=ResourceGroup,Values=resource-group-name</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Key=ParameterValues,Values=value-1,value-2,value-3</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To target all instances in the Amazon Web Services Region:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Key=AWS::EC2::Instance,Values=*</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Key=InstanceIds,Values=*</c> 
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
+    /// <para>
+    ///  <b>For Run Command and Maintenance Windows:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Key=InstanceIds,Values=instance-id-1,instance-id-2,instance-id-3</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Key=tag:tag-key,Values=tag-value-1,tag-value-2</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Key=resource-groups:Name,Values=resource-group-name</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Additionally, Maintenance Windows support targeting resource types:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Key=resource-groups:ResourceTypeFilters,Values=resource-type-1,resource-type-2</c>
+    /// 
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
+    /// <para>
+    ///  <b>For State Manager:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Key=InstanceIds,Values=instance-id-1,instance-id-2,instance-id-3</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Key=tag:tag-key,Values=tag-value-1,tag-value-2</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To target all instances in the Amazon Web Services Region:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Key=InstanceIds,Values=*</c> 
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
     /// <para>
     /// For more information about how to send commands that target managed nodes using <c>Key,Value</c>
     /// parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
