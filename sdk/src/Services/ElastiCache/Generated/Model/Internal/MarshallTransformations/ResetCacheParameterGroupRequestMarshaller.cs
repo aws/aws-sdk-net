@@ -63,7 +63,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(publicRequest.CacheParameterGroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetParameterNameValues())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,21 +72,17 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("ParameterNameValues" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterName", StringUtils.FromString(publicRequestlistValue.ParameterName));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetParameterValue())
                         {
                             request.Parameters.Add("ParameterNameValues" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResetAllParameters())
                 {
                     request.Parameters.Add("ResetAllParameters", StringUtils.FromBool(publicRequest.ResetAllParameters));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

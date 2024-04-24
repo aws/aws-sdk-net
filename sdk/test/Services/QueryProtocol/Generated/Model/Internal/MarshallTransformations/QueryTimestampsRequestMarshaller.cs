@@ -63,17 +63,14 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("epochMember", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochMember));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEpochTarget())
                 {
                     request.Parameters.Add("epochTarget", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochTarget));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNormalFormat())
                 {
                     request.Parameters.Add("normalFormat", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.NormalFormat));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

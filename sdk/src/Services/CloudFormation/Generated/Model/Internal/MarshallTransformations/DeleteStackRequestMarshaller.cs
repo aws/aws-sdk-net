@@ -63,7 +63,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRetainResources())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,17 +72,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRoleARN())
                 {
                     request.Parameters.Add("RoleARN", StringUtils.FromString(publicRequest.RoleARN));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackName())
                 {
                     request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

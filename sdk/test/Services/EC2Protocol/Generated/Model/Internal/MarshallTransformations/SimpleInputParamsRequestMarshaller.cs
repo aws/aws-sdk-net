@@ -63,57 +63,46 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Bam", StringUtils.FromInt(publicRequest.Bam));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetBar())
                 {
                     request.Parameters.Add("Bar", StringUtils.FromString(publicRequest.Bar));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetBaz())
                 {
                     request.Parameters.Add("Baz", StringUtils.FromBool(publicRequest.Baz));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetBoo())
                 {
                     request.Parameters.Add("Boo", StringUtils.FromDouble(publicRequest.Boo));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFloatValue())
                 {
                     request.Parameters.Add("FloatValue", StringUtils.FromFloat(publicRequest.FloatValue));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFoo())
                 {
                     request.Parameters.Add("Foo", StringUtils.FromString(publicRequest.Foo));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFooEnum())
                 {
                     request.Parameters.Add("FooEnum", StringUtils.FromString(publicRequest.FooEnum));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHasQueryAndXmlName())
                 {
                     request.Parameters.Add("HasQueryAndXmlName", StringUtils.FromString(publicRequest.HasQueryAndXmlName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHasQueryName())
                 {
                     request.Parameters.Add("HasQueryName", StringUtils.FromString(publicRequest.HasQueryName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetQux())
                 {
                     request.Parameters.Add("Qux", StringUtils.FromMemoryStream(publicRequest.Qux));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUsesXmlName())
                 {
                     request.Parameters.Add("UsesXmlName", StringUtils.FromString(publicRequest.UsesXmlName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

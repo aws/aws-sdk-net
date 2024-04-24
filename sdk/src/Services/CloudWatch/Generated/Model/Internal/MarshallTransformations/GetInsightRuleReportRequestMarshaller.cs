@@ -63,12 +63,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxContributorCount())
                 {
                     request.Parameters.Add("MaxContributorCount", StringUtils.FromInt(publicRequest.MaxContributorCount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMetrics())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,27 +76,22 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOrderBy())
                 {
                     request.Parameters.Add("OrderBy", StringUtils.FromString(publicRequest.OrderBy));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPeriod())
                 {
                     request.Parameters.Add("Period", StringUtils.FromInt(publicRequest.Period));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRuleName())
                 {
                     request.Parameters.Add("RuleName", StringUtils.FromString(publicRequest.RuleName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartTime())
                 {
                     request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

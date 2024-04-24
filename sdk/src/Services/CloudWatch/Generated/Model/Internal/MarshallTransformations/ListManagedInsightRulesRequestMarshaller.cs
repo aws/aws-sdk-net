@@ -63,17 +63,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceARN())
                 {
                     request.Parameters.Add("ResourceARN", StringUtils.FromString(publicRequest.ResourceARN));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

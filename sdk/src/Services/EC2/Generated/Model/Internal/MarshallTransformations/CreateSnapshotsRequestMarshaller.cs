@@ -63,19 +63,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CopyTagsFromSource", StringUtils.FromString(publicRequest.CopyTagsFromSource));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceSpecification())
                 {
                     if(publicRequest.InstanceSpecification.IsSetExcludeBootVolume())
                     {
                         request.Parameters.Add("InstanceSpecification" + "." + "ExcludeBootVolume", StringUtils.FromBool(publicRequest.InstanceSpecification.ExcludeBootVolume));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceSpecification.IsSetExcludeDataVolumeIds())
                     {
                         int publicRequestInstanceSpecificationlistValueIndex = 1;
@@ -85,19 +82,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestInstanceSpecificationlistValueIndex++;
                         }
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceSpecification.IsSetInstanceId())
                     {
                         request.Parameters.Add("InstanceSpecification" + "." + "InstanceId", StringUtils.FromString(publicRequest.InstanceSpecification.InstanceId));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOutpostArn())
                 {
                     request.Parameters.Add("OutpostArn", StringUtils.FromString(publicRequest.OutpostArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -107,7 +100,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -117,20 +109,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

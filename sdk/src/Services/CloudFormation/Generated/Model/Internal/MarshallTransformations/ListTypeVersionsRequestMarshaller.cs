@@ -63,37 +63,30 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Arn", StringUtils.FromString(publicRequest.Arn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeprecatedStatus())
                 {
                     request.Parameters.Add("DeprecatedStatus", StringUtils.FromString(publicRequest.DeprecatedStatus));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPublisherId())
                 {
                     request.Parameters.Add("PublisherId", StringUtils.FromString(publicRequest.PublisherId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetType())
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTypeName())
                 {
                     request.Parameters.Add("TypeName", StringUtils.FromString(publicRequest.TypeName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

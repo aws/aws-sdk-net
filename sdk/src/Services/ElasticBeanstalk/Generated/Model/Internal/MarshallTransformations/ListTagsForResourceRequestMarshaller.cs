@@ -63,7 +63,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

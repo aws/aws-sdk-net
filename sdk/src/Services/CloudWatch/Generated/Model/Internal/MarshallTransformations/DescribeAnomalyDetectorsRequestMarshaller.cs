@@ -68,7 +68,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDimensions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,36 +77,29 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMetricName())
                 {
                     request.Parameters.Add("MetricName", StringUtils.FromString(publicRequest.MetricName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNamespace())
                 {
                     request.Parameters.Add("Namespace", StringUtils.FromString(publicRequest.Namespace));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

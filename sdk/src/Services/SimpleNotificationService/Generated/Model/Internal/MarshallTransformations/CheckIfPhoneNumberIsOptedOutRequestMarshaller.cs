@@ -63,7 +63,6 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 {
                     request.Parameters.Add("phoneNumber", StringUtils.FromString(publicRequest.PhoneNumber));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

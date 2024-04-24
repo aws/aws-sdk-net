@@ -63,12 +63,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResources())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -89,21 +87,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                                 mapIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResourceType())
                         {
                             request.Parameters.Add("Resources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceScanId())
                 {
                     request.Parameters.Add("ResourceScanId", StringUtils.FromString(publicRequest.ResourceScanId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

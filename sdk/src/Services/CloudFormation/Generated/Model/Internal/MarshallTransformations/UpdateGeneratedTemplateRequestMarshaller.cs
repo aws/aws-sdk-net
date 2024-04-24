@@ -68,7 +68,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("AddResources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LogicalResourceId", StringUtils.FromString(publicRequestlistValue.LogicalResourceId));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResourceIdentifier())
                         {
                             int mapIndex = 1;
@@ -84,31 +83,25 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                                 mapIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResourceType())
                         {
                             request.Parameters.Add("AddResources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGeneratedTemplateName())
                 {
                     request.Parameters.Add("GeneratedTemplateName", StringUtils.FromString(publicRequest.GeneratedTemplateName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewGeneratedTemplateName())
                 {
                     request.Parameters.Add("NewGeneratedTemplateName", StringUtils.FromString(publicRequest.NewGeneratedTemplateName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRefreshAllResources())
                 {
                     request.Parameters.Add("RefreshAllResources", StringUtils.FromBool(publicRequest.RefreshAllResources));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveResources())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -118,21 +111,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateConfiguration())
                 {
                     if(publicRequest.TemplateConfiguration.IsSetDeletionPolicy())
                     {
                         request.Parameters.Add("TemplateConfiguration" + "." + "DeletionPolicy", StringUtils.FromString(publicRequest.TemplateConfiguration.DeletionPolicy));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.TemplateConfiguration.IsSetUpdateReplacePolicy())
                     {
                         request.Parameters.Add("TemplateConfiguration" + "." + "UpdateReplacePolicy", StringUtils.FromString(publicRequest.TemplateConfiguration.UpdateReplacePolicy));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -75,4 +75,3 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
 
     }
 }
-#pragma warning restore CS0612,CS0618

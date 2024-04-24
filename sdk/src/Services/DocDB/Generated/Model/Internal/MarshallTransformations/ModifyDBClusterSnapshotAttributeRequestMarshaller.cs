@@ -63,12 +63,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AttributeName", StringUtils.FromString(publicRequest.AttributeName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBClusterSnapshotIdentifier())
                 {
                     request.Parameters.Add("DBClusterSnapshotIdentifier", StringUtils.FromString(publicRequest.DBClusterSnapshotIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetValuesToAdd())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,7 +76,6 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetValuesToRemove())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -88,7 +85,6 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

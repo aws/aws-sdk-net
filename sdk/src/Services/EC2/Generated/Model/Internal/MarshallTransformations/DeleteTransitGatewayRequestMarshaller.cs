@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TransitGatewayId", StringUtils.FromString(publicRequest.TransitGatewayId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

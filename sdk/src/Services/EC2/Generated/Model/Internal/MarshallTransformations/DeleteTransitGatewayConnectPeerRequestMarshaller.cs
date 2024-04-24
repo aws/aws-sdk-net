@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TransitGatewayConnectPeerId", StringUtils.FromString(publicRequest.TransitGatewayConnectPeerId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

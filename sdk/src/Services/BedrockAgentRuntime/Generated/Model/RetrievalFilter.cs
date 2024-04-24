@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <c>key</c> and whose value matches the <c>value</c> in this object are returned.
         /// </para>
         /// </summary>
-        public FilterAttribute Equals
+        public new FilterAttribute Equals
         {
             get { return this._equals; }
             set { this._equals = value; }

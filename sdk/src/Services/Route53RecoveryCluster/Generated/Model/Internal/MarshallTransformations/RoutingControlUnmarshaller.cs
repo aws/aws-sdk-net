@@ -119,4 +119,3 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

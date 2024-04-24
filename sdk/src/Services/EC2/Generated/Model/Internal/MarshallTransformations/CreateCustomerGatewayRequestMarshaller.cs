@@ -63,27 +63,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("BgpAsn", StringUtils.FromInt(publicRequest.BgpAsn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCertificateArn())
                 {
                     request.Parameters.Add("CertificateArn", StringUtils.FromString(publicRequest.CertificateArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeviceName())
                 {
                     request.Parameters.Add("DeviceName", StringUtils.FromString(publicRequest.DeviceName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpAddress())
                 {
                     request.Parameters.Add("IpAddress", StringUtils.FromString(publicRequest.IpAddress));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPublicIp())
                 {
                     request.Parameters.Add("PublicIp", StringUtils.FromString(publicRequest.PublicIp));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -93,7 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTags())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -103,25 +97,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetValue())
                                 {
                                     request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetType())
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

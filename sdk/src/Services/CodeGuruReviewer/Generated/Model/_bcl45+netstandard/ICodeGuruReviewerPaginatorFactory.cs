@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the codeguru-reviewer-2019-09-19.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>

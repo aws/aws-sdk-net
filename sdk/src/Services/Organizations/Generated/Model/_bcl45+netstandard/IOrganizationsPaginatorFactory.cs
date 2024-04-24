@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the organizations-2016-11-28.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Organizations.Model
 {
     /// <summary>

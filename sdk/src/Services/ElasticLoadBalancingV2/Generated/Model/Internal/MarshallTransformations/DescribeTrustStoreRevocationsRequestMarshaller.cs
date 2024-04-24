@@ -63,12 +63,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPageSize())
                 {
                     request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRevocationIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,12 +76,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTrustStoreArn())
                 {
                     request.Parameters.Add("TrustStoreArn", StringUtils.FromString(publicRequest.TrustStoreArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

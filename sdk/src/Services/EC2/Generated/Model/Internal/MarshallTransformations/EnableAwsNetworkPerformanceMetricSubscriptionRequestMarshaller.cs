@@ -63,22 +63,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Destination", StringUtils.FromString(publicRequest.Destination));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMetric())
                 {
                     request.Parameters.Add("Metric", StringUtils.FromString(publicRequest.Metric));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSource())
                 {
                     request.Parameters.Add("Source", StringUtils.FromString(publicRequest.Source));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStatistic())
                 {
                     request.Parameters.Add("Statistic", StringUtils.FromString(publicRequest.Statistic));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

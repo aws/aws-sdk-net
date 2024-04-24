@@ -63,12 +63,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 {
                     request.Parameters.Add("OneTimePassword", StringUtils.FromString(publicRequest.OneTimePassword));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPhoneNumber())
                 {
                     request.Parameters.Add("PhoneNumber", StringUtils.FromString(publicRequest.PhoneNumber));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

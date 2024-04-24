@@ -63,12 +63,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("OriginalRuleSetName", StringUtils.FromString(publicRequest.OriginalRuleSetName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRuleSetName())
                 {
                     request.Parameters.Add("RuleSetName", StringUtils.FromString(publicRequest.RuleSetName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

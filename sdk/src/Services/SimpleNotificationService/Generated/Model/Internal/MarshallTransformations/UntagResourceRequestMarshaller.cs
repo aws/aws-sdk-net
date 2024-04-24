@@ -63,7 +63,6 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 {
                     request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagKeys())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,7 +72,6 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

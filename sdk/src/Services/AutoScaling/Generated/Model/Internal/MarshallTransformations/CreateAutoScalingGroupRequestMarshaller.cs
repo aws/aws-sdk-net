@@ -63,7 +63,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAvailabilityZones())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,90 +72,72 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCapacityRebalance())
                 {
                     request.Parameters.Add("CapacityRebalance", StringUtils.FromBool(publicRequest.CapacityRebalance));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetContext())
                 {
                     request.Parameters.Add("Context", StringUtils.FromString(publicRequest.Context));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDefaultCooldown())
                 {
                     request.Parameters.Add("DefaultCooldown", StringUtils.FromInt(publicRequest.DefaultCooldown));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDefaultInstanceWarmup())
                 {
                     request.Parameters.Add("DefaultInstanceWarmup", StringUtils.FromInt(publicRequest.DefaultInstanceWarmup));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDesiredCapacity())
                 {
                     request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(publicRequest.DesiredCapacity));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDesiredCapacityType())
                 {
                     request.Parameters.Add("DesiredCapacityType", StringUtils.FromString(publicRequest.DesiredCapacityType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHealthCheckGracePeriod())
                 {
                     request.Parameters.Add("HealthCheckGracePeriod", StringUtils.FromInt(publicRequest.HealthCheckGracePeriod));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHealthCheckType())
                 {
                     request.Parameters.Add("HealthCheckType", StringUtils.FromString(publicRequest.HealthCheckType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceMaintenancePolicy())
                 {
                     if(publicRequest.InstanceMaintenancePolicy.IsSetMaxHealthyPercentage())
                     {
                         request.Parameters.Add("InstanceMaintenancePolicy" + "." + "MaxHealthyPercentage", StringUtils.FromInt(publicRequest.InstanceMaintenancePolicy.MaxHealthyPercentage));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceMaintenancePolicy.IsSetMinHealthyPercentage())
                     {
                         request.Parameters.Add("InstanceMaintenancePolicy" + "." + "MinHealthyPercentage", StringUtils.FromInt(publicRequest.InstanceMaintenancePolicy.MinHealthyPercentage));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLaunchConfigurationName())
                 {
                     request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(publicRequest.LaunchConfigurationName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLaunchTemplate())
                 {
                     if(publicRequest.LaunchTemplate.IsSetLaunchTemplateId())
                     {
                         request.Parameters.Add("LaunchTemplate" + "." + "LaunchTemplateId", StringUtils.FromString(publicRequest.LaunchTemplate.LaunchTemplateId));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplate.IsSetLaunchTemplateName())
                     {
                         request.Parameters.Add("LaunchTemplate" + "." + "LaunchTemplateName", StringUtils.FromString(publicRequest.LaunchTemplate.LaunchTemplateName));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplate.IsSetVersion())
                     {
                         request.Parameters.Add("LaunchTemplate" + "." + "Version", StringUtils.FromString(publicRequest.LaunchTemplate.Version));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLifecycleHookSpecificationList())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -166,41 +147,33 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DefaultResult", StringUtils.FromString(publicRequestlistValue.DefaultResult));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetHeartbeatTimeout())
                         {
                             request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HeartbeatTimeout", StringUtils.FromInt(publicRequestlistValue.HeartbeatTimeout));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetLifecycleHookName())
                         {
                             request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LifecycleHookName", StringUtils.FromString(publicRequestlistValue.LifecycleHookName));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetLifecycleTransition())
                         {
                             request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LifecycleTransition", StringUtils.FromString(publicRequestlistValue.LifecycleTransition));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetNotificationMetadata())
                         {
                             request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NotificationMetadata", StringUtils.FromString(publicRequestlistValue.NotificationMetadata));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetNotificationTargetARN())
                         {
                             request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NotificationTargetARN", StringUtils.FromString(publicRequestlistValue.NotificationTargetARN));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetRoleARN())
                         {
                             request.Parameters.Add("LifecycleHookSpecificationList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RoleARN", StringUtils.FromString(publicRequestlistValue.RoleARN));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoadBalancerNames())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -210,22 +183,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxInstanceLifetime())
                 {
                     request.Parameters.Add("MaxInstanceLifetime", StringUtils.FromInt(publicRequest.MaxInstanceLifetime));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxSize())
                 {
                     request.Parameters.Add("MaxSize", StringUtils.FromInt(publicRequest.MaxSize));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMinSize())
                 {
                     request.Parameters.Add("MinSize", StringUtils.FromInt(publicRequest.MinSize));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMixedInstancesPolicy())
                 {
                     if(publicRequest.MixedInstancesPolicy.IsSetInstancesDistribution())
@@ -234,34 +203,27 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "OnDemandAllocationStrategy", StringUtils.FromString(publicRequest.MixedInstancesPolicy.InstancesDistribution.OnDemandAllocationStrategy));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.MixedInstancesPolicy.InstancesDistribution.IsSetOnDemandBaseCapacity())
                         {
                             request.Parameters.Add("MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "OnDemandBaseCapacity", StringUtils.FromInt(publicRequest.MixedInstancesPolicy.InstancesDistribution.OnDemandBaseCapacity));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.MixedInstancesPolicy.InstancesDistribution.IsSetOnDemandPercentageAboveBaseCapacity())
                         {
                             request.Parameters.Add("MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "OnDemandPercentageAboveBaseCapacity", StringUtils.FromInt(publicRequest.MixedInstancesPolicy.InstancesDistribution.OnDemandPercentageAboveBaseCapacity));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.MixedInstancesPolicy.InstancesDistribution.IsSetSpotAllocationStrategy())
                         {
                             request.Parameters.Add("MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "SpotAllocationStrategy", StringUtils.FromString(publicRequest.MixedInstancesPolicy.InstancesDistribution.SpotAllocationStrategy));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.MixedInstancesPolicy.InstancesDistribution.IsSetSpotInstancePools())
                         {
                             request.Parameters.Add("MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "SpotInstancePools", StringUtils.FromInt(publicRequest.MixedInstancesPolicy.InstancesDistribution.SpotInstancePools));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.MixedInstancesPolicy.InstancesDistribution.IsSetSpotMaxPrice())
                         {
                             request.Parameters.Add("MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "SpotMaxPrice", StringUtils.FromString(publicRequest.MixedInstancesPolicy.InstancesDistribution.SpotMaxPrice));
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.MixedInstancesPolicy.IsSetLaunchTemplate())
                     {
                         if(publicRequest.MixedInstancesPolicy.LaunchTemplate.IsSetLaunchTemplateSpecification())
@@ -270,19 +232,15 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "LaunchTemplateSpecification" + "." + "LaunchTemplateId", StringUtils.FromString(publicRequest.MixedInstancesPolicy.LaunchTemplate.LaunchTemplateSpecification.LaunchTemplateId));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequest.MixedInstancesPolicy.LaunchTemplate.LaunchTemplateSpecification.IsSetLaunchTemplateName())
                             {
                                 request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "LaunchTemplateSpecification" + "." + "LaunchTemplateName", StringUtils.FromString(publicRequest.MixedInstancesPolicy.LaunchTemplate.LaunchTemplateSpecification.LaunchTemplateName));
                             }
-#pragma warning restore CS0612,CS0618
                             if(publicRequest.MixedInstancesPolicy.LaunchTemplate.LaunchTemplateSpecification.IsSetVersion())
                             {
                                 request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "LaunchTemplateSpecification" + "." + "Version", StringUtils.FromString(publicRequest.MixedInstancesPolicy.LaunchTemplate.LaunchTemplateSpecification.Version));
                             }
-#pragma warning restore CS0612,CS0618
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.MixedInstancesPolicy.LaunchTemplate.IsSetOverrides())
                         {
                             int publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex = 1;
@@ -296,14 +254,11 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorCount" + "." + "Max", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorCount.Max));
                                         }
-#pragma warning restore CS0612,CS0618
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorCount.IsSetMin())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorCount" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorCount.Min));
                                         }
-#pragma warning restore CS0612,CS0618
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAcceleratorManufacturers())
                                     {
                                         int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
@@ -313,7 +268,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                             publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
                                         }
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAcceleratorNames())
                                     {
                                         int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
@@ -323,21 +277,17 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                             publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
                                         }
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAcceleratorTotalMemoryMiB())
                                     {
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.IsSetMax())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorTotalMemoryMiB" + "." + "Max", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.Max));
                                         }
-#pragma warning restore CS0612,CS0618
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.IsSetMin())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorTotalMemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.Min));
                                         }
-#pragma warning restore CS0612,CS0618
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAcceleratorTypes())
                                     {
                                         int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
@@ -347,7 +297,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                             publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
                                         }
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAllowedInstanceTypes())
                                     {
                                         int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
@@ -357,31 +306,25 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                             publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
                                         }
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetBareMetal())
                                     {
                                         request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "BareMetal", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BareMetal));
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetBaselineEbsBandwidthMbps())
                                     {
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMax())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Max", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Max));
                                         }
-#pragma warning restore CS0612,CS0618
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMin())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
                                         }
-#pragma warning restore CS0612,CS0618
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetBurstablePerformance())
                                     {
                                         request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "BurstablePerformance", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BurstablePerformance));
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetCpuManufacturers())
                                     {
                                         int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
@@ -391,7 +334,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                             publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
                                         }
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetExcludedInstanceTypes())
                                     {
                                         int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
@@ -401,7 +343,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                             publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
                                         }
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetInstanceGenerations())
                                     {
                                         int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
@@ -411,12 +352,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                             publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
                                         }
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetLocalStorage())
                                     {
                                         request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "LocalStorage", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.LocalStorage));
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetLocalStorageTypes())
                                     {
                                         int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
@@ -426,165 +365,129 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                             publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
                                         }
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice())
                                     {
                                         request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "MaxSpotPriceAsPercentageOfOptimalOnDemandPrice", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice));
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetMemoryGiBPerVCpu())
                                     {
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryGiBPerVCpu.IsSetMax())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "MemoryGiBPerVCpu" + "." + "Max", StringUtils.FromDouble(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryGiBPerVCpu.Max));
                                         }
-#pragma warning restore CS0612,CS0618
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryGiBPerVCpu.IsSetMin())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "MemoryGiBPerVCpu" + "." + "Min", StringUtils.FromDouble(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryGiBPerVCpu.Min));
                                         }
-#pragma warning restore CS0612,CS0618
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetMemoryMiB())
                                     {
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryMiB.IsSetMax())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "MemoryMiB" + "." + "Max", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryMiB.Max));
                                         }
-#pragma warning restore CS0612,CS0618
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryMiB.IsSetMin())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "MemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryMiB.Min));
                                         }
-#pragma warning restore CS0612,CS0618
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetNetworkBandwidthGbps())
                                     {
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.NetworkBandwidthGbps.IsSetMax())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "NetworkBandwidthGbps" + "." + "Max", StringUtils.FromDouble(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.NetworkBandwidthGbps.Max));
                                         }
-#pragma warning restore CS0612,CS0618
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.NetworkBandwidthGbps.IsSetMin())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "NetworkBandwidthGbps" + "." + "Min", StringUtils.FromDouble(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.NetworkBandwidthGbps.Min));
                                         }
-#pragma warning restore CS0612,CS0618
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetNetworkInterfaceCount())
                                     {
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.NetworkInterfaceCount.IsSetMax())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "NetworkInterfaceCount" + "." + "Max", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.NetworkInterfaceCount.Max));
                                         }
-#pragma warning restore CS0612,CS0618
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.NetworkInterfaceCount.IsSetMin())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "NetworkInterfaceCount" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.NetworkInterfaceCount.Min));
                                         }
-#pragma warning restore CS0612,CS0618
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetOnDemandMaxPricePercentageOverLowestPrice())
                                     {
                                         request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "OnDemandMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice));
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetRequireHibernateSupport())
                                     {
                                         request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "RequireHibernateSupport", StringUtils.FromBool(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.RequireHibernateSupport));
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetSpotMaxPricePercentageOverLowestPrice())
                                     {
                                         request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "SpotMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.SpotMaxPricePercentageOverLowestPrice));
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetTotalLocalStorageGB())
                                     {
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.TotalLocalStorageGB.IsSetMax())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "TotalLocalStorageGB" + "." + "Max", StringUtils.FromDouble(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.TotalLocalStorageGB.Max));
                                         }
-#pragma warning restore CS0612,CS0618
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.TotalLocalStorageGB.IsSetMin())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "TotalLocalStorageGB" + "." + "Min", StringUtils.FromDouble(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.TotalLocalStorageGB.Min));
                                         }
-#pragma warning restore CS0612,CS0618
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetVCpuCount())
                                     {
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.VCpuCount.IsSetMax())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "VCpuCount" + "." + "Max", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.VCpuCount.Max));
                                         }
-#pragma warning restore CS0612,CS0618
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.VCpuCount.IsSetMin())
                                         {
                                             request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "VCpuCount" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.VCpuCount.Min));
                                         }
-#pragma warning restore CS0612,CS0618
                                     }
-#pragma warning restore CS0612,CS0618
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.IsSetInstanceType())
                                 {
                                     request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceType));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.IsSetLaunchTemplateSpecification())
                                 {
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.LaunchTemplateSpecification.IsSetLaunchTemplateId())
                                     {
                                         request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "LaunchTemplateSpecification" + "." + "LaunchTemplateId", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.LaunchTemplateSpecification.LaunchTemplateId));
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.LaunchTemplateSpecification.IsSetLaunchTemplateName())
                                     {
                                         request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "LaunchTemplateSpecification" + "." + "LaunchTemplateName", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.LaunchTemplateSpecification.LaunchTemplateName));
                                     }
-#pragma warning restore CS0612,CS0618
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.LaunchTemplateSpecification.IsSetVersion())
                                     {
                                         request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "LaunchTemplateSpecification" + "." + "Version", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.LaunchTemplateSpecification.Version));
                                     }
-#pragma warning restore CS0612,CS0618
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.IsSetWeightedCapacity())
                                 {
                                     request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "WeightedCapacity", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.WeightedCapacity));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewInstancesProtectedFromScaleIn())
                 {
                     request.Parameters.Add("NewInstancesProtectedFromScaleIn", StringUtils.FromBool(publicRequest.NewInstancesProtectedFromScaleIn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPlacementGroup())
                 {
                     request.Parameters.Add("PlacementGroup", StringUtils.FromString(publicRequest.PlacementGroup));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServiceLinkedRoleARN())
                 {
                     request.Parameters.Add("ServiceLinkedRoleARN", StringUtils.FromString(publicRequest.ServiceLinkedRoleARN));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -594,31 +497,25 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPropagateAtLaunch())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PropagateAtLaunch", StringUtils.FromBool(publicRequestlistValue.PropagateAtLaunch));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResourceId())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceId", StringUtils.FromString(publicRequestlistValue.ResourceId));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResourceType())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetGroupARNs())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -628,7 +525,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTerminationPolicies())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -638,7 +534,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTrafficSources())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -648,21 +543,17 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TrafficSources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Identifier", StringUtils.FromString(publicRequestlistValue.Identifier));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetType())
                         {
                             request.Parameters.Add("TrafficSources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVPCZoneIdentifier())
                 {
                     request.Parameters.Add("VPCZoneIdentifier", StringUtils.FromString(publicRequest.VPCZoneIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

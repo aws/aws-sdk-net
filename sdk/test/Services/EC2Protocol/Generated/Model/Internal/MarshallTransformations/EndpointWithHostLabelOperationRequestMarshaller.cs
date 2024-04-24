@@ -63,7 +63,6 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Label", StringUtils.FromString(publicRequest.Label));
                 }
-#pragma warning restore CS0612,CS0618
 
                 var hostPrefixLabels = new
                 {

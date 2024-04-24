@@ -63,7 +63,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScheduledUpdateGroupActions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,46 +72,37 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DesiredCapacity", StringUtils.FromInt(publicRequestlistValue.DesiredCapacity));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetEndTimeUtc())
                         {
                             request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.EndTimeUtc));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetMaxSize())
                         {
                             request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MaxSize", StringUtils.FromInt(publicRequestlistValue.MaxSize));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetMinSize())
                         {
                             request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MinSize", StringUtils.FromInt(publicRequestlistValue.MinSize));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetRecurrence())
                         {
                             request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Recurrence", StringUtils.FromString(publicRequestlistValue.Recurrence));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetScheduledActionName())
                         {
                             request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ScheduledActionName", StringUtils.FromString(publicRequestlistValue.ScheduledActionName));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetStartTimeUtc())
                         {
                             request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.StartTimeUtc));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTimeZone())
                         {
                             request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TimeZone", StringUtils.FromString(publicRequestlistValue.TimeZone));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

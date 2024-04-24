@@ -68,16 +68,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("RulePriorities" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Priority", StringUtils.FromInt(publicRequestlistValue.Priority));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetRuleArn())
                         {
                             request.Parameters.Add("RulePriorities" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RuleArn", StringUtils.FromString(publicRequestlistValue.RuleArn));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

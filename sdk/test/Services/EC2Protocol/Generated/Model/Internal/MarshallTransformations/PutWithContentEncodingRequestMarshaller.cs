@@ -64,12 +64,10 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Data", StringUtils.FromString(publicRequest.Data));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEncoding())
                 {
                     request.Parameters.Add("Encoding", StringUtils.FromString(publicRequest.Encoding));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

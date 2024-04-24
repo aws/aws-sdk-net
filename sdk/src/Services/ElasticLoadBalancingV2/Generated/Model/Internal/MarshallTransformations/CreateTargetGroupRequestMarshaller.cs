@@ -63,76 +63,61 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("HealthCheckEnabled", StringUtils.FromBool(publicRequest.HealthCheckEnabled));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHealthCheckIntervalSeconds())
                 {
                     request.Parameters.Add("HealthCheckIntervalSeconds", StringUtils.FromInt(publicRequest.HealthCheckIntervalSeconds));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHealthCheckPath())
                 {
                     request.Parameters.Add("HealthCheckPath", StringUtils.FromString(publicRequest.HealthCheckPath));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHealthCheckPort())
                 {
                     request.Parameters.Add("HealthCheckPort", StringUtils.FromString(publicRequest.HealthCheckPort));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHealthCheckProtocol())
                 {
                     request.Parameters.Add("HealthCheckProtocol", StringUtils.FromString(publicRequest.HealthCheckProtocol));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHealthCheckTimeoutSeconds())
                 {
                     request.Parameters.Add("HealthCheckTimeoutSeconds", StringUtils.FromInt(publicRequest.HealthCheckTimeoutSeconds));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHealthyThresholdCount())
                 {
                     request.Parameters.Add("HealthyThresholdCount", StringUtils.FromInt(publicRequest.HealthyThresholdCount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpAddressType())
                 {
                     request.Parameters.Add("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMatcher())
                 {
                     if(publicRequest.Matcher.IsSetGrpcCode())
                     {
                         request.Parameters.Add("Matcher" + "." + "GrpcCode", StringUtils.FromString(publicRequest.Matcher.GrpcCode));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Matcher.IsSetHttpCode())
                     {
                         request.Parameters.Add("Matcher" + "." + "HttpCode", StringUtils.FromString(publicRequest.Matcher.HttpCode));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPort())
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetProtocol())
                 {
                     request.Parameters.Add("Protocol", StringUtils.FromString(publicRequest.Protocol));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetProtocolVersion())
                 {
                     request.Parameters.Add("ProtocolVersion", StringUtils.FromString(publicRequest.ProtocolVersion));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -142,31 +127,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetType())
                 {
                     request.Parameters.Add("TargetType", StringUtils.FromString(publicRequest.TargetType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUnhealthyThresholdCount())
                 {
                     request.Parameters.Add("UnhealthyThresholdCount", StringUtils.FromInt(publicRequest.UnhealthyThresholdCount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcId())
                 {
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

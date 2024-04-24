@@ -63,22 +63,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLogFileName())
                 {
                     request.Parameters.Add("LogFileName", StringUtils.FromString(publicRequest.LogFileName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNumberOfLines())
                 {
                     request.Parameters.Add("NumberOfLines", StringUtils.FromInt(publicRequest.NumberOfLines));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

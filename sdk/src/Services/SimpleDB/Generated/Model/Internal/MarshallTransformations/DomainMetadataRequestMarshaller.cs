@@ -63,7 +63,6 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

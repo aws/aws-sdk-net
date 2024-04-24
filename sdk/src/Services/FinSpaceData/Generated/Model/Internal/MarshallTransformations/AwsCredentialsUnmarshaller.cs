@@ -107,4 +107,3 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

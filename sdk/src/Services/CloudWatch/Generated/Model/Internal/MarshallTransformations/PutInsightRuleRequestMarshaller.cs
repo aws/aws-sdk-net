@@ -63,17 +63,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("RuleDefinition", StringUtils.FromString(publicRequest.RuleDefinition));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRuleName())
                 {
                     request.Parameters.Add("RuleName", StringUtils.FromString(publicRequest.RuleName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRuleState())
                 {
                     request.Parameters.Add("RuleState", StringUtils.FromString(publicRequest.RuleState));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -83,16 +80,13 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

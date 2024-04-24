@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -36,7 +37,6 @@ namespace Amazon.QuickSight.Model
     #endif
     public partial class ThrottlingException : AmazonQuickSightException
     {
-        private string _requestId;
 
         /// <summary>
         /// Constructs a new ThrottlingException with the specified error
@@ -122,24 +122,6 @@ namespace Amazon.QuickSight.Model
             info.AddValue("RequestId", this.RequestId);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property RequestId. 
-        /// <para>
-        /// The Amazon Web Services request ID for this request.
-        /// </para>
-        /// </summary>
-        public string RequestId
-        {
-            get { return this._requestId; }
-            set { this._requestId = value; }
-        }
-
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
-        {
-            return this._requestId != null;
-        }
 
     }
 }

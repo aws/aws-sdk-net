@@ -63,7 +63,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnvironmentName", StringUtils.FromString(publicRequest.EnvironmentName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptionSettings())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,50 +72,40 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetOptionName())
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetResourceName())
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPlatformDefinitionBundle())
                 {
                     if(publicRequest.PlatformDefinitionBundle.IsSetS3Bucket())
                     {
                         request.Parameters.Add("PlatformDefinitionBundle" + "." + "S3Bucket", StringUtils.FromString(publicRequest.PlatformDefinitionBundle.S3Bucket));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.PlatformDefinitionBundle.IsSetS3Key())
                     {
                         request.Parameters.Add("PlatformDefinitionBundle" + "." + "S3Key", StringUtils.FromString(publicRequest.PlatformDefinitionBundle.S3Key));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPlatformName())
                 {
                     request.Parameters.Add("PlatformName", StringUtils.FromString(publicRequest.PlatformName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPlatformVersion())
                 {
                     request.Parameters.Add("PlatformVersion", StringUtils.FromString(publicRequest.PlatformVersion));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -126,16 +115,13 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

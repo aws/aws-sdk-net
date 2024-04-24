@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KeyName", StringUtils.FromString(publicRequest.KeyName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetKeyPairId())
                 {
                     request.Parameters.Add("KeyPairId", StringUtils.FromString(publicRequest.KeyPairId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -63,12 +63,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoadBalancerArn())
                 {
                     request.Parameters.Add("LoadBalancerArn", StringUtils.FromString(publicRequest.LoadBalancerArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

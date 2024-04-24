@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model
 {
     /// <summary>

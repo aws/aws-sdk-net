@@ -63,37 +63,30 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Classic", StringUtils.FromBool(publicRequest.Classic));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClusterIdentifier())
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClusterType())
                 {
                     request.Parameters.Add("ClusterType", StringUtils.FromString(publicRequest.ClusterType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNodeType())
                 {
                     request.Parameters.Add("NodeType", StringUtils.FromString(publicRequest.NodeType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNumberOfNodes())
                 {
                     request.Parameters.Add("NumberOfNodes", StringUtils.FromInt(publicRequest.NumberOfNodes));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReservedNodeId())
                 {
                     request.Parameters.Add("ReservedNodeId", StringUtils.FromString(publicRequest.ReservedNodeId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetReservedNodeOfferingId())
                 {
                     request.Parameters.Add("TargetReservedNodeOfferingId", StringUtils.FromString(publicRequest.TargetReservedNodeOfferingId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

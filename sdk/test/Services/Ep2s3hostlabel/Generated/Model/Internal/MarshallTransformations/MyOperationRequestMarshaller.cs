@@ -101,4 +101,3 @@ namespace Amazon.Ep2s3hostlabel.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

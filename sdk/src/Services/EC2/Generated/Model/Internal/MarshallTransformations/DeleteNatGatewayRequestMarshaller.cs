@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NatGatewayId", StringUtils.FromString(publicRequest.NatGatewayId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

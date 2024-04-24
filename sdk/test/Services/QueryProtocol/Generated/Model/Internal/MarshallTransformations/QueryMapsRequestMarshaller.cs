@@ -73,12 +73,10 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("ComplexMapArg" + "." + "entry" + "." + mapIndex + "." + "value" + "." + "hi", StringUtils.FromString(value.Hi));
                             }
-#pragma warning restore CS0612,CS0618
                         }
                         mapIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFlattenedMap())
                 {
                     int mapIndex = 1;
@@ -94,7 +92,6 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                         mapIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFlattenedMapWithXmlName())
                 {
                     int mapIndex = 1;
@@ -110,7 +107,6 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                         mapIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMapArg())
                 {
                     int mapIndex = 1;
@@ -126,7 +122,6 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                         mapIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMapOfLists())
                 {
                     int mapIndex = 1;
@@ -148,7 +143,6 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                         mapIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMapWithXmlMemberName())
                 {
                     int mapIndex = 1;
@@ -164,7 +158,6 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                         mapIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNestedStructWithMap())
                 {
                     if(publicRequest.NestedStructWithMap.IsSetMapArg())
@@ -182,9 +175,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                             mapIndex++;
                         }
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRenamedMapArg())
                 {
                     int mapIndex = 1;
@@ -200,7 +191,6 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                         mapIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

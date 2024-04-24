@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
@@ -36,7 +37,6 @@ namespace Amazon.CodeGuruSecurity.Model
     #endif
     public partial class ThrottlingException : AmazonCodeGuruSecurityException
     {
-        private string _errorCode;
         private string _quotaCode;
         private string _serviceCode;
 
@@ -130,25 +130,6 @@ namespace Amazon.CodeGuruSecurity.Model
             info.AddValue("ServiceCode", this.ServiceCode);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode. 
-        /// <para>
-        /// The identifier for the error.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
-        }
 
         /// <summary>
         /// Gets and sets the property QuotaCode. 

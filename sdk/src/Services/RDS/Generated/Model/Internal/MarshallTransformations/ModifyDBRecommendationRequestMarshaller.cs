@@ -63,12 +63,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Locale", StringUtils.FromString(publicRequest.Locale));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRecommendationId())
                 {
                     request.Parameters.Add("RecommendationId", StringUtils.FromString(publicRequest.RecommendationId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRecommendedActionUpdates())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,21 +76,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("RecommendedActionUpdates" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ActionId", StringUtils.FromString(publicRequestlistValue.ActionId));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetStatus())
                         {
                             request.Parameters.Add("RecommendedActionUpdates" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Status", StringUtils.FromString(publicRequestlistValue.Status));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStatus())
                 {
                     request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

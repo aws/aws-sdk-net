@@ -63,47 +63,38 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Bam", StringUtils.FromInt(publicRequest.Bam));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetBar())
                 {
                     request.Parameters.Add("Bar", StringUtils.FromString(publicRequest.Bar));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetBaz())
                 {
                     request.Parameters.Add("Baz", StringUtils.FromBool(publicRequest.Baz));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetBoo())
                 {
                     request.Parameters.Add("Boo", StringUtils.FromDouble(publicRequest.Boo));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFloatValue())
                 {
                     request.Parameters.Add("FloatValue", StringUtils.FromFloat(publicRequest.FloatValue));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFoo())
                 {
                     request.Parameters.Add("Foo", StringUtils.FromString(publicRequest.Foo));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFooEnum())
                 {
                     request.Parameters.Add("FooEnum", StringUtils.FromString(publicRequest.FooEnum));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIntegerEnum())
                 {
                     request.Parameters.Add("IntegerEnum", StringUtils.FromInt(publicRequest.IntegerEnum));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetQux())
                 {
                     request.Parameters.Add("Qux", StringUtils.FromMemoryStream(publicRequest.Qux));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

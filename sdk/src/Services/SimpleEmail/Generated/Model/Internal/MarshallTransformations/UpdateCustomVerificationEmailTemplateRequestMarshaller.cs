@@ -63,32 +63,26 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("FailureRedirectionURL", StringUtils.FromString(publicRequest.FailureRedirectionURL));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFromEmailAddress())
                 {
                     request.Parameters.Add("FromEmailAddress", StringUtils.FromString(publicRequest.FromEmailAddress));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSuccessRedirectionURL())
                 {
                     request.Parameters.Add("SuccessRedirectionURL", StringUtils.FromString(publicRequest.SuccessRedirectionURL));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateContent())
                 {
                     request.Parameters.Add("TemplateContent", StringUtils.FromString(publicRequest.TemplateContent));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateName())
                 {
                     request.Parameters.Add("TemplateName", StringUtils.FromString(publicRequest.TemplateName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateSubject())
                 {
                     request.Parameters.Add("TemplateSubject", StringUtils.FromString(publicRequest.TemplateSubject));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

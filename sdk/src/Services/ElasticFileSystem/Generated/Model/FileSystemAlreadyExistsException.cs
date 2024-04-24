@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
@@ -37,7 +38,6 @@ namespace Amazon.ElasticFileSystem.Model
     #endif
     public partial class FileSystemAlreadyExistsException : AmazonElasticFileSystemException
     {
-        private string _errorCode;
         private string _fileSystemId;
 
         /// <summary>
@@ -126,22 +126,6 @@ namespace Amazon.ElasticFileSystem.Model
             info.AddValue("FileSystemId", this.FileSystemId);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode.
-        /// </summary>
-        [AWSProperty(Required=true, Min=1)]
-        public string ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
-        }
 
         /// <summary>
         /// Gets and sets the property FileSystemId.

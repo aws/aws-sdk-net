@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -38,7 +39,6 @@ namespace Amazon.Inspector.Model
     public partial class LimitExceededException : AmazonInspectorException
     {
         private bool? _canRetry;
-        private LimitExceededErrorCode _errorCode;
 
         /// <summary>
         /// Constructs a new LimitExceededException with the specified error
@@ -144,25 +144,6 @@ namespace Amazon.Inspector.Model
         internal bool IsSetCanRetry()
         {
             return this._canRetry.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode. 
-        /// <para>
-        /// Code that indicates the type of error that is generated.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public LimitExceededErrorCode ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
         }
 
     }

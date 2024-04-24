@@ -63,27 +63,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngineNativeAuditFieldsIncluded())
                 {
                     request.Parameters.Add("EngineNativeAuditFieldsIncluded", StringUtils.FromBool(publicRequest.EngineNativeAuditFieldsIncluded));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMode())
                 {
                     request.Parameters.Add("Mode", StringUtils.FromString(publicRequest.Mode));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceArn())
                 {
                     request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

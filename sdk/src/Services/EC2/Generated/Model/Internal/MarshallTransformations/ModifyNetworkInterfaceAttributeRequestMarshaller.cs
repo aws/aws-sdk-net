@@ -65,61 +65,48 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Attachment" + "." + "AttachmentId", StringUtils.FromString(publicRequest.Attachment.AttachmentId));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Attachment.IsSetDeleteOnTermination())
                     {
                         request.Parameters.Add("Attachment" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequest.Attachment.DeleteOnTermination));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetConnectionTrackingSpecification())
                 {
                     if(publicRequest.ConnectionTrackingSpecification.IsSetTcpEstablishedTimeout())
                     {
                         request.Parameters.Add("ConnectionTrackingSpecification" + "." + "TcpEstablishedTimeout", StringUtils.FromInt(publicRequest.ConnectionTrackingSpecification.TcpEstablishedTimeout));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ConnectionTrackingSpecification.IsSetUdpStreamTimeout())
                     {
                         request.Parameters.Add("ConnectionTrackingSpecification" + "." + "UdpStreamTimeout", StringUtils.FromInt(publicRequest.ConnectionTrackingSpecification.UdpStreamTimeout));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.ConnectionTrackingSpecification.IsSetUdpTimeout())
                     {
                         request.Parameters.Add("ConnectionTrackingSpecification" + "." + "UdpTimeout", StringUtils.FromInt(publicRequest.ConnectionTrackingSpecification.UdpTimeout));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description.Value", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnablePrimaryIpv6())
                 {
                     request.Parameters.Add("EnablePrimaryIpv6", StringUtils.FromBool(publicRequest.EnablePrimaryIpv6));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnaSrdSpecification())
                 {
                     if(publicRequest.EnaSrdSpecification.IsSetEnaSrdEnabled())
                     {
                         request.Parameters.Add("EnaSrdSpecification" + "." + "EnaSrdEnabled", StringUtils.FromBool(publicRequest.EnaSrdSpecification.EnaSrdEnabled));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.EnaSrdSpecification.IsSetEnaSrdUdpSpecification())
                     {
                         if(publicRequest.EnaSrdSpecification.EnaSrdUdpSpecification.IsSetEnaSrdUdpEnabled())
                         {
                             request.Parameters.Add("EnaSrdSpecification" + "." + "EnaSrdUdpSpecification" + "." + "EnaSrdUdpEnabled", StringUtils.FromBool(publicRequest.EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled));
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGroups())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -129,17 +116,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkInterfaceId())
                 {
                     request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceDestCheck())
                 {
                     request.Parameters.Add("SourceDestCheck.Value", StringUtils.FromBool(publicRequest.SourceDestCheck));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -63,7 +63,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

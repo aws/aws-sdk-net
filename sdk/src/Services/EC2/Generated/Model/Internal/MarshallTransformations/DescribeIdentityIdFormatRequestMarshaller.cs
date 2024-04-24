@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PrincipalArn", StringUtils.FromString(publicRequest.PrincipalArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResource())
                 {
                     request.Parameters.Add("Resource", StringUtils.FromString(publicRequest.Resource));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

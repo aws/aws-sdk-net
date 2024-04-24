@@ -63,61 +63,49 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoUpdate", StringUtils.FromBool(publicRequest.AutoUpdate));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExecutionRoleArn())
                 {
                     request.Parameters.Add("ExecutionRoleArn", StringUtils.FromString(publicRequest.ExecutionRoleArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoggingConfig())
                 {
                     if(publicRequest.LoggingConfig.IsSetLogGroupName())
                     {
                         request.Parameters.Add("LoggingConfig" + "." + "LogGroupName", StringUtils.FromString(publicRequest.LoggingConfig.LogGroupName));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.LoggingConfig.IsSetLogRoleArn())
                     {
                         request.Parameters.Add("LoggingConfig" + "." + "LogRoleArn", StringUtils.FromString(publicRequest.LoggingConfig.LogRoleArn));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMajorVersion())
                 {
                     request.Parameters.Add("MajorVersion", StringUtils.FromLong(publicRequest.MajorVersion));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPublicTypeArn())
                 {
                     request.Parameters.Add("PublicTypeArn", StringUtils.FromString(publicRequest.PublicTypeArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPublisherId())
                 {
                     request.Parameters.Add("PublisherId", StringUtils.FromString(publicRequest.PublisherId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetType())
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTypeName())
                 {
                     request.Parameters.Add("TypeName", StringUtils.FromString(publicRequest.TypeName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTypeNameAlias())
                 {
                     request.Parameters.Add("TypeNameAlias", StringUtils.FromString(publicRequest.TypeNameAlias));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVersionBump())
                 {
                     request.Parameters.Add("VersionBump", StringUtils.FromString(publicRequest.VersionBump));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

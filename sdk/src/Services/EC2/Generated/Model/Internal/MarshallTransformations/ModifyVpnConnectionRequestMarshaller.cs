@@ -63,22 +63,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CustomerGatewayId", StringUtils.FromString(publicRequest.CustomerGatewayId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransitGatewayId())
                 {
                     request.Parameters.Add("TransitGatewayId", StringUtils.FromString(publicRequest.TransitGatewayId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpnConnectionId())
                 {
                     request.Parameters.Add("VpnConnectionId", StringUtils.FromString(publicRequest.VpnConnectionId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpnGatewayId())
                 {
                     request.Parameters.Add("VpnGatewayId", StringUtils.FromString(publicRequest.VpnGatewayId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

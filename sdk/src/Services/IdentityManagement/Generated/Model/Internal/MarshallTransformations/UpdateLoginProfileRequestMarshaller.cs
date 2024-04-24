@@ -63,17 +63,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Password", StringUtils.FromString(publicRequest.Password));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPasswordResetRequired())
                 {
                     request.Parameters.Add("PasswordResetRequired", StringUtils.FromBool(publicRequest.PasswordResetRequired));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserName())
                 {
                     request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

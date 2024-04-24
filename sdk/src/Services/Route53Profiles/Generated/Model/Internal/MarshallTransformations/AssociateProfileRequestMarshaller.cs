@@ -129,4 +129,3 @@ namespace Amazon.Route53Profiles.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

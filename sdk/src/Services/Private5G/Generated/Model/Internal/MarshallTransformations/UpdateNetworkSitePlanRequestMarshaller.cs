@@ -118,4 +118,3 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

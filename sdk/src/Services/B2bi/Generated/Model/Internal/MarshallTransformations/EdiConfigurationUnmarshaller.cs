@@ -107,4 +107,3 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

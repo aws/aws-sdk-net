@@ -125,4 +125,3 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

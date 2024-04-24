@@ -63,12 +63,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("BlueGreenDeploymentIdentifier", StringUtils.FromString(publicRequest.BlueGreenDeploymentIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSwitchoverTimeout())
                 {
                     request.Parameters.Add("SwitchoverTimeout", StringUtils.FromInt(publicRequest.SwitchoverTimeout));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

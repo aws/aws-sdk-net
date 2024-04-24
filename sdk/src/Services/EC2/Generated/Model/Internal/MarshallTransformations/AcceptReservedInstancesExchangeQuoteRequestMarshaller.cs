@@ -68,7 +68,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetConfigurations())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,16 +77,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TargetConfiguration" + "." + publicRequestlistValueIndex + "." + "InstanceCount", StringUtils.FromInt(publicRequestlistValue.InstanceCount));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetOfferingId())
                         {
                             request.Parameters.Add("TargetConfiguration" + "." + publicRequestlistValueIndex + "." + "OfferingId", StringUtils.FromString(publicRequestlistValue.OfferingId));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

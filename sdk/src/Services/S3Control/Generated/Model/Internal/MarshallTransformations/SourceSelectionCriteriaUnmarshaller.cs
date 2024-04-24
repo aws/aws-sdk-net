@@ -101,4 +101,3 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

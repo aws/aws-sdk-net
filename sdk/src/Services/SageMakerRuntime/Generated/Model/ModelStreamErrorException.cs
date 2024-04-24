@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerRuntime.Model
 {
     /// <summary>
@@ -49,7 +50,6 @@ namespace Amazon.SageMakerRuntime.Model
     #endif
     public partial class ModelStreamErrorException : AmazonSageMakerRuntimeException
     {
-        private string _errorCode;
 
         /// <summary>
         /// Constructs a new ModelStreamErrorException with the specified error
@@ -135,35 +135,6 @@ namespace Amazon.SageMakerRuntime.Model
             info.AddValue("ErrorCode", this.ErrorCode);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode. 
-        /// <para>
-        /// This error can have the following error codes:
-        /// </para>
-        ///  <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> 
-        /// <para>
-        /// The model failed to finish sending the response within the timeout period allowed
-        /// by Amazon SageMaker.
-        /// </para>
-        ///  </dd> <dt>StreamBroken</dt> <dd> 
-        /// <para>
-        /// The Transmission Control Protocol (TCP) connection between the client and the model
-        /// was reset or closed.
-        /// </para>
-        ///  </dd> </dl>
-        /// </summary>
-        public string ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
-        }
 
     }
 }

@@ -63,7 +63,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SAMLProviderArn", StringUtils.FromString(publicRequest.SAMLProviderArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTagKeys())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,7 +72,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

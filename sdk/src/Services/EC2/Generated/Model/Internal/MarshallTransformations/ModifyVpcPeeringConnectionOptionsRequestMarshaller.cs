@@ -65,43 +65,34 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("AccepterPeeringConnectionOptions" + "." + "AllowDnsResolutionFromRemoteVpc", StringUtils.FromBool(publicRequest.AccepterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.AccepterPeeringConnectionOptions.IsSetAllowEgressFromLocalClassicLinkToRemoteVpc())
                     {
                         request.Parameters.Add("AccepterPeeringConnectionOptions" + "." + "AllowEgressFromLocalClassicLinkToRemoteVpc", StringUtils.FromBool(publicRequest.AccepterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.AccepterPeeringConnectionOptions.IsSetAllowEgressFromLocalVpcToRemoteClassicLink())
                     {
                         request.Parameters.Add("AccepterPeeringConnectionOptions" + "." + "AllowEgressFromLocalVpcToRemoteClassicLink", StringUtils.FromBool(publicRequest.AccepterPeeringConnectionOptions.AllowEgressFromLocalVpcToRemoteClassicLink));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRequesterPeeringConnectionOptions())
                 {
                     if(publicRequest.RequesterPeeringConnectionOptions.IsSetAllowDnsResolutionFromRemoteVpc())
                     {
                         request.Parameters.Add("RequesterPeeringConnectionOptions" + "." + "AllowDnsResolutionFromRemoteVpc", StringUtils.FromBool(publicRequest.RequesterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.RequesterPeeringConnectionOptions.IsSetAllowEgressFromLocalClassicLinkToRemoteVpc())
                     {
                         request.Parameters.Add("RequesterPeeringConnectionOptions" + "." + "AllowEgressFromLocalClassicLinkToRemoteVpc", StringUtils.FromBool(publicRequest.RequesterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.RequesterPeeringConnectionOptions.IsSetAllowEgressFromLocalVpcToRemoteClassicLink())
                     {
                         request.Parameters.Add("RequesterPeeringConnectionOptions" + "." + "AllowEgressFromLocalVpcToRemoteClassicLink", StringUtils.FromBool(publicRequest.RequesterPeeringConnectionOptions.AllowEgressFromLocalVpcToRemoteClassicLink));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcPeeringConnectionId())
                 {
                     request.Parameters.Add("VpcPeeringConnectionId", StringUtils.FromString(publicRequest.VpcPeeringConnectionId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

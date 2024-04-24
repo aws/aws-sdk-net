@@ -63,17 +63,14 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoCreate", StringUtils.FromBool(publicRequest.AutoCreate));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClusterIdentifier())
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCustomDomainName())
                 {
                     request.Parameters.Add("CustomDomainName", StringUtils.FromString(publicRequest.CustomDomainName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDbGroups())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -83,22 +80,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDbName())
                 {
                     request.Parameters.Add("DbName", StringUtils.FromString(publicRequest.DbName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDbUser())
                 {
                     request.Parameters.Add("DbUser", StringUtils.FromString(publicRequest.DbUser));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDurationSeconds())
                 {
                     request.Parameters.Add("DurationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -63,16 +63,13 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConfigurationSetName", StringUtils.FromString(publicRequest.ConfigurationSetName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTrackingOptions())
                 {
                     if(publicRequest.TrackingOptions.IsSetCustomRedirectDomain())
                     {
                         request.Parameters.Add("TrackingOptions" + "." + "CustomRedirectDomain", StringUtils.FromString(publicRequest.TrackingOptions.CustomRedirectDomain));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

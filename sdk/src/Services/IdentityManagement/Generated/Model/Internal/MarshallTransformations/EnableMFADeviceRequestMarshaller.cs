@@ -63,22 +63,18 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AuthenticationCode1", StringUtils.FromString(publicRequest.AuthenticationCode1));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAuthenticationCode2())
                 {
                     request.Parameters.Add("AuthenticationCode2", StringUtils.FromString(publicRequest.AuthenticationCode2));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSerialNumber())
                 {
                     request.Parameters.Add("SerialNumber", StringUtils.FromString(publicRequest.SerialNumber));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUserName())
                 {
                     request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

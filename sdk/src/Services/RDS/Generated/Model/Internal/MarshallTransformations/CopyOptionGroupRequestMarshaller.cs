@@ -63,7 +63,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SourceOptionGroupIdentifier", StringUtils.FromString(publicRequest.SourceOptionGroupIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,26 +72,21 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetOptionGroupDescription())
                 {
                     request.Parameters.Add("TargetOptionGroupDescription", StringUtils.FromString(publicRequest.TargetOptionGroupDescription));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetOptionGroupIdentifier())
                 {
                     request.Parameters.Add("TargetOptionGroupIdentifier", StringUtils.FromString(publicRequest.TargetOptionGroupIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

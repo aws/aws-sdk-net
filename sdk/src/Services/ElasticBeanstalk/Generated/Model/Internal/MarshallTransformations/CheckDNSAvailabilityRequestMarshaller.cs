@@ -63,7 +63,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CNAMEPrefix", StringUtils.FromString(publicRequest.CNAMEPrefix));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

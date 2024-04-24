@@ -63,7 +63,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CacheSubnetGroupName", StringUtils.FromString(publicRequest.CacheSubnetGroupName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

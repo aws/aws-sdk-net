@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
@@ -48,7 +49,6 @@ namespace Amazon.IdentityStore.Model
     public partial class ConflictException : AmazonIdentityStoreException
     {
         private ConflictExceptionReason _reason;
-        private string _requestId;
 
         /// <summary>
         /// Constructs a new ConflictException with the specified error
@@ -163,27 +163,6 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetReason()
         {
             return this._reason != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RequestId. 
-        /// <para>
-        /// The identifier for each request. This value is a globally unique ID that is generated
-        /// by the identity store service for each sent request, and is then returned inside the
-        /// exception if the request fails.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=36)]
-        public string RequestId
-        {
-            get { return this._requestId; }
-            set { this._requestId = value; }
-        }
-
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
-        {
-            return this._requestId != null;
         }
 
     }

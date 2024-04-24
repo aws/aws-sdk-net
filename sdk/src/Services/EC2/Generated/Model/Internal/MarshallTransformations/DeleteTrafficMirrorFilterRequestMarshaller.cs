@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TrafficMirrorFilterId", StringUtils.FromString(publicRequest.TrafficMirrorFilterId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

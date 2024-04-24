@@ -68,7 +68,6 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAWSAccountId())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,17 +77,14 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLabel())
                 {
                     request.Parameters.Add("Label", StringUtils.FromString(publicRequest.Label));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTopicArn())
                 {
                     request.Parameters.Add("TopicArn", StringUtils.FromString(publicRequest.TopicArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

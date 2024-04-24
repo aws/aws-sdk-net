@@ -63,22 +63,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFileLastWritten())
                 {
                     request.Parameters.Add("FileLastWritten", StringUtils.FromLong(publicRequest.FileLastWritten));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFilenameContains())
                 {
                     request.Parameters.Add("FilenameContains", StringUtils.FromString(publicRequest.FilenameContains));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFileSize())
                 {
                     request.Parameters.Add("FileSize", StringUtils.FromLong(publicRequest.FileSize));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFilters())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -88,7 +84,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -98,21 +93,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -37,7 +38,6 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     public partial class UnauthorizedClientException : AmazonChimeSDKMediaPipelinesException
     {
         private ErrorCode _code;
-        private string _requestId;
 
         /// <summary>
         /// Constructs a new UnauthorizedClientException with the specified error
@@ -139,25 +139,6 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         internal bool IsSetCode()
         {
             return this._code != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RequestId. 
-        /// <para>
-        /// The request ID associated with the call responsible for the exception.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=4096)]
-        public string RequestId
-        {
-            get { return this._requestId; }
-            set { this._requestId = value; }
-        }
-
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
-        {
-            return this._requestId != null;
         }
 
     }

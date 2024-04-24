@@ -63,17 +63,14 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoadBalancerPort())
                 {
                     request.Parameters.Add("LoadBalancerPort", StringUtils.FromInt(publicRequest.LoadBalancerPort));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSSLCertificateId())
                 {
                     request.Parameters.Add("SSLCertificateId", StringUtils.FromString(publicRequest.SSLCertificateId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

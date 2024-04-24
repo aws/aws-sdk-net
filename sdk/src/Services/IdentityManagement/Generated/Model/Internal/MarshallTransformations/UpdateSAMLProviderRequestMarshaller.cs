@@ -63,12 +63,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SAMLMetadataDocument", StringUtils.FromString(publicRequest.SAMLMetadataDocument));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSAMLProviderArn())
                 {
                     request.Parameters.Add("SAMLProviderArn", StringUtils.FromString(publicRequest.SAMLProviderArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

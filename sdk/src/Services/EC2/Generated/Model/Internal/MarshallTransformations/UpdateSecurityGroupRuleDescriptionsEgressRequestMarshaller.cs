@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GroupId", StringUtils.FromString(publicRequest.GroupId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGroupName())
                 {
                     request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpPermissions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,12 +76,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "FromPort", StringUtils.FromInt(publicRequestlistValue.FromPort));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetIpProtocol())
                         {
                             request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpProtocol", StringUtils.FromString(publicRequestlistValue.IpProtocol));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetIpv4Ranges())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -93,16 +89,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpRanges" + "." + publicRequestlistValuelistValueIndex + "." + "CidrIp", StringUtils.FromString(publicRequestlistValuelistValue.CidrIp));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetDescription())
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpRanges" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetIpv6Ranges())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -112,16 +105,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Ipv6Ranges" + "." + publicRequestlistValuelistValueIndex + "." + "CidrIpv6", StringUtils.FromString(publicRequestlistValuelistValue.CidrIpv6));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetDescription())
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Ipv6Ranges" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPrefixListIds())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -131,21 +121,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "PrefixListIds" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetId())
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "PrefixListIds" + "." + publicRequestlistValuelistValueIndex + "." + "PrefixListId", StringUtils.FromString(publicRequestlistValuelistValue.Id));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetToPort())
                         {
                             request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "ToPort", StringUtils.FromInt(publicRequestlistValue.ToPort));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetUserIdGroupPairs())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -155,45 +141,36 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetGroupId())
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "GroupId", StringUtils.FromString(publicRequestlistValuelistValue.GroupId));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetGroupName())
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "GroupName", StringUtils.FromString(publicRequestlistValuelistValue.GroupName));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetPeeringStatus())
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "PeeringStatus", StringUtils.FromString(publicRequestlistValuelistValue.PeeringStatus));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetUserId())
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestlistValuelistValue.UserId));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetVpcId())
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "VpcId", StringUtils.FromString(publicRequestlistValuelistValue.VpcId));
                                 }
-#pragma warning restore CS0612,CS0618
                                 if(publicRequestlistValuelistValue.IsSetVpcPeeringConnectionId())
                                 {
                                     request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "VpcPeeringConnectionId", StringUtils.FromString(publicRequestlistValuelistValue.VpcPeeringConnectionId));
                                 }
-#pragma warning restore CS0612,CS0618
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSecurityGroupRuleDescriptions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -203,16 +180,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("SecurityGroupRuleDescription" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetSecurityGroupRuleId())
                         {
                             request.Parameters.Add("SecurityGroupRuleDescription" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRuleId", StringUtils.FromString(publicRequestlistValue.SecurityGroupRuleId));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

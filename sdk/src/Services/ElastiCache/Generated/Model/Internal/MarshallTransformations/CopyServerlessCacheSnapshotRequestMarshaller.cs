@@ -63,12 +63,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceServerlessCacheSnapshotName())
                 {
                     request.Parameters.Add("SourceServerlessCacheSnapshotName", StringUtils.FromString(publicRequest.SourceServerlessCacheSnapshotName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,21 +76,17 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetServerlessCacheSnapshotName())
                 {
                     request.Parameters.Add("TargetServerlessCacheSnapshotName", StringUtils.FromString(publicRequest.TargetServerlessCacheSnapshotName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

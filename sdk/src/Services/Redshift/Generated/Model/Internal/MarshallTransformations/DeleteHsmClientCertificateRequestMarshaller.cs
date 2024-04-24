@@ -63,7 +63,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(publicRequest.HsmClientCertificateIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

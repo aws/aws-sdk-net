@@ -63,7 +63,6 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSuggester())
                 {
                     if(publicRequest.Suggester.IsSetDocumentSuggesterOptions())
@@ -72,26 +71,20 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Suggester" + "." + "DocumentSuggesterOptions" + "." + "FuzzyMatching", StringUtils.FromString(publicRequest.Suggester.DocumentSuggesterOptions.FuzzyMatching));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.Suggester.DocumentSuggesterOptions.IsSetSortExpression())
                         {
                             request.Parameters.Add("Suggester" + "." + "DocumentSuggesterOptions" + "." + "SortExpression", StringUtils.FromString(publicRequest.Suggester.DocumentSuggesterOptions.SortExpression));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.Suggester.DocumentSuggesterOptions.IsSetSourceField())
                         {
                             request.Parameters.Add("Suggester" + "." + "DocumentSuggesterOptions" + "." + "SourceField", StringUtils.FromString(publicRequest.Suggester.DocumentSuggesterOptions.SourceField));
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.Suggester.IsSetSuggesterName())
                     {
                         request.Parameters.Add("Suggester" + "." + "SuggesterName", StringUtils.FromString(publicRequest.Suggester.SuggesterName));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -63,12 +63,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AttributeName", StringUtils.FromString(publicRequest.AttributeName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBSnapshotIdentifier())
                 {
                     request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(publicRequest.DBSnapshotIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetValuesToAdd())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,7 +76,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetValuesToRemove())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -88,7 +85,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

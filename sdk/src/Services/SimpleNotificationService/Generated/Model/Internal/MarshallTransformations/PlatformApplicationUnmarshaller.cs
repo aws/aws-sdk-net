@@ -107,4 +107,3 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         }
     }
 }
-#pragma warning restore CS0612,CS0618

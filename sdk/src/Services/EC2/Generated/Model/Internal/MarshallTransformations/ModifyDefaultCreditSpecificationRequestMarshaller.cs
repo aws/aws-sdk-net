@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CpuCredits", StringUtils.FromString(publicRequest.CpuCredits));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceFamily())
                 {
                     request.Parameters.Add("InstanceFamily", StringUtils.FromString(publicRequest.InstanceFamily));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

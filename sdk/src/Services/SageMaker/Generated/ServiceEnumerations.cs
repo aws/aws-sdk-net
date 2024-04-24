@@ -11027,7 +11027,7 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Constant Equals for Operator
         /// </summary>
-        public static readonly Operator Equals = new Operator("Equals");
+        public new static readonly Operator Equals = new Operator("Equals");
         /// <summary>
         /// Constant Exists for Operator
         /// </summary>

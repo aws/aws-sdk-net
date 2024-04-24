@@ -63,32 +63,26 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeferMaintenance())
                 {
                     request.Parameters.Add("DeferMaintenance", StringUtils.FromBool(publicRequest.DeferMaintenance));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeferMaintenanceDuration())
                 {
                     request.Parameters.Add("DeferMaintenanceDuration", StringUtils.FromInt(publicRequest.DeferMaintenanceDuration));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeferMaintenanceEndTime())
                 {
                     request.Parameters.Add("DeferMaintenanceEndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DeferMaintenanceEndTime));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeferMaintenanceIdentifier())
                 {
                     request.Parameters.Add("DeferMaintenanceIdentifier", StringUtils.FromString(publicRequest.DeferMaintenanceIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeferMaintenanceStartTime())
                 {
                     request.Parameters.Add("DeferMaintenanceStartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DeferMaintenanceStartTime));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

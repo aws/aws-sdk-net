@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
@@ -36,7 +37,6 @@ namespace Amazon.MarketplaceAgreement.Model
     #endif
     public partial class InternalServerException : AmazonMarketplaceAgreementException
     {
-        private string _requestId;
 
         /// <summary>
         /// Constructs a new InternalServerException with the specified error
@@ -122,25 +122,6 @@ namespace Amazon.MarketplaceAgreement.Model
             info.AddValue("RequestId", this.RequestId);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property RequestId. 
-        /// <para>
-        /// The unique identifier for the error.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string RequestId
-        {
-            get { return this._requestId; }
-            set { this._requestId = value; }
-        }
-
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
-        {
-            return this._requestId != null;
-        }
 
     }
 }

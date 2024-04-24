@@ -68,36 +68,29 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("AddEntry" + "." + publicRequestlistValueIndex + "." + "Cidr", StringUtils.FromString(publicRequestlistValue.Cidr));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetDescription())
                         {
                             request.Parameters.Add("AddEntry" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCurrentVersion())
                 {
                     request.Parameters.Add("CurrentVersion", StringUtils.FromLong(publicRequest.CurrentVersion));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxEntries())
                 {
                     request.Parameters.Add("MaxEntries", StringUtils.FromInt(publicRequest.MaxEntries));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrefixListId())
                 {
                     request.Parameters.Add("PrefixListId", StringUtils.FromString(publicRequest.PrefixListId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrefixListName())
                 {
                     request.Parameters.Add("PrefixListName", StringUtils.FromString(publicRequest.PrefixListName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveEntries())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -107,11 +100,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("RemoveEntry" + "." + publicRequestlistValueIndex + "." + "Cidr", StringUtils.FromString(publicRequestlistValue.Cidr));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

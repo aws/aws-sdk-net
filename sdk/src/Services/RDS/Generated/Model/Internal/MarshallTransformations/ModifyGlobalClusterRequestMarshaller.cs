@@ -63,27 +63,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllowMajorVersionUpgrade", StringUtils.FromBool(publicRequest.AllowMajorVersionUpgrade));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeletionProtection())
                 {
                     request.Parameters.Add("DeletionProtection", StringUtils.FromBool(publicRequest.DeletionProtection));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEngineVersion())
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetGlobalClusterIdentifier())
                 {
                     request.Parameters.Add("GlobalClusterIdentifier", StringUtils.FromString(publicRequest.GlobalClusterIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewGlobalClusterIdentifier())
                 {
                     request.Parameters.Add("NewGlobalClusterIdentifier", StringUtils.FromString(publicRequest.NewGlobalClusterIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

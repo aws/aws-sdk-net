@@ -68,12 +68,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicySourceArn())
                 {
                     request.Parameters.Add("PolicySourceArn", StringUtils.FromString(publicRequest.PolicySourceArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

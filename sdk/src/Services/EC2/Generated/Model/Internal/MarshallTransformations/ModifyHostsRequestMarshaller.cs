@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoPlacement", StringUtils.FromString(publicRequest.AutoPlacement));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHostIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,27 +72,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHostMaintenance())
                 {
                     request.Parameters.Add("HostMaintenance", StringUtils.FromString(publicRequest.HostMaintenance));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetHostRecovery())
                 {
                     request.Parameters.Add("HostRecovery", StringUtils.FromString(publicRequest.HostRecovery));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceFamily())
                 {
                     request.Parameters.Add("InstanceFamily", StringUtils.FromString(publicRequest.InstanceFamily));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceType())
                 {
                     request.Parameters.Add("InstanceType", StringUtils.FromString(publicRequest.InstanceType));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

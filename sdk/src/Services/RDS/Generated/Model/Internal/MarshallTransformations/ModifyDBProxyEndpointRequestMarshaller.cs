@@ -63,12 +63,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBProxyEndpointName", StringUtils.FromString(publicRequest.DBProxyEndpointName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNewDBProxyEndpointName())
                 {
                     request.Parameters.Add("NewDBProxyEndpointName", StringUtils.FromString(publicRequest.NewDBProxyEndpointName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,7 +76,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

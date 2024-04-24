@@ -63,12 +63,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBInstanceClass", StringUtils.FromString(publicRequest.DBInstanceClass));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDuration())
                 {
                     request.Parameters.Add("Duration", StringUtils.FromString(publicRequest.Duration));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFilters())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,7 +76,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -88,41 +85,33 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMultiAZ())
                 {
                     request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOfferingType())
                 {
                     request.Parameters.Add("OfferingType", StringUtils.FromString(publicRequest.OfferingType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetProductDescription())
                 {
                     request.Parameters.Add("ProductDescription", StringUtils.FromString(publicRequest.ProductDescription));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReservedDBInstancesOfferingId())
                 {
                     request.Parameters.Add("ReservedDBInstancesOfferingId", StringUtils.FromString(publicRequest.ReservedDBInstancesOfferingId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("GroupIpAddress", StringUtils.FromString(publicRequest.GroupIpAddress));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkInterfaceIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,12 +72,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTransitGatewayMulticastDomainId())
                 {
                     request.Parameters.Add("TransitGatewayMulticastDomainId", StringUtils.FromString(publicRequest.TransitGatewayMulticastDomainId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

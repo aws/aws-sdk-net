@@ -63,22 +63,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetParameterGroupName())
                 {
                     request.Parameters.Add("ParameterGroupName", StringUtils.FromString(publicRequest.ParameterGroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSource())
                 {
                     request.Parameters.Add("Source", StringUtils.FromString(publicRequest.Source));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

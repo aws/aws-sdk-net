@@ -67,79 +67,63 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDeviceOptions())
                 {
                     if(publicRequest.DeviceOptions.IsSetPublicSigningKeyUrl())
                     {
                         request.Parameters.Add("DeviceOptions" + "." + "PublicSigningKeyUrl", StringUtils.FromString(publicRequest.DeviceOptions.PublicSigningKeyUrl));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOidcOptions())
                 {
                     if(publicRequest.OidcOptions.IsSetAuthorizationEndpoint())
                     {
                         request.Parameters.Add("OidcOptions" + "." + "AuthorizationEndpoint", StringUtils.FromString(publicRequest.OidcOptions.AuthorizationEndpoint));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.OidcOptions.IsSetClientId())
                     {
                         request.Parameters.Add("OidcOptions" + "." + "ClientId", StringUtils.FromString(publicRequest.OidcOptions.ClientId));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.OidcOptions.IsSetClientSecret())
                     {
                         request.Parameters.Add("OidcOptions" + "." + "ClientSecret", StringUtils.FromString(publicRequest.OidcOptions.ClientSecret));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.OidcOptions.IsSetIssuer())
                     {
                         request.Parameters.Add("OidcOptions" + "." + "Issuer", StringUtils.FromString(publicRequest.OidcOptions.Issuer));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.OidcOptions.IsSetScope())
                     {
                         request.Parameters.Add("OidcOptions" + "." + "Scope", StringUtils.FromString(publicRequest.OidcOptions.Scope));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.OidcOptions.IsSetTokenEndpoint())
                     {
                         request.Parameters.Add("OidcOptions" + "." + "TokenEndpoint", StringUtils.FromString(publicRequest.OidcOptions.TokenEndpoint));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.OidcOptions.IsSetUserInfoEndpoint())
                     {
                         request.Parameters.Add("OidcOptions" + "." + "UserInfoEndpoint", StringUtils.FromString(publicRequest.OidcOptions.UserInfoEndpoint));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSseSpecification())
                 {
                     if(publicRequest.SseSpecification.IsSetCustomerManagedKeyEnabled())
                     {
                         request.Parameters.Add("SseSpecification" + "." + "CustomerManagedKeyEnabled", StringUtils.FromBool(publicRequest.SseSpecification.CustomerManagedKeyEnabled));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.SseSpecification.IsSetKmsKeyArn())
                     {
                         request.Parameters.Add("SseSpecification" + "." + "KmsKeyArn", StringUtils.FromString(publicRequest.SseSpecification.KmsKeyArn));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVerifiedAccessTrustProviderId())
                 {
                     request.Parameters.Add("VerifiedAccessTrustProviderId", StringUtils.FromString(publicRequest.VerifiedAccessTrustProviderId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

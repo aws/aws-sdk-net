@@ -65,7 +65,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("InstanceTagAttribute" + "." + "IncludeAllTagsOfInstance", StringUtils.FromBool(publicRequest.InstanceTagAttribute.IncludeAllTagsOfInstance));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.InstanceTagAttribute.IsSetInstanceTagKeys())
                     {
                         int publicRequestInstanceTagAttributelistValueIndex = 1;
@@ -75,9 +74,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestInstanceTagAttributelistValueIndex++;
                         }
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

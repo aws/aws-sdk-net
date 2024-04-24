@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LocalGatewayRouteTableVpcAssociationId", StringUtils.FromString(publicRequest.LocalGatewayRouteTableVpcAssociationId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the models.lex.v2-2020-08-07.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>

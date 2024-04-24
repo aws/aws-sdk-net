@@ -74,12 +74,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         mapIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPlatformApplicationArn())
                 {
                     request.Parameters.Add("PlatformApplicationArn", StringUtils.FromString(publicRequest.PlatformApplicationArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

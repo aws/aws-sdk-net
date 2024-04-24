@@ -63,17 +63,14 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 {
                     request.Parameters.Add("AuthenticateOnUnsubscribe", StringUtils.FromString(publicRequest.AuthenticateOnUnsubscribe));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetToken())
                 {
                     request.Parameters.Add("Token", StringUtils.FromString(publicRequest.Token));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTopicArn())
                 {
                     request.Parameters.Add("TopicArn", StringUtils.FromString(publicRequest.TopicArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

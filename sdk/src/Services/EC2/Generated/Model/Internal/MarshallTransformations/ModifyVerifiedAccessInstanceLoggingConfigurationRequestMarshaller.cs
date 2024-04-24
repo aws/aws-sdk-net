@@ -67,64 +67,50 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("AccessLogs" + "." + "CloudWatchLogs" + "." + "Enabled", StringUtils.FromBool(publicRequest.AccessLogs.CloudWatchLogs.Enabled));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.AccessLogs.CloudWatchLogs.IsSetLogGroup())
                         {
                             request.Parameters.Add("AccessLogs" + "." + "CloudWatchLogs" + "." + "LogGroup", StringUtils.FromString(publicRequest.AccessLogs.CloudWatchLogs.LogGroup));
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.AccessLogs.IsSetIncludeTrustContext())
                     {
                         request.Parameters.Add("AccessLogs" + "." + "IncludeTrustContext", StringUtils.FromBool(publicRequest.AccessLogs.IncludeTrustContext));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.AccessLogs.IsSetKinesisDataFirehose())
                     {
                         if(publicRequest.AccessLogs.KinesisDataFirehose.IsSetDeliveryStream())
                         {
                             request.Parameters.Add("AccessLogs" + "." + "KinesisDataFirehose" + "." + "DeliveryStream", StringUtils.FromString(publicRequest.AccessLogs.KinesisDataFirehose.DeliveryStream));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.AccessLogs.KinesisDataFirehose.IsSetEnabled())
                         {
                             request.Parameters.Add("AccessLogs" + "." + "KinesisDataFirehose" + "." + "Enabled", StringUtils.FromBool(publicRequest.AccessLogs.KinesisDataFirehose.Enabled));
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.AccessLogs.IsSetLogVersion())
                     {
                         request.Parameters.Add("AccessLogs" + "." + "LogVersion", StringUtils.FromString(publicRequest.AccessLogs.LogVersion));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.AccessLogs.IsSetS3())
                     {
                         if(publicRequest.AccessLogs.S3.IsSetBucketName())
                         {
                             request.Parameters.Add("AccessLogs" + "." + "S3" + "." + "BucketName", StringUtils.FromString(publicRequest.AccessLogs.S3.BucketName));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.AccessLogs.S3.IsSetBucketOwner())
                         {
                             request.Parameters.Add("AccessLogs" + "." + "S3" + "." + "BucketOwner", StringUtils.FromString(publicRequest.AccessLogs.S3.BucketOwner));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.AccessLogs.S3.IsSetEnabled())
                         {
                             request.Parameters.Add("AccessLogs" + "." + "S3" + "." + "Enabled", StringUtils.FromBool(publicRequest.AccessLogs.S3.Enabled));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequest.AccessLogs.S3.IsSetPrefix())
                         {
                             request.Parameters.Add("AccessLogs" + "." + "S3" + "." + "Prefix", StringUtils.FromString(publicRequest.AccessLogs.S3.Prefix));
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
@@ -133,12 +119,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVerifiedAccessInstanceId())
                 {
                     request.Parameters.Add("VerifiedAccessInstanceId", StringUtils.FromString(publicRequest.VerifiedAccessInstanceId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

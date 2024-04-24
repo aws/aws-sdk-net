@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Private5G.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.Private5G
 {
     /// <summary>

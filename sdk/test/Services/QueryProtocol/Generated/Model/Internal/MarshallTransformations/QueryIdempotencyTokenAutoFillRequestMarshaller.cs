@@ -67,7 +67,6 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("token", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

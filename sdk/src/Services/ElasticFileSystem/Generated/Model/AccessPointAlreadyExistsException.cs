@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
@@ -38,7 +39,6 @@ namespace Amazon.ElasticFileSystem.Model
     public partial class AccessPointAlreadyExistsException : AmazonElasticFileSystemException
     {
         private string _accessPointId;
-        private string _errorCode;
 
         /// <summary>
         /// Constructs a new AccessPointAlreadyExistsException with the specified error
@@ -141,22 +141,6 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetAccessPointId()
         {
             return this._accessPointId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode.
-        /// </summary>
-        [AWSProperty(Required=true, Min=1)]
-        public string ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
         }
 
     }

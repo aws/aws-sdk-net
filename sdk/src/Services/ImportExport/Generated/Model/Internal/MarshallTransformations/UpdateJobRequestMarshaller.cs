@@ -63,27 +63,22 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("APIVersion", StringUtils.FromString(publicRequest.APIVersion));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetJobId())
                 {
                     request.Parameters.Add("JobId", StringUtils.FromString(publicRequest.JobId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetJobType())
                 {
                     request.Parameters.Add("JobType", StringUtils.FromString(publicRequest.JobType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetManifest())
                 {
                     request.Parameters.Add("Manifest", StringUtils.FromString(publicRequest.Manifest));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetValidateOnly())
                 {
                     request.Parameters.Add("ValidateOnly", StringUtils.FromBool(publicRequest.ValidateOnly));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

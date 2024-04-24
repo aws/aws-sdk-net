@@ -63,7 +63,6 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 {
                     request.Parameters.Add("SubscriptionArn", StringUtils.FromString(publicRequest.SubscriptionArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

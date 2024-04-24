@@ -63,22 +63,18 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("JobId", StringUtils.FromString(publicRequest.JobId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxItems())
                 {
                     request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetServiceNamespace())
                 {
                     request.Parameters.Add("ServiceNamespace", StringUtils.FromString(publicRequest.ServiceNamespace));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

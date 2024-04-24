@@ -68,21 +68,17 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("CustomerNodeEndpointList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Address", StringUtils.FromString(publicRequestlistValue.Address));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPort())
                         {
                             request.Parameters.Add("CustomerNodeEndpointList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Port", StringUtils.FromInt(publicRequestlistValue.Port));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReplicationGroupId())
                 {
                     request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

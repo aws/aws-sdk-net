@@ -63,7 +63,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LoadBalancerArn", StringUtils.FromString(publicRequest.LoadBalancerArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

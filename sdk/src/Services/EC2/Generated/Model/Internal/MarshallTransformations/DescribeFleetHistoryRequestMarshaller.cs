@@ -63,27 +63,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EventType", StringUtils.FromString(publicRequest.EventType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFleetId())
                 {
                     request.Parameters.Add("FleetId", StringUtils.FromString(publicRequest.FleetId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartTimeUtc())
                 {
                     request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -63,12 +63,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CacheClusterId", StringUtils.FromString(publicRequest.CacheClusterId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReplicationGroupId())
                 {
                     request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

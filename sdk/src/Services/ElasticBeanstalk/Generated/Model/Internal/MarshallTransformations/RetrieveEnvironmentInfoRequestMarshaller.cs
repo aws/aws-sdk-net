@@ -63,17 +63,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnvironmentId", StringUtils.FromString(publicRequest.EnvironmentId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnvironmentName())
                 {
                     request.Parameters.Add("EnvironmentName", StringUtils.FromString(publicRequest.EnvironmentName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInfoType())
                 {
                     request.Parameters.Add("InfoType", StringUtils.FromString(publicRequest.InfoType));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

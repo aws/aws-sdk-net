@@ -63,7 +63,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SnapshotName", StringUtils.FromString(publicRequest.SnapshotName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

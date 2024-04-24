@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Attribute", StringUtils.FromString(publicRequest.Attribute));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFpgaImageId())
                 {
                     request.Parameters.Add("FpgaImageId", StringUtils.FromString(publicRequest.FpgaImageId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

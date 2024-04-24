@@ -68,12 +68,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Attribute", StringUtils.FromString(publicRequestlistValue.Attribute));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetOperator())
                         {
                             request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Operator", StringUtils.FromString(publicRequestlistValue.Operator));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -83,21 +81,17 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

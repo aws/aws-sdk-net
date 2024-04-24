@@ -63,7 +63,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TrustStoreArn", StringUtils.FromString(publicRequest.TrustStoreArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -63,17 +63,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDbiResourceId())
                 {
                     request.Parameters.Add("DbiResourceId", StringUtils.FromString(publicRequest.DbiResourceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDBSnapshotIdentifier())
                 {
                     request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(publicRequest.DBSnapshotIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFilters())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -83,7 +80,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -93,26 +89,21 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotType())
                 {
                     request.Parameters.Add("SnapshotType", StringUtils.FromString(publicRequest.SnapshotType));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

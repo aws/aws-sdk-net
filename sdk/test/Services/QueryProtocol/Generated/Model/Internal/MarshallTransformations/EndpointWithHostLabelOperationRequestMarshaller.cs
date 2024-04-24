@@ -63,7 +63,6 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("label", StringUtils.FromString(publicRequest.Label));
                 }
-#pragma warning restore CS0612,CS0618
 
                 var hostPrefixLabels = new
                 {

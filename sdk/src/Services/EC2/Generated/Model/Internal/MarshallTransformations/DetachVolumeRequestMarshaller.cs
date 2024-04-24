@@ -63,22 +63,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Device", StringUtils.FromString(publicRequest.Device));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetForce())
                 {
                     request.Parameters.Add("Force", StringUtils.FromBool(publicRequest.Force));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVolumeId())
                 {
                     request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -63,7 +63,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CacheClusterId", StringUtils.FromString(publicRequest.CacheClusterId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCacheNodeIdsToReboot())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,7 +72,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

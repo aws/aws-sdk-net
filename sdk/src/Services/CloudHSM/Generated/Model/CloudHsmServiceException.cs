@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.CloudHSM.Model
         /// Indicates if the action can be retried.
         /// </para>
         /// </summary>
-        public bool Retryable
+        public new bool Retryable
         {
             get { return this._retryable.GetValueOrDefault(); }
             set { this._retryable = value; }

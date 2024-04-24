@@ -131,4 +131,3 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         }
     }
 }
-#pragma warning restore CS0612,CS0618

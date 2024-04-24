@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AssociationId", StringUtils.FromString(publicRequest.AssociationId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkAclId())
                 {
                     request.Parameters.Add("NetworkAclId", StringUtils.FromString(publicRequest.NetworkAclId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

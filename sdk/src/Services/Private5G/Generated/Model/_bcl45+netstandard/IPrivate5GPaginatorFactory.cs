@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the privatenetworks-2021-12-03.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Private5G.Model
 {
     /// <summary>

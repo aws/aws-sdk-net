@@ -63,22 +63,18 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnvironmentId", StringUtils.FromString(publicRequest.EnvironmentId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnvironmentName())
                 {
                     request.Parameters.Add("EnvironmentName", StringUtils.FromString(publicRequest.EnvironmentName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetForceTerminate())
                 {
                     request.Parameters.Add("ForceTerminate", StringUtils.FromBool(publicRequest.ForceTerminate));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTerminateResources())
                 {
                     request.Parameters.Add("TerminateResources", StringUtils.FromBool(publicRequest.TerminateResources));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

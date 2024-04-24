@@ -63,17 +63,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetFeatureName())
                 {
                     request.Parameters.Add("FeatureName", StringUtils.FromString(publicRequest.FeatureName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRoleArn())
                 {
                     request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

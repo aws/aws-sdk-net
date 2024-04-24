@@ -63,17 +63,14 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyAction", StringUtils.FromString(publicRequest.ApplyAction));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptInType())
                 {
                     request.Parameters.Add("OptInType", StringUtils.FromString(publicRequest.OptInType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceIdentifier())
                 {
                     request.Parameters.Add("ResourceIdentifier", StringUtils.FromString(publicRequest.ResourceIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

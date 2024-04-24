@@ -63,41 +63,33 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExecutionRoleArn())
                 {
                     request.Parameters.Add("ExecutionRoleArn", StringUtils.FromString(publicRequest.ExecutionRoleArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLoggingConfig())
                 {
                     if(publicRequest.LoggingConfig.IsSetLogGroupName())
                     {
                         request.Parameters.Add("LoggingConfig" + "." + "LogGroupName", StringUtils.FromString(publicRequest.LoggingConfig.LogGroupName));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.LoggingConfig.IsSetLogRoleArn())
                     {
                         request.Parameters.Add("LoggingConfig" + "." + "LogRoleArn", StringUtils.FromString(publicRequest.LoggingConfig.LogRoleArn));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSchemaHandlerPackage())
                 {
                     request.Parameters.Add("SchemaHandlerPackage", StringUtils.FromString(publicRequest.SchemaHandlerPackage));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetType())
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTypeName())
                 {
                     request.Parameters.Add("TypeName", StringUtils.FromString(publicRequest.TypeName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

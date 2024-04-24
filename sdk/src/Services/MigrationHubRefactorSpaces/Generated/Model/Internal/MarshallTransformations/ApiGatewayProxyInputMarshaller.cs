@@ -69,4 +69,3 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 
     }
 }
-#pragma warning restore CS0612,CS0618

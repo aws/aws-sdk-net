@@ -130,4 +130,3 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 
     }
 }
-#pragma warning restore CS0612,CS0618

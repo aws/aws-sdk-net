@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CancelReason", StringUtils.FromString(publicRequest.CancelReason));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetImportTaskId())
                 {
                     request.Parameters.Add("ImportTaskId", StringUtils.FromString(publicRequest.ImportTaskId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

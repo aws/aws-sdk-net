@@ -68,7 +68,6 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -78,16 +77,13 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceType())
                 {
                     request.Parameters.Add("SourceType", StringUtils.FromString(publicRequest.SourceType));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

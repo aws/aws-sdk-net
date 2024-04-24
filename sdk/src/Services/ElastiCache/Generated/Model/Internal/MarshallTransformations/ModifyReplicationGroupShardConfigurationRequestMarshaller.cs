@@ -63,12 +63,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNodeGroupCount())
                 {
                     request.Parameters.Add("NodeGroupCount", StringUtils.FromInt(publicRequest.NodeGroupCount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNodeGroupsToRemove())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,7 +76,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNodeGroupsToRetain())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -88,12 +85,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReplicationGroupId())
                 {
                     request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReshardingConfiguration())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -103,7 +98,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("ReshardingConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValue.NodeGroupId));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPreferredAvailabilityZones())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -113,11 +107,9 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

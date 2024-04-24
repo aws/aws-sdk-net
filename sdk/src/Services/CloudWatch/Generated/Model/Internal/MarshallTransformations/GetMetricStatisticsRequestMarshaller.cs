@@ -68,21 +68,17 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndTimeUtc())
                 {
                     request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetExtendedStatistics())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -92,27 +88,22 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMetricName())
                 {
                     request.Parameters.Add("MetricName", StringUtils.FromString(publicRequest.MetricName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNamespace())
                 {
                     request.Parameters.Add("Namespace", StringUtils.FromString(publicRequest.Namespace));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPeriod())
                 {
                     request.Parameters.Add("Period", StringUtils.FromInt(publicRequest.Period));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartTimeUtc())
                 {
                     request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStatistics())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -122,12 +113,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetUnit())
                 {
                     request.Parameters.Add("Unit", StringUtils.FromString(publicRequest.Unit));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the kinesis-video-archived-media-2017-09-30.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>

@@ -68,16 +68,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Identifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SnapshotClusterIdentifier", StringUtils.FromString(publicRequestlistValue.SnapshotClusterIdentifier));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetSnapshotIdentifier())
                         {
                             request.Parameters.Add("Identifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SnapshotIdentifier", StringUtils.FromString(publicRequestlistValue.SnapshotIdentifier));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

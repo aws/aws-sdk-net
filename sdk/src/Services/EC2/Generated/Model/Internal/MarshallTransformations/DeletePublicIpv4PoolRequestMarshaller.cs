@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PoolId", StringUtils.FromString(publicRequest.PoolId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

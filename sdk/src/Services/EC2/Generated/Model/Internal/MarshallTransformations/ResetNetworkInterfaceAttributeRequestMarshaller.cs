@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceDestCheck())
                 {
                     request.Parameters.Add("SourceDestCheck", StringUtils.FromString(publicRequest.SourceDestCheck));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

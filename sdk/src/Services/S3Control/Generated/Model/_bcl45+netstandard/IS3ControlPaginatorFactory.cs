@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the s3control-2018-08-20.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model
 {
     /// <summary>

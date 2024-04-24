@@ -84,4 +84,3 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
         }
     }
 }
-#pragma warning restore CS0612,CS0618

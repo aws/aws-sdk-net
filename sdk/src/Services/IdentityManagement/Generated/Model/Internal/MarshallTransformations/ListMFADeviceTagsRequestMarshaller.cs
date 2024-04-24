@@ -63,17 +63,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxItems())
                 {
                     request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSerialNumber())
                 {
                     request.Parameters.Add("SerialNumber", StringUtils.FromString(publicRequest.SerialNumber));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

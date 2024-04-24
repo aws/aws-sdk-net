@@ -67,7 +67,6 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Token", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

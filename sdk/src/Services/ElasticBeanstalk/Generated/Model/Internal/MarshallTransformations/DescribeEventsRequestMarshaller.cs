@@ -63,62 +63,50 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndTimeUtc())
                 {
                     request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnvironmentId())
                 {
                     request.Parameters.Add("EnvironmentId", StringUtils.FromString(publicRequest.EnvironmentId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnvironmentName())
                 {
                     request.Parameters.Add("EnvironmentName", StringUtils.FromString(publicRequest.EnvironmentName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPlatformArn())
                 {
                     request.Parameters.Add("PlatformArn", StringUtils.FromString(publicRequest.PlatformArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRequestId())
                 {
                     request.Parameters.Add("RequestId", StringUtils.FromString(publicRequest.RequestId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSeverity())
                 {
                     request.Parameters.Add("Severity", StringUtils.FromString(publicRequest.Severity));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStartTimeUtc())
                 {
                     request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTemplateName())
                 {
                     request.Parameters.Add("TemplateName", StringUtils.FromString(publicRequest.TemplateName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVersionLabel())
                 {
                     request.Parameters.Add("VersionLabel", StringUtils.FromString(publicRequest.VersionLabel));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

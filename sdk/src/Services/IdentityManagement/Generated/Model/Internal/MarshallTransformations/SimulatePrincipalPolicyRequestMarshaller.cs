@@ -68,12 +68,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCallerArn())
                 {
                     request.Parameters.Add("CallerArn", StringUtils.FromString(publicRequest.CallerArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetContextEntries())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -83,12 +81,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("ContextEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ContextKeyName", StringUtils.FromString(publicRequestlistValue.ContextKeyName));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetContextKeyType())
                         {
                             request.Parameters.Add("ContextEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ContextKeyType", StringUtils.FromString(publicRequestlistValue.ContextKeyType));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetContextKeyValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -98,21 +94,17 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxItems())
                 {
                     request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPermissionsBoundaryPolicyInputList())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -122,7 +114,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyInputList())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -132,12 +123,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicySourceArn())
                 {
                     request.Parameters.Add("PolicySourceArn", StringUtils.FromString(publicRequest.PolicySourceArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceArns())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -147,22 +136,18 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceHandlingOption())
                 {
                     request.Parameters.Add("ResourceHandlingOption", StringUtils.FromString(publicRequest.ResourceHandlingOption));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceOwner())
                 {
                     request.Parameters.Add("ResourceOwner", StringUtils.FromString(publicRequest.ResourceOwner));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourcePolicy())
                 {
                     request.Parameters.Add("ResourcePolicy", StringUtils.FromString(publicRequest.ResourcePolicy));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

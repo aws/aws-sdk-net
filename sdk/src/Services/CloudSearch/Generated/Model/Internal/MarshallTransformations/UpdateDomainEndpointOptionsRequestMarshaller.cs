@@ -65,19 +65,15 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("DomainEndpointOptions" + "." + "EnforceHTTPS", StringUtils.FromBool(publicRequest.DomainEndpointOptions.EnforceHTTPS));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.DomainEndpointOptions.IsSetTLSSecurityPolicy())
                     {
                         request.Parameters.Add("DomainEndpointOptions" + "." + "TLSSecurityPolicy", StringUtils.FromString(publicRequest.DomainEndpointOptions.TLSSecurityPolicy));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDomainName())
                 {
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

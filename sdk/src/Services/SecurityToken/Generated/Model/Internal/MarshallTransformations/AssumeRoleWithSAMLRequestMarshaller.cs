@@ -63,12 +63,10 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DurationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicy())
                 {
                     request.Parameters.Add("Policy", StringUtils.FromString(publicRequest.Policy));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPolicyArns())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,26 +76,21 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("PolicyArns" + "." + "member" + "." + publicRequestlistValueIndex + "." + "arn", StringUtils.FromString(publicRequestlistValue.Arn));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrincipalArn())
                 {
                     request.Parameters.Add("PrincipalArn", StringUtils.FromString(publicRequest.PrincipalArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRoleArn())
                 {
                     request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSAMLAssertion())
                 {
                     request.Parameters.Add("SAMLAssertion", StringUtils.FromString(publicRequest.SAMLAssertion));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

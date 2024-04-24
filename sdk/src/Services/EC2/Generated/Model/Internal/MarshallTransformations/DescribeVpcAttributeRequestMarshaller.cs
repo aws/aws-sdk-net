@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Attribute", StringUtils.FromString(publicRequest.Attribute));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpcId())
                 {
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

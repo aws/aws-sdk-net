@@ -63,17 +63,14 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Force", StringUtils.FromBool(publicRequest.Force));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetManualSnapshotRetentionPeriod())
                 {
                     request.Parameters.Add("ManualSnapshotRetentionPeriod", StringUtils.FromInt(publicRequest.ManualSnapshotRetentionPeriod));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotIdentifier())
                 {
                     request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

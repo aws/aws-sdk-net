@@ -63,12 +63,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NewPassword", StringUtils.FromString(publicRequest.NewPassword));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOldPassword())
                 {
                     request.Parameters.Add("OldPassword", StringUtils.FromString(publicRequest.OldPassword));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -67,7 +67,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPurchaseRequests())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -77,16 +76,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("PurchaseRequest" + "." + publicRequestlistValueIndex + "." + "InstanceCount", StringUtils.FromInt(publicRequestlistValue.InstanceCount));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPurchaseToken())
                         {
                             request.Parameters.Add("PurchaseRequest" + "." + publicRequestlistValueIndex + "." + "PurchaseToken", StringUtils.FromString(publicRequestlistValue.PurchaseToken));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

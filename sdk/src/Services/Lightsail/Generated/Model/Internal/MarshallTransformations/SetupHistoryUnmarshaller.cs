@@ -113,4 +113,3 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

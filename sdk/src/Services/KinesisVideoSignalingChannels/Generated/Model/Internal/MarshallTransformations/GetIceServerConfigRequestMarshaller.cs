@@ -119,4 +119,3 @@ namespace Amazon.KinesisVideoSignalingChannels.Model.Internal.MarshallTransforma
 
     }
 }
-#pragma warning restore CS0612,CS0618

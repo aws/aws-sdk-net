@@ -67,17 +67,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVerifiedAccessInstanceId())
                 {
                     request.Parameters.Add("VerifiedAccessInstanceId", StringUtils.FromString(publicRequest.VerifiedAccessInstanceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVerifiedAccessTrustProviderId())
                 {
                     request.Parameters.Add("VerifiedAccessTrustProviderId", StringUtils.FromString(publicRequest.VerifiedAccessTrustProviderId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

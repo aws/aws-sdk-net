@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the mediatailor-2018-04-23.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>

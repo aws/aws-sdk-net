@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetReservedInstancesIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,7 +72,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetConfigurations())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -83,31 +81,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValue.AvailabilityZone));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetInstanceCount())
                         {
                             request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "InstanceCount", StringUtils.FromInt(publicRequestlistValue.InstanceCount));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetInstanceType())
                         {
                             request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestlistValue.InstanceType));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetPlatform())
                         {
                             request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "Platform", StringUtils.FromString(publicRequestlistValue.Platform));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetScope())
                         {
                             request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "Scope", StringUtils.FromString(publicRequestlistValue.Scope));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

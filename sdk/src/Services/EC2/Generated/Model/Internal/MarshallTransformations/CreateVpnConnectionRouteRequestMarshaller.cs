@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVpnConnectionId())
                 {
                     request.Parameters.Add("VpnConnectionId", StringUtils.FromString(publicRequest.VpnConnectionId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

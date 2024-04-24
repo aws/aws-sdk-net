@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PrefixListId", StringUtils.FromString(publicRequest.PrefixListId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

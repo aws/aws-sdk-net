@@ -63,7 +63,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NetworkInsightsAnalysisId", StringUtils.FromString(publicRequest.NetworkInsightsAnalysisId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.VPCLattice.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.VPCLattice
 {
     /// <summary>

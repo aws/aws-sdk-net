@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
@@ -37,7 +38,6 @@ namespace Amazon.ElasticFileSystem.Model
     #endif
     public partial class FileSystemLimitExceededException : AmazonElasticFileSystemException
     {
-        private string _errorCode;
 
         /// <summary>
         /// Constructs a new FileSystemLimitExceededException with the specified error
@@ -123,22 +123,6 @@ namespace Amazon.ElasticFileSystem.Model
             info.AddValue("ErrorCode", this.ErrorCode);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode.
-        /// </summary>
-        [AWSProperty(Required=true, Min=1)]
-        public string ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
-        }
 
     }
 }

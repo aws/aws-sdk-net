@@ -63,22 +63,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CapacityReservationFleetId", StringUtils.FromString(publicRequest.CapacityReservationFleetId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEndDate())
                 {
                     request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveEndDate())
                 {
                     request.Parameters.Add("RemoveEndDate", StringUtils.FromBool(publicRequest.RemoveEndDate));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTotalTargetCapacity())
                 {
                     request.Parameters.Add("TotalTargetCapacity", StringUtils.FromInt(publicRequest.TotalTargetCapacity));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

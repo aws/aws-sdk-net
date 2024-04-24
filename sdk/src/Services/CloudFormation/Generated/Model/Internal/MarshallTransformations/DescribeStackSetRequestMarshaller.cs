@@ -63,12 +63,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CallAs", StringUtils.FromString(publicRequest.CallAs));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackSetName())
                 {
                     request.Parameters.Add("StackSetName", StringUtils.FromString(publicRequest.StackSetName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

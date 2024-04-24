@@ -63,27 +63,22 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLifecycleActionResult())
                 {
                     request.Parameters.Add("LifecycleActionResult", StringUtils.FromString(publicRequest.LifecycleActionResult));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLifecycleActionToken())
                 {
                     request.Parameters.Add("LifecycleActionToken", StringUtils.FromString(publicRequest.LifecycleActionToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLifecycleHookName())
                 {
                     request.Parameters.Add("LifecycleHookName", StringUtils.FromString(publicRequest.LifecycleHookName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

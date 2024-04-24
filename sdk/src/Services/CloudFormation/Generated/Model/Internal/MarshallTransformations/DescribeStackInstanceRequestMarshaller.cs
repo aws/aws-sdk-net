@@ -63,22 +63,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CallAs", StringUtils.FromString(publicRequest.CallAs));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackInstanceAccount())
                 {
                     request.Parameters.Add("StackInstanceAccount", StringUtils.FromString(publicRequest.StackInstanceAccount));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackInstanceRegion())
                 {
                     request.Parameters.Add("StackInstanceRegion", StringUtils.FromString(publicRequest.StackInstanceRegion));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackSetName())
                 {
                     request.Parameters.Add("StackSetName", StringUtils.FromString(publicRequest.StackSetName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

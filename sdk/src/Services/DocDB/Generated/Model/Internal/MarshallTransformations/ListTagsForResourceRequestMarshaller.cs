@@ -68,7 +68,6 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Filters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValues())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -78,16 +77,13 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceName())
                 {
                     request.Parameters.Add("ResourceName", StringUtils.FromString(publicRequest.ResourceName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

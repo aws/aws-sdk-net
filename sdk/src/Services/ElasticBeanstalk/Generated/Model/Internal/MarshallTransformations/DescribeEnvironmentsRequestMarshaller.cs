@@ -63,7 +63,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnvironmentIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,7 +72,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnvironmentNames())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -83,32 +81,26 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIncludedDeletedBackToUtc())
                 {
                     request.Parameters.Add("IncludedDeletedBackTo", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.IncludedDeletedBackToUtc));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIncludeDeleted())
                 {
                     request.Parameters.Add("IncludeDeleted", StringUtils.FromBool(publicRequest.IncludeDeleted));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxRecords())
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVersionLabel())
                 {
                     request.Parameters.Add("VersionLabel", StringUtils.FromString(publicRequest.VersionLabel));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

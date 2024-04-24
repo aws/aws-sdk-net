@@ -63,32 +63,26 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AccountId", StringUtils.FromString(publicRequest.AccountId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetClusterIdentifier())
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDatabaseName())
                 {
                     request.Parameters.Add("DatabaseName", StringUtils.FromString(publicRequest.DatabaseName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPartnerName())
                 {
                     request.Parameters.Add("PartnerName", StringUtils.FromString(publicRequest.PartnerName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStatus())
                 {
                     request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStatusMessage())
                 {
                     request.Parameters.Add("StatusMessage", StringUtils.FromString(publicRequest.StatusMessage));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the controltower-2018-05-10.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ControlTower.Model
 {
     /// <summary>

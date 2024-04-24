@@ -125,4 +125,3 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         }
     }
 }
-#pragma warning restore CS0612,CS0618

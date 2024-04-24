@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.MigrationHubRefactorSpaces.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.MigrationHubRefactorSpaces
 {
     /// <summary>

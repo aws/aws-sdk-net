@@ -63,7 +63,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SubscriptionName", StringUtils.FromString(publicRequest.SubscriptionName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

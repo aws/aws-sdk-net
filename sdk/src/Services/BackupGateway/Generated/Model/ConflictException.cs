@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BackupGateway.Model
 {
     /// <summary>
@@ -36,7 +37,6 @@ namespace Amazon.BackupGateway.Model
     #endif
     public partial class ConflictException : AmazonBackupGatewayException
     {
-        private string _errorCode;
 
         /// <summary>
         /// Constructs a new ConflictException with the specified error
@@ -122,25 +122,6 @@ namespace Amazon.BackupGateway.Model
             info.AddValue("ErrorCode", this.ErrorCode);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property ErrorCode. 
-        /// <para>
-        /// A description of why the operation is not supported.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
-        }
 
     }
 }

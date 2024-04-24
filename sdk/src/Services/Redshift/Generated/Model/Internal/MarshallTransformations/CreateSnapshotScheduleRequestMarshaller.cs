@@ -63,12 +63,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextInvocations())
                 {
                     request.Parameters.Add("NextInvocations", StringUtils.FromInt(publicRequest.NextInvocations));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScheduleDefinitions())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -78,17 +76,14 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScheduleDescription())
                 {
                     request.Parameters.Add("ScheduleDescription", StringUtils.FromString(publicRequest.ScheduleDescription));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetScheduleIdentifier())
                 {
                     request.Parameters.Add("ScheduleIdentifier", StringUtils.FromString(publicRequest.ScheduleIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -98,16 +93,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

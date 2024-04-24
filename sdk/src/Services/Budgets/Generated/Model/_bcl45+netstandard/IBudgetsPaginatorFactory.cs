@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the budgets-2016-10-20.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model
 {
     /// <summary>

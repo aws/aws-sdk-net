@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.ApiGatewayV2.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.ApiGatewayV2
 {
     /// <summary>

@@ -63,32 +63,26 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CopyOptionGroup", StringUtils.FromBool(publicRequest.CopyOptionGroup));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetCopyTags())
                 {
                     request.Parameters.Add("CopyTags", StringUtils.FromBool(publicRequest.CopyTags));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOptionGroupName())
                 {
                     request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPreSignedUrl())
                 {
                     request.Parameters.Add("PreSignedUrl", StringUtils.FromString(publicRequest.PreSignedUrl));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceDBSnapshotIdentifier())
                 {
                     request.Parameters.Add("SourceDBSnapshotIdentifier", StringUtils.FromString(publicRequest.SourceDBSnapshotIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -98,26 +92,21 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetCustomAvailabilityZone())
                 {
                     request.Parameters.Add("TargetCustomAvailabilityZone", StringUtils.FromString(publicRequest.TargetCustomAvailabilityZone));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTargetDBSnapshotIdentifier())
                 {
                     request.Parameters.Add("TargetDBSnapshotIdentifier", StringUtils.FromString(publicRequest.TargetDBSnapshotIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

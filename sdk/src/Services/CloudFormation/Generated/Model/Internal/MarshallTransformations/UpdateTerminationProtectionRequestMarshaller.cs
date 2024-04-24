@@ -63,12 +63,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnableTerminationProtection", StringUtils.FromBool(publicRequest.EnableTerminationProtection));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetStackName())
                 {
                     request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

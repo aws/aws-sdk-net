@@ -113,4 +113,3 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         }
     }
 }
-#pragma warning restore CS0612,CS0618

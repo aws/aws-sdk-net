@@ -63,12 +63,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SourceIdentifier", StringUtils.FromString(publicRequest.SourceIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSubscriptionName())
                 {
                     request.Parameters.Add("SubscriptionName", StringUtils.FromString(publicRequest.SubscriptionName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

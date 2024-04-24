@@ -63,12 +63,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MetricWidget", StringUtils.FromString(publicRequest.MetricWidget));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetOutputFormat())
                 {
                     request.Parameters.Add("OutputFormat", StringUtils.FromString(publicRequest.OutputFormat));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

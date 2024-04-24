@@ -63,7 +63,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(publicRequest.LaunchConfigurationName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

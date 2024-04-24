@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Bucket", StringUtils.FromString(publicRequest.Bucket));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetPrefix())
                 {
                     request.Parameters.Add("Prefix", StringUtils.FromString(publicRequest.Prefix));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

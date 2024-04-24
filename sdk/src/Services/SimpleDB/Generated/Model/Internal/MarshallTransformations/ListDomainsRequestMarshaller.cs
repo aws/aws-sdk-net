@@ -63,12 +63,10 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaxNumberOfDomains", StringUtils.FromInt(publicRequest.MaxNumberOfDomains));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

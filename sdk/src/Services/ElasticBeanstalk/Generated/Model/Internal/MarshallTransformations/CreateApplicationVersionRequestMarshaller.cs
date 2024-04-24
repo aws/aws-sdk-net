@@ -63,84 +63,67 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetAutoCreateApplication())
                 {
                     request.Parameters.Add("AutoCreateApplication", StringUtils.FromBool(publicRequest.AutoCreateApplication));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetBuildConfiguration())
                 {
                     if(publicRequest.BuildConfiguration.IsSetArtifactName())
                     {
                         request.Parameters.Add("BuildConfiguration" + "." + "ArtifactName", StringUtils.FromString(publicRequest.BuildConfiguration.ArtifactName));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.BuildConfiguration.IsSetCodeBuildServiceRole())
                     {
                         request.Parameters.Add("BuildConfiguration" + "." + "CodeBuildServiceRole", StringUtils.FromString(publicRequest.BuildConfiguration.CodeBuildServiceRole));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.BuildConfiguration.IsSetComputeType())
                     {
                         request.Parameters.Add("BuildConfiguration" + "." + "ComputeType", StringUtils.FromString(publicRequest.BuildConfiguration.ComputeType));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.BuildConfiguration.IsSetImage())
                     {
                         request.Parameters.Add("BuildConfiguration" + "." + "Image", StringUtils.FromString(publicRequest.BuildConfiguration.Image));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.BuildConfiguration.IsSetTimeoutInMinutes())
                     {
                         request.Parameters.Add("BuildConfiguration" + "." + "TimeoutInMinutes", StringUtils.FromInt(publicRequest.BuildConfiguration.TimeoutInMinutes));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetProcess())
                 {
                     request.Parameters.Add("Process", StringUtils.FromBool(publicRequest.Process));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceBuildInformation())
                 {
                     if(publicRequest.SourceBuildInformation.IsSetSourceLocation())
                     {
                         request.Parameters.Add("SourceBuildInformation" + "." + "SourceLocation", StringUtils.FromString(publicRequest.SourceBuildInformation.SourceLocation));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.SourceBuildInformation.IsSetSourceRepository())
                     {
                         request.Parameters.Add("SourceBuildInformation" + "." + "SourceRepository", StringUtils.FromString(publicRequest.SourceBuildInformation.SourceRepository));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.SourceBuildInformation.IsSetSourceType())
                     {
                         request.Parameters.Add("SourceBuildInformation" + "." + "SourceType", StringUtils.FromString(publicRequest.SourceBuildInformation.SourceType));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceBundle())
                 {
                     if(publicRequest.SourceBundle.IsSetS3Bucket())
                     {
                         request.Parameters.Add("SourceBundle" + "." + "S3Bucket", StringUtils.FromString(publicRequest.SourceBundle.S3Bucket));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.SourceBundle.IsSetS3Key())
                     {
                         request.Parameters.Add("SourceBundle" + "." + "S3Key", StringUtils.FromString(publicRequest.SourceBundle.S3Key));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -150,21 +133,17 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetVersionLabel())
                 {
                     request.Parameters.Add("VersionLabel", StringUtils.FromString(publicRequest.VersionLabel));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

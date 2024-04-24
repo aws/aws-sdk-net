@@ -63,17 +63,14 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DurationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSerialNumber())
                 {
                     request.Parameters.Add("SerialNumber", StringUtils.FromString(publicRequest.SerialNumber));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTokenCode())
                 {
                     request.Parameters.Add("TokenCode", StringUtils.FromString(publicRequest.TokenCode));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

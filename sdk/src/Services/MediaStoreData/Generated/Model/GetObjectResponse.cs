@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaStoreData.Model
 {
     /// <summary>
@@ -35,7 +36,6 @@ namespace Amazon.MediaStoreData.Model
     {
         private Stream _body;
         private string _cacheControl;
-        private long? _contentLength;
         private string _contentRange;
         private string _contentType;
         private string _eTag;
@@ -81,25 +81,6 @@ namespace Amazon.MediaStoreData.Model
         internal bool IsSetCacheControl()
         {
             return this._cacheControl != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ContentLength. 
-        /// <para>
-        /// The length of the object in bytes.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0)]
-        public long ContentLength
-        {
-            get { return this._contentLength.GetValueOrDefault(); }
-            set { this._contentLength = value; }
-        }
-
-        // Check to see if ContentLength property is set
-        internal bool IsSetContentLength()
-        {
-            return this._contentLength.HasValue; 
         }
 
         /// <summary>
@@ -208,6 +189,9 @@ namespace Amazon.MediaStoreData.Model
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)

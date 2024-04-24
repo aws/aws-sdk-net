@@ -107,4 +107,3 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
         }
     }
 }
-#pragma warning restore CS0612,CS0618

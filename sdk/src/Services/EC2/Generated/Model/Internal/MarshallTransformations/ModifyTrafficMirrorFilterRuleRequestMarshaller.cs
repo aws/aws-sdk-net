@@ -63,31 +63,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinationCidrBlock())
                 {
                     request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetDestinationPortRange())
                 {
                     if(publicRequest.DestinationPortRange.IsSetFromPort())
                     {
                         request.Parameters.Add("DestinationPortRange" + "." + "FromPort", StringUtils.FromInt(publicRequest.DestinationPortRange.FromPort));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.DestinationPortRange.IsSetToPort())
                     {
                         request.Parameters.Add("DestinationPortRange" + "." + "ToPort", StringUtils.FromInt(publicRequest.DestinationPortRange.ToPort));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetProtocol())
                 {
                     request.Parameters.Add("Protocol", StringUtils.FromInt(publicRequest.Protocol));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRemoveFields())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -97,46 +91,37 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRuleAction())
                 {
                     request.Parameters.Add("RuleAction", StringUtils.FromString(publicRequest.RuleAction));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetRuleNumber())
                 {
                     request.Parameters.Add("RuleNumber", StringUtils.FromInt(publicRequest.RuleNumber));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceCidrBlock())
                 {
                     request.Parameters.Add("SourceCidrBlock", StringUtils.FromString(publicRequest.SourceCidrBlock));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourcePortRange())
                 {
                     if(publicRequest.SourcePortRange.IsSetFromPort())
                     {
                         request.Parameters.Add("SourcePortRange" + "." + "FromPort", StringUtils.FromInt(publicRequest.SourcePortRange.FromPort));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.SourcePortRange.IsSetToPort())
                     {
                         request.Parameters.Add("SourcePortRange" + "." + "ToPort", StringUtils.FromInt(publicRequest.SourcePortRange.ToPort));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTrafficDirection())
                 {
                     request.Parameters.Add("TrafficDirection", StringUtils.FromString(publicRequest.TrafficDirection));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetTrafficMirrorFilterRuleId())
                 {
                     request.Parameters.Add("TrafficMirrorFilterRuleId", StringUtils.FromString(publicRequest.TrafficMirrorFilterRuleId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

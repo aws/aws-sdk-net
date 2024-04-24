@@ -63,7 +63,6 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Enabled", StringUtils.FromBool(publicRequest.Enabled));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEventCategories())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -73,22 +72,18 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnsTopicArn())
                 {
                     request.Parameters.Add("SnsTopicArn", StringUtils.FromString(publicRequest.SnsTopicArn));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSourceType())
                 {
                     request.Parameters.Add("SourceType", StringUtils.FromString(publicRequest.SourceType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSubscriptionName())
                 {
                     request.Parameters.Add("SubscriptionName", StringUtils.FromString(publicRequest.SubscriptionName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

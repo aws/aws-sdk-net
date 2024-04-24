@@ -68,11 +68,9 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("ComplexListArg" + "." + publicRequestlistValueIndex + "." + "Hi", StringUtils.FromString(publicRequestlistValue.Hi));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetListArg())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -82,7 +80,6 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetListArgWithXmlName())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -92,7 +89,6 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetListArgWithXmlNameMember())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -102,7 +98,6 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNestedWithList())
                 {
                     if(publicRequest.NestedWithList.IsSetListArg())
@@ -114,9 +109,7 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                             publicRequestNestedWithListlistValueIndex++;
                         }
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

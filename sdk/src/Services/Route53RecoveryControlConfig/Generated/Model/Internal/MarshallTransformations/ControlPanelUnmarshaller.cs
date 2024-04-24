@@ -125,4 +125,3 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
         }
     }
 }
-#pragma warning restore CS0612,CS0618

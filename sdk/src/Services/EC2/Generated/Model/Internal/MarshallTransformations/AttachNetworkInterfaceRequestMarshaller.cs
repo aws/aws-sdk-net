@@ -63,40 +63,32 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeviceIndex", StringUtils.FromInt(publicRequest.DeviceIndex));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEnaSrdSpecification())
                 {
                     if(publicRequest.EnaSrdSpecification.IsSetEnaSrdEnabled())
                     {
                         request.Parameters.Add("EnaSrdSpecification" + "." + "EnaSrdEnabled", StringUtils.FromBool(publicRequest.EnaSrdSpecification.EnaSrdEnabled));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.EnaSrdSpecification.IsSetEnaSrdUdpSpecification())
                     {
                         if(publicRequest.EnaSrdSpecification.EnaSrdUdpSpecification.IsSetEnaSrdUdpEnabled())
                         {
                             request.Parameters.Add("EnaSrdSpecification" + "." + "EnaSrdUdpSpecification" + "." + "EnaSrdUdpEnabled", StringUtils.FromBool(publicRequest.EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled));
                         }
-#pragma warning restore CS0612,CS0618
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkCardIndex())
                 {
                     request.Parameters.Add("NetworkCardIndex", StringUtils.FromInt(publicRequest.NetworkCardIndex));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNetworkInterfaceId())
                 {
                     request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

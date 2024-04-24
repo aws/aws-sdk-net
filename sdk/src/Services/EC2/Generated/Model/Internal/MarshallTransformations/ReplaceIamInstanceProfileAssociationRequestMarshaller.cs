@@ -63,21 +63,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AssociationId", StringUtils.FromString(publicRequest.AssociationId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIamInstanceProfile())
                 {
                     if(publicRequest.IamInstanceProfile.IsSetArn())
                     {
                         request.Parameters.Add("IamInstanceProfile" + "." + "Arn", StringUtils.FromString(publicRequest.IamInstanceProfile.Arn));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.IamInstanceProfile.IsSetName())
                     {
                         request.Parameters.Add("IamInstanceProfile" + "." + "Name", StringUtils.FromString(publicRequest.IamInstanceProfile.Name));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -63,45 +63,36 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLaunchTemplate())
                 {
                     if(publicRequest.LaunchTemplate.IsSetLaunchTemplateId())
                     {
                         request.Parameters.Add("LaunchTemplate" + "." + "LaunchTemplateId", StringUtils.FromString(publicRequest.LaunchTemplate.LaunchTemplateId));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplate.IsSetLaunchTemplateName())
                     {
                         request.Parameters.Add("LaunchTemplate" + "." + "LaunchTemplateName", StringUtils.FromString(publicRequest.LaunchTemplate.LaunchTemplateName));
                     }
-#pragma warning restore CS0612,CS0618
                     if(publicRequest.LaunchTemplate.IsSetVersion())
                     {
                         request.Parameters.Add("LaunchTemplate" + "." + "Version", StringUtils.FromString(publicRequest.LaunchTemplate.Version));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetMaxParallelLaunches())
                 {
                     request.Parameters.Add("MaxParallelLaunches", StringUtils.FromInt(publicRequest.MaxParallelLaunches));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetResourceType())
                 {
                     request.Parameters.Add("ResourceType", StringUtils.FromString(publicRequest.ResourceType));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetSnapshotConfiguration())
                 {
                     if(publicRequest.SnapshotConfiguration.IsSetTargetResourceCount())
                     {
                         request.Parameters.Add("SnapshotConfiguration" + "." + "TargetResourceCount", StringUtils.FromInt(publicRequest.SnapshotConfiguration.TargetResourceCount));
                     }
-#pragma warning restore CS0612,CS0618
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

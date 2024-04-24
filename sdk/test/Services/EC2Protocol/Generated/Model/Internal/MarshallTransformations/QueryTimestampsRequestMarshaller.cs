@@ -63,17 +63,14 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EpochMember", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochMember));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEpochTarget())
                 {
                     request.Parameters.Add("EpochTarget", StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochTarget));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetNormalFormat())
                 {
                     request.Parameters.Add("NormalFormat", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.NormalFormat));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

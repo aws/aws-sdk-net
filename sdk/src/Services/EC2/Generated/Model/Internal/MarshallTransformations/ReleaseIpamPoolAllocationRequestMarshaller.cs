@@ -63,17 +63,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Cidr", StringUtils.FromString(publicRequest.Cidr));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpamPoolAllocationId())
                 {
                     request.Parameters.Add("IpamPoolAllocationId", StringUtils.FromString(publicRequest.IpamPoolAllocationId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetIpamPoolId())
                 {
                     request.Parameters.Add("IpamPoolId", StringUtils.FromString(publicRequest.IpamPoolId));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

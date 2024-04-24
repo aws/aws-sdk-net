@@ -63,7 +63,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EndpointName", StringUtils.FromString(publicRequest.EndpointName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

@@ -63,12 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LaunchTemplateId", StringUtils.FromString(publicRequest.LaunchTemplateId));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetLaunchTemplateName())
                 {
                     request.Parameters.Add("LaunchTemplateName", StringUtils.FromString(publicRequest.LaunchTemplateName));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

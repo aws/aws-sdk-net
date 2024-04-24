@@ -20,6 +20,7 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     <SignAssembly>true</SignAssembly>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
     <NoWarn>CA1822</NoWarn>
   </PropertyGroup>
@@ -28,7 +29,6 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
-    <WarningsAsErrors>IL2026,IL2075</WarningsAsErrors>
     <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'false' Or '$(RuleSetFileForBuild)' == '' ">

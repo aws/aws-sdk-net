@@ -64,12 +64,10 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("data", StringUtils.FromString(publicRequest.Data));
                 }
-#pragma warning restore CS0612,CS0618
                 if(publicRequest.IsSetEncoding())
                 {
                     request.Parameters.Add("encoding", StringUtils.FromString(publicRequest.Encoding));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

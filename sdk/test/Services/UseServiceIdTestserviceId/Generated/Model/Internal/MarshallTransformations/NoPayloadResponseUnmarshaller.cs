@@ -105,4 +105,3 @@ namespace Amazon.UseServiceIdTestserviceId.Model.Internal.MarshallTransformation
 
     }
 }
-#pragma warning restore CS0612,CS0618

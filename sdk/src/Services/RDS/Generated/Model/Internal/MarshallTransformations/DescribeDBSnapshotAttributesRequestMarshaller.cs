@@ -63,7 +63,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(publicRequest.DBSnapshotIdentifier));
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }

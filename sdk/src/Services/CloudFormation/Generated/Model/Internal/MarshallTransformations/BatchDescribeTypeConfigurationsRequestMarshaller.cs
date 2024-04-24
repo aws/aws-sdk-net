@@ -68,31 +68,25 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTypeArn())
                         {
                             request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TypeArn", StringUtils.FromString(publicRequestlistValue.TypeArn));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTypeConfigurationAlias())
                         {
                             request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TypeConfigurationAlias", StringUtils.FromString(publicRequestlistValue.TypeConfigurationAlias));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTypeConfigurationArn())
                         {
                             request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TypeConfigurationArn", StringUtils.FromString(publicRequestlistValue.TypeConfigurationArn));
                         }
-#pragma warning restore CS0612,CS0618
                         if(publicRequestlistValue.IsSetTypeName())
                         {
                             request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TypeName", StringUtils.FromString(publicRequestlistValue.TypeName));
                         }
-#pragma warning restore CS0612,CS0618
                         publicRequestlistValueIndex++;
                     }
                 }
-#pragma warning restore CS0612,CS0618
             }
             return request;
         }
