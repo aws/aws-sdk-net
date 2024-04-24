@@ -1,3 +1,32 @@
+### 3.7.796.0 (2024-04-24 18:21 UTC)
+* DataSync (3.7.302.0)
+	* This change allows users to disable and enable the schedules associated with their tasks.
+* DynamoDBv2 (3.7.302.22)
+	* Improve startup by removing assembly scanning from DynamoDBEntryConversion
+	* Added missing RequiresUnreferencedCode for DynamoDB high level library converters
+	* Removed CLSCompliant(false) attributes
+	* Added public documentation
+* EC2 (3.7.325.0)
+	* Launching capability for customers to enable or disable automatic assignment of public IPv4 addresses to their network interface
+* EMRContainers (3.7.303.0)
+	* EMRonEKS Service support for SecurityConfiguration enforcement for Spark Jobs.
+* EntityResolution (3.7.302.0)
+	* Support Batch Unique IDs Deletion.
+* GameLift (3.7.302.0)
+	* Amazon GameLift releases container fleets support for public preview. Deploy Linux-based containerized game server software for hosting on Amazon GameLift.
+* S3 (3.7.307.22)
+	* Added missing public documentation
+* SimpleSystemsManagement (3.7.304.0)
+	* Add SSM DescribeInstanceProperties API to public AWS SDK.
+* Core 3.7.303.21
+	* Added EnumeratorCancellation attribute for IAsyncEnumerable paginator methods
+	* Added missing public docs
+	* Removed generated properties that were attempting to override non virtual properties from the base type. The generated properties were the same implementation as the base.
+	* Removed the ` = default` from the signature in methods being implemented using explicit interface implementation. The `default` is inherited from the interface and triggers a warning when specified in the implementation.
+	* Removed the Obsolete attribute for CorrectedUtcNow. This method is needed when the corrected time without a service endpoint is used.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.795.0 (2024-04-23 18:30 UTC)
 * Bedrock (3.7.302.0)
 	* This release introduces Model Evaluation and Guardrails for Amazon Bedrock.
