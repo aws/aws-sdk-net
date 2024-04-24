@@ -1055,10 +1055,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// The entry is converted to a converted DynamoDBEntry either by the
     /// consuming Document or Table.
     /// </summary>
-
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class UnconvertedDynamoDBEntry : DynamoDBEntry
     {
         private object Value;
