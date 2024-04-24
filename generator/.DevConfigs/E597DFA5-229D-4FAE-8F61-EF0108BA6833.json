@@ -1,0 +1,11 @@
+{
+	"services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Improve startup by removing assembly scanning from DynamoDBEntryConversion"
+            ]
+        }		
+	]
+}
