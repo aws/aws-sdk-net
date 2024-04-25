@@ -274,9 +274,16 @@ namespace Amazon.Runtime
         long RequestMinCompressionSizeBytes { get; }
 
         /// <summary>
-        /// Customers can opt-in to provide an app id that is intended to identify their applications
-        /// in the user agent header string. The value should have a maximum length of 50.
+        /// <para>
+        /// ClientAppId is an optional application specific identifier that can be set. When set it will be appended to the User-Agent header of every request in the form of <c>app/{ClientAppId}</c>. 
+        /// </para>
+        /// <para>
+        /// If the ClientAppId is not set on the object the SDK will search the environment variable <c>AWS_SDK_UA_APP_ID</c> and the shared config profile attribute <c>sdk_ua_app_id</c> for a potential value for the ClientAppId.
+        /// </para>
         /// </summary>
+        /// <remarks>
+        /// See <see href="https://docs.aws.amazon.com/sdkref/latest/guide/settings-reference.html"/> for more information on environment variables and shared config settings.
+        /// </remarks>
         string ClientAppId { get; }
 
         /// <summary>
