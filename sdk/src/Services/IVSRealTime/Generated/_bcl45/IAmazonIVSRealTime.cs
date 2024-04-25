@@ -1816,6 +1816,9 @@ namespace Amazon.IVSRealTime
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
         /// 
         /// </exception>
@@ -1843,6 +1846,9 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the UpdateStage service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
