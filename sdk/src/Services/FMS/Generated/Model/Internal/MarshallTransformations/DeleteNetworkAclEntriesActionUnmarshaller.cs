@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PolicyOption Object
+    /// Response Unmarshaller for DeleteNetworkAclEntriesAction Object
     /// </summary>  
-    public class PolicyOptionUnmarshaller : IUnmarshaller<PolicyOption, XmlUnmarshallerContext>, IUnmarshaller<PolicyOption, JsonUnmarshallerContext>
+    public class DeleteNetworkAclEntriesActionUnmarshaller : IUnmarshaller<DeleteNetworkAclEntriesAction, XmlUnmarshallerContext>, IUnmarshaller<DeleteNetworkAclEntriesAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PolicyOption IUnmarshaller<PolicyOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DeleteNetworkAclEntriesAction IUnmarshaller<DeleteNetworkAclEntriesAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PolicyOption Unmarshall(JsonUnmarshallerContext context)
+        public DeleteNetworkAclEntriesAction Unmarshall(JsonUnmarshallerContext context)
         {
-            PolicyOption unmarshalledObject = new PolicyOption();
+            DeleteNetworkAclEntriesAction unmarshalledObject = new DeleteNetworkAclEntriesAction();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,22 +64,28 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NetworkAclCommonPolicy", targetDepth))
+                if (context.TestExpression("Description", targetDepth))
                 {
-                    var unmarshaller = NetworkAclCommonPolicyUnmarshaller.Instance;
-                    unmarshalledObject.NetworkAclCommonPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NetworkFirewallPolicy", targetDepth))
+                if (context.TestExpression("FMSCanRemediate", targetDepth))
                 {
-                    var unmarshaller = NetworkFirewallPolicyUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.FMSCanRemediate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ThirdPartyFirewallPolicy", targetDepth))
+                if (context.TestExpression("NetworkAclEntriesToBeDeleted", targetDepth))
                 {
-                    var unmarshaller = ThirdPartyFirewallPolicyUnmarshaller.Instance;
-                    unmarshalledObject.ThirdPartyFirewallPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<EntryDescription, EntryDescriptionUnmarshaller>(EntryDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.NetworkAclEntriesToBeDeleted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkAclId", targetDepth))
+                {
+                    var unmarshaller = ActionTargetUnmarshaller.Instance;
+                    unmarshalledObject.NetworkAclId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,12 +93,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
 
 
-        private static PolicyOptionUnmarshaller _instance = new PolicyOptionUnmarshaller();        
+        private static DeleteNetworkAclEntriesActionUnmarshaller _instance = new DeleteNetworkAclEntriesActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PolicyOptionUnmarshaller Instance
+        public static DeleteNetworkAclEntriesActionUnmarshaller Instance
         {
             get
             {

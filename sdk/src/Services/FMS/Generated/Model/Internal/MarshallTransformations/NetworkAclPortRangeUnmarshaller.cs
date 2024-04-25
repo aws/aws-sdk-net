@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PolicyOption Object
+    /// Response Unmarshaller for NetworkAclPortRange Object
     /// </summary>  
-    public class PolicyOptionUnmarshaller : IUnmarshaller<PolicyOption, XmlUnmarshallerContext>, IUnmarshaller<PolicyOption, JsonUnmarshallerContext>
+    public class NetworkAclPortRangeUnmarshaller : IUnmarshaller<NetworkAclPortRange, XmlUnmarshallerContext>, IUnmarshaller<NetworkAclPortRange, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PolicyOption IUnmarshaller<PolicyOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NetworkAclPortRange IUnmarshaller<NetworkAclPortRange, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PolicyOption Unmarshall(JsonUnmarshallerContext context)
+        public NetworkAclPortRange Unmarshall(JsonUnmarshallerContext context)
         {
-            PolicyOption unmarshalledObject = new PolicyOption();
+            NetworkAclPortRange unmarshalledObject = new NetworkAclPortRange();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,22 +64,16 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NetworkAclCommonPolicy", targetDepth))
+                if (context.TestExpression("From", targetDepth))
                 {
-                    var unmarshaller = NetworkAclCommonPolicyUnmarshaller.Instance;
-                    unmarshalledObject.NetworkAclCommonPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.From = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NetworkFirewallPolicy", targetDepth))
+                if (context.TestExpression("To", targetDepth))
                 {
-                    var unmarshaller = NetworkFirewallPolicyUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallPolicy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ThirdPartyFirewallPolicy", targetDepth))
-                {
-                    var unmarshaller = ThirdPartyFirewallPolicyUnmarshaller.Instance;
-                    unmarshalledObject.ThirdPartyFirewallPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.To = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,12 +81,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
 
 
-        private static PolicyOptionUnmarshaller _instance = new PolicyOptionUnmarshaller();        
+        private static NetworkAclPortRangeUnmarshaller _instance = new NetworkAclPortRangeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PolicyOptionUnmarshaller Instance
+        public static NetworkAclPortRangeUnmarshaller Instance
         {
             get
             {

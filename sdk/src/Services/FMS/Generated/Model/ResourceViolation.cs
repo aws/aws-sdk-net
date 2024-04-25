@@ -42,6 +42,7 @@ namespace Amazon.FMS.Model
         private DnsRuleGroupPriorityConflictViolation _dnsRuleGroupPriorityConflictViolation;
         private FirewallSubnetIsOutOfScopeViolation _firewallSubnetIsOutOfScopeViolation;
         private FirewallSubnetMissingVPCEndpointViolation _firewallSubnetMissingVPCEndpointViolation;
+        private InvalidNetworkAclEntriesViolation _invalidNetworkAclEntriesViolation;
         private NetworkFirewallBlackHoleRouteDetectedViolation _networkFirewallBlackHoleRouteDetectedViolation;
         private NetworkFirewallInternetTrafficNotInspectedViolation _networkFirewallInternetTrafficNotInspectedViolation;
         private NetworkFirewallInvalidRouteConfigurationViolation _networkFirewallInvalidRouteConfigurationViolation;
@@ -206,6 +207,24 @@ namespace Amazon.FMS.Model
         internal bool IsSetFirewallSubnetMissingVPCEndpointViolation()
         {
             return this._firewallSubnetMissingVPCEndpointViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvalidNetworkAclEntriesViolation. 
+        /// <para>
+        /// Violation detail for the entries in a network ACL resource.
+        /// </para>
+        /// </summary>
+        public InvalidNetworkAclEntriesViolation InvalidNetworkAclEntriesViolation
+        {
+            get { return this._invalidNetworkAclEntriesViolation; }
+            set { this._invalidNetworkAclEntriesViolation = value; }
+        }
+
+        // Check to see if InvalidNetworkAclEntriesViolation property is set
+        internal bool IsSetInvalidNetworkAclEntriesViolation()
+        {
+            return this._invalidNetworkAclEntriesViolation != null;
         }
 
         /// <summary>

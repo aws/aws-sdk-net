@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PolicyOption Object
+    /// Response Unmarshaller for EntryDescription Object
     /// </summary>  
-    public class PolicyOptionUnmarshaller : IUnmarshaller<PolicyOption, XmlUnmarshallerContext>, IUnmarshaller<PolicyOption, JsonUnmarshallerContext>
+    public class EntryDescriptionUnmarshaller : IUnmarshaller<EntryDescription, XmlUnmarshallerContext>, IUnmarshaller<EntryDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PolicyOption IUnmarshaller<PolicyOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EntryDescription IUnmarshaller<EntryDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PolicyOption Unmarshall(JsonUnmarshallerContext context)
+        public EntryDescription Unmarshall(JsonUnmarshallerContext context)
         {
-            PolicyOption unmarshalledObject = new PolicyOption();
+            EntryDescription unmarshalledObject = new EntryDescription();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,22 +64,22 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NetworkAclCommonPolicy", targetDepth))
+                if (context.TestExpression("EntryDetail", targetDepth))
                 {
-                    var unmarshaller = NetworkAclCommonPolicyUnmarshaller.Instance;
-                    unmarshalledObject.NetworkAclCommonPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NetworkAclEntryUnmarshaller.Instance;
+                    unmarshalledObject.EntryDetail = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NetworkFirewallPolicy", targetDepth))
+                if (context.TestExpression("EntryRuleNumber", targetDepth))
                 {
-                    var unmarshaller = NetworkFirewallPolicyUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.EntryRuleNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ThirdPartyFirewallPolicy", targetDepth))
+                if (context.TestExpression("EntryType", targetDepth))
                 {
-                    var unmarshaller = ThirdPartyFirewallPolicyUnmarshaller.Instance;
-                    unmarshalledObject.ThirdPartyFirewallPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EntryType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,12 +87,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
 
 
-        private static PolicyOptionUnmarshaller _instance = new PolicyOptionUnmarshaller();        
+        private static EntryDescriptionUnmarshaller _instance = new EntryDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PolicyOptionUnmarshaller Instance
+        public static EntryDescriptionUnmarshaller Instance
         {
             get
             {

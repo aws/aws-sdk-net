@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PolicyOption Marshaller
+    /// NetworkAclEntry Marshaller
     /// </summary>
-    public class PolicyOptionMarshaller : IRequestMarshaller<PolicyOption, JsonMarshallerContext> 
+    public class NetworkAclEntryMarshaller : IRequestMarshaller<NetworkAclEntry, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,60 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PolicyOption requestObject, JsonMarshallerContext context)
+        public void Marshall(NetworkAclEntry requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetNetworkAclCommonPolicy())
+            if(requestObject.IsSetCidrBlock())
             {
-                context.Writer.WritePropertyName("NetworkAclCommonPolicy");
+                context.Writer.WritePropertyName("CidrBlock");
+                context.Writer.Write(requestObject.CidrBlock);
+            }
+
+            if(requestObject.IsSetEgress())
+            {
+                context.Writer.WritePropertyName("Egress");
+                context.Writer.Write(requestObject.Egress);
+            }
+
+            if(requestObject.IsSetIcmpTypeCode())
+            {
+                context.Writer.WritePropertyName("IcmpTypeCode");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = NetworkAclCommonPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.NetworkAclCommonPolicy, context);
+                var marshaller = NetworkAclIcmpTypeCodeMarshaller.Instance;
+                marshaller.Marshall(requestObject.IcmpTypeCode, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetNetworkFirewallPolicy())
+            if(requestObject.IsSetIpv6CidrBlock())
             {
-                context.Writer.WritePropertyName("NetworkFirewallPolicy");
+                context.Writer.WritePropertyName("Ipv6CidrBlock");
+                context.Writer.Write(requestObject.Ipv6CidrBlock);
+            }
+
+            if(requestObject.IsSetPortRange())
+            {
+                context.Writer.WritePropertyName("PortRange");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = NetworkFirewallPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.NetworkFirewallPolicy, context);
+                var marshaller = NetworkAclPortRangeMarshaller.Instance;
+                marshaller.Marshall(requestObject.PortRange, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetThirdPartyFirewallPolicy())
+            if(requestObject.IsSetProtocol())
             {
-                context.Writer.WritePropertyName("ThirdPartyFirewallPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Protocol");
+                context.Writer.Write(requestObject.Protocol);
+            }
 
-                var marshaller = ThirdPartyFirewallPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.ThirdPartyFirewallPolicy, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetRuleAction())
+            {
+                context.Writer.WritePropertyName("RuleAction");
+                context.Writer.Write(requestObject.RuleAction);
             }
 
         }
@@ -86,7 +105,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PolicyOptionMarshaller Instance = new PolicyOptionMarshaller();
+        public readonly static NetworkAclEntryMarshaller Instance = new NetworkAclEntryMarshaller();
 
     }
 }

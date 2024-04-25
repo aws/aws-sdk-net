@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PolicyOption Marshaller
+    /// NetworkAclPortRange Marshaller
     /// </summary>
-    public class PolicyOptionMarshaller : IRequestMarshaller<PolicyOption, JsonMarshallerContext> 
+    public class NetworkAclPortRangeMarshaller : IRequestMarshaller<NetworkAclPortRange, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,20 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PolicyOption requestObject, JsonMarshallerContext context)
+        public void Marshall(NetworkAclPortRange requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetNetworkAclCommonPolicy())
+            if(requestObject.IsSetFrom())
             {
-                context.Writer.WritePropertyName("NetworkAclCommonPolicy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = NetworkAclCommonPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.NetworkAclCommonPolicy, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("From");
+                context.Writer.Write(requestObject.From);
             }
 
-            if(requestObject.IsSetNetworkFirewallPolicy())
+            if(requestObject.IsSetTo())
             {
-                context.Writer.WritePropertyName("NetworkFirewallPolicy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = NetworkFirewallPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.NetworkFirewallPolicy, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetThirdPartyFirewallPolicy())
-            {
-                context.Writer.WritePropertyName("ThirdPartyFirewallPolicy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ThirdPartyFirewallPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.ThirdPartyFirewallPolicy, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("To");
+                context.Writer.Write(requestObject.To);
             }
 
         }
@@ -86,7 +65,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PolicyOptionMarshaller Instance = new PolicyOptionMarshaller();
+        public readonly static NetworkAclPortRangeMarshaller Instance = new NetworkAclPortRangeMarshaller();
 
     }
 }

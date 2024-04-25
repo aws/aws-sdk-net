@@ -568,6 +568,21 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FMS.Model.CreateNetworkAclAction.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.CreateNetworkAclEntriesAction.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.DeleteNetworkAclEntriesAction.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FMS.Model.DiscoveredResource.AccountId</property>
     <min>1</min>
     <max>1024</max>
@@ -730,6 +745,21 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FMS.Model.EntryDescription.EntryRuleNumber</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.EntryViolation.ActualEvaluationOrder</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.EntryViolation.ExpectedEvaluationOrder</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FMS.Model.EvaluationResult.ViolatorCount</property>
     <min>0</min>
   </property-value-rule>
@@ -823,6 +853,64 @@
     <min>1</min>
     <max>10000</max>
     <pattern>^((?!\\[nr]).)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.InvalidNetworkAclEntriesViolation.CurrentAssociatedNetworkAcl</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.InvalidNetworkAclEntriesViolation.Subnet</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.InvalidNetworkAclEntriesViolation.SubnetAvailabilityZone</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.InvalidNetworkAclEntriesViolation.Vpc</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.NetworkAclEntry.CidrBlock</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.NetworkAclEntry.Ipv6CidrBlock</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.NetworkAclEntry.Protocol</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.NetworkAclIcmpTypeCode.Code</property>
+    <min>-2147483648</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.NetworkAclIcmpTypeCode.Type</property>
+    <min>-2147483648</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.NetworkAclPortRange.From</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.NetworkAclPortRange.To</property>
+    <min>0</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.NetworkFirewallBlackHoleRouteDetectedViolation.RouteTableId</property>
@@ -1234,6 +1322,11 @@
     <property>Amazon.FMS.Model.RemediationActionWithOrder.Order</property>
     <min>-2147483648</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ReplaceNetworkAclAssociationAction.Description</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.Resource.AccountId</property>

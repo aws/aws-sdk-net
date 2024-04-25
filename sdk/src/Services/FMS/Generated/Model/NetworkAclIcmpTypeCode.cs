@@ -30,31 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetAdminScope operation.
-    /// Returns information about the specified account's administrative scope. The administrative
-    /// scope defines the resources that an Firewall Manager administrator can manage.
+    /// ICMP protocol: The ICMP type and code.
     /// </summary>
-    public partial class GetAdminScopeRequest : AmazonFMSRequest
+    public partial class NetworkAclIcmpTypeCode
     {
-        private string _adminAccount;
+        private int? _code;
+        private int? _type;
 
         /// <summary>
-        /// Gets and sets the property AdminAccount. 
+        /// Gets and sets the property Code. 
         /// <para>
-        /// The administrator account that you want to get the details for.
+        /// ICMP code. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string AdminAccount
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
+        public int Code
         {
-            get { return this._adminAccount; }
-            set { this._adminAccount = value; }
+            get { return this._code.GetValueOrDefault(); }
+            set { this._code = value; }
         }
 
-        // Check to see if AdminAccount property is set
-        internal bool IsSetAdminAccount()
+        // Check to see if Code property is set
+        internal bool IsSetCode()
         {
-            return this._adminAccount != null;
+            return this._code.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// ICMP type. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=-2147483648, Max=2147483647)]
+        public int Type
+        {
+            get { return this._type.GetValueOrDefault(); }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type.HasValue; 
         }
 
     }

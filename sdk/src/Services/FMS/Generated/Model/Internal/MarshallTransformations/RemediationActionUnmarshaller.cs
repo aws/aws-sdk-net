@@ -64,6 +64,24 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CreateNetworkAclAction", targetDepth))
+                {
+                    var unmarshaller = CreateNetworkAclActionUnmarshaller.Instance;
+                    unmarshalledObject.CreateNetworkAclAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreateNetworkAclEntriesAction", targetDepth))
+                {
+                    var unmarshaller = CreateNetworkAclEntriesActionUnmarshaller.Instance;
+                    unmarshalledObject.CreateNetworkAclEntriesAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DeleteNetworkAclEntriesAction", targetDepth))
+                {
+                    var unmarshaller = DeleteNetworkAclEntriesActionUnmarshaller.Instance;
+                    unmarshalledObject.DeleteNetworkAclEntriesAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -116,6 +134,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = FMSPolicyUpdateFirewallCreationConfigActionUnmarshaller.Instance;
                     unmarshalledObject.FMSPolicyUpdateFirewallCreationConfigAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReplaceNetworkAclAssociationAction", targetDepth))
+                {
+                    var unmarshaller = ReplaceNetworkAclAssociationActionUnmarshaller.Instance;
+                    unmarshalledObject.ReplaceNetworkAclAssociationAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

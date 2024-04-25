@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PolicyOption Object
+    /// Response Unmarshaller for InvalidNetworkAclEntriesViolation Object
     /// </summary>  
-    public class PolicyOptionUnmarshaller : IUnmarshaller<PolicyOption, XmlUnmarshallerContext>, IUnmarshaller<PolicyOption, JsonUnmarshallerContext>
+    public class InvalidNetworkAclEntriesViolationUnmarshaller : IUnmarshaller<InvalidNetworkAclEntriesViolation, XmlUnmarshallerContext>, IUnmarshaller<InvalidNetworkAclEntriesViolation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PolicyOption IUnmarshaller<PolicyOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InvalidNetworkAclEntriesViolation IUnmarshaller<InvalidNetworkAclEntriesViolation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PolicyOption Unmarshall(JsonUnmarshallerContext context)
+        public InvalidNetworkAclEntriesViolation Unmarshall(JsonUnmarshallerContext context)
         {
-            PolicyOption unmarshalledObject = new PolicyOption();
+            InvalidNetworkAclEntriesViolation unmarshalledObject = new InvalidNetworkAclEntriesViolation();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,22 +64,34 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NetworkAclCommonPolicy", targetDepth))
+                if (context.TestExpression("CurrentAssociatedNetworkAcl", targetDepth))
                 {
-                    var unmarshaller = NetworkAclCommonPolicyUnmarshaller.Instance;
-                    unmarshalledObject.NetworkAclCommonPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrentAssociatedNetworkAcl = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NetworkFirewallPolicy", targetDepth))
+                if (context.TestExpression("EntryViolations", targetDepth))
                 {
-                    var unmarshaller = NetworkFirewallPolicyUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<EntryViolation, EntryViolationUnmarshaller>(EntryViolationUnmarshaller.Instance);
+                    unmarshalledObject.EntryViolations = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ThirdPartyFirewallPolicy", targetDepth))
+                if (context.TestExpression("Subnet", targetDepth))
                 {
-                    var unmarshaller = ThirdPartyFirewallPolicyUnmarshaller.Instance;
-                    unmarshalledObject.ThirdPartyFirewallPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Subnet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SubnetAvailabilityZone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Vpc", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Vpc = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,12 +99,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
 
 
-        private static PolicyOptionUnmarshaller _instance = new PolicyOptionUnmarshaller();        
+        private static InvalidNetworkAclEntriesViolationUnmarshaller _instance = new InvalidNetworkAclEntriesViolationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PolicyOptionUnmarshaller Instance
+        public static InvalidNetworkAclEntriesViolationUnmarshaller Instance
         {
             get
             {
