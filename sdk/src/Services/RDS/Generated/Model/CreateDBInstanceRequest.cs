@@ -2682,8 +2682,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Timezone. 
         /// <para>
         /// The time zone of the DB instance. The time zone parameter is currently supported only
-        /// by <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
-        /// SQL Server</a>.
+        /// by <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-time-zone">RDS
+        /// for Db2</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">RDS
+        /// for SQL Server</a>.
         /// </para>
         /// </summary>
         public string Timezone
