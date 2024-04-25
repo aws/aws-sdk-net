@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RedriveExecution operation
+    /// Response Unmarshaller for ValidateStateMachineDefinition operation
     /// </summary>  
-    public class RedriveExecutionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ValidateStateMachineDefinitionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,22 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RedriveExecutionResponse response = new RedriveExecutionResponse();
+            ValidateStateMachineDefinitionResponse response = new ValidateStateMachineDefinitionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("redriveDate", targetDepth))
+                if (context.TestExpression("diagnostics", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.RedriveDate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ValidateStateMachineDefinitionDiagnostic, ValidateStateMachineDefinitionDiagnosticUnmarshaller>(ValidateStateMachineDefinitionDiagnosticUnmarshaller.Instance);
+                    response.Diagnostics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("result", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Result = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -81,22 +87,6 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ExecutionDoesNotExist"))
-                {
-                    return ExecutionDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ExecutionLimitExceeded"))
-                {
-                    return ExecutionLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ExecutionNotRedrivable"))
-                {
-                    return ExecutionNotRedrivableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArn"))
-                {
-                    return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
                     return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -105,9 +95,9 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             return new AmazonStepFunctionsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static RedriveExecutionResponseUnmarshaller _instance = new RedriveExecutionResponseUnmarshaller();        
+        private static ValidateStateMachineDefinitionResponseUnmarshaller _instance = new ValidateStateMachineDefinitionResponseUnmarshaller();        
 
-        internal static RedriveExecutionResponseUnmarshaller GetInstance()
+        internal static ValidateStateMachineDefinitionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +105,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RedriveExecutionResponseUnmarshaller Instance
+        public static ValidateStateMachineDefinitionResponseUnmarshaller Instance
         {
             get
             {
