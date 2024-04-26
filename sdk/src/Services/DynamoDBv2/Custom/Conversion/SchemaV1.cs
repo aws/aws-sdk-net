@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -110,6 +111,8 @@ namespace Amazon.DynamoDBv2
     {
         public CollectionConverterFactoryV1(DynamoDBEntryConversion conversion) : base(conversion, Utils.PrimitiveTypes) { }
 
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL3050:RequiresDynamicCode",
+            Justification = "MakeGenericType is safe here since we support reference types only, so fully shareable code is generated.")]
         protected override Converter CreateConverter(Type elementType, Type collectionType)
         {
             var genericType = typeof(PrimitiveCollectionConverterV1<,>).MakeGenericType(elementType, collectionType);

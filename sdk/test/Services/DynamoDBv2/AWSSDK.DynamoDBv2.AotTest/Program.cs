@@ -1,5 +1,7 @@
-﻿using Amazon.DynamoDBv2;
+﻿using System.Collections.Immutable;
+using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 
 var config = new AmazonDynamoDBConfig { ServiceURL = $"http://localhost:8000" };
@@ -7,33 +9,37 @@ var credentials = new BasicAWSCredentials("access", "secret");
 var dynamoDbClient = new AmazonDynamoDBClient(credentials, config);
 var context = new DynamoDBContext(dynamoDbClient);
 
-//var table = await dynamoDbClient.CreateTableAsync(new CreateTableRequest
-//{
-//    TableName = "TestTable",
-//    AttributeDefinitions =
-//    [
-//        new AttributeDefinition
-//        {
-//            AttributeName = "Id",
-//            AttributeType = ScalarAttributeType.S
-//        }
-//    ],
-//    KeySchema =
-//    [
-//        new KeySchemaElement
-//        {
-//            AttributeName = "Id",
-//            KeyType = KeyType.HASH
-//        }
-//    ],
-//    ProvisionedThroughput = new ProvisionedThroughput
-//    {
-//        ReadCapacityUnits = 1,
-//        WriteCapacityUnits = 1
-//    }
-//});
+var tables = await dynamoDbClient.ListTablesAsync();
+if (!tables.TableNames.Contains("TestTable"))
+{
+    await dynamoDbClient.CreateTableAsync(new CreateTableRequest
+    {
+        TableName = "TestTable",
+        AttributeDefinitions =
+        [
+            new AttributeDefinition
+            {
+                AttributeName = "Id",
+                AttributeType = ScalarAttributeType.S
+            }
+        ],
+        KeySchema =
+        [
+            new KeySchemaElement
+            {
+                AttributeName = "Id",
+                KeyType = KeyType.HASH
+            }
+        ],
+        ProvisionedThroughput = new ProvisionedThroughput
+        {
+            ReadCapacityUnits = 1,
+            WriteCapacityUnits = 1
+        }
+    });
 
-Console.WriteLine("Table created");
+    Console.WriteLine("Table created");
+}
 
 await context.SaveAsync(new TestType
 {

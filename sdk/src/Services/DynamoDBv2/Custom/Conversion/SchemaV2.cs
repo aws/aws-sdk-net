@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
@@ -62,6 +63,8 @@ namespace Amazon.DynamoDBv2
     {
         public CollectionConverterFactoryV2(DynamoDBEntryConversion conversion) : base(conversion, Utils.PrimitiveTypes) { }
 
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL3050:RequiresDynamicCode",
+            Justification = "MakeGenericType is safe here since we support reference types only, so fully shareable code is generated.")]
         protected override Converter CreateConverter(Type elementType, Type collectionType)
         {
             var genericType = typeof(CollectionConverterV2<,>).MakeGenericType(elementType, collectionType);
@@ -74,6 +77,8 @@ namespace Amazon.DynamoDBv2
         public DynamoDBListConverterFactory(DynamoDBEntryConversion conversion)
             : base(conversion, new[] { typeof(String), typeof(MemoryStream), typeof(byte[]) }) { }
 
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL3050:RequiresDynamicCode",
+            Justification = "MakeGenericType is safe here since we support reference types only, so fully shareable code is generated.")]
         protected override Converter CreateConverter(Type elementType, Type collectionType)
         {
             var genericType = typeof(DynamoDBListConverter<,>).MakeGenericType(elementType, collectionType);
