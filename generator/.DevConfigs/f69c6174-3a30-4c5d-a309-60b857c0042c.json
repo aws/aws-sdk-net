@@ -1,0 +1,9 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Update `UserCrypto` not to load `Crypt32.dll` when running outside of Windows (requires applications using the SDK to target .NET 8 or later)"
+        ]
+    }
+}
