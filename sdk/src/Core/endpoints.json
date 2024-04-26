@@ -26240,7 +26240,7 @@
               },
               "hostname": "entitlement-marketplace.cn-northwest-1.amazonaws.com.cn",
               "protocols": [
-                "HTTPS"
+                "https"
               ]
             }
           }
