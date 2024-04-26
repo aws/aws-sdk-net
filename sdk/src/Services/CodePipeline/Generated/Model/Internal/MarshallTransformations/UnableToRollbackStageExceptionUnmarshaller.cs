@@ -35,64 +35,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StageExecution Object
+    /// Response Unmarshaller for UnableToRollbackStageException Object
     /// </summary>  
-    public class StageExecutionUnmarshaller : IUnmarshaller<StageExecution, XmlUnmarshallerContext>, IUnmarshaller<StageExecution, JsonUnmarshallerContext>
+    public class UnableToRollbackStageExceptionUnmarshaller : IErrorResponseUnmarshaller<UnableToRollbackStageException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StageExecution IUnmarshaller<StageExecution, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public UnableToRollbackStageException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns>The unmarshalled object</returns>
-        public StageExecution Unmarshall(JsonUnmarshallerContext context)
+        /// <param name="errorResponse"></param>
+        /// <returns></returns>
+        public UnableToRollbackStageException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            StageExecution unmarshalledObject = new StageExecution();
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
+            UnableToRollbackStageException unmarshalledObject = new UnableToRollbackStageException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("pipelineExecutionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecutionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
+          
             return unmarshalledObject;
         }
 
-
-        private static StageExecutionUnmarshaller _instance = new StageExecutionUnmarshaller();        
+        private static UnableToRollbackStageExceptionUnmarshaller _instance = new UnableToRollbackStageExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StageExecutionUnmarshaller Instance
+        public static UnableToRollbackStageExceptionUnmarshaller Instance
         {
             get
             {

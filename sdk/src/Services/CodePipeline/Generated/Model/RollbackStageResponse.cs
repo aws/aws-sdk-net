@@ -30,18 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents information about the run of a stage.
+    /// This is the response object from the RollbackStage operation.
     /// </summary>
-    public partial class StageExecution
+    public partial class RollbackStageResponse : AmazonWebServiceResponse
     {
         private string _pipelineExecutionId;
-        private StageExecutionStatus _status;
-        private ExecutionType _type;
 
         /// <summary>
         /// Gets and sets the property PipelineExecutionId. 
         /// <para>
-        /// The ID of the pipeline execution associated with the stage.
+        /// The execution ID of the pipeline execution for the stage that has been rolled back.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -55,49 +53,6 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetPipelineExecutionId()
         {
             return this._pipelineExecutionId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of the stage, or for a completed stage, the last status of the stage.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// A status of cancelled means that the pipeline’s definition was updated before the
-        /// stage execution could be completed.
-        /// </para>
-        ///  </note>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public StageExecutionStatus Status
-        {
-            get { return this._status; }
-            set { this._status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this._status != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of pipeline execution for the stage, such as a rollback pipeline execution.
-        /// </para>
-        /// </summary>
-        public ExecutionType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
         }
 
     }

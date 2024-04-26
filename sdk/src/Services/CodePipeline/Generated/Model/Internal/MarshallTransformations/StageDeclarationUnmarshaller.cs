@@ -82,6 +82,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("onFailure", targetDepth))
+                {
+                    var unmarshaller = FailureConditionsUnmarshaller.Instance;
+                    unmarshalledObject.OnFailure = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListPipelineExecutions Request Marshaller
+    /// RollbackStage Request Marshaller
     /// </summary>       
-    public class ListPipelineExecutionsRequestMarshaller : IMarshaller<IRequest, ListPipelineExecutionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RollbackStageRequestMarshaller : IMarshaller<IRequest, RollbackStageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListPipelineExecutionsRequest)input);
+            return this.Marshall((RollbackStageRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListPipelineExecutionsRequest publicRequest)
+        public IRequest Marshall(RollbackStageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodePipeline");
-            string target = "CodePipeline_20150709.ListPipelineExecutions";
+            string target = "CodePipeline_20150709.RollbackStage";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";
@@ -69,33 +69,22 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilter())
-                {
-                    context.Writer.WritePropertyName("filter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PipelineExecutionFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
                 if(publicRequest.IsSetPipelineName())
                 {
                     context.Writer.WritePropertyName("pipelineName");
                     context.Writer.Write(publicRequest.PipelineName);
+                }
+
+                if(publicRequest.IsSetStageName())
+                {
+                    context.Writer.WritePropertyName("stageName");
+                    context.Writer.Write(publicRequest.StageName);
+                }
+
+                if(publicRequest.IsSetTargetPipelineExecutionId())
+                {
+                    context.Writer.WritePropertyName("targetPipelineExecutionId");
+                    context.Writer.Write(publicRequest.TargetPipelineExecutionId);
                 }
 
                 writer.WriteObjectEnd();
@@ -106,9 +95,9 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListPipelineExecutionsRequestMarshaller _instance = new ListPipelineExecutionsRequestMarshaller();        
+        private static RollbackStageRequestMarshaller _instance = new RollbackStageRequestMarshaller();        
 
-        internal static ListPipelineExecutionsRequestMarshaller GetInstance()
+        internal static RollbackStageRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +105,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListPipelineExecutionsRequestMarshaller Instance
+        public static RollbackStageRequestMarshaller Instance
         {
             get
             {

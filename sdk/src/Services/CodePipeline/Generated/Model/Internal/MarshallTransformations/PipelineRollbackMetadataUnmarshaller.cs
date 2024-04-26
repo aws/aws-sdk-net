@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StageExecution Object
+    /// Response Unmarshaller for PipelineRollbackMetadata Object
     /// </summary>  
-    public class StageExecutionUnmarshaller : IUnmarshaller<StageExecution, XmlUnmarshallerContext>, IUnmarshaller<StageExecution, JsonUnmarshallerContext>
+    public class PipelineRollbackMetadataUnmarshaller : IUnmarshaller<PipelineRollbackMetadata, XmlUnmarshallerContext>, IUnmarshaller<PipelineRollbackMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StageExecution IUnmarshaller<StageExecution, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PipelineRollbackMetadata IUnmarshaller<PipelineRollbackMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public StageExecution Unmarshall(JsonUnmarshallerContext context)
+        public PipelineRollbackMetadata Unmarshall(JsonUnmarshallerContext context)
         {
-            StageExecution unmarshalledObject = new StageExecution();
+            PipelineRollbackMetadata unmarshalledObject = new PipelineRollbackMetadata();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,22 +64,10 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("pipelineExecutionId", targetDepth))
+                if (context.TestExpression("rollbackTargetPipelineExecutionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecutionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RollbackTargetPipelineExecutionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,12 +75,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         }
 
 
-        private static StageExecutionUnmarshaller _instance = new StageExecutionUnmarshaller();        
+        private static PipelineRollbackMetadataUnmarshaller _instance = new PipelineRollbackMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StageExecutionUnmarshaller Instance
+        public static PipelineRollbackMetadataUnmarshaller Instance
         {
             get
             {
