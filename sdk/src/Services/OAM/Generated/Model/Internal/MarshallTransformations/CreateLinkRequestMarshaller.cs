@@ -73,6 +73,17 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LabelTemplate);
                 }
 
+                if(publicRequest.IsSetLinkConfiguration())
+                {
+                    context.Writer.WritePropertyName("LinkConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LinkConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LinkConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetResourceTypes())
                 {
                     context.Writer.WritePropertyName("ResourceTypes");

@@ -65,6 +65,9 @@ namespace Amazon.OAM
 
         /// <summary>
         /// Creates a link between a source account and a sink that you have created in a monitoring
+        /// account. After the link is created, data is sent from the source account to the monitoring
+        /// account. When you create a link, you can optionally specify filters that specify which
+        /// metric namespaces and which log groups are shared from the source account to the monitoring
         /// account.
         /// 
         ///  
@@ -113,6 +116,9 @@ namespace Amazon.OAM
 
         /// <summary>
         /// Creates a link between a source account and a sink that you have created in a monitoring
+        /// account. After the link is created, data is sent from the source account to the monitoring
+        /// account. When you create a link, you can optionally specify filters that specify which
+        /// metric namespaces and which log groups are shared from the source account to the monitoring
         /// account.
         /// 
         ///  
@@ -178,8 +184,8 @@ namespace Amazon.OAM
         /// </para>
         ///  
         /// <para>
-        /// Each account can contain one sink. If you delete a sink, you can then create a new
-        /// one in that account.
+        /// Each account can contain one sink per Region. If you delete a sink, you can then create
+        /// a new one in that Region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSink service method.</param>
@@ -218,8 +224,8 @@ namespace Amazon.OAM
         /// </para>
         ///  
         /// <para>
-        /// Each account can contain one sink. If you delete a sink, you can then create a new
-        /// one in that account.
+        /// Each account can contain one sink per Region. If you delete a sink, you can then create
+        /// a new one in that Region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSink service method.</param>
@@ -1054,6 +1060,12 @@ namespace Amazon.OAM
         /// 
         ///  
         /// <para>
+        /// When you update a link, you can optionally specify filters that specify which metric
+        /// namespaces and which log groups are shared from the source account to the monitoring
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
         /// To update the list of tags associated with the sink, use <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_TagResource.html">TagResource</a>.
         /// </para>
         /// </summary>
@@ -1082,6 +1094,12 @@ namespace Amazon.OAM
         /// its linked monitoring account sink. You can't change the sink or change the monitoring
         /// account with this operation.
         /// 
+        ///  
+        /// <para>
+        /// When you update a link, you can optionally specify filters that specify which metric
+        /// namespaces and which log groups are shared from the source account to the monitoring
+        /// account.
+        /// </para>
         ///  
         /// <para>
         /// To update the list of tags associated with the sink, use <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_TagResource.html">TagResource</a>.
