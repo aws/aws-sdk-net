@@ -1,3 +1,27 @@
+### 3.7.798.0 (2024-04-26 18:21 UTC)
+* AWSSupport (3.7.301.0)
+	* Releasing minor endpoint updates.
+* CloudWatchLogs (3.7.305.24)
+	* Fixed a bug at GetLogEventsPaginator where it enters an infinite loop.
+* CodePipeline (3.7.304.0)
+	* Add ability to manually and automatically roll back a pipeline stage to a previously successful execution.
+* CognitoIdentityProvider (3.7.304.0)
+	* Add LimitExceededException to SignUp errors
+* ConnectCampaignService (3.7.302.0)
+	* This release adds support for specifying if Answering Machine should wait for prompt sound.
+* MarketplaceEntitlementService (3.7.302.0)
+	* Releasing minor endpoint updates.
+* OAM (3.7.302.0)
+	* This release introduces support for Source Accounts to define which Metrics and Logs to share with the Monitoring Account
+* RDS (3.7.312.0)
+	* SupportsLimitlessDatabase field added to describe-db-engine-versions to indicate whether the DB engine version supports Aurora Limitless Database.
+* Core 3.7.303.23
+	* Update `UserCrypto` not to load `Crypt32.dll` when running outside of Windows (requires applications using the SDK to target .NET 8 or later)
+	* Update API documentation for the `ClientConfig.ClientAppId` property
+	* Update InternalSDKUtils.DetermineFramework to return a standardized string and additional metadata if parsing version fails.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.797.0 (2024-04-25 18:20 UTC)
 * AppSync (3.7.305.0)
 	* UpdateGraphQLAPI documentation update and datasource introspection secret arn update

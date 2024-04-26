@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Update InternalSDKUtils.DetermineFramework to return a standardized string and additional metadata if parsing version fails."
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }

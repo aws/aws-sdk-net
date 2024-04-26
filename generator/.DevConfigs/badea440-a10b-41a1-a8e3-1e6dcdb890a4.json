@@ -1,9 +1,0 @@
-{
-    "core": {
-        "updateMinimum": true,
-        "type": "Patch",
-        "changeLogMessages": [
-            "Update API documentation for the `ClientConfig.ClientAppId` property"
-        ]
-    }
-}
