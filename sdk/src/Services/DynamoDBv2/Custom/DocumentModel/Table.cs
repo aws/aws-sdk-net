@@ -478,23 +478,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 if (property.Converter != null)
                 {
+                    // If the property has a property converter, use it to convert the hypothetical value
                     convertedEntry = property.Converter.ToEntry(hypotheticalValue);
                 }
                 else
                 {
-                    // Get the converter that would be used for this property
-                    flatConfig.Conversion.TryGetConverter(property.MemberType, out Converter converter);
-
                     // This will throw an exception if the conversion fails, or if the resulting entry isn't a primitive
-                    convertedEntry = converter.ToEntry(hypotheticalValue);
+                    convertedEntry = flatConfig.Conversion.ConvertToEntry(property.MemberType, hypotheticalValue);
                 }
+
+                return convertedEntry.ToPrimitive().Type;
             }
             catch (Exception e)
             {
                 throw new InvalidOperationException($"Failed to determine the DynamoDB primitive type for property {property.PropertyName} of type {property.MemberType}.", e);
             }
-
-            return convertedEntry.ToPrimitive().Type;
         }
 
         /// <summary>
