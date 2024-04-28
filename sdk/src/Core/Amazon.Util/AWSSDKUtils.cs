@@ -1143,7 +1143,6 @@ namespace Amazon.Util
         public static string UrlEncode(int rfcNumber, string data, bool path)
         {
             byte[] sharedDataBuffer = null;
-            // Put this elsewhere?
             const int MaxStackLimit = 256;
             try
             {
