@@ -80,12 +80,6 @@ namespace Amazon.Util
         // Default value of progress update interval for streaming is 100KB.
         public const long DefaultProgressUpdateInterval = 102400;
 
-        internal static Dictionary<int, string> RFCEncodingSchemes = new Dictionary<int, string>
-        {
-            { 3986,  ValidUrlCharacters },
-            { 1738,  ValidUrlCharactersRFC1738 }
-        };
-
         internal const string S3Accelerate = "s3-accelerate";
         internal const string S3Control = "s3-control";
 
