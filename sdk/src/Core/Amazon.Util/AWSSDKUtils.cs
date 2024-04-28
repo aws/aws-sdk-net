@@ -1043,6 +1043,8 @@ namespace Amazon.Util
                 var dataBuffer = encodedByteLength <= MaxStackLimit
                     ? stackalloc byte[MaxStackLimit]
                     : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(dataByteLength);
+                // instead of stack allocating or renting two buffers we over rent and add the data
+                // to the end and the encoded bytes to the beginning
                 var encodingBuffer = dataBuffer.Slice(dataBuffer.Length - dataByteLength);
                 var bytesWritten = encoding.GetBytes(dataAsSpan, encodingBuffer);
             
