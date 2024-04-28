@@ -33,6 +33,7 @@ using Amazon.Util.Internal;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using Amazon.Runtime.Endpoints;
 using ThirdParty.RuntimeBackports;
@@ -1028,7 +1029,7 @@ namespace Amazon.Util
         /// Currently recognised RFC versions are 1738 (Dec '94) and 3986 (Jan '05). 
         /// If the specified RFC is not recognised, 3986 is used by default.
         /// </remarks>
-        // TODO Add SkipsLocalsInit?
+        [SkipLocalsInit]
         public static string UrlEncode(int rfcNumber, string data, bool path)
         {
             byte[] sharedDataBuffer = null;
@@ -1036,8 +1037,7 @@ namespace Amazon.Util
             const int MaxStackLimit = 256;
             try
             {
-                string validUrlCharacters;
-                if (!TryGetRFCEncodingSchemes(rfcNumber, out validUrlCharacters))
+                if (!TryGetRFCEncodingSchemes(rfcNumber, out var validUrlCharacters))
                     validUrlCharacters = ValidUrlCharacters;
 
                 var unreservedChars = string.Concat(validUrlCharacters, path ? ValidPathCharacters : "");
