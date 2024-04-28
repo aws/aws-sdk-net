@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Amazon.Util;
 using System.Text;
 using Amazon.Runtime.Internal;
@@ -62,6 +62,26 @@ namespace UnitTests.NetStandard.Core
             var service = AWSSDKUtils.DetermineService(url);
 
             Assert.Equal(expectedService, service);
+        }
+
+        [Theory]
+        [InlineData("value, with special chars!", "value%2C%20with%20special%20chars%21")]
+        [InlineData("value, with special chars and path {/+:}", "value%2C%20with%20special%20chars%20and%20path%20%7B%2F%2B%3A%7D")]
+        public void UrlEncodeWithoutPath(string input, string expected)
+        {
+            var encoded = AWSSDKUtils.UrlEncode(input, path: false);
+
+            Assert.Equal(expected, encoded);
+        }
+
+        [Theory]
+        [InlineData("value, with special chars!", "value%2C%20with%20special%20chars!")]
+        [InlineData("value, with special chars and path {/+:}", "value%2C%20with%20special%20chars%20and%20path%20%7B/%2B:%7D")]
+        public void UrlEncodeWithPath(string input, string expected)
+        {
+            var encoded = AWSSDKUtils.UrlEncode(input, path: true);
+
+            Assert.Equal(expected, encoded);
         }
     }
 }
