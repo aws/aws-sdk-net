@@ -1160,6 +1160,7 @@ namespace Amazon.Util
             
                 var index = 0;
                 foreach (var symbol in encodingBuffer.Slice(0, bytesWritten))
+                {
                     if (unreservedChars.IndexOf((char)symbol) != -1)
                     {
                         dataBuffer[index++] = symbol;
@@ -1175,6 +1176,7 @@ namespace Amazon.Util
                         dataBuffer[index++] = (byte)ToUpperHex(hiNibble);
                         dataBuffer[index++] = (byte)ToUpperHex(loNibble);
                     }
+                }
 
                 return encoding.GetString(dataBuffer.Slice(0, index));
             }
