@@ -1031,64 +1031,70 @@ namespace Amazon.Util
         // TODO Add SkipsLocalsInit?
         public static string UrlEncode(int rfcNumber, string data, bool path)
         {
-            byte[] sharedDataBuffer = null, sharedEncodedBuffer = null;
+            byte[] sharedDataBuffer = null;
             // Put this elsewhere?
             const int MaxStackLimit = 256;
             try
             {
                 string validUrlCharacters;
-                if (!RFCEncodingSchemes.TryGetValue(rfcNumber, out validUrlCharacters))
+                if (!TryGetRFCEncodingSchemes(rfcNumber, out validUrlCharacters))
                     validUrlCharacters = ValidUrlCharacters;
 
-                string unreservedChars = String.Concat(validUrlCharacters, (path ? ValidPathCharacters : ""));
-            
+                var unreservedChars = string.Concat(validUrlCharacters, path ? ValidPathCharacters : "");
+
                 var dataAsSpan = data.AsSpan();
                 var encoding = Encoding.UTF8;
 
                 var dataByteLength = encoding.GetMaxByteCount(dataAsSpan.Length);
-                var dataBuffer = dataByteLength <= MaxStackLimit
+                var encodedByteLength = 2 * dataByteLength;
+                var dataBuffer = encodedByteLength <= MaxStackLimit
                     ? stackalloc byte[MaxStackLimit]
                     : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(dataByteLength);
-                var bytesWritten = encoding.GetBytes(dataAsSpan, dataBuffer);
-
-                var encodedByteLength = dataByteLength * dataByteLength;
-                var encodedBuffer = encodedByteLength <= MaxStackLimit
-                    ? stackalloc byte[MaxStackLimit]
-                    : sharedEncodedBuffer = ArrayPool<byte>.Shared.Rent(encodedByteLength);
-                int index = 0;
-                foreach (byte symbol in dataBuffer.Slice(0, bytesWritten))
-                {
+                var encodingBuffer = dataBuffer.Slice(dataBuffer.Length - dataByteLength);
+                var bytesWritten = encoding.GetBytes(dataAsSpan, encodingBuffer);
+            
+                var index = 0;
+                foreach (var symbol in encodingBuffer.Slice(0, bytesWritten))
                     if (unreservedChars.IndexOf((char)symbol) != -1)
                     {
-                        encodedBuffer[index++] = symbol;
+                        dataBuffer[index++] = symbol;
                     }
                     else
                     {
-                        encodedBuffer[index++] = (byte)'%';
+                        dataBuffer[index++] = (byte)'%';
 
                         // Break apart the byte into two four-bit components and
                         // then convert each into their hexadecimal equivalent.
-                        int hiNibble = symbol >> 4;
-                        int loNibble = symbol & 0xF;
-                        encodedBuffer[index++] = (byte)ToUpperHex(hiNibble);
-                        encodedBuffer[index++] = (byte)ToUpperHex(loNibble);
+                        var hiNibble = symbol >> 4;
+                        var loNibble = symbol & 0xF;
+                        dataBuffer[index++] = (byte)ToUpperHex(hiNibble);
+                        dataBuffer[index++] = (byte)ToUpperHex(loNibble);
                     }
-                }
 
-                return encoding.GetString(encodedBuffer.Slice(index));
+                return encoding.GetString(dataBuffer.Slice(0, index));
             }
             finally
             {
-                if (sharedDataBuffer != null)
-                {
-                    ArrayPool<byte>.Shared.Return(sharedDataBuffer);
-                }
-                
-                if (sharedEncodedBuffer != null)
-                {
-                    ArrayPool<byte>.Shared.Return(sharedEncodedBuffer);
-                }
+                if (sharedDataBuffer != null) ArrayPool<byte>.Shared.Return(sharedDataBuffer);
             }
+        }
+        
+        internal static bool TryGetRFCEncodingSchemes(int rfcNumber, out string? encodingScheme)
+        {
+            if (rfcNumber == 3986)
+            {
+                encodingScheme = ValidUrlCharacters;
+                return true;
+            }
+
+            if (rfcNumber == 1738)
+            {
+                encodingScheme = ValidUrlCharactersRFC1738;
+                return true;
+            }
+
+            encodingScheme = null;
+            return false;
         }
 
         private static void ToHexString(Span<byte> source, Span<char> destination, bool lowercase)
