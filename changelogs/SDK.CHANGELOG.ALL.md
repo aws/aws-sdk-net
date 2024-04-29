@@ -1,3 +1,20 @@
+### 3.7.799.0 (2024-04-29 18:21 UTC)
+* Amplify (3.7.302.0)
+	* Updating max results limit for listing any resources (Job, Artifacts, Branch, BackendResources, DomainAssociation) to 50 with the exception of list apps that where max results can be up to 100.
+* ConnectCases (3.7.303.0)
+	* This feature releases DeleteField, DeletedLayout, and DeleteTemplate API's
+* Inspector2 (3.7.303.0)
+	* Update Inspector2 to include new Agentless API parameters.
+* TimestreamQuery (3.7.301.0)
+	* This change allows users to update and describe account settings associated with their accounts.
+* TranscribeService (3.7.303.0)
+	* This update provides error messaging for generative call summarization in Transcribe Call Analytics
+* TrustedAdvisor (3.7.301.0)
+	* This release adds the BatchUpdateRecommendationResourceExclusion API to support batch updates of Recommendation Resource exclusion statuses and introduces a new exclusion status filter to the ListRecommendationResources and ListOrganizationRecommendationResources APIs.
+* Core 3.7.303.24
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.798.0 (2024-04-26 18:21 UTC)
 * AWSSupport (3.7.301.0)
 	* Releasing minor endpoint updates.
