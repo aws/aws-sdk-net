@@ -63,6 +63,9 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
                 throw new AmazonTrustedAdvisorException("Request object does not have required field RecommendationIdentifier set");
             request.AddPathResource("{recommendationIdentifier}", StringUtils.FromString(publicRequest.RecommendationIdentifier));
             
+            if (publicRequest.IsSetExclusionStatus())
+                request.Parameters.Add("exclusionStatus", StringUtils.FromString(publicRequest.ExclusionStatus));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

@@ -25,6 +25,56 @@ namespace Amazon.TrustedAdvisor
 {
 
     /// <summary>
+    /// Constants used for properties of type ExclusionStatus.
+    /// </summary>
+    public class ExclusionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Excluded for ExclusionStatus
+        /// </summary>
+        public static readonly ExclusionStatus Excluded = new ExclusionStatus("excluded");
+        /// <summary>
+        /// Constant Included for ExclusionStatus
+        /// </summary>
+        public static readonly ExclusionStatus Included = new ExclusionStatus("included");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExclusionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExclusionStatus FindValue(string value)
+        {
+            return FindValue<ExclusionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExclusionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecommendationLanguage.
     /// </summary>
     public class RecommendationLanguage : ConstantClass

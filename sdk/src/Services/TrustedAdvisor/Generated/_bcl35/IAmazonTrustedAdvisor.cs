@@ -45,6 +45,62 @@ namespace Amazon.TrustedAdvisor
 
 
         
+        #region  BatchUpdateRecommendationResourceExclusion
+
+
+        /// <summary>
+        /// Update one or more exclusion status for a list of recommendation resources
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateRecommendationResourceExclusion service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateRecommendationResourceExclusion service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ConflictException">
+        /// Exception that the request was denied due to conflictions in state
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion">REST API Reference for BatchUpdateRecommendationResourceExclusion Operation</seealso>
+        BatchUpdateRecommendationResourceExclusionResponse BatchUpdateRecommendationResourceExclusion(BatchUpdateRecommendationResourceExclusionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateRecommendationResourceExclusion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateRecommendationResourceExclusion operation on AmazonTrustedAdvisorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateRecommendationResourceExclusion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion">REST API Reference for BatchUpdateRecommendationResourceExclusion Operation</seealso>
+        IAsyncResult BeginBatchUpdateRecommendationResourceExclusion(BatchUpdateRecommendationResourceExclusionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateRecommendationResourceExclusion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateRecommendationResourceExclusion.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateRecommendationResourceExclusionResult from TrustedAdvisor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion">REST API Reference for BatchUpdateRecommendationResourceExclusion Operation</seealso>
+        BatchUpdateRecommendationResourceExclusionResponse EndBatchUpdateRecommendationResourceExclusion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetOrganizationRecommendation
 
 
@@ -492,7 +548,7 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// Update the lifecyle of a Recommendation within an Organization. This API only supports
+        /// Update the lifecycle of a Recommendation within an Organization. This API only supports
         /// prioritized recommendations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationRecommendationLifecycle service method.</param>

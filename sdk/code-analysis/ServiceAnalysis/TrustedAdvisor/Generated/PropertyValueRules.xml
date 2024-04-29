@@ -261,6 +261,12 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TrustedAdvisor.Model.RecommendationResourceExclusion.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w-]+:trustedadvisor::\d{12}:recommendation-resource\/[\w-]+\/[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TrustedAdvisor.Model.RecommendationResourceSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -282,5 +288,11 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:[\w-]+:trustedadvisor::\d{12}:recommendation\/[\w-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TrustedAdvisor.Model.UpdateRecommendationResourceExclusionError.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w-]+:trustedadvisor::\d{12}:recommendation-resource\/[\w-]+\/[\w-]+$</pattern>
   </property-value-rule>
 </property-value-rules>
