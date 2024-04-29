@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CoveredResource Object
+    /// Response Unmarshaller for Ec2ScanModeState Object
     /// </summary>  
-    public class CoveredResourceUnmarshaller : IUnmarshaller<CoveredResource, XmlUnmarshallerContext>, IUnmarshaller<CoveredResource, JsonUnmarshallerContext>
+    public class Ec2ScanModeStateUnmarshaller : IUnmarshaller<Ec2ScanModeState, XmlUnmarshallerContext>, IUnmarshaller<Ec2ScanModeState, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CoveredResource IUnmarshaller<CoveredResource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Ec2ScanModeState IUnmarshaller<Ec2ScanModeState, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CoveredResource Unmarshall(JsonUnmarshallerContext context)
+        public Ec2ScanModeState Unmarshall(JsonUnmarshallerContext context)
         {
-            CoveredResource unmarshalledObject = new CoveredResource();
+            Ec2ScanModeState unmarshalledObject = new Ec2ScanModeState();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,52 +64,16 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accountId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastScannedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastScannedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceMetadata", targetDepth))
-                {
-                    var unmarshaller = ResourceScanMetadataUnmarshaller.Instance;
-                    unmarshalledObject.ResourceMetadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("scanMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScanMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("scanStatus", targetDepth))
-                {
-                    var unmarshaller = ScanStatusUnmarshaller.Instance;
-                    unmarshalledObject.ScanStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("scanType", targetDepth))
+                if (context.TestExpression("scanModeStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScanType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScanModeStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -117,12 +81,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         }
 
 
-        private static CoveredResourceUnmarshaller _instance = new CoveredResourceUnmarshaller();        
+        private static Ec2ScanModeStateUnmarshaller _instance = new Ec2ScanModeStateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CoveredResourceUnmarshaller Instance
+        public static Ec2ScanModeStateUnmarshaller Instance
         {
             get
             {

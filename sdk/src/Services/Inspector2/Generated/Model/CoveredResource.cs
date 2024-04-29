@@ -39,6 +39,7 @@ namespace Amazon.Inspector2.Model
         private string _resourceId;
         private ResourceScanMetadata _resourceMetadata;
         private CoverageResourceType _resourceType;
+        private ScanMode _scanMode;
         private ScanStatus _scanStatus;
         private ScanType _scanType;
 
@@ -133,6 +134,24 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanMode. 
+        /// <para>
+        /// The scan method that is applied to the instance.
+        /// </para>
+        /// </summary>
+        public ScanMode ScanMode
+        {
+            get { return this._scanMode; }
+            set { this._scanMode = value; }
+        }
+
+        // Check to see if ScanMode property is set
+        internal bool IsSetScanMode()
+        {
+            return this._scanMode != null;
         }
 
         /// <summary>

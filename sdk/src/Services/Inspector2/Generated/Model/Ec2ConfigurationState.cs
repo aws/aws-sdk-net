@@ -30,47 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// This is the response object from the GetCisScanReport operation.
+    /// Details about the state of the EC2 scan configuration for your environment.
     /// </summary>
-    public partial class GetCisScanReportResponse : AmazonWebServiceResponse
+    public partial class Ec2ConfigurationState
     {
-        private CisReportStatus _status;
-        private string _url;
+        private Ec2ScanModeState _scanModeState;
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property ScanModeState. 
         /// <para>
-        /// The status.
+        /// An object that contains details about the state of the Amazon EC2 scan mode.
         /// </para>
         /// </summary>
-        public CisReportStatus Status
+        public Ec2ScanModeState ScanModeState
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._scanModeState; }
+            set { this._scanModeState = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if ScanModeState property is set
+        internal bool IsSetScanModeState()
         {
-            return this._status != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Url. 
-        /// <para>
-        ///  The URL where a PDF of the CIS scan report can be downloaded. 
-        /// </para>
-        /// </summary>
-        public string Url
-        {
-            get { return this._url; }
-            set { this._url = value; }
-        }
-
-        // Check to see if Url property is set
-        internal bool IsSetUrl()
-        {
-            return this._url != null;
+            return this._scanModeState != null;
         }
 
     }

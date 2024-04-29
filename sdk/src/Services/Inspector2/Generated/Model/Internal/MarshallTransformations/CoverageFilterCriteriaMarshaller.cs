@@ -224,6 +224,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetScanMode())
+            {
+                context.Writer.WritePropertyName("scanMode");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectScanModeListValue in requestObject.ScanMode)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CoverageStringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectScanModeListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetScanStatusCode())
             {
                 context.Writer.WritePropertyName("scanStatusCode");

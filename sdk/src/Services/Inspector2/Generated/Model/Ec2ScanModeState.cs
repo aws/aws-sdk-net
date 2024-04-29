@@ -30,49 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// This is the response object from the GetConfiguration operation.
+    /// The state of your Amazon EC2 scan mode configuration.
     /// </summary>
-    public partial class GetConfigurationResponse : AmazonWebServiceResponse
+    public partial class Ec2ScanModeState
     {
-        private Ec2ConfigurationState _ec2Configuration;
-        private EcrConfigurationState _ecrConfiguration;
+        private Ec2ScanMode _scanMode;
+        private Ec2ScanModeStatus _scanModeStatus;
 
         /// <summary>
-        /// Gets and sets the property Ec2Configuration. 
+        /// Gets and sets the property ScanMode. 
         /// <para>
-        /// Specifies how the Amazon EC2 automated scan mode is currently configured for your
-        /// environment.
+        /// The scan method that is applied to the instance.
         /// </para>
         /// </summary>
-        public Ec2ConfigurationState Ec2Configuration
+        public Ec2ScanMode ScanMode
         {
-            get { return this._ec2Configuration; }
-            set { this._ec2Configuration = value; }
+            get { return this._scanMode; }
+            set { this._scanMode = value; }
         }
 
-        // Check to see if Ec2Configuration property is set
-        internal bool IsSetEc2Configuration()
+        // Check to see if ScanMode property is set
+        internal bool IsSetScanMode()
         {
-            return this._ec2Configuration != null;
+            return this._scanMode != null;
         }
 
         /// <summary>
-        /// Gets and sets the property EcrConfiguration. 
+        /// Gets and sets the property ScanModeStatus. 
         /// <para>
-        /// Specifies how the ECR automated re-scan duration is currently configured for your
-        /// environment.
+        /// The status of the Amazon EC2 scan mode setting.
         /// </para>
         /// </summary>
-        public EcrConfigurationState EcrConfiguration
+        public Ec2ScanModeStatus ScanModeStatus
         {
-            get { return this._ecrConfiguration; }
-            set { this._ecrConfiguration = value; }
+            get { return this._scanModeStatus; }
+            set { this._scanModeStatus = value; }
         }
 
-        // Check to see if EcrConfiguration property is set
-        internal bool IsSetEcrConfiguration()
+        // Check to see if ScanModeStatus property is set
+        internal bool IsSetScanModeStatus()
         {
-            return this._ecrConfiguration != null;
+            return this._scanModeStatus != null;
         }
 
     }
