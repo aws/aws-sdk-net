@@ -133,6 +133,56 @@ namespace Amazon.TimestreamQuery
 
 
     /// <summary>
+    /// Constants used for properties of type QueryPricingModel.
+    /// </summary>
+    public class QueryPricingModel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYTES_SCANNED for QueryPricingModel
+        /// </summary>
+        public static readonly QueryPricingModel BYTES_SCANNED = new QueryPricingModel("BYTES_SCANNED");
+        /// <summary>
+        /// Constant COMPUTE_UNITS for QueryPricingModel
+        /// </summary>
+        public static readonly QueryPricingModel COMPUTE_UNITS = new QueryPricingModel("COMPUTE_UNITS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryPricingModel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryPricingModel FindValue(string value)
+        {
+            return FindValue<QueryPricingModel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryPricingModel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type S3EncryptionOption.
     /// </summary>
     public class S3EncryptionOption : ConstantClass

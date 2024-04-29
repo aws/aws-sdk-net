@@ -70,6 +70,12 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                     unmarshalledObject.BytesMetered = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CumulativeBytesScanned", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.CumulativeBytesScanned = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataWrites", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
