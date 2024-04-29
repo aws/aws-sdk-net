@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetTemplate operation
+    /// Response Unmarshaller for DeleteTemplate operation
     /// </summary>  
-    public class GetTemplateResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteTemplateResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,79 +46,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetTemplateResponse response = new GetTemplateResponse();
+            DeleteTemplateResponse response = new DeleteTemplateResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("createdTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("deleted", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.Deleted = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastModifiedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastModifiedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("layoutConfiguration", targetDepth))
-                {
-                    var unmarshaller = LayoutConfigurationUnmarshaller.Instance;
-                    response.LayoutConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("requiredFields", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RequiredField, RequiredFieldUnmarshaller>(RequiredFieldUnmarshaller.Instance);
-                    response.RequiredFields = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("templateArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TemplateArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("templateId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TemplateId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -145,6 +74,10 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -165,9 +98,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             return new AmazonConnectCasesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetTemplateResponseUnmarshaller _instance = new GetTemplateResponseUnmarshaller();        
+        private static DeleteTemplateResponseUnmarshaller _instance = new DeleteTemplateResponseUnmarshaller();        
 
-        internal static GetTemplateResponseUnmarshaller GetInstance()
+        internal static DeleteTemplateResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -175,7 +108,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTemplateResponseUnmarshaller Instance
+        public static DeleteTemplateResponseUnmarshaller Instance
         {
             get
             {

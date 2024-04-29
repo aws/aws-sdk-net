@@ -31,13 +31,6 @@ namespace Amazon.ConnectCases.Model
 {
     /// <summary>
     /// Object to store union of Field values.
-    /// 
-    ///  <important> 
-    /// <para>
-    /// This data type is a UNION, so only one of the following members can be specified when
-    /// used or returned.
-    /// </para>
-    ///  </important>
     /// </summary>
     public partial class AuditEventFieldValueUnion
     {
