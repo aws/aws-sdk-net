@@ -12385,6 +12385,38 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProductionVariantInstanceType MlG5Xlarge = new ProductionVariantInstanceType("ml.g5.xlarge");
         /// <summary>
+        /// Constant MlG612xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG612xlarge = new ProductionVariantInstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG616xlarge = new ProductionVariantInstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG624xlarge = new ProductionVariantInstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG62xlarge = new ProductionVariantInstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG648xlarge = new ProductionVariantInstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG64xlarge = new ProductionVariantInstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG68xlarge = new ProductionVariantInstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG6Xlarge = new ProductionVariantInstanceType("ml.g6.xlarge");
+        /// <summary>
         /// Constant MlInf124xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlInf124xlarge = new ProductionVariantInstanceType("ml.inf1.24xlarge");

@@ -135,6 +135,7 @@ namespace Amazon.SageMaker.Model
         private ResourceConfig _resourceConfig;
         private RetryStrategy _retryStrategy;
         private string _roleArn;
+        private SessionChainingConfig _sessionChainingConfig;
         private StoppingCondition _stoppingCondition;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TensorBoardOutputConfig _tensorBoardOutputConfig;
@@ -574,6 +575,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionChainingConfig. 
+        /// <para>
+        /// Contains information about attribute-based access control (ABAC) for the training
+        /// job.
+        /// </para>
+        /// </summary>
+        public SessionChainingConfig SessionChainingConfig
+        {
+            get { return this._sessionChainingConfig; }
+            set { this._sessionChainingConfig = value; }
+        }
+
+        // Check to see if SessionChainingConfig property is set
+        internal bool IsSetSessionChainingConfig()
+        {
+            return this._sessionChainingConfig != null;
         }
 
         /// <summary>

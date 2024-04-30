@@ -279,6 +279,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RoleArn);
                 }
 
+                if(publicRequest.IsSetSessionChainingConfig())
+                {
+                    context.Writer.WritePropertyName("SessionChainingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SessionChainingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SessionChainingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetStoppingCondition())
                 {
                     context.Writer.WritePropertyName("StoppingCondition");
