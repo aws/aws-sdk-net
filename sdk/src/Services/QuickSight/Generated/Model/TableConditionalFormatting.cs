@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// Conditional formatting options for a <c>PivotTableVisual</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Max=500)]
         public List<TableConditionalFormattingOption> ConditionalFormattingOptions
         {
             get { return this._conditionalFormattingOptions; }

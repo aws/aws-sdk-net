@@ -30,29 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The conditional formatting for a <c>PivotTableVisual</c>.
+    /// This is the response object from the UpdateSPICECapacityConfiguration operation.
     /// </summary>
-    public partial class PivotTableConditionalFormatting
+    public partial class UpdateSPICECapacityConfigurationResponse : AmazonWebServiceResponse
     {
-        private List<PivotTableConditionalFormattingOption> _conditionalFormattingOptions = AWSConfigs.InitializeCollections ? new List<PivotTableConditionalFormattingOption>() : null;
+        private string _requestId;
+        private int? _status;
 
         /// <summary>
-        /// Gets and sets the property ConditionalFormattingOptions. 
+        /// Gets and sets the property RequestId. 
         /// <para>
-        /// Conditional formatting options for a <c>PivotTableVisual</c>.
+        /// The Amazon Web Services request ID for this operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=500)]
-        public List<PivotTableConditionalFormattingOption> ConditionalFormattingOptions
+        public string RequestId
         {
-            get { return this._conditionalFormattingOptions; }
-            set { this._conditionalFormattingOptions = value; }
+            get { return this._requestId; }
+            set { this._requestId = value; }
         }
 
-        // Check to see if ConditionalFormattingOptions property is set
-        internal bool IsSetConditionalFormattingOptions()
+        // Check to see if RequestId property is set
+        internal bool IsSetRequestId()
         {
-            return this._conditionalFormattingOptions != null && (this._conditionalFormattingOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._requestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The HTTP status of the request.
+        /// </para>
+        /// </summary>
+        public int Status
+        {
+            get { return this._status.GetValueOrDefault(); }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status.HasValue; 
         }
 
     }

@@ -30,37 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The settings that you want to use with the Q search bar.
+    /// The color configuration of a <c>GaugeChartVisual</c>.
     /// </summary>
-    public partial class AnonymousUserQSearchBarEmbeddingConfiguration
+    public partial class GaugeChartColorConfiguration
     {
-        private string _initialTopicId;
+        private string _backgroundColor;
+        private string _foregroundColor;
 
         /// <summary>
-        /// Gets and sets the property InitialTopicId. 
+        /// Gets and sets the property BackgroundColor. 
         /// <para>
-        /// The Amazon QuickSight Q topic ID of the legacy topic that you want the anonymous user
-        /// to see first. This ID is included in the output URL. When the URL in response is accessed,
-        /// Amazon QuickSight renders the Q search bar with this legacy topic pre-selected.
-        /// </para>
-        ///  
-        /// <para>
-        /// The Amazon Resource Name (ARN) of this Q legacy topic must be included in the <c>AuthorizedResourceArns</c>
-        /// parameter. Otherwise, the request fails with an <c>InvalidParameterValueException</c>
-        /// error.
+        /// The background color configuration of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
-        public string InitialTopicId
+        public string BackgroundColor
         {
-            get { return this._initialTopicId; }
-            set { this._initialTopicId = value; }
+            get { return this._backgroundColor; }
+            set { this._backgroundColor = value; }
         }
 
-        // Check to see if InitialTopicId property is set
-        internal bool IsSetInitialTopicId()
+        // Check to see if BackgroundColor property is set
+        internal bool IsSetBackgroundColor()
         {
-            return this._initialTopicId != null;
+            return this._backgroundColor != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForegroundColor. 
+        /// <para>
+        /// The foreground color configuration of a <c>GaugeChartVisual</c>.
+        /// </para>
+        /// </summary>
+        public string ForegroundColor
+        {
+            get { return this._foregroundColor; }
+            set { this._foregroundColor = value; }
+        }
+
+        // Check to see if ForegroundColor property is set
+        internal bool IsSetForegroundColor()
+        {
+            return this._foregroundColor != null;
         }
 
     }

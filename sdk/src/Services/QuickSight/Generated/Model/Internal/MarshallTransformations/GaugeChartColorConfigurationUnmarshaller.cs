@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TopicSummary Object
+    /// Response Unmarshaller for GaugeChartColorConfiguration Object
     /// </summary>  
-    public class TopicSummaryUnmarshaller : IUnmarshaller<TopicSummary, XmlUnmarshallerContext>, IUnmarshaller<TopicSummary, JsonUnmarshallerContext>
+    public class GaugeChartColorConfigurationUnmarshaller : IUnmarshaller<GaugeChartColorConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GaugeChartColorConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TopicSummary IUnmarshaller<TopicSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GaugeChartColorConfiguration IUnmarshaller<GaugeChartColorConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TopicSummary Unmarshall(JsonUnmarshallerContext context)
+        public GaugeChartColorConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            TopicSummary unmarshalledObject = new TopicSummary();
+            GaugeChartColorConfiguration unmarshalledObject = new GaugeChartColorConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,28 +64,16 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("BackgroundColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackgroundColor = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("ForegroundColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TopicId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TopicId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UserExperienceVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserExperienceVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ForegroundColor = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,12 +81,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static TopicSummaryUnmarshaller _instance = new TopicSummaryUnmarshaller();        
+        private static GaugeChartColorConfigurationUnmarshaller _instance = new GaugeChartColorConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TopicSummaryUnmarshaller Instance
+        public static GaugeChartColorConfigurationUnmarshaller Instance
         {
             get
             {

@@ -30,29 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Information about the Q search bar embedding experience.
+    /// The settings that you want to use for the Generative Q&amp;A experience.
     /// </summary>
-    public partial class RegisteredUserQSearchBarEmbeddingConfiguration
+    public partial class AnonymousUserGenerativeQnAEmbeddingConfiguration
     {
         private string _initialTopicId;
 
         /// <summary>
         /// Gets and sets the property InitialTopicId. 
         /// <para>
-        /// The ID of the legacy Q topic that you want to use as the starting topic in the Q search
-        /// bar. To locate the topic ID of the topic that you want to use, open the <a href="https://quicksight.aws.amazon.com/">Amazon
-        /// QuickSight console</a>, navigate to the <b>Topics</b> pane, and choose thre topic
-        /// that you want to use. The <c>TopicID</c> is located in the URL of the topic that opens.
-        /// When you select an initial topic, you can specify whether or not readers are allowed
-        /// to select other topics from the list of available topics.
+        /// The Amazon QuickSight Q topic ID of the new reader experience topic that you want
+        /// the anonymous user to see first. This ID is included in the output URL. When the URL
+        /// in response is accessed, Amazon QuickSight renders the Generative Q&amp;A experience
+        /// with this new reader experience topic pre selected.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify an initial topic or if you specify a new reader experience topic,
-        /// a list of all shared legacy topics is shown in the Q bar. 
+        /// The Amazon Resource Name (ARN) of this Q new reader experience topic must be included
+        /// in the <c>AuthorizedResourceArns</c> parameter. Otherwise, the request fails with
+        /// an <c>InvalidParameterValueException</c> error.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string InitialTopicId
         {
             get { return this._initialTopicId; }
