@@ -100,6 +100,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventDestinations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProtectConfigurationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProtectConfigurationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

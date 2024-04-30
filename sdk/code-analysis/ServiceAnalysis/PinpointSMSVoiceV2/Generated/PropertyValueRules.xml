@@ -31,6 +31,36 @@
     <pattern>[A-Z]{2}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.AssociateProtectConfigurationRequest.ConfigurationSetName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.AssociateProtectConfigurationRequest.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.AssociateProtectConfigurationResponse.ConfigurationSetName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.AssociateProtectConfigurationResponse.ProtectConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.AssociateProtectConfigurationResponse.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.CreateConfigurationSetRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -125,6 +155,24 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateProtectConfigurationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateProtectConfigurationResponse.ProtectConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateProtectConfigurationResponse.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationRequest.ClientToken</property>
@@ -226,6 +274,18 @@
     <pattern>\+?[1-9][0-9]{1,18}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteAccountDefaultProtectConfigurationResponse.DefaultProtectConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteAccountDefaultProtectConfigurationResponse.DefaultProtectConfigurationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.DeleteConfigurationSetRequest.ConfigurationSetName</property>
     <min>1</min>
     <max>256</max>
@@ -316,6 +376,11 @@
     <pattern>(?!\s*$)[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteMediaMessageSpendLimitOverrideResponse.MonthlyLimit</property>
+    <min>0</min>
+    <max>1000000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.DeleteOptedOutNumberRequest.OptedOutNumber</property>
     <min>1</min>
     <max>20</max>
@@ -374,6 +439,24 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteProtectConfigurationRequest.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteProtectConfigurationResponse.ProtectConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteProtectConfigurationResponse.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationRequest.RegistrationId</property>
@@ -608,6 +691,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.DescribePoolsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeProtectConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeProtectConfigurationsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DescribeProtectConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
     <pattern>.+</pattern>
@@ -871,6 +971,36 @@
     <pattern>[A-Z]{2}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DisassociateProtectConfigurationRequest.ConfigurationSetName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DisassociateProtectConfigurationRequest.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DisassociateProtectConfigurationResponse.ConfigurationSetName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DisassociateProtectConfigurationResponse.ProtectConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DisassociateProtectConfigurationResponse.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.DiscardRegistrationVersionRequest.RegistrationId</property>
     <min>1</min>
     <max>256</max>
@@ -880,6 +1010,24 @@
     <property>Amazon.PinpointSMSVoiceV2.Model.DiscardRegistrationVersionResponse.VersionNumber</property>
     <min>1</min>
     <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.GetProtectConfigurationCountryRuleSetRequest.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.GetProtectConfigurationCountryRuleSetResponse.ProtectConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.GetProtectConfigurationCountryRuleSetResponse.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.ListPoolOriginationIdentitiesRequest.MaxResults</property>
@@ -1207,6 +1355,47 @@
     <pattern>[A-Za-z0-9_:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendMediaMessageRequest.ConfigurationSetName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendMediaMessageRequest.DestinationPhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+?[1-9][0-9]{1,18}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendMediaMessageRequest.MaxPrice</property>
+    <min>2</min>
+    <max>8</max>
+    <pattern>[0-9]{0,2}\.[0-9]{1,5}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendMediaMessageRequest.MessageBody</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>(?!\s*$)[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendMediaMessageRequest.OriginationIdentity</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/\+-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendMediaMessageRequest.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendMediaMessageRequest.TimeToLive</property>
+    <min>5</min>
+    <max>259200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.SendTextMessageRequest.ConfigurationSetName</property>
     <min>1</min>
     <max>256</max>
@@ -1241,6 +1430,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>[A-Za-z0-9_:/\+-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendTextMessageRequest.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.SendTextMessageRequest.TimeToLive</property>
@@ -1278,9 +1473,33 @@
     <pattern>[A-Za-z0-9_:/\+-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendVoiceMessageRequest.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.SendVoiceMessageRequest.TimeToLive</property>
     <min>5</min>
     <max>259200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SetAccountDefaultProtectConfigurationRequest.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SetAccountDefaultProtectConfigurationResponse.DefaultProtectConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SetAccountDefaultProtectConfigurationResponse.DefaultProtectConfigurationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.SetDefaultMessageTypeRequest.ConfigurationSetName</property>
@@ -1317,6 +1536,16 @@
     <min>1</min>
     <max>11</max>
     <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SetMediaMessageSpendLimitOverrideRequest.MonthlyLimit</property>
+    <min>0</min>
+    <max>1000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SetMediaMessageSpendLimitOverrideResponse.MonthlyLimit</property>
+    <min>0</min>
+    <max>1000000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.SetTextMessageSpendLimitOverrideRequest.MonthlyLimit</property>
@@ -1476,6 +1705,42 @@
     <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateProtectConfigurationRequest.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateProtectConfigurationResponse.ProtectConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateProtectConfigurationResponse.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateProtectConfigurationCountryRuleSetRequest.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateProtectConfigurationCountryRuleSetResponse.ProtectConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateProtectConfigurationCountryRuleSetResponse.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.UpdateSenderIdRequest.IsoCountryCode</property>
     <min>2</min>
     <max>2</max>
@@ -1540,6 +1805,12 @@
     <min>1</min>
     <max>11</max>
     <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ConfigurationSetInformation.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.EventDestination.EventDestinationName</property>
@@ -1642,6 +1913,18 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ProtectConfigurationInformation.ProtectConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ProtectConfigurationInformation.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationAssociationMetadata.IsoCountryCode</property>

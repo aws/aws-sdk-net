@@ -35,7 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     ///  
     /// <para>
     /// Event destinations are associated with configuration sets, which enable you to publish
-    /// message sending events to CloudWatch, Kinesis Data Firehose,or Amazon SNS.
+    /// message sending events to CloudWatch, Kinesis Data Firehose, or Amazon SNS.
     /// </para>
     /// </summary>
     public partial class EventDestination
@@ -134,7 +134,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Required=true, Min=1, Max=43)]
         public List<string> MatchingEventTypes
         {
             get { return this._matchingEventTypes; }

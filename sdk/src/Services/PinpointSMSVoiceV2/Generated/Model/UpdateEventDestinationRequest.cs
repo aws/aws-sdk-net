@@ -158,7 +158,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=43)]
         public List<string> MatchingEventTypes
         {
             get { return this._matchingEventTypes; }

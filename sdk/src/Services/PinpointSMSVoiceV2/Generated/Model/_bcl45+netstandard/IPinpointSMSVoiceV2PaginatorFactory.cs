@@ -67,6 +67,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         IDescribePoolsPaginator DescribePools(DescribePoolsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeProtectConfigurations operation
+        ///</summary>
+        IDescribeProtectConfigurationsPaginator DescribeProtectConfigurations(DescribeProtectConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeRegistrationAttachments operation
         ///</summary>
         IDescribeRegistrationAttachmentsPaginator DescribeRegistrationAttachments(DescribeRegistrationAttachmentsRequest request);

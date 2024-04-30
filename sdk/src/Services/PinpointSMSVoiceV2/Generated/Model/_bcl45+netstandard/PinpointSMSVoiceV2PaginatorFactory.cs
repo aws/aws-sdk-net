@@ -101,6 +101,14 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeProtectConfigurations operation
+        ///</summary>
+        public IDescribeProtectConfigurationsPaginator DescribeProtectConfigurations(DescribeProtectConfigurationsRequest request) 
+        {
+            return new DescribeProtectConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeRegistrationAttachments operation
         ///</summary>
         public IDescribeRegistrationAttachmentsPaginator DescribeRegistrationAttachments(DescribeRegistrationAttachmentsRequest request) 
