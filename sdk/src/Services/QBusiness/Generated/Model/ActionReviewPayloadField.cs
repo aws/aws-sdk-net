@@ -34,12 +34,35 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ActionReviewPayloadField
     {
+        private string _allowedFormat;
         private List<ActionReviewPayloadFieldAllowedValue> _allowedValues = AWSConfigs.InitializeCollections ? new List<ActionReviewPayloadFieldAllowedValue>() : null;
+        private string _displayDescription;
         private string _displayName;
         private int? _displayOrder;
         private bool? _required;
         private ActionPayloadFieldType _type;
         private Amazon.Runtime.Documents.Document _value;
+
+        /// <summary>
+        /// Gets and sets the property AllowedFormat. 
+        /// <para>
+        /// The expected data format for the action review input field value. For example, in
+        /// PTO request, <c>from</c> and <c>to</c> would be of <c>datetime</c> allowed format.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string AllowedFormat
+        {
+            get { return this._allowedFormat; }
+            set { this._allowedFormat = value; }
+        }
+
+        // Check to see if AllowedFormat property is set
+        internal bool IsSetAllowedFormat()
+        {
+            return this._allowedFormat != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AllowedValues. 
@@ -58,6 +81,27 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetAllowedValues()
         {
             return this._allowedValues != null && (this._allowedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayDescription. 
+        /// <para>
+        /// The field level description of each action review input field. This could be an explanation
+        /// of the field. In the Amazon Q Business web experience, these descriptions could be
+        /// used to display as tool tips to help users understand the field. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string DisplayDescription
+        {
+            get { return this._displayDescription; }
+            set { this._displayDescription = value; }
+        }
+
+        // Check to see if DisplayDescription property is set
+        internal bool IsSetDisplayDescription()
+        {
+            return this._displayDescription != null;
         }
 
         /// <summary>

@@ -32,6 +32,16 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
     /// Creates an Amazon Q Business application.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro
+    /// are also available in Amazon Q Business Lite. For information on what's included in
+    /// Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+    /// Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription
+    /// tiers to users.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateApplicationRequest : AmazonQBusinessRequest
     {
@@ -166,7 +176,7 @@ namespace Amazon.QBusiness.Model
         /// CloudWatch logs and metrics.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1284)]
+        [AWSProperty(Min=0, Max=1284)]
         public string RoleArn
         {
             get { return this._roleArn; }

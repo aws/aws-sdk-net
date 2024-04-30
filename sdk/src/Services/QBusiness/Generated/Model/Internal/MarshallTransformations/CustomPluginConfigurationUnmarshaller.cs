@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Plugin Object
+    /// Response Unmarshaller for CustomPluginConfiguration Object
     /// </summary>  
-    public class PluginUnmarshaller : IUnmarshaller<Plugin, XmlUnmarshallerContext>, IUnmarshaller<Plugin, JsonUnmarshallerContext>
+    public class CustomPluginConfigurationUnmarshaller : IUnmarshaller<CustomPluginConfiguration, XmlUnmarshallerContext>, IUnmarshaller<CustomPluginConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Plugin IUnmarshaller<Plugin, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CustomPluginConfiguration IUnmarshaller<CustomPluginConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Plugin Unmarshall(JsonUnmarshallerContext context)
+        public CustomPluginConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            Plugin unmarshalledObject = new Plugin();
+            CustomPluginConfiguration unmarshalledObject = new CustomPluginConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,52 +64,22 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("buildStatus", targetDepth))
+                if (context.TestExpression("apiSchema", targetDepth))
+                {
+                    var unmarshaller = APISchemaUnmarshaller.Instance;
+                    unmarshalledObject.ApiSchema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("apiSchemaType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BuildStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApiSchemaType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("displayName", targetDepth))
+                if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pluginId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PluginId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("serverUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServerUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("state", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -117,12 +87,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         }
 
 
-        private static PluginUnmarshaller _instance = new PluginUnmarshaller();        
+        private static CustomPluginConfigurationUnmarshaller _instance = new CustomPluginConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PluginUnmarshaller Instance
+        public static CustomPluginConfigurationUnmarshaller Instance
         {
             get
             {

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PluginAuthConfiguration Object
+    /// Response Unmarshaller for SnippetExcerpt Object
     /// </summary>  
-    public class PluginAuthConfigurationUnmarshaller : IUnmarshaller<PluginAuthConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PluginAuthConfiguration, JsonUnmarshallerContext>
+    public class SnippetExcerptUnmarshaller : IUnmarshaller<SnippetExcerpt, XmlUnmarshallerContext>, IUnmarshaller<SnippetExcerpt, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PluginAuthConfiguration IUnmarshaller<PluginAuthConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SnippetExcerpt IUnmarshaller<SnippetExcerpt, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PluginAuthConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public SnippetExcerpt Unmarshall(JsonUnmarshallerContext context)
         {
-            PluginAuthConfiguration unmarshalledObject = new PluginAuthConfiguration();
+            SnippetExcerpt unmarshalledObject = new SnippetExcerpt();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,22 +64,10 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("basicAuthConfiguration", targetDepth))
+                if (context.TestExpression("text", targetDepth))
                 {
-                    var unmarshaller = BasicAuthConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.BasicAuthConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("noAuthConfiguration", targetDepth))
-                {
-                    var unmarshaller = NoAuthConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NoAuthConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("oAuth2ClientCredentialConfiguration", targetDepth))
-                {
-                    var unmarshaller = OAuth2ClientCredentialConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OAuth2ClientCredentialConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,12 +75,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         }
 
 
-        private static PluginAuthConfigurationUnmarshaller _instance = new PluginAuthConfigurationUnmarshaller();        
+        private static SnippetExcerptUnmarshaller _instance = new SnippetExcerptUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PluginAuthConfigurationUnmarshaller Instance
+        public static SnippetExcerptUnmarshaller Instance
         {
             get
             {

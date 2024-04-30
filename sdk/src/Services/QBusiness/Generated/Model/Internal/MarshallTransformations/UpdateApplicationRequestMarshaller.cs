@@ -93,6 +93,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DisplayName);
                 }
 
+                if(publicRequest.IsSetIdentityCenterInstanceArn())
+                {
+                    context.Writer.WritePropertyName("identityCenterInstanceArn");
+                    context.Writer.Write(publicRequest.IdentityCenterInstanceArn);
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");

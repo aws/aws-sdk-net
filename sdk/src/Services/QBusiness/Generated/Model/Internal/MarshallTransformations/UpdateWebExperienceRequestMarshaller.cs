@@ -84,6 +84,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("roleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
+                }
+
                 if(publicRequest.IsSetSamplePromptsControlMode())
                 {
                     context.Writer.WritePropertyName("samplePromptsControlMode");

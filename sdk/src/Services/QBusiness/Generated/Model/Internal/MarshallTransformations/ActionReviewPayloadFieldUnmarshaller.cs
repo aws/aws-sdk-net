@@ -64,10 +64,22 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("allowedFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AllowedFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("allowedValues", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ActionReviewPayloadFieldAllowedValue, ActionReviewPayloadFieldAllowedValueUnmarshaller>(ActionReviewPayloadFieldAllowedValueUnmarshaller.Instance);
                     unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("displayDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisplayDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("displayName", targetDepth))

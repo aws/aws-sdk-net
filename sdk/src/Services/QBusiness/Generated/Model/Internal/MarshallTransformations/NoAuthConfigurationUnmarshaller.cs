@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PluginAuthConfiguration Object
+    /// Response Unmarshaller for NoAuthConfiguration Object
     /// </summary>  
-    public class PluginAuthConfigurationUnmarshaller : IUnmarshaller<PluginAuthConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PluginAuthConfiguration, JsonUnmarshallerContext>
+    public class NoAuthConfigurationUnmarshaller : IUnmarshaller<NoAuthConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NoAuthConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PluginAuthConfiguration IUnmarshaller<PluginAuthConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NoAuthConfiguration IUnmarshaller<NoAuthConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PluginAuthConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public NoAuthConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            PluginAuthConfiguration unmarshalledObject = new PluginAuthConfiguration();
+            NoAuthConfiguration unmarshalledObject = new NoAuthConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,35 +64,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("basicAuthConfiguration", targetDepth))
-                {
-                    var unmarshaller = BasicAuthConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.BasicAuthConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("noAuthConfiguration", targetDepth))
-                {
-                    var unmarshaller = NoAuthConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NoAuthConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("oAuth2ClientCredentialConfiguration", targetDepth))
-                {
-                    var unmarshaller = OAuth2ClientCredentialConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OAuth2ClientCredentialConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static PluginAuthConfigurationUnmarshaller _instance = new PluginAuthConfigurationUnmarshaller();        
+        private static NoAuthConfigurationUnmarshaller _instance = new NoAuthConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PluginAuthConfigurationUnmarshaller Instance
+        public static NoAuthConfigurationUnmarshaller Instance
         {
             get
             {

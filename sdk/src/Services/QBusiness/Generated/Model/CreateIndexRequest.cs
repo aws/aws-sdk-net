@@ -54,6 +54,7 @@ namespace Amazon.QBusiness.Model
         private string _description;
         private string _displayName;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private IndexType _type;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -170,6 +171,26 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The index type that's suitable for your needs. For more information on what's included
+        /// in each type of index or index tier, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+        /// Q Business tiers</a>.
+        /// </para>
+        /// </summary>
+        public IndexType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PluginAuthConfiguration Object
+    /// Response Unmarshaller for AuthChallengeRequest Object
     /// </summary>  
-    public class PluginAuthConfigurationUnmarshaller : IUnmarshaller<PluginAuthConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PluginAuthConfiguration, JsonUnmarshallerContext>
+    public class AuthChallengeRequestUnmarshaller : IUnmarshaller<AuthChallengeRequest, XmlUnmarshallerContext>, IUnmarshaller<AuthChallengeRequest, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PluginAuthConfiguration IUnmarshaller<PluginAuthConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AuthChallengeRequest IUnmarshaller<AuthChallengeRequest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PluginAuthConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AuthChallengeRequest Unmarshall(JsonUnmarshallerContext context)
         {
-            PluginAuthConfiguration unmarshalledObject = new PluginAuthConfiguration();
+            AuthChallengeRequest unmarshalledObject = new AuthChallengeRequest();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,22 +64,10 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("basicAuthConfiguration", targetDepth))
+                if (context.TestExpression("authorizationUrl", targetDepth))
                 {
-                    var unmarshaller = BasicAuthConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.BasicAuthConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("noAuthConfiguration", targetDepth))
-                {
-                    var unmarshaller = NoAuthConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NoAuthConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("oAuth2ClientCredentialConfiguration", targetDepth))
-                {
-                    var unmarshaller = OAuth2ClientCredentialConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OAuth2ClientCredentialConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuthorizationUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,12 +75,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         }
 
 
-        private static PluginAuthConfigurationUnmarshaller _instance = new PluginAuthConfigurationUnmarshaller();        
+        private static AuthChallengeRequestUnmarshaller _instance = new AuthChallengeRequestUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PluginAuthConfigurationUnmarshaller Instance
+        public static AuthChallengeRequestUnmarshaller Instance
         {
             get
             {

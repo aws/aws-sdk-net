@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PluginAuthConfiguration Object
+    /// Response Unmarshaller for APISchema Object
     /// </summary>  
-    public class PluginAuthConfigurationUnmarshaller : IUnmarshaller<PluginAuthConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PluginAuthConfiguration, JsonUnmarshallerContext>
+    public class APISchemaUnmarshaller : IUnmarshaller<APISchema, XmlUnmarshallerContext>, IUnmarshaller<APISchema, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PluginAuthConfiguration IUnmarshaller<PluginAuthConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        APISchema IUnmarshaller<APISchema, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PluginAuthConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public APISchema Unmarshall(JsonUnmarshallerContext context)
         {
-            PluginAuthConfiguration unmarshalledObject = new PluginAuthConfiguration();
+            APISchema unmarshalledObject = new APISchema();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,22 +64,16 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("basicAuthConfiguration", targetDepth))
+                if (context.TestExpression("payload", targetDepth))
                 {
-                    var unmarshaller = BasicAuthConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.BasicAuthConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Payload = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("noAuthConfiguration", targetDepth))
+                if (context.TestExpression("s3", targetDepth))
                 {
-                    var unmarshaller = NoAuthConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NoAuthConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("oAuth2ClientCredentialConfiguration", targetDepth))
-                {
-                    var unmarshaller = OAuth2ClientCredentialConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OAuth2ClientCredentialConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = S3Unmarshaller.Instance;
+                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,12 +81,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         }
 
 
-        private static PluginAuthConfigurationUnmarshaller _instance = new PluginAuthConfigurationUnmarshaller();        
+        private static APISchemaUnmarshaller _instance = new APISchemaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PluginAuthConfigurationUnmarshaller Instance
+        public static APISchemaUnmarshaller Instance
         {
             get
             {

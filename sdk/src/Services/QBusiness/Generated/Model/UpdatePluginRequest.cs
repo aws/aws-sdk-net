@@ -37,6 +37,7 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private PluginAuthConfiguration _authConfiguration;
+        private CustomPluginConfiguration _customPluginConfiguration;
         private string _displayName;
         private string _pluginId;
         private string _serverUrl;
@@ -77,6 +78,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetAuthConfiguration()
         {
             return this._authConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomPluginConfiguration. 
+        /// <para>
+        /// The configuration for a custom plugin.
+        /// </para>
+        /// </summary>
+        public CustomPluginConfiguration CustomPluginConfiguration
+        {
+            get { return this._customPluginConfiguration; }
+            set { this._customPluginConfiguration = value; }
+        }
+
+        // Check to see if CustomPluginConfiguration property is set
+        internal bool IsSetCustomPluginConfiguration()
+        {
+            return this._customPluginConfiguration != null;
         }
 
         /// <summary>

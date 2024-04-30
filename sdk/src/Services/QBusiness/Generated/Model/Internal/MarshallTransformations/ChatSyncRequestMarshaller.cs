@@ -115,6 +115,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAuthChallengeResponse())
+                {
+                    context.Writer.WritePropertyName("authChallengeResponse");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AuthChallengeResponseMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AuthChallengeResponse, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetChatMode())
                 {
                     context.Writer.WritePropertyName("chatMode");

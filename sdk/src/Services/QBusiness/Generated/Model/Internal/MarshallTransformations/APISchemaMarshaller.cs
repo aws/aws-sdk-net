@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PluginAuthConfiguration Marshaller
+    /// APISchema Marshaller
     /// </summary>
-    public class PluginAuthConfigurationMarshaller : IRequestMarshaller<PluginAuthConfiguration, JsonMarshallerContext> 
+    public class APISchemaMarshaller : IRequestMarshaller<APISchema, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,39 +44,23 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PluginAuthConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(APISchema requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBasicAuthConfiguration())
+            if(requestObject.IsSetPayload())
             {
-                context.Writer.WritePropertyName("basicAuthConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = BasicAuthConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.BasicAuthConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("payload");
+                context.Writer.Write(requestObject.Payload);
             }
 
-            if(requestObject.IsSetNoAuthConfiguration())
+            if(requestObject.IsSetS3())
             {
-                context.Writer.WritePropertyName("noAuthConfiguration");
+                context.Writer.WritePropertyName("s3");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = NoAuthConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.NoAuthConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetOAuth2ClientCredentialConfiguration())
-            {
-                context.Writer.WritePropertyName("oAuth2ClientCredentialConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OAuth2ClientCredentialConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.OAuth2ClientCredentialConfiguration, context);
+                var marshaller = S3Marshaller.Instance;
+                marshaller.Marshall(requestObject.S3, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -86,7 +70,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PluginAuthConfigurationMarshaller Instance = new PluginAuthConfigurationMarshaller();
+        public readonly static APISchemaMarshaller Instance = new APISchemaMarshaller();
 
     }
 }

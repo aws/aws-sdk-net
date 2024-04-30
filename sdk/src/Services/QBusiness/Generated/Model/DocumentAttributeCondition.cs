@@ -97,8 +97,8 @@ namespace Amazon.QBusiness.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon Kendra currently does not support <c>_document_body</c> as an attribute key
-        /// used for the condition.
+        /// Amazon Q Business currently does not support <c>_document_body</c> as an attribute
+        /// key used for the condition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

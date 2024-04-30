@@ -45,6 +45,7 @@ namespace Amazon.QBusiness.Model
         private string _indexId;
         private IndexStatistics _indexStatistics;
         private IndexStatus _status;
+        private IndexType _type;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -255,6 +256,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of index attached to your Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        public IndexType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>
