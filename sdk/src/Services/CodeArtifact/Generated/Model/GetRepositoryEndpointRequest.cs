@@ -56,6 +56,10 @@ namespace Amazon.CodeArtifact.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <c>ruby</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>swift</c> 
     /// </para>
     ///  </li> </ul>

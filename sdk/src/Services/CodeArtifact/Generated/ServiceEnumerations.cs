@@ -305,6 +305,10 @@ namespace Amazon.CodeArtifact
         /// </summary>
         public static readonly PackageFormat Pypi = new PackageFormat("pypi");
         /// <summary>
+        /// Constant Ruby for PackageFormat
+        /// </summary>
+        public static readonly PackageFormat Ruby = new PackageFormat("ruby");
+        /// <summary>
         /// Constant Swift for PackageFormat
         /// </summary>
         public static readonly PackageFormat Swift = new PackageFormat("swift");
