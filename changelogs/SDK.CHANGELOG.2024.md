@@ -1,3 +1,27 @@
+### 3.7.800.0 (2024-04-30 18:25 UTC)
+* ChimeSDKVoice (3.7.301.0)
+	* Due to changes made by the Amazon Alexa service, GetSipMediaApplicationAlexaSkillConfiguration and PutSipMediaApplicationAlexaSkillConfiguration APIs are no longer available for use. For more information, refer to the Alexa Smart Properties page.
+* CodeArtifact (3.7.302.0)
+	* Add support for the Ruby package format.
+* FMS (3.7.302.0)
+	* AWS Firewall Manager now supports the network firewall service stream exception policy feature for accounts within your organization.
+* Omics (3.7.302.0)
+	* Add support for workflow sharing and dynamic run storage
+* OpenSearchService (3.7.306.0)
+	* This release enables customers to create Route53 A and AAAA alias record types to point custom endpoint domain to OpenSearch domain's dualstack search endpoint.
+* PinpointSMSVoiceV2 (3.7.302.0)
+	* Amazon Pinpoint has added two new features Multimedia services (MMS) and protect configurations. Use the three new MMS APIs to send media messages to a mobile phone which includes image, audio, text, or video files. Use the ten new protect configurations APIs to block messages to specific countries.
+* QBusiness (3.7.303.0)
+	* This is a general availability (GA) release of Amazon Q Business. Q Business enables employees in an enterprise to get comprehensive answers to complex questions and take actions through a unified, intuitive web-based chat experience - using an enterprise's existing content, data, and systems.
+* QuickSight (3.7.310.0)
+	* New Q embedding supporting Generative Q&A
+* Route53Resolver (3.7.303.0)
+	* Release of FirewallDomainRedirectionAction parameter on the Route 53 DNS Firewall Rule.  This allows customers to configure a DNS Firewall rule to inspect all the domains in the DNS redirection chain (default) , such as CNAME, ALIAS, DNAME, etc., or just the first domain and trust the rest.
+* SageMaker (3.7.320.0)
+	* Amazon SageMaker Training now supports the use of attribute-based access control (ABAC) roles for training job execution roles. Amazon SageMaker Inference now supports G6 instance types.
+* Signer (3.7.300.85)
+	* Documentation updates for AWS Signer. Adds cross-account signing constraint and definitions for cross-account actions.
+
 ### 3.7.799.0 (2024-04-29 18:21 UTC)
 * Amplify (3.7.302.0)
 	* Updating max results limit for listing any resources (Job, Artifacts, Branch, BackendResources, DomainAssociation) to 50 with the exception of list apps that where max results can be up to 100.
