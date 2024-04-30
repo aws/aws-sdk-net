@@ -51,7 +51,11 @@ namespace Amazon.FMS.Model
         /// Provide these in the order in which you want them to run. Firewall Manager will assign
         /// the specific rule numbers for you, in the network ACLs that it creates. 
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// You must specify at least one first entry or one last entry in any network ACL policy.
+        /// 
+        /// </para>
         /// </summary>
         public List<NetworkAclEntry> FirstEntries
         {
@@ -132,7 +136,11 @@ namespace Amazon.FMS.Model
         /// Provide these in the order in which you want them to run. Firewall Manager will assign
         /// the specific rule numbers for you, in the network ACLs that it creates. 
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// You must specify at least one first entry or one last entry in any network ACL policy.
+        /// 
+        /// </para>
         /// </summary>
         public List<NetworkAclEntry> LastEntries
         {
