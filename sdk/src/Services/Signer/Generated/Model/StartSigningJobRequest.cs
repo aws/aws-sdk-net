@@ -56,6 +56,11 @@ namespace Amazon.Signer.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// You must ensure the S3 buckets are from the same Region as the signing profile. Cross-Region
+    /// signing isn't supported.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// You must also specify a request token that identifies your request to Signer.
     /// </para>
     ///  </li> </ul> 
