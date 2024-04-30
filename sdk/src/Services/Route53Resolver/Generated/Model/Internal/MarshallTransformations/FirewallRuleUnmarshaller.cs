@@ -112,6 +112,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirewallDomainListId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FirewallDomainRedirectionAction", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FirewallDomainRedirectionAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FirewallRuleGroupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

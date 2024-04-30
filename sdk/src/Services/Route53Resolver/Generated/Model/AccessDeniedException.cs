@@ -32,6 +32,12 @@ namespace Amazon.Route53Resolver.Model
     /// <summary>
     /// The current account doesn't have the IAM permissions required to perform the specified
     /// Resolver operation.
+    /// 
+    ///  
+    /// <para>
+    /// This error can also be thrown when a customer has reached the 5120 character limit
+    /// for a resource policy for CloudWatch Logs.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

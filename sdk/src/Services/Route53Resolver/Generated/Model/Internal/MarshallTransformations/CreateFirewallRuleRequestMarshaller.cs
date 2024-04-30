@@ -116,6 +116,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FirewallDomainListId);
                 }
 
+                if(publicRequest.IsSetFirewallDomainRedirectionAction())
+                {
+                    context.Writer.WritePropertyName("FirewallDomainRedirectionAction");
+                    context.Writer.Write(publicRequest.FirewallDomainRedirectionAction);
+                }
+
                 if(publicRequest.IsSetFirewallRuleGroupId())
                 {
                     context.Writer.WritePropertyName("FirewallRuleGroupId");
