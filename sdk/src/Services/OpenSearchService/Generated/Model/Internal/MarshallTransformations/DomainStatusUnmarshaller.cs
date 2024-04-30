@@ -130,6 +130,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainEndpointOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DomainEndpointV2HostedZoneId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DomainEndpointV2HostedZoneId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DomainId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
