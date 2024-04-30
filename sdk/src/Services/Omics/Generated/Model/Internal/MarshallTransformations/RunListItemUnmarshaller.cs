@@ -118,6 +118,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.StorageCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("storageType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("workflowId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

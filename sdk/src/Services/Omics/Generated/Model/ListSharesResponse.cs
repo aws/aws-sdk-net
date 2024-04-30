@@ -59,7 +59,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Shares. 
         /// <para>
-        ///  The shares available and their meta details. 
+        /// The shares available and their metadata details.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

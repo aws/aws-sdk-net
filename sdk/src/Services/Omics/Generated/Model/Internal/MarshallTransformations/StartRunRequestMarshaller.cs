@@ -138,6 +138,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StorageCapacity);
                 }
 
+                if(publicRequest.IsSetStorageType())
+                {
+                    context.Writer.WritePropertyName("storageType");
+                    context.Writer.Write(publicRequest.StorageType);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -156,6 +162,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("workflowId");
                     context.Writer.Write(publicRequest.WorkflowId);
+                }
+
+                if(publicRequest.IsSetWorkflowOwnerId())
+                {
+                    context.Writer.WritePropertyName("workflowOwnerId");
+                    context.Writer.Write(publicRequest.WorkflowOwnerId);
                 }
 
                 if(publicRequest.IsSetWorkflowType())

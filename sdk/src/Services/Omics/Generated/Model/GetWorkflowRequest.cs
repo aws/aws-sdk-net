@@ -32,12 +32,18 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Container for the parameters to the GetWorkflow operation.
     /// Gets information about a workflow.
+    /// 
+    ///  
+    /// <para>
+    /// If a workflow is shared with you, you cannot export the workflow.
+    /// </para>
     /// </summary>
     public partial class GetWorkflowRequest : AmazonOmicsRequest
     {
         private List<string> _export = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private WorkflowType _type;
+        private string _workflowOwnerId;
 
         /// <summary>
         /// Gets and sets the property Export. 
@@ -94,6 +100,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowOwnerId. 
+        /// <para>
+        /// The ID of the workflow owner.
+        /// </para>
+        /// </summary>
+        public string WorkflowOwnerId
+        {
+            get { return this._workflowOwnerId; }
+            set { this._workflowOwnerId = value; }
+        }
+
+        // Check to see if WorkflowOwnerId property is set
+        internal bool IsSetWorkflowOwnerId()
+        {
+            return this._workflowOwnerId != null;
         }
 
     }

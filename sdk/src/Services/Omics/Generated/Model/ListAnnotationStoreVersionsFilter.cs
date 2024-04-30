@@ -40,7 +40,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of an annotation store version. 
+        /// The status of an annotation store version.
         /// </para>
         /// </summary>
         public VersionStatus Status

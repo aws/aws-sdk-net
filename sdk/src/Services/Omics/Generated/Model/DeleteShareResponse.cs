@@ -39,7 +39,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the share being deleted. 
+        /// The status of the share being deleted.
         /// </para>
         /// </summary>
         public ShareStatus Status

@@ -88,6 +88,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resourceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("shareId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

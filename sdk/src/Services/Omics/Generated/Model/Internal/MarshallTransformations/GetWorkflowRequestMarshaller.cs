@@ -68,6 +68,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
+            
+            if (publicRequest.IsSetWorkflowOwnerId())
+                request.Parameters.Add("workflowOwnerId", StringUtils.FromString(publicRequest.WorkflowOwnerId));
             request.ResourcePath = "/workflow/{id}";
             request.UseQueryString = true;
             

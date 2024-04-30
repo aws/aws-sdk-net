@@ -202,6 +202,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.StorageCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("storageType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StorageType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
@@ -218,6 +224,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WorkflowId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowOwnerId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkflowOwnerId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("workflowType", targetDepth))

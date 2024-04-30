@@ -39,7 +39,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of an analytics store share. 
+        /// The status of the resource share.
         /// </para>
         /// </summary>
         public ShareStatus Status

@@ -40,7 +40,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The workflows' items.
+        /// A list of workflow items.
         /// </para>
         /// </summary>
         public List<WorkflowListItem> Items
