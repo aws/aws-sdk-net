@@ -546,7 +546,15 @@ namespace Amazon.ChimeSDKVoice
 
 
         /// <summary>
-        /// Updates one or more phone numbers.
+        /// Updates phone number product types, calling names, or phone number names. You can
+        /// update one attribute at a time for each <c>UpdatePhoneNumberRequestItem</c>. For example,
+        /// you can update the product type, the calling name, or phone name. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot have a duplicate <c>phoneNumberId</c> in a request.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdatePhoneNumber service method.</param>
         /// 
@@ -584,7 +592,15 @@ namespace Amazon.ChimeSDKVoice
 
 
         /// <summary>
-        /// Updates one or more phone numbers.
+        /// Updates phone number product types, calling names, or phone number names. You can
+        /// update one attribute at a time for each <c>UpdatePhoneNumberRequestItem</c>. For example,
+        /// you can update the product type, the calling name, or phone name. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot have a duplicate <c>phoneNumberId</c> in a request.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdatePhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -3487,6 +3503,14 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Gets the Alexa Skill configuration for the SIP media application.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Due to changes made by the Amazon Alexa service, this API is no longer available for
+        /// use. For more information, refer to the <a href="https://developer.amazon.com/en-US/alexa/alexasmartproperties">Alexa
+        /// Smart Properties</a> page.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSipMediaApplicationAlexaSkillConfiguration service method.</param>
         /// 
@@ -3513,6 +3537,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationAlexaSkillConfiguration">REST API Reference for GetSipMediaApplicationAlexaSkillConfiguration Operation</seealso>
+        [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual GetSipMediaApplicationAlexaSkillConfigurationResponse GetSipMediaApplicationAlexaSkillConfiguration(GetSipMediaApplicationAlexaSkillConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -3525,6 +3550,14 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Gets the Alexa Skill configuration for the SIP media application.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Due to changes made by the Amazon Alexa service, this API is no longer available for
+        /// use. For more information, refer to the <a href="https://developer.amazon.com/en-US/alexa/alexasmartproperties">Alexa
+        /// Smart Properties</a> page.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSipMediaApplicationAlexaSkillConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -3554,6 +3587,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationAlexaSkillConfiguration">REST API Reference for GetSipMediaApplicationAlexaSkillConfiguration Operation</seealso>
+        [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual Task<GetSipMediaApplicationAlexaSkillConfigurationResponse> GetSipMediaApplicationAlexaSkillConfigurationAsync(GetSipMediaApplicationAlexaSkillConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -5908,6 +5942,14 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Updates the Alexa Skill configuration for the SIP media application.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Due to changes made by the Amazon Alexa service, this API is no longer available for
+        /// use. For more information, refer to the <a href="https://developer.amazon.com/en-US/alexa/alexasmartproperties">Alexa
+        /// Smart Properties</a> page.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSipMediaApplicationAlexaSkillConfiguration service method.</param>
         /// 
@@ -5934,6 +5976,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationAlexaSkillConfiguration">REST API Reference for PutSipMediaApplicationAlexaSkillConfiguration Operation</seealso>
+        [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual PutSipMediaApplicationAlexaSkillConfigurationResponse PutSipMediaApplicationAlexaSkillConfiguration(PutSipMediaApplicationAlexaSkillConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -5946,6 +5989,14 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Updates the Alexa Skill configuration for the SIP media application.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Due to changes made by the Amazon Alexa service, this API is no longer available for
+        /// use. For more information, refer to the <a href="https://developer.amazon.com/en-US/alexa/alexasmartproperties">Alexa
+        /// Smart Properties</a> page.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSipMediaApplicationAlexaSkillConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -5975,6 +6026,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationAlexaSkillConfiguration">REST API Reference for PutSipMediaApplicationAlexaSkillConfiguration Operation</seealso>
+        [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual Task<PutSipMediaApplicationAlexaSkillConfigurationResponse> PutSipMediaApplicationAlexaSkillConfigurationAsync(PutSipMediaApplicationAlexaSkillConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -7547,9 +7599,10 @@ namespace Amazon.ChimeSDKVoice
 
 
         /// <summary>
-        /// Updates phone number details, such as product type or calling name, for the specified
-        /// phone number ID. You can update one phone number detail at a time. For example, you
-        /// can update either the product type or the calling name in one action.
+        /// Updates phone number details, such as product type, calling name, or phone number
+        /// name for the specified phone number ID. You can update one phone number detail at
+        /// a time. For example, you can update either the product type, calling name, or phone
+        /// number name in one action.
         /// 
         ///  
         /// <para>
@@ -7601,9 +7654,10 @@ namespace Amazon.ChimeSDKVoice
 
 
         /// <summary>
-        /// Updates phone number details, such as product type or calling name, for the specified
-        /// phone number ID. You can update one phone number detail at a time. For example, you
-        /// can update either the product type or the calling name in one action.
+        /// Updates phone number details, such as product type, calling name, or phone number
+        /// name for the specified phone number ID. You can update one phone number detail at
+        /// a time. For example, you can update either the product type, calling name, or phone
+        /// number name in one action.
         /// 
         ///  
         /// <para>
