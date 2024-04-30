@@ -162,7 +162,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public async Task TestContext_DisableFetchingTableMetadata_KeyWithPropertyConverter()
+        public void TestContext_DisableFetchingTableMetadata_KeyWithPropertyConverter()
         {
             TableCache.Clear();
             CleanupTables();
@@ -176,8 +176,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CreationTime = EpochDate,
             };
 
-            await Context.SaveAsync(employee);
-            var storedEmployee = await Context.LoadAsync<PropertyConverterEmployee>(employee.CreationTime, employee.Name);
+            Context.Save(employee);
+            var storedEmployee = Context.Load<PropertyConverterEmployee>(employee.CreationTime, employee.Name);
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(EpochDate, storedEmployee.CreationTime);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
