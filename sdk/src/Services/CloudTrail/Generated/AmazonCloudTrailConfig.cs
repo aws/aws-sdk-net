@@ -32,7 +32,7 @@ namespace Amazon.CloudTrail
     public partial class AmazonCloudTrailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudTrail", "3.7.304.29");
+            InternalSDKUtils.BuildUserAgentString("CloudTrail", "3.7.304.30");
 
         private string _userAgent = UserAgentString;
         ///<summary>
