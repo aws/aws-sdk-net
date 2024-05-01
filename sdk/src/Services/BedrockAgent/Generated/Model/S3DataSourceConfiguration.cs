@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property BucketOwnerAccountId. 
         /// <para>
-        /// The account ID for the owner of the S3 bucket.
+        /// The bucket account owner ID for the S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

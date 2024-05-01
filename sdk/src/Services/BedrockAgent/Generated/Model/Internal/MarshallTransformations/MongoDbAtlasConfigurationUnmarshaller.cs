@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StorageConfiguration Object
+    /// Response Unmarshaller for MongoDbAtlasConfiguration Object
     /// </summary>  
-    public class StorageConfigurationUnmarshaller : IUnmarshaller<StorageConfiguration, XmlUnmarshallerContext>, IUnmarshaller<StorageConfiguration, JsonUnmarshallerContext>
+    public class MongoDbAtlasConfigurationUnmarshaller : IUnmarshaller<MongoDbAtlasConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MongoDbAtlasConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StorageConfiguration IUnmarshaller<StorageConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MongoDbAtlasConfiguration IUnmarshaller<MongoDbAtlasConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public StorageConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public MongoDbAtlasConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            StorageConfiguration unmarshalledObject = new StorageConfiguration();
+            MongoDbAtlasConfiguration unmarshalledObject = new MongoDbAtlasConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,40 +64,46 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("mongoDbAtlasConfiguration", targetDepth))
-                {
-                    var unmarshaller = MongoDbAtlasConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.MongoDbAtlasConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("opensearchServerlessConfiguration", targetDepth))
-                {
-                    var unmarshaller = OpenSearchServerlessConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OpensearchServerlessConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pineconeConfiguration", targetDepth))
-                {
-                    var unmarshaller = PineconeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PineconeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rdsConfiguration", targetDepth))
-                {
-                    var unmarshaller = RdsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RdsConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("redisEnterpriseCloudConfiguration", targetDepth))
-                {
-                    var unmarshaller = RedisEnterpriseCloudConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RedisEnterpriseCloudConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("collectionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CollectionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("credentialsSecretArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CredentialsSecretArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("databaseName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("endpoint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("endpointServiceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndpointServiceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fieldMapping", targetDepth))
+                {
+                    var unmarshaller = MongoDbAtlasFieldMappingUnmarshaller.Instance;
+                    unmarshalledObject.FieldMapping = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vectorIndexName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VectorIndexName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -105,12 +111,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static StorageConfigurationUnmarshaller _instance = new StorageConfigurationUnmarshaller();        
+        private static MongoDbAtlasConfigurationUnmarshaller _instance = new MongoDbAtlasConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StorageConfigurationUnmarshaller Instance
+        public static MongoDbAtlasConfigurationUnmarshaller Instance
         {
             get
             {
