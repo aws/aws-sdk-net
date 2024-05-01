@@ -53,7 +53,11 @@ namespace Amazon.EC2.Model
         private VolumeType _volumeType;
 
         /// <summary>
-        /// Gets and sets the property Attachments. 
+        /// Gets and sets the property Attachments. <note> 
+        /// <para>
+        /// This parameter is not returned by CreateVolume.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Information about the volume attachments.
         /// </para>
@@ -125,7 +129,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FastRestored. 
+        /// Gets and sets the property FastRestored. <note> 
+        /// <para>
+        /// This parameter is not returned by CreateVolume.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Indicates whether the volume was created using fast snapshot restore.
         /// </para>
@@ -255,7 +263,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SseType. 
+        /// Gets and sets the property SseType. <note> 
+        /// <para>
+        /// This parameter is not returned by CreateVolume.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Reserved for future use.
         /// </para>
