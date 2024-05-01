@@ -51,35 +51,27 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLowerInclusive())
             {
                 context.Writer.WritePropertyName("lowerInclusive");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.LowerInclusive.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.LowerInclusive))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LowerInclusive.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LowerInclusive));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LowerInclusive.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LowerInclusive);
+                    context.Writer.Write(requestObject.LowerInclusive.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetUpperInclusive())
             {
                 context.Writer.WritePropertyName("upperInclusive");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.UpperInclusive.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.UpperInclusive))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.UpperInclusive.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.UpperInclusive));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.UpperInclusive.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.UpperInclusive);
+                    context.Writer.Write(requestObject.UpperInclusive.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

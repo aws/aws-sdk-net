@@ -115,9 +115,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int MaxWorkerCount
+        public int? MaxWorkerCount
         {
-            get { return this._maxWorkerCount.GetValueOrDefault(); }
+            get { return this._maxWorkerCount; }
             set { this._maxWorkerCount = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int MinWorkerCount
+        public int? MinWorkerCount
         {
-            get { return this._minWorkerCount.GetValueOrDefault(); }
+            get { return this._minWorkerCount; }
             set { this._minWorkerCount = value; }
         }
 
@@ -304,9 +304,9 @@ namespace Amazon.Deadline.Model
         /// The number of target workers in the fleet.
         /// </para>
         /// </summary>
-        public int TargetWorkerCount
+        public int? TargetWorkerCount
         {
-            get { return this._targetWorkerCount.GetValueOrDefault(); }
+            get { return this._targetWorkerCount; }
             set { this._targetWorkerCount = value; }
         }
 
@@ -322,9 +322,9 @@ namespace Amazon.Deadline.Model
         /// The date and time the resource was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 
@@ -359,9 +359,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int WorkerCount
+        public int? WorkerCount
         {
-            get { return this._workerCount.GetValueOrDefault(); }
+            get { return this._workerCount; }
             set { this._workerCount = value; }
         }
 

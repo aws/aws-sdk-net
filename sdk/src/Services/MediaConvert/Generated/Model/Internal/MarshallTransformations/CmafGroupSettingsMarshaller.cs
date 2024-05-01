@@ -160,18 +160,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinFinalSegmentLength())
             {
                 context.Writer.WritePropertyName("minFinalSegmentLength");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.MinFinalSegmentLength.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MinFinalSegmentLength))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinFinalSegmentLength.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinFinalSegmentLength));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinFinalSegmentLength.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinFinalSegmentLength);
+                    context.Writer.Write(requestObject.MinFinalSegmentLength.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMpdManifestBandwidthType())

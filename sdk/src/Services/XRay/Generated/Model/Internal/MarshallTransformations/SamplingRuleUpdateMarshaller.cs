@@ -65,18 +65,14 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFixedRate())
             {
                 context.Writer.WritePropertyName("FixedRate");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.FixedRate.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.FixedRate))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.FixedRate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FixedRate));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FixedRate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.FixedRate);
+                    context.Writer.Write(requestObject.FixedRate.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetHost())

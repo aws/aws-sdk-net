@@ -69,7 +69,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResponseTimeout())
             {
                 context.Writer.WritePropertyName("responseTimeout");
-                context.Writer.Write(requestObject.ResponseTimeout);
+                context.Writer.Write(requestObject.ResponseTimeout.Value);
             }
 
         }

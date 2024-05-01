@@ -103,18 +103,14 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Threshold.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Threshold);
+                    context.Writer.Write(requestObject.Threshold.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetUnit())

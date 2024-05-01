@@ -54,7 +54,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("nextItemOffset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.NextItemOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -66,7 +66,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalResults", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalResults = unmarshaller.Unmarshall(context);
                     continue;
                 }

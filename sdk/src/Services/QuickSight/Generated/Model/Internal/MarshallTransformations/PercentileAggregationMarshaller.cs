@@ -51,18 +51,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentileValue())
             {
                 context.Writer.WritePropertyName("PercentileValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.PercentileValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentileValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentileValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentileValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentileValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PercentileValue);
+                    context.Writer.Write(requestObject.PercentileValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

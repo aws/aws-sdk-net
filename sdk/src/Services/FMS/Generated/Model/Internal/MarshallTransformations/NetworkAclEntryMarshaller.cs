@@ -57,7 +57,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEgress())
             {
                 context.Writer.WritePropertyName("Egress");
-                context.Writer.Write(requestObject.Egress);
+                context.Writer.Write(requestObject.Egress.Value);
             }
 
             if(requestObject.IsSetIcmpTypeCode())

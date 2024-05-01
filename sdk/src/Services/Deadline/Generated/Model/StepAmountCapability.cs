@@ -45,9 +45,9 @@ namespace Amazon.Deadline.Model
         /// The maximum amount.
         /// </para>
         /// </summary>
-        public double Max
+        public double? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Deadline.Model
         /// The minimum amount.
         /// </para>
         /// </summary>
-        public double Min
+        public double? Min
         {
-            get { return this._min.GetValueOrDefault(); }
+            get { return this._min; }
             set { this._min = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.Deadline.Model
         /// The amount value.
         /// </para>
         /// </summary>
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

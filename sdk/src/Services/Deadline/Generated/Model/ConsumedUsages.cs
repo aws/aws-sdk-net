@@ -43,9 +43,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float ApproximateDollarUsage
+        public float? ApproximateDollarUsage
         {
-            get { return this._approximateDollarUsage.GetValueOrDefault(); }
+            get { return this._approximateDollarUsage; }
             set { this._approximateDollarUsage = value; }
         }
 

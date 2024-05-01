@@ -63,18 +63,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScanRate())
             {
                 context.Writer.WritePropertyName("scanRate");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.ScanRate.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ScanRate))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ScanRate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScanRate));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScanRate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ScanRate);
+                    context.Writer.Write(requestObject.ScanRate.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

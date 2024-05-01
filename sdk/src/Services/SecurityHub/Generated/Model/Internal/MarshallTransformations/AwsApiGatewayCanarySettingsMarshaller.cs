@@ -57,18 +57,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentTraffic())
             {
                 context.Writer.WritePropertyName("PercentTraffic");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.PercentTraffic.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentTraffic))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentTraffic.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentTraffic));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentTraffic.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PercentTraffic);
+                    context.Writer.Write(requestObject.PercentTraffic.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetStageVariableOverrides())

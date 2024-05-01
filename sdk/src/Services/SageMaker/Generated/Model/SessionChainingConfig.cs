@@ -43,9 +43,9 @@ namespace Amazon.SageMaker.Model
         /// creation role and reuse these tags when assuming the training job execution role.
         /// </para>
         /// </summary>
-        public bool EnableSessionTagChaining
+        public bool? EnableSessionTagChaining
         {
-            get { return this._enableSessionTagChaining.GetValueOrDefault(); }
+            get { return this._enableSessionTagChaining; }
             set { this._enableSessionTagChaining = value; }
         }
 

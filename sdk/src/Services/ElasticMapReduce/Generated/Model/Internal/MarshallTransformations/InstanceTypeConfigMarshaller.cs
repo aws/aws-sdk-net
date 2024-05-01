@@ -57,18 +57,14 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBidPriceAsPercentageOfOnDemandPrice())
             {
                 context.Writer.WritePropertyName("BidPriceAsPercentageOfOnDemandPrice");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.BidPriceAsPercentageOfOnDemandPrice))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BidPriceAsPercentageOfOnDemandPrice));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BidPriceAsPercentageOfOnDemandPrice);
+                    context.Writer.Write(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetConfigurations())

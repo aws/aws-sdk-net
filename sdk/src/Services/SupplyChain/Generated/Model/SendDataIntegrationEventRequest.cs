@@ -106,9 +106,9 @@ namespace Amazon.SupplyChain.Model
         /// The event timestamp (in epoch seconds).
         /// </para>
         /// </summary>
-        public DateTime EventTimestamp
+        public DateTime? EventTimestamp
         {
-            get { return this._eventTimestamp.GetValueOrDefault(); }
+            get { return this._eventTimestamp; }
             set { this._eventTimestamp = value; }
         }
 

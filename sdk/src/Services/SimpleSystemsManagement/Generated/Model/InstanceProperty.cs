@@ -310,9 +310,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date the association was last run.
         /// </para>
         /// </summary>
-        public DateTime LastAssociationExecutionDate
+        public DateTime? LastAssociationExecutionDate
         {
-            get { return this._lastAssociationExecutionDate.GetValueOrDefault(); }
+            get { return this._lastAssociationExecutionDate; }
             set { this._lastAssociationExecutionDate = value; }
         }
 
@@ -328,9 +328,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date and time when the SSM Agent last pinged the Systems Manager service.
         /// </para>
         /// </summary>
-        public DateTime LastPingDateTime
+        public DateTime? LastPingDateTime
         {
-            get { return this._lastPingDateTime.GetValueOrDefault(); }
+            get { return this._lastPingDateTime; }
             set { this._lastPingDateTime = value; }
         }
 
@@ -346,9 +346,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The last date the association was successfully run.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulAssociationExecutionDate
+        public DateTime? LastSuccessfulAssociationExecutionDate
         {
-            get { return this._lastSuccessfulAssociationExecutionDate.GetValueOrDefault(); }
+            get { return this._lastSuccessfulAssociationExecutionDate; }
             set { this._lastSuccessfulAssociationExecutionDate = value; }
         }
 
@@ -364,9 +364,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The timestamp for when the node was launched.
         /// </para>
         /// </summary>
-        public DateTime LaunchTime
+        public DateTime? LaunchTime
         {
-            get { return this._launchTime.GetValueOrDefault(); }
+            get { return this._launchTime; }
             set { this._launchTime = value; }
         }
 
@@ -476,9 +476,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date the node was registered with Systems Manager.
         /// </para>
         /// </summary>
-        public DateTime RegistrationDate
+        public DateTime? RegistrationDate
         {
-            get { return this._registrationDate.GetValueOrDefault(); }
+            get { return this._registrationDate; }
             set { this._registrationDate = value; }
         }
 

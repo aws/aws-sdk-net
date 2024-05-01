@@ -51,18 +51,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomValue())
             {
                 context.Writer.WritePropertyName("CustomValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.CustomValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.CustomValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CustomValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CustomValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CustomValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CustomValue);
+                    context.Writer.Write(requestObject.CustomValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetValueWhenUnsetOption())

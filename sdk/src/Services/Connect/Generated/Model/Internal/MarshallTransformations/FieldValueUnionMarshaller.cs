@@ -57,18 +57,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDoubleValue())
             {
                 context.Writer.WritePropertyName("DoubleValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.DoubleValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DoubleValue);
+                    context.Writer.Write(requestObject.DoubleValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetEmptyValue())

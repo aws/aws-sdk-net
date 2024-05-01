@@ -1429,7 +1429,7 @@ this.Write(this.ToStringHelper.ToStringWithCulture((member.IsNullable ? ".Value"
         #line hidden
         
         #line 291 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("));\t\t\t\t \r\n");
+this.Write("));\r\n");
 
         
         #line default
@@ -1509,20 +1509,6 @@ this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
         #line hidden
         
         #line 298 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("\", \"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 298 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(xmlNamespace));
-
-        
-        #line default
-        #line hidden
-        
-        #line 298 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
 this.Write("\", ");
 
         
@@ -1572,7 +1558,7 @@ this.Write(this.ToStringHelper.ToStringWithCulture((member.IsNullable ? ".Value"
         #line hidden
         
         #line 298 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write("));\t\t\t\t \r\n\r\n");
+this.Write("));\r\n\r\n");
 
         
         #line default

@@ -66,7 +66,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("approximateDollarUsage", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ApproximateDollarUsage = unmarshaller.Unmarshall(context);
                     continue;
                 }

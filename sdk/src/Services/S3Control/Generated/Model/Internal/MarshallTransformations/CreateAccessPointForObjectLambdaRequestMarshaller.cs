@@ -87,14 +87,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();            
                     }
                     if(publicRequest.Configuration.IsSetCloudWatchMetricsEnabled())
-<<<<<<< HEAD
-                        xmlWriter.WriteElementString("CloudWatchMetricsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Configuration.CloudWatchMetricsEnabled.Value));                 
-=======
-                        xmlWriter.WriteElementString("CloudWatchMetricsEnabled", StringUtils.FromBool(publicRequest.Configuration.CloudWatchMetricsEnabled));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                        xmlWriter.WriteElementString("CloudWatchMetricsEnabled", StringUtils.FromBool(publicRequest.Configuration.CloudWatchMetricsEnabled.Value));
 
                     if(publicRequest.Configuration.IsSetSupportingAccessPoint())
-                        xmlWriter.WriteElementString("SupportingAccessPoint", StringUtils.FromString(publicRequest.Configuration.SupportingAccessPoint));                 
+                        xmlWriter.WriteElementString("SupportingAccessPoint", StringUtils.FromString(publicRequest.Configuration.SupportingAccessPoint));
 
                     var publicRequestConfigurationTransformationConfigurations = publicRequest.Configuration.TransformationConfigurations;
                     if (publicRequestConfigurationTransformationConfigurations != null && (publicRequestConfigurationTransformationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections)) 
@@ -124,10 +120,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("AwsLambda");
                                     if(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.IsSetFunctionArn())
-                                        xmlWriter.WriteElementString("FunctionArn", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionArn));                 
+                                        xmlWriter.WriteElementString("FunctionArn", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionArn));
 
                                     if(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.IsSetFunctionPayload())
-                                        xmlWriter.WriteElementString("FunctionPayload", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionPayload));                 
+                                        xmlWriter.WriteElementString("FunctionPayload", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionPayload));
 
                                     xmlWriter.WriteEndElement();
                                 }

@@ -48,9 +48,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property Bam.
         /// </summary>
-        public int Bam
+        public int? Bam
         {
-            get { return this._bam.GetValueOrDefault(); }
+            get { return this._bam; }
             set { this._bam = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property Baz.
         /// </summary>
-        public bool Baz
+        public bool? Baz
         {
-            get { return this._baz.GetValueOrDefault(); }
+            get { return this._baz; }
             set { this._baz = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property Boo.
         /// </summary>
-        public double Boo
+        public double? Boo
         {
-            get { return this._boo.GetValueOrDefault(); }
+            get { return this._boo; }
             set { this._boo = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property FloatValue.
         /// </summary>
-        public float FloatValue
+        public float? FloatValue
         {
-            get { return this._floatValue.GetValueOrDefault(); }
+            get { return this._floatValue; }
             set { this._floatValue = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property IntegerEnum.
         /// </summary>
-        public int IntegerEnum
+        public int? IntegerEnum
         {
-            get { return this._integerEnum.GetValueOrDefault(); }
+            get { return this._integerEnum; }
             set { this._integerEnum = value; }
         }
 

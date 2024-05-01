@@ -69,18 +69,14 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Offset.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Offset))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Offset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Offset);
+                    context.Writer.Write(requestObject.Offset.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetPid())
@@ -98,18 +94,14 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScaling())
             {
                 context.Writer.WritePropertyName("scaling");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Scaling.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Scaling))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Scaling.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scaling));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scaling.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Scaling);
+                    context.Writer.Write(requestObject.Scaling.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetServiceMode())

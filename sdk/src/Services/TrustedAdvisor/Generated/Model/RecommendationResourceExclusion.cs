@@ -64,9 +64,9 @@ namespace Amazon.TrustedAdvisor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsExcluded
+        public bool? IsExcluded
         {
-            get { return this._isExcluded.GetValueOrDefault(); }
+            get { return this._isExcluded; }
             set { this._isExcluded = value; }
         }
 

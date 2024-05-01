@@ -281,7 +281,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SupportsLimitlessDatabase", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.SupportsLimitlessDatabase = unmarshaller.Unmarshall(context);
                         continue;
                     }

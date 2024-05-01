@@ -65,9 +65,9 @@ namespace Amazon.EC2.Model
         /// The maximum number of hops that the metadata token can travel.
         /// </para>
         /// </summary>
-        public int HttpPutResponseHopLimit
+        public int? HttpPutResponseHopLimit
         {
-            get { return this._httpPutResponseHopLimit.GetValueOrDefault(); }
+            get { return this._httpPutResponseHopLimit; }
             set { this._httpPutResponseHopLimit = value; }
         }
 

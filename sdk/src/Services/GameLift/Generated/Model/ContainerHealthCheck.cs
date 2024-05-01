@@ -88,9 +88,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=300)]
-        public int Interval
+        public int? Interval
         {
-            get { return this._interval.GetValueOrDefault(); }
+            get { return this._interval; }
             set { this._interval = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=10)]
-        public int Retries
+        public int? Retries
         {
-            get { return this._retries.GetValueOrDefault(); }
+            get { return this._retries; }
             set { this._retries = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
-        public int StartPeriod
+        public int? StartPeriod
         {
-            get { return this._startPeriod.GetValueOrDefault(); }
+            get { return this._startPeriod; }
             set { this._startPeriod = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=30, Max=60)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

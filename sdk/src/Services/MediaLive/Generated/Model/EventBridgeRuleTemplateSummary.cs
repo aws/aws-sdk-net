@@ -66,9 +66,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property CreatedAt.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.MediaLive.Model
         /// matching events.
         /// </summary>
         [AWSProperty(Required=true, Max=5)]
-        public int EventTargetCount
+        public int? EventTargetCount
         {
-            get { return this._eventTargetCount.GetValueOrDefault(); }
+            get { return this._eventTargetCount; }
             set { this._eventTargetCount = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ModifiedAt.
         /// </summary>
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 

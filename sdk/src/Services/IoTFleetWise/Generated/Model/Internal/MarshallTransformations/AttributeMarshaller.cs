@@ -104,35 +104,27 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMax())
             {
                 context.Writer.WritePropertyName("max");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Max.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Max))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Max.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Max);
+                    context.Writer.Write(requestObject.Max.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMin())
             {
                 context.Writer.WritePropertyName("min");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Min.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Min))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Min.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Min);
+                    context.Writer.Write(requestObject.Min.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetUnit())

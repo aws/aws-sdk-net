@@ -87,13 +87,13 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxFailedTasksCount())
                 {
                     context.Writer.WritePropertyName("maxFailedTasksCount");
-                    context.Writer.Write(publicRequest.MaxFailedTasksCount);
+                    context.Writer.Write(publicRequest.MaxFailedTasksCount.Value);
                 }
 
                 if(publicRequest.IsSetMaxRetriesPerTask())
                 {
                     context.Writer.WritePropertyName("maxRetriesPerTask");
-                    context.Writer.Write(publicRequest.MaxRetriesPerTask);
+                    context.Writer.Write(publicRequest.MaxRetriesPerTask.Value);
                 }
 
                 if(publicRequest.IsSetParameters())
@@ -118,7 +118,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPriority())
                 {
                     context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority);
+                    context.Writer.Write(publicRequest.Priority.Value);
                 }
 
                 if(publicRequest.IsSetStorageProfileId())

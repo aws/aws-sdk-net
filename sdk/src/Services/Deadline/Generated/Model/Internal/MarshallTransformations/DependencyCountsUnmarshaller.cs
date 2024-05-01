@@ -66,25 +66,25 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("consumersResolved", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConsumersResolved = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("consumersUnresolved", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConsumersUnresolved = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("dependenciesResolved", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DependenciesResolved = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("dependenciesUnresolved", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DependenciesUnresolved = unmarshaller.Unmarshall(context);
                     continue;
                 }

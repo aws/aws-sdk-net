@@ -106,9 +106,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=30)]
-        public int ManifestWindowSeconds
+        public int? ManifestWindowSeconds
         {
-            get { return this._manifestWindowSeconds.GetValueOrDefault(); }
+            get { return this._manifestWindowSeconds; }
             set { this._manifestWindowSeconds = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
-        public int MinBufferTimeSeconds
+        public int? MinBufferTimeSeconds
         {
-            get { return this._minBufferTimeSeconds.GetValueOrDefault(); }
+            get { return this._minBufferTimeSeconds; }
             set { this._minBufferTimeSeconds = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3600)]
-        public int MinUpdatePeriodSeconds
+        public int? MinUpdatePeriodSeconds
         {
-            get { return this._minUpdatePeriodSeconds.GetValueOrDefault(); }
+            get { return this._minUpdatePeriodSeconds; }
             set { this._minUpdatePeriodSeconds = value; }
         }
 
@@ -238,9 +238,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
-        public int SuggestedPresentationDelaySeconds
+        public int? SuggestedPresentationDelaySeconds
         {
-            get { return this._suggestedPresentationDelaySeconds.GetValueOrDefault(); }
+            get { return this._suggestedPresentationDelaySeconds; }
             set { this._suggestedPresentationDelaySeconds = value; }
         }
 

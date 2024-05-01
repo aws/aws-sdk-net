@@ -78,18 +78,14 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDesiredValue())
                 {
                     context.Writer.WritePropertyName("DesiredValue");
-<<<<<<< HEAD
-                    context.Writer.Write(publicRequest.DesiredValue.Value);
-=======
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.DesiredValue))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.DesiredValue.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DesiredValue));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DesiredValue.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.DesiredValue);
+                        context.Writer.Write(publicRequest.DesiredValue.Value);
                     }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetQuotaCode())

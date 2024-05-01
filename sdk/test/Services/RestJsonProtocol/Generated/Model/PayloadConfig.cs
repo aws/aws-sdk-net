@@ -39,9 +39,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property Data.
         /// </summary>
-        public int Data
+        public int? Data
         {
-            get { return this._data.GetValueOrDefault(); }
+            get { return this._data; }
             set { this._data = value; }
         }
 

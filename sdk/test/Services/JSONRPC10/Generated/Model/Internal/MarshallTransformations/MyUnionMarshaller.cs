@@ -57,7 +57,7 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");
-                context.Writer.Write(requestObject.BooleanValue);
+                context.Writer.Write(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetEnumValue())
@@ -69,7 +69,7 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntEnumValue())
             {
                 context.Writer.WritePropertyName("intEnumValue");
-                context.Writer.Write(requestObject.IntEnumValue);
+                context.Writer.Write(requestObject.IntEnumValue.Value);
             }
 
             if(requestObject.IsSetListValue())
@@ -100,7 +100,7 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberValue())
             {
                 context.Writer.WritePropertyName("numberValue");
-                context.Writer.Write(requestObject.NumberValue);
+                context.Writer.Write(requestObject.NumberValue.Value);
             }
 
             if(requestObject.IsSetStringValue())
@@ -123,7 +123,7 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimestampValue())
             {
                 context.Writer.WritePropertyName("timestampValue");
-                context.Writer.Write(requestObject.TimestampValue);
+                context.Writer.Write(requestObject.TimestampValue.Value);
             }
 
         }

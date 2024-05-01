@@ -69,17 +69,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("PutAccessGrantsInstanceResourcePolicyRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetOrganization())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("Organization", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Organization));
-
-                if(publicRequest.IsSetPolicy())
-                    xmlWriter.WriteElementString("Policy", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Policy));
-=======
                     xmlWriter.WriteElementString("Organization", StringUtils.FromString(publicRequest.Organization));
 
                 if(publicRequest.IsSetPolicy())
                     xmlWriter.WriteElementString("Policy", StringUtils.FromString(publicRequest.Policy));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                 xmlWriter.WriteEndElement();

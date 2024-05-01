@@ -51,18 +51,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValidationFraction())
             {
                 context.Writer.WritePropertyName("ValidationFraction");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.ValidationFraction.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.ValidationFraction))
+                if(StringUtils.IsSpecialFloatValue(requestObject.ValidationFraction.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ValidationFraction));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ValidationFraction.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ValidationFraction);
+                    context.Writer.Write(requestObject.ValidationFraction.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

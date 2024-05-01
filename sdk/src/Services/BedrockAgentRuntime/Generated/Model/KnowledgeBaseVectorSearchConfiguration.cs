@@ -83,13 +83,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The number of source chunks to retrieve.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=1, Max=25)]
-        public int? NumberOfResults
-=======
         [AWSProperty(Min=1, Max=100)]
-        public int NumberOfResults
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+        public int? NumberOfResults
         {
             get { return this._numberOfResults; }
             set { this._numberOfResults = value; }

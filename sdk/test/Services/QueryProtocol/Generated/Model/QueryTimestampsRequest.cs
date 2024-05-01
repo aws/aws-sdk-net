@@ -46,9 +46,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property EpochMember.
         /// </summary>
-        public DateTime EpochMember
+        public DateTime? EpochMember
         {
-            get { return this._epochMember.GetValueOrDefault(); }
+            get { return this._epochMember; }
             set { this._epochMember = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property EpochTarget.
         /// </summary>
-        public DateTime EpochTarget
+        public DateTime? EpochTarget
         {
-            get { return this._epochTarget.GetValueOrDefault(); }
+            get { return this._epochTarget; }
             set { this._epochTarget = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property NormalFormat.
         /// </summary>
-        public DateTime NormalFormat
+        public DateTime? NormalFormat
         {
-            get { return this._normalFormat.GetValueOrDefault(); }
+            get { return this._normalFormat; }
             set { this._normalFormat = value; }
         }
 

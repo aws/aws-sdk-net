@@ -51,35 +51,27 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLat())
             {
                 context.Writer.WritePropertyName("Lat");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Lat.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Lat))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Lat.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lat));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lat.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Lat);
+                    context.Writer.Write(requestObject.Lat.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetLon())
             {
                 context.Writer.WritePropertyName("Lon");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Lon.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Lon))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Lon.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lon));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lon.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Lon);
+                    context.Writer.Write(requestObject.Lon.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

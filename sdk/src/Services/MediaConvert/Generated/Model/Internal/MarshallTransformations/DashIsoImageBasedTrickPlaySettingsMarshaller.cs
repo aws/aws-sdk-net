@@ -63,18 +63,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThumbnailInterval())
             {
                 context.Writer.WritePropertyName("thumbnailInterval");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.ThumbnailInterval.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ThumbnailInterval))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThumbnailInterval.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThumbnailInterval));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThumbnailInterval.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThumbnailInterval);
+                    context.Writer.Write(requestObject.ThumbnailInterval.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetThumbnailWidth())

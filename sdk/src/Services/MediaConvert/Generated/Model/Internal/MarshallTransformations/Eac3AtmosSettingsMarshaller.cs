@@ -99,69 +99,53 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLoRoCenterMixLevel())
             {
                 context.Writer.WritePropertyName("loRoCenterMixLevel");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.LoRoCenterMixLevel.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.LoRoCenterMixLevel))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LoRoCenterMixLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoRoCenterMixLevel));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoRoCenterMixLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LoRoCenterMixLevel);
+                    context.Writer.Write(requestObject.LoRoCenterMixLevel.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetLoRoSurroundMixLevel())
             {
                 context.Writer.WritePropertyName("loRoSurroundMixLevel");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.LoRoSurroundMixLevel.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.LoRoSurroundMixLevel))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LoRoSurroundMixLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoRoSurroundMixLevel));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoRoSurroundMixLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LoRoSurroundMixLevel);
+                    context.Writer.Write(requestObject.LoRoSurroundMixLevel.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetLtRtCenterMixLevel())
             {
                 context.Writer.WritePropertyName("ltRtCenterMixLevel");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.LtRtCenterMixLevel.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.LtRtCenterMixLevel))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LtRtCenterMixLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LtRtCenterMixLevel));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LtRtCenterMixLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LtRtCenterMixLevel);
+                    context.Writer.Write(requestObject.LtRtCenterMixLevel.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetLtRtSurroundMixLevel())
             {
                 context.Writer.WritePropertyName("ltRtSurroundMixLevel");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.LtRtSurroundMixLevel.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.LtRtSurroundMixLevel))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LtRtSurroundMixLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LtRtSurroundMixLevel));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LtRtSurroundMixLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LtRtSurroundMixLevel);
+                    context.Writer.Write(requestObject.LtRtSurroundMixLevel.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMeteringMode())

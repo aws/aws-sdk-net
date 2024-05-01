@@ -70,9 +70,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float ApproximateDollarLimit
+        public float? ApproximateDollarLimit
         {
-            get { return this._approximateDollarLimit.GetValueOrDefault(); }
+            get { return this._approximateDollarLimit; }
             set { this._approximateDollarLimit = value; }
         }
 

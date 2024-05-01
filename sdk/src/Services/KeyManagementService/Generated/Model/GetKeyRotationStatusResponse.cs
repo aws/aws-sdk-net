@@ -83,9 +83,9 @@ namespace Amazon.KeyManagementService.Model
         /// The next date that KMS will automatically rotate the key material.
         /// </para>
         /// </summary>
-        public DateTime NextRotationDate
+        public DateTime? NextRotationDate
         {
-            get { return this._nextRotationDate.GetValueOrDefault(); }
+            get { return this._nextRotationDate; }
             set { this._nextRotationDate = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.KeyManagementService.Model
         /// view the details of the on-demand rotation.
         /// </para>
         /// </summary>
-        public DateTime OnDemandRotationStartDate
+        public DateTime? OnDemandRotationStartDate
         {
-            get { return this._onDemandRotationStartDate.GetValueOrDefault(); }
+            get { return this._onDemandRotationStartDate; }
             set { this._onDemandRotationStartDate = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=90, Max=2560)]
-        public int RotationPeriodInDays
+        public int? RotationPeriodInDays
         {
-            get { return this._rotationPeriodInDays.GetValueOrDefault(); }
+            get { return this._rotationPeriodInDays; }
             set { this._rotationPeriodInDays = value; }
         }
 

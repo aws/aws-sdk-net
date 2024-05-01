@@ -214,9 +214,9 @@ namespace Amazon.Lightsail.Model
         ///  Set this value to <c>false</c> to attach a new certificate to the distribution.
         /// </para>
         /// </summary>
-        public bool UseDefaultCertificate
+        public bool? UseDefaultCertificate
         {
-            get { return this._useDefaultCertificate.GetValueOrDefault(); }
+            get { return this._useDefaultCertificate; }
             set { this._useDefaultCertificate = value; }
         }
 

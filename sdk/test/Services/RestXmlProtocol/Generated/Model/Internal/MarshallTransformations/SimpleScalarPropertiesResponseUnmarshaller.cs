@@ -69,43 +69,43 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("byteValue", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.ByteValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DoubleDribble", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         response.DoubleValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("falseBooleanValue", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.FalseBooleanValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("floatValue", targetDepth))
                     {
-                        var unmarshaller = FloatUnmarshaller.Instance;
+                        var unmarshaller = NullableFloatUnmarshaller.Instance;
                         response.FloatValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("integerValue", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.IntegerValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("longValue", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         response.LongValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("shortValue", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.ShortValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -117,7 +117,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("trueBooleanValue", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.TrueBooleanValue = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -51,13 +51,13 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThresholdPercentage())
             {
                 context.Writer.WritePropertyName("thresholdPercentage");
-                if(StringUtils.IsSpecialFloatValue(requestObject.ThresholdPercentage))
+                if(StringUtils.IsSpecialFloatValue(requestObject.ThresholdPercentage.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ThresholdPercentage));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ThresholdPercentage.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThresholdPercentage);
+                    context.Writer.Write(requestObject.ThresholdPercentage.Value);
                 }
             }
 

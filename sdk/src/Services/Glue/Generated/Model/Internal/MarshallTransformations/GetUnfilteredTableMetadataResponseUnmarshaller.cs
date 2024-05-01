@@ -66,13 +66,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsMultiDialectView", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsMultiDialectView = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsProtected", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsProtected = unmarshaller.Unmarshall(context);
                     continue;
                 }

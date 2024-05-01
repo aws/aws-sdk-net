@@ -64,9 +64,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property CreatedAt.
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ModifiedAt.
         /// </summary>
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 

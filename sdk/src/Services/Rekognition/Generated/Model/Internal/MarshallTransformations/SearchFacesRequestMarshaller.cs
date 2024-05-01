@@ -84,18 +84,14 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFaceMatchThreshold())
                 {
                     context.Writer.WritePropertyName("FaceMatchThreshold");
-<<<<<<< HEAD
-                    context.Writer.Write(publicRequest.FaceMatchThreshold.Value);
-=======
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.FaceMatchThreshold))
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.FaceMatchThreshold.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.FaceMatchThreshold));
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.FaceMatchThreshold.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.FaceMatchThreshold);
+                        context.Writer.Write(publicRequest.FaceMatchThreshold.Value);
                     }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetMaxFaces())

@@ -45,9 +45,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=3000, Max=16000)]
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Deadline.Model
         /// The EBS volume size in GiB.
         /// </para>
         /// </summary>
-        public int SizeGiB
+        public int? SizeGiB
         {
-            get { return this._sizeGiB.GetValueOrDefault(); }
+            get { return this._sizeGiB; }
             set { this._sizeGiB = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=125, Max=1000)]
-        public int ThroughputMiB
+        public int? ThroughputMiB
         {
-            get { return this._throughputMiB.GetValueOrDefault(); }
+            get { return this._throughputMiB; }
             set { this._throughputMiB = value; }
         }
 

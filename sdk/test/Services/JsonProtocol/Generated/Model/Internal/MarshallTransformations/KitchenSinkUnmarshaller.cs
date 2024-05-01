@@ -72,13 +72,13 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Boolean", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Boolean = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Double", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Double = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -90,25 +90,25 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Float", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Float = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("HttpdateTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.HttpdateTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Integer", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Integer = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Iso8601Timestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Iso8601Timestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -144,7 +144,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Long", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Long = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -210,13 +210,13 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Timestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UnixTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UnixTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

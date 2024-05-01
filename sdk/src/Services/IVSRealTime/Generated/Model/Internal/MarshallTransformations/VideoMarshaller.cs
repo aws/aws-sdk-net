@@ -57,18 +57,14 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFramerate())
             {
                 context.Writer.WritePropertyName("framerate");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Framerate.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.Framerate))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Framerate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Framerate));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Framerate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Framerate);
+                    context.Writer.Write(requestObject.Framerate.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetHeight())

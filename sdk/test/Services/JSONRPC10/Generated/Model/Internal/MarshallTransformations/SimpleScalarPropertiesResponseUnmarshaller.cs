@@ -54,13 +54,13 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("doubleValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.DoubleValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("floatValue", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     response.FloatValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

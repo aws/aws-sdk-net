@@ -63,35 +63,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfAcceleratorDevicesRequired())
             {
                 context.Writer.WritePropertyName("NumberOfAcceleratorDevicesRequired");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.NumberOfAcceleratorDevicesRequired.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired))
+                if(StringUtils.IsSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.NumberOfAcceleratorDevicesRequired);
+                    context.Writer.Write(requestObject.NumberOfAcceleratorDevicesRequired.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetNumberOfCpuCoresRequired())
             {
                 context.Writer.WritePropertyName("NumberOfCpuCoresRequired");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.NumberOfCpuCoresRequired.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.NumberOfCpuCoresRequired))
+                if(StringUtils.IsSpecialFloatValue(requestObject.NumberOfCpuCoresRequired.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.NumberOfCpuCoresRequired));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.NumberOfCpuCoresRequired.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.NumberOfCpuCoresRequired);
+                    context.Writer.Write(requestObject.NumberOfCpuCoresRequired.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

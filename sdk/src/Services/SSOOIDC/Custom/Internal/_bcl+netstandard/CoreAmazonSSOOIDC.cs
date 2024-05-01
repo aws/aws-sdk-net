@@ -118,7 +118,7 @@ namespace Amazon.SSOOIDC.Internal
                 startDeviceAuthorizationResponse.Interval.GetValueOrDefault(),
                 deviceCodeExpiration,
                 context);
-            var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt), XmlDateTimeSerializationMode.Utc);
+            var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt.GetValueOrDefault()), XmlDateTimeSerializationMode.Utc);
             return new GetSsoTokenResponse
             {
                 AccessToken = ssoToken.AccessToken,
@@ -233,7 +233,7 @@ namespace Amazon.SSOOIDC.Internal
                 cancellationToken
             ).ConfigureAwait(false);
             
-            var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt), XmlDateTimeSerializationMode.Utc);
+            var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt.GetValueOrDefault()), XmlDateTimeSerializationMode.Utc);
             return new GetSsoTokenResponse
             {
                 AccessToken = ssoToken.AccessToken,

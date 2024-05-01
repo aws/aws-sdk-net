@@ -51,7 +51,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoImportDataQualityResult())
             {
                 context.Writer.WritePropertyName("autoImportDataQualityResult");
-                context.Writer.Write(requestObject.AutoImportDataQualityResult);
+                context.Writer.Write(requestObject.AutoImportDataQualityResult.Value);
             }
 
             if(requestObject.IsSetDataAccessRole())

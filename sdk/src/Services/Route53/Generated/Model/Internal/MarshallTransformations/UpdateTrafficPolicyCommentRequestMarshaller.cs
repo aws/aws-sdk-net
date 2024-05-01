@@ -70,11 +70,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("UpdateTrafficPolicyCommentRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetComment())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Comment));
-=======
                     xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.Comment));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                 xmlWriter.WriteEndElement();

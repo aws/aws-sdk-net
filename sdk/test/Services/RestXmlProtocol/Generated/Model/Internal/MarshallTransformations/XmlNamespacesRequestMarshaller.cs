@@ -67,7 +67,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("nested");
                     if(publicRequest.Nested.IsSetFoo())
-                        xmlWriter.WriteElementString("foo", StringUtils.FromString(publicRequest.Nested.Foo));                 
+                        xmlWriter.WriteElementString("foo", StringUtils.FromString(publicRequest.Nested.Foo));
 
                     var publicRequestNestedValues = publicRequest.Nested.Values;
                     if (publicRequestNestedValues != null && (publicRequestNestedValues.Count > 0 || !AWSConfigs.InitializeCollections)) 

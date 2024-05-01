@@ -69,9 +69,9 @@ namespace Amazon.ConnectCases.Model
         /// The timestamp for when the resource was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.ConnectCases.Model
         /// Indicates whether the resource has been deleted.
         /// </para>
         /// </summary>
-        public bool Deleted
+        public bool? Deleted
         {
-            get { return this._deleted.GetValueOrDefault(); }
+            get { return this._deleted; }
             set { this._deleted = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.ConnectCases.Model
         /// The timestamp for when the resource was created or last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

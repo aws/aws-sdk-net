@@ -72,7 +72,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("hashing", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Hashing = unmarshaller.Unmarshall(context);
                     continue;
                 }

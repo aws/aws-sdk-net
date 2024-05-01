@@ -64,35 +64,19 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateTrafficPolicyInstanceRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetHostedZoneId())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("HostedZoneId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HostedZoneId));
-
-                if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Name));
-
-                if(publicRequest.IsSetTTL())
-                    xmlWriter.WriteElementString("TTL", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequest.TTL.Value));
-
-                if(publicRequest.IsSetTrafficPolicyId())
-                    xmlWriter.WriteElementString("TrafficPolicyId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.TrafficPolicyId));
-
-                if(publicRequest.IsSetTrafficPolicyVersion())
-                    xmlWriter.WriteElementString("TrafficPolicyVersion", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.TrafficPolicyVersion.Value));
-=======
                     xmlWriter.WriteElementString("HostedZoneId", StringUtils.FromString(publicRequest.HostedZoneId));
 
                 if(publicRequest.IsSetName())
                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
                 if(publicRequest.IsSetTTL())
-                    xmlWriter.WriteElementString("TTL", StringUtils.FromLong(publicRequest.TTL));
+                    xmlWriter.WriteElementString("TTL", StringUtils.FromLong(publicRequest.TTL.Value));
 
                 if(publicRequest.IsSetTrafficPolicyId())
                     xmlWriter.WriteElementString("TrafficPolicyId", StringUtils.FromString(publicRequest.TrafficPolicyId));
 
                 if(publicRequest.IsSetTrafficPolicyVersion())
-                    xmlWriter.WriteElementString("TrafficPolicyVersion", StringUtils.FromInt(publicRequest.TrafficPolicyVersion));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                    xmlWriter.WriteElementString("TrafficPolicyVersion", StringUtils.FromInt(publicRequest.TrafficPolicyVersion.Value));
 
 
                 xmlWriter.WriteEndElement();

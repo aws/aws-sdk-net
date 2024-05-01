@@ -63,9 +63,9 @@ namespace Amazon.JSONRPC10.Model
         /// <summary>
         /// Gets and sets the property BooleanValue.
         /// </summary>
-        public bool BooleanValue
+        public bool? BooleanValue
         {
-            get { return this._booleanValue.GetValueOrDefault(); }
+            get { return this._booleanValue; }
             set { this._booleanValue = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.JSONRPC10.Model
         /// <summary>
         /// Gets and sets the property IntEnumValue.
         /// </summary>
-        public int IntEnumValue
+        public int? IntEnumValue
         {
-            get { return this._intEnumValue.GetValueOrDefault(); }
+            get { return this._intEnumValue; }
             set { this._intEnumValue = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.JSONRPC10.Model
         /// <summary>
         /// Gets and sets the property NumberValue.
         /// </summary>
-        public int NumberValue
+        public int? NumberValue
         {
-            get { return this._numberValue.GetValueOrDefault(); }
+            get { return this._numberValue; }
             set { this._numberValue = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.JSONRPC10.Model
         /// <summary>
         /// Gets and sets the property TimestampValue.
         /// </summary>
-        public DateTime TimestampValue
+        public DateTime? TimestampValue
         {
-            get { return this._timestampValue.GetValueOrDefault(); }
+            get { return this._timestampValue; }
             set { this._timestampValue = value; }
         }
 

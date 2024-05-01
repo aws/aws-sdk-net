@@ -64,21 +64,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateKeySigningKeyRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetCallerReference())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.CallerReference));
-
-                if(publicRequest.IsSetHostedZoneId())
-                    xmlWriter.WriteElementString("HostedZoneId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HostedZoneId));
-
-                if(publicRequest.IsSetKeyManagementServiceArn())
-                    xmlWriter.WriteElementString("KeyManagementServiceArn", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.KeyManagementServiceArn));
-
-                if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Name));
-
-                if(publicRequest.IsSetStatus())
-                    xmlWriter.WriteElementString("Status", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Status));
-=======
                     xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CallerReference));
 
                 if(publicRequest.IsSetHostedZoneId())
@@ -92,7 +77,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                 if(publicRequest.IsSetStatus())
                     xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequest.Status));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                 xmlWriter.WriteEndElement();

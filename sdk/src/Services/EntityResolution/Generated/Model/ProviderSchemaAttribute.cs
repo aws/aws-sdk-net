@@ -64,9 +64,9 @@ namespace Amazon.EntityResolution.Model
         /// The hashing attribute of the provider schema.
         /// </para>
         /// </summary>
-        public bool Hashing
+        public bool? Hashing
         {
-            get { return this._hashing.GetValueOrDefault(); }
+            get { return this._hashing; }
             set { this._hashing = value; }
         }
 

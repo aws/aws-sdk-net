@@ -219,9 +219,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the DB engine version supports Aurora Limitless Database.
         /// </para>
         /// </summary>
-        public bool SupportsLimitlessDatabase
+        public bool? SupportsLimitlessDatabase
         {
-            get { return this._supportsLimitlessDatabase.GetValueOrDefault(); }
+            get { return this._supportsLimitlessDatabase; }
             set { this._supportsLimitlessDatabase = value; }
         }
 

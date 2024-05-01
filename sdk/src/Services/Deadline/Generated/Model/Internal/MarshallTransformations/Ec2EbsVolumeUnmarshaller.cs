@@ -66,19 +66,19 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("iops", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sizeGiB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SizeGiB = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("throughputMiB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThroughputMiB = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -63,18 +63,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLevel())
             {
                 context.Writer.WritePropertyName("Level");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Level.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.Level))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Level.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Level));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Level.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Level);
+                    context.Writer.Write(requestObject.Level.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

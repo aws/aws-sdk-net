@@ -104,9 +104,9 @@ namespace Amazon.Personalize.Model
         /// automatic campaign updates</a>. 
         /// </para>
         /// </summary>
-        public bool SyncWithLatestSolutionVersion
+        public bool? SyncWithLatestSolutionVersion
         {
-            get { return this._syncWithLatestSolutionVersion.GetValueOrDefault(); }
+            get { return this._syncWithLatestSolutionVersion; }
             set { this._syncWithLatestSolutionVersion = value; }
         }
 

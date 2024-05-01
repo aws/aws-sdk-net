@@ -72,46 +72,32 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("AccessGrantsLocationConfiguration");
                     if(publicRequest.AccessGrantsLocationConfiguration.IsSetS3SubPrefix())
-                        xmlWriter.WriteElementString("S3SubPrefix", StringUtils.FromString(publicRequest.AccessGrantsLocationConfiguration.S3SubPrefix));                 
+                        xmlWriter.WriteElementString("S3SubPrefix", StringUtils.FromString(publicRequest.AccessGrantsLocationConfiguration.S3SubPrefix));
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetAccessGrantsLocationId())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("AccessGrantsLocationId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.AccessGrantsLocationId));
-
-                if(publicRequest.IsSetApplicationArn())
-                    xmlWriter.WriteElementString("ApplicationArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ApplicationArn));
-=======
                     xmlWriter.WriteElementString("AccessGrantsLocationId", StringUtils.FromString(publicRequest.AccessGrantsLocationId));
 
                 if(publicRequest.IsSetApplicationArn())
                     xmlWriter.WriteElementString("ApplicationArn", StringUtils.FromString(publicRequest.ApplicationArn));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                 if (publicRequest.Grantee != null)
                 {
                     xmlWriter.WriteStartElement("Grantee");
                     if(publicRequest.Grantee.IsSetGranteeIdentifier())
-                        xmlWriter.WriteElementString("GranteeIdentifier", StringUtils.FromString(publicRequest.Grantee.GranteeIdentifier));                 
+                        xmlWriter.WriteElementString("GranteeIdentifier", StringUtils.FromString(publicRequest.Grantee.GranteeIdentifier));
 
                     if(publicRequest.Grantee.IsSetGranteeType())
-                        xmlWriter.WriteElementString("GranteeType", StringUtils.FromString(publicRequest.Grantee.GranteeType));                 
+                        xmlWriter.WriteElementString("GranteeType", StringUtils.FromString(publicRequest.Grantee.GranteeType));
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetPermission())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("Permission", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Permission));
-
-                if(publicRequest.IsSetS3PrefixType())
-                    xmlWriter.WriteElementString("S3PrefixType", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.S3PrefixType));
-=======
                     xmlWriter.WriteElementString("Permission", StringUtils.FromString(publicRequest.Permission));
 
                 if(publicRequest.IsSetS3PrefixType())
                     xmlWriter.WriteElementString("S3PrefixType", StringUtils.FromString(publicRequest.S3PrefixType));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                 var publicRequestTags = publicRequest.Tags;
                 if (publicRequestTags != null && (publicRequestTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
@@ -123,10 +109,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("Tag");
                         if(publicRequestTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));                 
+                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
 
                         if(publicRequestTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));                 
+                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
 
                         xmlWriter.WriteEndElement();
                     }

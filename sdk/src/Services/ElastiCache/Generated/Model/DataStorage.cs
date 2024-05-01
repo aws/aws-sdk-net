@@ -44,12 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// The upper limit for data storage the cache is set to use.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true)]
         public int? Maximum
-=======
-        public int Maximum
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
         {
             get { return this._maximum; }
             set { this._maximum = value; }
@@ -67,9 +62,9 @@ namespace Amazon.ElastiCache.Model
         /// The lower limit for data storage the cache is set to use.
         /// </para>
         /// </summary>
-        public int Minimum
+        public int? Minimum
         {
-            get { return this._minimum.GetValueOrDefault(); }
+            get { return this._minimum; }
             set { this._minimum = value; }
         }
 

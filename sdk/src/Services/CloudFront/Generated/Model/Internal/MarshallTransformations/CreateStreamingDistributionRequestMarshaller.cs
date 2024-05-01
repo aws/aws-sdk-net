@@ -81,66 +81,44 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.StreamingDistributionConfig.Aliases.IsSetQuantity())
-<<<<<<< HEAD
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.StreamingDistributionConfig.Aliases.Quantity.Value));                 
-=======
-                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.StreamingDistributionConfig.Aliases.Quantity));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.StreamingDistributionConfig.Aliases.Quantity.Value));
 
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.StreamingDistributionConfig.IsSetCallerReference())
-<<<<<<< HEAD
-                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.CallerReference));
-
-                    if(publicRequest.StreamingDistributionConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Comment));
-
-                    if(publicRequest.StreamingDistributionConfig.IsSetEnabled())
-                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Enabled.Value));
-=======
                         xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.StreamingDistributionConfig.CallerReference));
 
                     if(publicRequest.StreamingDistributionConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Comment));
 
                     if(publicRequest.StreamingDistributionConfig.IsSetEnabled())
-                        xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Enabled));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                        xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Enabled.Value));
 
                     if (publicRequest.StreamingDistributionConfig.Logging != null)
                     {
                         xmlWriter.WriteStartElement("Logging");
                         if(publicRequest.StreamingDistributionConfig.Logging.IsSetBucket())
-                            xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Logging.Bucket));                 
+                            xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Logging.Bucket));
 
                         if(publicRequest.StreamingDistributionConfig.Logging.IsSetEnabled())
-<<<<<<< HEAD
-                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Logging.Enabled.Value));                 
-=======
-                            xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Logging.Enabled));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                            xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.Logging.Enabled.Value));
 
                         if(publicRequest.StreamingDistributionConfig.Logging.IsSetPrefix())
-                            xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Logging.Prefix));                 
+                            xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequest.StreamingDistributionConfig.Logging.Prefix));
 
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.StreamingDistributionConfig.IsSetPriceClass())
-<<<<<<< HEAD
-                        xmlWriter.WriteElementString("PriceClass", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfig.PriceClass));
-=======
                         xmlWriter.WriteElementString("PriceClass", StringUtils.FromString(publicRequest.StreamingDistributionConfig.PriceClass));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                     if (publicRequest.StreamingDistributionConfig.S3Origin != null)
                     {
                         xmlWriter.WriteStartElement("S3Origin");
                         if(publicRequest.StreamingDistributionConfig.S3Origin.IsSetDomainName())
-                            xmlWriter.WriteElementString("DomainName", StringUtils.FromString(publicRequest.StreamingDistributionConfig.S3Origin.DomainName));                 
+                            xmlWriter.WriteElementString("DomainName", StringUtils.FromString(publicRequest.StreamingDistributionConfig.S3Origin.DomainName));
 
                         if(publicRequest.StreamingDistributionConfig.S3Origin.IsSetOriginAccessIdentity())
-                            xmlWriter.WriteElementString("OriginAccessIdentity", StringUtils.FromString(publicRequest.StreamingDistributionConfig.S3Origin.OriginAccessIdentity));                 
+                            xmlWriter.WriteElementString("OriginAccessIdentity", StringUtils.FromString(publicRequest.StreamingDistributionConfig.S3Origin.OriginAccessIdentity));
 
                         xmlWriter.WriteEndElement();
                     }
@@ -148,11 +126,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("TrustedSigners");
                         if(publicRequest.StreamingDistributionConfig.TrustedSigners.IsSetEnabled())
-<<<<<<< HEAD
-                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.TrustedSigners.Enabled.Value));                 
-=======
-                            xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.TrustedSigners.Enabled));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                            xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.StreamingDistributionConfig.TrustedSigners.Enabled.Value));
 
                         var publicRequestStreamingDistributionConfigTrustedSignersItems = publicRequest.StreamingDistributionConfig.TrustedSigners.Items;
                         if (publicRequestStreamingDistributionConfigTrustedSignersItems != null && (publicRequestStreamingDistributionConfigTrustedSignersItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
@@ -167,11 +141,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.StreamingDistributionConfig.TrustedSigners.IsSetQuantity())
-<<<<<<< HEAD
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.StreamingDistributionConfig.TrustedSigners.Quantity.Value));                 
-=======
-                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.StreamingDistributionConfig.TrustedSigners.Quantity));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.StreamingDistributionConfig.TrustedSigners.Quantity.Value));
 
                         xmlWriter.WriteEndElement();
                     }

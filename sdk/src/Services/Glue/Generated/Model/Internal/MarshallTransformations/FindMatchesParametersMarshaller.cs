@@ -51,18 +51,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccuracyCostTradeoff())
             {
                 context.Writer.WritePropertyName("AccuracyCostTradeoff");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.AccuracyCostTradeoff.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.AccuracyCostTradeoff))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.AccuracyCostTradeoff.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AccuracyCostTradeoff));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AccuracyCostTradeoff.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AccuracyCostTradeoff);
+                    context.Writer.Write(requestObject.AccuracyCostTradeoff.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetEnforceProvidedLabels())
@@ -74,18 +70,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrecisionRecallTradeoff())
             {
                 context.Writer.WritePropertyName("PrecisionRecallTradeoff");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.PrecisionRecallTradeoff.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.PrecisionRecallTradeoff))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PrecisionRecallTradeoff.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PrecisionRecallTradeoff));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PrecisionRecallTradeoff.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PrecisionRecallTradeoff);
+                    context.Writer.Write(requestObject.PrecisionRecallTradeoff.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetPrimaryKeyColumnName())

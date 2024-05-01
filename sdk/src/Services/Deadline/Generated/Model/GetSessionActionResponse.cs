@@ -70,9 +70,9 @@ namespace Amazon.Deadline.Model
         /// The date and time the resource ended running.
         /// </para>
         /// </summary>
-        public DateTime EndedAt
+        public DateTime? EndedAt
         {
-            get { return this._endedAt.GetValueOrDefault(); }
+            get { return this._endedAt; }
             set { this._endedAt = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int ProcessExitCode
+        public int? ProcessExitCode
         {
-            get { return this._processExitCode.GetValueOrDefault(); }
+            get { return this._processExitCode; }
             set { this._processExitCode = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float ProgressPercent
+        public float? ProgressPercent
         {
-            get { return this._progressPercent.GetValueOrDefault(); }
+            get { return this._progressPercent; }
             set { this._progressPercent = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.Deadline.Model
         /// The date and time the resource started running.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.Deadline.Model
         /// The Linux timestamp of the date and time the session action was last updated.
         /// </para>
         /// </summary>
-        public DateTime WorkerUpdatedAt
+        public DateTime? WorkerUpdatedAt
         {
-            get { return this._workerUpdatedAt.GetValueOrDefault(); }
+            get { return this._workerUpdatedAt; }
             set { this._workerUpdatedAt = value; }
         }
 

@@ -51,18 +51,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCurrentRestoreRateInMegaBytesPerSecond())
             {
                 context.Writer.WritePropertyName("CurrentRestoreRateInMegaBytesPerSecond");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.CurrentRestoreRateInMegaBytesPerSecond))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CurrentRestoreRateInMegaBytesPerSecond));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CurrentRestoreRateInMegaBytesPerSecond);
+                    context.Writer.Write(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetElapsedTimeInSeconds())

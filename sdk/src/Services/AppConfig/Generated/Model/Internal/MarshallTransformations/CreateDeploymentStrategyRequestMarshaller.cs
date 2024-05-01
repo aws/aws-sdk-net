@@ -88,18 +88,14 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetGrowthFactor())
                 {
                     context.Writer.WritePropertyName("GrowthFactor");
-<<<<<<< HEAD
-                    context.Writer.Write(publicRequest.GrowthFactor.Value);
-=======
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.GrowthFactor))
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.GrowthFactor.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.GrowthFactor));
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.GrowthFactor.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.GrowthFactor);
+                        context.Writer.Write(publicRequest.GrowthFactor.Value);
                     }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetGrowthType())

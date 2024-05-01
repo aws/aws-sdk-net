@@ -249,9 +249,9 @@ namespace Amazon.MedicalImaging.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=-2147483648, Max=2147483647)]
-        public int DICOMSeriesNumber
+        public int? DICOMSeriesNumber
         {
-            get { return this._dicomSeriesNumber.GetValueOrDefault(); }
+            get { return this._dicomSeriesNumber; }
             set { this._dicomSeriesNumber = value; }
         }
 

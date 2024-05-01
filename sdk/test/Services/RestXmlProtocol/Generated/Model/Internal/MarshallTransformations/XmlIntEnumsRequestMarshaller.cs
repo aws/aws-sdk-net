@@ -64,13 +64,13 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("XmlIntEnumsRequest", "");
                 if(publicRequest.IsSetIntEnum1())
-                    xmlWriter.WriteElementString("intEnum1", StringUtils.FromInt(publicRequest.IntEnum1));
+                    xmlWriter.WriteElementString("intEnum1", StringUtils.FromInt(publicRequest.IntEnum1.Value));
 
                 if(publicRequest.IsSetIntEnum2())
-                    xmlWriter.WriteElementString("intEnum2", StringUtils.FromInt(publicRequest.IntEnum2));
+                    xmlWriter.WriteElementString("intEnum2", StringUtils.FromInt(publicRequest.IntEnum2.Value));
 
                 if(publicRequest.IsSetIntEnum3())
-                    xmlWriter.WriteElementString("intEnum3", StringUtils.FromInt(publicRequest.IntEnum3));
+                    xmlWriter.WriteElementString("intEnum3", StringUtils.FromInt(publicRequest.IntEnum3.Value));
 
                 var publicRequestIntEnumList = publicRequest.IntEnumList;
                 if (publicRequestIntEnumList != null && (publicRequestIntEnumList.Count > 0 || !AWSConfigs.InitializeCollections)) 

@@ -51,35 +51,27 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHealthScoreThreshold())
             {
                 context.Writer.WritePropertyName("HealthScoreThreshold");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.HealthScoreThreshold.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.HealthScoreThreshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.HealthScoreThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.HealthScoreThreshold));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.HealthScoreThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.HealthScoreThreshold);
+                    context.Writer.Write(requestObject.HealthScoreThreshold.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMinTrafficImpact())
             {
                 context.Writer.WritePropertyName("MinTrafficImpact");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.MinTrafficImpact.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MinTrafficImpact))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinTrafficImpact.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinTrafficImpact));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinTrafficImpact.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinTrafficImpact);
+                    context.Writer.Write(requestObject.MinTrafficImpact.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetStatus())

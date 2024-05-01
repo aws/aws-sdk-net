@@ -72,7 +72,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ASNumber", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ASNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -90,13 +90,13 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Latitude", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Latitude = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Longitude", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Longitude = unmarshaller.Unmarshall(context);
                     continue;
                 }

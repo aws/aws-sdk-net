@@ -72,18 +72,14 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxLineCoveragePercentage())
                 {
                     context.Writer.WritePropertyName("maxLineCoveragePercentage");
-<<<<<<< HEAD
-                    context.Writer.Write(publicRequest.MaxLineCoveragePercentage.Value);
-=======
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.MaxLineCoveragePercentage);
+                        context.Writer.Write(publicRequest.MaxLineCoveragePercentage.Value);
                     }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetMaxResults())
@@ -95,18 +91,14 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinLineCoveragePercentage())
                 {
                     context.Writer.WritePropertyName("minLineCoveragePercentage");
-<<<<<<< HEAD
-                    context.Writer.Write(publicRequest.MinLineCoveragePercentage.Value);
-=======
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MinLineCoveragePercentage))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MinLineCoveragePercentage.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MinLineCoveragePercentage));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MinLineCoveragePercentage.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.MinLineCoveragePercentage);
+                        context.Writer.Write(publicRequest.MinLineCoveragePercentage.Value);
                     }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetNextToken())

@@ -68,7 +68,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("Cpu");
-                context.Writer.Write(requestObject.Cpu);
+                context.Writer.Write(requestObject.Cpu.Value);
             }
 
             if(requestObject.IsSetDependsOn())
@@ -117,7 +117,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEssential())
             {
                 context.Writer.WritePropertyName("Essential");
-                context.Writer.Write(requestObject.Essential);
+                context.Writer.Write(requestObject.Essential.Value);
             }
 
             if(requestObject.IsSetHealthCheck())

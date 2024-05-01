@@ -84,13 +84,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numberOfMetadataDocumentsModified", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfMetadataDocumentsModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfMetadataDocumentsScanned", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfMetadataDocumentsScanned = unmarshaller.Unmarshall(context);
                     continue;
                 }

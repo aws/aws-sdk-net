@@ -74,17 +74,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("OriginRequestPolicyConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.OriginRequestPolicyConfig.IsSetComment())
-<<<<<<< HEAD
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Comment));
-=======
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Comment));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                     if (publicRequest.OriginRequestPolicyConfig.CookiesConfig != null)
                     {
                         xmlWriter.WriteStartElement("CookiesConfig");
                         if(publicRequest.OriginRequestPolicyConfig.CookiesConfig.IsSetCookieBehavior())
-                            xmlWriter.WriteElementString("CookieBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.CookiesConfig.CookieBehavior));                 
+                            xmlWriter.WriteElementString("CookieBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.CookiesConfig.CookieBehavior));
 
                         if (publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies != null)
                         {
@@ -102,11 +98,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.IsSetQuantity())
-<<<<<<< HEAD
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.Quantity.Value));                 
-=======
-                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.Quantity));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.Quantity.Value));
 
                             xmlWriter.WriteEndElement();
                         }
@@ -116,7 +108,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("HeadersConfig");
                         if(publicRequest.OriginRequestPolicyConfig.HeadersConfig.IsSetHeaderBehavior())
-                            xmlWriter.WriteElementString("HeaderBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.HeadersConfig.HeaderBehavior));                 
+                            xmlWriter.WriteElementString("HeaderBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.HeadersConfig.HeaderBehavior));
 
                         if (publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers != null)
                         {
@@ -134,28 +126,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.IsSetQuantity())
-<<<<<<< HEAD
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.Quantity.Value));                 
-=======
-                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.Quantity));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.Quantity.Value));
 
                             xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.OriginRequestPolicyConfig.IsSetName())
-<<<<<<< HEAD
-                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Name));
-=======
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Name));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                     if (publicRequest.OriginRequestPolicyConfig.QueryStringsConfig != null)
                     {
                         xmlWriter.WriteStartElement("QueryStringsConfig");
                         if(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.IsSetQueryStringBehavior())
-                            xmlWriter.WriteElementString("QueryStringBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStringBehavior));                 
+                            xmlWriter.WriteElementString("QueryStringBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStringBehavior));
 
                         if (publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings != null)
                         {
@@ -173,11 +157,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.IsSetQuantity())
-<<<<<<< HEAD
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.Quantity.Value));                 
-=======
-                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.Quantity));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                                xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.Quantity.Value));
 
                             xmlWriter.WriteEndElement();
                         }

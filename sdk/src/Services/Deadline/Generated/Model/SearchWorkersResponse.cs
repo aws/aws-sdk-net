@@ -45,9 +45,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public int NextItemOffset
+        public int? NextItemOffset
         {
-            get { return this._nextItemOffset.GetValueOrDefault(); }
+            get { return this._nextItemOffset; }
             set { this._nextItemOffset = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]
-        public int TotalResults
+        public int? TotalResults
         {
-            get { return this._totalResults.GetValueOrDefault(); }
+            get { return this._totalResults; }
             set { this._totalResults = value; }
         }
 

@@ -79,18 +79,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartValue())
             {
                 context.Writer.WritePropertyName("StartValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.StartValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.StartValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StartValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StartValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StartValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.StartValue);
+                    context.Writer.Write(requestObject.StartValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

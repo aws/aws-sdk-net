@@ -45,9 +45,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property IntEnum1.
         /// </summary>
-        public int IntEnum1
+        public int? IntEnum1
         {
-            get { return this._intEnum1.GetValueOrDefault(); }
+            get { return this._intEnum1; }
             set { this._intEnum1 = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property IntEnum2.
         /// </summary>
-        public int IntEnum2
+        public int? IntEnum2
         {
-            get { return this._intEnum2.GetValueOrDefault(); }
+            get { return this._intEnum2; }
             set { this._intEnum2 = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property IntEnum3.
         /// </summary>
-        public int IntEnum3
+        public int? IntEnum3
         {
-            get { return this._intEnum3.GetValueOrDefault(); }
+            get { return this._intEnum3; }
             set { this._intEnum3 = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.TimestreamQuery.Model
         /// Bytes scanned for a single scheduled query run.
         /// </para>
         /// </summary>
-        public long CumulativeBytesScanned
+        public long? CumulativeBytesScanned
         {
-            get { return this._cumulativeBytesScanned.GetValueOrDefault(); }
+            get { return this._cumulativeBytesScanned; }
             set { this._cumulativeBytesScanned = value; }
         }
 

@@ -80,9 +80,9 @@ namespace Amazon.JsonProtocol.Model
         /// <summary>
         /// Gets and sets the property Boolean.
         /// </summary>
-        public bool Boolean
+        public bool? Boolean
         {
-            get { return this._boolean.GetValueOrDefault(); }
+            get { return this._boolean; }
             set { this._boolean = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.JsonProtocol.Model
         /// <summary>
         /// Gets and sets the property Double.
         /// </summary>
-        public double Double
+        public double? Double
         {
-            get { return this._double.GetValueOrDefault(); }
+            get { return this._double; }
             set { this._double = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.JsonProtocol.Model
         /// <summary>
         /// Gets and sets the property Float.
         /// </summary>
-        public float Float
+        public float? Float
         {
-            get { return this._float.GetValueOrDefault(); }
+            get { return this._float; }
             set { this._float = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.JsonProtocol.Model
         /// <summary>
         /// Gets and sets the property HttpdateTimestamp.
         /// </summary>
-        public DateTime HttpdateTimestamp
+        public DateTime? HttpdateTimestamp
         {
-            get { return this._httpdateTimestamp.GetValueOrDefault(); }
+            get { return this._httpdateTimestamp; }
             set { this._httpdateTimestamp = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.JsonProtocol.Model
         /// <summary>
         /// Gets and sets the property Integer.
         /// </summary>
-        public int Integer
+        public int? Integer
         {
-            get { return this._integer.GetValueOrDefault(); }
+            get { return this._integer; }
             set { this._integer = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.JsonProtocol.Model
         /// <summary>
         /// Gets and sets the property Iso8601Timestamp.
         /// </summary>
-        public DateTime Iso8601Timestamp
+        public DateTime? Iso8601Timestamp
         {
-            get { return this._iso8601Timestamp.GetValueOrDefault(); }
+            get { return this._iso8601Timestamp; }
             set { this._iso8601Timestamp = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.JsonProtocol.Model
         /// <summary>
         /// Gets and sets the property Long.
         /// </summary>
-        public long Long
+        public long? Long
         {
-            get { return this._long.GetValueOrDefault(); }
+            get { return this._long; }
             set { this._long = value; }
         }
 
@@ -425,9 +425,9 @@ namespace Amazon.JsonProtocol.Model
         /// <summary>
         /// Gets and sets the property Timestamp.
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 
@@ -440,9 +440,9 @@ namespace Amazon.JsonProtocol.Model
         /// <summary>
         /// Gets and sets the property UnixTimestamp.
         /// </summary>
-        public DateTime UnixTimestamp
+        public DateTime? UnixTimestamp
         {
-            get { return this._unixTimestamp.GetValueOrDefault(); }
+            get { return this._unixTimestamp; }
             set { this._unixTimestamp = value; }
         }
 

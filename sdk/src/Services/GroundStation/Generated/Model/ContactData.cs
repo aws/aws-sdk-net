@@ -297,9 +297,9 @@ namespace Amazon.GroundStation.Model
         /// status.</i> 
         /// </para>
         /// </summary>
-        public DateTime VisibilityEndTime
+        public DateTime? VisibilityEndTime
         {
-            get { return this._visibilityEndTime.GetValueOrDefault(); }
+            get { return this._visibilityEndTime; }
             set { this._visibilityEndTime = value; }
         }
 
@@ -319,9 +319,9 @@ namespace Amazon.GroundStation.Model
         /// status.</i> 
         /// </para>
         /// </summary>
-        public DateTime VisibilityStartTime
+        public DateTime? VisibilityStartTime
         {
-            get { return this._visibilityStartTime.GetValueOrDefault(); }
+            get { return this._visibilityStartTime; }
             set { this._visibilityStartTime = value; }
         }
 

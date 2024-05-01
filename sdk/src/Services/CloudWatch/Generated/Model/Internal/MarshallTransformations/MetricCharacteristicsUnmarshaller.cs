@@ -57,7 +57,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("PeriodicSpikes", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.PeriodicSpikes = unmarshaller.Unmarshall(context);
                         continue;
                     }

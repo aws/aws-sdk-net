@@ -64,29 +64,21 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateKeyValueStoreRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 if(publicRequest.IsSetComment())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Comment));
-=======
                     xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.Comment));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                 if (publicRequest.ImportSource != null)
                 {
                     xmlWriter.WriteStartElement("ImportSource");
                     if(publicRequest.ImportSource.IsSetSourceARN())
-                        xmlWriter.WriteElementString("SourceARN", StringUtils.FromString(publicRequest.ImportSource.SourceARN));                 
+                        xmlWriter.WriteElementString("SourceARN", StringUtils.FromString(publicRequest.ImportSource.SourceARN));
 
                     if(publicRequest.ImportSource.IsSetSourceType())
-                        xmlWriter.WriteElementString("SourceType", StringUtils.FromString(publicRequest.ImportSource.SourceType));                 
+                        xmlWriter.WriteElementString("SourceType", StringUtils.FromString(publicRequest.ImportSource.SourceType));
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetName())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Name));
-=======
                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                 xmlWriter.WriteEndElement();

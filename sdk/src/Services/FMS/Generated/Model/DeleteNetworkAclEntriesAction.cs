@@ -67,9 +67,9 @@ namespace Amazon.FMS.Model
         /// is unable to perform the action due to a conflict of some kind.
         /// </para>
         /// </summary>
-        public bool FMSCanRemediate
+        public bool? FMSCanRemediate
         {
-            get { return this._fmsCanRemediate.GetValueOrDefault(); }
+            get { return this._fmsCanRemediate; }
             set { this._fmsCanRemediate = value; }
         }
 

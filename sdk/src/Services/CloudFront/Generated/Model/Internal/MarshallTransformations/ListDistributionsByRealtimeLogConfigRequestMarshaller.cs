@@ -64,18 +64,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("ListDistributionsByRealtimeLogConfigRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 if(publicRequest.IsSetMarker())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("Marker", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Marker));
-
-                if(publicRequest.IsSetMaxItems())
-                    xmlWriter.WriteElementString("MaxItems", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.MaxItems));
-
-                if(publicRequest.IsSetRealtimeLogConfigArn())
-                    xmlWriter.WriteElementString("RealtimeLogConfigArn", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.RealtimeLogConfigArn));
-
-                if(publicRequest.IsSetRealtimeLogConfigName())
-                    xmlWriter.WriteElementString("RealtimeLogConfigName", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.RealtimeLogConfigName));
-=======
                     xmlWriter.WriteElementString("Marker", StringUtils.FromString(publicRequest.Marker));
 
                 if(publicRequest.IsSetMaxItems())
@@ -86,7 +74,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                 if(publicRequest.IsSetRealtimeLogConfigName())
                     xmlWriter.WriteElementString("RealtimeLogConfigName", StringUtils.FromString(publicRequest.RealtimeLogConfigName));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                 xmlWriter.WriteEndElement();

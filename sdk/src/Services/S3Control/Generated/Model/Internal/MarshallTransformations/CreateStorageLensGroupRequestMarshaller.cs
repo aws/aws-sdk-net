@@ -111,10 +111,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("Tag");
                                     if(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.IsSetKey())
-                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.Key));                 
+                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.Key));
 
                                     if(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.IsSetValue())
-                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.Value));                 
+                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterAndMatchAnyTagValue.Value));
 
                                     xmlWriter.WriteEndElement();
                                 }
@@ -125,17 +125,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("MatchObjectAge");
                                 if(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.IsSetDaysGreaterThan())
-<<<<<<< HEAD
-                                    xmlWriter.WriteElementString("DaysGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.DaysGreaterThan.Value));                 
+                                    xmlWriter.WriteElementString("DaysGreaterThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.DaysGreaterThan.Value));
 
                                 if(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.IsSetDaysLessThan())
-                                    xmlWriter.WriteElementString("DaysLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.DaysLessThan.Value));                 
-=======
-                                    xmlWriter.WriteElementString("DaysGreaterThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.DaysGreaterThan));                 
-
-                                if(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.IsSetDaysLessThan())
-                                    xmlWriter.WriteElementString("DaysLessThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.DaysLessThan));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                                    xmlWriter.WriteElementString("DaysLessThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.And.MatchObjectAge.DaysLessThan.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -143,17 +136,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("MatchObjectSize");
                                 if(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.IsSetBytesGreaterThan())
-<<<<<<< HEAD
-                                    xmlWriter.WriteElementString("BytesGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.BytesGreaterThan.Value));                 
+                                    xmlWriter.WriteElementString("BytesGreaterThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.BytesGreaterThan.Value));
 
                                 if(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.IsSetBytesLessThan())
-                                    xmlWriter.WriteElementString("BytesLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.BytesLessThan.Value));                 
-=======
-                                    xmlWriter.WriteElementString("BytesGreaterThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.BytesGreaterThan));                 
-
-                                if(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.IsSetBytesLessThan())
-                                    xmlWriter.WriteElementString("BytesLessThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.BytesLessThan));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                                    xmlWriter.WriteElementString("BytesLessThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.And.MatchObjectSize.BytesLessThan.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -193,10 +179,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("Tag");
                                 if(publicRequestStorageLensGroupFilterMatchAnyTagValue.IsSetKey())
-                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterMatchAnyTagValue.Key));                 
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterMatchAnyTagValue.Key));
 
                                 if(publicRequestStorageLensGroupFilterMatchAnyTagValue.IsSetValue())
-                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterMatchAnyTagValue.Value));                 
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterMatchAnyTagValue.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -207,17 +193,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("MatchObjectAge");
                             if(publicRequest.StorageLensGroup.Filter.MatchObjectAge.IsSetDaysGreaterThan())
-<<<<<<< HEAD
-                                xmlWriter.WriteElementString("DaysGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.MatchObjectAge.DaysGreaterThan.Value));                 
+                                xmlWriter.WriteElementString("DaysGreaterThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.MatchObjectAge.DaysGreaterThan.Value));
 
                             if(publicRequest.StorageLensGroup.Filter.MatchObjectAge.IsSetDaysLessThan())
-                                xmlWriter.WriteElementString("DaysLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.MatchObjectAge.DaysLessThan.Value));                 
-=======
-                                xmlWriter.WriteElementString("DaysGreaterThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.MatchObjectAge.DaysGreaterThan));                 
-
-                            if(publicRequest.StorageLensGroup.Filter.MatchObjectAge.IsSetDaysLessThan())
-                                xmlWriter.WriteElementString("DaysLessThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.MatchObjectAge.DaysLessThan));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                                xmlWriter.WriteElementString("DaysLessThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.MatchObjectAge.DaysLessThan.Value));
 
                             xmlWriter.WriteEndElement();
                         }
@@ -225,17 +204,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("MatchObjectSize");
                             if(publicRequest.StorageLensGroup.Filter.MatchObjectSize.IsSetBytesGreaterThan())
-<<<<<<< HEAD
-                                xmlWriter.WriteElementString("BytesGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.MatchObjectSize.BytesGreaterThan.Value));                 
+                                xmlWriter.WriteElementString("BytesGreaterThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.MatchObjectSize.BytesGreaterThan.Value));
 
                             if(publicRequest.StorageLensGroup.Filter.MatchObjectSize.IsSetBytesLessThan())
-                                xmlWriter.WriteElementString("BytesLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.MatchObjectSize.BytesLessThan.Value));                 
-=======
-                                xmlWriter.WriteElementString("BytesGreaterThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.MatchObjectSize.BytesGreaterThan));                 
-
-                            if(publicRequest.StorageLensGroup.Filter.MatchObjectSize.IsSetBytesLessThan())
-                                xmlWriter.WriteElementString("BytesLessThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.MatchObjectSize.BytesLessThan));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                                xmlWriter.WriteElementString("BytesLessThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.MatchObjectSize.BytesLessThan.Value));
 
                             xmlWriter.WriteEndElement();
                         }
@@ -276,10 +248,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("Tag");
                                     if(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.IsSetKey())
-                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.Key));                 
+                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.Key));
 
                                     if(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.IsSetValue())
-                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.Value));                 
+                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestStorageLensGroupFilterOrMatchAnyTagValue.Value));
 
                                     xmlWriter.WriteEndElement();
                                 }
@@ -290,17 +262,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("MatchObjectAge");
                                 if(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.IsSetDaysGreaterThan())
-<<<<<<< HEAD
-                                    xmlWriter.WriteElementString("DaysGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.DaysGreaterThan.Value));                 
+                                    xmlWriter.WriteElementString("DaysGreaterThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.DaysGreaterThan.Value));
 
                                 if(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.IsSetDaysLessThan())
-                                    xmlWriter.WriteElementString("DaysLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.DaysLessThan.Value));                 
-=======
-                                    xmlWriter.WriteElementString("DaysGreaterThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.DaysGreaterThan));                 
-
-                                if(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.IsSetDaysLessThan())
-                                    xmlWriter.WriteElementString("DaysLessThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.DaysLessThan));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                                    xmlWriter.WriteElementString("DaysLessThan", StringUtils.FromInt(publicRequest.StorageLensGroup.Filter.Or.MatchObjectAge.DaysLessThan.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -308,17 +273,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("MatchObjectSize");
                                 if(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.IsSetBytesGreaterThan())
-<<<<<<< HEAD
-                                    xmlWriter.WriteElementString("BytesGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.BytesGreaterThan.Value));                 
+                                    xmlWriter.WriteElementString("BytesGreaterThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.BytesGreaterThan.Value));
 
                                 if(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.IsSetBytesLessThan())
-                                    xmlWriter.WriteElementString("BytesLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.BytesLessThan.Value));                 
-=======
-                                    xmlWriter.WriteElementString("BytesGreaterThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.BytesGreaterThan));                 
-
-                                if(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.IsSetBytesLessThan())
-                                    xmlWriter.WriteElementString("BytesLessThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.BytesLessThan));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                                    xmlWriter.WriteElementString("BytesLessThan", StringUtils.FromLong(publicRequest.StorageLensGroup.Filter.Or.MatchObjectSize.BytesLessThan.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -327,10 +285,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.StorageLensGroup.IsSetName())
-                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.StorageLensGroup.Name));                 
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.StorageLensGroup.Name));
 
                     if(publicRequest.StorageLensGroup.IsSetStorageLensGroupArn())
-                        xmlWriter.WriteElementString("StorageLensGroupArn", StringUtils.FromString(publicRequest.StorageLensGroup.StorageLensGroupArn));                 
+                        xmlWriter.WriteElementString("StorageLensGroupArn", StringUtils.FromString(publicRequest.StorageLensGroup.StorageLensGroupArn));
 
                     xmlWriter.WriteEndElement();
                 }
@@ -344,10 +302,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("Tag");
                         if(publicRequestTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));                 
+                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
 
                         if(publicRequestTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));                 
+                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
 
                         xmlWriter.WriteEndElement();
                     }

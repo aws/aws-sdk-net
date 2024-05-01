@@ -64,9 +64,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property CreatedAt.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ModifiedAt.
         /// </summary>
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TemplateCount. The number of templates in a group.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TemplateCount
+        public int? TemplateCount
         {
-            get { return this._templateCount.GetValueOrDefault(); }
+            get { return this._templateCount; }
             set { this._templateCount = value; }
         }
 

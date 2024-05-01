@@ -72,7 +72,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("autoImportDataQualityResult", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoImportDataQualityResult = unmarshaller.Unmarshall(context);
                     continue;
                 }

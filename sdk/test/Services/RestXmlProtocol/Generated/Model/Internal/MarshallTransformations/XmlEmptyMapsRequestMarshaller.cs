@@ -75,7 +75,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         if (kvp.Value != null) 
                         {
                             if(kvp.Value.IsSetHi())
-                                xmlWriter.WriteElementString("hi", StringUtils.FromString(kvp.Value.Hi));                 
+                                xmlWriter.WriteElementString("hi", StringUtils.FromString(kvp.Value.Hi));
                         }
                         xmlWriter.WriteEndElement();
                         xmlWriter.WriteEndElement();

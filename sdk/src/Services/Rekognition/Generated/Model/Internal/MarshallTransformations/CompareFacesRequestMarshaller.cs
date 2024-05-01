@@ -78,18 +78,14 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSimilarityThreshold())
                 {
                     context.Writer.WritePropertyName("SimilarityThreshold");
-<<<<<<< HEAD
-                    context.Writer.Write(publicRequest.SimilarityThreshold.Value);
-=======
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.SimilarityThreshold))
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.SimilarityThreshold.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.SimilarityThreshold));
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.SimilarityThreshold.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.SimilarityThreshold);
+                        context.Writer.Write(publicRequest.SimilarityThreshold.Value);
                     }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetSourceImage())

@@ -107,9 +107,9 @@ namespace Amazon.MediaPackageV2.Model
         /// The total duration (in seconds) of the manifest's content.
         /// </para>
         /// </summary>
-        public int ManifestWindowSeconds
+        public int? ManifestWindowSeconds
         {
-            get { return this._manifestWindowSeconds.GetValueOrDefault(); }
+            get { return this._manifestWindowSeconds; }
             set { this._manifestWindowSeconds = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.MediaPackageV2.Model
         /// Minimum amount of content (in seconds) that a player must keep available in the buffer.
         /// </para>
         /// </summary>
-        public int MinBufferTimeSeconds
+        public int? MinBufferTimeSeconds
         {
-            get { return this._minBufferTimeSeconds.GetValueOrDefault(); }
+            get { return this._minBufferTimeSeconds; }
             set { this._minBufferTimeSeconds = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.MediaPackageV2.Model
         /// updates to the manifest.
         /// </para>
         /// </summary>
-        public int MinUpdatePeriodSeconds
+        public int? MinUpdatePeriodSeconds
         {
-            get { return this._minUpdatePeriodSeconds.GetValueOrDefault(); }
+            get { return this._minUpdatePeriodSeconds; }
             set { this._minUpdatePeriodSeconds = value; }
         }
 
@@ -234,9 +234,9 @@ namespace Amazon.MediaPackageV2.Model
         /// The amount of time (in seconds) that the player should be from the end of the manifest.
         /// </para>
         /// </summary>
-        public int SuggestedPresentationDelaySeconds
+        public int? SuggestedPresentationDelaySeconds
         {
-            get { return this._suggestedPresentationDelaySeconds.GetValueOrDefault(); }
+            get { return this._suggestedPresentationDelaySeconds; }
             set { this._suggestedPresentationDelaySeconds = value; }
         }
 

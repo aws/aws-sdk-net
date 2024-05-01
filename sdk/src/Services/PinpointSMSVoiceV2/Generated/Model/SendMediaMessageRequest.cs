@@ -112,9 +112,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// recipient.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 
@@ -236,9 +236,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=259200)]
-        public int TimeToLive
+        public int? TimeToLive
         {
-            get { return this._timeToLive.GetValueOrDefault(); }
+            get { return this._timeToLive; }
             set { this._timeToLive = value; }
         }
 

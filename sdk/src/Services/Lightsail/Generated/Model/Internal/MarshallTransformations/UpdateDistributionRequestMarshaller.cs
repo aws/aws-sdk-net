@@ -139,7 +139,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUseDefaultCertificate())
                 {
                     context.Writer.WritePropertyName("useDefaultCertificate");
-                    context.Writer.Write(publicRequest.UseDefaultCertificate);
+                    context.Writer.Write(publicRequest.UseDefaultCertificate.Value);
                 }
 
                 if(publicRequest.IsSetViewerMinimumTlsProtocolVersion())

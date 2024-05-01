@@ -303,9 +303,9 @@ namespace Amazon.S3.Model
                 }
                 else
                 {
-                    if (!string.IsNullOrEmpty(this.RawExpires))
+                    if (!string.IsNullOrEmpty(this.ExpiresString))
                     {
-                        this.expires = AmazonS3Util.ParseExpiresHeader(this.RawExpires, this.ResponseMetadata.RequestId);
+                        this.expires = AmazonS3Util.ParseExpiresHeader(this.ExpiresString, this.ResponseMetadata.RequestId);
                     }
                     else
                     {

@@ -82,13 +82,13 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEpochSeconds())
                 {
                     context.Writer.WritePropertyName("epochSeconds");
-                    context.Writer.Write(publicRequest.EpochSeconds);
+                    context.Writer.Write(publicRequest.EpochSeconds.Value);
                 }
 
                 if(publicRequest.IsSetEpochSecondsOnTarget())
                 {
                     context.Writer.WritePropertyName("epochSecondsOnTarget");
-                    context.Writer.Write(publicRequest.EpochSecondsOnTarget);
+                    context.Writer.Write(publicRequest.EpochSecondsOnTarget.Value);
                 }
 
                 if(publicRequest.IsSetHttpDate())
@@ -106,7 +106,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNormal())
                 {
                     context.Writer.WritePropertyName("normal");
-                    context.Writer.Write(publicRequest.Normal);
+                    context.Writer.Write(publicRequest.Normal.Value);
                 }
 
                 writer.WriteObjectEnd();

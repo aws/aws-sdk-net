@@ -147,18 +147,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("MaxCapacity");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.MaxCapacity.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxCapacity))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxCapacity.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxCapacity));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxCapacity.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxCapacity);
+                    context.Writer.Write(requestObject.MaxCapacity.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMaxRetries())

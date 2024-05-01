@@ -51,18 +51,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberValue())
             {
                 context.Writer.WritePropertyName("NumberValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.NumberValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.NumberValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.NumberValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NumberValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NumberValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.NumberValue);
+                    context.Writer.Write(requestObject.NumberValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetStringValue())

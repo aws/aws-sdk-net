@@ -51,52 +51,40 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinBoundingBoxHeight())
             {
                 context.Writer.WritePropertyName("MinBoundingBoxHeight");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.MinBoundingBoxHeight.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.MinBoundingBoxHeight))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinBoundingBoxHeight.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinBoundingBoxHeight));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinBoundingBoxHeight.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinBoundingBoxHeight);
+                    context.Writer.Write(requestObject.MinBoundingBoxHeight.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMinBoundingBoxWidth())
             {
                 context.Writer.WritePropertyName("MinBoundingBoxWidth");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.MinBoundingBoxWidth.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.MinBoundingBoxWidth))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinBoundingBoxWidth.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinBoundingBoxWidth));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinBoundingBoxWidth.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinBoundingBoxWidth);
+                    context.Writer.Write(requestObject.MinBoundingBoxWidth.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMinConfidence())
             {
                 context.Writer.WritePropertyName("MinConfidence");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.MinConfidence.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.MinConfidence))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinConfidence.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinConfidence));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinConfidence.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinConfidence);
+                    context.Writer.Write(requestObject.MinConfidence.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

@@ -69,18 +69,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProduct())
             {
                 context.Writer.WritePropertyName("Product");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Product.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Product))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Product.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Product));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Product.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Product);
+                    context.Writer.Write(requestObject.Product.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

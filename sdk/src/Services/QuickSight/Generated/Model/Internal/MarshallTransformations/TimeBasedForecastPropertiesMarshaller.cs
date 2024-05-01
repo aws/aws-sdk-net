@@ -51,18 +51,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLowerBoundary())
             {
                 context.Writer.WritePropertyName("LowerBoundary");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.LowerBoundary.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.LowerBoundary))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LowerBoundary.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LowerBoundary));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LowerBoundary.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LowerBoundary);
+                    context.Writer.Write(requestObject.LowerBoundary.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetPeriodsBackward())
@@ -92,18 +88,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUpperBoundary())
             {
                 context.Writer.WritePropertyName("UpperBoundary");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.UpperBoundary.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.UpperBoundary))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.UpperBoundary.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.UpperBoundary));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.UpperBoundary.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.UpperBoundary);
+                    context.Writer.Write(requestObject.UpperBoundary.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

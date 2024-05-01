@@ -57,18 +57,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredWeight())
             {
                 context.Writer.WritePropertyName("DesiredWeight");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.DesiredWeight.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.DesiredWeight))
+                if(StringUtils.IsSpecialFloatValue(requestObject.DesiredWeight.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.DesiredWeight));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.DesiredWeight.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DesiredWeight);
+                    context.Writer.Write(requestObject.DesiredWeight.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetServerlessUpdateConfig())

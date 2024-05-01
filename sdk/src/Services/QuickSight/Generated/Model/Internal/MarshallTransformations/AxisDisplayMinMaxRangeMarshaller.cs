@@ -51,35 +51,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximum())
             {
                 context.Writer.WritePropertyName("Maximum");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Maximum.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Maximum))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Maximum.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Maximum));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Maximum.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Maximum);
+                    context.Writer.Write(requestObject.Maximum.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMinimum())
             {
                 context.Writer.WritePropertyName("Minimum");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Minimum.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Minimum))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Minimum.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Minimum));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Minimum.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Minimum);
+                    context.Writer.Write(requestObject.Minimum.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

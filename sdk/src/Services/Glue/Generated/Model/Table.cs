@@ -179,9 +179,9 @@ namespace Amazon.Glue.Model
         /// engines and can therefore be read by those engines.
         /// </para>
         /// </summary>
-        public bool IsMultiDialectView
+        public bool? IsMultiDialectView
         {
-            get { return this._isMultiDialectView.GetValueOrDefault(); }
+            get { return this._isMultiDialectView; }
             set { this._isMultiDialectView = value; }
         }
 

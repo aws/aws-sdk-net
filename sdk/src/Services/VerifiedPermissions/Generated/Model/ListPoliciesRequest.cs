@@ -76,13 +76,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// You can specify a maximum of 50 policies per response.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=1, Max=50)]
-        public int? MaxResults
-=======
         [AWSProperty(Min=1)]
-        public int MaxResults
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+        public int? MaxResults
         {
             get { return this._maxResults; }
             set { this._maxResults = value; }

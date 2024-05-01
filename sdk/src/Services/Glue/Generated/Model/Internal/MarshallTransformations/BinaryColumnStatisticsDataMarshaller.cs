@@ -51,18 +51,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAverageLength())
             {
                 context.Writer.WritePropertyName("AverageLength");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.AverageLength.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.AverageLength))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.AverageLength.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AverageLength));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AverageLength.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AverageLength);
+                    context.Writer.Write(requestObject.AverageLength.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMaximumLength())

@@ -231,9 +231,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=128, Max=10240)]
-        public int TotalCpuLimit
+        public int? TotalCpuLimit
         {
-            get { return this._totalCpuLimit.GetValueOrDefault(); }
+            get { return this._totalCpuLimit; }
             set { this._totalCpuLimit = value; }
         }
 
@@ -254,9 +254,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=1024000)]
-        public int TotalMemoryLimit
+        public int? TotalMemoryLimit
         {
-            get { return this._totalMemoryLimit.GetValueOrDefault(); }
+            get { return this._totalMemoryLimit; }
             set { this._totalMemoryLimit = value; }
         }
 

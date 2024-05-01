@@ -64,15 +64,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateTrafficPolicyRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetName())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Name));
-
-                if(publicRequest.IsSetDocument())
-                    xmlWriter.WriteElementString("Document", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Document));
-
-                if(publicRequest.IsSetComment())
-                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Comment));
-=======
                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
                 if(publicRequest.IsSetDocument())
@@ -80,7 +71,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                 if(publicRequest.IsSetComment())
                     xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.Comment));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                 xmlWriter.WriteEndElement();

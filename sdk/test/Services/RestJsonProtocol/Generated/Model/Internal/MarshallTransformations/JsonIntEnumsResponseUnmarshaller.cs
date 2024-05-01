@@ -54,19 +54,19 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("integerEnum1", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.IntegerEnum1 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("integerEnum2", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.IntegerEnum2 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("integerEnum3", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.IntegerEnum3 = unmarshaller.Unmarshall(context);
                     continue;
                 }

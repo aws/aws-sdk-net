@@ -69,39 +69,39 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("SimpleScalarPropertiesInputOutput", "https://example.com");
                 if(publicRequest.IsSetByteValue())
-                    xmlWriter.WriteElementString("byteValue", StringUtils.FromInt(publicRequest.ByteValue));
+                    xmlWriter.WriteElementString("byteValue", StringUtils.FromInt(publicRequest.ByteValue.Value));
 
                 if(publicRequest.IsSetDoubleValue())
-                    xmlWriter.WriteElementString("DoubleDribble", StringUtils.FromDouble(publicRequest.DoubleValue));
+                    xmlWriter.WriteElementString("DoubleDribble", StringUtils.FromDouble(publicRequest.DoubleValue.Value));
 
                 if(publicRequest.IsSetFalseBooleanValue())
-                    xmlWriter.WriteElementString("falseBooleanValue", StringUtils.FromBool(publicRequest.FalseBooleanValue));
+                    xmlWriter.WriteElementString("falseBooleanValue", StringUtils.FromBool(publicRequest.FalseBooleanValue.Value));
 
                 if(publicRequest.IsSetFloatValue())
-                    xmlWriter.WriteElementString("floatValue", StringUtils.FromFloat(publicRequest.FloatValue));
+                    xmlWriter.WriteElementString("floatValue", StringUtils.FromFloat(publicRequest.FloatValue.Value));
 
                 if(publicRequest.IsSetIntegerValue())
-                    xmlWriter.WriteElementString("integerValue", StringUtils.FromInt(publicRequest.IntegerValue));
+                    xmlWriter.WriteElementString("integerValue", StringUtils.FromInt(publicRequest.IntegerValue.Value));
 
                 if(publicRequest.IsSetLongValue())
-                    xmlWriter.WriteElementString("longValue", StringUtils.FromLong(publicRequest.LongValue));
+                    xmlWriter.WriteElementString("longValue", StringUtils.FromLong(publicRequest.LongValue.Value));
 
                 if (publicRequest.Nested != null)
                 {
                     xmlWriter.WriteStartElement("Nested");
                     if(publicRequest.Nested.IsSetAttrField())
-                        xmlWriter.WriteElementString("xsi:someName", StringUtils.FromString(publicRequest.Nested.AttrField));                 
+                        xmlWriter.WriteElementString("xsi:someName", StringUtils.FromString(publicRequest.Nested.AttrField));
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetShortValue())
-                    xmlWriter.WriteElementString("shortValue", StringUtils.FromInt(publicRequest.ShortValue));
+                    xmlWriter.WriteElementString("shortValue", StringUtils.FromInt(publicRequest.ShortValue.Value));
 
                 if(publicRequest.IsSetStringValue())
                     xmlWriter.WriteElementString("stringValue", StringUtils.FromString(publicRequest.StringValue));
 
                 if(publicRequest.IsSetTrueBooleanValue())
-                    xmlWriter.WriteElementString("trueBooleanValue", StringUtils.FromBool(publicRequest.TrueBooleanValue));
+                    xmlWriter.WriteElementString("trueBooleanValue", StringUtils.FromBool(publicRequest.TrueBooleanValue.Value));
 
 
                 xmlWriter.WriteEndElement();

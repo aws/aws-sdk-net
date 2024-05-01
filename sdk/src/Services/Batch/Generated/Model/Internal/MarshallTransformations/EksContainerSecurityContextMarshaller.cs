@@ -51,7 +51,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowPrivilegeEscalation())
             {
                 context.Writer.WritePropertyName("allowPrivilegeEscalation");
-                context.Writer.Write(requestObject.AllowPrivilegeEscalation);
+                context.Writer.Write(requestObject.AllowPrivilegeEscalation.Value);
             }
 
             if(requestObject.IsSetPrivileged())

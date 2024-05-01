@@ -64,11 +64,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("MemberRefInputShape", "");
                 if(publicRequest.IsSetName())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("Name", "", StringUtils.FromString(publicRequest.Name));
-=======
                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                 xmlWriter.WriteEndElement();

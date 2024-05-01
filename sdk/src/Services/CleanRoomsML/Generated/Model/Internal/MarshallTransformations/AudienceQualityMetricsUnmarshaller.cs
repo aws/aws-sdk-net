@@ -66,7 +66,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("recallMetric", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RecallMetric = unmarshaller.Unmarshall(context);
                     continue;
                 }

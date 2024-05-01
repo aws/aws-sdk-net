@@ -78,7 +78,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FMSCanRemediate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FMSCanRemediate = unmarshaller.Unmarshall(context);
                     continue;
                 }

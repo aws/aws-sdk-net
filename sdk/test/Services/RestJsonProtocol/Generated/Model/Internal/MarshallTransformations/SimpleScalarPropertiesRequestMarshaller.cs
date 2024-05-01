@@ -70,57 +70,57 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetByteValue())
                 {
                     context.Writer.WritePropertyName("byteValue");
-                    context.Writer.Write(publicRequest.ByteValue);
+                    context.Writer.Write(publicRequest.ByteValue.Value);
                 }
 
                 if(publicRequest.IsSetDoubleValue())
                 {
                     context.Writer.WritePropertyName("DoubleDribble");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.DoubleValue))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.DoubleValue.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DoubleValue));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DoubleValue.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.DoubleValue);
+                        context.Writer.Write(publicRequest.DoubleValue.Value);
                     }
                 }
 
                 if(publicRequest.IsSetFalseBooleanValue())
                 {
                     context.Writer.WritePropertyName("falseBooleanValue");
-                    context.Writer.Write(publicRequest.FalseBooleanValue);
+                    context.Writer.Write(publicRequest.FalseBooleanValue.Value);
                 }
 
                 if(publicRequest.IsSetFloatValue())
                 {
                     context.Writer.WritePropertyName("floatValue");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.FloatValue))
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.FloatValue.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.FloatValue));
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.FloatValue.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.FloatValue);
+                        context.Writer.Write(publicRequest.FloatValue.Value);
                     }
                 }
 
                 if(publicRequest.IsSetIntegerValue())
                 {
                     context.Writer.WritePropertyName("integerValue");
-                    context.Writer.Write(publicRequest.IntegerValue);
+                    context.Writer.Write(publicRequest.IntegerValue.Value);
                 }
 
                 if(publicRequest.IsSetLongValue())
                 {
                     context.Writer.WritePropertyName("longValue");
-                    context.Writer.Write(publicRequest.LongValue);
+                    context.Writer.Write(publicRequest.LongValue.Value);
                 }
 
                 if(publicRequest.IsSetShortValue())
                 {
                     context.Writer.WritePropertyName("shortValue");
-                    context.Writer.Write(publicRequest.ShortValue);
+                    context.Writer.Write(publicRequest.ShortValue.Value);
                 }
 
                 if(publicRequest.IsSetStringValue())
@@ -132,7 +132,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTrueBooleanValue())
                 {
                     context.Writer.WritePropertyName("trueBooleanValue");
-                    context.Writer.Write(publicRequest.TrueBooleanValue);
+                    context.Writer.Write(publicRequest.TrueBooleanValue.Value);
                 }
 
                 writer.WriteObjectEnd();

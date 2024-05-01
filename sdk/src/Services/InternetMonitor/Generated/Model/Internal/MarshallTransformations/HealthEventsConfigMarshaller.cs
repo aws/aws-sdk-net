@@ -62,18 +62,14 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityScoreThreshold())
             {
                 context.Writer.WritePropertyName("AvailabilityScoreThreshold");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.AvailabilityScoreThreshold.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.AvailabilityScoreThreshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.AvailabilityScoreThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AvailabilityScoreThreshold));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AvailabilityScoreThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AvailabilityScoreThreshold);
+                    context.Writer.Write(requestObject.AvailabilityScoreThreshold.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetPerformanceLocalHealthEventsConfig())
@@ -90,18 +86,14 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPerformanceScoreThreshold())
             {
                 context.Writer.WritePropertyName("PerformanceScoreThreshold");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.PerformanceScoreThreshold.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.PerformanceScoreThreshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PerformanceScoreThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PerformanceScoreThreshold));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PerformanceScoreThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PerformanceScoreThreshold);
+                    context.Writer.Write(requestObject.PerformanceScoreThreshold.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

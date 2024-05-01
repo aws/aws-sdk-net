@@ -130,9 +130,9 @@ namespace Amazon.EMRContainers.Model
         /// operation returns all applicable virtual clusters.
         /// </para>
         /// </summary>
-        public bool EksAccessEntryIntegrated
+        public bool? EksAccessEntryIntegrated
         {
-            get { return this._eksAccessEntryIntegrated.GetValueOrDefault(); }
+            get { return this._eksAccessEntryIntegrated; }
             set { this._eksAccessEntryIntegrated = value; }
         }
 

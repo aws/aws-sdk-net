@@ -122,18 +122,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGopSize())
             {
                 context.Writer.WritePropertyName("gopSize");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.GopSize.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.GopSize))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.GopSize.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GopSize));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GopSize.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.GopSize);
+                    context.Writer.Write(requestObject.GopSize.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetGopSizeUnits())

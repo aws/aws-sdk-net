@@ -591,9 +591,9 @@ namespace Amazon.MediaLive.Model
         /// a value that MediaLive calculates
         /// </summary>
         [AWSProperty(Min=64, Max=2160)]
-        public int TileHeight
+        public int? TileHeight
         {
-            get { return this._tileHeight.GetValueOrDefault(); }
+            get { return this._tileHeight; }
             set { this._tileHeight = value; }
         }
 
@@ -626,9 +626,9 @@ namespace Amazon.MediaLive.Model
         /// See tileHeight for more information.
         /// </summary>
         [AWSProperty(Min=256, Max=3840)]
-        public int TileWidth
+        public int? TileWidth
         {
-            get { return this._tileWidth.GetValueOrDefault(); }
+            get { return this._tileWidth; }
             set { this._tileWidth = value; }
         }
 

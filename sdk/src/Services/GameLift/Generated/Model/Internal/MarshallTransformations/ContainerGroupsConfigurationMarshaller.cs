@@ -73,7 +73,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredReplicaContainerGroupsPerInstance())
             {
                 context.Writer.WritePropertyName("DesiredReplicaContainerGroupsPerInstance");
-                context.Writer.Write(requestObject.DesiredReplicaContainerGroupsPerInstance);
+                context.Writer.Write(requestObject.DesiredReplicaContainerGroupsPerInstance.Value);
             }
 
         }

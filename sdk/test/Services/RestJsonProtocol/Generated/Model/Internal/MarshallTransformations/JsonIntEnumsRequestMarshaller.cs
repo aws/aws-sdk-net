@@ -70,19 +70,19 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIntegerEnum1())
                 {
                     context.Writer.WritePropertyName("integerEnum1");
-                    context.Writer.Write(publicRequest.IntegerEnum1);
+                    context.Writer.Write(publicRequest.IntegerEnum1.Value);
                 }
 
                 if(publicRequest.IsSetIntegerEnum2())
                 {
                     context.Writer.WritePropertyName("integerEnum2");
-                    context.Writer.Write(publicRequest.IntegerEnum2);
+                    context.Writer.Write(publicRequest.IntegerEnum2.Value);
                 }
 
                 if(publicRequest.IsSetIntegerEnum3())
                 {
                     context.Writer.WritePropertyName("integerEnum3");
-                    context.Writer.Write(publicRequest.IntegerEnum3);
+                    context.Writer.Write(publicRequest.IntegerEnum3.Value);
                 }
 
                 if(publicRequest.IsSetIntegerEnumList())

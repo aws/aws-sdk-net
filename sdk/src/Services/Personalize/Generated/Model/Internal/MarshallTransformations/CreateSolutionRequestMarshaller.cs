@@ -96,7 +96,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPerformAutoTraining())
                 {
                     context.Writer.WritePropertyName("performAutoTraining");
-                    context.Writer.Write(publicRequest.PerformAutoTraining);
+                    context.Writer.Write(publicRequest.PerformAutoTraining.Value);
                 }
 
                 if(publicRequest.IsSetPerformHPO())

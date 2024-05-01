@@ -59,9 +59,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=60000)]
-        public int ConnectionPort
+        public int? ConnectionPort
         {
-            get { return this._connectionPort.GetValueOrDefault(); }
+            get { return this._connectionPort; }
             set { this._connectionPort = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=60000)]
-        public int ContainerPort
+        public int? ContainerPort
         {
-            get { return this._containerPort.GetValueOrDefault(); }
+            get { return this._containerPort; }
             set { this._containerPort = value; }
         }
 

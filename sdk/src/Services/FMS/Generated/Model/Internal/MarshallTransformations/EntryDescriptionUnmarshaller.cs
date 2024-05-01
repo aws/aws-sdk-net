@@ -72,7 +72,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EntryRuleNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EntryRuleNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

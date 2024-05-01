@@ -172,18 +172,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFragmentTime())
             {
                 context.Writer.WritePropertyName("fragmentTime");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.FragmentTime.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.FragmentTime))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.FragmentTime.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FragmentTime));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FragmentTime.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.FragmentTime);
+                    context.Writer.Write(requestObject.FragmentTime.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetKlvMetadata())
@@ -213,18 +209,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNullPacketBitrate())
             {
                 context.Writer.WritePropertyName("nullPacketBitrate");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.NullPacketBitrate.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.NullPacketBitrate))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.NullPacketBitrate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NullPacketBitrate));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NullPacketBitrate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.NullPacketBitrate);
+                    context.Writer.Write(requestObject.NullPacketBitrate.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetPatInterval())
@@ -331,18 +323,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentationTime())
             {
                 context.Writer.WritePropertyName("segmentationTime");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.SegmentationTime.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.SegmentationTime))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SegmentationTime.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SegmentationTime));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SegmentationTime.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.SegmentationTime);
+                    context.Writer.Write(requestObject.SegmentationTime.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetTimedMetadataPid())

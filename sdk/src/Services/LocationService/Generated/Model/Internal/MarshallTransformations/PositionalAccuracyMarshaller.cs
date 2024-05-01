@@ -51,18 +51,14 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHorizontal())
             {
                 context.Writer.WritePropertyName("Horizontal");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Horizontal.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Horizontal))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Horizontal.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Horizontal));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Horizontal.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Horizontal);
+                    context.Writer.Write(requestObject.Horizontal.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

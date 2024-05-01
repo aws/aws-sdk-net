@@ -108,7 +108,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxConcurrentSessions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConcurrentSessions = unmarshaller.Unmarshall(context);
                     continue;
                 }

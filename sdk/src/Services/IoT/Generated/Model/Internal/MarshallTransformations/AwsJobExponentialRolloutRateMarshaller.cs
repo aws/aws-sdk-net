@@ -57,18 +57,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncrementFactor())
             {
                 context.Writer.WritePropertyName("incrementFactor");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.IncrementFactor.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.IncrementFactor))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.IncrementFactor.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.IncrementFactor));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.IncrementFactor.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.IncrementFactor);
+                    context.Writer.Write(requestObject.IncrementFactor.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetRateIncreaseCriteria())

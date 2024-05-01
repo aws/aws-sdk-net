@@ -85,9 +85,9 @@ namespace Amazon.Outposts.Model
         /// The date that the specified capacity task successfully ran.
         /// </para>
         /// </summary>
-        public DateTime CompletionDate
+        public DateTime? CompletionDate
         {
-            get { return this._completionDate.GetValueOrDefault(); }
+            get { return this._completionDate; }
             set { this._completionDate = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Outposts.Model
         /// The date that the specified capacity task was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.Outposts.Model
         /// The date that the specified capacity was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

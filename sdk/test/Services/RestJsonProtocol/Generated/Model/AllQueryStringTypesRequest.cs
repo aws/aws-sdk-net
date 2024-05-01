@@ -60,9 +60,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property QueryBoolean.
         /// </summary>
-        public bool QueryBoolean
+        public bool? QueryBoolean
         {
-            get { return this._queryBoolean.GetValueOrDefault(); }
+            get { return this._queryBoolean; }
             set { this._queryBoolean = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property QueryByte.
         /// </summary>
-        public int QueryByte
+        public int? QueryByte
         {
-            get { return this._queryByte.GetValueOrDefault(); }
+            get { return this._queryByte; }
             set { this._queryByte = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property QueryDouble.
         /// </summary>
-        public double QueryDouble
+        public double? QueryDouble
         {
-            get { return this._queryDouble.GetValueOrDefault(); }
+            get { return this._queryDouble; }
             set { this._queryDouble = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property QueryFloat.
         /// </summary>
-        public float QueryFloat
+        public float? QueryFloat
         {
-            get { return this._queryFloat.GetValueOrDefault(); }
+            get { return this._queryFloat; }
             set { this._queryFloat = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property QueryInteger.
         /// </summary>
-        public int QueryInteger
+        public int? QueryInteger
         {
-            get { return this._queryInteger.GetValueOrDefault(); }
+            get { return this._queryInteger; }
             set { this._queryInteger = value; }
         }
 
@@ -195,9 +195,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property QueryIntegerEnum.
         /// </summary>
-        public int QueryIntegerEnum
+        public int? QueryIntegerEnum
         {
-            get { return this._queryIntegerEnum.GetValueOrDefault(); }
+            get { return this._queryIntegerEnum; }
             set { this._queryIntegerEnum = value; }
         }
 
@@ -255,9 +255,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property QueryLong.
         /// </summary>
-        public long QueryLong
+        public long? QueryLong
         {
-            get { return this._queryLong.GetValueOrDefault(); }
+            get { return this._queryLong; }
             set { this._queryLong = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property QueryShort.
         /// </summary>
-        public int QueryShort
+        public int? QueryShort
         {
-            get { return this._queryShort.GetValueOrDefault(); }
+            get { return this._queryShort; }
             set { this._queryShort = value; }
         }
 
@@ -345,9 +345,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property QueryTimestamp.
         /// </summary>
-        public DateTime QueryTimestamp
+        public DateTime? QueryTimestamp
         {
-            get { return this._queryTimestamp.GetValueOrDefault(); }
+            get { return this._queryTimestamp; }
             set { this._queryTimestamp = value; }
         }
 

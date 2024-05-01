@@ -92,18 +92,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("Weight");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Weight.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Weight))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Weight.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Weight));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Weight.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Weight);
+                    context.Writer.Write(requestObject.Weight.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

@@ -69,18 +69,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileOffset())
             {
                 context.Writer.WritePropertyName("fileOffset");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.FileOffset.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.FileOffset))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.FileOffset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FileOffset));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FileOffset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.FileOffset);
+                    context.Writer.Write(requestObject.FileOffset.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetKantarLicenseId())

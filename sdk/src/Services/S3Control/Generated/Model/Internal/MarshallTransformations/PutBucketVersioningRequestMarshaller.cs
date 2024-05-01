@@ -79,17 +79,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("VersioningConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     if(publicRequest.VersioningConfiguration.IsSetMFADelete())
-<<<<<<< HEAD
-                        xmlWriter.WriteElementString("MfaDelete", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.VersioningConfiguration.MFADelete));
-
-                    if(publicRequest.VersioningConfiguration.IsSetStatus())
-                        xmlWriter.WriteElementString("Status", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.VersioningConfiguration.Status));
-=======
                         xmlWriter.WriteElementString("MfaDelete", StringUtils.FromString(publicRequest.VersioningConfiguration.MFADelete));
 
                     if(publicRequest.VersioningConfiguration.IsSetStatus())
                         xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequest.VersioningConfiguration.Status));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                     xmlWriter.WriteEndElement();

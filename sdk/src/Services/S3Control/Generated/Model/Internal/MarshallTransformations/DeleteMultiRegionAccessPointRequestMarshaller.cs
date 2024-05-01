@@ -69,11 +69,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("DeleteMultiRegionAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetClientToken())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("ClientToken", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ClientToken));
-=======
                     xmlWriter.WriteElementString("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 else                
                     xmlWriter.WriteElementString("ClientToken", Guid.NewGuid().ToString());                
 
@@ -81,7 +77,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("Details");
                     if(publicRequest.Details.IsSetName())
-                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Details.Name));                 
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Details.Name));
 
                     xmlWriter.WriteEndElement();
                 }

@@ -89,13 +89,13 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetApproximateDollarLimit())
                 {
                     context.Writer.WritePropertyName("approximateDollarLimit");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.ApproximateDollarLimit))
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.ApproximateDollarLimit.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ApproximateDollarLimit));
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ApproximateDollarLimit.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.ApproximateDollarLimit);
+                        context.Writer.Write(publicRequest.ApproximateDollarLimit.Value);
                     }
                 }
 

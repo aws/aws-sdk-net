@@ -66,13 +66,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("From", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.From = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("To", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.To = unmarshaller.Unmarshall(context);
                     continue;
                 }

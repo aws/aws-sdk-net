@@ -72,7 +72,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("thresholdPercentage", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ThresholdPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

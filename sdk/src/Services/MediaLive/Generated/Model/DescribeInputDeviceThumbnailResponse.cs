@@ -56,24 +56,6 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-<<<<<<< HEAD
-        /// Gets and sets the property ContentLength. The length of the content.
-        /// </summary>
-        public long? ContentLength
-        {
-            get { return this._contentLength; }
-            set { this._contentLength = value; }
-        }
-
-        // Check to see if ContentLength property is set
-        internal bool IsSetContentLength()
-        {
-            return this._contentLength.HasValue; 
-        }
-
-        /// <summary>
-=======
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
         /// Gets and sets the property ContentType. Specifies the media type of the thumbnail.
         /// </summary>
         public ContentType ContentType

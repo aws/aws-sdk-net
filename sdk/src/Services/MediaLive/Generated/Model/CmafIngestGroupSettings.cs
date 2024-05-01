@@ -96,9 +96,9 @@ namespace Amazon.MediaLive.Model
         /// be a fraction of the units.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int SegmentLength
+        public int? SegmentLength
         {
-            get { return this._segmentLength.GetValueOrDefault(); }
+            get { return this._segmentLength; }
             set { this._segmentLength = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.MediaLive.Model
         /// from the second pipeline.
         /// </summary>
         [AWSProperty(Min=0, Max=2000)]
-        public int SendDelayMs
+        public int? SendDelayMs
         {
-            get { return this._sendDelayMs.GetValueOrDefault(); }
+            get { return this._sendDelayMs; }
             set { this._sendDelayMs = value; }
         }
 

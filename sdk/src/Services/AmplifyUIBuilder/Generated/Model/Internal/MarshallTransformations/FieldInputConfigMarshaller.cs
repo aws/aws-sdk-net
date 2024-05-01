@@ -92,35 +92,27 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("maxValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.MaxValue.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.MaxValue))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MaxValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxValue));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxValue);
+                    context.Writer.Write(requestObject.MaxValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("minValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.MinValue.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.MinValue))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinValue));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinValue);
+                    context.Writer.Write(requestObject.MinValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetName())
@@ -150,18 +142,14 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStep())
             {
                 context.Writer.WritePropertyName("step");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Step.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.Step))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Step.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Step));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Step.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Step);
+                    context.Writer.Write(requestObject.Step.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetType())

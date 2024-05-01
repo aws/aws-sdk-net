@@ -51,69 +51,53 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Height.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Height))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Height.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Height));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Height.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Height);
+                    context.Writer.Write(requestObject.Height.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetLeftOffset())
             {
                 context.Writer.WritePropertyName("leftOffset");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.LeftOffset.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.LeftOffset))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LeftOffset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LeftOffset));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LeftOffset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LeftOffset);
+                    context.Writer.Write(requestObject.LeftOffset.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetTopOffset())
             {
                 context.Writer.WritePropertyName("topOffset");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.TopOffset.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.TopOffset))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TopOffset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TopOffset));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TopOffset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TopOffset);
+                    context.Writer.Write(requestObject.TopOffset.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("width");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Width.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Width))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Width.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Width));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Width.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Width);
+                    context.Writer.Write(requestObject.Width.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

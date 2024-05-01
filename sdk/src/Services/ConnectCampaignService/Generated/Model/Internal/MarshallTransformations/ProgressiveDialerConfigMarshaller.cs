@@ -51,35 +51,27 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBandwidthAllocation())
             {
                 context.Writer.WritePropertyName("bandwidthAllocation");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.BandwidthAllocation.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.BandwidthAllocation))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BandwidthAllocation.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BandwidthAllocation));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BandwidthAllocation.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BandwidthAllocation);
+                    context.Writer.Write(requestObject.BandwidthAllocation.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetDialingCapacity())
             {
                 context.Writer.WritePropertyName("dialingCapacity");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.DialingCapacity.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.DialingCapacity))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DialingCapacity.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DialingCapacity));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DialingCapacity.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DialingCapacity);
+                    context.Writer.Write(requestObject.DialingCapacity.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

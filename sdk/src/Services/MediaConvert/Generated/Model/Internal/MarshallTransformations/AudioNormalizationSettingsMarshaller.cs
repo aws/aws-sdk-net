@@ -81,35 +81,27 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetLkfs())
             {
                 context.Writer.WritePropertyName("targetLkfs");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.TargetLkfs.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetLkfs))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetLkfs.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetLkfs));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetLkfs.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TargetLkfs);
+                    context.Writer.Write(requestObject.TargetLkfs.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetTruePeakLimiterThreshold())
             {
                 context.Writer.WritePropertyName("truePeakLimiterThreshold");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.TruePeakLimiterThreshold.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.TruePeakLimiterThreshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TruePeakLimiterThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TruePeakLimiterThreshold));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TruePeakLimiterThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TruePeakLimiterThreshold);
+                    context.Writer.Write(requestObject.TruePeakLimiterThreshold.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

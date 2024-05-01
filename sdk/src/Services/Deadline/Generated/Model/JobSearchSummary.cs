@@ -57,9 +57,9 @@ namespace Amazon.Deadline.Model
         /// The date and time the resource was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.Deadline.Model
         /// The date and time the resource ended running.
         /// </para>
         /// </summary>
-        public DateTime EndedAt
+        public DateTime? EndedAt
         {
-            get { return this._endedAt.GetValueOrDefault(); }
+            get { return this._endedAt; }
             set { this._endedAt = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int MaxFailedTasksCount
+        public int? MaxFailedTasksCount
         {
-            get { return this._maxFailedTasksCount.GetValueOrDefault(); }
+            get { return this._maxFailedTasksCount; }
             set { this._maxFailedTasksCount = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int MaxRetriesPerTask
+        public int? MaxRetriesPerTask
         {
-            get { return this._maxRetriesPerTask.GetValueOrDefault(); }
+            get { return this._maxRetriesPerTask; }
             set { this._maxRetriesPerTask = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -278,9 +278,9 @@ namespace Amazon.Deadline.Model
         /// The date and time the resource started running.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

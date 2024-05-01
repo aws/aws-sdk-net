@@ -51,35 +51,27 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricIntervalLowerBound())
             {
                 context.Writer.WritePropertyName("MetricIntervalLowerBound");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.MetricIntervalLowerBound.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalLowerBound))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalLowerBound.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalLowerBound));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalLowerBound.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MetricIntervalLowerBound);
+                    context.Writer.Write(requestObject.MetricIntervalLowerBound.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMetricIntervalUpperBound())
             {
                 context.Writer.WritePropertyName("MetricIntervalUpperBound");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.MetricIntervalUpperBound.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalUpperBound))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalUpperBound.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalUpperBound));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalUpperBound.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MetricIntervalUpperBound);
+                    context.Writer.Write(requestObject.MetricIntervalUpperBound.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetScalingAdjustment())

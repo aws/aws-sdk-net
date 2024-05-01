@@ -51,35 +51,27 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatitude())
             {
                 context.Writer.WritePropertyName("latitude");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Latitude.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Latitude))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Latitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Latitude));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Latitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Latitude);
+                    context.Writer.Write(requestObject.Latitude.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetLongitude())
             {
                 context.Writer.WritePropertyName("longitude");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Longitude.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Longitude))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Longitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Longitude));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Longitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Longitude);
+                    context.Writer.Write(requestObject.Longitude.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

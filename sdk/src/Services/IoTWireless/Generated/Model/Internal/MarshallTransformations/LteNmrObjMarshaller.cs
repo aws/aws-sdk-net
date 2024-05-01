@@ -75,18 +75,14 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRsrq())
             {
                 context.Writer.WritePropertyName("Rsrq");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Rsrq.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.Rsrq))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Rsrq.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Rsrq));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Rsrq.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Rsrq);
+                    context.Writer.Write(requestObject.Rsrq.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

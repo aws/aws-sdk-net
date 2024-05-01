@@ -51,18 +51,14 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFactor())
             {
                 context.Writer.WritePropertyName("factor");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Factor.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Factor))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Factor.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Factor));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Factor.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Factor);
+                    context.Writer.Write(requestObject.Factor.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetIsBigEndian())
@@ -98,18 +94,14 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Offset.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Offset))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Offset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Offset);
+                    context.Writer.Write(requestObject.Offset.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetStartBit())

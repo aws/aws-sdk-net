@@ -84,43 +84,43 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("dateTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.DateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("dateTimeOnTarget", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.DateTimeOnTarget = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("epochSeconds", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.EpochSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("epochSecondsOnTarget", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.EpochSecondsOnTarget = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("httpDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.HttpDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("httpDateOnTarget", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.HttpDateOnTarget = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("normal", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.Normal = unmarshaller.Unmarshall(context);
                         continue;
                     }

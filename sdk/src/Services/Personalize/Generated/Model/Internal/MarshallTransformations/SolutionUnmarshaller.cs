@@ -114,7 +114,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("performAutoTraining", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PerformAutoTraining = unmarshaller.Unmarshall(context);
                     continue;
                 }

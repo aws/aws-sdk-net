@@ -74,35 +74,19 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("CachePolicyConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.CachePolicyConfig.IsSetComment())
-<<<<<<< HEAD
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CachePolicyConfig.Comment));
-
-                    if(publicRequest.CachePolicyConfig.IsSetDefaultTTL())
-                        xmlWriter.WriteElementString("DefaultTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.CachePolicyConfig.DefaultTTL.Value));
-
-                    if(publicRequest.CachePolicyConfig.IsSetMaxTTL())
-                        xmlWriter.WriteElementString("MaxTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.CachePolicyConfig.MaxTTL.Value));
-
-                    if(publicRequest.CachePolicyConfig.IsSetMinTTL())
-                        xmlWriter.WriteElementString("MinTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.CachePolicyConfig.MinTTL.Value));
-
-                    if(publicRequest.CachePolicyConfig.IsSetName())
-                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CachePolicyConfig.Name));
-=======
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.CachePolicyConfig.Comment));
 
                     if(publicRequest.CachePolicyConfig.IsSetDefaultTTL())
-                        xmlWriter.WriteElementString("DefaultTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.DefaultTTL));
+                        xmlWriter.WriteElementString("DefaultTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.DefaultTTL.Value));
 
                     if(publicRequest.CachePolicyConfig.IsSetMaxTTL())
-                        xmlWriter.WriteElementString("MaxTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MaxTTL));
+                        xmlWriter.WriteElementString("MaxTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MaxTTL.Value));
 
                     if(publicRequest.CachePolicyConfig.IsSetMinTTL())
-                        xmlWriter.WriteElementString("MinTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MinTTL));
+                        xmlWriter.WriteElementString("MinTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MinTTL.Value));
 
                     if(publicRequest.CachePolicyConfig.IsSetName())
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.CachePolicyConfig.Name));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                     if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin != null)
                     {
@@ -111,7 +95,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("CookiesConfig");
                             if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.IsSetCookieBehavior())
-                                xmlWriter.WriteElementString("CookieBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.CookieBehavior));                 
+                                xmlWriter.WriteElementString("CookieBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.CookieBehavior));
 
                             if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies != null)
                             {
@@ -129,34 +113,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();            
                                 }
                                 if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.IsSetQuantity())
-<<<<<<< HEAD
-                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.Quantity.Value));                 
-=======
-                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.Quantity));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.Quantity.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.IsSetEnableAcceptEncodingBrotli())
-<<<<<<< HEAD
-                            xmlWriter.WriteElementString("EnableAcceptEncodingBrotli", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingBrotli.Value));                 
+                            xmlWriter.WriteElementString("EnableAcceptEncodingBrotli", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingBrotli.Value));
 
                         if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.IsSetEnableAcceptEncodingGzip())
-                            xmlWriter.WriteElementString("EnableAcceptEncodingGzip", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingGzip.Value));                 
-=======
-                            xmlWriter.WriteElementString("EnableAcceptEncodingBrotli", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingBrotli));                 
-
-                        if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.IsSetEnableAcceptEncodingGzip())
-                            xmlWriter.WriteElementString("EnableAcceptEncodingGzip", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingGzip));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                            xmlWriter.WriteElementString("EnableAcceptEncodingGzip", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingGzip.Value));
 
                         if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig != null)
                         {
                             xmlWriter.WriteStartElement("HeadersConfig");
                             if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.IsSetHeaderBehavior())
-                                xmlWriter.WriteElementString("HeaderBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.HeaderBehavior));                 
+                                xmlWriter.WriteElementString("HeaderBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.HeaderBehavior));
 
                             if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers != null)
                             {
@@ -174,11 +147,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();            
                                 }
                                 if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.IsSetQuantity())
-<<<<<<< HEAD
-                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.Quantity.Value));                 
-=======
-                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.Quantity));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.Quantity.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -188,7 +157,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("QueryStringsConfig");
                             if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.IsSetQueryStringBehavior())
-                                xmlWriter.WriteElementString("QueryStringBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStringBehavior));                 
+                                xmlWriter.WriteElementString("QueryStringBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStringBehavior));
 
                             if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings != null)
                             {
@@ -206,11 +175,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();            
                                 }
                                 if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.IsSetQuantity())
-<<<<<<< HEAD
-                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.Quantity.Value));                 
-=======
-                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.Quantity));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.Quantity.Value));
 
                                 xmlWriter.WriteEndElement();
                             }

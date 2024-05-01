@@ -54,7 +54,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxQueryTCU", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxQueryTCU = unmarshaller.Unmarshall(context);
                     continue;
                 }

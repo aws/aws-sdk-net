@@ -125,11 +125,7 @@ namespace Amazon.CloudHSM.Model
         /// Indicates if the action can be retried.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        public bool? Retryable
-=======
-        public new bool Retryable
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+        public new bool? Retryable
         {
             get { return this._retryable; }
             set { this._retryable = value; }

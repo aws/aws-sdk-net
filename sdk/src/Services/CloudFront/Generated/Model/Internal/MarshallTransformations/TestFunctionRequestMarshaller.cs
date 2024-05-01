@@ -72,17 +72,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("TestFunctionRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 if(publicRequest.IsSetEventObject())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("EventObject", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromMemoryStream(publicRequest.EventObject));
-
-                if(publicRequest.IsSetStage())
-                    xmlWriter.WriteElementString("Stage", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Stage));
-=======
                     xmlWriter.WriteElementString("EventObject", StringUtils.FromMemoryStream(publicRequest.EventObject));
 
                 if(publicRequest.IsSetStage())
                     xmlWriter.WriteElementString("Stage", StringUtils.FromString(publicRequest.Stage));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                 xmlWriter.WriteEndElement();

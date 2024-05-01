@@ -51,18 +51,14 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfidenceThreshold())
             {
                 context.Writer.WritePropertyName("ConfidenceThreshold");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.ConfidenceThreshold.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.ConfidenceThreshold))
+                if(StringUtils.IsSpecialFloatValue(requestObject.ConfidenceThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ConfidenceThreshold));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ConfidenceThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ConfidenceThreshold);
+                    context.Writer.Write(requestObject.ConfidenceThreshold.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

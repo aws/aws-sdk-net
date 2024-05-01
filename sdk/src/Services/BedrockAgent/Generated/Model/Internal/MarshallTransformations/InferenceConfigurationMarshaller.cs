@@ -68,18 +68,14 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTemperature())
             {
                 context.Writer.WritePropertyName("temperature");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Temperature.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.Temperature))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Temperature.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Temperature));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Temperature.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Temperature);
+                    context.Writer.Write(requestObject.Temperature.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetTopK())
@@ -91,18 +87,14 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTopP())
             {
                 context.Writer.WritePropertyName("topP");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.TopP.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.TopP))
+                if(StringUtils.IsSpecialFloatValue(requestObject.TopP.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TopP));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TopP.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TopP);
+                    context.Writer.Write(requestObject.TopP.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

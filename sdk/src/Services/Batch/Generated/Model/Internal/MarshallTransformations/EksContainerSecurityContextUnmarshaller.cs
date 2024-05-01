@@ -66,7 +66,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowPrivilegeEscalation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowPrivilegeEscalation = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -66,21 +66,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("OriginAccessControlConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.OriginAccessControlConfig.IsSetDescription())
-<<<<<<< HEAD
-                        xmlWriter.WriteElementString("Description", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.OriginAccessControlConfig.Description));
-
-                    if(publicRequest.OriginAccessControlConfig.IsSetName())
-                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.OriginAccessControlConfig.Name));
-
-                    if(publicRequest.OriginAccessControlConfig.IsSetOriginAccessControlOriginType())
-                        xmlWriter.WriteElementString("OriginAccessControlOriginType", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.OriginAccessControlConfig.OriginAccessControlOriginType));
-
-                    if(publicRequest.OriginAccessControlConfig.IsSetSigningBehavior())
-                        xmlWriter.WriteElementString("SigningBehavior", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.OriginAccessControlConfig.SigningBehavior));
-
-                    if(publicRequest.OriginAccessControlConfig.IsSetSigningProtocol())
-                        xmlWriter.WriteElementString("SigningProtocol", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.OriginAccessControlConfig.SigningProtocol));
-=======
                         xmlWriter.WriteElementString("Description", StringUtils.FromString(publicRequest.OriginAccessControlConfig.Description));
 
                     if(publicRequest.OriginAccessControlConfig.IsSetName())
@@ -94,7 +79,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                     if(publicRequest.OriginAccessControlConfig.IsSetSigningProtocol())
                         xmlWriter.WriteElementString("SigningProtocol", StringUtils.FromString(publicRequest.OriginAccessControlConfig.SigningProtocol));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                     xmlWriter.WriteEndElement();

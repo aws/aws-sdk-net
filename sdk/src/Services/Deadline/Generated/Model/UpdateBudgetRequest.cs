@@ -91,9 +91,9 @@ namespace Amazon.Deadline.Model
         /// The dollar limit to update on the budget. Based on consumed usage.
         /// </para>
         /// </summary>
-        public float ApproximateDollarLimit
+        public float? ApproximateDollarLimit
         {
-            get { return this._approximateDollarLimit.GetValueOrDefault(); }
+            get { return this._approximateDollarLimit; }
             set { this._approximateDollarLimit = value; }
         }
 

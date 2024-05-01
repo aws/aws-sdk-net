@@ -51,18 +51,14 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentageValue())
             {
                 context.Writer.WritePropertyName("PercentageValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.PercentageValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentageValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentageValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentageValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentageValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PercentageValue);
+                    context.Writer.Write(requestObject.PercentageValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

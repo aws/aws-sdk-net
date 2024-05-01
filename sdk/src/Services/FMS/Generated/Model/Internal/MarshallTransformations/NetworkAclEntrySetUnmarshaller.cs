@@ -72,13 +72,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ForceRemediateForFirstEntries", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ForceRemediateForFirstEntries = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ForceRemediateForLastEntries", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ForceRemediateForLastEntries = unmarshaller.Unmarshall(context);
                     continue;
                 }

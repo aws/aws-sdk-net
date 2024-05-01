@@ -51,18 +51,14 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChargeValue())
             {
                 context.Writer.WritePropertyName("ChargeValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.ChargeValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ChargeValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ChargeValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ChargeValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ChargeValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ChargeValue);
+                    context.Writer.Write(requestObject.ChargeValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

@@ -101,18 +101,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSampleSize())
                 {
                     context.Writer.WritePropertyName("SampleSize");
-<<<<<<< HEAD
-                    context.Writer.Write(publicRequest.SampleSize.Value);
-=======
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.SampleSize))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.SampleSize.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.SampleSize));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.SampleSize.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.SampleSize);
+                        context.Writer.Write(publicRequest.SampleSize.Value);
                     }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetSecurityConfiguration())

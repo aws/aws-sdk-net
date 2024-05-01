@@ -51,18 +51,14 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultValue())
             {
                 context.Writer.WritePropertyName("defaultValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.DefaultValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.DefaultValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DefaultValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DefaultValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DefaultValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DefaultValue);
+                    context.Writer.Write(requestObject.DefaultValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetDimensions())

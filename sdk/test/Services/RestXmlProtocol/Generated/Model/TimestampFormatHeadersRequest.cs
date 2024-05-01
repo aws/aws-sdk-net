@@ -46,9 +46,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property DefaultFormat.
         /// </summary>
-        public DateTime DefaultFormat
+        public DateTime? DefaultFormat
         {
-            get { return this._defaultFormat.GetValueOrDefault(); }
+            get { return this._defaultFormat; }
             set { this._defaultFormat = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property MemberDateTime.
         /// </summary>
-        public DateTime MemberDateTime
+        public DateTime? MemberDateTime
         {
-            get { return this._memberDateTime.GetValueOrDefault(); }
+            get { return this._memberDateTime; }
             set { this._memberDateTime = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property MemberEpochSeconds.
         /// </summary>
-        public DateTime MemberEpochSeconds
+        public DateTime? MemberEpochSeconds
         {
-            get { return this._memberEpochSeconds.GetValueOrDefault(); }
+            get { return this._memberEpochSeconds; }
             set { this._memberEpochSeconds = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property MemberHttpDate.
         /// </summary>
-        public DateTime MemberHttpDate
+        public DateTime? MemberHttpDate
         {
-            get { return this._memberHttpDate.GetValueOrDefault(); }
+            get { return this._memberHttpDate; }
             set { this._memberHttpDate = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property TargetDateTime.
         /// </summary>
-        public DateTime TargetDateTime
+        public DateTime? TargetDateTime
         {
-            get { return this._targetDateTime.GetValueOrDefault(); }
+            get { return this._targetDateTime; }
             set { this._targetDateTime = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property TargetEpochSeconds.
         /// </summary>
-        public DateTime TargetEpochSeconds
+        public DateTime? TargetEpochSeconds
         {
-            get { return this._targetEpochSeconds.GetValueOrDefault(); }
+            get { return this._targetEpochSeconds; }
             set { this._targetEpochSeconds = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property TargetHttpDate.
         /// </summary>
-        public DateTime TargetHttpDate
+        public DateTime? TargetHttpDate
         {
-            get { return this._targetHttpDate.GetValueOrDefault(); }
+            get { return this._targetHttpDate; }
             set { this._targetHttpDate = value; }
         }
 

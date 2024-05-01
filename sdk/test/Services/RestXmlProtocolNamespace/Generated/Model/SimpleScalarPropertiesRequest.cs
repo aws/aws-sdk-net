@@ -50,9 +50,9 @@ namespace Amazon.RestXmlProtocolNamespace.Model
         /// <summary>
         /// Gets and sets the property ByteValue.
         /// </summary>
-        public int ByteValue
+        public int? ByteValue
         {
-            get { return this._byteValue.GetValueOrDefault(); }
+            get { return this._byteValue; }
             set { this._byteValue = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.RestXmlProtocolNamespace.Model
         /// <summary>
         /// Gets and sets the property DoubleValue.
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.RestXmlProtocolNamespace.Model
         /// <summary>
         /// Gets and sets the property FalseBooleanValue.
         /// </summary>
-        public bool FalseBooleanValue
+        public bool? FalseBooleanValue
         {
-            get { return this._falseBooleanValue.GetValueOrDefault(); }
+            get { return this._falseBooleanValue; }
             set { this._falseBooleanValue = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.RestXmlProtocolNamespace.Model
         /// <summary>
         /// Gets and sets the property FloatValue.
         /// </summary>
-        public float FloatValue
+        public float? FloatValue
         {
-            get { return this._floatValue.GetValueOrDefault(); }
+            get { return this._floatValue; }
             set { this._floatValue = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.RestXmlProtocolNamespace.Model
         /// <summary>
         /// Gets and sets the property IntegerValue.
         /// </summary>
-        public int IntegerValue
+        public int? IntegerValue
         {
-            get { return this._integerValue.GetValueOrDefault(); }
+            get { return this._integerValue; }
             set { this._integerValue = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.RestXmlProtocolNamespace.Model
         /// <summary>
         /// Gets and sets the property LongValue.
         /// </summary>
-        public long LongValue
+        public long? LongValue
         {
-            get { return this._longValue.GetValueOrDefault(); }
+            get { return this._longValue; }
             set { this._longValue = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.RestXmlProtocolNamespace.Model
         /// <summary>
         /// Gets and sets the property ShortValue.
         /// </summary>
-        public int ShortValue
+        public int? ShortValue
         {
-            get { return this._shortValue.GetValueOrDefault(); }
+            get { return this._shortValue; }
             set { this._shortValue = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.RestXmlProtocolNamespace.Model
         /// <summary>
         /// Gets and sets the property TrueBooleanValue.
         /// </summary>
-        public bool TrueBooleanValue
+        public bool? TrueBooleanValue
         {
-            get { return this._trueBooleanValue.GetValueOrDefault(); }
+            get { return this._trueBooleanValue; }
             set { this._trueBooleanValue = value; }
         }
 

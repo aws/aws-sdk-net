@@ -40,7 +40,7 @@ public final class DotnetImportContainer implements ImportContainer {
             "AWSSDK.ProtocolTests",
             "Microsoft.VisualStudio.TestTools.UnitTesting",
             "Amazon.Runtime.Internal.Transform",
-            "AWSSDK_DotNet35.UnitTests.TestTools"
+            "AWSSDK_DotNet.UnitTests.TestTools"
     );
     private final Map<String, Map<String, String>> imports = new TreeMap<>();
     private final String localNamespace;

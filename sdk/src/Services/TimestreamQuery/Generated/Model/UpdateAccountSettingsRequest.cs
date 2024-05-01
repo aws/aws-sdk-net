@@ -62,9 +62,9 @@ namespace Amazon.TimestreamQuery.Model
         /// quotas</a>.
         /// </para>
         /// </summary>
-        public int MaxQueryTCU
+        public int? MaxQueryTCU
         {
-            get { return this._maxQueryTCU.GetValueOrDefault(); }
+            get { return this._maxQueryTCU; }
             set { this._maxQueryTCU = value; }
         }
 

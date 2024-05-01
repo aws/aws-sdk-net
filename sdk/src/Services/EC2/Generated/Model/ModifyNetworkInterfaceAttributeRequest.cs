@@ -55,9 +55,9 @@ namespace Amazon.EC2.Model
         /// interface (eth0).
         /// </para>
         /// </summary>
-        public bool AssociatePublicIpAddress
+        public bool? AssociatePublicIpAddress
         {
-            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            get { return this._associatePublicIpAddress; }
             set { this._associatePublicIpAddress = value; }
         }
 

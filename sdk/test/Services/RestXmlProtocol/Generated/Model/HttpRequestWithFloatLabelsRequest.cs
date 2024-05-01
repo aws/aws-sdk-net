@@ -42,9 +42,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// Gets and sets the property Double.
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Double
+        public double? Double
         {
-            get { return this._double.GetValueOrDefault(); }
+            get { return this._double; }
             set { this._double = value; }
         }
 
@@ -58,9 +58,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// Gets and sets the property Float.
         /// </summary>
         [AWSProperty(Required=true)]
-        public float Float
+        public float? Float
         {
-            get { return this._float.GetValueOrDefault(); }
+            get { return this._float; }
             set { this._float = value; }
         }
 

@@ -69,18 +69,14 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThresholdPercentage())
             {
                 context.Writer.WritePropertyName("thresholdPercentage");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.ThresholdPercentage.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdPercentage))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdPercentage.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdPercentage));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdPercentage.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThresholdPercentage);
+                    context.Writer.Write(requestObject.ThresholdPercentage.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

@@ -54,9 +54,9 @@ namespace Amazon.Deadline.Model
         /// The end time for the aggregation.
         /// </para>
         /// </summary>
-        public DateTime AggregationEndTime
+        public DateTime? AggregationEndTime
         {
-            get { return this._aggregationEndTime.GetValueOrDefault(); }
+            get { return this._aggregationEndTime; }
             set { this._aggregationEndTime = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.Deadline.Model
         /// The start time for the aggregation.
         /// </para>
         /// </summary>
-        public DateTime AggregationStartTime
+        public DateTime? AggregationStartTime
         {
-            get { return this._aggregationStartTime.GetValueOrDefault(); }
+            get { return this._aggregationStartTime; }
             set { this._aggregationStartTime = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

@@ -85,9 +85,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ForceRemediateForFirstEntries
+        public bool? ForceRemediateForFirstEntries
         {
-            get { return this._forceRemediateForFirstEntries.GetValueOrDefault(); }
+            get { return this._forceRemediateForFirstEntries; }
             set { this._forceRemediateForFirstEntries = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ForceRemediateForLastEntries
+        public bool? ForceRemediateForLastEntries
         {
-            get { return this._forceRemediateForLastEntries.GetValueOrDefault(); }
+            get { return this._forceRemediateForLastEntries; }
             set { this._forceRemediateForLastEntries = value; }
         }
 

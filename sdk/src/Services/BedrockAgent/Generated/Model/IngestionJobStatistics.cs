@@ -103,9 +103,9 @@ namespace Amazon.BedrockAgent.Model
         /// The number of metadata files that were updated or deleted.
         /// </para>
         /// </summary>
-        public long NumberOfMetadataDocumentsModified
+        public long? NumberOfMetadataDocumentsModified
         {
-            get { return this._numberOfMetadataDocumentsModified.GetValueOrDefault(); }
+            get { return this._numberOfMetadataDocumentsModified; }
             set { this._numberOfMetadataDocumentsModified = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.BedrockAgent.Model
         /// files.
         /// </para>
         /// </summary>
-        public long NumberOfMetadataDocumentsScanned
+        public long? NumberOfMetadataDocumentsScanned
         {
-            get { return this._numberOfMetadataDocumentsScanned.GetValueOrDefault(); }
+            get { return this._numberOfMetadataDocumentsScanned; }
             set { this._numberOfMetadataDocumentsScanned = value; }
         }
 

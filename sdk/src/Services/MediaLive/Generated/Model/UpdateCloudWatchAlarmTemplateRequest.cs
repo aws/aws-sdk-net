@@ -69,9 +69,9 @@ namespace Amazon.MediaLive.Model
         /// evaluation period that must be breaching to trigger the alarm.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int DatapointsToAlarm
+        public int? DatapointsToAlarm
         {
-            get { return this._datapointsToAlarm.GetValueOrDefault(); }
+            get { return this._datapointsToAlarm; }
             set { this._datapointsToAlarm = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.MediaLive.Model
         /// is compared to the specified threshold.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int EvaluationPeriods
+        public int? EvaluationPeriods
         {
-            get { return this._evaluationPeriods.GetValueOrDefault(); }
+            get { return this._evaluationPeriods; }
             set { this._evaluationPeriods = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.MediaLive.Model
         /// statistic is applied.
         /// </summary>
         [AWSProperty(Min=10, Max=86400)]
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Threshold. The threshold value to compare with the specified
         /// statistic.
         /// </summary>
-        public double Threshold
+        public double? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

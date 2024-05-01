@@ -122,13 +122,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTotalCpuLimit())
                 {
                     context.Writer.WritePropertyName("TotalCpuLimit");
-                    context.Writer.Write(publicRequest.TotalCpuLimit);
+                    context.Writer.Write(publicRequest.TotalCpuLimit.Value);
                 }
 
                 if(publicRequest.IsSetTotalMemoryLimit())
                 {
                     context.Writer.WritePropertyName("TotalMemoryLimit");
-                    context.Writer.Write(publicRequest.TotalMemoryLimit);
+                    context.Writer.Write(publicRequest.TotalMemoryLimit.Value);
                 }
 
                 writer.WriteObjectEnd();

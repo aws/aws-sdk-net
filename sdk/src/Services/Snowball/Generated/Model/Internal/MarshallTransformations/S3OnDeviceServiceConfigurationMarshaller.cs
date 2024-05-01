@@ -63,18 +63,14 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStorageLimit())
             {
                 context.Writer.WritePropertyName("StorageLimit");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.StorageLimit.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.StorageLimit))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StorageLimit.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StorageLimit));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StorageLimit.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.StorageLimit);
+                    context.Writer.Write(requestObject.StorageLimit.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetStorageUnit())

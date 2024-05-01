@@ -50,9 +50,9 @@ namespace Amazon.NeptuneGraph.Model
         /// the task skips the data that caused the error and continues if possible.
         /// </para>
         /// </summary>
-        public bool FailOnError
+        public bool? FailOnError
         {
-            get { return this._failOnError.GetValueOrDefault(); }
+            get { return this._failOnError; }
             set { this._failOnError = value; }
         }
 

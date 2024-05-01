@@ -68,35 +68,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumValue())
             {
                 context.Writer.WritePropertyName("MaximumValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.MaximumValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MaximumValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaximumValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaximumValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaximumValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaximumValue);
+                    context.Writer.Write(requestObject.MaximumValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMinimumValue())
             {
                 context.Writer.WritePropertyName("MinimumValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.MinimumValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinimumValue);
+                    context.Writer.Write(requestObject.MinimumValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetSourceFilterId())
@@ -108,18 +100,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStepSize())
             {
                 context.Writer.WritePropertyName("StepSize");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.StepSize.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.StepSize))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StepSize.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StepSize));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StepSize.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.StepSize);
+                    context.Writer.Write(requestObject.StepSize.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetTitle())

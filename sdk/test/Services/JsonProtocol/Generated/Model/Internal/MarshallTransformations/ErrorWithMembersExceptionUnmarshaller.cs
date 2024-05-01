@@ -79,7 +79,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IntegerField", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IntegerField = unmarshaller.Unmarshall(context);
                     continue;
                 }

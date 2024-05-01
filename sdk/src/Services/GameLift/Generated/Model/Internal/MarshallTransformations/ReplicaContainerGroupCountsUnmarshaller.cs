@@ -66,25 +66,25 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ACTIVE", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ACTIVE = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IDLE", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IDLE = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PENDING", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PENDING = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TERMINATING", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TERMINATING = unmarshaller.Unmarshall(context);
                     continue;
                 }

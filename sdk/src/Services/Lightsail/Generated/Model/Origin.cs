@@ -129,9 +129,9 @@ namespace Amazon.Lightsail.Model
         /// and the default (if you don't specify otherwise) is 30 seconds.
         /// </para>
         /// </summary>
-        public int ResponseTimeout
+        public int? ResponseTimeout
         {
-            get { return this._responseTimeout.GetValueOrDefault(); }
+            get { return this._responseTimeout; }
             set { this._responseTimeout = value; }
         }
 

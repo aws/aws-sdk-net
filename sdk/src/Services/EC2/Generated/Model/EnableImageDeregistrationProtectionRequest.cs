@@ -76,9 +76,9 @@ namespace Amazon.EC2.Model
         /// protection is disabled.
         /// </para>
         /// </summary>
-        public bool WithCooldown
+        public bool? WithCooldown
         {
-            get { return this._withCooldown.GetValueOrDefault(); }
+            get { return this._withCooldown; }
             set { this._withCooldown = value; }
         }
 

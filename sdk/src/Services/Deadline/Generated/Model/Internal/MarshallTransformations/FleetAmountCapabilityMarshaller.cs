@@ -51,26 +51,26 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMax())
             {
                 context.Writer.WritePropertyName("max");
-                if(StringUtils.IsSpecialFloatValue(requestObject.Max))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Max.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Max));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Max.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Max);
+                    context.Writer.Write(requestObject.Max.Value);
                 }
             }
 
             if(requestObject.IsSetMin())
             {
                 context.Writer.WritePropertyName("min");
-                if(StringUtils.IsSpecialFloatValue(requestObject.Min))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Min.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Min));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Min.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Min);
+                    context.Writer.Write(requestObject.Min.Value);
                 }
             }
 

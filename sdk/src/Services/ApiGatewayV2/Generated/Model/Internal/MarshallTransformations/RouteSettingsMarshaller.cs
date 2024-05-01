@@ -75,18 +75,14 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThrottlingRateLimit())
             {
                 context.Writer.WritePropertyName("throttlingRateLimit");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.ThrottlingRateLimit.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ThrottlingRateLimit))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThrottlingRateLimit.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThrottlingRateLimit));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThrottlingRateLimit.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThrottlingRateLimit);
+                    context.Writer.Write(requestObject.ThrottlingRateLimit.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

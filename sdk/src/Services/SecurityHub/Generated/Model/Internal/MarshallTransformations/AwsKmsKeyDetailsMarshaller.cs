@@ -57,18 +57,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreationDate())
             {
                 context.Writer.WritePropertyName("CreationDate");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.CreationDate.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.CreationDate))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CreationDate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CreationDate));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CreationDate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CreationDate);
+                    context.Writer.Write(requestObject.CreationDate.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetDescription())

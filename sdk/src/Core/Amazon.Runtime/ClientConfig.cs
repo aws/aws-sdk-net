@@ -720,7 +720,6 @@ namespace Amazon.Runtime
         {
         }
 
-#if BCL
         /// <summary>
         /// .NET Framework 3.5
         /// ------------------

@@ -68,9 +68,9 @@ namespace Amazon.CodeConnections.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.CodeConnections.Model
         /// The time that a specific sync blocker was resolved.
         /// </para>
         /// </summary>
-        public DateTime ResolvedAt
+        public DateTime? ResolvedAt
         {
-            get { return this._resolvedAt.GetValueOrDefault(); }
+            get { return this._resolvedAt; }
             set { this._resolvedAt = value; }
         }
 

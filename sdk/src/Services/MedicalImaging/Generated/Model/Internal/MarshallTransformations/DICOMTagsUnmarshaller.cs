@@ -126,7 +126,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DICOMSeriesNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DICOMSeriesNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

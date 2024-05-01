@@ -69,11 +69,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.InvalidationBatch.IsSetCallerReference())
-<<<<<<< HEAD
-                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));
-=======
                         xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                     if (publicRequest.InvalidationBatch.Paths != null)
                     {
@@ -91,11 +87,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.InvalidationBatch.Paths.IsSetQuantity())
-<<<<<<< HEAD
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity.Value));                 
-=======
-                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity));                 
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity.Value));
 
                         xmlWriter.WriteEndElement();
                     }

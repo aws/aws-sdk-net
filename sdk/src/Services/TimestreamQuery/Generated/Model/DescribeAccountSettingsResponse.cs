@@ -44,9 +44,9 @@ namespace Amazon.TimestreamQuery.Model
         /// compute units</a> (TCUs) the service will use at any point in time to serve your queries.
         /// </para>
         /// </summary>
-        public int MaxQueryTCU
+        public int? MaxQueryTCU
         {
-            get { return this._maxQueryTCU.GetValueOrDefault(); }
+            get { return this._maxQueryTCU; }
             set { this._maxQueryTCU = value; }
         }
 

@@ -209,9 +209,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=90, Max=2560)]
-        public int RotationPeriodInDays
+        public int? RotationPeriodInDays
         {
-            get { return this._rotationPeriodInDays.GetValueOrDefault(); }
+            get { return this._rotationPeriodInDays; }
             set { this._rotationPeriodInDays = value; }
         }
 

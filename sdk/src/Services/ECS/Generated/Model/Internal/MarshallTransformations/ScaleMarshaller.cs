@@ -57,18 +57,14 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Value.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Value))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Value.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Value));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Value.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Value);
+                    context.Writer.Write(requestObject.Value.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

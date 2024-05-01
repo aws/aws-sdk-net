@@ -102,9 +102,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int UpdateIntervalSeconds
+        public int? UpdateIntervalSeconds
         {
-            get { return this._updateIntervalSeconds.GetValueOrDefault(); }
+            get { return this._updateIntervalSeconds; }
             set { this._updateIntervalSeconds = value; }
         }
 

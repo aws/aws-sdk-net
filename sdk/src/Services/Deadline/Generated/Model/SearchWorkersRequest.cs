@@ -110,9 +110,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]
-        public int ItemOffset
+        public int? ItemOffset
         {
-            get { return this._itemOffset.GetValueOrDefault(); }
+            get { return this._itemOffset; }
             set { this._itemOffset = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int PageSize
+        public int? PageSize
         {
-            get { return this._pageSize.GetValueOrDefault(); }
+            get { return this._pageSize; }
             set { this._pageSize = value; }
         }
 

@@ -63,18 +63,14 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpirationTime())
             {
                 context.Writer.WritePropertyName("expirationTime");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.ExpirationTime.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ExpirationTime))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ExpirationTime.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ExpirationTime));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ExpirationTime.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ExpirationTime);
+                    context.Writer.Write(requestObject.ExpirationTime.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetOpenIDAuthTTL())

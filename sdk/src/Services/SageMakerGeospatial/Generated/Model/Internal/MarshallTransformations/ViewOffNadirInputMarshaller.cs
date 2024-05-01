@@ -51,35 +51,27 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLowerBound())
             {
                 context.Writer.WritePropertyName("LowerBound");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.LowerBound.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.LowerBound))
+                if(StringUtils.IsSpecialFloatValue(requestObject.LowerBound.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.LowerBound));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.LowerBound.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LowerBound);
+                    context.Writer.Write(requestObject.LowerBound.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetUpperBound())
             {
                 context.Writer.WritePropertyName("UpperBound");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.UpperBound.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.UpperBound))
+                if(StringUtils.IsSpecialFloatValue(requestObject.UpperBound.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.UpperBound));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.UpperBound.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.UpperBound);
+                    context.Writer.Write(requestObject.UpperBound.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

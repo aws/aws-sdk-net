@@ -86,18 +86,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInitialVariantWeight())
             {
                 context.Writer.WritePropertyName("InitialVariantWeight");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.InitialVariantWeight.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.InitialVariantWeight))
+                if(StringUtils.IsSpecialFloatValue(requestObject.InitialVariantWeight.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.InitialVariantWeight));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.InitialVariantWeight.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.InitialVariantWeight);
+                    context.Writer.Write(requestObject.InitialVariantWeight.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetInstanceType())

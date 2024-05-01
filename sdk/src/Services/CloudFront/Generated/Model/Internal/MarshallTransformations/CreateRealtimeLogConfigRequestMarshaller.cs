@@ -76,15 +76,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("KinesisStreamConfig");
                             if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetRoleARN())
-                                xmlWriter.WriteElementString("RoleARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.RoleARN));                 
+                                xmlWriter.WriteElementString("RoleARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.RoleARN));
 
                             if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetStreamARN())
-                                xmlWriter.WriteElementString("StreamARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.StreamARN));                 
+                                xmlWriter.WriteElementString("StreamARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.StreamARN));
 
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequestEndPointsValue.IsSetStreamType())
-                            xmlWriter.WriteElementString("StreamType", StringUtils.FromString(publicRequestEndPointsValue.StreamType));                 
+                            xmlWriter.WriteElementString("StreamType", StringUtils.FromString(publicRequestEndPointsValue.StreamType));
 
                         xmlWriter.WriteEndElement();
                     }
@@ -104,17 +104,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();            
                 }
                 if(publicRequest.IsSetName())
-<<<<<<< HEAD
-                    xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Name));
-
-                if(publicRequest.IsSetSamplingRate())
-                    xmlWriter.WriteElementString("SamplingRate", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.SamplingRate.Value));
-=======
                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
                 if(publicRequest.IsSetSamplingRate())
-                    xmlWriter.WriteElementString("SamplingRate", StringUtils.FromLong(publicRequest.SamplingRate));
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+                    xmlWriter.WriteElementString("SamplingRate", StringUtils.FromLong(publicRequest.SamplingRate.Value));
 
 
                 xmlWriter.WriteEndElement();

@@ -51,9 +51,9 @@ namespace Amazon.Route53Profiles.Model
         /// Coordinated Universal Time (UTC). 
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.Route53Profiles.Model
         /// and Coordinated Universal Time (UTC). 
         /// </para>
         /// </summary>
-        public DateTime ModificationTime
+        public DateTime? ModificationTime
         {
-            get { return this._modificationTime.GetValueOrDefault(); }
+            get { return this._modificationTime; }
             set { this._modificationTime = value; }
         }
 

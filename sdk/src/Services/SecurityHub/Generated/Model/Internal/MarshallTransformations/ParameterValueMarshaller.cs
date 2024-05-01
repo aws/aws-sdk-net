@@ -57,18 +57,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDouble())
             {
                 context.Writer.WritePropertyName("Double");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Double.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Double))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Double.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Double));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Double.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Double);
+                    context.Writer.Write(requestObject.Double.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetEnum())

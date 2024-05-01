@@ -51,18 +51,14 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssistAltitude())
             {
                 context.Writer.WritePropertyName("AssistAltitude");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.AssistAltitude.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.AssistAltitude))
+                if(StringUtils.IsSpecialFloatValue(requestObject.AssistAltitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.AssistAltitude));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.AssistAltitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AssistAltitude);
+                    context.Writer.Write(requestObject.AssistAltitude.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetAssistPosition())
@@ -79,35 +75,27 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptureTime())
             {
                 context.Writer.WritePropertyName("CaptureTime");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.CaptureTime.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTime))
+                if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTime.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTime));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTime.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CaptureTime);
+                    context.Writer.Write(requestObject.CaptureTime.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetCaptureTimeAccuracy())
             {
                 context.Writer.WritePropertyName("CaptureTimeAccuracy");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.CaptureTimeAccuracy.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTimeAccuracy))
+                if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTimeAccuracy.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTimeAccuracy));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTimeAccuracy.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CaptureTimeAccuracy);
+                    context.Writer.Write(requestObject.CaptureTimeAccuracy.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetPayload())

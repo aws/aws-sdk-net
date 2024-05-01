@@ -85,9 +85,9 @@ namespace Amazon.Glue.Model
         /// queried in their respective query engines.
         /// </para>
         /// </summary>
-        public bool IsStale
+        public bool? IsStale
         {
-            get { return this._isStale.GetValueOrDefault(); }
+            get { return this._isStale; }
             set { this._isStale = value; }
         }
 

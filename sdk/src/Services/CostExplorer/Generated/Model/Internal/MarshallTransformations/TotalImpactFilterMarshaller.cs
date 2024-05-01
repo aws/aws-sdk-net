@@ -51,18 +51,14 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndValue())
             {
                 context.Writer.WritePropertyName("EndValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.EndValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.EndValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.EndValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.EndValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.EndValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.EndValue);
+                    context.Writer.Write(requestObject.EndValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetNumericOperator())
@@ -74,18 +70,14 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartValue())
             {
                 context.Writer.WritePropertyName("StartValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.StartValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.StartValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StartValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StartValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StartValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.StartValue);
+                    context.Writer.Write(requestObject.StartValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

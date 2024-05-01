@@ -71,7 +71,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSyncWithLatestSolutionVersion())
             {
                 context.Writer.WritePropertyName("syncWithLatestSolutionVersion");
-                context.Writer.Write(requestObject.SyncWithLatestSolutionVersion);
+                context.Writer.Write(requestObject.SyncWithLatestSolutionVersion.Value);
             }
 
         }

@@ -52,9 +52,9 @@ namespace Amazon.InternetMonitor.Model
         /// User Guide.
         /// </para>
         /// </summary>
-        public bool IncludeLinkedAccounts
+        public bool? IncludeLinkedAccounts
         {
-            get { return this._includeLinkedAccounts.GetValueOrDefault(); }
+            get { return this._includeLinkedAccounts; }
             set { this._includeLinkedAccounts = value; }
         }
 

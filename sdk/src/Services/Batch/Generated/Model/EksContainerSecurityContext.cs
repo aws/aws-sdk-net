@@ -49,9 +49,9 @@ namespace Amazon.Batch.Model
         /// than its parent process. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool AllowPrivilegeEscalation
+        public bool? AllowPrivilegeEscalation
         {
-            get { return this._allowPrivilegeEscalation.GetValueOrDefault(); }
+            get { return this._allowPrivilegeEscalation; }
             set { this._allowPrivilegeEscalation = value; }
         }
 

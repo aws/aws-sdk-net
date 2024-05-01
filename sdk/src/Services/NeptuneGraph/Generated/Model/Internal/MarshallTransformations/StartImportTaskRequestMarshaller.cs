@@ -73,7 +73,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFailOnError())
                 {
                     context.Writer.WritePropertyName("failOnError");
-                    context.Writer.Write(publicRequest.FailOnError);
+                    context.Writer.Write(publicRequest.FailOnError.Value);
                 }
 
                 if(publicRequest.IsSetFormat())

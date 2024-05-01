@@ -51,35 +51,27 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseLat())
             {
                 context.Writer.WritePropertyName("BaseLat");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.BaseLat.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.BaseLat))
+                if(StringUtils.IsSpecialFloatValue(requestObject.BaseLat.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.BaseLat));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.BaseLat.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BaseLat);
+                    context.Writer.Write(requestObject.BaseLat.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetBaseLng())
             {
                 context.Writer.WritePropertyName("BaseLng");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.BaseLng.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.BaseLng))
+                if(StringUtils.IsSpecialFloatValue(requestObject.BaseLng.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.BaseLng));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.BaseLng.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BaseLng);
+                    context.Writer.Write(requestObject.BaseLng.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetBaseStationId())

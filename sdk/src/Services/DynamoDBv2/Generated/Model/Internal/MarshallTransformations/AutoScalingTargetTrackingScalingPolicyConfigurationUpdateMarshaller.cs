@@ -69,18 +69,14 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetValue())
             {
                 context.Writer.WritePropertyName("TargetValue");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.TargetValue.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TargetValue);
+                    context.Writer.Write(requestObject.TargetValue.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

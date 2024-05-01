@@ -44,9 +44,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int Code
+        public int? Code
         {
-            get { return this._code.GetValueOrDefault(); }
+            get { return this._code; }
             set { this._code = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int Type
+        public int? Type
         {
-            get { return this._type.GetValueOrDefault(); }
+            get { return this._type; }
             set { this._type = value; }
         }
 

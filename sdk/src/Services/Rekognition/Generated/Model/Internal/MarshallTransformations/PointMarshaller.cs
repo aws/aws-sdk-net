@@ -51,35 +51,27 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetX())
             {
                 context.Writer.WritePropertyName("X");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.X.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.X))
+                if(StringUtils.IsSpecialFloatValue(requestObject.X.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.X));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.X.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.X);
+                    context.Writer.Write(requestObject.X.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetY())
             {
                 context.Writer.WritePropertyName("Y");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Y.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.Y))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Y.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Y));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Y.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Y);
+                    context.Writer.Write(requestObject.Y.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

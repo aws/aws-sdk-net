@@ -51,18 +51,14 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetN())
             {
                 context.Writer.WritePropertyName("N");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.N.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.N))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.N.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.N));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.N.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.N);
+                    context.Writer.Write(requestObject.N.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetS())

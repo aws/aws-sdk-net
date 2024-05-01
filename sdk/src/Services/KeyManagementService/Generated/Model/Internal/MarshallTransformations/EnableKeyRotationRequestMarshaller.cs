@@ -78,7 +78,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRotationPeriodInDays())
                 {
                     context.Writer.WritePropertyName("RotationPeriodInDays");
-                    context.Writer.Write(publicRequest.RotationPeriodInDays);
+                    context.Writer.Write(publicRequest.RotationPeriodInDays.Value);
                 }
 
                 writer.WriteObjectEnd();

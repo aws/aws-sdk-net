@@ -66,7 +66,7 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("awaitAnswerMachinePrompt", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AwaitAnswerMachinePrompt = unmarshaller.Unmarshall(context);
                     continue;
                 }

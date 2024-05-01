@@ -51,18 +51,14 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("cpu");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.Cpu.Value);
-=======
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Cpu))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Cpu.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Cpu));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Cpu.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Cpu);
+                    context.Writer.Write(requestObject.Cpu.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMemoryLimit())

@@ -18,7 +18,7 @@
  */
 using AWSSDK.ProtocolTests;
 using AWSSDK.ProtocolTests.Utils;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Amazon.QueryProtocol;
 using Amazon.QueryProtocol.Model;
 using Amazon.QueryProtocol.Model.Internal.MarshallTransformations;

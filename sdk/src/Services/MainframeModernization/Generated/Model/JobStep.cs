@@ -65,9 +65,9 @@ namespace Amazon.MainframeModernization.Model
         /// The number of a procedure step.
         /// </para>
         /// </summary>
-        public int ProcStepNumber
+        public int? ProcStepNumber
         {
-            get { return this._procStepNumber.GetValueOrDefault(); }
+            get { return this._procStepNumber; }
             set { this._procStepNumber = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.MainframeModernization.Model
         /// The number of a step.
         /// </para>
         /// </summary>
-        public int StepNumber
+        public int? StepNumber
         {
-            get { return this._stepNumber.GetValueOrDefault(); }
+            get { return this._stepNumber; }
             set { this._stepNumber = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.MainframeModernization.Model
         /// Specifies if a step can be restarted or not.
         /// </para>
         /// </summary>
-        public bool StepRestartable
+        public bool? StepRestartable
         {
-            get { return this._stepRestartable.GetValueOrDefault(); }
+            get { return this._stepRestartable; }
             set { this._stepRestartable = value; }
         }
 

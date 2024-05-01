@@ -51,18 +51,14 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatencyInMilliseconds())
             {
                 context.Writer.WritePropertyName("LatencyInMilliseconds");
-<<<<<<< HEAD
-                context.Writer.Write(requestObject.LatencyInMilliseconds.Value);
-=======
-                if(StringUtils.IsSpecialFloatValue(requestObject.LatencyInMilliseconds))
+                if(StringUtils.IsSpecialFloatValue(requestObject.LatencyInMilliseconds.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.LatencyInMilliseconds));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.LatencyInMilliseconds.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LatencyInMilliseconds);
+                    context.Writer.Write(requestObject.LatencyInMilliseconds.Value);
                 }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetPlayerId())

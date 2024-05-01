@@ -31,7 +31,6 @@ namespace Amazon.SSO
         /// <summary>
         /// Create credentials from SSO access token
         /// </summary>
-        /// <param name="client"></param>
         /// <param name="accountId"></param>
         /// <param name="roleName"></param>
         /// <param name="accessToken"></param>
@@ -47,7 +46,6 @@ namespace Amazon.SSO
         /// <summary>
         /// Logout access token
         /// </summary>
-        /// <param name="client"></param>
         /// <param name="accessToken"></param>		
         void ICoreAmazonSSO_Logout.Logout(string accessToken)
         {
@@ -58,11 +56,12 @@ namespace Amazon.SSO
 #if AWS_ASYNC_API
 
         /// <summary>
-        /// Logout access token
+        /// Create credentials from SSO access token
         /// </summary>
-        /// <param name="client"></param>
+        /// <param name="accountId"></param>
+        /// <param name="roleName"></param>
         /// <param name="accessToken"></param>
-        /// <param name="cancellationToken"></param>
+        /// <param name="additionalProperties"></param>
         /// <returns></returns>
         Task<ImmutableCredentials> ICoreAmazonSSO.CredentialsFromSsoAccessTokenAsync(
             string accountId, string roleName, string accessToken,
@@ -74,7 +73,6 @@ namespace Amazon.SSO
         /// <summary>
         /// Logout access token
         /// </summary>
-        /// <param name="client"></param>
         /// <param name="accessToken"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>		

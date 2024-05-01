@@ -62,39 +62,39 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumValue())
             {
                 context.Writer.WritePropertyName("MaximumValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MaximumValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaximumValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaximumValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaximumValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaximumValue);
+                    context.Writer.Write(requestObject.MaximumValue.Value);
                 }
             }
 
             if(requestObject.IsSetMinimumValue())
             {
                 context.Writer.WritePropertyName("MinimumValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinimumValue);
+                    context.Writer.Write(requestObject.MinimumValue.Value);
                 }
             }
 
             if(requestObject.IsSetStepSize())
             {
                 context.Writer.WritePropertyName("StepSize");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.StepSize))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StepSize.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StepSize));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StepSize.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.StepSize);
+                    context.Writer.Write(requestObject.StepSize.Value);
                 }
             }
 

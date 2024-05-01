@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Route53Profiles")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Route 53 Profiles. Route 53 Profiles allows you to apply a central DNS configuration across many VPCs regardless of account.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Route 53 Profiles. Route 53 Profiles allows you to apply a central DNS configuration across many VPCs regardless of account.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Route 53 Profiles. Route 53 Profiles allows you to apply a central DNS configuration across many VPCs regardless of account.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Route 53 Profiles. Route 53 Profiles allows you to apply a central DNS configuration across many VPCs regardless of account.")]
 #elif NETCOREAPP3_1

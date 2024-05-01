@@ -86,6 +86,16 @@ namespace Amazon.Runtime.Internal.Util
             return value.ToString(CultureInfo.InvariantCulture);
         }
 
+        public static string FromFloat(float? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToString(CultureInfo.InvariantCulture);
+        }
+
         public static string FromSpecialFloatValue(float value)
         {
             if (float.IsPositiveInfinity(value))
@@ -191,6 +201,23 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
+        /// Converts a DateTime to ISO8601 formatted string with milliseconds
+        /// if they are not zero.
+        /// </summary>
+        public static string FromDateTimeToISO8601WithOptionalMs(DateTime? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            var format = value.Value.Millisecond == 0
+                ? AWSSDKUtils.ISO8601DateFormatNoMS
+                : AWSSDKUtils.ISO8601DateFormat;
+            return value.Value.ToUniversalTime().ToString(format, CultureInfo.InvariantCulture);
+        }
+
+        /// <summary>
         /// Converts a DateTime to RFC822 formatted string.
         /// </summary>
         public static string FromDateTimeToRFC822(DateTime value)
@@ -200,11 +227,38 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
+        /// Converts a DateTime to RFC822 formatted string.
+        /// </summary>
+        public static string FromDateTimeToRFC822(DateTime? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToUniversalTime().ToString(
+                AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
+        }
+
+        /// <summary>
         /// Converts a DateTime to Unix epoch time formatted string.
         /// </summary>
         public static string FromDateTimeToUnixTimestamp(DateTime value)
         {
             return AWSSDKUtils.ConvertToUnixEpochSecondsString(value);
+        }
+
+        /// <summary>
+        /// Converts a DateTime to Unix epoch time formatted string.
+        /// </summary>
+        public static string FromDateTimeToUnixTimestamp(DateTime? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return AWSSDKUtils.ConvertToUnixEpochSecondsString(value.Value);
         }
 
         public static string FromDouble(double value)

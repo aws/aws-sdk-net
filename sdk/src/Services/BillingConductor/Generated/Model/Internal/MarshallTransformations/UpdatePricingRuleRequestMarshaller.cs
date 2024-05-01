@@ -82,18 +82,14 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetModifierPercentage())
                 {
                     context.Writer.WritePropertyName("ModifierPercentage");
-<<<<<<< HEAD
-                    context.Writer.Write(publicRequest.ModifierPercentage.Value);
-=======
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.ModifierPercentage))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.ModifierPercentage.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ModifierPercentage));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ModifierPercentage.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.ModifierPercentage);
+                        context.Writer.Write(publicRequest.ModifierPercentage.Value);
                     }
->>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetName())

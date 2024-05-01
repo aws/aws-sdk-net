@@ -57,7 +57,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");
-                context.Writer.Write(requestObject.BooleanValue);
+                context.Writer.Write(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetEnumValue())
@@ -94,7 +94,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberValue())
             {
                 context.Writer.WritePropertyName("numberValue");
-                context.Writer.Write(requestObject.NumberValue);
+                context.Writer.Write(requestObject.NumberValue.Value);
             }
 
             if(requestObject.IsSetRenamedStructureValue())
@@ -128,7 +128,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimestampValue())
             {
                 context.Writer.WritePropertyName("timestampValue");
-                context.Writer.Write(requestObject.TimestampValue);
+                context.Writer.Write(requestObject.TimestampValue.Value);
             }
 
         }

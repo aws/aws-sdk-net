@@ -60,9 +60,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ACTIVE
+        public int? ACTIVE
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int IDLE
+        public int? IDLE
         {
-            get { return this._idle.GetValueOrDefault(); }
+            get { return this._idle; }
             set { this._idle = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int PENDING
+        public int? PENDING
         {
-            get { return this._pending.GetValueOrDefault(); }
+            get { return this._pending; }
             set { this._pending = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TERMINATING
+        public int? TERMINATING
         {
-            get { return this._terminating.GetValueOrDefault(); }
+            get { return this._terminating; }
             set { this._terminating = value; }
         }
 
