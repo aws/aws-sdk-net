@@ -56,19 +56,14 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListContactsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmailV2");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetContactListName())
                 throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field ContactListName set");
             request.AddPathResource("{ContactListName}", StringUtils.FromString(publicRequest.ContactListName));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetPageSize())
-                request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
-            request.ResourcePath = "/v2/email/contact-lists/{ContactListName}/contacts";
+            request.ResourcePath = "/v2/email/contact-lists/{ContactListName}/contacts/list";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -86,12 +81,23 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetPageSize())
+                {
+                    context.Writer.WritePropertyName("PageSize");
+                    context.Writer.Write(publicRequest.PageSize);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
-            request.UseQueryString = true;
 
             return request;
         }
