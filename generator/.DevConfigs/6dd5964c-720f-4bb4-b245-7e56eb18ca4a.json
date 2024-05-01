@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "PR [#3304](https://github.com/aws/aws-sdk-net/pull/3304): Properly handle a primary key that has a converter applied when DisableFetchingTableMetadata is set to true. Thanks [Oleksandr Liakhevych](https://github.com/Dreamescaper)."
+            ]
+        }
+    ]
+}
