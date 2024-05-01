@@ -27,6 +27,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class GetBucketPolicyStatusResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             var response = new GetBucketPolicyStatusResponse();
@@ -58,6 +63,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetBucketPolicyStatusResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GetBucketPolicyStatusResponseUnmarshaller Instance
         {
             get

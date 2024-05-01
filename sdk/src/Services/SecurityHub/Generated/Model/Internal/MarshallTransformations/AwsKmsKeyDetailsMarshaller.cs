@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsKmsKeyDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAWSAccountId())
             {
                 context.Writer.WritePropertyName("AWSAccountId");
@@ -54,7 +57,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreationDate())
             {
                 context.Writer.WritePropertyName("CreationDate");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.CreationDate.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CreationDate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CreationDate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CreationDate);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetDescription())

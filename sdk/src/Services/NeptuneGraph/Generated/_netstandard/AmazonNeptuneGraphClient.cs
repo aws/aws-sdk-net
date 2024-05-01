@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.NeptuneGraph
 {
     /// <summary>
@@ -541,8 +542,13 @@ namespace Amazon.NeptuneGraph
 
         /// <summary>
         /// Create a private graph endpoint to allow private access from to the graph from within
-        /// a VPC. You can attach security groups to the private graph endpoint. VPC endpoint
-        /// charges apply.
+        /// a VPC. You can attach security groups to the private graph endpoint.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// VPC endpoint charges apply.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivateGraphEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -741,8 +747,7 @@ namespace Amazon.NeptuneGraph
 
 
         /// <summary>
-        /// Execute an openCypher query. Currently, the SDK does not support parameterized queries.
-        /// If you want to make a parameterized query call, you can use an HTTP request. 
+        /// Execute an openCypher query.
         /// 
         ///  
         /// <para>
@@ -762,14 +767,7 @@ namespace Amazon.NeptuneGraph
         /// <para>
         /// neptune-graph:DeleteDataViaQuery
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        ///  Non-parametrized queries are not considered for plan caching. You can force plan
-        /// caching with <c>planCache=enabled</c>. The plan cache will be reused only for the
-        /// same exact query. Slight variations in the query will not be able to reuse the query
-        /// plan cache. 
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteQuery service method.</param>
         /// <param name="cancellationToken">
@@ -1467,6 +1465,56 @@ namespace Amazon.NeptuneGraph
             options.ResponseUnmarshaller = RestoreGraphFromSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<RestoreGraphFromSnapshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartImportTask
+
+        internal virtual StartImportTaskResponse StartImportTask(StartImportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Import data into existing Neptune Analytics graph from Amazon Simple Storage Service
+        /// (S3). The graph needs to be empty and in the AVAILABLE state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartImportTask service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartImportTask">REST API Reference for StartImportTask Operation</seealso>
+        public virtual Task<StartImportTaskResponse> StartImportTaskAsync(StartImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartImportTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion

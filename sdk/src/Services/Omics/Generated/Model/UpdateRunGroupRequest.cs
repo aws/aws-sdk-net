@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -101,7 +102,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property MaxGpus. 
         /// <para>
-        ///  The maximum GPUs that can be used by a run group. 
+        /// The maximum GPUs that can be used by a run group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]

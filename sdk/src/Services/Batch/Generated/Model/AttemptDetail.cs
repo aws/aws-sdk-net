@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -37,6 +38,7 @@ namespace Amazon.Batch.Model
         private long? _startedAt;
         private string _statusReason;
         private long? _stoppedAt;
+        private List<AttemptEcsTaskDetails> _taskProperties = AWSConfigs.InitializeCollections ? new List<AttemptEcsTaskDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property Container. 
@@ -112,6 +114,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetStoppedAt()
         {
             return this._stoppedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskProperties. 
+        /// <para>
+        /// The properties for a task definition that describes the container and volume definitions
+        /// of an Amazon ECS task.
+        /// </para>
+        /// </summary>
+        public List<AttemptEcsTaskDetails> TaskProperties
+        {
+            get { return this._taskProperties; }
+            set { this._taskProperties = value; }
+        }
+
+        // Check to see if TaskProperties property is set
+        internal bool IsSetTaskProperties()
+        {
+            return this._taskProperties != null && (this._taskProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

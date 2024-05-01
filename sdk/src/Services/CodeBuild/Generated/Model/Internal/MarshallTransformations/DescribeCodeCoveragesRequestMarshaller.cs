@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,12 +66,24 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetMaxLineCoveragePercentage())
                 {
                     context.Writer.WritePropertyName("maxLineCoveragePercentage");
+<<<<<<< HEAD
                     context.Writer.Write(publicRequest.MaxLineCoveragePercentage.Value);
+=======
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxLineCoveragePercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MaxLineCoveragePercentage);
+                    }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetMaxResults())
@@ -82,7 +95,18 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinLineCoveragePercentage())
                 {
                     context.Writer.WritePropertyName("minLineCoveragePercentage");
+<<<<<<< HEAD
                     context.Writer.Write(publicRequest.MinLineCoveragePercentage.Value);
+=======
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MinLineCoveragePercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MinLineCoveragePercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MinLineCoveragePercentage);
+                    }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetNextToken())

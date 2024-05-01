@@ -92,6 +92,10 @@ namespace Amazon.MarketplaceEntitlementService.Internal
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                     }
+                    if (Equals(refs["Region"], "cn-northwest-1"))
+                    {
+                        return new Endpoint("https://entitlement-marketplace.cn-northwest-1.amazonaws.com.cn", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
                     if (Equals("aws", GetAttr(refs["PartitionResult"], "name")))
                     {
                         return new Endpoint(Interpolate(@"https://entitlement.marketplace.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));

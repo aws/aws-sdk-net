@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Rules for retrieving content from data sources connected to a Amazon Q application
+    /// Rules for retrieving content from data sources connected to a Amazon Q Business application
     /// for a specific topic control configuration.
     /// </summary>
     public partial class ContentRetrievalRule
@@ -39,7 +40,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property EligibleDataSources. 
         /// <para>
-        /// Specifies data sources in a Amazon Q application to use for content generation.
+        /// Specifies data sources in a Amazon Q Business application to use for content generation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LteNmrObj requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEarfcn())
             {
                 context.Writer.WritePropertyName("Earfcn");
@@ -72,7 +75,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRsrq())
             {
                 context.Writer.WritePropertyName("Rsrq");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Rsrq.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.Rsrq))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Rsrq));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Rsrq);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

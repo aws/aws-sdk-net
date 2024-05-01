@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Amplify.Model
 {
     /// <summary>
@@ -83,8 +84,13 @@ namespace Amazon.Amplify.Model
         /// The maximum number of records to list in a single response. 
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=0, Max=100)]
         public int? MaxResults
+=======
+        [AWSProperty(Min=0, Max=50)]
+        public int MaxResults
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
         {
             get { return this._maxResults; }
             set { this._maxResults = value; }

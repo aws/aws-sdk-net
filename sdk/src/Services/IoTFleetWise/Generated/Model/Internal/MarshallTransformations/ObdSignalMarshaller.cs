@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ObdSignal requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBitMaskLength())
             {
                 context.Writer.WritePropertyName("bitMaskLength");
@@ -66,7 +69,18 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Offset.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Offset))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Offset);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetPid())
@@ -84,7 +98,18 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScaling())
             {
                 context.Writer.WritePropertyName("scaling");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Scaling.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Scaling))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scaling));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Scaling);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetServiceMode())

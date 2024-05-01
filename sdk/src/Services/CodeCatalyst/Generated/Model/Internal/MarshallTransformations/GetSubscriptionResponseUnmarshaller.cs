@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -55,6 +56,18 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AwsAccountName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pendingSubscriptionStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.PendingSubscriptionStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pendingSubscriptionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PendingSubscriptionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("subscriptionType", targetDepth))

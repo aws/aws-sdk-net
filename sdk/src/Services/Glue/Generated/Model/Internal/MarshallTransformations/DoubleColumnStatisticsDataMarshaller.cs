@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,40 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DoubleColumnStatisticsData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaximumValue())
             {
                 context.Writer.WritePropertyName("MaximumValue");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MaximumValue.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaximumValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaximumValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaximumValue);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMinimumValue())
             {
                 context.Writer.WritePropertyName("MinimumValue");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MinimumValue.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinimumValue);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetNumberOfDistinctValues())

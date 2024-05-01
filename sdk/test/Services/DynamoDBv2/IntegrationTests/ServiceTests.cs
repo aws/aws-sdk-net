@@ -8,7 +8,7 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
-
+#pragma warning disable CS0162
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
     public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
@@ -17,6 +17,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [TestCategory("DynamoDBv2")]
         public void TestTableCalls()
         {
+
             // Only run these tests if we are not reusing tables
             if (ReuseTables)
                 return;

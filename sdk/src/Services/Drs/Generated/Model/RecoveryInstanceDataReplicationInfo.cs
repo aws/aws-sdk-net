@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -40,6 +41,7 @@ namespace Amazon.Drs.Model
         private string _lagDuration;
         private List<RecoveryInstanceDataReplicationInfoReplicatedDisk> _replicatedDisks = AWSConfigs.InitializeCollections ? new List<RecoveryInstanceDataReplicationInfoReplicatedDisk>() : null;
         private string _stagingAvailabilityZone;
+        private string _stagingOutpostArn;
 
         /// <summary>
         /// Gets and sets the property DataReplicationError. 
@@ -169,6 +171,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetStagingAvailabilityZone()
         {
             return this._stagingAvailabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StagingOutpostArn. 
+        /// <para>
+        /// The ARN of the staging Outpost
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=255)]
+        public string StagingOutpostArn
+        {
+            get { return this._stagingOutpostArn; }
+            set { this._stagingOutpostArn = value; }
+        }
+
+        // Check to see if StagingOutpostArn property is set
+        internal bool IsSetStagingOutpostArn()
+        {
+            return this._stagingOutpostArn != null;
         }
 
     }

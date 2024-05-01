@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -80,9 +81,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of entity that CloudFormation changes. Currently, the only entity type is
-        /// <c>Resource</c>.
+        /// The type of entity that CloudFormation changes.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Resource</c> This change is for a resource.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ChangeType Type
         {

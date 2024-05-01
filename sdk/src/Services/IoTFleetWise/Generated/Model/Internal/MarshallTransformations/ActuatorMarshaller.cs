@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Actuator requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAllowedValues())
             {
                 context.Writer.WritePropertyName("allowedValues");
@@ -95,13 +98,35 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMax())
             {
                 context.Writer.WritePropertyName("max");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Max.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Max))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Max);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMin())
             {
                 context.Writer.WritePropertyName("min");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Min.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Min))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Min);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetStructFullyQualifiedName())

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Private5G.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,23 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Position requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetElevation())
             {
                 context.Writer.WritePropertyName("elevation");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Elevation.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Elevation))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Elevation));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Elevation);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetElevationReference())
@@ -66,13 +80,35 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatitude())
             {
                 context.Writer.WritePropertyName("latitude");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Latitude.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Latitude))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Latitude));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Latitude);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetLongitude())
             {
                 context.Writer.WritePropertyName("longitude");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Longitude.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Longitude))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Longitude));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Longitude);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

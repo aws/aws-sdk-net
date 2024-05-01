@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -107,7 +108,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                             }
                             if(publicRequestlistValue.RecipientDsnFields.IsSetLastAttemptDateUtc())
                             {
-                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "LastAttemptDate", StringUtils.FromDateTimeToISO8601(publicRequestlistValue.RecipientDsnFields.LastAttemptDateUtc));
+                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "LastAttemptDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.RecipientDsnFields.LastAttemptDateUtc));
                             }
                             if(publicRequestlistValue.RecipientDsnFields.IsSetRemoteMta())
                             {
@@ -137,7 +138,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.MessageDsn.IsSetArrivalDateUtc())
                     {
-                        request.Parameters.Add("MessageDsn" + "." + "ArrivalDate", StringUtils.FromDateTimeToISO8601(publicRequest.MessageDsn.ArrivalDateUtc));
+                        request.Parameters.Add("MessageDsn" + "." + "ArrivalDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.MessageDsn.ArrivalDateUtc));
                     }
                     if(publicRequest.MessageDsn.IsSetExtensionFields())
                     {

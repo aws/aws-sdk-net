@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -54,16 +55,40 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AfterValue", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AfterValue = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Attribute", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Attribute = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AttributeChangeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AttributeChangeType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("BeforeValue", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BeforeValue = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Name", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Path", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Path = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RequiresRecreation", targetDepth))

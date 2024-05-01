@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the iottwinmaker-2021-11-29.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>

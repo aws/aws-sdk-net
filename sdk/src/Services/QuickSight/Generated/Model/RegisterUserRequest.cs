@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -136,7 +137,8 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// Amazon QuickSight custom permissions are applied through IAM policies. Therefore,
         /// they override the permissions typically granted by assigning Amazon QuickSight users
-        /// to one of the default security cohorts in Amazon QuickSight (admin, author, reader).
+        /// to one of the default security cohorts in Amazon QuickSight (admin, author, reader,
+        /// admin pro, author pro, reader pro).
         /// </para>
         ///  
         /// <para>
@@ -247,19 +249,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IdentityType. 
         /// <para>
-        /// Amazon QuickSight supports several ways of managing the identity of users. This parameter
-        /// accepts two values:
+        /// The identity type that your Amazon QuickSight account uses to manage the identity
+        /// of users.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>IAM</c>: A user whose identity maps to an existing IAM user or role. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>QUICKSIGHT</c>: A user whose identity is owned and managed internally by Amazon
-        /// QuickSight. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public IdentityType IdentityType

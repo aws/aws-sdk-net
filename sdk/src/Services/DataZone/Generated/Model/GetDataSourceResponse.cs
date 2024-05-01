@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -354,7 +355,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Recommendation.
+        /// Gets and sets the property Recommendation. 
+        /// <para>
+        /// The recommendation configuration of the data source.
+        /// </para>
         /// </summary>
         public RecommendationConfiguration Recommendation
         {

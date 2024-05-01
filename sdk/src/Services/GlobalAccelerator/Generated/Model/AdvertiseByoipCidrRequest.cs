@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -55,6 +56,11 @@ namespace Amazon.GlobalAccelerator.Model
         /// <para>
         /// The address range, in CIDR notation. This must be the exact range that you provisioned.
         /// You can't advertise only a portion of the provisioned range.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+        /// your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

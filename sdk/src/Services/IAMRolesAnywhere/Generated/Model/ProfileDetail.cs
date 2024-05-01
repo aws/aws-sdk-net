@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
@@ -33,6 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// </summary>
     public partial class ProfileDetail
     {
+        private List<AttributeMapping> _attributeMappings = AWSConfigs.InitializeCollections ? new List<AttributeMapping>() : null;
         private DateTime? _createdAt;
         private string _createdBy;
         private int? _durationSeconds;
@@ -45,6 +47,24 @@ namespace Amazon.IAMRolesAnywhere.Model
         private List<string> _roleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sessionPolicy;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property AttributeMappings. 
+        /// <para>
+        /// A mapping applied to the authenticating end-entity certificate.
+        /// </para>
+        /// </summary>
+        public List<AttributeMapping> AttributeMappings
+        {
+            get { return this._attributeMappings; }
+            set { this._attributeMappings = value; }
+        }
+
+        // Check to see if AttributeMappings property is set
+        internal bool IsSetAttributeMappings()
+        {
+            return this._attributeMappings != null && (this._attributeMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -87,7 +107,8 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <para>
         ///  Used to determine how long sessions vended using this profile are valid for. See
         /// the <c>Expiration</c> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
-        /// API documentation</a> page for more details. 
+        /// API documentation</a> page for more details. In requests, if this value is not provided,
+        /// the default value will be 3600. 
         /// </para>
         /// </summary>
         public int? DurationSeconds
@@ -221,7 +242,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// A list of IAM roles that this profile can assume in a temporary credential request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> RoleArns
         {
             get { return this._roleArns; }

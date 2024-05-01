@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoScalingThresholds requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlarms())
             {
                 context.Writer.WritePropertyName("Alarms");
@@ -59,7 +62,18 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpuThreshold())
             {
                 context.Writer.WritePropertyName("CpuThreshold");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.CpuThreshold.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CpuThreshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CpuThreshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CpuThreshold);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetIgnoreMetricsTime())
@@ -77,13 +91,35 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLoadThreshold())
             {
                 context.Writer.WritePropertyName("LoadThreshold");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.LoadThreshold.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LoadThreshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoadThreshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LoadThreshold);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMemoryThreshold())
             {
                 context.Writer.WritePropertyName("MemoryThreshold");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MemoryThreshold.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MemoryThreshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MemoryThreshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MemoryThreshold);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetThresholdsWaitTime())

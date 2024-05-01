@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -40,7 +41,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The identifier for the resource server
+        /// A unique resource server identifier for the resource server. The identifier can be
+        /// an API friendly name like <c>solar-system-data</c>. You can also set an API URL like
+        /// <c>https://solar-system-data-api.example.com</c> as your identifier.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Cognito represents scopes in the access token in the format <c>$resource-server-identifier/$scope</c>.
+        /// Longer scope-identifier strings increase the size of your access tokens.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

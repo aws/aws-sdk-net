@@ -131,7 +131,12 @@ namespace Amazon.Util
             var sb = new StringBuilder();
             foreach (var c in basePathCharacters)
             {
+                // This warning is suggesting EscapeDataString when escaping full query string components
+                // and will always escape the base path characters. We don't need to worry about the
+                // corruption warning because we are only attempting to scape a single character.
+#pragma warning disable SYSLIB0013
                 var escaped = Uri.EscapeUriString(c.ToString());
+#pragma warning restore SYSLIB0013
                 if (escaped.Length == 1 && escaped[0] == c)
                     sb.Append(c);
             }
@@ -1003,9 +1008,9 @@ namespace Amazon.Util
         /// <returns>The ISO8601 formatted future timestamp.</returns>
         public static string GetFormattedTimestampRFC822(int minutesFromNow)
         {
-#pragma warning disable CS0612 // Type or member is obsolete
+#pragma warning disable CS0612,CS0618 // Type or member is obsolete
             DateTime dateTime = AWSSDKUtils.CorrectedUtcNow.AddMinutes(minutesFromNow);
-#pragma warning restore CS0612 // Type or member is obsolete
+#pragma warning restore CS0612,CS0618 // Type or member is obsolete
             return dateTime.ToString(AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
         }
 
@@ -1023,8 +1028,9 @@ namespace Amazon.Util
         {
 #if NETSTANDARD
             return RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
-#endif
+#else
             return true;
+#endif
         }
 
         #region The code in this region has been minimally adapted from Microsoft's PathInternal.Windows.cs class as of 11/19/2019.  The logic remains the same.
@@ -1345,7 +1351,6 @@ namespace Amazon.Util
         /// <seealso cref="AWSConfigs.ManualClockCorrection"/> is set.
         /// This value should be used instead of DateTime.UtcNow to factor in manual clock correction
         /// </summary>
-        [Obsolete("This property does not account for endpoint specific clock skew.  Use CorrectClockSkew.GetCorrectedUtcNowForEndpoint() instead.")]
         public static DateTime CorrectedUtcNow
         {
             get

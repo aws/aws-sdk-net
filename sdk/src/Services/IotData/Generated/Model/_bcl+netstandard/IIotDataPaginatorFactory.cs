@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the iot-data-2015-05-28.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IotData.Model
 {
     /// <summary>

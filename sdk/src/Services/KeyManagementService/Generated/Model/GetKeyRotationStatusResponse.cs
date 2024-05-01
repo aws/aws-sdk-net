@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -33,7 +34,30 @@ namespace Amazon.KeyManagementService.Model
     /// </summary>
     public partial class GetKeyRotationStatusResponse : AmazonWebServiceResponse
     {
+        private string _keyId;
         private bool? _keyRotationEnabled;
+        private DateTime? _nextRotationDate;
+        private DateTime? _onDemandRotationStartDate;
+        private int? _rotationPeriodInDays;
+
+        /// <summary>
+        /// Gets and sets the property KeyId. 
+        /// <para>
+        /// Identifies the specified symmetric encryption KMS key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KeyId
+        {
+            get { return this._keyId; }
+            set { this._keyId = value; }
+        }
+
+        // Check to see if KeyId property is set
+        internal bool IsSetKeyId()
+        {
+            return this._keyId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KeyRotationEnabled. 
@@ -51,6 +75,69 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetKeyRotationEnabled()
         {
             return this._keyRotationEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextRotationDate. 
+        /// <para>
+        /// The next date that KMS will automatically rotate the key material.
+        /// </para>
+        /// </summary>
+        public DateTime NextRotationDate
+        {
+            get { return this._nextRotationDate.GetValueOrDefault(); }
+            set { this._nextRotationDate = value; }
+        }
+
+        // Check to see if NextRotationDate property is set
+        internal bool IsSetNextRotationDate()
+        {
+            return this._nextRotationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemandRotationStartDate. 
+        /// <para>
+        /// Identifies the date and time that an in progress on-demand rotation was initiated.
+        /// </para>
+        ///  
+        /// <para>
+        /// The KMS API follows an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">eventual
+        /// consistency</a> model due to the distributed nature of the system. As a result, there
+        /// might be a slight delay between initiating on-demand key rotation and the rotation's
+        /// completion. Once the on-demand rotation is complete, use <a>ListKeyRotations</a> to
+        /// view the details of the on-demand rotation.
+        /// </para>
+        /// </summary>
+        public DateTime OnDemandRotationStartDate
+        {
+            get { return this._onDemandRotationStartDate.GetValueOrDefault(); }
+            set { this._onDemandRotationStartDate = value; }
+        }
+
+        // Check to see if OnDemandRotationStartDate property is set
+        internal bool IsSetOnDemandRotationStartDate()
+        {
+            return this._onDemandRotationStartDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RotationPeriodInDays. 
+        /// <para>
+        /// The number of days between each automatic rotation. The default value is 365 days.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=90, Max=2560)]
+        public int RotationPeriodInDays
+        {
+            get { return this._rotationPeriodInDays.GetValueOrDefault(); }
+            set { this._rotationPeriodInDays = value; }
+        }
+
+        // Check to see if RotationPeriodInDays property is set
+        internal bool IsSetRotationPeriodInDays()
+        {
+            return this._rotationPeriodInDays.HasValue; 
         }
 
     }

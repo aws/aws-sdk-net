@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// PrepareAgent Response
+    /// This is the response object from the PrepareAgent operation.
     /// </summary>
     public partial class PrepareAgentResponse : AmazonWebServiceResponse
     {
@@ -39,7 +40,10 @@ namespace Amazon.BedrockAgent.Model
         private DateTime? _preparedAt;
 
         /// <summary>
-        /// Gets and sets the property AgentId.
+        /// Gets and sets the property AgentId. 
+        /// <para>
+        /// The unique identifier of the agent for which the <c>DRAFT</c> version was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentId
@@ -55,7 +59,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentStatus.
+        /// Gets and sets the property AgentStatus. 
+        /// <para>
+        /// The status of the <c>DRAFT</c> version and whether it is ready for use.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentStatus AgentStatus
@@ -71,7 +78,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentVersion.
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The version of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
         public string AgentVersion
@@ -87,7 +97,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PreparedAt.
+        /// Gets and sets the property PreparedAt. 
+        /// <para>
+        /// The time at which the <c>DRAFT</c> version of the agent was last prepared.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? PreparedAt

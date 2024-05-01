@@ -54,6 +54,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetBucketIntelligentTieringConfigurationRequestMarshaller _instance;
 
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static GetBucketIntelligentTieringConfigurationRequestMarshaller Instance
         {
             get

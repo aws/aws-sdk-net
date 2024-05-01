@@ -6,7 +6,10 @@
         "AttributeValue" : [
             "BOOL",
             "M",
-            "L"
+            "L",
+            "SS",
+            "BS",
+            "NS"
         ],
         "GetItemOutput" : [
             "Item"

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -469,7 +470,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SecurityPolicyName. 
         /// <para>
-        /// Specifies the name of the security policy that is attached to the server.
+        /// Specifies the name of the security policy for the server.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

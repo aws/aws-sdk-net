@@ -26,17 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetHub.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// Creates a Fleet Hub for AWS IoT Device Management web application.
+    /// Creates a Fleet Hub for IoT Device Management web application.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
+    /// When creating a Fleet Hub application, you must create an organization instance of
+    /// IAM Identity Center if you don't already have one. The Fleet Hub application you create
+    /// must also be in the same Amazon Web Services Region of the organization instance of
+    /// IAM Identity Center. For more information see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/get-set-up-for-idc.html">Enabling
+    /// IAM Identity Center</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/organization-instances-identity-center.html">Organization
+    /// instances of IAM Identity Center</a>.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class CreateApplicationRequest : AmazonIoTFleetHubRequest
     {
@@ -107,8 +112,8 @@ namespace Amazon.IoTFleetHub.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role that the web application assumes when it interacts with AWS IoT
-        /// Core.
+        /// The ARN of the role that the web application assumes when it interacts with Amazon
+        /// Web Services IoT Core.
         /// </para>
         ///  <note> 
         /// <para>

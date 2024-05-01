@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The default storage settings for a private space.
+    /// The default storage settings for a space.
     /// </summary>
     public partial class DefaultSpaceStorageSettings
     {
@@ -38,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultEbsStorageSettings. 
         /// <para>
-        /// The default EBS storage settings for a private space.
+        /// The default EBS storage settings for a space.
         /// </para>
         /// </summary>
         public DefaultEbsStorageSettings DefaultEbsStorageSettings

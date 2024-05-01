@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The resource's Amazon Resource Name.
+        /// The resource's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

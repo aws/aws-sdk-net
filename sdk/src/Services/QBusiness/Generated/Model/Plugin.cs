@@ -26,13 +26,15 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Information about an Amazon Q plugin and its configuration.
+    /// Information about an Amazon Q Business plugin and its configuration.
     /// </summary>
     public partial class Plugin
     {
+        private PluginBuildStatus _buildStatus;
         private DateTime? _createdAt;
         private string _displayName;
         private string _pluginId;
@@ -40,6 +42,24 @@ namespace Amazon.QBusiness.Model
         private PluginState _state;
         private PluginType _type;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property BuildStatus. 
+        /// <para>
+        /// The status of the plugin.
+        /// </para>
+        /// </summary>
+        public PluginBuildStatus BuildStatus
+        {
+            get { return this._buildStatus; }
+            set { this._buildStatus = value; }
+        }
+
+        // Check to see if BuildStatus property is set
+        internal bool IsSetBuildStatus()
+        {
+            return this._buildStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

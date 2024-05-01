@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3OnDeviceServiceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFaultTolerance())
             {
                 context.Writer.WritePropertyName("FaultTolerance");
@@ -60,7 +63,18 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStorageLimit())
             {
                 context.Writer.WritePropertyName("StorageLimit");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.StorageLimit.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StorageLimit))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StorageLimit));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.StorageLimit);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetStorageUnit())

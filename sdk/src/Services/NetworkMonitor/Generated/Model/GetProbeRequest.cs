@@ -26,11 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the GetProbe operation.
-    /// Returns the details about a probe. You'll need both the <c>monitorName</c> and <c>probeId</c>.
+    /// Returns the details about a probe. This action requires both the <c>monitorName</c>
+    /// and <c>probeId</c> parameters. Run <c>ListMonitors</c> to get a list of monitor names.
+    /// Run <c>GetMonitor</c> to get a list of probes and probe IDs.
     /// </summary>
     public partial class GetProbeRequest : AmazonNetworkMonitorRequest
     {
@@ -44,7 +47,7 @@ namespace Amazon.NetworkMonitor.Model
         /// a list of monitor names.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string MonitorName
         {
             get { return this._monitorName; }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,40 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StepAdjustment requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMetricIntervalLowerBound())
             {
                 context.Writer.WritePropertyName("MetricIntervalLowerBound");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MetricIntervalLowerBound.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalLowerBound))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalLowerBound));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MetricIntervalLowerBound);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMetricIntervalUpperBound())
             {
                 context.Writer.WritePropertyName("MetricIntervalUpperBound");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MetricIntervalUpperBound.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalUpperBound))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalUpperBound));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MetricIntervalUpperBound);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetScalingAdjustment())

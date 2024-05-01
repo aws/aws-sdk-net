@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// A list of identifiers of security groups within your Amazon VPC. The security groups
-        /// should enable Amazon Q to connect to the data source.
+        /// should enable Amazon Q Business to connect to the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

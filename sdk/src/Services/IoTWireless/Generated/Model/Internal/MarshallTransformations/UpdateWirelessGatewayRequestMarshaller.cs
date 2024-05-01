@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,6 +67,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDescription())
@@ -93,7 +95,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxEirp())
                 {
                     context.Writer.WritePropertyName("MaxEirp");
+<<<<<<< HEAD
                     context.Writer.Write(publicRequest.MaxEirp.Value);
+=======
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.MaxEirp))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MaxEirp));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MaxEirp);
+                    }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetName())

@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+     <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
+      <TargetFramework>net45</TargetFramework>
+      <DefineConstants>$(DefineConstants);TRACE;BCL;BCL45;ASYNC_AWAIT;DEBUG</DefineConstants>
+      <DebugType>portable</DebugType>
+      <GenerateDocumentationFile>true</GenerateDocumentationFile>
+      <AssemblyName>AWSSDK.ProtocolTests.Net45</AssemblyName>
+      <PackageId>AWSSDK.ProtocolTests.Net45</PackageId>
+  
+      <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+      <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+      <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+      <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+      <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+      <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+      <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+      <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+      <SignAssembly>true</SignAssembly>
+  
+      <NoWarn>CS1591,CS1570</NoWarn>
+      <TreatWarningsAsErrors>true</TreatWarningsAsErrors>  
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="**/obj/**" />
+      <None Remove="**/obj/**" />
+    </ItemGroup>
+  
+    <ItemGroup>
+      <ProjectReference Include="../../src/Core/AWSSDK.Core.Net45.csproj" />
+      <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj" />
+      <ProjectReference Include="../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />
+      <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.Net45.csproj" />
+	  <ProjectReference Include="../Services/RestJsonProtocol/AWSSDK.RestJsonProtocol.Net45.csproj" />
+	  <ProjectReference Include="../Services/JSONRPC10/AWSSDK.JSONRPC10.Net45.csproj" />
+	  <ProjectReference Include="../Services/JsonProtocol/AWSSDK.JsonProtocol.Net45.csproj" />
+	  <ProjectReference Include="../Services/QueryProtocol/AWSSDK.QueryProtocol.Net45.csproj" />
+	  <ProjectReference Include="../Services/EC2Protocol/AWSSDK.EC2Protocol.Net45.csproj" />
+	  <ProjectReference Include="../Services/RestXmlProtocol/AWSSDK.RestXmlProtocol.Net45.csproj" />
+	  <ProjectReference Include="../Services/RestXmlProtocolNamespace/AWSSDK.RestXmlProtocolNamespace.Net45.csproj" />
+      <ProjectReference Include="../UnitTests/Custom/AWSSDK.UnitTestUtilities.Net45.csproj" />
+    </ItemGroup>
+    <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+    </ItemGroup>
+    <ItemGroup>
+          <PackageReference Include="Moq" Version="4.8.3" />
+          <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+          <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+          <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+          <PackageReference Include="AutoFixture" Version="3.51.0" />
+          <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0" />
+          <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+  </Project>

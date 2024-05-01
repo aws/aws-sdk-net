@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the mediapackagev2-2022-12-25.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model
 {
     /// <summary>

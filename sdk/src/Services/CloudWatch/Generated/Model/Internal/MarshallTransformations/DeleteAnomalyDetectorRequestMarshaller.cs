@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -161,6 +162,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSingleMetricAnomalyDetector())
                 {
+                    if(publicRequest.SingleMetricAnomalyDetector.IsSetAccountId())
+                    {
+                        request.Parameters.Add("SingleMetricAnomalyDetector" + "." + "AccountId", StringUtils.FromString(publicRequest.SingleMetricAnomalyDetector.AccountId));
+                    }
                     if(publicRequest.SingleMetricAnomalyDetector.IsSetDimensions())
                     {
                         int publicRequestSingleMetricAnomalyDetectorlistValueIndex = 1;

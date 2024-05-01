@@ -8,6 +8,7 @@
 
     AddCommonUsingStatements();
 #>
+#pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     var requestStructure = this.Operation.RequestStructure;
     if(requestStructure != null)
         ProcessMembers(0, "",  "publicRequest", requestStructure.Members);
+	if (!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
+	{
+		ProcessEndpointHostPrefixMembers(4, "publicRequest", this.Operation);
+	}
 #>
             }
             return request;
@@ -108,14 +113,29 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             else if(member.IsMap)
             {
                 string context = ComposeContext(parameterContext, marshallName);
-                string mapItemContext = ComposeContext(context, member.Shape.IsFlattened ? "" : "entry", "mapIndex");
+                string mapItemContext = ComposeContext(context, member.IsFlattened ? "" : "entry", "mapIndex");
                 string mapKeyContext = ComposeContext(mapItemContext, member.Shape.KeyMarshallName);
                 string mapValueContext = ComposeContext(mapItemContext, member.Shape.ValueMarshallName);
+                string mapListValueContext = ComposeContext(mapValueContext, "member", "valueIndex");
 #>
 <#=new string(' ', level * 4)#>                    int mapIndex = 1;
 <#=new string(' ', level * 4)#>                    foreach(var key in <#=variableName#>.<#=member.PropertyName#>.Keys)
 <#=new string(' ', level * 4)#>                    {
+<#+
+                if(member.Shape.ValueShape.IsList)
+                {
+#>
+<#=new string(' ', level * 4)#>                        List<<#= member.Shape.ValueShape.ListShape.GetPrimitiveType() #>> value;
+
+<#+
+                }
+                else
+                {
+#>
 <#=new string(' ', level * 4)#>                        <#= member.Shape.ValueShape.IsStructure ? member.Shape.ValueShape.Name : member.Shape.ValueShape.GetPrimitiveType() #> value;
+<#+
+                }
+#>
 <#=new string(' ', level * 4)#>                        bool hasValue = <#=variableName#>.<#=member.PropertyName#>.TryGetValue(key, out value);
 <#=new string(' ', level * 4)#>                        request.Parameters.Add(<#=mapKeyContext#>, <#=member.Shape.KeyShape.PrimitiveMarshaller(MarshallLocation.Body)#>(key));
 <#=new string(' ', level * 4)#>                        if (hasValue)
@@ -124,6 +144,17 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 if(member.Shape.ValueShape.IsStructure)
                 {
                     ProcessMembers(level + 3, mapValueContext, "value", member.Shape.ValueShape.Members);
+                }
+                else if(member.Shape.ValueShape.IsList)
+                {
+#>
+<#=new string(' ', level * 4)#>                            int valueIndex = 1;
+<#=new string(' ', level * 4)#>                            foreach(var listValue in value)
+<#=new string(' ', level * 4)#>                            {
+<#=new string(' ', level * 4)#>                                request.Parameters.Add(<#=mapListValueContext#>, <#=member.Shape.ValueShape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)#>(listValue));
+<#=new string(' ', level * 4)#>                                valueIndex++;
+<#=new string(' ', level * 4)#>                            }
+<#+
                 }
                 else
                 {

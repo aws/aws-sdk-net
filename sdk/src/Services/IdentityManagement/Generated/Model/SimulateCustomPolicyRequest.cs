@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -364,11 +365,12 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Each of the EC2 scenarios requires that you specify instance, image, and security
+        /// Each of the Amazon EC2 scenarios requires that you specify instance, image, and security
         /// group resources. If your scenario includes an EBS volume, then you must specify that
-        /// volume as a resource. If the EC2 scenario includes VPC, then you must supply the network
-        /// interface resource. If it includes an IP subnet, then you must specify the subnet
-        /// resource. For more information on the EC2 scenario options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// volume as a resource. If the Amazon EC2 scenario includes VPC, then you must supply
+        /// the network interface resource. If it includes an IP subnet, then you must specify
+        /// the subnet resource. For more information on the Amazon EC2 scenario options, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// platforms</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <ul> <li> 

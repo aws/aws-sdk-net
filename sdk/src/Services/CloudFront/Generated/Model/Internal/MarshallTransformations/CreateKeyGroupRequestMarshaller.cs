@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,22 +66,30 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("KeyGroupConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.KeyGroupConfig.IsSetComment())
+<<<<<<< HEAD
                         xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.KeyGroupConfig.Comment));
+=======
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.KeyGroupConfig.Comment));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                     var publicRequestKeyGroupConfigItems = publicRequest.KeyGroupConfig.Items;
                     if (publicRequestKeyGroupConfigItems != null && (publicRequestKeyGroupConfigItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                    {                        
-                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                    {
+                        xmlWriter.WriteStartElement("Items");
                         foreach (var publicRequestKeyGroupConfigItemsValue in publicRequestKeyGroupConfigItems) 
                         {
-                            xmlWriter.WriteStartElement("PublicKey", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                            xmlWriter.WriteStartElement("PublicKey");
                             xmlWriter.WriteValue(publicRequestKeyGroupConfigItemsValue);
                             xmlWriter.WriteEndElement();
                         }            
                         xmlWriter.WriteEndElement();            
                     }
                     if(publicRequest.KeyGroupConfig.IsSetName())
+<<<<<<< HEAD
                         xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.KeyGroupConfig.Name));
+=======
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.KeyGroupConfig.Name));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                     xmlWriter.WriteEndElement();

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -52,6 +53,11 @@ namespace Amazon.ECS.Model
     /// <para>
     /// The health check is designed to make sure that your containers survive agent restarts,
     /// upgrades, or temporary unavailability.
+    /// </para>
+    ///  
+    /// <para>
+    /// Amazon ECS performs health checks on containers with the default that launched the
+    /// container instance or the task.
     /// </para>
     ///  
     /// <para>

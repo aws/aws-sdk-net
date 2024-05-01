@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,6 +74,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ManagedPersistenceMonitoringConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ManagedPersistenceMonitoringConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("prometheusMonitoringConfiguration", targetDepth))
+                {
+                    var unmarshaller = PrometheusMonitoringConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PrometheusMonitoringConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("s3MonitoringConfiguration", targetDepth))

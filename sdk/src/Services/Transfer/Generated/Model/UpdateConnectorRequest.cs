@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -40,6 +41,7 @@ namespace Amazon.Transfer.Model
         private As2ConnectorConfig _as2Config;
         private string _connectorId;
         private string _loggingRole;
+        private string _securityPolicyName;
         private SftpConnectorConfig _sftpConfig;
         private string _url;
 
@@ -155,6 +157,25 @@ namespace Amazon.Transfer.Model
         internal bool IsSetLoggingRole()
         {
             return this._loggingRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityPolicyName. 
+        /// <para>
+        /// Specifies the name of the security policy for the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public string SecurityPolicyName
+        {
+            get { return this._securityPolicyName; }
+            set { this._securityPolicyName = value; }
+        }
+
+        // Check to see if SecurityPolicyName property is set
+        internal bool IsSetSecurityPolicyName()
+        {
+            return this._securityPolicyName != null;
         }
 
         /// <summary>

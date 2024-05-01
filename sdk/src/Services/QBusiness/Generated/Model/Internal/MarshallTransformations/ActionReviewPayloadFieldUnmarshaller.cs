@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,10 +64,22 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("allowedFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AllowedFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("allowedValues", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ActionReviewPayloadFieldAllowedValue, ActionReviewPayloadFieldAllowedValueUnmarshaller>(ActionReviewPayloadFieldAllowedValueUnmarshaller.Instance);
                     unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("displayDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisplayDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("displayName", targetDepth))

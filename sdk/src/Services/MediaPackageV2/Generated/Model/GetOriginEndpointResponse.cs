@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackageV2.Model
 {
     /// <summary>
@@ -38,6 +39,7 @@ namespace Amazon.MediaPackageV2.Model
         private string _channelName;
         private ContainerType _containerType;
         private DateTime? _createdAt;
+        private List<GetDashManifestConfiguration> _dashManifests = AWSConfigs.InitializeCollections ? new List<GetDashManifestConfiguration>() : null;
         private string _description;
         private string _eTag;
         private List<GetHlsManifestConfiguration> _hlsManifests = AWSConfigs.InitializeCollections ? new List<GetHlsManifestConfiguration>() : null;
@@ -143,6 +145,24 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DashManifests. 
+        /// <para>
+        /// A DASH manifest configuration.
+        /// </para>
+        /// </summary>
+        public List<GetDashManifestConfiguration> DashManifests
+        {
+            get { return this._dashManifests; }
+            set { this._dashManifests = value; }
+        }
+
+        // Check to see if DashManifests property is set
+        internal bool IsSetDashManifests()
+        {
+            return this._dashManifests != null && (this._dashManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

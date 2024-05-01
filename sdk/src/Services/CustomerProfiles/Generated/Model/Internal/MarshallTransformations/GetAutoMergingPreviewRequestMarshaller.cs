@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,6 +67,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetConflictResolution())
@@ -93,7 +95,18 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinAllowedConfidenceScoreForMerging())
                 {
                     context.Writer.WritePropertyName("MinAllowedConfidenceScoreForMerging");
+<<<<<<< HEAD
                     context.Writer.Write(publicRequest.MinAllowedConfidenceScoreForMerging.Value);
+=======
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MinAllowedConfidenceScoreForMerging))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MinAllowedConfidenceScoreForMerging));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MinAllowedConfidenceScoreForMerging);
+                    }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 writer.WriteObjectEnd();

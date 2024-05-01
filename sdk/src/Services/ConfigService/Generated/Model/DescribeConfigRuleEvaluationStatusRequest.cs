@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.ConfigService.Model
         ///  
         /// <para>
         /// This parameter is required if the rule limit for your account is more than the default
-        /// of 150 rules.
+        /// of 1000 rules.
         /// </para>
         ///  
         /// <para>

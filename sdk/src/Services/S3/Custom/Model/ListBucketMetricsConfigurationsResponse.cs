@@ -59,7 +59,10 @@ namespace Amazon.S3.Model
             set { this.metricsConfigurationList = value; }
         }
 
-        // Check to see if MetricsConfigurationList property is set
+        /// <summary>
+        /// Check to see if MetricsConfigurationList property is set
+        /// </summary>
+        /// <returns></returns>
         public bool IsSetMetricsConfigurationList()
         {
             return this.metricsConfigurationList != null && (this.metricsConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections);

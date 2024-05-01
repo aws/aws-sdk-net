@@ -172,7 +172,7 @@ namespace UnitTests
             var clientConfig = new MyClientConfig();
             clientConfig.HttpClientFactory = new MyBasicClientFactory();
 
-            Assert.Equal(null, CreateConfigUniqueString(clientConfig));
+            Assert.Null(CreateConfigUniqueString(clientConfig));
         }
 
         [Fact]

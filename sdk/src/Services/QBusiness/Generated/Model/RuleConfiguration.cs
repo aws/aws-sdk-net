@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -39,7 +40,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ContentBlockerRule. 
         /// <para>
-        /// A rule for configuring how Amazon Q responds when it encounters a a blocked topic.
+        /// A rule for configuring how Amazon Q Business responds when it encounters a a blocked
+        /// topic.
         /// </para>
         /// </summary>
         public ContentBlockerRule ContentBlockerRule

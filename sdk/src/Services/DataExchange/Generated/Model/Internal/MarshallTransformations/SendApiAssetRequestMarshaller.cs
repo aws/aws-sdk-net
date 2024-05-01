@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -59,12 +60,14 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
-            
             if (publicRequest.IsSetQueryStringParameters())
             {
                 foreach(var kvp in publicRequest.QueryStringParameters)
                 {
-                    request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
+                    if(request.Parameters.ContainsKey(kvp.Key))
+                       continue;
+                    else
+                       request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
                 }
             }
             request.ResourcePath = "/v1";

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -157,7 +158,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of <c>FilterListControl</c>. Choose one of the following options:
+        /// The type of the <c>FilterListControl</c>. Choose one of the following options:
         /// </para>
         ///  <ul> <li> 
         /// <para>

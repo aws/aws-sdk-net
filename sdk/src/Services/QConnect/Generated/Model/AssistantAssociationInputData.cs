@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// The data that is input into Amazon Q as a result of the assistant association.
+    /// The data that is input into Amazon Q in Connect as a result of the assistant association.
     /// </summary>
     public partial class AssistantAssociationInputData
     {
@@ -39,7 +40,7 @@ namespace Amazon.QConnect.Model
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
         /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
-        /// base if you're storing Amazon Q Content resource to it.
+        /// base.
         /// </para>
         /// </summary>
         public string KnowledgeBaseId

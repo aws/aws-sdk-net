@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NumericRangeFilterValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetParameter())
             {
                 context.Writer.WritePropertyName("Parameter");
@@ -54,7 +57,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStaticValue())
             {
                 context.Writer.WritePropertyName("StaticValue");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.StaticValue.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StaticValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StaticValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.StaticValue);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

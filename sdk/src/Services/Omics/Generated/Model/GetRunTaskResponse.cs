@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -87,7 +88,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        ///  The reason a task has failed. 
+        /// The reason a task has failed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -106,7 +107,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Gpus. 
         /// <para>
-        ///  The number of Graphics Processing Units (GPU) specified in the task. 
+        /// The number of Graphics Processing Units (GPU) specified in the task.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -125,7 +126,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        ///  The instance type for a task. 
+        /// The instance type for a task.
         /// </para>
         /// </summary>
         public string InstanceType

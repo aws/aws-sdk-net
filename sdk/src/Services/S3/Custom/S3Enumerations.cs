@@ -113,6 +113,8 @@ namespace Amazon.S3
             return FindValue(value);
         }
     }
+
+    /// <summary>
     /// Constants used for properties of type BucketType.
     /// </summary>
     public class BucketType : ConstantClass
@@ -510,7 +512,7 @@ namespace Amazon.S3
         public static S3Region FindValue(string value)
         {
             if (value == null)
-                return S3Region.US;
+                return S3Region.USEast1;
 
             return FindValue<S3Region>(value);
         }
@@ -1867,6 +1869,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly RequestPayer Requester = new RequestPayer("requester");
 
+        /// <summary>
+        /// Construct an instance of RequestPayer
+        /// </summary>
+        /// <param name="value"></param>
         public RequestPayer(string value)
             : base(value)
         {
@@ -1899,6 +1905,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly RequestCharged Requester = new RequestCharged("requester");
 
+        /// <summary>
+        /// Construct an instance of RequestCharged
+        /// </summary>
+        /// <param name="value"></param>
         public RequestCharged(string value)
             : base(value)
         {
@@ -1930,7 +1940,11 @@ namespace Amazon.S3
         /// Overrides destination bucket's owner.
         /// </summary>
         public static readonly OwnerOverride Destination = new OwnerOverride("Destination");
-        
+
+        /// <summary>
+        /// Construct an instance of OwnerOverride
+        /// </summary>
+        /// <param name="value"></param>
         public OwnerOverride(string value)
             : base(value)
         {
@@ -2110,6 +2124,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly FileHeaderInfo None = new FileHeaderInfo("NONE");
 
+        /// <summary>
+        /// Construct instance of FileHeaderInfo
+        /// </summary>
+        /// <param name="value"></param>
         public FileHeaderInfo(string value)
             : base(value)
         {
@@ -2149,6 +2167,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly ExistingObjectReplicationStatus Disabled = new ExistingObjectReplicationStatus("Disabled");
 
+        /// <summary>
+        /// Construct instance of ExistingObjectReplicationStatus
+        /// </summary>
+        /// <param name="value"></param>
         public ExistingObjectReplicationStatus(string value)
             : base(value)
         {
@@ -2188,6 +2210,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly QuoteFields AsNeeded = new QuoteFields("ASNEEDED");
 
+        /// <summary>
+        /// Constuct an instance of QuoteFields
+        /// </summary>
+        /// <param name="value"></param>
         public QuoteFields(string value)
             : base(value)
         {
@@ -2222,6 +2248,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly ExpressionType SQL = new ExpressionType("SQL");
 
+        /// <summary>
+        /// Construct instance of ExpressionType
+        /// </summary>
+        /// <param name="value"></param>
         public ExpressionType(string value)
             : base(value)
         {
@@ -2251,8 +2281,15 @@ namespace Amazon.S3
     /// </summary>
     public sealed class RestoreRequestType : ConstantClass
     {
+        /// <summary>
+        /// Constant for the value SELECT
+        /// </summary>
         public static readonly RestoreRequestType SELECT = new RestoreRequestType("SELECT");
 
+        /// <summary>
+        /// Construct an instance of RestoreRequestType
+        /// </summary>
+        /// <param name="value"></param>
         public RestoreRequestType(string value)
             : base(value)
         {
@@ -2280,9 +2317,19 @@ namespace Amazon.S3
     /// </summary>
     public sealed class JsonType : ConstantClass
     {
+        /// <summary>
+        /// Constant for DOCUMENT
+        /// </summary>
         public static readonly JsonType Document = new JsonType("DOCUMENT");
+        /// <summary>
+        /// Constant for LINES
+        /// </summary>
         public static readonly JsonType Lines = new JsonType("LINES");
 
+        /// <summary>
+        /// Construct instance of JsonType
+        /// </summary>
+        /// <param name="value"></param>
         public JsonType(string value)
             : base(value)
         {
@@ -2310,10 +2357,23 @@ namespace Amazon.S3
     /// </summary>
     public sealed class CompressionType : ConstantClass
     {
+        /// <summary>
+        /// Constant for NONE
+        /// </summary>
         public static readonly CompressionType None = new CompressionType("NONE");
+        /// <summary>
+        /// Constant for GZIP
+        /// </summary>
         public static readonly CompressionType Gzip = new CompressionType("GZIP");
+        /// <summary>
+        /// Constante for BZIP2
+        /// </summary>
         public static readonly CompressionType Bzip2 = new CompressionType("BZIP2");
 
+        /// <summary>
+        /// Constructs an instance of CompressionType
+        /// </summary>
+        /// <param name="value"></param>
         public CompressionType(string value)
             : base(value)
         {
@@ -2341,8 +2401,15 @@ namespace Amazon.S3
     /// </summary>
     public sealed class ObjectLockEnabled : ConstantClass
     {        
+        /// <summary>
+        /// Constant for Enabled
+        /// </summary>
         public static readonly ObjectLockEnabled Enabled = new ObjectLockEnabled("Enabled");
-        
+
+        /// <summary>
+        /// Construct an instance of ObjectLockEnabled
+        /// </summary>
+        /// <param name="value"></param>
         public ObjectLockEnabled(string value)
             : base(value)
         {
@@ -2369,10 +2436,21 @@ namespace Amazon.S3
     /// The type of ObjectLockLegalHoldStatus
     /// </summary>
     public sealed class ObjectLockLegalHoldStatus : ConstantClass
-    {        
+    {
+        /// <summary>
+        /// Constant for ON
+        /// </summary>
         public static readonly ObjectLockLegalHoldStatus On = new ObjectLockLegalHoldStatus("ON");
+
+        /// <summary>
+        /// Constant for OFF
+        /// </summary>
         public static readonly ObjectLockLegalHoldStatus Off = new ObjectLockLegalHoldStatus("OFF");
-        
+
+        /// <summary>
+        /// Construct an instance of ObjectLockLegalHoldStatus
+        /// </summary>
+        /// <param name="value"></param>
         public ObjectLockLegalHoldStatus(string value)
             : base(value)
         {
@@ -2399,10 +2477,21 @@ namespace Amazon.S3
     /// The type of ObjectLockRetentionMode
     /// </summary>
     public sealed class ObjectLockRetentionMode : ConstantClass
-    {        
+    {
+        /// <summary>
+        /// Constant for GOVERNANCE
+        /// </summary>
         public static readonly ObjectLockRetentionMode Governance = new ObjectLockRetentionMode("GOVERNANCE");
+
+        /// <summary>
+        /// Constant for COMPLIANCE
+        /// </summary>
         public static readonly ObjectLockRetentionMode Compliance = new ObjectLockRetentionMode("COMPLIANCE");
-        
+
+        /// <summary>
+        /// Construct an instance of ObjectLockRetentionMode
+        /// </summary>
+        /// <param name="value"></param>
         public ObjectLockRetentionMode(string value)
             : base(value)
         {
@@ -2429,10 +2518,21 @@ namespace Amazon.S3
     /// The type of ObjectLockMode
     /// </summary>
     public sealed class ObjectLockMode : ConstantClass
-    {        
+    {
+        /// <summary>
+        /// Constant for GOVERNANCE
+        /// </summary>
         public static readonly ObjectLockMode Governance = new ObjectLockMode("GOVERNANCE");
+
+        /// <summary>
+        /// Constant for COMPLIANCE
+        /// </summary>
         public static readonly ObjectLockMode Compliance = new ObjectLockMode("COMPLIANCE");
-        
+
+        /// <summary>
+        /// Construct an instance of ObjectLockMode
+        /// </summary>
+        /// <param name="value"></param>
         public ObjectLockMode(string value)
             : base(value)
         {
@@ -2504,6 +2604,10 @@ namespace Amazon.S3
     /// </summary>
     public sealed class ReplicationTimeStatus : ConstantClass
     {
+        /// <summary>
+        /// Construct an instance of ReplicationTimeStatus
+        /// </summary>
+        /// <param name="value"></param>
         public ReplicationTimeStatus(string value)
             : base(value)
         {
@@ -2545,6 +2649,10 @@ namespace Amazon.S3
     /// </summary>
     public sealed class MetricsStatus : ConstantClass
     {
+        /// <summary>
+        /// Construct an instance of MetricsStatus
+        /// </summary>
+        /// <param name="value"></param>
         public MetricsStatus(string value)
             : base(value)
         {
@@ -2586,6 +2694,10 @@ namespace Amazon.S3
     /// </summary>
     public sealed class ObjectOwnership : ConstantClass
     {
+        /// <summary>
+        /// Constuct an instance of ObjectOwnership
+        /// </summary>
+        /// <param name="value"></param>
         public ObjectOwnership(string value)
             : base(value)
         {
@@ -2627,8 +2739,15 @@ namespace Amazon.S3
         }
     }
 
+    /// <summary>
+    /// Constants for the IntelligentTieringStatus field.
+    /// </summary>
     public sealed class IntelligentTieringStatus : ConstantClass
     {
+        /// <summary>
+        /// Construct an instance of IntelligentTieringStatus
+        /// </summary>
+        /// <param name="value"></param>
         public IntelligentTieringStatus(string value)
             : base(value)
         {
@@ -2665,8 +2784,15 @@ namespace Amazon.S3
         }
     }
 
+    /// <summary>
+    /// Constance for intelligent tiering access tier.
+    /// </summary>
     public sealed class IntelligentTieringAccessTier : ConstantClass
     {
+        /// <summary>
+        /// Construct instance of IntelligentTieringAccessTier
+        /// </summary>
+        /// <param name="value"></param>
         public IntelligentTieringAccessTier(string value)
             : base(value)
         {
@@ -2749,8 +2875,15 @@ namespace Amazon.S3
 
     }
 
+    /// <summary>
+    /// Constants for the ReplicaModificationsStatus field.
+    /// </summary>
     public sealed class ReplicaModificationsStatus : ConstantClass
     {
+        /// <summary>
+        /// Construct an instance of ReplicaModificationsStatus
+        /// </summary>
+        /// <param name="value"></param>
         public ReplicaModificationsStatus(string value)
             : base(value)
         {

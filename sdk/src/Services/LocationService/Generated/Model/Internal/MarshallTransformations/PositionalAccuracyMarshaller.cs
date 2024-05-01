@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,23 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PositionalAccuracy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHorizontal())
             {
                 context.Writer.WritePropertyName("Horizontal");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Horizontal.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Horizontal))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Horizontal));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Horizontal);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

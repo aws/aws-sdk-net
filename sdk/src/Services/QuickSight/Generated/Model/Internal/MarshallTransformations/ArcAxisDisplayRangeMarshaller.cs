@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,40 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ArcAxisDisplayRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMax())
             {
                 context.Writer.WritePropertyName("Max");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Max.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Max))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Max);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMin())
             {
                 context.Writer.WritePropertyName("Min");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Min.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Min))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Min);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,10 +70,10 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetScheduledBefore())
-                request.Parameters.Add("scheduledBefore", StringUtils.FromDateTimeToISO8601(publicRequest.ScheduledBefore));
+                request.Parameters.Add("scheduledBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ScheduledBefore));
             
             if (publicRequest.IsSetScheduledOnOrAfter())
-                request.Parameters.Add("scheduledOnOrAfter", StringUtils.FromDateTimeToISO8601(publicRequest.ScheduledOnOrAfter));
+                request.Parameters.Add("scheduledOnOrAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ScheduledOnOrAfter));
             request.ResourcePath = "/datasets/{datasetName}/contents";
             request.UseQueryString = true;
 

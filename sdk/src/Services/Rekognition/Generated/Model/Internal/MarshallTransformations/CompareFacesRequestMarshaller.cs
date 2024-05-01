@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetQualityFilter())
@@ -76,7 +78,18 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSimilarityThreshold())
                 {
                     context.Writer.WritePropertyName("SimilarityThreshold");
+<<<<<<< HEAD
                     context.Writer.Write(publicRequest.SimilarityThreshold.Value);
+=======
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.SimilarityThreshold))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.SimilarityThreshold));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.SimilarityThreshold);
+                    }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetSourceImage())

@@ -26,11 +26,18 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mgn.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLaunchConfiguration operation.
     /// Updates multiple LaunchConfigurations by Source Server ID.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// bootMode valid values are <c>LEGACY_BIOS | UEFI</c> 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateLaunchConfigurationRequest : AmazonMgnRequest
     {

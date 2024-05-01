@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TrialComponentParameterValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNumberValue())
             {
                 context.Writer.WritePropertyName("NumberValue");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.NumberValue.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.NumberValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NumberValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NumberValue);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetStringValue())

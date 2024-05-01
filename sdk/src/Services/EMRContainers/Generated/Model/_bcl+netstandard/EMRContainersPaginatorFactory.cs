@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
@@ -57,6 +58,14 @@ namespace Amazon.EMRContainers.Model
         public IListManagedEndpointsPaginator ListManagedEndpoints(ListManagedEndpointsRequest request) 
         {
             return new ListManagedEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSecurityConfigurations operation
+        ///</summary>
+        public IListSecurityConfigurationsPaginator ListSecurityConfigurations(ListSecurityConfigurationsRequest request) 
+        {
+            return new ListSecurityConfigurationsPaginator(this.client, request);
         }
 
         /// <summary>

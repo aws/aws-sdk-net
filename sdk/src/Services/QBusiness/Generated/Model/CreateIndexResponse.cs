@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of an Amazon Q index.
+        ///  The Amazon Resource Name (ARN) of an Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -58,7 +59,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier for the Amazon Q index.
+        /// The identifier for the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

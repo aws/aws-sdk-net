@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,14 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AnswerMachineDetectionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetAwaitAnswerMachinePrompt())
+            {
+                context.Writer.WritePropertyName("awaitAnswerMachinePrompt");
+                context.Writer.Write(requestObject.AwaitAnswerMachinePrompt);
+            }
+
             if(requestObject.IsSetEnableAnswerMachineDetection())
             {
                 context.Writer.WritePropertyName("enableAnswerMachineDetection");

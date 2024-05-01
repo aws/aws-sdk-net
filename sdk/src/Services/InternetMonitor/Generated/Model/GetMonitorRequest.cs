@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
@@ -36,7 +37,31 @@ namespace Amazon.InternetMonitor.Model
     /// </summary>
     public partial class GetMonitorRequest : AmazonInternetMonitorRequest
     {
+        private string _linkedAccountId;
         private string _monitorName;
+
+        /// <summary>
+        /// Gets and sets the property LinkedAccountId. 
+        /// <para>
+        /// The account ID for an account that you've set up cross-account sharing for in Amazon
+        /// CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch
+        /// Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+        /// Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor
+        /// User Guide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string LinkedAccountId
+        {
+            get { return this._linkedAccountId; }
+            set { this._linkedAccountId = value; }
+        }
+
+        // Check to see if LinkedAccountId property is set
+        internal bool IsSetLinkedAccountId()
+        {
+            return this._linkedAccountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MonitorName. 

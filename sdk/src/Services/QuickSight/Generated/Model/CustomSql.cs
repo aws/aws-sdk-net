@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -101,7 +102,7 @@ namespace Amazon.QuickSight.Model
         /// The SQL query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65536)]
+        [AWSProperty(Required=true, Min=1, Max=168000)]
         public string SqlQuery
         {
             get { return this._sqlQuery; }

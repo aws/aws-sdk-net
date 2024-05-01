@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the finspace-data-2020-07-13.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>

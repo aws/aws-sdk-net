@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class CoreAssemblyInfo : BaseGenerator
     {
@@ -41,35 +41,48 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7" +
                     "274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2" +
                     "b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252ed08a2413f00a28f3a" +
-                    "0752a81203f03ccb7f684db373518b4\")]\r\n\r\n[assembly: AssemblyConfiguration(\"\")]\r\n[as" +
-                    "sembly: AssemblyProduct(\"Amazon Web Services SDK for .NET\")]\r\n[assembly: Assembl" +
-                    "yCompany(\"Amazon.com, Inc\")]\r\n[assembly: AssemblyCopyright(\"Copyright Amazon.com" +
-                    ", Inc. or its affiliates. All Rights Reserved.\")]\r\n[assembly: AssemblyTrademark(" +
-                    "\"\")]\r\n[assembly: AssemblyCulture(\"\")]\r\n\r\n// Setting ComVisible to false makes th" +
-                    "e types in this assembly not visible \r\n// to COM components.  If you need to acc" +
-                    "ess a type in this assembly from \r\n// COM, set the ComVisible attribute to true " +
-                    "on that type.\r\n[assembly: ComVisible(false)]\r\n\r\n// Version information for an as" +
-                    "sembly consists of the following four values:\r\n//\r\n//      Major Version\r\n//    " +
-                    "  Minor Version \r\n//      Build Number\r\n//      Revision\r\n//\r\n// You can specify" +
-                    " all the values or you can default the Build and Revision Numbers \r\n// by using " +
-                    "the \'*\' as shown below:\r\n// [assembly: AssemblyVersion(\"1.0.*\")]\r\n[assembly: Ass" +
-                    "emblyVersion(\"");
+                    "0752a81203f03ccb7f684db373518b4\")]\r\n// Assembly name of UnitTests.NetStandard\r\n[" +
+                    "assembly: InternalsVisibleTo(\"UnitTests, PublicKey=00240000048000009400000006020" +
+                    "00000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9d" +
+                    "f0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09" +
+                    "d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf12" +
+                    "52ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n[assembly: InternalsVisi" +
+                    "bleTo(\"AWSSDK.UnitTests.Custom.NetStandard, PublicKey=00240000048000009400000006" +
+                    "02000000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9" +
+                    "a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0" +
+                    "d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddb" +
+                    "f1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n// Allows moq to acce" +
+                    "ss internals for testing\r\n[assembly: InternalsVisibleTo(\"DynamicProxyGenAssembly" +
+                    "2, PublicKey=0024000004800000940000000602000000240000525341310004000001000100c54" +
+                    "7cac37abd99c8db225ef2f6c8a3602f3b3606cc9891605d02baa56104f4cfc0734aa39b93bf7852f" +
+                    "7d9266654753cc297e7d2edfe0bac1cdcf9f717241550e0a7b191195b7667bb4f64bcb8e2121380f" +
+                    "d1d9d46ad2d92d2d15605093924cceaf74c4861eff62abf69b9291ed0a340e113be11e6a7d3113e9" +
+                    "2484cf7045cc7\")]\r\n[assembly: AssemblyConfiguration(\"\")]\r\n[assembly: AssemblyProd" +
+                    "uct(\"Amazon Web Services SDK for .NET\")]\r\n[assembly: AssemblyCompany(\"Amazon.com" +
+                    ", Inc\")]\r\n[assembly: AssemblyCopyright(\"Copyright Amazon.com, Inc. or its affili" +
+                    "ates. All Rights Reserved.\")]\r\n[assembly: AssemblyTrademark(\"\")]\r\n[assembly: Ass" +
+                    "emblyCulture(\"\")]\r\n\r\n// Setting ComVisible to false makes the types in this asse" +
+                    "mbly not visible \r\n// to COM components.  If you need to access a type in this a" +
+                    "ssembly from \r\n// COM, set the ComVisible attribute to true on that type.\r\n[asse" +
+                    "mbly: ComVisible(false)]\r\n\r\n// Version information for an assembly consists of t" +
+                    "he following four values:\r\n//\r\n//      Major Version\r\n//      Minor Version \r\n//" +
+                    "      Build Number\r\n//      Revision\r\n//\r\n// You can specify all the values or y" +
+                    "ou can default the Build and Revision Numbers \r\n// by using the \'*\' as shown bel" +
+                    "ow:\r\n// [assembly: AssemblyVersion(\"1.0.*\")]\r\n[assembly: AssemblyVersion(\"");
             
-            #line 48 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 52 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Version"]));
             
             #line default
             #line hidden
             this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
             
-            #line 49 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 53 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
             #line hidden
             this.Write(@""")]
-
-[assembly: System.CLSCompliant(true)]
 
 #if BCL
 [assembly: System.Security.AllowPartiallyTrustedCallers]

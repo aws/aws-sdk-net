@@ -26,24 +26,45 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCompute operation.
-    /// Retrieves properties for a compute resource in an Amazon GameLift fleet. Call <a>ListCompute</a>
-    /// to get a list of compute resources in a fleet. You can request information for computes
-    /// in either managed EC2 fleets or Anywhere fleets. 
+    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
+    /// which is currently in public preview.</b> 
     /// 
     ///  
     /// <para>
-    /// To request compute properties, specify the compute name and fleet ID.
+    /// Retrieves properties for a compute resource in an Amazon GameLift fleet. To get a
+    /// list of all computes in a fleet, call <a>ListCompute</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// To request information on a specific compute, provide the fleet ID and compute name.
     /// </para>
     ///  
     /// <para>
     /// If successful, this operation returns details for the requested compute resource.
-    /// For managed EC2 fleets, this operation returns the fleet's EC2 instances. For Anywhere
-    /// fleets, this operation returns the fleet's registered computes. 
+    /// Depending on the fleet's compute type, the result includes the following information:
+    /// 
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For <c>EC2</c> fleets, this operation returns information about the EC2 instance.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <c>ANYWHERE</c> fleets, this operation returns information about the registered
+    /// compute.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <c>CONTAINER</c> fleets, this operation returns information about the container
+    /// that's registered as a compute, and the instance it's running on. The compute name
+    /// is the container name.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeComputeRequest : AmazonGameLiftRequest
     {
@@ -54,8 +75,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ComputeName. 
         /// <para>
         /// The unique identifier of the compute resource to retrieve properties for. For an Anywhere
-        /// fleet compute, use the registered compute name. For a managed EC2 fleet instance,
-        /// use the instance ID.
+        /// fleet compute, use the registered compute name. For an EC2 fleet instance, use the
+        /// instance ID. For a container fleet, use the compute name (for example, <c>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</c>)
+        /// or the compute ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -74,7 +96,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for the fleet that the compute is registered to. You can use either
+        /// A unique identifier for the fleet that the compute belongs to. You can use either
         /// the fleet ID or ARN value.
         /// </para>
         /// </summary>

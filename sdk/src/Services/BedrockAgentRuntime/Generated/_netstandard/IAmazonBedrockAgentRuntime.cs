@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.BedrockAgentRuntime.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.BedrockAgentRuntime
 {
     /// <summary>
@@ -47,7 +48,8 @@ namespace Amazon.BedrockAgentRuntime
 
 
         /// <summary>
-        /// Sends a prompt for the agent to process and respond to.
+        /// Sends a prompt for the agent to process and respond to. Use return control event type
+        /// for function calling.
         /// 
         ///  <note> 
         /// <para>
@@ -72,7 +74,12 @@ namespace Amazon.BedrockAgentRuntime
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Include attributes for the session or prompt in the <c>sessionState</c> object.
+        /// In the <c>sessionState</c> object, you can include attributes for the session or prompt
+        /// or parameters returned from the action group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use return control event type for function calling.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -118,7 +125,8 @@ namespace Amazon.BedrockAgentRuntime
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -166,7 +174,8 @@ namespace Amazon.BedrockAgentRuntime
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.
@@ -188,16 +197,7 @@ namespace Amazon.BedrockAgentRuntime
 
         /// <summary>
         /// Queries a knowledge base and generates responses based on the retrieved results. The
-        /// response cites up to five sources but only selects the ones that are relevant to the
-        /// query.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The <c>numberOfResults</c> field is currently unsupported for <c>RetrieveAndGenerate</c>.
-        /// Don't include it in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_KnowledgeBaseVectorSearchConfiguration.html">vectorSearchConfiguration</a>
-        /// object.
-        /// </para>
-        ///  </note>
+        /// response only cites sources that are relevant to the query.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveAndGenerate service method.</param>
         /// <param name="cancellationToken">
@@ -224,7 +224,8 @@ namespace Amazon.BedrockAgentRuntime
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
-        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
         /// The number of requests exceeds the service quota. Resubmit your request later.

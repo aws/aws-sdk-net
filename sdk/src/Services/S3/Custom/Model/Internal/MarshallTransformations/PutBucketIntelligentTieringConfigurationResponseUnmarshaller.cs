@@ -25,6 +25,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 	/// </summary>
 	public class PutBucketIntelligentTieringConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
 	{
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             PutBucketIntelligentTieringConfigurationResponse response = new PutBucketIntelligentTieringConfigurationResponse();
@@ -34,6 +39,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static PutBucketIntelligentTieringConfigurationResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static PutBucketIntelligentTieringConfigurationResponseUnmarshaller Instance
         {
             get

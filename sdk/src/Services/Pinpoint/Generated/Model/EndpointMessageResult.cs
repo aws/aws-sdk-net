@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -91,10 +92,6 @@ namespace Amazon.Pinpoint.Model
         /// </li> <li>
         /// <para>
         /// THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// TIMEOUT - The message couldn't be sent within the timeout period.
         /// </para>
         /// </li> <li>
         /// <para>

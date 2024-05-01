@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// A mapping of Bedrock Knowledge Base fields to OpenSearch Serverless field names
+    /// Contains the names of the fields to which to map information about the vector store.
     /// </summary>
     public partial class OpenSearchServerlessFieldMapping
     {
@@ -38,7 +39,10 @@ namespace Amazon.BedrockAgent.Model
         private string _vectorField;
 
         /// <summary>
-        /// Gets and sets the property MetadataField.
+        /// Gets and sets the property MetadataField. 
+        /// <para>
+        /// The name of the field in which Amazon Bedrock stores metadata about the vector store.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string MetadataField
@@ -54,7 +58,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TextField.
+        /// Gets and sets the property TextField. 
+        /// <para>
+        /// The name of the field in which Amazon Bedrock stores the raw text from your data.
+        /// The text is split according to the chunking strategy you choose.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string TextField
@@ -70,7 +78,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VectorField.
+        /// Gets and sets the property VectorField. 
+        /// <para>
+        /// The name of the field in which Amazon Bedrock stores the vector embeddings for your
+        /// data sources.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string VectorField

@@ -19,8 +19,10 @@ using System.Text;
 
 namespace Amazon.S3.Model
 {
-	
-	public partial class ListBucketIntelligentTieringConfigurationsResponse : AmazonWebServiceResponse
+    /// <summary>
+    /// Response for the ListBucketIntelligentTieringConfigurations operation.
+    /// </summary>
+    public partial class ListBucketIntelligentTieringConfigurationsResponse : AmazonWebServiceResponse
 	{
 		private string continuationToken;
 		private List<IntelligentTieringConfiguration> intelligentTieringConfigurationList = AWSConfigs.InitializeCollections ? new List<IntelligentTieringConfiguration>() : null;

@@ -26,17 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Update Agent Knowledge Base Response
+    /// This is the response object from the UpdateAgentKnowledgeBase operation.
     /// </summary>
     public partial class UpdateAgentKnowledgeBaseResponse : AmazonWebServiceResponse
     {
         private AgentKnowledgeBase _agentKnowledgeBase;
 
         /// <summary>
-        /// Gets and sets the property AgentKnowledgeBase.
+        /// Gets and sets the property AgentKnowledgeBase. 
+        /// <para>
+        /// Contains details about the knowledge base that has been associated with an agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentKnowledgeBase AgentKnowledgeBase

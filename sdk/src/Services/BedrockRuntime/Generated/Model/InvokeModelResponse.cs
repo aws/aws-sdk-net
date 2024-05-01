@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
@@ -39,9 +40,9 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// Inference response from the model in the format specified in the content-type header
-        /// field. To see the format and content of this field for different models, refer to
-        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+        /// Inference response from the model in the format specified in the <c>contentType</c>
+        /// header. To see the format and content of the request and response bodies for different
+        /// models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
         /// parameters</a>.
         /// </para>
         /// </summary>

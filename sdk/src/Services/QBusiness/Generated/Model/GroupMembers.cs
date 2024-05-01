@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// A list of users or sub groups that belong to a group. This is for generating Amazon
-    /// Q chat results only from document a user has access to.
+    /// Q Business chat results only from document a user has access to.
     /// </summary>
     public partial class GroupMembers
     {

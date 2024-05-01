@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FieldLevelEncryptionProfileSummary Object
     /// </summary>  
-    public class FieldLevelEncryptionProfileSummaryUnmarshaller : IUnmarshaller<FieldLevelEncryptionProfileSummary, XmlUnmarshallerContext>
+    public class FieldLevelEncryptionProfileSummaryUnmarshaller : IUnmarshaller<FieldLevelEncryptionProfileSummary, XmlUnmarshallerContext>, IUnmarshaller<FieldLevelEncryptionProfileSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -92,6 +93,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public FieldLevelEncryptionProfileSummary Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static FieldLevelEncryptionProfileSummaryUnmarshaller _instance = new FieldLevelEncryptionProfileSummaryUnmarshaller();        

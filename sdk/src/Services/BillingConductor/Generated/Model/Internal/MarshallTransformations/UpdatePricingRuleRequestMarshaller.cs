@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetArn())
@@ -80,7 +82,18 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetModifierPercentage())
                 {
                     context.Writer.WritePropertyName("ModifierPercentage");
+<<<<<<< HEAD
                     context.Writer.Write(publicRequest.ModifierPercentage.Value);
+=======
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.ModifierPercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ModifierPercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.ModifierPercentage);
+                    }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetName())

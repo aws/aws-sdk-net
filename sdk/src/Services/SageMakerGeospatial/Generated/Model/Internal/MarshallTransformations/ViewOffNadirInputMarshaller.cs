@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,40 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ViewOffNadirInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLowerBound())
             {
                 context.Writer.WritePropertyName("LowerBound");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.LowerBound.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.LowerBound))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.LowerBound));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LowerBound);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetUpperBound())
             {
                 context.Writer.WritePropertyName("UpperBound");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.UpperBound.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.UpperBound))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.UpperBound));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.UpperBound);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

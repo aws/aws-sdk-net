@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -292,7 +293,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property KeepJobFlowAliveWhenNoSteps. 
         /// <para>
         /// Specifies whether the cluster should remain available after completing all steps.
-        /// Defaults to <c>true</c>. For more information about configuring cluster termination,
+        /// Defaults to <c>false</c>. For more information about configuring cluster termination,
         /// see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
         /// Cluster Termination</a> in the <i>EMR Management Guide</i>.
         /// </para>

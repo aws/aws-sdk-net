@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -38,8 +39,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Share. 
         /// <para>
-        ///  An analytic store share details object. contains status, resourceArn, ownerId, etc.
-        /// 
+        /// A resource share details object. The object includes the status, the resourceArn,
+        /// and ownerId.
         /// </para>
         /// </summary>
         public ShareDetails Share

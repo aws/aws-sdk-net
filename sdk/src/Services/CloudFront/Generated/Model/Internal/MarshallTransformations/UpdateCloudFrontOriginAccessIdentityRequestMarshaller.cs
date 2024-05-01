@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,10 +74,17 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetCallerReference())
+<<<<<<< HEAD
                         xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.CallerReference));
 
                     if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.Comment));
+=======
+                        xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.CallerReference));
+
+                    if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetComment())
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.Comment));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                     xmlWriter.WriteEndElement();

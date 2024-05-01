@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,7 +64,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.AddPathResource("{SubscribedDomain}", StringUtils.FromString(publicRequest.SubscribedDomain));
             
             if (publicRequest.IsSetEndDate())
-                request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDate));
+                request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
@@ -72,7 +73,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
             
             if (publicRequest.IsSetStartDate())
-                request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDate));
+                request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));
             request.ResourcePath = "/v1/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns";
             request.UseQueryString = true;
 

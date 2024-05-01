@@ -26,17 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Server-side encryption configuration.
+    /// Contains the configuration for server-side encryption.
     /// </summary>
     public partial class ServerSideEncryptionConfiguration
     {
         private string _kmsKeyArn;
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn.
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string KmsKeyArn

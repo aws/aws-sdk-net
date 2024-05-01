@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property AllowedAnalyses. 
         /// <para>
-        /// The analysis templates that are allowed by the custom analysis rule.
+        /// The ARN of the analysis templates that are allowed by the custom analysis rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -60,8 +61,8 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property AllowedAnalysisProviders. 
         /// <para>
-        /// The Amazon Web Services accounts that are allowed to query by the custom analysis
-        /// rule. Required when <c>allowedAnalyses</c> is <c>ANY_QUERY</c>.
+        /// The IDs of the Amazon Web Services accounts that are allowed to query by the custom
+        /// analysis rule. Required when <c>allowedAnalyses</c> is <c>ANY_QUERY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

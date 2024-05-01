@@ -300,9 +300,9 @@ namespace Amazon.DNXCore.IntegrationTests
                         Thread.Sleep(5000);
                     }
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    throw e;
+                    throw;
                 }
             } while (isObjectProcessing);
         }

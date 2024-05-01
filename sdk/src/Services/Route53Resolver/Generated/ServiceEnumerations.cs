@@ -341,6 +341,56 @@ namespace Amazon.Route53Resolver
 
 
     /// <summary>
+    /// Constants used for properties of type FirewallDomainRedirectionAction.
+    /// </summary>
+    public class FirewallDomainRedirectionAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSPECT_REDIRECTION_DOMAIN for FirewallDomainRedirectionAction
+        /// </summary>
+        public static readonly FirewallDomainRedirectionAction INSPECT_REDIRECTION_DOMAIN = new FirewallDomainRedirectionAction("INSPECT_REDIRECTION_DOMAIN");
+        /// <summary>
+        /// Constant TRUST_REDIRECTION_DOMAIN for FirewallDomainRedirectionAction
+        /// </summary>
+        public static readonly FirewallDomainRedirectionAction TRUST_REDIRECTION_DOMAIN = new FirewallDomainRedirectionAction("TRUST_REDIRECTION_DOMAIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FirewallDomainRedirectionAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallDomainRedirectionAction FindValue(string value)
+        {
+            return FindValue<FirewallDomainRedirectionAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallDomainRedirectionAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FirewallDomainUpdateOperation.
     /// </summary>
     public class FirewallDomainUpdateOperation : ConstantClass

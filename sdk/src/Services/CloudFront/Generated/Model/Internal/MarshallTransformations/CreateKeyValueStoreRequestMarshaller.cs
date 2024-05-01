@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -61,24 +62,31 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateKeyValueStoreRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
+                xmlWriter.WriteStartElement("CreateKeyValueStoreRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 if(publicRequest.IsSetComment())
+<<<<<<< HEAD
                     xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Comment));
+=======
+                    xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.Comment));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
-                
-                if (publicRequest.ImportSource != null) 
+                if (publicRequest.ImportSource != null)
                 {
-                    xmlWriter.WriteStartElement("ImportSource", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                    xmlWriter.WriteStartElement("ImportSource");
                     if(publicRequest.ImportSource.IsSetSourceARN())
-                        xmlWriter.WriteElementString("SourceARN", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ImportSource.SourceARN));                 
+                        xmlWriter.WriteElementString("SourceARN", StringUtils.FromString(publicRequest.ImportSource.SourceARN));                 
 
                     if(publicRequest.ImportSource.IsSetSourceType())
-                        xmlWriter.WriteElementString("SourceType", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.ImportSource.SourceType));                 
+                        xmlWriter.WriteElementString("SourceType", StringUtils.FromString(publicRequest.ImportSource.SourceType));                 
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetName())
+<<<<<<< HEAD
                     xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Name));
+=======
+                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                 xmlWriter.WriteEndElement();

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -35,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private List<BlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<BlockDeviceMapping>() : null;
         private string _bootMode;
+        private string _deregistrationProtection;
         private string _description;
         private string _imageId;
         private string _imdsSupport;
@@ -81,6 +83,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetBootMode()
         {
             return this._bootMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeregistrationProtection. 
+        /// <para>
+        /// Indicates whether deregistration protection is enabled for the AMI.
+        /// </para>
+        /// </summary>
+        public string DeregistrationProtection
+        {
+            get { return this._deregistrationProtection; }
+            set { this._deregistrationProtection = value; }
+        }
+
+        // Check to see if DeregistrationProtection property is set
+        internal bool IsSetDeregistrationProtection()
+        {
+            return this._deregistrationProtection != null;
         }
 
         /// <summary>

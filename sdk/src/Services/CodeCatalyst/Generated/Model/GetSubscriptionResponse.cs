@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCatalyst.Model
 {
     /// <summary>
@@ -34,6 +35,8 @@ namespace Amazon.CodeCatalyst.Model
     public partial class GetSubscriptionResponse : AmazonWebServiceResponse
     {
         private string _awsAccountName;
+        private DateTime? _pendingSubscriptionStartTime;
+        private string _pendingSubscriptionType;
         private string _subscriptionType;
 
         /// <summary>
@@ -53,6 +56,47 @@ namespace Amazon.CodeCatalyst.Model
         internal bool IsSetAwsAccountName()
         {
             return this._awsAccountName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingSubscriptionStartTime. 
+        /// <para>
+        /// The day and time the pending change will be applied to the space, in coordinated universal
+        /// time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339</a>.
+        /// </para>
+        /// </summary>
+        public DateTime PendingSubscriptionStartTime
+        {
+            get { return this._pendingSubscriptionStartTime.GetValueOrDefault(); }
+            set { this._pendingSubscriptionStartTime = value; }
+        }
+
+        // Check to see if PendingSubscriptionStartTime property is set
+        internal bool IsSetPendingSubscriptionStartTime()
+        {
+            return this._pendingSubscriptionStartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingSubscriptionType. 
+        /// <para>
+        /// The type of the billing plan that the space will be changed to at the start of the
+        /// next billing cycle. This applies only to changes that reduce the functionality available
+        /// for the space. Billing plan changes that increase functionality are applied immediately.
+        /// For more information, see <a href="https://codecatalyst.aws/explore/pricing">Pricing</a>.
+        /// </para>
+        /// </summary>
+        public string PendingSubscriptionType
+        {
+            get { return this._pendingSubscriptionType; }
+            set { this._pendingSubscriptionType = value; }
+        }
+
+        // Check to see if PendingSubscriptionType property is set
+        internal bool IsSetPendingSubscriptionType()
+        {
+            return this._pendingSubscriptionType != null;
         }
 
         /// <summary>

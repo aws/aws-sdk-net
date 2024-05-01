@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaStoreData.Model
 {
     /// <summary>
@@ -35,7 +36,6 @@ namespace Amazon.MediaStoreData.Model
     {
         private Stream _body;
         private string _cacheControl;
-        private long? _contentLength;
         private string _contentRange;
         private string _contentType;
         private string _eTag;
@@ -84,6 +84,7 @@ namespace Amazon.MediaStoreData.Model
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets and sets the property ContentLength. 
         /// <para>
         /// The length of the object in bytes.
@@ -103,6 +104,8 @@ namespace Amazon.MediaStoreData.Model
         }
 
         /// <summary>
+=======
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
         /// Gets and sets the property ContentRange. 
         /// <para>
         /// The range of bytes to retrieve.
@@ -208,6 +211,9 @@ namespace Amazon.MediaStoreData.Model
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)

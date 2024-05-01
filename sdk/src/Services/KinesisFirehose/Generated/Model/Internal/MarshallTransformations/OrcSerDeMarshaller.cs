@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrcSerDe requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBlockSizeBytes())
             {
                 context.Writer.WritePropertyName("BlockSizeBytes");
@@ -65,7 +68,18 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBloomFilterFalsePositiveProbability())
             {
                 context.Writer.WritePropertyName("BloomFilterFalsePositiveProbability");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.BloomFilterFalsePositiveProbability.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BloomFilterFalsePositiveProbability))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BloomFilterFalsePositiveProbability));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BloomFilterFalsePositiveProbability);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetCompression())
@@ -77,7 +91,18 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDictionaryKeyThreshold())
             {
                 context.Writer.WritePropertyName("DictionaryKeyThreshold");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.DictionaryKeyThreshold.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DictionaryKeyThreshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DictionaryKeyThreshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DictionaryKeyThreshold);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetEnablePadding())
@@ -95,7 +120,18 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPaddingTolerance())
             {
                 context.Writer.WritePropertyName("PaddingTolerance");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.PaddingTolerance.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PaddingTolerance))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PaddingTolerance));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PaddingTolerance);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetRowIndexStride())

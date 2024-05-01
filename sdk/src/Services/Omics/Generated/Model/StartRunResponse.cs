@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -81,7 +82,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RunOutputUri. 
         /// <para>
-        ///  The destination for workflow outputs. 
+        /// The destination for workflow outputs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=750)]
@@ -137,7 +138,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Uuid. 
         /// <para>
-        ///  The universally unique identifier for a run. 
+        /// The universally unique identifier for a run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

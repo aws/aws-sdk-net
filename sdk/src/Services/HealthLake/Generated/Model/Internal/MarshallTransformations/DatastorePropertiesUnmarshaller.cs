@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -103,6 +104,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatastoreTypeVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ErrorCause", targetDepth))
+                {
+                    var unmarshaller = ErrorCauseUnmarshaller.Instance;
+                    unmarshalledObject.ErrorCause = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IdentityProviderConfiguration", targetDepth))

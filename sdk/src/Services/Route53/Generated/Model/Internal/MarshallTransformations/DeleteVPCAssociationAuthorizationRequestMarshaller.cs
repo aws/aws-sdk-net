@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -64,16 +65,15 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("DeleteVPCAssociationAuthorizationRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
-                
-                if (publicRequest.VPC != null) 
+                xmlWriter.WriteStartElement("DeleteVPCAssociationAuthorizationRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
+                if (publicRequest.VPC != null)
                 {
-                    xmlWriter.WriteStartElement("VPC", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                    xmlWriter.WriteStartElement("VPC");
                     if(publicRequest.VPC.IsSetVPCRegion())
-                        xmlWriter.WriteElementString("VPCRegion", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.VPC.VPCRegion));                 
+                        xmlWriter.WriteElementString("VPCRegion", StringUtils.FromString(publicRequest.VPC.VPCRegion));                 
 
                     if(publicRequest.VPC.IsSetVPCId())
-                        xmlWriter.WriteElementString("VPCId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.VPC.VPCId));                 
+                        xmlWriter.WriteElementString("VPCId", StringUtils.FromString(publicRequest.VPC.VPCId));                 
 
                     xmlWriter.WriteEndElement();
                 }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(H264Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdaptiveQuantization())
             {
                 context.Writer.WritePropertyName("adaptiveQuantization");
@@ -166,7 +169,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGopSize())
             {
                 context.Writer.WritePropertyName("gopSize");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.GopSize.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.GopSize))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GopSize));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.GopSize);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetGopSizeUnits())

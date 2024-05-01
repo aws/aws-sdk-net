@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Video requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
@@ -54,7 +57,18 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFramerate())
             {
                 context.Writer.WritePropertyName("framerate");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Framerate.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.Framerate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Framerate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Framerate);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetHeight())

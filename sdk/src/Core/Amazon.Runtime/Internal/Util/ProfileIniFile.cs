@@ -78,12 +78,16 @@ namespace Amazon.Runtime.Internal.Util
             }
             return hasCredentialsProperties;
         }
+
+#pragma warning disable CS0809
         [Obsolete("TryGetSection(string sectionName, bool isSsoSession, out Dictionary<string,string> properties is deprecated. Please use the overloaded" +
     "method with nestedProperties instead")]
         public override bool TryGetSection(string sectionName, out Dictionary<string, string> properties)
         {
             return this.TryGetSection(sectionName, isSsoSession: false, out properties);
         }
+#pragma warning restore CS0809
+
         // This is no longer used, as this implementation didn't take into account nested properties
         // The overloaded method above correctly fills out a dictionary of nested properties
         [Obsolete("TryGetSection(string sectionName, bool isSsoSession, out Dictionary<string,string> properties is deprecated. Please use the overloaded" +

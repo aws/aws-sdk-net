@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags to apply to the resource. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging
-        /// Amazon Personalize recources</a>.
+        /// Amazon Personalize resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

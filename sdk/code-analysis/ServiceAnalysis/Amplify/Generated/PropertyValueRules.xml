@@ -373,7 +373,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListArtifactsRequest.MaxResults</property>
     <min>0</min>
-    <max>100</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListArtifactsRequest.NextToken</property>
@@ -400,7 +400,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListBackendEnvironmentsRequest.MaxResults</property>
     <min>0</min>
-    <max>100</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListBackendEnvironmentsRequest.NextToken</property>
@@ -421,7 +421,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListBranchesRequest.MaxResults</property>
     <min>0</min>
-    <max>100</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListBranchesRequest.NextToken</property>
@@ -442,7 +442,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListDomainAssociationsRequest.MaxResults</property>
     <min>0</min>
-    <max>100</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListDomainAssociationsRequest.NextToken</property>
@@ -469,7 +469,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListJobsRequest.MaxResults</property>
     <min>0</min>
-    <max>100</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListJobsRequest.NextToken</property>
@@ -496,7 +496,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListWebhooksRequest.MaxResults</property>
     <min>0</min>
-    <max>100</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListWebhooksRequest.NextToken</property>

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ActionThreshold requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActionThresholdType())
             {
                 context.Writer.WritePropertyName("ActionThresholdType");
@@ -54,7 +57,18 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionThresholdValue())
             {
                 context.Writer.WritePropertyName("ActionThresholdValue");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.ActionThresholdValue.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ActionThresholdValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ActionThresholdValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ActionThresholdValue);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

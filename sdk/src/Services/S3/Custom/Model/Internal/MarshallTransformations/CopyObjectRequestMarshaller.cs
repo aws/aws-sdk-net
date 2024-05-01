@@ -37,12 +37,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(CopyObjectRequest copyObjectRequest)
         {
             var sourceKey = 
-                copyObjectRequest.DisableTrimmingLeadingSlash ?
+                copyObjectRequest.DisableTrimmingLeadingSlash || string.IsNullOrEmpty(copyObjectRequest.SourceKey) ?
                 copyObjectRequest.SourceKey :
                 AmazonS3Util.RemoveLeadingSlash(copyObjectRequest.SourceKey);
 
             var destinationKey = 
-                copyObjectRequest.DisableTrimmingLeadingSlash ?
+                copyObjectRequest.DisableTrimmingLeadingSlash || string.IsNullOrEmpty(copyObjectRequest.DestinationKey) ?
                 copyObjectRequest.DestinationKey:
                 AmazonS3Util.RemoveLeadingSlash(copyObjectRequest.DestinationKey);
             
@@ -148,6 +148,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("DestinationBucket is a required property and must be set before making this call.", "CopyObjectRequest.DestinationBucket");
             if (string.IsNullOrEmpty(destinationKey))
                 throw new System.ArgumentException("DestinationKey is a required property and must be set before making this call.", "CopyObjectRequest.DestinationKey");
+            if (string.IsNullOrEmpty(copyObjectRequest.SourceBucket))
+                throw new System.ArgumentException("SourceBucket is a required property and must be set before making this call.", "CopyObjectRequest.SourceBucket");
+            if (string.IsNullOrEmpty(sourceKey))
+                throw new System.ArgumentException("SourceKey is a required property and must be set before making this call.", "CopyObjectRequest.SourceKey");
 
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
                                                  S3Transforms.ToStringValue(destinationKey));
@@ -181,7 +185,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static CopyObjectRequestMarshaller _instance;
 
-	    public static CopyObjectRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static CopyObjectRequestMarshaller Instance
 	    {
 	        get
 	        {

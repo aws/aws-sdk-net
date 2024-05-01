@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -39,8 +40,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role
-        /// that is able to write event data to an Amazon CloudWatch destination.
+        /// The Amazon Resource Name (ARN) of an Identity and Access Management role that is able
+        /// to write event data to an Amazon CloudWatch destination.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

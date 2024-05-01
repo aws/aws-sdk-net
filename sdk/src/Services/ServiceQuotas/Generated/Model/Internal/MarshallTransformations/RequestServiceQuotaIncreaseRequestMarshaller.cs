@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetContextId())
@@ -76,7 +78,18 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDesiredValue())
                 {
                     context.Writer.WritePropertyName("DesiredValue");
+<<<<<<< HEAD
                     context.Writer.Write(publicRequest.DesiredValue.Value);
+=======
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.DesiredValue))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DesiredValue));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.DesiredValue);
+                    }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetQuotaCode())

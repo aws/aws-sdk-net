@@ -19,8 +19,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// SourceSelectionCriteria unmarshaller
+    /// </summary>
     public class SourceSelectionCriteriaUnmarshaller : IUnmarshaller<SourceSelectionCriteria, XmlUnmarshallerContext>, IUnmarshaller<SourceSelectionCriteria, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SourceSelectionCriteria Unmarshall(XmlUnmarshallerContext context)
         {
             SourceSelectionCriteria SourceSelectionCriteria = new SourceSelectionCriteria();
@@ -56,6 +64,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return SourceSelectionCriteria;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SourceSelectionCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -63,6 +76,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static SourceSelectionCriteriaUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static SourceSelectionCriteriaUnmarshaller Instance
         {
             get

@@ -26,12 +26,15 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSecurityPolicies operation.
-    /// Lists the security policies that are attached to your file transfer protocol-enabled
-    /// servers.
+    /// Lists the security policies that are attached to your servers and SFTP connectors.
+    /// For more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+    /// with security policies for servers</a> or <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working
+    /// with security policies for SFTP connectors</a>.
     /// </summary>
     public partial class ListSecurityPoliciesRequest : AmazonTransferRequest
     {

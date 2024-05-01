@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsApiGatewayCanarySettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDeploymentId())
             {
                 context.Writer.WritePropertyName("DeploymentId");
@@ -54,7 +57,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentTraffic())
             {
                 context.Writer.WritePropertyName("PercentTraffic");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.PercentTraffic.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentTraffic))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentTraffic));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PercentTraffic);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetStageVariableOverrides())

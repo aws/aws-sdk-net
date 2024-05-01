@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -90,9 +91,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of webhook filter. There are eight webhook filter types: <c>EVENT</c>, <c>ACTOR_ACCOUNT_ID</c>,
+        ///  The type of webhook filter. There are nine webhook filter types: <c>EVENT</c>, <c>ACTOR_ACCOUNT_ID</c>,
         /// <c>HEAD_REF</c>, <c>BASE_REF</c>, <c>FILE_PATH</c>, <c>COMMIT_MESSAGE</c>, <c>TAG_NAME</c>,
-        /// and <c>RELEASE_NAME</c>. 
+        /// <c>RELEASE_NAME</c>, and <c>WORKFLOW_NAME</c>. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -101,16 +102,18 @@ namespace Amazon.CodeBuild.Model
         ///  <ul> <li> 
         /// <para>
         ///  A webhook event triggers a build when the provided <c>pattern</c> matches one of
-        /// eight event types: <c>PUSH</c>, <c>PULL_REQUEST_CREATED</c>, <c>PULL_REQUEST_UPDATED</c>,
+        /// nine event types: <c>PUSH</c>, <c>PULL_REQUEST_CREATED</c>, <c>PULL_REQUEST_UPDATED</c>,
         /// <c>PULL_REQUEST_CLOSED</c>, <c>PULL_REQUEST_REOPENED</c>, <c>PULL_REQUEST_MERGED</c>,
-        /// <c>RELEASED</c>, and <c>PRERELEASED</c>. The <c>EVENT</c> patterns are specified as
-        /// a comma-separated string. For example, <c>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</c>
-        /// filters all push, pull request created, and pull request updated events. 
+        /// <c>RELEASED</c>, <c>PRERELEASED</c>, and <c>WORKFLOW_JOB_QUEUED</c>. The <c>EVENT</c>
+        /// patterns are specified as a comma-separated string. For example, <c>PUSH, PULL_REQUEST_CREATED,
+        /// PULL_REQUEST_UPDATED</c> filters all push, pull request created, and pull request
+        /// updated events. 
         /// </para>
         ///  <note> 
         /// <para>
         ///  The <c>PULL_REQUEST_REOPENED</c> works with GitHub and GitHub Enterprise only. The
-        /// <c>RELEASED</c> and <c>PRERELEASED</c> work with GitHub only.
+        /// <c>RELEASED</c>, <c>PRERELEASED</c>, and <c>WORKFLOW_JOB_QUEUED</c> work with GitHub
+        /// only.
         /// </para>
         ///  </note> </li> </ul> </li> <li> 
         /// <para>
@@ -203,6 +206,18 @@ namespace Amazon.CodeBuild.Model
         ///  <note> 
         /// <para>
         ///  Works with <c>RELEASED</c> and <c>PRERELEASED</c> events only. 
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
+        /// <para>
+        /// WORKFLOW_NAME
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A webhook triggers a build when the workflow name matches the regular expression <c>pattern</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Works with <c>WORKFLOW_JOB_QUEUED</c> events only. 
         /// </para>
         ///  </note> </li> </ul> </li> </ul>
         /// </summary>

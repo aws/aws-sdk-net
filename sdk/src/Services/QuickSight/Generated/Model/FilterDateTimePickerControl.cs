@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -117,16 +118,15 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The date time picker type of a <c>FilterDateTimePickerControl</c>. Choose one of the
-        /// following options:
+        /// The type of the <c>FilterDropDownControl</c>. Choose one of the following options:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>SINGLE_VALUED</c>: The filter condition is a fixed date.
+        ///  <c>MULTI_SELECT</c>: The user can select multiple entries from a dropdown menu.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DATE_RANGE</c>: The filter condition is a date time range.
+        ///  <c>SINGLE_SELECT</c>: The user can select a single entry from a dropdown menu.
         /// </para>
         ///  </li> </ul>
         /// </summary>

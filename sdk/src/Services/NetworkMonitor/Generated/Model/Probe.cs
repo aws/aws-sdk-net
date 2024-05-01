@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
-    /// Describes information about a monitor probe.
+    /// Describes information about a network monitor probe.
     /// </summary>
     public partial class Probe
     {

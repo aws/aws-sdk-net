@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The Key Value Store associations.
+    /// The key value store associations.
     /// </summary>
     public partial class KeyValueStoreAssociations
     {
@@ -39,7 +40,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The items of the Key Value Store association.
+        /// The items of the key value store association.
         /// </para>
         /// </summary>
         public List<KeyValueStoreAssociation> Items
@@ -57,7 +58,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The quantity of Key Value Store associations.
+        /// The quantity of key value store associations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

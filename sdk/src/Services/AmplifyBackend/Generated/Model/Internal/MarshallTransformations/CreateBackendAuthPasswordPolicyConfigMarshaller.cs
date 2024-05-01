@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateBackendAuthPasswordPolicyConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalConstraints())
             {
                 context.Writer.WritePropertyName("additionalConstraints");
@@ -59,7 +62,18 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimumLength())
             {
                 context.Writer.WritePropertyName("minimumLength");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MinimumLength.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumLength))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumLength));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinimumLength);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

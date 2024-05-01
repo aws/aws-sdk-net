@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,22 +46,57 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DetectionFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMinBoundingBoxHeight())
             {
                 context.Writer.WritePropertyName("MinBoundingBoxHeight");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MinBoundingBoxHeight.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinBoundingBoxHeight))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinBoundingBoxHeight));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinBoundingBoxHeight);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMinBoundingBoxWidth())
             {
                 context.Writer.WritePropertyName("MinBoundingBoxWidth");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MinBoundingBoxWidth.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinBoundingBoxWidth))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinBoundingBoxWidth));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinBoundingBoxWidth);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMinConfidence())
             {
                 context.Writer.WritePropertyName("MinConfidence");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MinConfidence.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinConfidence))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinConfidence));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinConfidence);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

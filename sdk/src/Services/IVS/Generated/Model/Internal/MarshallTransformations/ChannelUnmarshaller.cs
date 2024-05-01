@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -121,6 +122,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecordingConfigurationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("srt", targetDepth))
+                {
+                    var unmarshaller = SrtUnmarshaller.Instance;
+                    unmarshalledObject.Srt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))

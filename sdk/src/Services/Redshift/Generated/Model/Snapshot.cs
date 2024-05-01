@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -60,6 +61,7 @@ namespace Amazon.Redshift.Model
         private string _ownerAccount;
         private int? _port;
         private List<string> _restorableNodeTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _snapshotArn;
         private DateTime? _snapshotCreateTime;
         private string _snapshotIdentifier;
         private DateTime? _snapshotRetentionStartTime;
@@ -593,6 +595,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetRestorableNodeTypes()
         {
             return this._restorableNodeTypes != null && (this._restorableNodeTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the snapshot.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string SnapshotArn
+        {
+            get { return this._snapshotArn; }
+            set { this._snapshotArn = value; }
+        }
+
+        // Check to see if SnapshotArn property is set
+        internal bool IsSetSnapshotArn()
+        {
+            return this._snapshotArn != null;
         }
 
         /// <summary>

@@ -26,14 +26,23 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataSource operation.
-    /// Update an existing data source
+    /// Updates configurations for a data source.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// You can't change the <c>chunkingConfiguration</c> after you create the data source.
+    /// Specify the existing <c>chunkingConfiguration</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateDataSourceRequest : AmazonBedrockAgentRequest
     {
+        private DataDeletionPolicy _dataDeletionPolicy;
         private DataSourceConfiguration _dataSourceConfiguration;
         private string _dataSourceId;
         private string _description;
@@ -43,7 +52,28 @@ namespace Amazon.BedrockAgent.Model
         private VectorIngestionConfiguration _vectorIngestionConfiguration;
 
         /// <summary>
-        /// Gets and sets the property DataSourceConfiguration.
+        /// Gets and sets the property DataDeletionPolicy. 
+        /// <para>
+        /// The data deletion policy of the updated data source.
+        /// </para>
+        /// </summary>
+        public DataDeletionPolicy DataDeletionPolicy
+        {
+            get { return this._dataDeletionPolicy; }
+            set { this._dataDeletionPolicy = value; }
+        }
+
+        // Check to see if DataDeletionPolicy property is set
+        internal bool IsSetDataDeletionPolicy()
+        {
+            return this._dataDeletionPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSourceConfiguration. 
+        /// <para>
+        /// Contains details about the storage configuration of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataSourceConfiguration DataSourceConfiguration
@@ -59,7 +89,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSourceId.
+        /// Gets and sets the property DataSourceId. 
+        /// <para>
+        /// The unique identifier of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DataSourceId
@@ -75,7 +108,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Specifies a new description for the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -91,7 +127,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base to which the data source belongs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId
@@ -107,7 +146,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Specifies a new name for the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -123,7 +165,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerSideEncryptionConfiguration.
+        /// Gets and sets the property ServerSideEncryptionConfiguration. 
+        /// <para>
+        /// Contains details about server-side encryption of the data source.
+        /// </para>
         /// </summary>
         public ServerSideEncryptionConfiguration ServerSideEncryptionConfiguration
         {
@@ -138,7 +183,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VectorIngestionConfiguration.
+        /// Gets and sets the property VectorIngestionConfiguration. 
+        /// <para>
+        /// Contains details about how to ingest the documents in the data source.
+        /// </para>
         /// </summary>
         public VectorIngestionConfiguration VectorIngestionConfiguration
         {

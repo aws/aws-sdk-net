@@ -72,7 +72,11 @@ namespace Amazon.S3.Model
         /// from the raw value or set by user code.
         /// </summary>
         private bool isExpiresUnmarshalled;
-        internal string RawExpires { get; set; }
+
+        /// <summary>
+        /// The date and time at which the object is no longer cacheable.
+        /// </summary>
+        public string ExpiresString { get; set; }
 
         /// <summary>
         /// Gets and sets the BucketName property.
@@ -307,6 +311,7 @@ namespace Amazon.S3.Model
         /// The date and time at which the object is no longer cacheable.
         ///  
         /// </summary>
+        [Obsolete("This property is deprecated for handling cases where Expires cannot be parsed as a DateTime. Instead, use ExpiresString, which returns the unparsed value from S3.")]
         public DateTime? Expires
         {
             get
@@ -326,7 +331,7 @@ namespace Amazon.S3.Model
                         this.expires = null;
                     }
                     this.isExpiresUnmarshalled = true;
-                    return this.expires.Value;
+                    return this.expires.GetValueOrDefault();
                 }
             }
             set { this.expires = value; this.isExpiresUnmarshalled = true; }

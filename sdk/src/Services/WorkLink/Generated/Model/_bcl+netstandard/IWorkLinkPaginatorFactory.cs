@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the worklink-2018-09-25.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WorkLink.Model
 {
     /// <summary>

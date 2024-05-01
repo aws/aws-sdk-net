@@ -86,7 +86,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static RestoreObjectRequestMarshaller _instance;
 
-	    public static RestoreObjectRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static RestoreObjectRequestMarshaller Instance
 	    {
 	        get
 	        {

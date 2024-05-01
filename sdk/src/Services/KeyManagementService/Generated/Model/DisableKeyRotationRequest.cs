@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -84,6 +85,14 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> <li> 
     /// <para>
     ///  <a>GetKeyRotationStatus</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListKeyRotations</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RotateKeyOnDemand</a> 
     /// </para>
     ///  </li> </ul> 
     /// <para>

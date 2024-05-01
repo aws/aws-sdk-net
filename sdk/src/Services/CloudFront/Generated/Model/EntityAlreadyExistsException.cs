@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The Key Value Store entity already exists. You must provide a unique Key Value Store
+    /// The key value store entity already exists. You must provide a unique key value store
     /// entity.
     /// </summary>
     #if !NETSTANDARD

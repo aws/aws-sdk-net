@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property ByoipCidr. 
         /// <para>
-        /// Information about the address pool.
+        /// Information about the BYOIP address pool.
         /// </para>
         /// </summary>
         public ByoipCidr ByoipCidr

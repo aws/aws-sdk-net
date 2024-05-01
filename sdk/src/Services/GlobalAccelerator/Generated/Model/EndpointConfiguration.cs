@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the cross-account attachment that specifies the
         /// endpoints (resources) that can be added to accelerators and principals that have permission
-        /// to add the endpoints to accelerators.
+        /// to add the endpoints.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -109,7 +110,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         ///  
         /// <para>
-        /// An Application Load Balancer can be either internal or internet-facing.
+        /// For cross-account endpoints, this must be the ARN of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

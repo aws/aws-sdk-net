@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -644,8 +645,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// One or more network interfaces. If you specify a network interface, you must specify
-        /// any security groups and subnets as part of the network interface.
+        /// The network interfaces for the instance.
         /// </para>
         /// </summary>
         public List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> NetworkInterfaces
@@ -724,7 +724,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// One or more security group IDs. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.
+        /// The IDs of the security groups.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a network interface, you must specify any security groups as part of
+        /// the network interface instead of using this parameter.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -742,8 +747,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// One or more security group names. For a nondefault VPC, you must use security group
+        /// The names of the security groups. For a nondefault VPC, you must use security group
         /// IDs instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a network interface, you must specify any security groups as part of
+        /// the network interface instead of using this parameter.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups

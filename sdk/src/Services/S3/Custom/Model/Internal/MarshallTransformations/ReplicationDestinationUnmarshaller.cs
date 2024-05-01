@@ -19,9 +19,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// ReplicationDestination unmarshaller
+    /// </summary>
     public class ReplicationDestinationUnmarshaller : IUnmarshaller<ReplicationDestination, XmlUnmarshallerContext>, IUnmarshaller<ReplicationDestination, JsonUnmarshallerContext>
     {
-
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReplicationDestination Unmarshall(XmlUnmarshallerContext context)
         {
             ReplicationDestination destination = new ReplicationDestination();
@@ -83,6 +90,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return destination;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReplicationDestination Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -90,6 +102,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ReplicationDestinationUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ReplicationDestinationUnmarshaller Instance
         {
             get

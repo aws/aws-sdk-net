@@ -33,19 +33,35 @@ using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// Marshaller for the SelectObjectContent operation
+    /// </summary>
     public class SelectObjectContentRequestMarshaller : IMarshaller<IRequest, AmazonWebServiceRequest>,
         IMarshaller<IRequest, SelectObjectContentRequest>
     {
         private static SelectObjectContentRequestMarshaller _instance;
 
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static SelectObjectContentRequestMarshaller Instance =>
             _instance ?? (_instance = new SelectObjectContentRequestMarshaller());
 
+        /// <summary>
+        /// Marshall the public request to the internal IRequest structure.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
             return Marshall((SelectObjectContentRequest) input);
         }
 
+        /// <summary>
+        /// Marshall the public request to the internal IRequest structure.
+        /// </summary>
+        /// <param name="selectObjectContentRequest"></param>
+        /// <returns></returns>
         public IRequest Marshall(SelectObjectContentRequest selectObjectContentRequest)
         {
             // Required Parameters

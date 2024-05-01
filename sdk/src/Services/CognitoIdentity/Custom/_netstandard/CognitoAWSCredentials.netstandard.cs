@@ -19,11 +19,6 @@ namespace Amazon.CognitoIdentity
     /// </summary>
     public partial class CognitoAWSCredentials : RefreshingAWSCredentials
     {
-        /// <summary>
-        /// Key for storing the identity id
-        /// </summary>
-        private static readonly String IDENTITY_ID_CACHE_KEY = "CognitoIdentity:IdentityId";
-
         private Amazon.SecurityToken.Model.Credentials GetStsCredentials(AssumeRoleWithWebIdentityRequest assumeRequest)
         {
             var assumeResult = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<AssumeRoleWithWebIdentityResponse>(() => sts.AssumeRoleWithWebIdentityAsync(assumeRequest));

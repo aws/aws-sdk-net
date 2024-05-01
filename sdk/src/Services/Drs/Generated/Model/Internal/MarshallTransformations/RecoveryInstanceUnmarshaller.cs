@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -139,6 +140,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RecoveryInstancePropertiesUnmarshaller.Instance;
                     unmarshalledObject.RecoveryInstanceProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceOutpostArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceOutpostArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourceServerID", targetDepth))

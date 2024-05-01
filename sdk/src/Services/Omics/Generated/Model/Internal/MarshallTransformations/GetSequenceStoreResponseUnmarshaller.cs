@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eTagAlgorithmFamily", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ETagAlgorithmFamily = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fallbackLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -85,6 +92,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("s3Access", targetDepth))
+                {
+                    var unmarshaller = SequenceStoreS3AccessUnmarshaller.Instance;
+                    response.S3Access = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sseConfig", targetDepth))

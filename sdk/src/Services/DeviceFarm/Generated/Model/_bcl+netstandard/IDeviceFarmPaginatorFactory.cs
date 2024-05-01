@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the devicefarm-2015-06-23.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>

@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// This exception is thrown when a request is made beyond the service quota
+    /// The number of requests exceeds the service quota. Resubmit your request later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

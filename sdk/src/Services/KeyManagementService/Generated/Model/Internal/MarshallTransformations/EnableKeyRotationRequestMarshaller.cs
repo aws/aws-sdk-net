@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,12 +66,19 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetKeyId())
                 {
                     context.Writer.WritePropertyName("KeyId");
                     context.Writer.Write(publicRequest.KeyId);
+                }
+
+                if(publicRequest.IsSetRotationPeriodInDays())
+                {
+                    context.Writer.WritePropertyName("RotationPeriodInDays");
+                    context.Writer.Write(publicRequest.RotationPeriodInDays);
                 }
 
                 writer.WriteObjectEnd();

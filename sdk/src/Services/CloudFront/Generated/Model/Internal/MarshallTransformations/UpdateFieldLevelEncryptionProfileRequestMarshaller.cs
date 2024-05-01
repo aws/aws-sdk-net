@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,51 +74,59 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("FieldLevelEncryptionProfileConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetCallerReference())
+<<<<<<< HEAD
                         xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.CallerReference));
 
                     if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Comment));
+=======
+                        xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.CallerReference));
 
-                
-                    if (publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities != null) 
+                    if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetComment())
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Comment));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
+
+                    if (publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities != null)
                     {
-                        xmlWriter.WriteStartElement("EncryptionEntities", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                        xmlWriter.WriteStartElement("EncryptionEntities");
                         var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems = publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.Items;
                         if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems != null && (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                        {                        
-                            xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                        {
+                            xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue in publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItems) 
                             {
-                
-                            if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue != null) 
+                            if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue != null)
                             {
-                                xmlWriter.WriteStartElement("EncryptionEntity", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
-                
-                                if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns != null) 
+                                xmlWriter.WriteStartElement("EncryptionEntity");
+                                if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns != null)
                                 {
-                                    xmlWriter.WriteStartElement("FieldPatterns", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                                    xmlWriter.WriteStartElement("FieldPatterns");
                                     var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems = publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Items;
                                     if (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems != null && (publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                                    {                        
-                                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                                    {
+                                        xmlWriter.WriteStartElement("Items");
                                         foreach (var publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItemsValue in publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItems) 
                                         {
-                                            xmlWriter.WriteStartElement("FieldPattern", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                                            xmlWriter.WriteStartElement("FieldPattern");
                                             xmlWriter.WriteValue(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValueFieldPatternsItemsValue);
                                             xmlWriter.WriteEndElement();
                                         }            
                                         xmlWriter.WriteEndElement();            
                                     }
                                     if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.IsSetQuantity())
+<<<<<<< HEAD
                                         xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Quantity.Value));                 
+=======
+                                        xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Quantity));                 
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                                     xmlWriter.WriteEndElement();
                                 }
                                 if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetProviderId())
-                                    xmlWriter.WriteElementString("ProviderId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.ProviderId));                 
+                                    xmlWriter.WriteElementString("ProviderId", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.ProviderId));                 
 
                                 if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetPublicKeyId())
-                                    xmlWriter.WriteElementString("PublicKeyId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.PublicKeyId));                 
+                                    xmlWriter.WriteElementString("PublicKeyId", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.PublicKeyId));                 
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -125,12 +134,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.IsSetQuantity())
+<<<<<<< HEAD
                             xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.Quantity.Value));                 
+=======
+                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.Quantity));                 
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetName())
+<<<<<<< HEAD
                         xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Name));
+=======
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Name));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                     xmlWriter.WriteEndElement();

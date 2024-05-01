@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,10 +70,10 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetNotAfter())
-                request.Parameters.Add("not-after", StringUtils.FromDateTimeToISO8601(publicRequest.NotAfter));
+                request.Parameters.Add("not-after", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.NotAfter));
             
             if (publicRequest.IsSetNotBefore())
-                request.Parameters.Add("not-before", StringUtils.FromDateTimeToISO8601(publicRequest.NotBefore));
+                request.Parameters.Add("not-before", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.NotBefore));
             
             if (publicRequest.IsSetSortOrder())
                 request.Parameters.Add("sort-order", StringUtils.FromString(publicRequest.SortOrder));

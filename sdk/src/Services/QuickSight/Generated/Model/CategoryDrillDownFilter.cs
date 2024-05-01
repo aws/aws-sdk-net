@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The numeric equality type drill down filter.
+    /// The category drill down filter.
     /// </summary>
     public partial class CategoryDrillDownFilter
     {

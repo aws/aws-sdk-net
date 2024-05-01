@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,28 +46,74 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CaptionRectangle requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Height.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Height))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Height));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Height);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetLeftOffset())
             {
                 context.Writer.WritePropertyName("leftOffset");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.LeftOffset.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LeftOffset))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LeftOffset));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LeftOffset);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetTopOffset())
             {
                 context.Writer.WritePropertyName("topOffset");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.TopOffset.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TopOffset))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TopOffset));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TopOffset);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("width");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Width.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Width))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Width));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Width);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

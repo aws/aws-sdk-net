@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -60,6 +61,7 @@ namespace Amazon.DataZone.Model
         /// Specifies the target (for example, a column name) where a prediction can be rejected.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PredictionTarget
         {
             get { return this._predictionTarget; }

@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Amazon GameLift Anywhere configuration options for your Anywhere fleets.
+    /// Amazon GameLift configuration options for your Anywhere fleets.
     /// </summary>
     public partial class AnywhereConfiguration
     {

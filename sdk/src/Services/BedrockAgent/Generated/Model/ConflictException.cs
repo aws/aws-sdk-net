@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// This exception is thrown when there is a conflict performing an operation
+    /// There was a conflict performing an operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

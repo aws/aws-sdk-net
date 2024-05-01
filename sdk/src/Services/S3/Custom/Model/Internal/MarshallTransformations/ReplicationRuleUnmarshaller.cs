@@ -17,10 +17,19 @@ using System.Collections.Generic;
 using Amazon.S3.Model;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// ReplicationRule unmarshaller
+    /// </summary>
     public class ReplicationRuleUnmarshaller : IUnmarshaller<ReplicationRule, XmlUnmarshallerContext>, IUnmarshaller<ReplicationRule, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReplicationRule Unmarshall(XmlUnmarshallerContext context)
         {
             ReplicationRule rule = new ReplicationRule();
@@ -98,6 +107,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return rule;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public ReplicationRule Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -105,6 +119,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ReplicationRuleUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ReplicationRuleUnmarshaller Instance
         {
             get

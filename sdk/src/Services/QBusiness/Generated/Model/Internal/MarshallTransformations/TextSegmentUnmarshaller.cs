@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,6 +74,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("snippetExcerpt", targetDepth))
+                {
+                    var unmarshaller = SnippetExcerptUnmarshaller.Instance;
+                    unmarshalledObject.SnippetExcerpt = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

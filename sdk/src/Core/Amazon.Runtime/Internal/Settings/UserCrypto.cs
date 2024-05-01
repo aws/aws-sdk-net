@@ -204,6 +204,12 @@ namespace Amazon.Runtime.Internal.Settings
         {
             get
             {
+#if NET8_0_OR_GREATER
+                if (!OperatingSystem.IsWindows())
+                {
+                    return false;
+                }
+#endif
                 if(!_isUserCryptAvailable.HasValue)
                 {
                     try

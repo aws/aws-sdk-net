@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the emr-containers-2020-10-01.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
@@ -39,6 +40,11 @@ namespace Amazon.EMRContainers.Model
         /// Paginator for ListManagedEndpoints operation
         ///</summary>
         IListManagedEndpointsPaginator ListManagedEndpoints(ListManagedEndpointsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSecurityConfigurations operation
+        ///</summary>
+        IListSecurityConfigurationsPaginator ListSecurityConfigurations(ListSecurityConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListVirtualClusters operation

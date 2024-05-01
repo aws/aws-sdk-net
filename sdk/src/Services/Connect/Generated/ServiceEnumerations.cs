@@ -55,6 +55,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly ActionType SEND_NOTIFICATION = new ActionType("SEND_NOTIFICATION");
         /// <summary>
+        /// Constant SUBMIT_AUTO_EVALUATION for ActionType
+        /// </summary>
+        public static readonly ActionType SUBMIT_AUTO_EVALUATION = new ActionType("SUBMIT_AUTO_EVALUATION");
+        /// <summary>
         /// Constant UPDATE_CASE for ActionType
         /// </summary>
         public static readonly ActionType UPDATE_CASE = new ActionType("UPDATE_CASE");

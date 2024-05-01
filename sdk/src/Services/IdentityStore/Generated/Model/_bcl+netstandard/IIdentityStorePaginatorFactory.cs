@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the identitystore-2020-06-15.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>

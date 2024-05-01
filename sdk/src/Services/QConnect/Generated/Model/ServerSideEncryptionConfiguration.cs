@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QConnect.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.QConnect.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The customer managed key used for encryption. For more information about setting up
-        /// a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
+        /// a customer managed key for Amazon Q in Connect, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
         /// Amazon Q in Connect for your instance</a>. For information about valid ID values,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
         /// identifiers (KeyId)</a>.

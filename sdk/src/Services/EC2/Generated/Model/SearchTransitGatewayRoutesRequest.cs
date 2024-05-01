@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -105,7 +106,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of routes to return.
+        /// The maximum number of routes to return. If a value is not provided, the default is
+        /// 1000.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]

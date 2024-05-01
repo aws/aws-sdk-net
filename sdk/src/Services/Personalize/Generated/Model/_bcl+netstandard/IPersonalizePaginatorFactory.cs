@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the personalize-2018-05-22.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model
 {
     /// <summary>

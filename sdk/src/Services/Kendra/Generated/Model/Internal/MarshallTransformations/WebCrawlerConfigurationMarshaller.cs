@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WebCrawlerConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAuthenticationConfiguration())
             {
                 context.Writer.WritePropertyName("AuthenticationConfiguration");
@@ -65,7 +68,18 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxContentSizePerPageInMegaBytes())
             {
                 context.Writer.WritePropertyName("MaxContentSizePerPageInMegaBytes");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MaxContentSizePerPageInMegaBytes.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxContentSizePerPageInMegaBytes);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMaxLinksPerPage())

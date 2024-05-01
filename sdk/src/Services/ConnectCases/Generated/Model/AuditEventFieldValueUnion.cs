@@ -26,17 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
     /// Object to store union of Field values.
-    /// 
-    ///  <important> 
-    /// <para>
-    /// This data type is a UNION, so only one of the following members can be specified when
-    /// used or returned.
-    /// </para>
-    ///  </important>
     /// </summary>
     public partial class AuditEventFieldValueUnion
     {

@@ -26,16 +26,18 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateWebExperience operation.
-    /// Creates an Amazon Q web experience.
+    /// Creates an Amazon Q Business web experience.
     /// </summary>
     public partial class CreateWebExperienceRequest : AmazonQBusinessRequest
     {
         private string _applicationId;
         private string _clientToken;
+        private string _roleArn;
         private WebExperienceSamplePromptsControlMode _samplePromptsControlMode;
         private string _subtitle;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -45,7 +47,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q web experience.
+        /// The identifier of the Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -64,7 +66,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token you provide to identify a request to create an Amazon Q web experience. 
+        /// A token you provide to identify a request to create an Amazon Q Business web experience.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -78,6 +81,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the service role attached to your web experience.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1284)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
         /// <summary>
@@ -101,7 +123,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Subtitle. 
         /// <para>
-        /// A subtitle to personalize your Amazon Q web experience.
+        /// A subtitle to personalize your Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -120,7 +142,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of key-value pairs that identify or categorize your Amazon Q web experience.
+        /// A list of key-value pairs that identify or categorize your Amazon Q Business web experience.
         /// You can also use tags to help control access to the web experience. Tag keys and values
         /// can consist of Unicode letters, digits, white space, and any of the following symbols:
         /// _ . : / = + - @.
@@ -142,7 +164,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The title for your Amazon Q web experience.
+        /// The title for your Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -161,7 +183,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property WelcomeMessage. 
         /// <para>
-        /// The customized welcome message for end users of an Amazon Q web experience.
+        /// The customized welcome message for end users of an Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]

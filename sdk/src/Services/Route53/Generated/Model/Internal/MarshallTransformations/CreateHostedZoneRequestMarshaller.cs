@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -61,39 +62,53 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
+                xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetName())
+<<<<<<< HEAD
                     xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Name));
+=======
+                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
-                
-                if (publicRequest.VPC != null) 
+                if (publicRequest.VPC != null)
                 {
-                    xmlWriter.WriteStartElement("VPC", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                    xmlWriter.WriteStartElement("VPC");
                     if(publicRequest.VPC.IsSetVPCRegion())
-                        xmlWriter.WriteElementString("VPCRegion", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.VPC.VPCRegion));                 
+                        xmlWriter.WriteElementString("VPCRegion", StringUtils.FromString(publicRequest.VPC.VPCRegion));                 
 
                     if(publicRequest.VPC.IsSetVPCId())
-                        xmlWriter.WriteElementString("VPCId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.VPC.VPCId));                 
+                        xmlWriter.WriteElementString("VPCId", StringUtils.FromString(publicRequest.VPC.VPCId));                 
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetCallerReference())
+<<<<<<< HEAD
                     xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.CallerReference));
+=======
+                    xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CallerReference));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
-                
-                if (publicRequest.HostedZoneConfig != null) 
+                if (publicRequest.HostedZoneConfig != null)
                 {
-                    xmlWriter.WriteStartElement("HostedZoneConfig", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                    xmlWriter.WriteStartElement("HostedZoneConfig");
                     if(publicRequest.HostedZoneConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HostedZoneConfig.Comment));                 
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.HostedZoneConfig.Comment));                 
 
                     if(publicRequest.HostedZoneConfig.IsSetPrivateZone())
+<<<<<<< HEAD
                         xmlWriter.WriteElementString("PrivateZone", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HostedZoneConfig.PrivateZone.Value));                 
+=======
+                        xmlWriter.WriteElementString("PrivateZone", StringUtils.FromBool(publicRequest.HostedZoneConfig.PrivateZone));                 
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetDelegationSetId())
+<<<<<<< HEAD
                     xmlWriter.WriteElementString("DelegationSetId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.DelegationSetId));
+=======
+                    xmlWriter.WriteElementString("DelegationSetId", StringUtils.FromString(publicRequest.DelegationSetId));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                 xmlWriter.WriteEndElement();

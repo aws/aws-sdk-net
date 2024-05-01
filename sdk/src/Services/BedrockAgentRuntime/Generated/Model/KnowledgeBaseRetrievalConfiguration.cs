@@ -26,10 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains details about how the results should be returned.
+    /// Contains configurations for the knowledge base query and retrieval process. For more
+    /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+    /// configurations</a>.
     /// 
     ///  
     /// <para>
@@ -38,12 +41,12 @@ namespace Amazon.BedrockAgentRuntime.Model
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
-    /// request body</a> 
+    /// request</a> – in the <c>retrievalConfiguration</c> field
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
-    /// request body</a> 
+    /// request</a> – in the <c>retrievalConfiguration</c> field
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -55,6 +58,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Gets and sets the property VectorSearchConfiguration. 
         /// <para>
         /// Contains details about how the results from the vector search should be returned.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+        /// configurations</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

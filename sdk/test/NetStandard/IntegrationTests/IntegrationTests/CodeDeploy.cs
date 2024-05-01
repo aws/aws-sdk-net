@@ -26,9 +26,9 @@ namespace Amazon.DNXCore.IntegrationTests
         {
             var appName = UtilityMethods.GenerateName();
             await Client.CreateApplicationAsync(new CreateApplicationRequest { ApplicationName = appName });
-            Assert.True(Client.ListApplicationsAsync().Result.Applications.Contains(appName));
+            Assert.Contains(appName, Client.ListApplicationsAsync().Result.Applications);
             await Client.DeleteApplicationAsync(new DeleteApplicationRequest { ApplicationName = appName });
-            Assert.False(Client.ListApplicationsAsync().Result.Applications.Contains(appName));
+            Assert.DoesNotContain(appName, Client.ListApplicationsAsync().Result.Applications);
         }
     }
 }

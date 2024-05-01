@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.IdentityManagement
 {
     /// <summary>
@@ -1659,6 +1660,10 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it attempted to create resources beyond the current
         /// Amazon Web Services account limits. The error message describes the limit exceeded.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OpenIdIdpCommunicationErrorException">
+        /// The request failed because IAM cannot connect to the OpenID Connect identity provider
+        /// URL.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
@@ -1755,6 +1760,10 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OpenIdIdpCommunicationErrorException">
+        /// The request failed because IAM cannot connect to the OpenID Connect identity provider
+        /// URL.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -12827,7 +12836,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Removes the specified IAM role from the specified EC2 instance profile.
+        /// Removes the specified IAM role from the specified Amazon EC2 instance profile.
         /// 
         ///  <important> 
         /// <para>
@@ -12877,7 +12886,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Removes the specified IAM role from the specified EC2 instance profile.
+        /// Removes the specified IAM role from the specified Amazon EC2 instance profile.
         /// 
         ///  <important> 
         /// <para>

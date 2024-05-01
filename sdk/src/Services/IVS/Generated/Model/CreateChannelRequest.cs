@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVS.Model
 {
     /// <summary>
@@ -65,7 +66,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property InsecureIngest. 
         /// <para>
-        /// Whether the channel allows insecure RTMP ingest. Default: <c>false</c>.
+        /// Whether the channel allows insecure RTMP and SRT ingest. Default: <c>false</c>.
         /// </para>
         /// </summary>
         public bool? InsecureIngest

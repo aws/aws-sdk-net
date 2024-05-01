@@ -151,7 +151,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     TopicArn = topicArn
                 };
                 var subs = (await Client.ListSubscriptionsByTopicAsync(listSubscriptionsRequest)).Subscriptions;
-                Assert.Equal(1, subs.Count);
+                Assert.Single(subs);
 
                 // test whether the subscription has been confirmed
                 var subscription = subs[0];
@@ -226,7 +226,7 @@ namespace Amazon.DNXCore.IntegrationTests
             await SubscribeQueue(topicArn, queueUrl);
             List<Message> messages = await PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
 
-            Assert.Equal(1, messages.Count);
+            Assert.Single(messages);
             var bodyJson = GetBodyJson(messages[0]);
             var validMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson);
             Assert.True(validMessage.IsMessageSignatureValid());
@@ -254,7 +254,7 @@ namespace Amazon.DNXCore.IntegrationTests
             await SubscribeQueue(topicArn, queueUrl);
             List<Message> messages = await PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
 
-            Assert.Equal(1, messages.Count);
+            Assert.Single(messages);
             var bodyJson = GetBodyJson(messages[0]);
             var validMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson);
             Assert.True(validMessage.IsMessageSignatureValid());
@@ -272,7 +272,7 @@ namespace Amazon.DNXCore.IntegrationTests
             await SubscribeQueue(topicArn, queueUrl);
             List<Message> messages = await PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
 
-            Assert.Equal(1, messages.Count);
+            Assert.Single(messages);
             var bodyJson = GetBodyJson(messages[0]);
 
             // modify message to have invalid SignatureVersion
@@ -280,7 +280,7 @@ namespace Amazon.DNXCore.IntegrationTests
             jsonData["SignatureVersion"] = "3";
 
             var ex = Assert.Throws<AmazonClientException>(() => Amazon.SimpleNotificationService.Util.Message.ParseMessage(jsonData.ToJson()));
-            Assert.Equal(ex.Message, "SignatureVersion is not a valid value");
+            Assert.Equal("SignatureVersion is not a valid value", ex.Message);
         }
 
         [Fact]
@@ -293,7 +293,7 @@ namespace Amazon.DNXCore.IntegrationTests
             var publishRequest = GetPublishRequest(topicArn);
             List<Message> messages = await PublishToSNSAndReceiveMessages(publishRequest, topicArn, queueUrl);
 
-            Assert.Equal(1, messages.Count);
+            Assert.Single(messages);
             var message = messages[0];
 
             string bodyJson = GetBodyJson(message);
@@ -309,7 +309,7 @@ namespace Amazon.DNXCore.IntegrationTests
             {
                 var name = ma.Key;
                 var value = ma.Value;
-                Assert.True(messageAttributes.PropertyNames.Contains(name, StringComparer.Ordinal));
+                Assert.Contains(name, messageAttributes.PropertyNames, StringComparer.Ordinal);
                 var jsonAttribute = messageAttributes[name];
                 var jsonType = jsonAttribute["Type"].ToString();
                 var jsonValue = jsonAttribute["Value"].ToString();
@@ -348,7 +348,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 WaitTimeSeconds = 20
             })).Messages;
 
-            Assert.Equal(1, messages.Count);
+            Assert.Single(messages);
 
             var response = WaitUtils.WaitForComplete(
                 () => {
@@ -364,7 +364,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 });
 
             var policy = Policy.FromJson(response.Policy);
-            Assert.Equal(1, policy.Statements.Count);
+            Assert.Single(policy.Statements);
         }
 
         private static string GetBodyJson(Message message)

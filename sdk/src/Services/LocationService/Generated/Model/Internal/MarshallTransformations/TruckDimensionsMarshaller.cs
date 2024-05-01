@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,40 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TruckDimensions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("Height");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Height.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Height))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Height));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Height);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetLength())
             {
                 context.Writer.WritePropertyName("Length");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Length.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Length))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Length));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Length);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetUnit())
@@ -66,7 +91,18 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("Width");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Width.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Width))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Width));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Width);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

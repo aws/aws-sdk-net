@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRetriever operation.
-    /// Updates the retriever used for your Amazon Q application.
+    /// Updates the retriever used for your Amazon Q Business application.
     /// </summary>
     public partial class UpdateRetrieverRequest : AmazonQBusinessRequest
     {
@@ -43,7 +44,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of your Amazon Q application.
+        /// The identifier of your Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

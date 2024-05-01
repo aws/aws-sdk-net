@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteWebExperience operation.
-    /// Deletes an Amazon Q web experience.
+    /// Deletes an Amazon Q Business web experience.
     /// </summary>
     public partial class DeleteWebExperienceRequest : AmazonQBusinessRequest
     {
@@ -40,7 +41,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application linked to the Amazon Q web experience.
+        /// The identifier of the Amazon Q Business application linked to the Amazon Q Business
+        /// web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -59,7 +61,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property WebExperienceId. 
         /// <para>
-        /// The identifier of the Amazon Q web experience being deleted.
+        /// The identifier of the Amazon Q Business web experience being deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

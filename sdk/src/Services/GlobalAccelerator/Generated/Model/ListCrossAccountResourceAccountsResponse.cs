@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Gets and sets the property ResourceOwnerAwsAccountIds. 
         /// <para>
         /// The account IDs of principals (resource owners) in a cross-account attachment who
-        /// can add endpoints (resources) listed in the same attachment.
+        /// can work with resources listed in the same attachment.
         /// </para>
         /// </summary>
         public List<string> ResourceOwnerAwsAccountIds

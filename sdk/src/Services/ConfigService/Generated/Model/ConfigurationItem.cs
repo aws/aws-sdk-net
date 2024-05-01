@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -168,6 +169,16 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// The time when configuration changes for the resource were delivered.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is optional and is not guaranteed to be present in a configuration item
+        /// (CI). If you are using daily recording, this field will be populated. However, if
+        /// you are using continuous recording, this field will be omitted since the delivery
+        /// time is instantaneous as the CI is available right away. For more information on daily
+        /// recording and continuous recording, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording
+        /// Frequency</a> in the <i>Config Developer Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DateTime? ConfigurationItemDeliveryTime
         {

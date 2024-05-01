@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -64,9 +65,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("UpdateHostedZoneCommentRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
+                xmlWriter.WriteStartElement("UpdateHostedZoneCommentRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetComment())
+<<<<<<< HEAD
                     xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Comment));
+=======
+                    xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.Comment));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                 xmlWriter.WriteEndElement();

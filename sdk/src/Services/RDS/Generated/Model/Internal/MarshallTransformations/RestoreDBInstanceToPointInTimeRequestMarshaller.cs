@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,6 +74,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBackupTarget())
                 {
                     request.Parameters.Add("BackupTarget", StringUtils.FromString(publicRequest.BackupTarget));
+                }
+                if(publicRequest.IsSetCACertificateIdentifier())
+                {
+                    request.Parameters.Add("CACertificateIdentifier", StringUtils.FromString(publicRequest.CACertificateIdentifier));
                 }
                 if(publicRequest.IsSetCopyTagsToSnapshot())
                 {
@@ -206,7 +211,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRestoreTimeUtc())
                 {
-                    request.Parameters.Add("RestoreTime", StringUtils.FromDateTimeToISO8601(publicRequest.RestoreTimeUtc));
+                    request.Parameters.Add("RestoreTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.RestoreTimeUtc));
                 }
                 if(publicRequest.IsSetSourceDBInstanceAutomatedBackupsArn())
                 {

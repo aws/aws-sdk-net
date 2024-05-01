@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,40 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProgressiveDialerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBandwidthAllocation())
             {
                 context.Writer.WritePropertyName("bandwidthAllocation");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.BandwidthAllocation.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BandwidthAllocation))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BandwidthAllocation));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BandwidthAllocation);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetDialingCapacity())
             {
                 context.Writer.WritePropertyName("dialingCapacity");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.DialingCapacity.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DialingCapacity))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DialingCapacity));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DialingCapacity);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

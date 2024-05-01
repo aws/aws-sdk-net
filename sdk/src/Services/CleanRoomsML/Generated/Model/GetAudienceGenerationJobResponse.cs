@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
@@ -170,7 +171,8 @@ namespace Amazon.CleanRoomsML.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// The relevance scores for different audience sizes. 
+        /// The relevance scores for different audience sizes and the recall score of the generated
+        /// audience. 
         /// </para>
         /// </summary>
         public AudienceQualityMetrics Metrics

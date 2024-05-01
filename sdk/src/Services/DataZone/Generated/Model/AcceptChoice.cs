@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -34,8 +35,28 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class AcceptChoice
     {
+        private string _editedValue;
         private int? _predictionChoice;
         private string _predictionTarget;
+
+        /// <summary>
+        /// Gets and sets the property EditedValue. 
+        /// <para>
+        /// The edit of the prediction.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=5000)]
+        public string EditedValue
+        {
+            get { return this._editedValue; }
+            set { this._editedValue = value; }
+        }
+
+        // Check to see if EditedValue property is set
+        internal bool IsSetEditedValue()
+        {
+            return this._editedValue != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PredictionChoice. 
@@ -62,6 +83,7 @@ namespace Amazon.DataZone.Model
         /// Specifies the target (for example, a column name) where a prediction can be accepted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PredictionTarget
         {
             get { return this._predictionTarget; }

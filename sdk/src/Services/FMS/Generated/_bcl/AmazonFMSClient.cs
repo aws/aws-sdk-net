@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.FMS
 {
     /// <summary>
@@ -1263,7 +1264,7 @@ namespace Amazon.FMS
 
 
         /// <summary>
-        /// Returns information about the specified account's administrative scope. The admistrative
+        /// Returns information about the specified account's administrative scope. The administrative
         /// scope defines the resources that an Firewall Manager administrator can manage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAdminScope service method.</param>
@@ -1305,7 +1306,7 @@ namespace Amazon.FMS
 
 
         /// <summary>
-        /// Returns information about the specified account's administrative scope. The admistrative
+        /// Returns information about the specified account's administrative scope. The administrative
         /// scope defines the resources that an Firewall Manager administrator can manage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAdminScope service method.</param>
@@ -1428,31 +1429,11 @@ namespace Amazon.FMS
         /// Returns detailed compliance information about the specified member account. Details
         /// include resources that are in and out of compliance with the specified policy. 
         /// 
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// Resources are considered noncompliant for WAF and Shield Advanced policies if the
-        /// specified policy has not been applied to them.
+        /// The reasons for resources being considered compliant depend on the Firewall Manager
+        /// policy type. 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Resources are considered noncompliant for security group policies if they are in scope
-        /// of the policy, they violate one or more of the policy rules, and remediation is disabled
-        /// or not possible.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Resources are considered noncompliant for Network Firewall policies if a firewall
-        /// is missing in the VPC, if the firewall endpoint isn't set up in an expected Availability
-        /// Zone and subnet, if a subnet created by the Firewall Manager doesn't have the expected
-        /// route table, and for modifications to a firewall policy that violate the Firewall
-        /// Manager policy's rules.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Resources are considered noncompliant for DNS Firewall policies if a DNS Firewall
-        /// rule group is missing from the rule group associations for the VPC. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetail service method.</param>
         /// 
@@ -1490,31 +1471,11 @@ namespace Amazon.FMS
         /// Returns detailed compliance information about the specified member account. Details
         /// include resources that are in and out of compliance with the specified policy. 
         /// 
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// Resources are considered noncompliant for WAF and Shield Advanced policies if the
-        /// specified policy has not been applied to them.
+        /// The reasons for resources being considered compliant depend on the Firewall Manager
+        /// policy type. 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Resources are considered noncompliant for security group policies if they are in scope
-        /// of the policy, they violate one or more of the policy rules, and remediation is disabled
-        /// or not possible.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Resources are considered noncompliant for Network Firewall policies if a firewall
-        /// is missing in the VPC, if the firewall endpoint isn't set up in an expected Availability
-        /// Zone and subnet, if a subnet created by the Firewall Manager doesn't have the expected
-        /// route table, and for modifications to a firewall policy that violate the Firewall
-        /// Manager policy's rules.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Resources are considered noncompliant for DNS Firewall policies if a DNS Firewall
-        /// rule group is missing from the rule group associations for the VPC. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetail service method.</param>
         /// <param name="cancellationToken">
@@ -3264,6 +3225,11 @@ namespace Amazon.FMS
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <b>WAF policy</b> - This policy applies WAF web ACL protections to specified accounts
+        /// and resources. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>Shield Advanced policy</b> - This policy applies Shield Advanced protection to
         /// specified accounts and resources. 
         /// </para>
@@ -3272,6 +3238,12 @@ namespace Amazon.FMS
         ///  <b>Security Groups policy</b> - This type of policy gives you control over security
         /// groups that are in use throughout your organization in Organizations and lets you
         /// enforce a baseline set of rules across your organization. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Network ACL policy</b> - This type of policy gives you control over the network
+        /// ACLs that are in use throughout your organization in Organizations and lets you enforce
+        /// a baseline set of first and last network ACL rules across your organization. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3367,6 +3339,11 @@ namespace Amazon.FMS
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <b>WAF policy</b> - This policy applies WAF web ACL protections to specified accounts
+        /// and resources. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>Shield Advanced policy</b> - This policy applies Shield Advanced protection to
         /// specified accounts and resources. 
         /// </para>
@@ -3375,6 +3352,12 @@ namespace Amazon.FMS
         ///  <b>Security Groups policy</b> - This type of policy gives you control over security
         /// groups that are in use throughout your organization in Organizations and lets you
         /// enforce a baseline set of rules across your organization. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Network ACL policy</b> - This type of policy gives you control over the network
+        /// ACLs that are in use throughout your organization in Organizations and lets you enforce
+        /// a baseline set of first and last network ACL rules across your organization. 
         /// </para>
         ///  </li> <li> 
         /// <para>

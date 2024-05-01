@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -55,8 +56,13 @@ namespace Amazon.VerifiedPermissions.Model
         /// per response. You can specify a maximum of 50 policy templates per response.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=1, Max=50)]
         public int? MaxResults
+=======
+        [AWSProperty(Min=1)]
+        public int MaxResults
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
         {
             get { return this._maxResults; }
             set { this._maxResults = value; }

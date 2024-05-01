@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InferenceComponentComputeResourceRequirements requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxMemoryRequiredInMb())
             {
                 context.Writer.WritePropertyName("MaxMemoryRequiredInMb");
@@ -60,13 +63,35 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfAcceleratorDevicesRequired())
             {
                 context.Writer.WritePropertyName("NumberOfAcceleratorDevicesRequired");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.NumberOfAcceleratorDevicesRequired.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NumberOfAcceleratorDevicesRequired);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetNumberOfCpuCoresRequired())
             {
                 context.Writer.WritePropertyName("NumberOfCpuCoresRequired");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.NumberOfCpuCoresRequired.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.NumberOfCpuCoresRequired))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.NumberOfCpuCoresRequired));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NumberOfCpuCoresRequired);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

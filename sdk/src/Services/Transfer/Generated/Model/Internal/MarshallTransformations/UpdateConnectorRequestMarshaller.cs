@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAccessRole())
@@ -94,6 +96,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("LoggingRole");
                     context.Writer.Write(publicRequest.LoggingRole);
+                }
+
+                if(publicRequest.IsSetSecurityPolicyName())
+                {
+                    context.Writer.WritePropertyName("SecurityPolicyName");
+                    context.Writer.Write(publicRequest.SecurityPolicyName);
                 }
 
                 if(publicRequest.IsSetSftpConfig())

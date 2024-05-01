@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetMapRunArn())
@@ -88,7 +90,18 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetToleratedFailurePercentage())
                 {
                     context.Writer.WritePropertyName("toleratedFailurePercentage");
+<<<<<<< HEAD
                     context.Writer.Write(publicRequest.ToleratedFailurePercentage.Value);
+=======
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.ToleratedFailurePercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ToleratedFailurePercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.ToleratedFailurePercentage);
+                    }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 writer.WriteObjectEnd();

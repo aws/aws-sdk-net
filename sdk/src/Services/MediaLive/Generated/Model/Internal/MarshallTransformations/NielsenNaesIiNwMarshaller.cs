@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NielsenNaesIiNw requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCheckDigitString())
             {
                 context.Writer.WritePropertyName("checkDigitString");
@@ -54,7 +57,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSid())
             {
                 context.Writer.WritePropertyName("sid");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Sid.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Sid))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Sid));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Sid);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetTimezone())

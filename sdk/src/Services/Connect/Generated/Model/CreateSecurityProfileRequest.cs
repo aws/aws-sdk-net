@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -86,10 +87,6 @@ namespace Amazon.Connect.Model
 
         /// <summary>
         /// Gets and sets the property Applications. 
-        /// <para>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// </para>
-        ///  
         /// <para>
         /// A list of third-party applications that the security profile will give access to.
         /// </para>

@@ -4,49 +4,49 @@
     <property>Amazon.QBusiness.Model.BatchDeleteDocumentRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.BatchDeleteDocumentRequest.DataSourceSyncId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.BatchDeleteDocumentRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.BatchPutDocumentRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.BatchPutDocumentRequest.DataSourceSyncId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.BatchPutDocumentRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.BatchPutDocumentRequest.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ChatSyncRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ChatSyncRequest.ClientToken</property>
@@ -57,19 +57,19 @@
     <property>Amazon.QBusiness.Model.ChatSyncRequest.ConversationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ChatSyncRequest.ParentMessageId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ChatSyncRequest.UserId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ChatSyncRequest.UserMessage</property>
@@ -80,7 +80,7 @@
     <property>Amazon.QBusiness.Model.ChatSyncResponse.ConversationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ChatSyncResponse.SystemMessage</property>
@@ -91,13 +91,13 @@
     <property>Amazon.QBusiness.Model.ChatSyncResponse.SystemMessageId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ChatSyncResponse.UserMessageId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateApplicationRequest.ClientToken</property>
@@ -108,37 +108,43 @@
     <property>Amazon.QBusiness.Model.CreateApplicationRequest.Description</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateApplicationRequest.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.CreateApplicationRequest.IdentityCenterInstanceArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateApplicationRequest.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateApplicationResponse.ApplicationArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateApplicationResponse.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateDataSourceRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateDataSourceRequest.ClientToken</property>
@@ -149,49 +155,49 @@
     <property>Amazon.QBusiness.Model.CreateDataSourceRequest.Description</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateDataSourceRequest.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateDataSourceRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateDataSourceRequest.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateDataSourceRequest.SyncSchedule</property>
     <min>0</min>
     <max>998</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateDataSourceResponse.DataSourceArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateDataSourceResponse.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateIndexRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateIndexRequest.ClientToken</property>
@@ -202,31 +208,31 @@
     <property>Amazon.QBusiness.Model.CreateIndexRequest.Description</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateIndexRequest.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateIndexResponse.IndexArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateIndexResponse.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreatePluginRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreatePluginRequest.ClientToken</property>
@@ -237,31 +243,31 @@
     <property>Amazon.QBusiness.Model.CreatePluginRequest.DisplayName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreatePluginRequest.ServerUrl</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^(https?|ftp|file)://([^\s]*)$</pattern>
+    <pattern>(https?|ftp|file)://([^\s]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreatePluginResponse.PluginArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreatePluginResponse.PluginId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateRetrieverRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateRetrieverRequest.ClientToken</property>
@@ -272,31 +278,31 @@
     <property>Amazon.QBusiness.Model.CreateRetrieverRequest.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateRetrieverRequest.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateRetrieverResponse.RetrieverArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateRetrieverResponse.RetrieverId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateUserRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateUserRequest.ClientToken</property>
@@ -312,7 +318,7 @@
     <property>Amazon.QBusiness.Model.CreateWebExperienceRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateWebExperienceRequest.ClientToken</property>
@@ -320,16 +326,22 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.CreateWebExperienceRequest.RoleArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateWebExperienceRequest.Subtitle</property>
     <min>0</min>
     <max>500</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateWebExperienceRequest.Title</property>
     <min>0</min>
     <max>500</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateWebExperienceRequest.WelcomeMessage</property>
@@ -340,127 +352,127 @@
     <property>Amazon.QBusiness.Model.CreateWebExperienceResponse.WebExperienceArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.CreateWebExperienceResponse.WebExperienceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteApplicationRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteChatControlsConfigurationRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteConversationRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteConversationRequest.ConversationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteConversationRequest.UserId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteDataSourceRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteDataSourceRequest.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteDataSourceRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteGroupRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteGroupRequest.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteGroupRequest.GroupName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteGroupRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteIndexRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteIndexRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeletePluginRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeletePluginRequest.PluginId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteRetrieverRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteRetrieverRequest.RetrieverId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteUserRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteUserRequest.UserId</property>
@@ -471,55 +483,61 @@
     <property>Amazon.QBusiness.Model.DeleteWebExperienceRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DeleteWebExperienceRequest.WebExperienceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetApplicationRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetApplicationResponse.ApplicationArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetApplicationResponse.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetApplicationResponse.Description</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetApplicationResponse.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.GetApplicationResponse.IdentityCenterApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetApplicationResponse.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetChatControlsConfigurationRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetChatControlsConfigurationRequest.MaxResults</property>
@@ -540,67 +558,67 @@
     <property>Amazon.QBusiness.Model.GetDataSourceRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataSourceRequest.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataSourceRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataSourceResponse.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataSourceResponse.DataSourceArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataSourceResponse.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataSourceResponse.Description</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataSourceResponse.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataSourceResponse.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataSourceResponse.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataSourceResponse.SyncSchedule</property>
     <min>0</min>
     <max>998</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetDataSourceResponse.Type</property>
@@ -611,157 +629,157 @@
     <property>Amazon.QBusiness.Model.GetGroupRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetGroupRequest.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetGroupRequest.GroupName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetGroupRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetIndexRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetIndexRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetIndexResponse.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetIndexResponse.Description</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetIndexResponse.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetIndexResponse.IndexArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetIndexResponse.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetPluginRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetPluginRequest.PluginId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetPluginResponse.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetPluginResponse.DisplayName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetPluginResponse.PluginArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetPluginResponse.PluginId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetPluginResponse.ServerUrl</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^(https?|ftp|file)://([^\s]*)$</pattern>
+    <pattern>(https?|ftp|file)://([^\s]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetRetrieverRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetRetrieverRequest.RetrieverId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetRetrieverResponse.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetRetrieverResponse.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetRetrieverResponse.RetrieverArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetRetrieverResponse.RetrieverId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetRetrieverResponse.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetUserRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetUserRequest.UserId</property>
@@ -772,49 +790,55 @@
     <property>Amazon.QBusiness.Model.GetWebExperienceRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetWebExperienceRequest.WebExperienceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetWebExperienceResponse.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetWebExperienceResponse.DefaultEndpoint</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^(https?|ftp|file)://([^\s]*)$</pattern>
+    <pattern>(https?|ftp|file)://([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.GetWebExperienceResponse.RoleArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetWebExperienceResponse.Subtitle</property>
     <min>0</min>
     <max>500</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetWebExperienceResponse.Title</property>
     <min>0</min>
     <max>500</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetWebExperienceResponse.WebExperienceArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetWebExperienceResponse.WebExperienceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GetWebExperienceResponse.WelcomeMessage</property>
@@ -840,7 +864,7 @@
     <property>Amazon.QBusiness.Model.ListConversationsRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListConversationsRequest.MaxResults</property>
@@ -856,7 +880,7 @@
     <property>Amazon.QBusiness.Model.ListConversationsRequest.UserId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListConversationsResponse.NextToken</property>
@@ -867,13 +891,13 @@
     <property>Amazon.QBusiness.Model.ListDataSourcesRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListDataSourcesRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListDataSourcesRequest.MaxResults</property>
@@ -894,19 +918,19 @@
     <property>Amazon.QBusiness.Model.ListDataSourceSyncJobsRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListDataSourceSyncJobsRequest.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListDataSourceSyncJobsRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListDataSourceSyncJobsRequest.MaxResults</property>
@@ -927,13 +951,13 @@
     <property>Amazon.QBusiness.Model.ListDocumentsRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListDocumentsRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListDocumentsRequest.MaxResults</property>
@@ -954,19 +978,19 @@
     <property>Amazon.QBusiness.Model.ListGroupsRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListGroupsRequest.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListGroupsRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListGroupsRequest.MaxResults</property>
@@ -987,7 +1011,7 @@
     <property>Amazon.QBusiness.Model.ListIndicesRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListIndicesRequest.MaxResults</property>
@@ -1008,13 +1032,13 @@
     <property>Amazon.QBusiness.Model.ListMessagesRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListMessagesRequest.ConversationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListMessagesRequest.MaxResults</property>
@@ -1030,7 +1054,7 @@
     <property>Amazon.QBusiness.Model.ListMessagesRequest.UserId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListMessagesResponse.NextToken</property>
@@ -1041,7 +1065,7 @@
     <property>Amazon.QBusiness.Model.ListPluginsRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListPluginsRequest.MaxResults</property>
@@ -1062,7 +1086,7 @@
     <property>Amazon.QBusiness.Model.ListRetrieversRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListRetrieversRequest.MaxResults</property>
@@ -1088,7 +1112,7 @@
     <property>Amazon.QBusiness.Model.ListWebExperiencesRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ListWebExperiencesRequest.MaxResults</property>
@@ -1109,91 +1133,91 @@
     <property>Amazon.QBusiness.Model.PutFeedbackRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.PutFeedbackRequest.ConversationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.PutFeedbackRequest.MessageId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.PutFeedbackRequest.UserId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.PutGroupRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.PutGroupRequest.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.PutGroupRequest.GroupName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.PutGroupRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.StartDataSourceSyncJobRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.StartDataSourceSyncJobRequest.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.StartDataSourceSyncJobRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.StartDataSourceSyncJobResponse.ExecutionId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.StopDataSourceSyncJobRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.StopDataSourceSyncJobRequest.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.StopDataSourceSyncJobRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.TagResourceRequest.ResourceARN</property>
@@ -1209,31 +1233,37 @@
     <property>Amazon.QBusiness.Model.UpdateApplicationRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateApplicationRequest.Description</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateApplicationRequest.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.UpdateApplicationRequest.IdentityCenterInstanceArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateApplicationRequest.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateChatControlsConfigurationRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateChatControlsConfigurationRequest.ClientToken</property>
@@ -1244,121 +1274,121 @@
     <property>Amazon.QBusiness.Model.UpdateDataSourceRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateDataSourceRequest.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateDataSourceRequest.Description</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateDataSourceRequest.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateDataSourceRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateDataSourceRequest.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateDataSourceRequest.SyncSchedule</property>
     <min>0</min>
     <max>998</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateIndexRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateIndexRequest.Description</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateIndexRequest.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateIndexRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdatePluginRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdatePluginRequest.DisplayName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdatePluginRequest.PluginId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdatePluginRequest.ServerUrl</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^(https?|ftp|file)://([^\s]*)$</pattern>
+    <pattern>(https?|ftp|file)://([^\s]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateRetrieverRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateRetrieverRequest.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateRetrieverRequest.RetrieverId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateRetrieverRequest.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateUserRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateUserRequest.UserId</property>
@@ -1369,25 +1399,31 @@
     <property>Amazon.QBusiness.Model.UpdateWebExperienceRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.UpdateWebExperienceRequest.RoleArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateWebExperienceRequest.Subtitle</property>
     <min>0</min>
     <max>500</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateWebExperienceRequest.Title</property>
     <min>0</min>
     <max>500</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateWebExperienceRequest.WebExperienceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UpdateWebExperienceRequest.WelcomeMessage</property>
@@ -1403,7 +1439,18 @@
     <property>Amazon.QBusiness.Model.ActionExecution.PluginId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ActionExecutionEvent.PayloadFieldNameSeparator</property>
+    <min>1</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ActionExecutionEvent.PluginId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ActionReview.PayloadFieldNameSeparator</property>
@@ -1414,7 +1461,46 @@
     <property>Amazon.QBusiness.Model.ActionReview.PluginId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ActionReviewEvent.ConversationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ActionReviewEvent.PayloadFieldNameSeparator</property>
+    <min>1</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ActionReviewEvent.PluginId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ActionReviewEvent.SystemMessageId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ActionReviewEvent.UserMessageId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ActionReviewPayloadField.AllowedFormat</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ActionReviewPayloadField.DisplayDescription</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ActionReviewPayloadField.DisplayName</property>
@@ -1425,49 +1511,90 @@
     <property>Amazon.QBusiness.Model.Application.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Application.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.AttachmentInput.Name</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.AttachmentOutput.Name</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.AuthChallengeRequest.AuthorizationUrl</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(https?|ftp|file)://([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.AuthChallengeRequestEvent.AuthorizationUrl</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(https?|ftp|file)://([^\s]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.BasicAuthConfiguration.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.BasicAuthConfiguration.SecretArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.BlockedPhrasesConfiguration.SystemMessageOverride</property>
     <min>0</min>
     <max>350</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.BlockedPhrasesConfigurationUpdate.SystemMessageOverride</property>
     <min>0</min>
     <max>350</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ChatInput.ApplicationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ChatInput.ClientToken</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ChatInput.ConversationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ChatInput.ParentMessageId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.ChatInput.UserId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ConflictException.ResourceId</property>
@@ -1483,25 +1610,30 @@
     <property>Amazon.QBusiness.Model.ContentBlockerRule.SystemMessageOverride</property>
     <min>0</min>
     <max>350</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Conversation.ConversationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.CustomPluginConfiguration.Description</property>
+    <min>1</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DataSource.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DataSource.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DataSource.Type</property>
@@ -1517,27 +1649,27 @@
     <property>Amazon.QBusiness.Model.DataSourceSyncJob.ExecutionId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DataSourceSyncJobMetrics.DocumentsAdded</property>
-    <pattern>^(([1-9][0-9]*)|0)$</pattern>
+    <pattern>(([1-9][0-9]*)|0)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DataSourceSyncJobMetrics.DocumentsDeleted</property>
-    <pattern>^(([1-9][0-9]*)|0)$</pattern>
+    <pattern>(([1-9][0-9]*)|0)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DataSourceSyncJobMetrics.DocumentsFailed</property>
-    <pattern>^(([1-9][0-9]*)|0)$</pattern>
+    <pattern>(([1-9][0-9]*)|0)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DataSourceSyncJobMetrics.DocumentsModified</property>
-    <pattern>^(([1-9][0-9]*)|0)$</pattern>
+    <pattern>(([1-9][0-9]*)|0)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DataSourceSyncJobMetrics.DocumentsScanned</property>
-    <pattern>^(([1-9][0-9]*)|0)$</pattern>
+    <pattern>(([1-9][0-9]*)|0)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DateAttributeBoostingConfiguration.BoostingDurationInSeconds</property>
@@ -1548,13 +1680,13 @@
     <property>Amazon.QBusiness.Model.DeleteDocument.DocumentId</property>
     <min>1</min>
     <max>1825</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Document.Id</property>
     <min>1</min>
     <max>1825</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Document.Title</property>
@@ -1565,24 +1697,25 @@
     <property>Amazon.QBusiness.Model.DocumentAttribute.Name</property>
     <min>1</min>
     <max>200</max>
-    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9_][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DocumentAttributeCondition.Key</property>
     <min>1</min>
     <max>200</max>
-    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9_][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DocumentAttributeConfiguration.Name</property>
     <min>1</min>
-    <max>2048</max>
+    <max>30</max>
+    <pattern>[a-zA-Z0-9_][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DocumentAttributeTarget.Key</property>
     <min>1</min>
     <max>200</max>
-    <pattern>^[a-zA-Z0-9_][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9_][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.DocumentAttributeValue.StringValue</property>
@@ -1593,19 +1726,19 @@
     <property>Amazon.QBusiness.Model.DocumentDetails.DocumentId</property>
     <min>1</min>
     <max>1825</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.EligibleDataSource.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.EligibleDataSource.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.EncryptionConfiguration.KmsKeyId</property>
@@ -1616,55 +1749,73 @@
     <property>Amazon.QBusiness.Model.ErrorDetail.ErrorMessage</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.FailedAttachmentEvent.ConversationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.FailedAttachmentEvent.SystemMessageId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.FailedAttachmentEvent.UserMessageId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.FailedDocument.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.FailedDocument.Id</property>
     <min>1</min>
     <max>1825</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.GroupSummary.GroupName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.HookConfiguration.LambdaArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws[a-zA-Z-]*:lambda:[a-z-]*-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?$</pattern>
+    <pattern>arn:aws[a-zA-Z-]*:lambda:[a-z-]*-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.HookConfiguration.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.HookConfiguration.S3BucketName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$</pattern>
+    <pattern>[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Index.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Index.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.IndexCapacityConfiguration.Units</property>
@@ -1674,25 +1825,25 @@
     <property>Amazon.QBusiness.Model.KendraIndexConfiguration.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.MemberGroup.GroupName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.MemberUser.UserId</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Message.Body</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>^\P{C}*$}$</pattern>
+    <pattern>\P{C}*$}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Message.MessageId</property>
@@ -1703,55 +1854,84 @@
     <property>Amazon.QBusiness.Model.MessageUsefulnessFeedback.Comment</property>
     <min>0</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.MetadataEvent.ConversationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.MetadataEvent.FinalTextMessage</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.MetadataEvent.SystemMessageId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.MetadataEvent.UserMessageId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.NativeIndexConfiguration.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.OAuth2ClientCredentialConfiguration.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.OAuth2ClientCredentialConfiguration.SecretArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Plugin.DisplayName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Plugin.PluginId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Plugin.ServerUrl</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^(https?|ftp|file)://([^\s]*)$</pattern>
+    <pattern>(https?|ftp|file)://([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.PluginConfiguration.PluginId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.PrincipalGroup.Name</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.PrincipalUser.Id</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ResourceNotFoundException.ResourceId</property>
@@ -1767,25 +1947,25 @@
     <property>Amazon.QBusiness.Model.Retriever.ApplicationId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Retriever.DisplayName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.Retriever.RetrieverId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.S3.Bucket</property>
     <min>1</min>
     <max>63</max>
-    <pattern>^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$</pattern>
+    <pattern>[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.S3.Key</property>
@@ -1796,13 +1976,13 @@
     <property>Amazon.QBusiness.Model.SamlConfiguration.MetadataXML</property>
     <min>1000</min>
     <max>10000000</max>
-    <pattern>^.*$</pattern>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.SamlConfiguration.RoleArn</property>
     <min>0</min>
     <max>1284</max>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.SamlConfiguration.UserGroupAttribute</property>
@@ -1858,28 +2038,56 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.TextInputEvent.UserMessage</property>
+    <min>1</min>
+    <max>7000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.TextOutputEvent.ConversationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.TextOutputEvent.SystemMessage</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.TextOutputEvent.SystemMessageId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.TextOutputEvent.UserMessageId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.TopicConfiguration.Description</property>
     <min>0</min>
     <max>350</max>
-    <pattern>^\P{C}*$</pattern>
+    <pattern>\P{C}*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.TopicConfiguration.Name</property>
     <min>1</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{0,35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{0,35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UserAlias.DataSourceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UserAlias.IndexId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]{35}$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.UserAlias.UserId</property>
@@ -1900,12 +2108,12 @@
     <property>Amazon.QBusiness.Model.WebExperience.DefaultEndpoint</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^(https?|ftp|file)://([^\s]*)$</pattern>
+    <pattern>(https?|ftp|file)://([^\s]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.WebExperience.WebExperienceId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-]*$</pattern>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
 </property-value-rules>

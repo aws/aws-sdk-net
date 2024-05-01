@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -61,7 +62,6 @@ namespace Amazon.EntityResolution.Model
         /// An object which defines any additional configurations required by the provider service.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProviderProperties ProviderProperties
         {
             get { return this._providerProperties; }

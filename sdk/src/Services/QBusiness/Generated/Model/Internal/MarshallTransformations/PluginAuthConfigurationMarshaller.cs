@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PluginAuthConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBasicAuthConfiguration())
             {
                 context.Writer.WritePropertyName("basicAuthConfiguration");
@@ -52,6 +55,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 
                 var marshaller = BasicAuthConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BasicAuthConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetNoAuthConfiguration())
+            {
+                context.Writer.WritePropertyName("noAuthConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NoAuthConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.NoAuthConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }

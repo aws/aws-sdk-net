@@ -28,7 +28,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class AbortMultipartUploadResponseUnmarshaller : S3ReponseUnmarshaller
     {
-
+        /// <summary>
+        /// Invoke the unmarshaller
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             AbortMultipartUploadResponse response = new AbortMultipartUploadResponse();
@@ -41,6 +45,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static AbortMultipartUploadResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static AbortMultipartUploadResponseUnmarshaller Instance
         {
             get

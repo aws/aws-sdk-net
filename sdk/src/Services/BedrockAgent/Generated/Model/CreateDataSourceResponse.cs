@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
@@ -36,7 +37,10 @@ namespace Amazon.BedrockAgent.Model
         private DataSource _dataSource;
 
         /// <summary>
-        /// Gets and sets the property DataSource.
+        /// Gets and sets the property DataSource. 
+        /// <para>
+        /// Contains details about the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataSource DataSource

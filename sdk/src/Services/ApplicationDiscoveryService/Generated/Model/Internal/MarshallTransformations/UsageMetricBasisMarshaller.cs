@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
         /// <returns></returns>
         public void Marshall(UsageMetricBasis requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -54,7 +57,18 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             if(requestObject.IsSetPercentageAdjust())
             {
                 context.Writer.WritePropertyName("percentageAdjust");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.PercentageAdjust.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentageAdjust))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentageAdjust));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PercentageAdjust);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

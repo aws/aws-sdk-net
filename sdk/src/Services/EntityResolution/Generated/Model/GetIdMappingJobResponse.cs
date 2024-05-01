@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -37,6 +38,7 @@ namespace Amazon.EntityResolution.Model
         private ErrorDetails _errorDetails;
         private string _jobId;
         private IdMappingJobMetrics _metrics;
+        private List<IdMappingJobOutputSource> _outputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingJobOutputSource>() : null;
         private DateTime? _startTime;
         private JobStatus _status;
 
@@ -109,6 +111,25 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetMetrics()
         {
             return this._metrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputSourceConfig. 
+        /// <para>
+        /// A list of <c>OutputSource</c> objects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<IdMappingJobOutputSource> OutputSourceConfig
+        {
+            get { return this._outputSourceConfig; }
+            set { this._outputSourceConfig = value; }
+        }
+
+        // Check to see if OutputSourceConfig property is set
+        internal bool IsSetOutputSourceConfig()
+        {
+            return this._outputSourceConfig != null && (this._outputSourceConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

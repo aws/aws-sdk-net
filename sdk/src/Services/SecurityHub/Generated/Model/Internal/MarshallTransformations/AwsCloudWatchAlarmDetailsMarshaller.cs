@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsCloudWatchAlarmDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActionsEnabled())
             {
                 context.Writer.WritePropertyName("ActionsEnabled");
@@ -181,7 +184,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Threshold.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Threshold);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetThresholdMetricId())

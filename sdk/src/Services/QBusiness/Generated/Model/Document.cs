@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// A document in an Amazon Q application.
+    /// A document in an Amazon Q Business application.
     /// </summary>
     public partial class Document
     {
@@ -62,7 +63,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// Custom attributes to apply to the document for refining Amazon Q web experience responses.
+        /// Custom attributes to apply to the document for refining Amazon Q Business web experience
+        /// responses.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ListConversations operation.
-    /// Lists one or more Amazon Q conversations.
+    /// Lists one or more Amazon Q Business conversations.
     /// </summary>
     public partial class ListConversationsRequest : AmazonQBusinessRequest
     {
@@ -42,7 +43,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application.
+        /// The identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -61,7 +62,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of Amazon Q conversations to return.
+        /// The maximum number of Amazon Q Business conversations to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -81,8 +82,8 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the <c>maxResults</c> response was incomplete because there is more data to retrieve,
-        /// Amazon Q returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of Amazon Q conversations.
+        /// Amazon Q Business returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of Amazon Q Business conversations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]
@@ -101,10 +102,11 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The identifier of the user involved in the Amazon Q web experience conversation. 
+        /// The identifier of the user involved in the Amazon Q Business web experience conversation.
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string UserId
         {
             get { return this._userId; }

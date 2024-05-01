@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EvaluationFormQuestion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInstructions())
             {
                 context.Writer.WritePropertyName("Instructions");
@@ -89,7 +92,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("Weight");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Weight.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Weight))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Weight));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Weight);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

@@ -31,6 +31,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class PutObjectResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             PutObjectResponse response = new PutObjectResponse();
@@ -80,6 +85,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static PutObjectResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static PutObjectResponseUnmarshaller Instance
         {
             get

@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Provides information about an Amazon Q data source connector synchronization job.
+    /// Provides information about an Amazon Q Business data source connector synchronization
+    /// job.
     /// </summary>
     public partial class DataSourceSyncJob
     {

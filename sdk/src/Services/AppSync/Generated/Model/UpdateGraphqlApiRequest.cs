@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppSync.Model
 {
     /// <summary>
@@ -93,6 +94,7 @@ namespace Amazon.AppSync.Model
         /// The new authentication type for the <c>GraphqlApi</c> object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AuthenticationType AuthenticationType
         {
             get { return this._authenticationType; }

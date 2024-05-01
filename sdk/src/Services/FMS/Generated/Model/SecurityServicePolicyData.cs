@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -192,7 +193,7 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Firewall Manager won't distrubute system tags added by Amazon Web Services services
+        ///  Firewall Manager won't distribute system tags added by Amazon Web Services services
         /// into the replica security groups. System tags begin with the <c>aws:</c> prefix. 
         /// </para>
         ///  </li> <li> 
@@ -464,8 +465,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyOption. 
         /// <para>
-        /// Contains the Network Firewall firewall policy options to configure a centralized deployment
-        /// model.
+        /// Contains the settings to configure a network ACL policy, a Network Firewall firewall
+        /// policy deployment model, or a third-party firewall policy.
         /// </para>
         /// </summary>
         public PolicyOption PolicyOption

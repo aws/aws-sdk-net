@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.Finspace
 {
     /// <summary>
@@ -880,6 +881,55 @@ namespace Amazon.Finspace
             options.ResponseUnmarshaller = DeleteKxClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteKxClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteKxClusterNode
+
+        internal virtual DeleteKxClusterNodeResponse DeleteKxClusterNode(DeleteKxClusterNodeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKxClusterNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKxClusterNodeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteKxClusterNodeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified nodes from a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKxClusterNode service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteKxClusterNode service method, as returned by Finspace.</returns>
+        /// <exception cref="Amazon.Finspace.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Finspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxClusterNode">REST API Reference for DeleteKxClusterNode Operation</seealso>
+        public virtual Task<DeleteKxClusterNodeResponse> DeleteKxClusterNodeAsync(DeleteKxClusterNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKxClusterNodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKxClusterNodeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteKxClusterNodeResponse>(request, options, cancellationToken);
         }
 
         #endregion

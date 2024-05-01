@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.Batch.Model
         private List<EksContainer> _containers = AWSConfigs.InitializeCollections ? new List<EksContainer>() : null;
         private string _dnsPolicy;
         private bool? _hostNetwork;
+        private List<ImagePullSecret> _imagePullSecrets = AWSConfigs.InitializeCollections ? new List<ImagePullSecret>() : null;
         private List<EksContainer> _initContainers = AWSConfigs.InitializeCollections ? new List<EksContainer>() : null;
         private EksMetadata _metadata;
         private string _serviceAccountName;
@@ -109,6 +111,29 @@ namespace Amazon.Batch.Model
         internal bool IsSetHostNetwork()
         {
             return this._hostNetwork.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImagePullSecrets. 
+        /// <para>
+        /// References a Kubernetes secret resource. It holds a list of secrets. These secrets
+        /// help to gain access to pull an images from a private registry.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>ImagePullSecret$name</c> is required when this object is used.
+        /// </para>
+        /// </summary>
+        public List<ImagePullSecret> ImagePullSecrets
+        {
+            get { return this._imagePullSecrets; }
+            set { this._imagePullSecrets = value; }
+        }
+
+        // Check to see if ImagePullSecrets property is set
+        internal bool IsSetImagePullSecrets()
+        {
+            return this._imagePullSecrets != null && (this._imagePullSecrets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -135,6 +135,10 @@ namespace Amazon.HealthLake
         /// </summary>
         public static readonly DatastoreStatus ACTIVE = new DatastoreStatus("ACTIVE");
         /// <summary>
+        /// Constant CREATE_FAILED for DatastoreStatus
+        /// </summary>
+        public static readonly DatastoreStatus CREATE_FAILED = new DatastoreStatus("CREATE_FAILED");
+        /// <summary>
         /// Constant CREATING for DatastoreStatus
         /// </summary>
         public static readonly DatastoreStatus CREATING = new DatastoreStatus("CREATING");
@@ -176,6 +180,56 @@ namespace Amazon.HealthLake
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DatastoreStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ErrorCategory.
+    /// </summary>
+    public class ErrorCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NON_RETRYABLE_ERROR for ErrorCategory
+        /// </summary>
+        public static readonly ErrorCategory NON_RETRYABLE_ERROR = new ErrorCategory("NON_RETRYABLE_ERROR");
+        /// <summary>
+        /// Constant RETRYABLE_ERROR for ErrorCategory
+        /// </summary>
+        public static readonly ErrorCategory RETRYABLE_ERROR = new ErrorCategory("RETRYABLE_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ErrorCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ErrorCategory FindValue(string value)
+        {
+            return FindValue<ErrorCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ErrorCategory(string value)
         {
             return FindValue(value);
         }

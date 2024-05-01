@@ -147,6 +147,10 @@ namespace Amazon.S3.Model
         }
     }
 
+    /// <summary>
+    /// A predicate that filters objects for a <see cref="LifecycleRule"/>
+    /// by comparing object size greater then specified value.
+    /// </summary>
     public class LifecycleObjectSizeGreaterThanPredicate : LifecycleFilterPredicate
     {
         private long? _objectSizeGreaterThan;
@@ -179,6 +183,10 @@ namespace Amazon.S3.Model
         }
     }
 
+    /// <summary>
+    /// A predicate that filters objects for a <see cref="LifecycleRule"/>
+    /// by comparing object size less then specified value.
+    /// </summary>
     public class LifecycleObjectSizeLessThanPredicate : LifecycleFilterPredicate
     {
         private long? _objectSizeLessThan;

@@ -84,6 +84,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant ACCOUNT_TIER for AccountAttributeName
         /// </summary>
         public static readonly AccountAttributeName ACCOUNT_TIER = new AccountAttributeName("ACCOUNT_TIER");
+        /// <summary>
+        /// Constant DEFAULT_PROTECT_CONFIGURATION_ID for AccountAttributeName
+        /// </summary>
+        public static readonly AccountAttributeName DEFAULT_PROTECT_CONFIGURATION_ID = new AccountAttributeName("DEFAULT_PROTECT_CONFIGURATION_ID");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -320,6 +324,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant MatchingEventTypes for ConfigurationSetFilterName
         /// </summary>
         public static readonly ConfigurationSetFilterName MatchingEventTypes = new ConfigurationSetFilterName("matching-event-types");
+        /// <summary>
+        /// Constant ProtectConfigurationId for ConfigurationSetFilterName
+        /// </summary>
+        public static readonly ConfigurationSetFilterName ProtectConfigurationId = new ConfigurationSetFilterName("protect-configuration-id");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -370,6 +378,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant DELETION_PROTECTION_ENABLED for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason DELETION_PROTECTION_ENABLED = new ConflictExceptionReason("DELETION_PROTECTION_ENABLED");
+        /// <summary>
+        /// Constant DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION = new ConflictExceptionReason("DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION");
         /// <summary>
         /// Constant DESTINATION_PHONE_NUMBER_NOT_VERIFIED for ConflictExceptionReason
         /// </summary>
@@ -434,6 +446,18 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant PHONE_NUMBER_NOT_IN_REGISTRATION_REGION for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason PHONE_NUMBER_NOT_IN_REGISTRATION_REGION = new ConflictExceptionReason("PHONE_NUMBER_NOT_IN_REGISTRATION_REGION");
+        /// <summary>
+        /// Constant PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET = new ConflictExceptionReason("PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET");
+        /// <summary>
+        /// Constant PROTECT_CONFIGURATION_IS_ACCOUNT_DEFAULT for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PROTECT_CONFIGURATION_IS_ACCOUNT_DEFAULT = new ConflictExceptionReason("PROTECT_CONFIGURATION_IS_ACCOUNT_DEFAULT");
+        /// <summary>
+        /// Constant PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET = new ConflictExceptionReason("PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET");
         /// <summary>
         /// Constant REGISTRATION_ALREADY_SUBMITTED for ConflictExceptionReason
         /// </summary>
@@ -582,6 +606,74 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant ALL for EventType
         /// </summary>
         public static readonly EventType ALL = new EventType("ALL");
+        /// <summary>
+        /// Constant MEDIA_ALL for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_ALL = new EventType("MEDIA_ALL");
+        /// <summary>
+        /// Constant MEDIA_BLOCKED for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_BLOCKED = new EventType("MEDIA_BLOCKED");
+        /// <summary>
+        /// Constant MEDIA_CARRIER_BLOCKED for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_CARRIER_BLOCKED = new EventType("MEDIA_CARRIER_BLOCKED");
+        /// <summary>
+        /// Constant MEDIA_CARRIER_UNREACHABLE for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_CARRIER_UNREACHABLE = new EventType("MEDIA_CARRIER_UNREACHABLE");
+        /// <summary>
+        /// Constant MEDIA_DELIVERED for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_DELIVERED = new EventType("MEDIA_DELIVERED");
+        /// <summary>
+        /// Constant MEDIA_FILE_INACCESSIBLE for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_FILE_INACCESSIBLE = new EventType("MEDIA_FILE_INACCESSIBLE");
+        /// <summary>
+        /// Constant MEDIA_FILE_SIZE_EXCEEDED for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_FILE_SIZE_EXCEEDED = new EventType("MEDIA_FILE_SIZE_EXCEEDED");
+        /// <summary>
+        /// Constant MEDIA_FILE_TYPE_UNSUPPORTED for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_FILE_TYPE_UNSUPPORTED = new EventType("MEDIA_FILE_TYPE_UNSUPPORTED");
+        /// <summary>
+        /// Constant MEDIA_INVALID for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_INVALID = new EventType("MEDIA_INVALID");
+        /// <summary>
+        /// Constant MEDIA_INVALID_MESSAGE for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_INVALID_MESSAGE = new EventType("MEDIA_INVALID_MESSAGE");
+        /// <summary>
+        /// Constant MEDIA_PENDING for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_PENDING = new EventType("MEDIA_PENDING");
+        /// <summary>
+        /// Constant MEDIA_QUEUED for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_QUEUED = new EventType("MEDIA_QUEUED");
+        /// <summary>
+        /// Constant MEDIA_SPAM for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_SPAM = new EventType("MEDIA_SPAM");
+        /// <summary>
+        /// Constant MEDIA_SUCCESSFUL for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_SUCCESSFUL = new EventType("MEDIA_SUCCESSFUL");
+        /// <summary>
+        /// Constant MEDIA_TTL_EXPIRED for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_TTL_EXPIRED = new EventType("MEDIA_TTL_EXPIRED");
+        /// <summary>
+        /// Constant MEDIA_UNKNOWN for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_UNKNOWN = new EventType("MEDIA_UNKNOWN");
+        /// <summary>
+        /// Constant MEDIA_UNREACHABLE for EventType
+        /// </summary>
+        public static readonly EventType MEDIA_UNREACHABLE = new EventType("MEDIA_UNREACHABLE");
         /// <summary>
         /// Constant TEXT_ALL for EventType
         /// </summary>
@@ -1073,6 +1165,10 @@ namespace Amazon.PinpointSMSVoiceV2
     {
 
         /// <summary>
+        /// Constant MMS for NumberCapability
+        /// </summary>
+        public static readonly NumberCapability MMS = new NumberCapability("MMS");
+        /// <summary>
         /// Constant SMS for NumberCapability
         /// </summary>
         public static readonly NumberCapability SMS = new NumberCapability("SMS");
@@ -1540,6 +1636,106 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PoolStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtectConfigurationFilterName.
+    /// </summary>
+    public class ProtectConfigurationFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccountDefault for ProtectConfigurationFilterName
+        /// </summary>
+        public static readonly ProtectConfigurationFilterName AccountDefault = new ProtectConfigurationFilterName("account-default");
+        /// <summary>
+        /// Constant DeletionProtectionEnabled for ProtectConfigurationFilterName
+        /// </summary>
+        public static readonly ProtectConfigurationFilterName DeletionProtectionEnabled = new ProtectConfigurationFilterName("deletion-protection-enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtectConfigurationFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtectConfigurationFilterName FindValue(string value)
+        {
+            return FindValue<ProtectConfigurationFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtectConfigurationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtectStatus.
+    /// </summary>
+    public class ProtectStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for ProtectStatus
+        /// </summary>
+        public static readonly ProtectStatus ALLOW = new ProtectStatus("ALLOW");
+        /// <summary>
+        /// Constant BLOCK for ProtectStatus
+        /// </summary>
+        public static readonly ProtectStatus BLOCK = new ProtectStatus("BLOCK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtectStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtectStatus FindValue(string value)
+        {
+            return FindValue<ProtectStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtectStatus(string value)
         {
             return FindValue(value);
         }
@@ -2141,6 +2337,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ResourceType Pool = new ResourceType("pool");
         /// <summary>
+        /// Constant ProtectConfiguration for ResourceType
+        /// </summary>
+        public static readonly ResourceType ProtectConfiguration = new ResourceType("protect-configuration");
+        /// <summary>
         /// Constant Registration for ResourceType
         /// </summary>
         public static readonly ResourceType Registration = new ResourceType("registration");
@@ -2285,6 +2485,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason KEYWORDS_PER_POOL = new ServiceQuotaExceededExceptionReason("KEYWORDS_PER_POOL");
         /// <summary>
+        /// Constant MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA = new ServiceQuotaExceededExceptionReason("MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA");
+        /// <summary>
         /// Constant MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT for ServiceQuotaExceededExceptionReason
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT = new ServiceQuotaExceededExceptionReason("MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT");
@@ -2312,6 +2516,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant POOLS_PER_ACCOUNT for ServiceQuotaExceededExceptionReason
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason POOLS_PER_ACCOUNT = new ServiceQuotaExceededExceptionReason("POOLS_PER_ACCOUNT");
+        /// <summary>
+        /// Constant PROTECT_CONFIGURATIONS_PER_ACCOUNT for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason PROTECT_CONFIGURATIONS_PER_ACCOUNT = new ServiceQuotaExceededExceptionReason("PROTECT_CONFIGURATIONS_PER_ACCOUNT");
         /// <summary>
         /// Constant REGISTRATION_ATTACHMENTS_CREATED_PER_DAY for ServiceQuotaExceededExceptionReason
         /// </summary>
@@ -2386,6 +2594,10 @@ namespace Amazon.PinpointSMSVoiceV2
     public class SpendLimitName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT for SpendLimitName
+        /// </summary>
+        public static readonly SpendLimitName MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT = new SpendLimitName("MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT");
         /// <summary>
         /// Constant TEXT_MESSAGE_MONTHLY_SPEND_LIMIT for SpendLimitName
         /// </summary>
@@ -2492,6 +2704,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant MAXIMUM_SIZE_EXCEEDED for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason MAXIMUM_SIZE_EXCEEDED = new ValidationExceptionReason("MAXIMUM_SIZE_EXCEEDED");
+        /// <summary>
+        /// Constant MEDIA_TYPE_NOT_SUPPORTED for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MEDIA_TYPE_NOT_SUPPORTED = new ValidationExceptionReason("MEDIA_TYPE_NOT_SUPPORTED");
         /// <summary>
         /// Constant MISSING_PARAMETER for ValidationExceptionReason
         /// </summary>

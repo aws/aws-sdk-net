@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public List<string> Equals
+        public new List<string> Equals
         {
             get { return this._equals; }
             set { this._equals = value; }

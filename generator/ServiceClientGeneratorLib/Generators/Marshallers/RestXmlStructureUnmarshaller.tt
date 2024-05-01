@@ -9,12 +9,13 @@
     AddCommonUsingStatements();
 #>
 
+#pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> Object
     /// </summary>  
-    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>
+    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>, IUnmarshaller<<#=this.UnmarshallerBaseName #>, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,8 +88,19 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			}
 			else
 			{
+            if(!member.IsXmlAttribute)
+            {
 #>
 					if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+<#
+            }
+            else
+            {
+#>
+                    if (context.TestExpression("@<#=member.MarshallName#>", targetDepth - 1))
+<#
+            }
+#>
 					{
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
@@ -106,6 +118,16 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
 <#

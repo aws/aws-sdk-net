@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.EntityResolution
 {
     /// <summary>
@@ -288,6 +289,108 @@ namespace Amazon.EntityResolution
         #endregion
 
 
+        #region  AddPolicyStatement
+
+        internal virtual AddPolicyStatementResponse AddPolicyStatement(AddPolicyStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPolicyStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPolicyStatementResponseUnmarshaller.Instance;
+
+            return Invoke<AddPolicyStatementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds a policy statement object. To retrieve a list of existing policy statements,
+        /// use the <c>GetPolicy</c> API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddPolicyStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddPolicyStatement service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/AddPolicyStatement">REST API Reference for AddPolicyStatement Operation</seealso>
+        public virtual Task<AddPolicyStatementResponse> AddPolicyStatementAsync(AddPolicyStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddPolicyStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddPolicyStatementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddPolicyStatementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteUniqueId
+
+        internal virtual BatchDeleteUniqueIdResponse BatchDeleteUniqueId(BatchDeleteUniqueIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteUniqueIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteUniqueIdResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteUniqueIdResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes multiple unique IDs in a matching workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteUniqueId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteUniqueId service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/BatchDeleteUniqueId">REST API Reference for BatchDeleteUniqueId Operation</seealso>
+        public virtual Task<BatchDeleteUniqueIdResponse> BatchDeleteUniqueIdAsync(BatchDeleteUniqueIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteUniqueIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteUniqueIdResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteUniqueIdResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateIdMappingWorkflow
 
         internal virtual CreateIdMappingWorkflowResponse CreateIdMappingWorkflow(CreateIdMappingWorkflowRequest request)
@@ -344,6 +447,66 @@ namespace Amazon.EntityResolution
             options.ResponseUnmarshaller = CreateIdMappingWorkflowResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateIdMappingWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateIdNamespace
+
+        internal virtual CreateIdNamespaceResponse CreateIdNamespace(CreateIdNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIdNamespaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an ID namespace object which will help customers provide metadata explaining
+        /// their dataset and how to use it. Each ID namespace must have a unique name. To modify
+        /// an existing ID namespace, use the <c>UpdateIdNamespace</c> API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIdNamespace service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Entity Resolution account limits. The error message describes the limit exceeded.
+        /// <c>HTTP Status Code: 402</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdNamespace">REST API Reference for CreateIdNamespace Operation</seealso>
+        public virtual Task<CreateIdNamespaceResponse> CreateIdNamespaceAsync(CreateIdNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdNamespaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIdNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -495,6 +658,11 @@ namespace Amazon.EntityResolution
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
         /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// <c>HTTP Status Code: 500</c>
@@ -514,6 +682,54 @@ namespace Amazon.EntityResolution
             options.ResponseUnmarshaller = DeleteIdMappingWorkflowResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteIdMappingWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteIdNamespace
+
+        internal virtual DeleteIdNamespaceResponse DeleteIdNamespace(DeleteIdNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdNamespaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the <c>IdNamespace</c> with a given name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIdNamespace service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdNamespace">REST API Reference for DeleteIdNamespace Operation</seealso>
+        public virtual Task<DeleteIdNamespaceResponse> DeleteIdNamespaceAsync(DeleteIdNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdNamespaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIdNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -544,6 +760,11 @@ namespace Amazon.EntityResolution
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
         /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// <c>HTTP Status Code: 500</c>
@@ -563,6 +784,62 @@ namespace Amazon.EntityResolution
             options.ResponseUnmarshaller = DeleteMatchingWorkflowResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteMatchingWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePolicyStatement
+
+        internal virtual DeletePolicyStatementResponse DeletePolicyStatement(DeletePolicyStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyStatementResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePolicyStatementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the policy statement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePolicyStatement service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeletePolicyStatement">REST API Reference for DeletePolicyStatement Operation</seealso>
+        public virtual Task<DeletePolicyStatementResponse> DeletePolicyStatementAsync(DeletePolicyStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyStatementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePolicyStatementResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -726,6 +1003,57 @@ namespace Amazon.EntityResolution
 
         #endregion
         
+        #region  GetIdNamespace
+
+        internal virtual GetIdNamespaceResponse GetIdNamespace(GetIdNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdNamespaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the <c>IdNamespace</c> with a given name, if it exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIdNamespace service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdNamespace">REST API Reference for GetIdNamespace Operation</seealso>
+        public virtual Task<GetIdNamespaceResponse> GetIdNamespaceAsync(GetIdNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdNamespaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIdNamespaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetMatchId
 
         internal virtual GetMatchIdResponse GetMatchId(GetMatchIdRequest request)
@@ -876,6 +1204,57 @@ namespace Amazon.EntityResolution
             options.ResponseUnmarshaller = GetMatchingWorkflowResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetMatchingWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPolicy
+
+        internal virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the resource-based policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1078,6 +1457,54 @@ namespace Amazon.EntityResolution
             options.ResponseUnmarshaller = ListIdMappingWorkflowsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListIdMappingWorkflowsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListIdNamespaces
+
+        internal virtual ListIdNamespacesResponse ListIdNamespaces(ListIdNamespacesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdNamespacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdNamespacesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdNamespacesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of all ID namespaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdNamespaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIdNamespaces service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdNamespaces">REST API Reference for ListIdNamespaces Operation</seealso>
+        public virtual Task<ListIdNamespacesResponse> ListIdNamespacesAsync(ListIdNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdNamespacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdNamespacesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIdNamespacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1322,6 +1749,62 @@ namespace Amazon.EntityResolution
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutPolicy
+
+        internal virtual PutPolicyResponse PutPolicy(PutPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the resource-based policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutPolicy service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
+        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
+        public virtual Task<PutPolicyResponse> PutPolicyAsync(PutPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1595,6 +2078,57 @@ namespace Amazon.EntityResolution
             options.ResponseUnmarshaller = UpdateIdMappingWorkflowResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateIdMappingWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateIdNamespace
+
+        internal virtual UpdateIdNamespaceResponse UpdateIdNamespace(UpdateIdNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIdNamespaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing ID namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIdNamespace service method, as returned by EntityResolution.</returns>
+        /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// <c>HTTP Status Code: 500</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
+        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
+        /// Status Code: 400</c>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdNamespace">REST API Reference for UpdateIdNamespace Operation</seealso>
+        public virtual Task<UpdateIdNamespaceResponse> UpdateIdNamespaceAsync(UpdateIdNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdNamespaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateIdNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion

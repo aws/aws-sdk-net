@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
@@ -33,7 +34,27 @@ namespace Amazon.PaymentCryptography.Model
     /// </summary>
     public partial class ExportTr31KeyBlock
     {
+        private KeyBlockHeaders _keyBlockHeaders;
         private string _wrappingKeyIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property KeyBlockHeaders. 
+        /// <para>
+        /// Optional metadata for export associated with the key material. This data is signed
+        /// but transmitted in clear text.
+        /// </para>
+        /// </summary>
+        public KeyBlockHeaders KeyBlockHeaders
+        {
+            get { return this._keyBlockHeaders; }
+            set { this._keyBlockHeaders = value; }
+        }
+
+        // Check to see if KeyBlockHeaders property is set
+        internal bool IsSetKeyBlockHeaders()
+        {
+            return this._keyBlockHeaders != null;
+        }
 
         /// <summary>
         /// Gets and sets the property WrappingKeyIdentifier. 

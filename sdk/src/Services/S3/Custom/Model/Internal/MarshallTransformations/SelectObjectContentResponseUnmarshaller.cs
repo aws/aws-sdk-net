@@ -24,13 +24,24 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// SelectObjectContentResponse unmarshaller
+    /// </summary>
     public class SelectObjectContentResponseUnmarshaller : S3ReponseUnmarshaller
     {
         private static SelectObjectContentResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton instance of SelectObjectContentResponseUnmarshaller
+        /// </summary>
         public static SelectObjectContentResponseUnmarshaller Instance =>
             _instance ?? (_instance = new SelectObjectContentResponseUnmarshaller());
 
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             var response = new SelectObjectContentResponse();
@@ -45,8 +56,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             response.Payload = new SelectObjectContentEventStream(context.Stream);
         }
 
+        /// <summary>
+        /// Returns true for having a streaming property.
+        /// </summary>
         public override bool HasStreamingProperty => true;
 
+        /// <summary>
+        /// Return false
+        /// </summary>
+        /// <param name="response"></param>
+        /// <param name="readEntireResponse"></param>
+        /// <returns></returns>
         protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
         {
             return false;

@@ -25,6 +25,56 @@ namespace Amazon.WellArchitected
 {
 
     /// <summary>
+    /// Constants used for properties of type AccountJiraIssueManagementStatus.
+    /// </summary>
+    public class AccountJiraIssueManagementStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AccountJiraIssueManagementStatus
+        /// </summary>
+        public static readonly AccountJiraIssueManagementStatus DISABLED = new AccountJiraIssueManagementStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AccountJiraIssueManagementStatus
+        /// </summary>
+        public static readonly AccountJiraIssueManagementStatus ENABLED = new AccountJiraIssueManagementStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountJiraIssueManagementStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountJiraIssueManagementStatus FindValue(string value)
+        {
+            return FindValue<AccountJiraIssueManagementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountJiraIssueManagementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AdditionalResourceType.
     /// </summary>
     public class AdditionalResourceType : ConstantClass
@@ -620,6 +670,198 @@ namespace Amazon.WellArchitected
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImportLensStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntegratingService.
+    /// </summary>
+    public class IntegratingService : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JIRA for IntegratingService
+        /// </summary>
+        public static readonly IntegratingService JIRA = new IntegratingService("JIRA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntegratingService(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegratingService FindValue(string value)
+        {
+            return FindValue<IntegratingService>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegratingService(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntegrationStatus.
+    /// </summary>
+    public class IntegrationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONFIGURED for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus CONFIGURED = new IntegrationStatus("CONFIGURED");
+        /// <summary>
+        /// Constant NOT_CONFIGURED for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus NOT_CONFIGURED = new IntegrationStatus("NOT_CONFIGURED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntegrationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationStatus FindValue(string value)
+        {
+            return FindValue<IntegrationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntegrationStatusInput.
+    /// </summary>
+    public class IntegrationStatusInput : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_CONFIGURED for IntegrationStatusInput
+        /// </summary>
+        public static readonly IntegrationStatusInput NOT_CONFIGURED = new IntegrationStatusInput("NOT_CONFIGURED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntegrationStatusInput(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationStatusInput FindValue(string value)
+        {
+            return FindValue<IntegrationStatusInput>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationStatusInput(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IssueManagementType.
+    /// </summary>
+    public class IssueManagementType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for IssueManagementType
+        /// </summary>
+        public static readonly IssueManagementType AUTO = new IssueManagementType("AUTO");
+        /// <summary>
+        /// Constant MANUAL for IssueManagementType
+        /// </summary>
+        public static readonly IssueManagementType MANUAL = new IssueManagementType("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IssueManagementType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IssueManagementType FindValue(string value)
+        {
+            return FindValue<IssueManagementType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IssueManagementType(string value)
         {
             return FindValue(value);
         }
@@ -1850,6 +2092,60 @@ namespace Amazon.WellArchitected
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WorkloadImprovementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkloadIssueManagementStatus.
+    /// </summary>
+    public class WorkloadIssueManagementStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for WorkloadIssueManagementStatus
+        /// </summary>
+        public static readonly WorkloadIssueManagementStatus DISABLED = new WorkloadIssueManagementStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for WorkloadIssueManagementStatus
+        /// </summary>
+        public static readonly WorkloadIssueManagementStatus ENABLED = new WorkloadIssueManagementStatus("ENABLED");
+        /// <summary>
+        /// Constant INHERIT for WorkloadIssueManagementStatus
+        /// </summary>
+        public static readonly WorkloadIssueManagementStatus INHERIT = new WorkloadIssueManagementStatus("INHERIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkloadIssueManagementStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkloadIssueManagementStatus FindValue(string value)
+        {
+            return FindValue<WorkloadIssueManagementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkloadIssueManagementStatus(string value)
         {
             return FindValue(value);
         }

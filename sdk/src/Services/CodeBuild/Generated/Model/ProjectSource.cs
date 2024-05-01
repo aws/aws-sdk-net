@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -218,6 +219,20 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL
+        /// to the repository that contains the source and the buildspec file. You must connect
+        /// your Amazon Web Services account to your GitLab account. Use the CodeBuild console
+        /// to start creating a build project. When you use the console to connect (or reconnect)
+        /// with GitLab, on the Connections <b>Authorize application</b> page, choose <b>Authorize</b>.
+        /// Then on the CodeConnections <b>Create GitLab connection</b> page, choose <b>Connect
+        /// to GitLab</b>. (After you have connected to your GitLab account, you do not need to
+        /// finish creating the build project. You can leave the CodeBuild console.) To instruct
+        /// CodeBuild to override the default connection and use this connection instead, set
+        /// the <c>auth</c> object's <c>type</c> value to <c>CODECONNECTIONS</c> in the <c>source</c>
+        /// object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For source code in a Bitbucket repository, the HTTPS clone URL to the repository that
         /// contains the source and the buildspec file. You must connect your Amazon Web Services
         /// account to your Bitbucket account. Use the CodeBuild console to start creating a build
@@ -251,8 +266,8 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  Set to true to report the status of a build's start and finish to your source provider.
         /// This option is valid only when your source provider is GitHub, GitHub Enterprise,
-        /// or Bitbucket. If this is set and you use a different source provider, an <c>invalidInputException</c>
-        /// is thrown. 
+        /// GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different
+        /// source provider, an <c>invalidInputException</c> is thrown. 
         /// </para>
         ///  
         /// <para>
@@ -324,11 +339,19 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>GITHUB</c>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
+        ///  <c>GITHUB</c>: The source code is in a GitHub repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>GITHUB_ENTERPRISE</c>: The source code is in a GitHub Enterprise Server repository.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GITLAB</c>: The source code is in a GitLab repository.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GITLAB_SELF_MANAGED</c>: The source code is in a self-managed GitLab repository.
         /// </para>
         ///  </li> <li> 
         /// <para>

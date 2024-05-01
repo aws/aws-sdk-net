@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
@@ -33,7 +34,31 @@ namespace Amazon.CleanRoomsML.Model
     /// </summary>
     public partial class AudienceQualityMetrics
     {
+        private double? _recallMetric;
         private List<RelevanceMetric> _relevanceMetrics = AWSConfigs.InitializeCollections ? new List<RelevanceMetric>() : null;
+
+        /// <summary>
+        /// Gets and sets the property RecallMetric. 
+        /// <para>
+        /// The recall score of the generated audience. Recall is the percentage of the most similar
+        /// users (by default, the most similar 20%) from a sample of the training data that are
+        /// included in the seed audience by the audience generation job. Values range from 0-1,
+        /// larger values indicate a better audience. A recall value approximately equal to the
+        /// maximum bin size indicates that the audience model is equivalent to random selection.
+        /// 
+        /// </para>
+        /// </summary>
+        public double RecallMetric
+        {
+            get { return this._recallMetric.GetValueOrDefault(); }
+            set { this._recallMetric = value; }
+        }
+
+        // Check to see if RecallMetric property is set
+        internal bool IsSetRecallMetric()
+        {
+            return this._recallMetric.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RelevanceMetrics. 

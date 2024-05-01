@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,10 +76,10 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetStartedAfter())
-                request.Parameters.Add("startedAfter", StringUtils.FromDateTimeToISO8601(publicRequest.StartedAfter));
+                request.Parameters.Add("startedAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartedAfter));
             
             if (publicRequest.IsSetStartedBefore())
-                request.Parameters.Add("startedBefore", StringUtils.FromDateTimeToISO8601(publicRequest.StartedBefore));
+                request.Parameters.Add("startedBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartedBefore));
             
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));

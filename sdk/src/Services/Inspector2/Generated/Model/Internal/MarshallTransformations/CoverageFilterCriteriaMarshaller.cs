@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CoverageFilterCriteria requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("accountId");
@@ -215,6 +218,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
                     var marshaller = CoverageStringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceTypeListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetScanMode())
+            {
+                context.Writer.WritePropertyName("scanMode");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectScanModeListValue in requestObject.ScanMode)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CoverageStringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectScanModeListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

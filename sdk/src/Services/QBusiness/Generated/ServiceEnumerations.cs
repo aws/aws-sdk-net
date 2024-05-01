@@ -83,6 +83,52 @@ namespace Amazon.QBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type APISchemaType.
+    /// </summary>
+    public class APISchemaType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OPEN_API_V3 for APISchemaType
+        /// </summary>
+        public static readonly APISchemaType OPEN_API_V3 = new APISchemaType("OPEN_API_V3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public APISchemaType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static APISchemaType FindValue(string value)
+        {
+            return FindValue<APISchemaType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator APISchemaType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ApplicationStatus.
     /// </summary>
     public class ApplicationStatus : ConstantClass
@@ -349,6 +395,60 @@ namespace Amazon.QBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type ChatMode.
+    /// </summary>
+    public class ChatMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATOR_MODE for ChatMode
+        /// </summary>
+        public static readonly ChatMode CREATOR_MODE = new ChatMode("CREATOR_MODE");
+        /// <summary>
+        /// Constant PLUGIN_MODE for ChatMode
+        /// </summary>
+        public static readonly ChatMode PLUGIN_MODE = new ChatMode("PLUGIN_MODE");
+        /// <summary>
+        /// Constant RETRIEVAL_MODE for ChatMode
+        /// </summary>
+        public static readonly ChatMode RETRIEVAL_MODE = new ChatMode("RETRIEVAL_MODE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChatMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChatMode FindValue(string value)
+        {
+            return FindValue<ChatMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChatMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContentType.
     /// </summary>
     public class ContentType : ConstantClass
@@ -432,6 +532,56 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CreatorModeControl.
+    /// </summary>
+    public class CreatorModeControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CreatorModeControl
+        /// </summary>
+        public static readonly CreatorModeControl DISABLED = new CreatorModeControl("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CreatorModeControl
+        /// </summary>
+        public static readonly CreatorModeControl ENABLED = new CreatorModeControl("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CreatorModeControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CreatorModeControl FindValue(string value)
+        {
+            return FindValue<CreatorModeControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CreatorModeControl(string value)
         {
             return FindValue(value);
         }
@@ -1025,6 +1175,56 @@ namespace Amazon.QBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type IndexType.
+    /// </summary>
+    public class IndexType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENTERPRISE for IndexType
+        /// </summary>
+        public static readonly IndexType ENTERPRISE = new IndexType("ENTERPRISE");
+        /// <summary>
+        /// Constant STARTER for IndexType
+        /// </summary>
+        public static readonly IndexType STARTER = new IndexType("STARTER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IndexType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IndexType FindValue(string value)
+        {
+            return FindValue<IndexType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IndexType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MemberRelation.
     /// </summary>
     public class MemberRelation : ConstantClass
@@ -1365,6 +1565,76 @@ namespace Amazon.QBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type PluginBuildStatus.
+    /// </summary>
+    public class PluginBuildStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for PluginBuildStatus
+        /// </summary>
+        public static readonly PluginBuildStatus CREATE_FAILED = new PluginBuildStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for PluginBuildStatus
+        /// </summary>
+        public static readonly PluginBuildStatus CREATE_IN_PROGRESS = new PluginBuildStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_FAILED for PluginBuildStatus
+        /// </summary>
+        public static readonly PluginBuildStatus DELETE_FAILED = new PluginBuildStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for PluginBuildStatus
+        /// </summary>
+        public static readonly PluginBuildStatus DELETE_IN_PROGRESS = new PluginBuildStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant READY for PluginBuildStatus
+        /// </summary>
+        public static readonly PluginBuildStatus READY = new PluginBuildStatus("READY");
+        /// <summary>
+        /// Constant UPDATE_FAILED for PluginBuildStatus
+        /// </summary>
+        public static readonly PluginBuildStatus UPDATE_FAILED = new PluginBuildStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for PluginBuildStatus
+        /// </summary>
+        public static readonly PluginBuildStatus UPDATE_IN_PROGRESS = new PluginBuildStatus("UPDATE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PluginBuildStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PluginBuildStatus FindValue(string value)
+        {
+            return FindValue<PluginBuildStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PluginBuildStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PluginState.
     /// </summary>
     public class PluginState : ConstantClass
@@ -1420,6 +1690,10 @@ namespace Amazon.QBusiness
     public class PluginType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CUSTOM for PluginType
+        /// </summary>
+        public static readonly PluginType CUSTOM = new PluginType("CUSTOM");
         /// <summary>
         /// Constant JIRA for PluginType
         /// </summary>

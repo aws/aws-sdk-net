@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
@@ -35,9 +36,33 @@ namespace Amazon.InternetMonitor.Model
     /// </summary>
     public partial class ListMonitorsRequest : AmazonInternetMonitorRequest
     {
+        private bool? _includeLinkedAccounts;
         private int? _maxResults;
         private string _monitorStatus;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property IncludeLinkedAccounts. 
+        /// <para>
+        /// A boolean option that you can set to <c>TRUE</c> to include monitors for linked accounts
+        /// in a list of monitors, when you've set up cross-account sharing in Amazon CloudWatch
+        /// Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability
+        /// Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+        /// Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor
+        /// User Guide.
+        /// </para>
+        /// </summary>
+        public bool IncludeLinkedAccounts
+        {
+            get { return this._includeLinkedAccounts.GetValueOrDefault(); }
+            set { this._includeLinkedAccounts = value; }
+        }
+
+        // Check to see if IncludeLinkedAccounts property is set
+        internal bool IsSetIncludeLinkedAccounts()
+        {
+            return this._includeLinkedAccounts.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

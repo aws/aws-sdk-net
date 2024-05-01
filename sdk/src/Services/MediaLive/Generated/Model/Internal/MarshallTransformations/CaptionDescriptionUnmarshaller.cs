@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Accessibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("captionDashRoles", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CaptionDashRoles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("captionSelectorName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -79,6 +86,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = CaptionDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.DestinationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dvbDashAccessibility", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DvbDashAccessibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("languageCode", targetDepth))

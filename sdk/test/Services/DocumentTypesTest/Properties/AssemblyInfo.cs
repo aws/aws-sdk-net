@@ -44,8 +44,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("3.3")]
 [assembly: AssemblyFileVersion("3.3")]
 
-[assembly: System.CLSCompliant(true)]
-
 #if BCL
 [assembly: System.Security.AllowPartiallyTrustedCallers]
 #endif

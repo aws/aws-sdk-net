@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PlayerLatency requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLatencyInMilliseconds())
             {
                 context.Writer.WritePropertyName("LatencyInMilliseconds");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.LatencyInMilliseconds.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.LatencyInMilliseconds))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.LatencyInMilliseconds));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LatencyInMilliseconds);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetPlayerId())

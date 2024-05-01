@@ -31,6 +31,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class GetObjectMetadataResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             GetObjectMetadataResponse response = new GetObjectMetadataResponse();
@@ -82,7 +87,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (responseData.IsHeaderPresent("Content-Type"))
                 response.Headers.ContentType = S3Transforms.ToString(responseData.GetHeaderValue("Content-Type"));
             if (responseData.IsHeaderPresent("Expires"))
-                response.RawExpires = S3Transforms.ToString(responseData.GetHeaderValue("Expires"));
+                response.ExpiresString = S3Transforms.ToString(responseData.GetHeaderValue("Expires"));
             if (responseData.IsHeaderPresent("x-amz-website-redirect-location"))
                 response.WebsiteRedirectLocation = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-website-redirect-location"));
             if (responseData.IsHeaderPresent("x-amz-server-side-encryption"))
@@ -132,6 +137,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetObjectMetadataResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GetObjectMetadataResponseUnmarshaller Instance
         {
             get

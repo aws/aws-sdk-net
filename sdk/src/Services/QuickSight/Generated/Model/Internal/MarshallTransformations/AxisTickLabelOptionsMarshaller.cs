@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AxisTickLabelOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLabelOptions())
             {
                 context.Writer.WritePropertyName("LabelOptions");
@@ -59,7 +62,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRotationAngle())
             {
                 context.Writer.WritePropertyName("RotationAngle");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.RotationAngle.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.RotationAngle))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.RotationAngle));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.RotationAngle);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

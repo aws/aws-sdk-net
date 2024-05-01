@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,40 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContinuousHyperParameterRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("maxValue");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MaxValue.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxValue);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("minValue");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MinValue.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MinValue);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetName())

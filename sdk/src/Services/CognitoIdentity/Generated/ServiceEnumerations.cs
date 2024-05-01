@@ -137,7 +137,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Constant Equals for MappingRuleMatchType
         /// </summary>
-        public static readonly MappingRuleMatchType Equals = new MappingRuleMatchType("Equals");
+        public new static readonly MappingRuleMatchType Equals = new MappingRuleMatchType("Equals");
         /// <summary>
         /// Constant NotEqual for MappingRuleMatchType
         /// </summary>

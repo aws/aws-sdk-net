@@ -22,8 +22,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// DeleteBucketReplicationResponse unmarshaller
+    /// </summary>
     public class DeleteBucketReplicationResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DeleteBucketReplicationResponse response = new DeleteBucketReplicationResponse();
@@ -34,6 +42,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static DeleteBucketReplicationResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static DeleteBucketReplicationResponseUnmarshaller Instance
         {
             get

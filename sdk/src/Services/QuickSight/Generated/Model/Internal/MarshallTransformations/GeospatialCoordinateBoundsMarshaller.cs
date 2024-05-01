@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,28 +46,74 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GeospatialCoordinateBounds requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEast())
             {
                 context.Writer.WritePropertyName("East");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.East.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.East))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.East));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.East);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetNorth())
             {
                 context.Writer.WritePropertyName("North");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.North.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.North))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.North));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.North);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetSouth())
             {
                 context.Writer.WritePropertyName("South");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.South.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.South))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.South));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.South);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetWest())
             {
                 context.Writer.WritePropertyName("West");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.West.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.West))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.West));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.West);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

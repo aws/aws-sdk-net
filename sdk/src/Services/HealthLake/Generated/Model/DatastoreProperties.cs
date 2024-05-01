@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
@@ -41,6 +42,7 @@ namespace Amazon.HealthLake.Model
         private string _datastoreName;
         private DatastoreStatus _datastoreStatus;
         private FHIRVersion _datastoreTypeVersion;
+        private ErrorCause _errorCause;
         private IdentityProviderConfiguration _identityProviderConfiguration;
         private PreloadDataConfig _preloadDataConfig;
         private SseConfiguration _sseConfiguration;
@@ -176,6 +178,24 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetDatastoreTypeVersion()
         {
             return this._datastoreTypeVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorCause. 
+        /// <para>
+        /// The error cause for the current data store operation.
+        /// </para>
+        /// </summary>
+        public ErrorCause ErrorCause
+        {
+            get { return this._errorCause; }
+            set { this._errorCause = value; }
+        }
+
+        // Check to see if ErrorCause property is set
+        internal bool IsSetErrorCause()
+        {
+            return this._errorCause != null;
         }
 
         /// <summary>

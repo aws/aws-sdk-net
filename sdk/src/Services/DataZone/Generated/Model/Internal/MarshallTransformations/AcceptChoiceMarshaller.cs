@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,14 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AcceptChoice requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetEditedValue())
+            {
+                context.Writer.WritePropertyName("editedValue");
+                context.Writer.Write(requestObject.EditedValue);
+            }
+
             if(requestObject.IsSetPredictionChoice())
             {
                 context.Writer.WritePropertyName("predictionChoice");

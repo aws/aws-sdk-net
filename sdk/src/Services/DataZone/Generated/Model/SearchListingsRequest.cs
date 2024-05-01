@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchListings operation.
-    /// Searches listings in Amazon DataZone.
+    /// Searches listings (records of an asset at a given time) in Amazon DataZone.
     /// </summary>
     public partial class SearchListingsRequest : AmazonDataZoneRequest
     {
@@ -144,7 +145,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SearchIn.
+        /// Gets and sets the property SearchIn. 
+        /// <para>
+        /// The details of the search.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<SearchInItem> SearchIn

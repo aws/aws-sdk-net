@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,40 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NumberFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLowerInclusive())
             {
                 context.Writer.WritePropertyName("lowerInclusive");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.LowerInclusive.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LowerInclusive))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LowerInclusive));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LowerInclusive);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetUpperInclusive())
             {
                 context.Writer.WritePropertyName("upperInclusive");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.UpperInclusive.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.UpperInclusive))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.UpperInclusive));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.UpperInclusive);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

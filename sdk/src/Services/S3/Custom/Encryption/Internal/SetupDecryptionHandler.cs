@@ -15,6 +15,7 @@ using Amazon.Util;
 using Amazon.Runtime.SharedInterfaces;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Encryption.Internal
 {
     /// <summary>
@@ -23,6 +24,7 @@ namespace Amazon.S3.Encryption.Internal
     public class SetupDecryptionHandler : PipelineHandler
     {
         private const string KMSKeyIDMetadataMessage = "Unable to determine the KMS key ID from the object metadata.  ";
+
 
         /// <summary>
         /// Construct instance of SetupDecryptionHandler.

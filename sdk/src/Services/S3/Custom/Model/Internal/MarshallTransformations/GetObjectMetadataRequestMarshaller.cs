@@ -93,7 +93,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static GetObjectMetadataRequestMarshaller _instance;
 
-	    public static GetObjectMetadataRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static GetObjectMetadataRequestMarshaller Instance
 	    {
 	        get
 	        {

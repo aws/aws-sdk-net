@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAgentActionGroup operation.
-    /// Updates an existing Action Group for Amazon Bedrock Agent
+    /// Updates the configuration for an action group for an agent.
     /// </summary>
     public partial class UpdateAgentActionGroupRequest : AmazonBedrockAgentRequest
     {
@@ -42,10 +43,15 @@ namespace Amazon.BedrockAgent.Model
         private string _agentVersion;
         private APISchema _apiSchema;
         private string _description;
+        private FunctionSchema _functionSchema;
         private ActionGroupSignature _parentActionGroupSignature;
 
         /// <summary>
-        /// Gets and sets the property ActionGroupExecutor.
+        /// Gets and sets the property ActionGroupExecutor. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Lambda function containing the business logic
+        /// that is carried out upon invoking the action.
+        /// </para>
         /// </summary>
         public ActionGroupExecutor ActionGroupExecutor
         {
@@ -62,7 +68,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ActionGroupId. 
         /// <para>
-        /// Id generated at the server side when an Action Group is created under Agent
+        /// The unique identifier of the action group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +85,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActionGroupName.
+        /// Gets and sets the property ActionGroupName. 
+        /// <para>
+        /// Specifies a new name for the action group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ActionGroupName
@@ -95,7 +104,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActionGroupState.
+        /// Gets and sets the property ActionGroupState. 
+        /// <para>
+        /// Specifies whether the action group is available for the agent to invoke or not when
+        /// sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
+        /// request.
+        /// </para>
         /// </summary>
         public ActionGroupState ActionGroupState
         {
@@ -112,7 +126,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent for which to update the action group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -131,7 +145,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// Draft Version of the Agent.
+        /// The unique identifier of the agent version for which to update the action group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=5)]
@@ -148,7 +162,13 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApiSchema.
+        /// Gets and sets the property ApiSchema. 
+        /// <para>
+        /// Contains either details about the S3 object containing the OpenAPI schema for the
+        /// action group or the JSON or YAML-formatted payload defining the schema. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action
+        /// group OpenAPI schemas</a>.
+        /// </para>
         /// </summary>
         public APISchema ApiSchema
         {
@@ -163,7 +183,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Specifies a new name for the action group.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -179,7 +202,38 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParentActionGroupSignature.
+        /// Gets and sets the property FunctionSchema. 
+        /// <para>
+        /// Contains details about the function schema for the action group or the JSON or YAML-formatted
+        /// payload defining the schema.
+        /// </para>
+        /// </summary>
+        public FunctionSchema FunctionSchema
+        {
+            get { return this._functionSchema; }
+            set { this._functionSchema = value; }
+        }
+
+        // Check to see if FunctionSchema property is set
+        internal bool IsSetFunctionSchema()
+        {
+            return this._functionSchema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentActionGroupSignature. 
+        /// <para>
+        /// To allow your agent to request the user for additional information when trying to
+        /// complete a task, set this field to <c>AMAZON.UserInput</c>. You must leave the <c>description</c>,
+        /// <c>apiSchema</c>, and <c>actionGroupExecutor</c> fields blank for this action group.
+        /// </para>
+        ///  
+        /// <para>
+        /// During orchestration, if your agent determines that it needs to invoke an API in an
+        /// action group, but doesn't have enough information to complete the API request, it
+        /// will invoke this action group instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
+        /// reprompting the user for more information.
+        /// </para>
         /// </summary>
         public ActionGroupSignature ParentActionGroupSignature
         {

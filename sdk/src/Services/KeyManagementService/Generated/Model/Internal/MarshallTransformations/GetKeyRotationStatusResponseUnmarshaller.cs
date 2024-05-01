@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -51,10 +52,34 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("KeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyRotationEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.KeyRotationEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextRotationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.NextRotationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OnDemandRotationStartDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.OnDemandRotationStartDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RotationPeriodInDays", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.RotationPeriodInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

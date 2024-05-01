@@ -55,7 +55,10 @@ namespace Amazon.S3.Model
             set { this.inventoryConfigurationList = value; }
         }
 
-        // Check to see if InventoryConfigurationList property is set
+        /// <summary>
+        /// Check to see if InventoryConfigurationList property is set
+        /// </summary>
+        /// <returns></returns>
         public bool IsSetInventoryConfigurationList()
         {
             return this.inventoryConfigurationList != null && (this.inventoryConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections);

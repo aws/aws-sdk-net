@@ -133,6 +133,106 @@ namespace Amazon.InternetMonitor
 
 
     /// <summary>
+    /// Constants used for properties of type InternetEventStatus.
+    /// </summary>
+    public class InternetEventStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for InternetEventStatus
+        /// </summary>
+        public static readonly InternetEventStatus ACTIVE = new InternetEventStatus("ACTIVE");
+        /// <summary>
+        /// Constant RESOLVED for InternetEventStatus
+        /// </summary>
+        public static readonly InternetEventStatus RESOLVED = new InternetEventStatus("RESOLVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InternetEventStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InternetEventStatus FindValue(string value)
+        {
+            return FindValue<InternetEventStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InternetEventStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InternetEventType.
+    /// </summary>
+    public class InternetEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABILITY for InternetEventType
+        /// </summary>
+        public static readonly InternetEventType AVAILABILITY = new InternetEventType("AVAILABILITY");
+        /// <summary>
+        /// Constant PERFORMANCE for InternetEventType
+        /// </summary>
+        public static readonly InternetEventType PERFORMANCE = new InternetEventType("PERFORMANCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InternetEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InternetEventType FindValue(string value)
+        {
+            return FindValue<InternetEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InternetEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LocalHealthEventsConfigStatus.
     /// </summary>
     public class LocalHealthEventsConfigStatus : ConstantClass

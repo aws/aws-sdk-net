@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
@@ -90,6 +91,9 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property ProvisionedMemory. 
         /// <para>
         /// The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.
+        /// </para>
+        ///  
+        /// <para>
         /// Min = 128
         /// </para>
         /// </summary>
@@ -130,6 +134,12 @@ namespace Amazon.NeptuneGraph.Model
         /// <para>
         /// The number of replicas in other AZs. Min =0, Max = 2, Default =1
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  Additional charges equivalent to the m-NCUs selected for the graph apply for each
+        /// replica. 
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
         public int? ReplicaCount

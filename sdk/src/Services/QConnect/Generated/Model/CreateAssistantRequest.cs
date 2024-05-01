@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QConnect.Model
 {
     /// <summary>
@@ -110,14 +111,15 @@ namespace Amazon.QConnect.Model
         /// <para>
         /// The customer managed key must have a policy that allows <c>kms:CreateGrant</c>, <c>
         /// kms:DescribeKey</c>, <c>kms:Decrypt</c>, and <c>kms:GenerateDataKey*</c> permissions
-        /// to the IAM identity using the key to invoke Amazon Q. To use Amazon Q with chat, the
-        /// key policy must also allow <c>kms:Decrypt</c>, <c>kms:GenerateDataKey*</c>, and <c>kms:DescribeKey</c>
-        /// permissions to the <c>connect.amazonaws.com</c> service principal. 
+        /// to the IAM identity using the key to invoke Amazon Q in Connect. To use Amazon Q in
+        /// Connect with chat, the key policy must also allow <c>kms:Decrypt</c>, <c>kms:GenerateDataKey*</c>,
+        /// and <c>kms:DescribeKey</c> permissions to the <c>connect.amazonaws.com</c> service
+        /// principal. 
         /// </para>
         ///  
         /// <para>
-        /// For more information about setting up a customer managed key for Amazon Q, see <a
-        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
+        /// For more information about setting up a customer managed key for Amazon Q in Connect,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable
         /// Amazon Q in Connect for your instance</a>.
         /// </para>
         /// </summary>

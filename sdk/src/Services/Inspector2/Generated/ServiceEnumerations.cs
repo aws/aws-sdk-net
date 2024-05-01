@@ -1997,6 +1997,106 @@ namespace Amazon.Inspector2
 
 
     /// <summary>
+    /// Constants used for properties of type Ec2ScanMode.
+    /// </summary>
+    public class Ec2ScanMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC2_HYBRID for Ec2ScanMode
+        /// </summary>
+        public static readonly Ec2ScanMode EC2_HYBRID = new Ec2ScanMode("EC2_HYBRID");
+        /// <summary>
+        /// Constant EC2_SSM_AGENT_BASED for Ec2ScanMode
+        /// </summary>
+        public static readonly Ec2ScanMode EC2_SSM_AGENT_BASED = new Ec2ScanMode("EC2_SSM_AGENT_BASED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ec2ScanMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ec2ScanMode FindValue(string value)
+        {
+            return FindValue<Ec2ScanMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ec2ScanMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Ec2ScanModeStatus.
+    /// </summary>
+    public class Ec2ScanModeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PENDING for Ec2ScanModeStatus
+        /// </summary>
+        public static readonly Ec2ScanModeStatus PENDING = new Ec2ScanModeStatus("PENDING");
+        /// <summary>
+        /// Constant SUCCESS for Ec2ScanModeStatus
+        /// </summary>
+        public static readonly Ec2ScanModeStatus SUCCESS = new Ec2ScanModeStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ec2ScanModeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ec2ScanModeStatus FindValue(string value)
+        {
+            return FindValue<Ec2ScanModeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ec2ScanModeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EcrPullDateRescanDuration.
     /// </summary>
     public class EcrPullDateRescanDuration : ConstantClass
@@ -4242,6 +4342,56 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SbomReportFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScanMode.
+    /// </summary>
+    public class ScanMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC2_AGENTLESS for ScanMode
+        /// </summary>
+        public static readonly ScanMode EC2_AGENTLESS = new ScanMode("EC2_AGENTLESS");
+        /// <summary>
+        /// Constant EC2_SSM_AGENT_BASED for ScanMode
+        /// </summary>
+        public static readonly ScanMode EC2_SSM_AGENT_BASED = new ScanMode("EC2_SSM_AGENT_BASED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScanMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanMode FindValue(string value)
+        {
+            return FindValue<ScanMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanMode(string value)
         {
             return FindValue(value);
         }

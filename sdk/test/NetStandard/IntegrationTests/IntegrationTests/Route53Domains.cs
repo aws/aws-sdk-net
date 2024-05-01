@@ -67,8 +67,7 @@ namespace Amazon.DNXCore.IntegrationTests
             await client.DeleteTagsForDomainAsync(domain, new List<string> { "tag1" });
 
             tags = (await client.ListTagsForDomainAsync(domain)).TagList;
-            count = tags.Count;
-            Assert.Equal(1, count);
+            Assert.Single(tags);
 
             // Restore previous tags
             if (existingTags.Count > 0)

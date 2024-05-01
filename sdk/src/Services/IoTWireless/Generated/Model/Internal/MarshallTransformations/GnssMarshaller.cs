@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,23 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Gnss requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAssistAltitude())
             {
                 context.Writer.WritePropertyName("AssistAltitude");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.AssistAltitude.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.AssistAltitude))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.AssistAltitude));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.AssistAltitude);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetAssistPosition())
@@ -65,13 +79,35 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptureTime())
             {
                 context.Writer.WritePropertyName("CaptureTime");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.CaptureTime.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTime))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTime));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CaptureTime);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetCaptureTimeAccuracy())
             {
                 context.Writer.WritePropertyName("CaptureTimeAccuracy");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.CaptureTimeAccuracy.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTimeAccuracy))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTimeAccuracy));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CaptureTimeAccuracy);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetPayload())

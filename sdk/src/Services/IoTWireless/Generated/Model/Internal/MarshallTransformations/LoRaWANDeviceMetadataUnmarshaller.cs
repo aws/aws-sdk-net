@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -91,6 +92,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<LoRaWANGatewayMetadata, LoRaWANGatewayMetadataUnmarshaller>(LoRaWANGatewayMetadataUnmarshaller.Instance);
                     unmarshalledObject.Gateways = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PublicGateways", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LoRaWANPublicGatewayMetadata, LoRaWANPublicGatewayMetadataUnmarshaller>(LoRaWANPublicGatewayMetadataUnmarshaller.Instance);
+                    unmarshalledObject.PublicGateways = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Timestamp", targetDepth))

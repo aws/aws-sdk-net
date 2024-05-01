@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// A data source in an Amazon Q application.
+    /// A data source in an Amazon Q Business application.
     /// </summary>
     public partial class DataSource
     {
@@ -43,7 +44,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q data source was created.
+        /// The Unix timestamp when the Amazon Q Business data source was created.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -61,7 +62,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The identifier of the Amazon Q data source.
+        /// The identifier of the Amazon Q Business data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -80,7 +81,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the Amazon Q data source.
+        /// The name of the Amazon Q Business data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -99,7 +100,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Amazon Q data source.
+        /// The status of the Amazon Q Business data source.
         /// </para>
         /// </summary>
         public DataSourceStatus Status
@@ -117,7 +118,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the Amazon Q data source.
+        /// The type of the Amazon Q Business data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -136,7 +137,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q data source was last updated. 
+        /// The Unix timestamp when the Amazon Q Business data source was last updated. 
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt

@@ -32,7 +32,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateAgentRequest.AgentName</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9\s+=._:@/-]+$</pattern>
   </property-value-rule>
@@ -320,7 +320,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateTaskRequest.Name</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9\s+=._:@/-]+$</pattern>
   </property-value-rule>
@@ -361,7 +361,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeAgentResponse.Name</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9\s+=._:@/-]+$</pattern>
   </property-value-rule>
@@ -730,7 +730,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeTaskResponse.Name</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9\s+=._:@/-]+$</pattern>
   </property-value-rule>
@@ -935,7 +935,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateAgentRequest.Name</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9\s+=._:@/-]+$</pattern>
   </property-value-rule>
@@ -1094,7 +1094,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateTaskRequest.Name</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9\s+=._:@/-]+$</pattern>
   </property-value-rule>
@@ -1115,7 +1115,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.AgentListEntry.Name</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9\s+=._:@/-]+$</pattern>
   </property-value-rule>
@@ -1508,7 +1508,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.TagListEntry.Value</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9\s+=._:@/-]+$</pattern>
   </property-value-rule>
@@ -1535,7 +1535,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.TaskListEntry.Name</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9\s+=._:@/-]+$</pattern>
   </property-value-rule>
@@ -1547,6 +1547,11 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.TaskSchedule.ScheduleExpression</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.TaskScheduleDetails.DisabledReason</property>
+    <max>8192</max>
+    <pattern>^[\w\s.,'?!:;\/=|&lt;&gt;()-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.Throughput.Other</property>

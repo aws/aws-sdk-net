@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -40,15 +41,6 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// The version of the DataSync agent.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// On December 7, 2023, we discontinued version 1 DataSync agents. Check the DataSync
-        /// console to see if you have affected agents. If you do, <a href="https://docs.aws.amazon.com/datasync/latest/userguide/replacing-agent.html">replace</a>
-        /// those agents or <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deleting-agent.html">delete</a>
-        /// them if they aren't in use. If you need more help, contact <a href="https://aws.amazon.com/contact-us/">Amazon
-        /// Web Services Support</a>.
-        /// </para>
-        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string Version

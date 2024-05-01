@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConversation operation.
-    /// Deletes an Amazon Q web experience conversation.
+    /// Deletes an Amazon Q Business web experience conversation.
     /// </summary>
     public partial class DeleteConversationRequest : AmazonQBusinessRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application associated with the conversation.
+        /// The identifier of the Amazon Q Business application associated with the conversation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -60,7 +61,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ConversationId. 
         /// <para>
-        /// The identifier of the Amazon Q web experience conversation being deleted.
+        /// The identifier of the Amazon Q Business web experience conversation being deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -82,7 +83,7 @@ namespace Amazon.QBusiness.Model
         /// The identifier of the user who is deleting the conversation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string UserId
         {
             get { return this._userId; }

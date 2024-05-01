@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaStoreData.Model
 {
     /// <summary>
@@ -34,7 +35,6 @@ namespace Amazon.MediaStoreData.Model
     public partial class DescribeObjectResponse : AmazonWebServiceResponse
     {
         private string _cacheControl;
-        private long? _contentLength;
         private string _contentType;
         private string _eTag;
         private DateTime? _lastModified;
@@ -63,6 +63,7 @@ namespace Amazon.MediaStoreData.Model
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets and sets the property ContentLength. 
         /// <para>
         /// The length of the object in bytes.
@@ -82,6 +83,8 @@ namespace Amazon.MediaStoreData.Model
         }
 
         /// <summary>
+=======
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
         /// Gets and sets the property ContentType. 
         /// <para>
         /// The content type of the object.

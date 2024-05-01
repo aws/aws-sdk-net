@@ -52,7 +52,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static GetBucketVersioningRequestMarshaller _instance;
 
-	    public static GetBucketVersioningRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static GetBucketVersioningRequestMarshaller Instance
 	    {
 	        get
 	        {

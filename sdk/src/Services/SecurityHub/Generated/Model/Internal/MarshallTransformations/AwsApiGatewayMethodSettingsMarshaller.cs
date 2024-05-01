@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsApiGatewayMethodSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCacheDataEncrypted())
             {
                 context.Writer.WritePropertyName("CacheDataEncrypted");
@@ -108,7 +111,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThrottlingRateLimit())
             {
                 context.Writer.WritePropertyName("ThrottlingRateLimit");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.ThrottlingRateLimit.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThrottlingRateLimit))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThrottlingRateLimit));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThrottlingRateLimit);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetUnauthorizedCacheControlHeaderStrategy())

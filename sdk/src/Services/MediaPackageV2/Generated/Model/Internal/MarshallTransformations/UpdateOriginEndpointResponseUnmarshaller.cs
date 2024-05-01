@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -79,6 +80,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DashManifests", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<GetDashManifestConfiguration, GetDashManifestConfigurationUnmarshaller>(GetDashManifestConfigurationUnmarshaller.Instance);
+                    response.DashManifests = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))

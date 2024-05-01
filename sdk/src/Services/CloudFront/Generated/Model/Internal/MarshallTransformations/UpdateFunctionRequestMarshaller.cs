@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,33 +70,34 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("UpdateFunctionRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
+                xmlWriter.WriteStartElement("UpdateFunctionRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 if(publicRequest.IsSetFunctionCode())
+<<<<<<< HEAD
                     xmlWriter.WriteElementString("FunctionCode", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromMemoryStream(publicRequest.FunctionCode));
+=======
+                    xmlWriter.WriteElementString("FunctionCode", StringUtils.FromMemoryStream(publicRequest.FunctionCode));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
-                
-                if (publicRequest.FunctionConfig != null) 
+                if (publicRequest.FunctionConfig != null)
                 {
-                    xmlWriter.WriteStartElement("FunctionConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                    xmlWriter.WriteStartElement("FunctionConfig");
                     if(publicRequest.FunctionConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FunctionConfig.Comment));                 
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.FunctionConfig.Comment));                 
 
-                
-                    if (publicRequest.FunctionConfig.KeyValueStoreAssociations != null) 
+                    if (publicRequest.FunctionConfig.KeyValueStoreAssociations != null)
                     {
-                        xmlWriter.WriteStartElement("KeyValueStoreAssociations", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                        xmlWriter.WriteStartElement("KeyValueStoreAssociations");
                         var publicRequestFunctionConfigKeyValueStoreAssociationsItems = publicRequest.FunctionConfig.KeyValueStoreAssociations.Items;
                         if (publicRequestFunctionConfigKeyValueStoreAssociationsItems != null && (publicRequestFunctionConfigKeyValueStoreAssociationsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                        {                        
-                            xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                        {
+                            xmlWriter.WriteStartElement("Items");
                             foreach (var publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue in publicRequestFunctionConfigKeyValueStoreAssociationsItems) 
                             {
-                
-                            if (publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue != null) 
+                            if (publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue != null)
                             {
-                                xmlWriter.WriteStartElement("KeyValueStoreAssociation", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                                xmlWriter.WriteStartElement("KeyValueStoreAssociation");
                                 if(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.IsSetKeyValueStoreARN())
-                                    xmlWriter.WriteElementString("KeyValueStoreARN", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));                 
+                                    xmlWriter.WriteElementString("KeyValueStoreARN", StringUtils.FromString(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));                 
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -103,12 +105,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.FunctionConfig.KeyValueStoreAssociations.IsSetQuantity())
+<<<<<<< HEAD
                             xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.FunctionConfig.KeyValueStoreAssociations.Quantity.Value));                 
+=======
+                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.FunctionConfig.KeyValueStoreAssociations.Quantity));                 
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.FunctionConfig.IsSetRuntime())
-                        xmlWriter.WriteElementString("Runtime", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FunctionConfig.Runtime));                 
+                        xmlWriter.WriteElementString("Runtime", StringUtils.FromString(publicRequest.FunctionConfig.Runtime));                 
 
                     xmlWriter.WriteEndElement();
                 }

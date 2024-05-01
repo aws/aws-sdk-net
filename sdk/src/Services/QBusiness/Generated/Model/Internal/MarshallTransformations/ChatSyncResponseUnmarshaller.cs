@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -55,6 +56,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ActionReviewUnmarshaller.Instance;
                     response.ActionReview = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("authChallengeRequest", targetDepth))
+                {
+                    var unmarshaller = AuthChallengeRequestUnmarshaller.Instance;
+                    response.AuthChallengeRequest = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("conversationId", targetDepth))

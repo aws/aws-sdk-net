@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -145,6 +146,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("validations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AnalysisTemplateValidationStatusDetail, AnalysisTemplateValidationStatusDetailUnmarshaller>(AnalysisTemplateValidationStatusDetailUnmarshaller.Instance);
+                    unmarshalledObject.Validations = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

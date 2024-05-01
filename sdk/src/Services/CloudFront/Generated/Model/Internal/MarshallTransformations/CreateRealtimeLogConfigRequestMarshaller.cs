@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -61,31 +62,29 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateRealtimeLogConfigRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
+                xmlWriter.WriteStartElement("CreateRealtimeLogConfigRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 var publicRequestEndPoints = publicRequest.EndPoints;
                 if (publicRequestEndPoints != null && (publicRequestEndPoints.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                {                        
-                    xmlWriter.WriteStartElement("EndPoints", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                {
+                    xmlWriter.WriteStartElement("EndPoints");
                     foreach (var publicRequestEndPointsValue in publicRequestEndPoints) 
                     {
-                
-                    if (publicRequestEndPointsValue != null) 
+                    if (publicRequestEndPointsValue != null)
                     {
-                        xmlWriter.WriteStartElement("member", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
-                
-                        if (publicRequestEndPointsValue.KinesisStreamConfig != null) 
+                        xmlWriter.WriteStartElement("member");
+                        if (publicRequestEndPointsValue.KinesisStreamConfig != null)
                         {
-                            xmlWriter.WriteStartElement("KinesisStreamConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                            xmlWriter.WriteStartElement("KinesisStreamConfig");
                             if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetRoleARN())
-                                xmlWriter.WriteElementString("RoleARN", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.RoleARN));                 
+                                xmlWriter.WriteElementString("RoleARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.RoleARN));                 
 
                             if(publicRequestEndPointsValue.KinesisStreamConfig.IsSetStreamARN())
-                                xmlWriter.WriteElementString("StreamARN", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.StreamARN));                 
+                                xmlWriter.WriteElementString("StreamARN", StringUtils.FromString(publicRequestEndPointsValue.KinesisStreamConfig.StreamARN));                 
 
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequestEndPointsValue.IsSetStreamType())
-                            xmlWriter.WriteElementString("StreamType", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestEndPointsValue.StreamType));                 
+                            xmlWriter.WriteElementString("StreamType", StringUtils.FromString(publicRequestEndPointsValue.StreamType));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -94,21 +93,28 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
                 var publicRequestFields = publicRequest.Fields;
                 if (publicRequestFields != null && (publicRequestFields.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                {                        
-                    xmlWriter.WriteStartElement("Fields", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                {
+                    xmlWriter.WriteStartElement("Fields");
                     foreach (var publicRequestFieldsValue in publicRequestFields) 
                     {
-                        xmlWriter.WriteStartElement("Field", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                        xmlWriter.WriteStartElement("Field");
                         xmlWriter.WriteValue(publicRequestFieldsValue);
                         xmlWriter.WriteEndElement();
                     }            
                     xmlWriter.WriteEndElement();            
                 }
                 if(publicRequest.IsSetName())
+<<<<<<< HEAD
                     xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Name));
 
                 if(publicRequest.IsSetSamplingRate())
                     xmlWriter.WriteElementString("SamplingRate", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.SamplingRate.Value));
+=======
+                    xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
+
+                if(publicRequest.IsSetSamplingRate())
+                    xmlWriter.WriteElementString("SamplingRate", StringUtils.FromLong(publicRequest.SamplingRate));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
 
                 xmlWriter.WriteEndElement();

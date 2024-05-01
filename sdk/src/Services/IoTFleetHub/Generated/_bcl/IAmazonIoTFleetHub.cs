@@ -26,19 +26,14 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.IoTFleetHub.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.IoTFleetHub
 {
     /// <summary>
     /// <para>Interface for accessing IoTFleetHub</para>
     ///
-    /// With Fleet Hub for AWS IoT Device Management you can build stand-alone web applications
+    /// With Fleet Hub for IoT Device Management you can build stand-alone web applications
     /// for monitoring the health of your device fleets.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial interface IAmazonIoTFleetHub : IAmazonService, IDisposable
     {
@@ -53,13 +48,17 @@ namespace Amazon.IoTFleetHub
 
 
         /// <summary>
-        /// Creates a Fleet Hub for AWS IoT Device Management web application.
+        /// Creates a Fleet Hub for IoT Device Management web application.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
+        /// When creating a Fleet Hub application, you must create an organization instance of
+        /// IAM Identity Center if you don't already have one. The Fleet Hub application you create
+        /// must also be in the same Amazon Web Services Region of the organization instance of
+        /// IAM Identity Center. For more information see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/get-set-up-for-idc.html">Enabling
+        /// IAM Identity Center</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/organization-instances-identity-center.html">Organization
+        /// instances of IAM Identity Center</a>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// 
@@ -82,13 +81,17 @@ namespace Amazon.IoTFleetHub
 
 
         /// <summary>
-        /// Creates a Fleet Hub for AWS IoT Device Management web application.
+        /// Creates a Fleet Hub for IoT Device Management web application.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
+        /// When creating a Fleet Hub application, you must create an organization instance of
+        /// IAM Identity Center if you don't already have one. The Fleet Hub application you create
+        /// must also be in the same Amazon Web Services Region of the organization instance of
+        /// IAM Identity Center. For more information see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/get-set-up-for-idc.html">Enabling
+        /// IAM Identity Center</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/organization-instances-identity-center.html">Organization
+        /// instances of IAM Identity Center</a>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// <param name="cancellationToken">
@@ -117,13 +120,7 @@ namespace Amazon.IoTFleetHub
 
 
         /// <summary>
-        /// Deletes a Fleet Hub for AWS IoT Device Management web application.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
+        /// Deletes a Fleet Hub for IoT Device Management web application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// 
@@ -146,13 +143,7 @@ namespace Amazon.IoTFleetHub
 
 
         /// <summary>
-        /// Deletes a Fleet Hub for AWS IoT Device Management web application.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
+        /// Deletes a Fleet Hub for IoT Device Management web application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// <param name="cancellationToken">
@@ -181,13 +172,7 @@ namespace Amazon.IoTFleetHub
 
 
         /// <summary>
-        /// Gets information about a Fleet Hub for AWS IoT Device Management web application.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
+        /// Gets information about a Fleet Hub for IoT Device Management web application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApplication service method.</param>
         /// 
@@ -210,13 +195,7 @@ namespace Amazon.IoTFleetHub
 
 
         /// <summary>
-        /// Gets information about a Fleet Hub for AWS IoT Device Management web application.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
+        /// Gets information about a Fleet Hub for IoT Device Management web application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApplication service method.</param>
         /// <param name="cancellationToken">
@@ -245,14 +224,8 @@ namespace Amazon.IoTFleetHub
 
 
         /// <summary>
-        /// Gets a list of Fleet Hub for AWS IoT Device Management web applications for the current
+        /// Gets a list of Fleet Hub for IoT Device Management web applications for the current
         /// account.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// 
@@ -272,14 +245,8 @@ namespace Amazon.IoTFleetHub
 
 
         /// <summary>
-        /// Gets a list of Fleet Hub for AWS IoT Device Management web applications for the current
+        /// Gets a list of Fleet Hub for IoT Device Management web applications for the current
         /// account.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// <param name="cancellationToken">
@@ -306,12 +273,6 @@ namespace Amazon.IoTFleetHub
 
         /// <summary>
         /// Lists the tags for the specified resource.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -332,12 +293,6 @@ namespace Amazon.IoTFleetHub
 
         /// <summary>
         /// Lists the tags for the specified resource.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -365,12 +320,6 @@ namespace Amazon.IoTFleetHub
         /// <summary>
         /// Adds to or modifies the tags of the specified resource. Tags are metadata which can
         /// be used to manage a resource.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -392,12 +341,6 @@ namespace Amazon.IoTFleetHub
         /// <summary>
         /// Adds to or modifies the tags of the specified resource. Tags are metadata which can
         /// be used to manage a resource.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -424,12 +367,6 @@ namespace Amazon.IoTFleetHub
 
         /// <summary>
         /// Removes the specified tags (metadata) from the resource.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -450,12 +387,6 @@ namespace Amazon.IoTFleetHub
 
         /// <summary>
         /// Removes the specified tags (metadata) from the resource.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -481,13 +412,7 @@ namespace Amazon.IoTFleetHub
 
 
         /// <summary>
-        /// Updates information about a Fleet Hub for a AWS IoT Device Management web application.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
+        /// Updates information about a Fleet Hub for IoT Device Management web application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// 
@@ -513,13 +438,7 @@ namespace Amazon.IoTFleetHub
 
 
         /// <summary>
-        /// Updates information about a Fleet Hub for a AWS IoT Device Management web application.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-        /// </para>
-        ///  </note>
+        /// Updates information about a Fleet Hub for IoT Device Management web application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// <param name="cancellationToken">

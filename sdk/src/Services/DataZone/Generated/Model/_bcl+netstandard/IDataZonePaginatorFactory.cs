@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the datazone-2018-05-10.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -71,6 +72,11 @@ namespace Amazon.DataZone.Model
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
 
         /// <summary>
+        /// Paginator for ListMetadataGenerationRuns operation
+        ///</summary>
+        IListMetadataGenerationRunsPaginator ListMetadataGenerationRuns(ListMetadataGenerationRunsRequest request);
+
+        /// <summary>
         /// Paginator for ListNotifications operation
         ///</summary>
         IListNotificationsPaginator ListNotifications(ListNotificationsRequest request);
@@ -104,6 +110,11 @@ namespace Amazon.DataZone.Model
         /// Paginator for ListSubscriptionTargets operation
         ///</summary>
         IListSubscriptionTargetsPaginator ListSubscriptionTargets(ListSubscriptionTargetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTimeSeriesDataPoints operation
+        ///</summary>
+        IListTimeSeriesDataPointsPaginator ListTimeSeriesDataPoints(ListTimeSeriesDataPointsRequest request);
 
         /// <summary>
         /// Paginator for Search operation

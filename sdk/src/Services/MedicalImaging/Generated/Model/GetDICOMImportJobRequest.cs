@@ -26,11 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDICOMImportJob operation.
     /// Get the import job properties to learn more about the job or job progress.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <c>jobStatus</c> refers to the execution of the import job. Therefore, an import
+    /// job can return a <c>jobStatus</c> as <c>COMPLETED</c> even if validation issues are
+    /// discovered during the import process. If a <c>jobStatus</c> returns as <c>COMPLETED</c>,
+    /// we still recommend you review the output manifests written to S3, as they provide
+    /// details on the success or failure of individual P10 object imports.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetDICOMImportJobRequest : AmazonMedicalImagingRequest
     {

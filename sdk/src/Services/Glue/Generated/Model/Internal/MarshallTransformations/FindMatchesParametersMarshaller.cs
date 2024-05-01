@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FindMatchesParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccuracyCostTradeoff())
             {
                 context.Writer.WritePropertyName("AccuracyCostTradeoff");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.AccuracyCostTradeoff.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.AccuracyCostTradeoff))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AccuracyCostTradeoff));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.AccuracyCostTradeoff);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetEnforceProvidedLabels())
@@ -60,7 +74,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrecisionRecallTradeoff())
             {
                 context.Writer.WritePropertyName("PrecisionRecallTradeoff");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.PrecisionRecallTradeoff.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PrecisionRecallTradeoff))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PrecisionRecallTradeoff));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PrecisionRecallTradeoff);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetPrimaryKeyColumnName())

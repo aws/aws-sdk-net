@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Signer.Model
 {
     /// <summary>
@@ -44,8 +45,34 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The AWS Signer action permitted as part of cross-account permissions.
+        /// For cross-account signing. Grant a designated account permission to perform one or
+        /// more of the following actions. Each action is associated with a specific API's operations.
+        /// For more information about cross-account signing, see <a href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
+        /// cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can designate the following actions to an account.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>signer:StartSigningJob</c>. This action isn't supported for container image workflows.
+        /// For details, see <a>StartSigningJob</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>signer:SignPayload</c>. This action isn't supported for AWS Lambda workflows.
+        /// For details, see <a>SignPayload</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>signer:GetSigningProfile</c>. For details, see <a>GetSigningProfile</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>signer:RevokeSignature</c>. For details, see <a>RevokeSignature</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Action

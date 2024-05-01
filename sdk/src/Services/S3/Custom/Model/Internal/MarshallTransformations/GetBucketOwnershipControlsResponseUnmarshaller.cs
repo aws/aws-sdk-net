@@ -28,6 +28,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class GetBucketOwnershipControlsResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             GetBucketOwnershipControlsResponse response = new GetBucketOwnershipControlsResponse();
@@ -72,6 +77,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetBucketOwnershipControlsResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GetBucketOwnershipControlsResponseUnmarshaller Instance
         {
             get

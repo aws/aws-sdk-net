@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
@@ -41,6 +42,10 @@ namespace Amazon.MedicalImaging.Model
         private string _dicomPatientId;
         private string _dicomPatientName;
         private string _dicomPatientSex;
+        private string _dicomSeriesBodyPart;
+        private string _dicomSeriesInstanceUID;
+        private string _dicomSeriesModality;
+        private int? _dicomSeriesNumber;
         private string _dicomStudyDate;
         private string _dicomStudyDescription;
         private string _dicomStudyId;
@@ -181,6 +186,82 @@ namespace Amazon.MedicalImaging.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DICOMSeriesBodyPart. 
+        /// <para>
+        /// The DICOM provided identifier for the series Body Part Examined.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
+        public string DICOMSeriesBodyPart
+        {
+            get { return this._dicomSeriesBodyPart; }
+            set { this._dicomSeriesBodyPart = value; }
+        }
+
+        // Check to see if DICOMSeriesBodyPart property is set
+        internal bool IsSetDICOMSeriesBodyPart()
+        {
+            return this._dicomSeriesBodyPart != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DICOMSeriesInstanceUID. 
+        /// <para>
+        /// The DICOM provided identifier for the Series Instance UID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
+        public string DICOMSeriesInstanceUID
+        {
+            get { return this._dicomSeriesInstanceUID; }
+            set { this._dicomSeriesInstanceUID = value; }
+        }
+
+        // Check to see if DICOMSeriesInstanceUID property is set
+        internal bool IsSetDICOMSeriesInstanceUID()
+        {
+            return this._dicomSeriesInstanceUID != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DICOMSeriesModality. 
+        /// <para>
+        /// The DICOM provided identifier for the series Modality.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=16)]
+        public string DICOMSeriesModality
+        {
+            get { return this._dicomSeriesModality; }
+            set { this._dicomSeriesModality = value; }
+        }
+
+        // Check to see if DICOMSeriesModality property is set
+        internal bool IsSetDICOMSeriesModality()
+        {
+            return this._dicomSeriesModality != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DICOMSeriesNumber. 
+        /// <para>
+        /// The DICOM provided identifier for the Series Number.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=-2147483648, Max=2147483647)]
+        public int DICOMSeriesNumber
+        {
+            get { return this._dicomSeriesNumber.GetValueOrDefault(); }
+            set { this._dicomSeriesNumber = value; }
+        }
+
+        // Check to see if DICOMSeriesNumber property is set
+        internal bool IsSetDICOMSeriesNumber()
+        {
+            return this._dicomSeriesNumber.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DICOMStudyDate. 
         /// <para>
         /// The study date.
@@ -202,7 +283,7 @@ namespace Amazon.MedicalImaging.Model
         /// <summary>
         /// Gets and sets the property DICOMStudyDescription. 
         /// <para>
-        /// The description of the study.
+        /// The DICOM provided Study Description.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=64)]
@@ -221,7 +302,7 @@ namespace Amazon.MedicalImaging.Model
         /// <summary>
         /// Gets and sets the property DICOMStudyId. 
         /// <para>
-        /// The DICOM provided studyId.
+        /// The DICOM provided identifier for the Study ID.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=16)]
@@ -240,7 +321,7 @@ namespace Amazon.MedicalImaging.Model
         /// <summary>
         /// Gets and sets the property DICOMStudyInstanceUID. 
         /// <para>
-        /// The DICOM provided identifier for studyInstanceUid.&gt;
+        /// The DICOM provided identifier for the Study Instance UID.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=64)]

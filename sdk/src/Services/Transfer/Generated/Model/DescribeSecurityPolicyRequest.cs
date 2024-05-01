@@ -26,14 +26,16 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSecurityPolicy operation.
-    /// Describes the security policy that is attached to your file transfer protocol-enabled
-    /// server. The response contains a description of the security policy's properties. For
-    /// more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
-    /// with security policies</a>.
+    /// Describes the security policy that is attached to your server or SFTP connector. The
+    /// response contains a description of the security policy's properties. For more information
+    /// about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+    /// with security policies for servers</a> or <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working
+    /// with security policies for SFTP connectors</a>.
     /// </summary>
     public partial class DescribeSecurityPolicyRequest : AmazonTransferRequest
     {
@@ -42,7 +44,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SecurityPolicyName. 
         /// <para>
-        /// Specifies the name of the security policy that is attached to the server.
+        /// Specify the text name of the security policy for which you want the details.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ReadSetId. 
         /// <para>
-        ///  The read set ID created for an uploaded read set. 
+        /// The read set ID created for an uploaded read set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]

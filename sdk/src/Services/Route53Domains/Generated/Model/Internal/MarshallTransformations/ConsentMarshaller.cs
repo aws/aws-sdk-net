@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Consent requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCurrency())
             {
                 context.Writer.WritePropertyName("Currency");
@@ -54,7 +57,18 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxPrice())
             {
                 context.Writer.WritePropertyName("MaxPrice");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.MaxPrice.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxPrice))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxPrice));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxPrice);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

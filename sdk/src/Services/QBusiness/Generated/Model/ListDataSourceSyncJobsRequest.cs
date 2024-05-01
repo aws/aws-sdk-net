@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataSourceSyncJobs operation.
-    /// Get information about an Amazon Q data source connector synchronization.
+    /// Get information about an Amazon Q Business data source connector synchronization.
     /// </summary>
     public partial class ListDataSourceSyncJobsRequest : AmazonQBusinessRequest
     {
@@ -46,7 +47,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application connected to the data source.
+        /// The identifier of the Amazon Q Business application connected to the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -102,7 +103,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index used with the Amazon Q data source connector.
+        /// The identifier of the index used with the Amazon Q Business data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -141,8 +142,8 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the <c>maxResults</c> response was incpmplete because there is more data to retriever,
-        /// Amazon Q returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of responses.
+        /// Amazon Q Business returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of responses.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

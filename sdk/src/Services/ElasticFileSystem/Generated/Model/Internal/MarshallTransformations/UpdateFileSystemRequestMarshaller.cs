@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,12 +67,24 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetProvisionedThroughputInMibps())
                 {
                     context.Writer.WritePropertyName("ProvisionedThroughputInMibps");
+<<<<<<< HEAD
                     context.Writer.Write(publicRequest.ProvisionedThroughputInMibps.Value);
+=======
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.ProvisionedThroughputInMibps);
+                    }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 if(publicRequest.IsSetThroughputMode())

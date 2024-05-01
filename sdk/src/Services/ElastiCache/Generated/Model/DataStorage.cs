@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.ElastiCache.Model
     public partial class DataStorage
     {
         private int? _maximum;
+        private int? _minimum;
         private DataStorageUnit _unit;
 
         /// <summary>
@@ -42,8 +44,12 @@ namespace Amazon.ElastiCache.Model
         /// The upper limit for data storage the cache is set to use.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
         public int? Maximum
+=======
+        public int Maximum
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
         {
             get { return this._maximum; }
             set { this._maximum = value; }
@@ -53,6 +59,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetMaximum()
         {
             return this._maximum.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Minimum. 
+        /// <para>
+        /// The lower limit for data storage the cache is set to use.
+        /// </para>
+        /// </summary>
+        public int Minimum
+        {
+            get { return this._minimum.GetValueOrDefault(); }
+            set { this._minimum = value; }
+        }
+
+        // Check to see if Minimum property is set
+        internal bool IsSetMinimum()
+        {
+            return this._minimum.HasValue; 
         }
 
         /// <summary>

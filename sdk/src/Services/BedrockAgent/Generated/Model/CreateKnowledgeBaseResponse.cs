@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
@@ -36,7 +37,10 @@ namespace Amazon.BedrockAgent.Model
         private KnowledgeBase _knowledgeBase;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBase.
+        /// Gets and sets the property KnowledgeBase. 
+        /// <para>
+        /// Contains details about the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public KnowledgeBase KnowledgeBase

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -37,6 +38,7 @@ namespace Amazon.Pinpoint.Model
         private bool? _enabled;
         private string _fromAddress;
         private string _identity;
+        private string _orchestrationSendingRoleArn;
         private string _roleArn;
 
         /// <summary>
@@ -115,6 +117,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetIdentity()
         {
             return this._identity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestrationSendingRoleArn. 
+        /// <para>
+        /// The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns
+        /// or journeys through Amazon SES.
+        /// </para>
+        /// </summary>
+        public string OrchestrationSendingRoleArn
+        {
+            get { return this._orchestrationSendingRoleArn; }
+            set { this._orchestrationSendingRoleArn = value; }
+        }
+
+        // Check to see if OrchestrationSendingRoleArn property is set
+        internal bool IsSetOrchestrationSendingRoleArn()
+        {
+            return this._orchestrationSendingRoleArn != null;
         }
 
         /// <summary>

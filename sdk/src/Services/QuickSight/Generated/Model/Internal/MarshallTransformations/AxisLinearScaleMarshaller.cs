@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AxisLinearScale requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetStepCount())
             {
                 context.Writer.WritePropertyName("StepCount");
@@ -54,7 +57,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStepSize())
             {
                 context.Writer.WritePropertyName("StepSize");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.StepSize.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StepSize))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StepSize));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.StepSize);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HostedZoneLimit Object
     /// </summary>  
-    public class HostedZoneLimitUnmarshaller : IUnmarshaller<HostedZoneLimit, XmlUnmarshallerContext>
+    public class HostedZoneLimitUnmarshaller : IUnmarshaller<HostedZoneLimit, XmlUnmarshallerContext>, IUnmarshaller<HostedZoneLimit, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +75,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public HostedZoneLimit Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static HostedZoneLimitUnmarshaller _instance = new HostedZoneLimitUnmarshaller();        

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -148,6 +149,13 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// The Amazon Web Services account ID associated with the S3 bucket associated with this
         /// access point.
+        /// </para>
+        ///  
+        /// <para>
+        /// For same account access point when your bucket and access point belong to the same
+        /// account owner, the <c>BucketAccountId</c> is not required. For cross-account access
+        /// point when your bucket and access point are not in the same account, the <c>BucketAccountId</c>
+        /// is required. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

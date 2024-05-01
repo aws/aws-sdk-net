@@ -63,6 +63,10 @@ namespace Amazon.Mgn
         /// </summary>
         public static readonly ActionCategory OTHER = new ActionCategory("OTHER");
         /// <summary>
+        /// Constant REFACTORING for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory REFACTORING = new ActionCategory("REFACTORING");
+        /// <summary>
         /// Constant SECURITY for ActionCategory
         /// </summary>
         public static readonly ActionCategory SECURITY = new ActionCategory("SECURITY");
@@ -228,6 +232,10 @@ namespace Amazon.Mgn
         /// Constant UEFI for BootMode
         /// </summary>
         public static readonly BootMode UEFI = new BootMode("UEFI");
+        /// <summary>
+        /// Constant USE_SOURCE for BootMode
+        /// </summary>
+        public static readonly BootMode USE_SOURCE = new BootMode("USE_SOURCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

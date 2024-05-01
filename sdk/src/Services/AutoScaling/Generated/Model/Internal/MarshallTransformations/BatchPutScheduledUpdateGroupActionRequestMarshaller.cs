@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         }
                         if(publicRequestlistValue.IsSetEndTimeUtc())
                         {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601(publicRequestlistValue.EndTimeUtc));
+                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.EndTimeUtc));
                         }
                         if(publicRequestlistValue.IsSetMaxSize())
                         {
@@ -93,7 +94,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         }
                         if(publicRequestlistValue.IsSetStartTimeUtc())
                         {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601(publicRequestlistValue.StartTimeUtc));
+                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.StartTimeUtc));
                         }
                         if(publicRequestlistValue.IsSetTimeZone())
                         {

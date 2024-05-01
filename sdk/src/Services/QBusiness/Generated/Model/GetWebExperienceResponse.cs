@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -38,6 +39,7 @@ namespace Amazon.QBusiness.Model
         private DateTime? _createdAt;
         private string _defaultEndpoint;
         private ErrorDetail _error;
+        private string _roleArn;
         private WebExperienceSamplePromptsControlMode _samplePromptsControlMode;
         private WebExperienceStatus _status;
         private string _subtitle;
@@ -50,7 +52,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application linked to the web experience.
+        /// The identifier of the Amazon Q Business application linked to the web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -69,9 +71,10 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property AuthenticationConfiguration. 
         /// <para>
-        /// The authentication configuration information for your Amazon Q web experience.
+        /// The authentication configuration information for your Amazon Q Business web experience.
         /// </para>
         /// </summary>
+        [Obsolete("Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
         public WebExperienceAuthConfiguration AuthenticationConfiguration
         {
             get { return this._authenticationConfiguration; }
@@ -87,7 +90,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp when the retriever was created.
+        /// The Unix timestamp when the Amazon Q Business web experience was last created.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -105,7 +108,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DefaultEndpoint. 
         /// <para>
-        /// The endpoint of your Amazon Q web experience.
+        /// The endpoint of your Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -141,6 +144,25 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the service role attached to your web experience.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1284)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SamplePromptsControlMode. 
         /// <para>
         /// Determines whether sample prompts are enabled in the web experience for an end user.
@@ -161,9 +183,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the Amazon Q web experience. When the <c>Status</c> field value
-        /// is <c>FAILED</c>, the <c>ErrorMessage</c> field contains a description of the error
-        /// that caused the data source connector to fail. 
+        /// The current status of the Amazon Q Business web experience. When the <c>Status</c>
+        /// field value is <c>FAILED</c>, the <c>ErrorMessage</c> field contains a description
+        /// of the error that caused the data source connector to fail. 
         /// </para>
         /// </summary>
         public WebExperienceStatus Status
@@ -181,7 +203,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Subtitle. 
         /// <para>
-        /// The subtitle for your Amazon Q web experience. 
+        /// The subtitle for your Amazon Q Business web experience. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -200,7 +222,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The title for your Amazon Q web experience. 
+        /// The title for your Amazon Q Business web experience. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -219,7 +241,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp when the data source connector was last updated.
+        /// The Unix timestamp when the Amazon Q Business web experience was last updated.
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt
@@ -238,7 +260,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property WebExperienceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the role with the permission to access the Amazon
-        /// Q web experience and required resources.
+        /// Q Business web experience and required resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -257,7 +279,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property WebExperienceId. 
         /// <para>
-        /// The identifier of the Amazon Q web experience.
+        /// The identifier of the Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -276,7 +298,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property WelcomeMessage. 
         /// <para>
-        /// The customized welcome message for end users of an Amazon Q web experience.
+        /// The customized welcome message for end users of an Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]

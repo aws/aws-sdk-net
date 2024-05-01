@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Units. 
         /// <para>
-        /// The number of storage units configured for an Amazon Q index.
+        /// The number of storage units configured for an Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

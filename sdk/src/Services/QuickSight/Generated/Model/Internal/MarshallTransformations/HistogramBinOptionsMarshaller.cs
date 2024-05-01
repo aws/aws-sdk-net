@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HistogramBinOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBinCount())
             {
                 context.Writer.WritePropertyName("BinCount");
@@ -76,7 +79,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartValue())
             {
                 context.Writer.WritePropertyName("StartValue");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.StartValue.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.StartValue))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StartValue));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.StartValue);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

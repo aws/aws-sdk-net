@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -60,15 +61,20 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.AddSubResource("mode", "import");
-            
             if (publicRequest.IsSetFailOnWarnings())
+            {
+                if(request.Parameters.ContainsKey("failonwarnings"))
+                   request.Parameters.Remove("failonwarnings");
                 request.Parameters.Add("failonwarnings", StringUtils.FromBool(publicRequest.FailOnWarnings));
-            
+            }
             if (publicRequest.IsSetParameters())
             {
                 foreach(var kvp in publicRequest.Parameters)
                 {
-                    request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
+                    if(request.Parameters.ContainsKey(kvp.Key))
+                       continue;
+                    else
+                       request.Parameters.Add(kvp.Key, StringUtils.FromString(kvp.Value));
                 }
             }
             request.ResourcePath = "/restapis";
@@ -79,11 +85,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             }
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
-            if (request.ContentStream != null && request.ContentStream.Length == 0)
-            {
-                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
-            }
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";
             request.UseQueryString = true;
 
             return request;

@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The Key Value Store entity cannot be deleted while it is in use.
+    /// The key value store entity cannot be deleted while it is in use.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

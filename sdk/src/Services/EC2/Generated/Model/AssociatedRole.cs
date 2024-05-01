@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -78,8 +79,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CertificateS3ObjectKey. 
         /// <para>
-        /// The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted
-        /// private key bundle is stored. The object key is formated as follows: <c>role_arn</c>/<c>certificate_arn</c>.
+        /// The key of the Amazon S3 object where the certificate, certificate chain, and encrypted
+        /// private key bundle are stored. The object key is formatted as follows: <c>role_arn</c>/<c>certificate_arn</c>.
         /// 
         /// </para>
         /// </summary>
@@ -98,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EncryptionKmsKeyId. 
         /// <para>
-        /// The ID of the KMS customer master key (CMK) used to encrypt the private key.
+        /// The ID of the KMS key used to encrypt the private key.
         /// </para>
         /// </summary>
         public string EncryptionKmsKeyId

@@ -1011,6 +1011,14 @@ namespace Amazon.CloudFront
     {
 
         /// <summary>
+        /// Constant Lambda for OriginAccessControlOriginTypes
+        /// </summary>
+        public static readonly OriginAccessControlOriginTypes Lambda = new OriginAccessControlOriginTypes("lambda");
+        /// <summary>
+        /// Constant Mediapackagev2 for OriginAccessControlOriginTypes
+        /// </summary>
+        public static readonly OriginAccessControlOriginTypes Mediapackagev2 = new OriginAccessControlOriginTypes("mediapackagev2");
+        /// <summary>
         /// Constant Mediastore for OriginAccessControlOriginTypes
         /// </summary>
         public static readonly OriginAccessControlOriginTypes Mediastore = new OriginAccessControlOriginTypes("mediastore");

@@ -299,6 +299,114 @@ namespace Amazon.FMS
 
 
     /// <summary>
+    /// Constants used for properties of type EntryType.
+    /// </summary>
+    public class EntryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM_ENTRY for EntryType
+        /// </summary>
+        public static readonly EntryType CUSTOM_ENTRY = new EntryType("CUSTOM_ENTRY");
+        /// <summary>
+        /// Constant FMS_MANAGED_FIRST_ENTRY for EntryType
+        /// </summary>
+        public static readonly EntryType FMS_MANAGED_FIRST_ENTRY = new EntryType("FMS_MANAGED_FIRST_ENTRY");
+        /// <summary>
+        /// Constant FMS_MANAGED_LAST_ENTRY for EntryType
+        /// </summary>
+        public static readonly EntryType FMS_MANAGED_LAST_ENTRY = new EntryType("FMS_MANAGED_LAST_ENTRY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EntryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntryType FindValue(string value)
+        {
+            return FindValue<EntryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EntryViolationReason.
+    /// </summary>
+    public class EntryViolationReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENTRY_CONFLICT for EntryViolationReason
+        /// </summary>
+        public static readonly EntryViolationReason ENTRY_CONFLICT = new EntryViolationReason("ENTRY_CONFLICT");
+        /// <summary>
+        /// Constant INCORRECT_ENTRY_ORDER for EntryViolationReason
+        /// </summary>
+        public static readonly EntryViolationReason INCORRECT_ENTRY_ORDER = new EntryViolationReason("INCORRECT_ENTRY_ORDER");
+        /// <summary>
+        /// Constant MISSING_EXPECTED_ENTRY for EntryViolationReason
+        /// </summary>
+        public static readonly EntryViolationReason MISSING_EXPECTED_ENTRY = new EntryViolationReason("MISSING_EXPECTED_ENTRY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EntryViolationReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntryViolationReason FindValue(string value)
+        {
+            return FindValue<EntryViolationReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntryViolationReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FailedItemReason.
     /// </summary>
     public class FailedItemReason : ConstantClass
@@ -462,6 +570,56 @@ namespace Amazon.FMS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MarketplaceSubscriptionOnboardingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NetworkAclRuleAction.
+    /// </summary>
+    public class NetworkAclRuleAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Allow for NetworkAclRuleAction
+        /// </summary>
+        public static readonly NetworkAclRuleAction Allow = new NetworkAclRuleAction("allow");
+        /// <summary>
+        /// Constant Deny for NetworkAclRuleAction
+        /// </summary>
+        public static readonly NetworkAclRuleAction Deny = new NetworkAclRuleAction("deny");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkAclRuleAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkAclRuleAction FindValue(string value)
+        {
+            return FindValue<NetworkAclRuleAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkAclRuleAction(string value)
         {
             return FindValue(value);
         }
@@ -787,6 +945,10 @@ namespace Amazon.FMS
         /// </summary>
         public static readonly SecurityServiceType IMPORT_NETWORK_FIREWALL = new SecurityServiceType("IMPORT_NETWORK_FIREWALL");
         /// <summary>
+        /// Constant NETWORK_ACL_COMMON for SecurityServiceType
+        /// </summary>
+        public static readonly SecurityServiceType NETWORK_ACL_COMMON = new SecurityServiceType("NETWORK_ACL_COMMON");
+        /// <summary>
         /// Constant NETWORK_FIREWALL for SecurityServiceType
         /// </summary>
         public static readonly SecurityServiceType NETWORK_FIREWALL = new SecurityServiceType("NETWORK_FIREWALL");
@@ -848,6 +1010,64 @@ namespace Amazon.FMS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SecurityServiceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StreamExceptionPolicy.
+    /// </summary>
+    public class StreamExceptionPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUE for StreamExceptionPolicy
+        /// </summary>
+        public static readonly StreamExceptionPolicy CONTINUE = new StreamExceptionPolicy("CONTINUE");
+        /// <summary>
+        /// Constant DROP for StreamExceptionPolicy
+        /// </summary>
+        public static readonly StreamExceptionPolicy DROP = new StreamExceptionPolicy("DROP");
+        /// <summary>
+        /// Constant FMS_IGNORE for StreamExceptionPolicy
+        /// </summary>
+        public static readonly StreamExceptionPolicy FMS_IGNORE = new StreamExceptionPolicy("FMS_IGNORE");
+        /// <summary>
+        /// Constant REJECT for StreamExceptionPolicy
+        /// </summary>
+        public static readonly StreamExceptionPolicy REJECT = new StreamExceptionPolicy("REJECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamExceptionPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamExceptionPolicy FindValue(string value)
+        {
+            return FindValue<StreamExceptionPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamExceptionPolicy(string value)
         {
             return FindValue(value);
         }
@@ -1086,6 +1306,10 @@ namespace Amazon.FMS
         /// Constant INTERNET_TRAFFIC_NOT_INSPECTED for ViolationReason
         /// </summary>
         public static readonly ViolationReason INTERNET_TRAFFIC_NOT_INSPECTED = new ViolationReason("INTERNET_TRAFFIC_NOT_INSPECTED");
+        /// <summary>
+        /// Constant INVALID_NETWORK_ACL_ENTRY for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason INVALID_NETWORK_ACL_ENTRY = new ViolationReason("INVALID_NETWORK_ACL_ENTRY");
         /// <summary>
         /// Constant INVALID_ROUTE_CONFIGURATION for ViolationReason
         /// </summary>

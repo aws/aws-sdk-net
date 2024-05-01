@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the cloud9-2017-09-23.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Cloud9.Model
 {
     /// <summary>

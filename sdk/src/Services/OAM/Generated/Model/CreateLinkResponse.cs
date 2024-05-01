@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OAM.Model
 {
     /// <summary>
@@ -37,6 +38,7 @@ namespace Amazon.OAM.Model
         private string _id;
         private string _label;
         private string _labelTemplate;
+        private LinkConfiguration _linkConfiguration;
         private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sinkArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -112,6 +114,25 @@ namespace Amazon.OAM.Model
         internal bool IsSetLabelTemplate()
         {
             return this._labelTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkConfiguration. 
+        /// <para>
+        /// This structure includes filters that specify which metric namespaces and which log
+        /// groups are shared from the source account to the monitoring account.
+        /// </para>
+        /// </summary>
+        public LinkConfiguration LinkConfiguration
+        {
+            get { return this._linkConfiguration; }
+            set { this._linkConfiguration = value; }
+        }
+
+        // Check to see if LinkConfiguration property is set
+        internal bool IsSetLinkConfiguration()
+        {
+            return this._linkConfiguration != null;
         }
 
         /// <summary>

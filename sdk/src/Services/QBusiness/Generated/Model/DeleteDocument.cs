@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// A document deleted from an Amazon Q data source connector.
+    /// A document deleted from an Amazon Q Business data source connector.
     /// </summary>
     public partial class DeleteDocument
     {

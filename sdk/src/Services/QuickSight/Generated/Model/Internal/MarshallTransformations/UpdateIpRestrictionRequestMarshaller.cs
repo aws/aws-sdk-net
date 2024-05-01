@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,6 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetEnabled())
@@ -84,6 +86,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                         var publicRequestIpRestrictionRuleMapValue = publicRequestIpRestrictionRuleMapKvp.Value;
 
                             context.Writer.Write(publicRequestIpRestrictionRuleMapValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVpcEndpointIdRestrictionRuleMap())
+                {
+                    context.Writer.WritePropertyName("VpcEndpointIdRestrictionRuleMap");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestVpcEndpointIdRestrictionRuleMapKvp in publicRequest.VpcEndpointIdRestrictionRuleMap)
+                    {
+                        context.Writer.WritePropertyName(publicRequestVpcEndpointIdRestrictionRuleMapKvp.Key);
+                        var publicRequestVpcEndpointIdRestrictionRuleMapValue = publicRequestVpcEndpointIdRestrictionRuleMapKvp.Value;
+
+                            context.Writer.Write(publicRequestVpcEndpointIdRestrictionRuleMapValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVpcIdRestrictionRuleMap())
+                {
+                    context.Writer.WritePropertyName("VpcIdRestrictionRuleMap");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestVpcIdRestrictionRuleMapKvp in publicRequest.VpcIdRestrictionRuleMap)
+                    {
+                        context.Writer.WritePropertyName(publicRequestVpcIdRestrictionRuleMapKvp.Key);
+                        var publicRequestVpcIdRestrictionRuleMapValue = publicRequestVpcIdRestrictionRuleMapKvp.Value;
+
+                            context.Writer.Write(publicRequestVpcIdRestrictionRuleMapValue);
                     }
                     context.Writer.WriteObjectEnd();
                 }

@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -217,6 +218,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             }
         }
 
+        /// <summary>
+        /// Return false for reading the entire response
+        /// </summary>
+        /// <param name="response"></param>
+        /// <param name="readEntireResponse"></param>
+        /// <returns></returns>
         protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
         {
             return false;

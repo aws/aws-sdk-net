@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ErrorCode. 
         /// <para>
         /// The error code that indicates why the instance could not be launched. For more information
-        /// about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+        /// about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
         /// codes</a>.
         /// </para>
         /// </summary>
@@ -62,7 +63,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ErrorMessage. 
         /// <para>
         /// The error message that describes why the instance could not be launched. For more
-        /// information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+        /// information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
         /// codes</a>.
         /// </para>
         /// </summary>

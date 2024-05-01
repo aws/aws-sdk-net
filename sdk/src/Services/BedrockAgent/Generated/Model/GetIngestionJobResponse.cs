@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
@@ -36,7 +37,10 @@ namespace Amazon.BedrockAgent.Model
         private IngestionJob _ingestionJob;
 
         /// <summary>
-        /// Gets and sets the property IngestionJob.
+        /// Gets and sets the property IngestionJob. 
+        /// <para>
+        /// Contains details about the ingestion job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public IngestionJob IngestionJob

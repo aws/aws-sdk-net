@@ -26,11 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchQuickResponses operation.
-    /// Searches existing Amazon Q quick responses in an Amazon Q knowledge base.
+    /// Searches existing Amazon Q in Connect quick responses in an Amazon Q in Connect knowledge
+    /// base.
     /// </summary>
     public partial class SearchQuickResponsesRequest : AmazonQConnectRequest
     {

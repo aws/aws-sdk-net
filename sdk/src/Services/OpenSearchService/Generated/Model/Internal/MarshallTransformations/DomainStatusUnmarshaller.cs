@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -127,6 +128,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DomainEndpointOptionsUnmarshaller.Instance;
                     unmarshalledObject.DomainEndpointOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DomainEndpointV2HostedZoneId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DomainEndpointV2HostedZoneId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DomainId", targetDepth))

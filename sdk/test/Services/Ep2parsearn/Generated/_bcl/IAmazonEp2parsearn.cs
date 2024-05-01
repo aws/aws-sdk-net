@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Ep2parsearn.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.Ep2parsearn
 {
     /// <summary>

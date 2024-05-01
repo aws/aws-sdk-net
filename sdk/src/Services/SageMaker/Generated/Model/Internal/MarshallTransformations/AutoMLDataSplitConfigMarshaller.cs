@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoMLDataSplitConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetValidationFraction())
             {
                 context.Writer.WritePropertyName("ValidationFraction");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.ValidationFraction.Value);
+=======
+                if(StringUtils.IsSpecialFloatValue(requestObject.ValidationFraction))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ValidationFraction));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ValidationFraction);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

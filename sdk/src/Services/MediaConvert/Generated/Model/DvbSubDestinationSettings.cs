@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -43,6 +44,10 @@ namespace Amazon.MediaConvert.Model
         private int? _ddsYCoordinate;
         private DvbSubSubtitleFallbackFont _fallbackFont;
         private DvbSubtitleFontColor _fontColor;
+        private string _fontFileBold;
+        private string _fontFileBoldItalic;
+        private string _fontFileItalic;
+        private string _fontFileRegular;
         private int? _fontOpacity;
         private int? _fontResolution;
         private FontScript _fontScript;
@@ -250,6 +255,74 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFontColor()
         {
             return this._fontColor != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FontFileBold. Specify a bold TrueType font file to use
+        /// when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do,
+        /// you must also separately specify a regular, an italic, and a bold italic font file.
+        /// </summary>
+        public string FontFileBold
+        {
+            get { return this._fontFileBold; }
+            set { this._fontFileBold = value; }
+        }
+
+        // Check to see if FontFileBold property is set
+        internal bool IsSetFontFileBold()
+        {
+            return this._fontFileBold != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FontFileBoldItalic. Specify a bold italic TrueType font
+        /// file to use when rendering your output captions.Enter an S3, HTTP, or HTTPS URL.When
+        /// you do, you must also separately specify a regular, a bold, and an italic font file.
+        /// </summary>
+        public string FontFileBoldItalic
+        {
+            get { return this._fontFileBoldItalic; }
+            set { this._fontFileBoldItalic = value; }
+        }
+
+        // Check to see if FontFileBoldItalic property is set
+        internal bool IsSetFontFileBoldItalic()
+        {
+            return this._fontFileBoldItalic != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FontFileItalic. Specify an italic TrueType font file to
+        /// use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you
+        /// do, you must also separately specify a regular, a bold, and a bold italic font file.
+        /// </summary>
+        public string FontFileItalic
+        {
+            get { return this._fontFileItalic; }
+            set { this._fontFileItalic = value; }
+        }
+
+        // Check to see if FontFileItalic property is set
+        internal bool IsSetFontFileItalic()
+        {
+            return this._fontFileItalic != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FontFileRegular. Specify a regular TrueType font file to
+        /// use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you
+        /// do, you must also separately specify a bold, an italic, and a bold italic font file.
+        /// </summary>
+        public string FontFileRegular
+        {
+            get { return this._fontFileRegular; }
+            set { this._fontFileRegular = value; }
+        }
+
+        // Check to see if FontFileRegular property is set
+        internal bool IsSetFontFileRegular()
+        {
+            return this._fontFileRegular != null;
         }
 
         /// <summary>
@@ -479,14 +552,15 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StylePassthrough. Set Style passthrough to ENABLED to use
-        /// the available style, color, and position information from your input captions. MediaConvert
-        /// uses default settings for any missing style and position information in your input
-        /// captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and
-        /// position information from your input captions and use default settings: white text
-        /// with black outlining, bottom-center positioning, and automatic sizing. Whether you
-        /// set Style passthrough to enabled or not, you can also choose to manually override
-        /// any of the individual style and position settings.
+        /// Gets and sets the property StylePassthrough. To use the available style, color, and
+        /// position information from your input captions: Set Style passthrough to Enabled. Note
+        /// that MediaConvert uses default settings for any missing style or position information
+        /// in your input captions To ignore the style and position information from your input
+        /// captions and use default settings: Leave blank or keep the default value, Disabled.
+        /// Default settings include white text with black outlining, bottom-center positioning,
+        /// and automatic sizing. Whether you set Style passthrough to enabled or not, you can
+        /// also choose to manually override any of the individual style and position settings.
+        /// You can also override any fonts by manually specifying custom font files.
         /// </summary>
         public DvbSubtitleStylePassthrough StylePassthrough
         {

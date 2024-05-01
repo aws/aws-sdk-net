@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCidrs())
             {
                 context.Writer.WritePropertyName("cidrs");
@@ -65,7 +68,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumber())
             {
                 context.Writer.WritePropertyName("number");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.Number.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Number))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Number));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Number);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetNumbers())

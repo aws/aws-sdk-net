@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -35,6 +36,7 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class UpdateCognitoUserPoolConfiguration
     {
         private List<string> _clientIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private UpdateCognitoGroupConfiguration _groupConfiguration;
         private string _userPoolArn;
 
         /// <summary>
@@ -55,6 +57,24 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetClientIds()
         {
             return this._clientIds != null && (this._clientIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupConfiguration. 
+        /// <para>
+        /// The configuration of the user groups from an Amazon Cognito user pool identity source.
+        /// </para>
+        /// </summary>
+        public UpdateCognitoGroupConfiguration GroupConfiguration
+        {
+            get { return this._groupConfiguration; }
+            set { this._groupConfiguration = value; }
+        }
+
+        // Check to see if GroupConfiguration property is set
+        internal bool IsSetGroupConfiguration()
+        {
+            return this._groupConfiguration != null;
         }
 
         /// <summary>

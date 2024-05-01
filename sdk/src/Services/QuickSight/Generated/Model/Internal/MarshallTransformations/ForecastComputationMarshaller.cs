@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ForecastComputation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComputationId())
             {
                 context.Writer.WritePropertyName("ComputationId");
@@ -60,7 +63,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLowerBoundary())
             {
                 context.Writer.WritePropertyName("LowerBoundary");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.LowerBoundary.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LowerBoundary))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LowerBoundary));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LowerBoundary);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetName())
@@ -107,7 +121,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUpperBoundary())
             {
                 context.Writer.WritePropertyName("UpperBoundary");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.UpperBoundary.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.UpperBoundary))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.UpperBoundary));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.UpperBoundary);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetValue())

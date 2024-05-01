@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BotLocaleImportSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBotId())
             {
                 context.Writer.WritePropertyName("botId");
@@ -66,7 +69,18 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNluIntentConfidenceThreshold())
             {
                 context.Writer.WritePropertyName("nluIntentConfidenceThreshold");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.NluIntentConfidenceThreshold.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.NluIntentConfidenceThreshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NluIntentConfidenceThreshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NluIntentConfidenceThreshold);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetVoiceSettings())

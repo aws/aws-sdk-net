@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -60,11 +61,11 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     keyToUse = keyToUse.Substring("".Length);
                 }
 
-                if (context.ResponseData.IsHeaderPresent($"{nameResponseHeaders}"))
+                if (context.ResponseData.IsHeaderPresent($"{keyToUse}"))
                 {
                     headersForResponseHeaders.Add(
                         keyToUse,
-                        context.ResponseData.GetHeaderValue($"{nameResponseHeaders}")
+                        context.ResponseData.GetHeaderValue($"{keyToUse}")
                     );
                 }
             }

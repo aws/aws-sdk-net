@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A collection of EBS storage settings that applies to private spaces.
+    /// A collection of EBS storage settings that apply to both private and shared spaces.
     /// </summary>
     public partial class EbsStorageSettings
     {
@@ -38,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EbsVolumeSizeInGb. 
         /// <para>
-        /// The size of an EBS storage volume for a private space.
+        /// The size of an EBS storage volume for a space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=16384)]

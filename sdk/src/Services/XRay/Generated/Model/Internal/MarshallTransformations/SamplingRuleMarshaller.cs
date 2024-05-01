@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SamplingRule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");
@@ -62,7 +65,18 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFixedRate())
             {
                 context.Writer.WritePropertyName("FixedRate");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.FixedRate.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.FixedRate))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FixedRate));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.FixedRate);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetHost())

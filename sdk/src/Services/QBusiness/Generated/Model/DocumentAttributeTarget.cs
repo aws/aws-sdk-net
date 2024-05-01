@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// The target document attribute or metadata field you want to alter when ingesting documents
-    /// into Amazon Q.
+    /// into Amazon Q Business.
     /// 
     ///  
     /// <para>
@@ -42,11 +43,11 @@ namespace Amazon.QBusiness.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon Q can't create a target field if it has not already been created as an index
-    /// field. After you create your index field, you can create a document metadata field
-    /// using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeTarget.html">
-    /// <c>DocumentAttributeTarget</c> </a>. Amazon Q will then map your newly created document
-    /// attribute to your index field.
+    /// Amazon Q Business can't create a target field if it has not already been created as
+    /// an index field. After you create your index field, you can create a document metadata
+    /// field using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeTarget.html">
+    /// <c>DocumentAttributeTarget</c> </a>. Amazon Q Business will then map your newly created
+    /// document attribute to your index field.
     /// </para>
     ///  
     /// <para>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _arn;
         private string _name;
         private string _topicId;
+        private TopicUserExperienceVersion _userExperienceVersion;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -92,6 +94,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTopicId()
         {
             return this._topicId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserExperienceVersion. 
+        /// <para>
+        /// The user experience version of the topic.
+        /// </para>
+        /// </summary>
+        public TopicUserExperienceVersion UserExperienceVersion
+        {
+            get { return this._userExperienceVersion; }
+            set { this._userExperienceVersion = value; }
+        }
+
+        // Check to see if UserExperienceVersion property is set
+        internal bool IsSetUserExperienceVersion()
+        {
+            return this._userExperienceVersion != null;
         }
 
     }

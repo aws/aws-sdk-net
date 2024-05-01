@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
@@ -129,20 +130,21 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// The schedule for a one-time (at format) or recurring (cron format) scheduled action.
-        /// Schedule invocations must be separated by at least one hour.
+        /// The schedule for a one-time (at timestamp format) or recurring (cron format) scheduled
+        /// action. Schedule invocations must be separated by at least one hour. Times are in
+        /// UTC.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Format of at expressions is "<c>at(yyyy-mm-ddThh:mm:ss)</c>". For example, "<c>at(2016-03-04T17:27:00)</c>".
+        /// Format of at timestamp is <c>yyyy-mm-ddThh:mm:ss</c>. For example, <c>2016-03-04T17:27:00</c>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Format of cron expressions is "<c>cron(Minutes Hours Day-of-month Month Day-of-week
-        /// Year)</c>". For example, "<c>cron(0 10 ? * MON *)</c>". For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+        /// Format of cron expression is <c>(Minutes Hours Day-of-month Month Day-of-week Year)</c>.
+        /// For example, <c>"(0 10 ? * MON *)"</c>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
         /// Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Schedule Schedule
         {

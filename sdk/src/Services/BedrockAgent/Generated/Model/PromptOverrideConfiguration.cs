@@ -26,10 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Configuration for prompt override.
+    /// Contains configurations to override prompts in different parts of an agent sequence.
+    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+    /// prompts</a>.
     /// </summary>
     public partial class PromptOverrideConfiguration
     {
@@ -37,7 +40,12 @@ namespace Amazon.BedrockAgent.Model
         private List<PromptConfiguration> _promptConfigurations = AWSConfigs.InitializeCollections ? new List<PromptConfiguration>() : null;
 
         /// <summary>
-        /// Gets and sets the property OverrideLambda.
+        /// Gets and sets the property OverrideLambda. 
+        /// <para>
+        /// The ARN of the Lambda function to use when parsing the raw foundation model output
+        /// in parts of the agent sequence. If you specify this field, at least one of the <c>promptConfigurations</c>
+        /// must contain a <c>parserMode</c> value that is set to <c>OVERRIDDEN</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public string OverrideLambda
@@ -53,7 +61,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PromptConfigurations.
+        /// Gets and sets the property PromptConfigurations. 
+        /// <para>
+        /// Contains configurations to override a prompt template in one part of an agent sequence.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+        /// prompts</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
         public List<PromptConfiguration> PromptConfigurations

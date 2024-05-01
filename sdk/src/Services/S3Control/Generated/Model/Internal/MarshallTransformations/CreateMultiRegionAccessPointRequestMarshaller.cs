@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,24 +67,27 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateMultiRegionAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
+                xmlWriter.WriteStartElement("CreateMultiRegionAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 if(publicRequest.IsSetClientToken())
+<<<<<<< HEAD
                     xmlWriter.WriteElementString("ClientToken", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ClientToken));
+=======
+                    xmlWriter.WriteElementString("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 else                
-                    xmlWriter.WriteElementString("ClientToken", "http://awss3control.amazonaws.com/doc/2018-08-20/", Guid.NewGuid().ToString());                
+                    xmlWriter.WriteElementString("ClientToken", Guid.NewGuid().ToString());                
 
-                
-                if (publicRequest.Details != null) 
+                if (publicRequest.Details != null)
                 {
-                    xmlWriter.WriteStartElement("Details", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                    xmlWriter.WriteStartElement("Details");
                     if(publicRequest.Details.IsSetName())
-                        xmlWriter.WriteElementString("Name", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Details.Name));                 
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Details.Name));                 
 
-                
-                    if (publicRequest.Details.PublicAccessBlock != null) 
+                    if (publicRequest.Details.PublicAccessBlock != null)
                     {
-                        xmlWriter.WriteStartElement("PublicAccessBlock", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        xmlWriter.WriteStartElement("PublicAccessBlock");
                         if(publicRequest.Details.PublicAccessBlock.IsSetBlockPublicAcls())
+<<<<<<< HEAD
                             xmlWriter.WriteElementString("BlockPublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.BlockPublicAcls.Value));                 
 
                         if(publicRequest.Details.PublicAccessBlock.IsSetBlockPublicPolicy())
@@ -94,24 +98,35 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                         if(publicRequest.Details.PublicAccessBlock.IsSetRestrictPublicBuckets())
                             xmlWriter.WriteElementString("RestrictPublicBuckets", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.RestrictPublicBuckets.Value));                 
+=======
+                            xmlWriter.WriteElementString("BlockPublicAcls", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.BlockPublicAcls));                 
+
+                        if(publicRequest.Details.PublicAccessBlock.IsSetBlockPublicPolicy())
+                            xmlWriter.WriteElementString("BlockPublicPolicy", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.BlockPublicPolicy));                 
+
+                        if(publicRequest.Details.PublicAccessBlock.IsSetIgnorePublicAcls())
+                            xmlWriter.WriteElementString("IgnorePublicAcls", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.IgnorePublicAcls));                 
+
+                        if(publicRequest.Details.PublicAccessBlock.IsSetRestrictPublicBuckets())
+                            xmlWriter.WriteElementString("RestrictPublicBuckets", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.RestrictPublicBuckets));                 
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
 
                         xmlWriter.WriteEndElement();
                     }
                     var publicRequestDetailsRegions = publicRequest.Details.Regions;
                     if (publicRequestDetailsRegions != null && (publicRequestDetailsRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                    {                        
-                        xmlWriter.WriteStartElement("Regions", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                    {
+                        xmlWriter.WriteStartElement("Regions");
                         foreach (var publicRequestDetailsRegionsValue in publicRequestDetailsRegions) 
                         {
-                
-                        if (publicRequestDetailsRegionsValue != null) 
+                        if (publicRequestDetailsRegionsValue != null)
                         {
-                            xmlWriter.WriteStartElement("Region", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            xmlWriter.WriteStartElement("Region");
                             if(publicRequestDetailsRegionsValue.IsSetBucket())
-                                xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestDetailsRegionsValue.Bucket));                 
+                                xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestDetailsRegionsValue.Bucket));                 
 
                             if(publicRequestDetailsRegionsValue.IsSetBucketAccountId())
-                                xmlWriter.WriteElementString("BucketAccountId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestDetailsRegionsValue.BucketAccountId));                 
+                                xmlWriter.WriteElementString("BucketAccountId", StringUtils.FromString(publicRequestDetailsRegionsValue.BucketAccountId));                 
 
                             xmlWriter.WriteEndElement();
                         }

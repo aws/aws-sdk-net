@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetEndpointConfigurations())
@@ -138,7 +140,18 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTrafficDialPercentage())
                 {
                     context.Writer.WritePropertyName("TrafficDialPercentage");
+<<<<<<< HEAD
                     context.Writer.Write(publicRequest.TrafficDialPercentage.Value);
+=======
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.TrafficDialPercentage))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.TrafficDialPercentage));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.TrafficDialPercentage);
+                    }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
                 }
 
                 writer.WriteObjectEnd();

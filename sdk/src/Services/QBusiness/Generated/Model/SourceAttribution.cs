@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// The documents used to generate an Amazon Q web experience response.
+    /// The documents used to generate an Amazon Q Business web experience response.
     /// </summary>
     public partial class SourceAttribution
     {
@@ -43,7 +44,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property CitationNumber. 
         /// <para>
-        /// The number attached to a citation in an Amazon Q generated response.
+        /// The number attached to a citation in an Amazon Q Business generated response.
         /// </para>
         /// </summary>
         public int? CitationNumber
@@ -98,8 +99,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The title of the document which is the source for the Amazon Q generated response.
-        /// 
+        /// The title of the document which is the source for the Amazon Q Business generated
+        /// response. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -118,7 +119,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q application was last updated.
+        /// The Unix timestamp when the Amazon Q Business application was last updated.
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt
@@ -136,7 +137,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The URL of the document which is the source for the Amazon Q generated response. 
+        /// The URL of the document which is the source for the Amazon Q Business generated response.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

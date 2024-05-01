@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// The identifier for the S3 resource.
+    /// Contains information about the S3 object containing the resource.
     /// </summary>
     public partial class S3Identifier
     {
@@ -37,7 +38,10 @@ namespace Amazon.BedrockAgent.Model
         private string _s3ObjectKey;
 
         /// <summary>
-        /// Gets and sets the property S3BucketName.
+        /// Gets and sets the property S3BucketName. 
+        /// <para>
+        /// The name of the S3 bucket.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]
         public string S3BucketName
@@ -53,7 +57,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3ObjectKey.
+        /// Gets and sets the property S3ObjectKey. 
+        /// <para>
+        /// The S3 object key containing the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string S3ObjectKey

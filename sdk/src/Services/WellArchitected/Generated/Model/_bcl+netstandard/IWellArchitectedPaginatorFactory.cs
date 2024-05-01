@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the wellarchitected-2020-03-31.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>

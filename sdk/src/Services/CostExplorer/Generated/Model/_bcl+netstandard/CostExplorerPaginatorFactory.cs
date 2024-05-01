@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -49,6 +50,14 @@ namespace Amazon.CostExplorer.Model
         public IGetSavingsPlansUtilizationDetailsPaginator GetSavingsPlansUtilizationDetails(GetSavingsPlansUtilizationDetailsRequest request) 
         {
             return new GetSavingsPlansUtilizationDetailsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCostAllocationTagBackfillHistory operation
+        ///</summary>
+        public IListCostAllocationTagBackfillHistoryPaginator ListCostAllocationTagBackfillHistory(ListCostAllocationTagBackfillHistoryRequest request) 
+        {
+            return new ListCostAllocationTagBackfillHistoryPaginator(this.client, request);
         }
 
         /// <summary>

@@ -25,6 +25,7 @@ namespace ServiceClientGenerator
         public const string HostLabelKey = "hostLabel";
         public const string EventPayloadKey = "eventpayload";
         public const string EventHeaderKey = "eventheader";
+        public const string XmlAttributeKey = "xmlAttribute";
         private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
 
         private const string BackwardsCompatibleDateTimePropertySuffix = "Utc";
@@ -120,7 +121,7 @@ namespace ServiceClientGenerator
             get
             {
                 string memberName = null;
-
+                
                 // Follow any property renaming for this member for consistent viewing
                 if (!IsInjected)
                 {
@@ -247,6 +248,15 @@ namespace ServiceClientGenerator
         {
             get
             {
+                // For Json11 and Json10 protocols the name of the member is always the MarshallName because these protocols don't support
+                // the JsonName trait. See https://smithy.io/2.0/aws/protocols/aws-json-1_0-protocol.html#supported-traits.
+                if (string.Equals(this.model.Protocol, "json", StringComparison.Ordinal))
+                {
+                    // if a shape modifier exists, do not change the marshall name
+                    if (this.model.Customizations.GetShapeModifier(this.OwningShape.Name) != null)
+                        return LocationName ?? _defaultMarshallName;
+                    return this.ModeledName;
+                }
                 return LocationName ?? _defaultMarshallName;
             }
         }
@@ -314,18 +324,6 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// If defined, specifies the namespace for the xml constructed
-        /// </summary>
-        public string XmlNamespace
-        {
-            get
-            {
-                return data[ServiceModel.XmlNamespaceKey] == null ? string.Empty :
-                    (string)data[ServiceModel.XmlNamespaceKey][ServiceModel.XmlNamespaceUriKey];
-            }
-        }
-
-        /// <summary>
         /// Determines if the member is flattened for the marshaller/unmarshaller
         /// </summary>
         public bool IsFlattened
@@ -333,9 +331,16 @@ namespace ServiceClientGenerator
             get
             {
                 var metadata = data[ServiceModel.MetadataKey];
-                if (metadata == null) return false;
-                var flattened = metadata[FlattenedKey];
-                if (flattened == null || !flattened.IsBoolean) return false;
+                var flattenedMember = data[FlattenedKey];
+                if (metadata == null && flattenedMember == null)
+                {
+                    return false;
+                }
+                var flattened = metadata?[FlattenedKey] ?? flattenedMember;
+                if (flattened == null || !flattened.IsBoolean)
+                {
+                    return false;
+                }
                 return (bool)flattened;
             }
         }
@@ -520,6 +525,8 @@ namespace ServiceClientGenerator
             if (typeNode == null)
                 throw new Exception("Type is missing for shape " + extendsNode.ToString());
 
+            var nullable = UseNullable ? "?" : "";
+
             switch (typeNode.ToString())
             {
                 case "string":
@@ -665,7 +672,7 @@ namespace ServiceClientGenerator
         /// <returns>A string that can be used as a proper name for the unmarshaller</returns>
         public string DetermineTypeUnmarshallerInstantiate()
         {
-            return this.DetermineTypeUnmarshallerInstantiate(this.data);
+            return this.DetermineTypeUnmarshallerInstantiate(this.data, string.Empty);
         }
 
         /// <summary>
@@ -674,7 +681,7 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="extendedData"></param>
         /// <returns></returns>
-        public string DetermineTypeUnmarshallerInstantiate(JsonData extendedData, bool useNullable = true)
+        public string DetermineTypeUnmarshallerInstantiate(JsonData extendedData, string parentTypeNode, bool useNullable = true)
         {
             // Check to see if customizations is overriding.
             var overrideType = this.model.Customizations.OverrideDataType(OwningShape.Name, this._name);
@@ -723,13 +730,22 @@ namespace ServiceClientGenerator
                 case "map":
                     var keyType = DetermineType(memberShape[Shape.KeyKey], true);
                     var keyTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.KeyKey]);
-                    var keyTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.KeyKey]);
+                    var keyTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.KeyKey], typeNode.ToString());
 
                     var valueType = DetermineType(memberShape[Shape.ValueKey], true, false);
                     var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey], false);
-                    var valueTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.ValueKey], false);
+                    var valueTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.ValueKey], typeNode.ToString(), false);
 
-                    if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json || this.model.Type == ServiceType.Rest_Xml)
+                    //Direct sub maps can not be flattened. If the parent was a map then force the sub map to not be flat.
+                    var isFlat = IsFlattened;
+                    if (parentTypeNode == "map")
+                    {
+                        isFlat = false;
+                    }
+
+                    if (this.model.Type == ServiceType.Json 
+                        || this.model.Type == ServiceType.Rest_Json 
+                        || (this.model.Type == ServiceType.Rest_Xml && !isFlat))
                         return string.Format("new DictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                     else
@@ -738,11 +754,13 @@ namespace ServiceClientGenerator
                 case "list":
                     var listType = DetermineType(memberShape[Shape.MemberKey], true, false);
                     var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.MemberKey], false);
-                    var listTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.MemberKey], false);
+                    var listTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.MemberKey], typeNode.ToString(), false);
 
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
                         return string.Format("new ListUnmarshaller<{0}, {1}>({2})",
                             listType, listTypeUnmarshaller, listTypeUnmarshallerInstantiate);
+                    else if ((this.model.Type == ServiceType.Query || this.model.Type == ServiceType.Rest_Xml) && $"{listTypeUnmarshaller}.Instance" != listTypeUnmarshallerInstantiate)
+                        return $"new {listTypeUnmarshaller}({listTypeUnmarshallerInstantiate})";
                     else
                         return listTypeUnmarshallerInstantiate;
 
@@ -908,6 +926,16 @@ namespace ServiceClientGenerator
             }
         }
 
+        public bool IsXmlAttribute
+        {
+            get
+            {
+                if (data[XmlAttributeKey] != null && data[XmlAttributeKey].IsBoolean)
+                    return (bool)data[XmlAttributeKey];
+                return false;
+            }
+        }
+
         /// <summary>
         /// Returns the deprecation message specified in the model or in the customization file.
         /// </summary>
@@ -1066,11 +1094,16 @@ namespace ServiceClientGenerator
             {
                 if (this.IsDateTime)
                 {
-                    return "StringUtils.FromDateTimeTo" + this.TimestampFormat;
+                    string formatAppend = string.Empty;
+                    if (this.TimestampFormat == TimestampFormat.ISO8601)
+                    {
+                        formatAppend = "WithOptionalMs";
+                    }
+                    return $"StringUtils.FromDateTimeTo{this.TimestampFormat}{formatAppend}";
                 }
                 else
                 {
-                    return "StringUtils.From" + this.GetPrimitiveType();
+                    return $"StringUtils.From{this.GetPrimitiveType()}";
                 }
 
             }
@@ -1089,18 +1122,18 @@ namespace ServiceClientGenerator
         {
             // Rules used to default the format if timestampFormat is not specified.
             // 1. All timestamp values serialized in HTTP headers are formatted using rfc822 by default.
-            // 2. All timestamp values serialized in query strings are formatted using iso8601 by default.
+            // 2. All timestamp values serialized in uri and query strings are formatted using iso8601 by default.
             if (marshallLocation == MarshallLocation.Header)
             {
                 return TimestampFormat.RFC822;
             }
-            else if (marshallLocation == MarshallLocation.QueryString)
+            else if (marshallLocation == MarshallLocation.QueryString || marshallLocation == MarshallLocation.Uri)
             {
                 return TimestampFormat.ISO8601;
             }
             else
             {
-                // Return protocol defaults if marshall location is not header or querystring.
+                // Return protocol defaults if marshall location is not header, querystring, or Uri.
                 // The default timestamp formats per protocol for structured payload shapes are as follows. 
                 //     rest-json: unixTimestamp
                 //     jsonrpc: unixTimestamp

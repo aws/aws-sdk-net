@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteListing operation.
-    /// 
+    /// Deletes a listing (a record of an asset at a given time).
     /// </summary>
     public partial class DeleteListingRequest : AmazonDataZoneRequest
     {
@@ -38,7 +39,10 @@ namespace Amazon.DataZone.Model
         private string _identifier;
 
         /// <summary>
-        /// Gets and sets the property DomainIdentifier.
+        /// Gets and sets the property DomainIdentifier. 
+        /// <para>
+        /// The ID of the Amazon DataZone domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DomainIdentifier
@@ -54,7 +58,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Identifier.
+        /// Gets and sets the property Identifier. 
+        /// <para>
+        /// The ID of the listing to be deleted.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Identifier

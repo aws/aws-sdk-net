@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the GetShare operation.
-    /// Retrieves the metadata for a share.
+    /// Retrieves the metadata for the specified resource share.
     /// </summary>
     public partial class GetShareRequest : AmazonOmicsRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ShareId. 
         /// <para>
-        ///  The generated ID for a share. 
+        /// The ID of the share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

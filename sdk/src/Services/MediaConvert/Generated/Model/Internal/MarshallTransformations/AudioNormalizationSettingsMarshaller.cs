@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioNormalizationSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("algorithm");
@@ -78,13 +81,35 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetLkfs())
             {
                 context.Writer.WritePropertyName("targetLkfs");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.TargetLkfs.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetLkfs))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetLkfs));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TargetLkfs);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
             if(requestObject.IsSetTruePeakLimiterThreshold())
             {
                 context.Writer.WritePropertyName("truePeakLimiterThreshold");
+<<<<<<< HEAD
                 context.Writer.Write(requestObject.TruePeakLimiterThreshold.Value);
+=======
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TruePeakLimiterThreshold))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TruePeakLimiterThreshold));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TruePeakLimiterThreshold);
+                }
+>>>>>>> 875eb2d705bb0cdd8b8b602780494e7b8e0f13d3
             }
 
         }

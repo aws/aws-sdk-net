@@ -100,7 +100,6 @@ namespace Amazon.S3.Model
     {
         private string bucketName;
         private ChecksumAlgorithm _checksumAlgorithm;
-        private string md5Digest;
         private string expectedBucketOwner;
         private string key;
         private RequestPayer requestPayer;

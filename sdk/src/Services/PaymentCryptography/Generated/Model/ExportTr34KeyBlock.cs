@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
@@ -37,6 +38,7 @@ namespace Amazon.PaymentCryptography.Model
         private string _certificateAuthorityPublicKeyIdentifier;
         private string _exportToken;
         private Tr34KeyBlockFormat _keyBlockFormat;
+        private KeyBlockHeaders _keyBlockHeaders;
         private string _randomNonce;
         private string _wrappingKeyCertificate;
 
@@ -65,9 +67,9 @@ namespace Amazon.PaymentCryptography.Model
         /// <para>
         /// The export token to initiate key export from Amazon Web Services Payment Cryptography.
         /// It also contains the signing key certificate that will sign the wrapped key during
-        /// TR-34 key block generation. Call <a>GetParametersForExport</a> to receive an export
-        /// token. It expires after 7 days. You can use the same export token to export multiple
-        /// keys from the same service account.
+        /// TR-34 key block generation. Call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+        /// to receive an export token. It expires after 7 days. You can use the same export token
+        /// to export multiple keys from the same service account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,6 +103,25 @@ namespace Amazon.PaymentCryptography.Model
         internal bool IsSetKeyBlockFormat()
         {
             return this._keyBlockFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyBlockHeaders. 
+        /// <para>
+        /// Optional metadata for export associated with the key material. This data is signed
+        /// but transmitted in clear text.
+        /// </para>
+        /// </summary>
+        public KeyBlockHeaders KeyBlockHeaders
+        {
+            get { return this._keyBlockHeaders; }
+            set { this._keyBlockHeaders = value; }
+        }
+
+        // Check to see if KeyBlockHeaders property is set
+        internal bool IsSetKeyBlockHeaders()
+        {
+            return this._keyBlockHeaders != null;
         }
 
         /// <summary>

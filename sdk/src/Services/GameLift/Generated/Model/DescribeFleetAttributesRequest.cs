@@ -26,25 +26,31 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleetAttributes operation.
-    /// Retrieves core fleet-wide properties, including the computing hardware and deployment
-    /// configuration for all instances in the fleet.
+    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
+    /// which is currently in public preview.</b> 
     /// 
     ///  
     /// <para>
-    /// This operation can be used in the following ways: 
+    /// Retrieves core fleet-wide properties for fleets in an Amazon Web Services Region.
+    /// Properties include the computing hardware and deployment configuration for instances
+    /// in the fleet.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use this operation in the following ways: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// To get attributes for one or more specific fleets, provide a list of fleet IDs or
-    /// fleet ARNs. 
+    /// To get attributes for specific fleets, provide a list of fleet IDs or fleet ARNs.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To get attributes for all fleets, do not provide a fleet identifier. 
+    /// To get attributes for all fleets, do not provide a fleet identifier.
     /// </para>
     ///  </li> </ul> 
     /// <para>
