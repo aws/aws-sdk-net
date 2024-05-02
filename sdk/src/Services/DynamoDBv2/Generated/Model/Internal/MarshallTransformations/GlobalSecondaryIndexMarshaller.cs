@@ -70,6 +70,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetOnDemandThroughput())
+            {
+                context.Writer.WritePropertyName("OnDemandThroughput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OnDemandThroughputMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnDemandThroughput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetProjection())
             {
                 context.Writer.WritePropertyName("Projection");

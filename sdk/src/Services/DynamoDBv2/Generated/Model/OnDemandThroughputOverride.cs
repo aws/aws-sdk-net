@@ -30,34 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteResourcePolicy operation.
+    /// Overrides the on-demand throughput settings for this replica table. If you don't specify
+    /// a value for this parameter, it uses the source table's on-demand throughput settings.
     /// </summary>
-    public partial class DeleteResourcePolicyResponse : AmazonWebServiceResponse
+    public partial class OnDemandThroughputOverride
     {
-        private string _revisionId;
+        private long? _maxReadRequestUnits;
 
         /// <summary>
-        /// Gets and sets the property RevisionId. 
+        /// Gets and sets the property MaxReadRequestUnits. 
         /// <para>
-        /// A unique string that represents the revision ID of the policy. If you're comparing
-        /// revision IDs, make sure to always use string comparison logic.
-        /// </para>
-        ///  
-        /// <para>
-        /// This value will be empty if you make a request against a resource without a policy.
+        /// Maximum number of read request units for the specified replica table.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string RevisionId
+        public long MaxReadRequestUnits
         {
-            get { return this._revisionId; }
-            set { this._revisionId = value; }
+            get { return this._maxReadRequestUnits.GetValueOrDefault(); }
+            set { this._maxReadRequestUnits = value; }
         }
 
-        // Check to see if RevisionId property is set
-        internal bool IsSetRevisionId()
+        // Check to see if MaxReadRequestUnits property is set
+        internal bool IsSetMaxReadRequestUnits()
         {
-            return this._revisionId != null;
+            return this._maxReadRequestUnits.HasValue; 
         }
 
     }

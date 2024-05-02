@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateGlobalSecondaryIndexAction Marshaller
+    /// OnDemandThroughputOverride Marshaller
     /// </summary>
-    public class UpdateGlobalSecondaryIndexActionMarshaller : IRequestMarshaller<UpdateGlobalSecondaryIndexAction, JsonMarshallerContext> 
+    public class OnDemandThroughputOverrideMarshaller : IRequestMarshaller<OnDemandThroughputOverride, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,14 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateGlobalSecondaryIndexAction requestObject, JsonMarshallerContext context)
+        public void Marshall(OnDemandThroughputOverride requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetIndexName())
+            if(requestObject.IsSetMaxReadRequestUnits())
             {
-                context.Writer.WritePropertyName("IndexName");
-                context.Writer.Write(requestObject.IndexName);
-            }
-
-            if(requestObject.IsSetOnDemandThroughput())
-            {
-                context.Writer.WritePropertyName("OnDemandThroughput");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OnDemandThroughputMarshaller.Instance;
-                marshaller.Marshall(requestObject.OnDemandThroughput, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetProvisionedThroughput())
-            {
-                context.Writer.WritePropertyName("ProvisionedThroughput");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ProvisionedThroughputMarshaller.Instance;
-                marshaller.Marshall(requestObject.ProvisionedThroughput, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("MaxReadRequestUnits");
+                context.Writer.Write(requestObject.MaxReadRequestUnits);
             }
 
         }
@@ -81,7 +59,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UpdateGlobalSecondaryIndexActionMarshaller Instance = new UpdateGlobalSecondaryIndexActionMarshaller();
+        public readonly static OnDemandThroughputOverrideMarshaller Instance = new OnDemandThroughputOverrideMarshaller();
 
     }
 }

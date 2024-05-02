@@ -62,6 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<GlobalSecondaryIndex> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndex>() : null;
         private List<KeySchemaElement> _keySchema = AWSConfigs.InitializeCollections ? new List<KeySchemaElement>() : null;
         private List<LocalSecondaryIndex> _localSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<LocalSecondaryIndex>() : null;
+        private OnDemandThroughput _onDemandThroughput;
         private ProvisionedThroughput _provisionedThroughput;
         private string _resourcePolicy;
         private SSESpecification _sseSpecification;
@@ -375,6 +376,26 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnDemandThroughput. 
+        /// <para>
+        /// Sets the maximum number of read and write units for the specified table in on-demand
+        /// capacity mode. If you use this parameter, you must specify <c>MaxReadRequestUnits</c>,
+        /// <c>MaxWriteRequestUnits</c>, or both.
+        /// </para>
+        /// </summary>
+        public OnDemandThroughput OnDemandThroughput
+        {
+            get { return this._onDemandThroughput; }
+            set { this._onDemandThroughput = value; }
+        }
+
+        // Check to see if OnDemandThroughput property is set
+        internal bool IsSetOnDemandThroughput()
+        {
+            return this._onDemandThroughput != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProvisionedThroughput. 
         /// <para>
         /// Represents the provisioned throughput settings for a specified table or index. The
@@ -411,15 +432,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// When you attach a resource-based policy while creating a table, the policy creation
+        /// When you attach a resource-based policy while creating a table, the policy application
         /// is <i>strongly consistent</i>.
         /// </para>
         ///  
         /// <para>
         /// The maximum size supported for a resource-based policy document is 20 KB. DynamoDB
-        /// counts whitespaces when calculating the size of a policy against this limit. You can’t
-        /// request an increase for this limit. For a full list of all considerations that you
-        /// should keep in mind while attaching a resource-based policy, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
+        /// counts whitespaces when calculating the size of a policy against this limit. For a
+        /// full list of all considerations that apply for resource-based policies, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
         /// policy considerations</a>.
         /// </para>
         /// </summary>

@@ -76,6 +76,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OnDemandThroughput", targetDepth))
+                {
+                    var unmarshaller = OnDemandThroughputUnmarshaller.Instance;
+                    unmarshalledObject.OnDemandThroughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Projection", targetDepth))
                 {
                     var unmarshaller = ProjectionUnmarshaller.Instance;

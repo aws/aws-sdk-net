@@ -76,6 +76,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.KMSMasterKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OnDemandThroughputOverride", targetDepth))
+                {
+                    var unmarshaller = OnDemandThroughputOverrideUnmarshaller.Instance;
+                    unmarshalledObject.OnDemandThroughputOverride = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProvisionedThroughputOverride", targetDepth))
                 {
                     var unmarshaller = ProvisionedThroughputOverrideUnmarshaller.Instance;

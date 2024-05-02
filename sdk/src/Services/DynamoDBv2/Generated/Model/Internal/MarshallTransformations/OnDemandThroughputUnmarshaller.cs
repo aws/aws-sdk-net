@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReplicaGlobalSecondaryIndexDescription Object
+    /// Response Unmarshaller for OnDemandThroughput Object
     /// </summary>  
-    public class ReplicaGlobalSecondaryIndexDescriptionUnmarshaller : IUnmarshaller<ReplicaGlobalSecondaryIndexDescription, XmlUnmarshallerContext>, IUnmarshaller<ReplicaGlobalSecondaryIndexDescription, JsonUnmarshallerContext>
+    public class OnDemandThroughputUnmarshaller : IUnmarshaller<OnDemandThroughput, XmlUnmarshallerContext>, IUnmarshaller<OnDemandThroughput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ReplicaGlobalSecondaryIndexDescription IUnmarshaller<ReplicaGlobalSecondaryIndexDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OnDemandThroughput IUnmarshaller<OnDemandThroughput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReplicaGlobalSecondaryIndexDescription Unmarshall(JsonUnmarshallerContext context)
+        public OnDemandThroughput Unmarshall(JsonUnmarshallerContext context)
         {
-            ReplicaGlobalSecondaryIndexDescription unmarshalledObject = new ReplicaGlobalSecondaryIndexDescription();
+            OnDemandThroughput unmarshalledObject = new OnDemandThroughput();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,22 +64,16 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("IndexName", targetDepth))
+                if (context.TestExpression("MaxReadRequestUnits", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.MaxReadRequestUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OnDemandThroughputOverride", targetDepth))
+                if (context.TestExpression("MaxWriteRequestUnits", targetDepth))
                 {
-                    var unmarshaller = OnDemandThroughputOverrideUnmarshaller.Instance;
-                    unmarshalledObject.OnDemandThroughputOverride = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProvisionedThroughputOverride", targetDepth))
-                {
-                    var unmarshaller = ProvisionedThroughputOverrideUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedThroughputOverride = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.MaxWriteRequestUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,12 +81,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ReplicaGlobalSecondaryIndexDescriptionUnmarshaller _instance = new ReplicaGlobalSecondaryIndexDescriptionUnmarshaller();        
+        private static OnDemandThroughputUnmarshaller _instance = new OnDemandThroughputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReplicaGlobalSecondaryIndexDescriptionUnmarshaller Instance
+        public static OnDemandThroughputUnmarshaller Instance
         {
             get
             {
