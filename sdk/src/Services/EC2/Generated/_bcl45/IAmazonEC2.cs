@@ -21244,6 +21244,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetInstanceTpmEkPub
+
+
+        /// <summary>
+        /// Gets the public endorsement key associated with the Nitro Trusted Platform Module
+        /// (NitroTPM) for the specified instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceTpmEkPub service method.</param>
+        /// 
+        /// <returns>The response from the GetInstanceTpmEkPub service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTpmEkPub">REST API Reference for GetInstanceTpmEkPub Operation</seealso>
+        GetInstanceTpmEkPubResponse GetInstanceTpmEkPub(GetInstanceTpmEkPubRequest request);
+
+
+
+        /// <summary>
+        /// Gets the public endorsement key associated with the Nitro Trusted Platform Module
+        /// (NitroTPM) for the specified instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceTpmEkPub service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInstanceTpmEkPub service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTpmEkPub">REST API Reference for GetInstanceTpmEkPub Operation</seealso>
+        Task<GetInstanceTpmEkPubResponse> GetInstanceTpmEkPubAsync(GetInstanceTpmEkPubRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetInstanceTypesFromInstanceRequirements
 
 

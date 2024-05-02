@@ -10502,6 +10502,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void GetInstanceTpmEkPubMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetInstanceTpmEkPub");
+
+            var request = InstantiateClassGenerator.Execute<GetInstanceTpmEkPubRequest>(operation);
+            var marshaller = new GetInstanceTpmEkPubRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetInstanceTpmEkPubResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetInstanceTpmEkPubResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void GetInstanceTypesFromInstanceRequirementsMarshallTest()
         {
             var operation = service_model.FindOperation("GetInstanceTypesFromInstanceRequirements");
